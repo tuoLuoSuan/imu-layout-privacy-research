@@ -102,6 +102,7 @@
     "docs/research/claim-evidence-matrix.md",
     "docs/superpowers/plans/2026-10-13-ccfa-imu-layout-research-roadmap-v2.md",
     "environment/2026-10-14-手机0.2.2有线与拔线持续性验收.md",
+    "environment/2026-10-14-手机0.2.2拔线30分钟验收.md",
     "environment/bootstrap_ml.sh",
     "environment/bootstrap_ros_humble.sh",
     "environment/inspect_ubuntu.sh",
