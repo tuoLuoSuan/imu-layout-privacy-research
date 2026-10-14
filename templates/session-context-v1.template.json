@@ -1,0 +1,58 @@
+{
+  "schema_version": "session-context/v1-draft",
+  "record_kind": "template_not_collected",
+  "raw_binding": {
+    "session_id": null,
+    "raw_export_sha256": null,
+    "raw_export_location_ref": null,
+    "app_version": null,
+    "source_digest": null,
+    "source_commit": null
+  },
+  "grouping_eval_only": {
+    "participant_id": null,
+    "physical_room_id": null,
+    "layout_variant_id": null,
+    "site_id": null,
+    "split": null
+  },
+  "protocol_plan": {
+    "protocol_id": "phone-0.2.2-wired-r2-short-draft",
+    "planned_requested_rate_hz": 100,
+    "planned_phases": [
+      {"state": "foreground", "nominal_seconds": 60},
+      {"state": "other_app", "nominal_seconds": 60},
+      {"state": "screen_off", "nominal_seconds": 90},
+      {"state": "foreground", "nominal_seconds": 30}
+    ]
+  },
+  "observations_eval_only": {
+    "phone_carry_position": null,
+    "phone_orientation_description": null,
+    "wrist_side": null,
+    "wrist_device_ref": null,
+    "battery_policy_user_report": null,
+    "charging_condition": null,
+    "screen_condition": null,
+    "battery_percent_start": null,
+    "battery_percent_end": null,
+    "observation_source_refs": [],
+    "notes": null
+  },
+  "actual_phases_eval_only": [],
+  "reference_eval_only": {
+    "reference_map_ref": null,
+    "reference_quality_report_ref": null,
+    "independent_measurements_ref": null,
+    "activity_annotations_ref": null
+  },
+  "consent_review_ref": null,
+  "quality_review_ref": null,
+  "instructions": [
+    "Template only; no actual session or participant is represented.",
+    "Copy before use; keep original recorder ZIP and manifest unchanged.",
+    "Plans are not actual phase boundaries; preserve unknown values as null.",
+    "Do not pass grouping, manual observations, or reference fields to test inference.",
+    "Store completed private context files outside the source allowlist."
+  ]
+}

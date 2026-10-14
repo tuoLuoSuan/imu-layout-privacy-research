@@ -41,6 +41,8 @@ attachments/
 datasets/
 data/raw/
 data/ground_truth/
+data/session_context/
+data/annotations/
 collection/band9pro-probe/recordings/
 showcase/data/
 docs/evidence/**

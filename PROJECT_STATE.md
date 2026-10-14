@@ -2,6 +2,8 @@
 
 更新：2026-10-14。本文是当前状态导航；事实以链接的原件、源码和验收记录为准，历史记录不回写。负责人：Codex整合实现，DS独立审查，用户操作设备并与导师确认研究要求。不开子代理。
 
+本次研究口径：[CCF-A研究合同v1](docs/research/2026-10-14-research-contract-v1.md)（Codex整合，待DS核对）；[主张—证据表](docs/research/claim-evidence-matrix.md)列C01–C12当前状态。主目标为CCS/USENIX Security正式长文，不以完成工具或扩大人数替代科学贡献。DS为独立审查，尚未回复本合同。
+
 研究问题：普通应用实际可读的手机/腕部惯性信息，随观察时长、覆盖和交互增加，能区分多少空间信息；腕部是否提升空间层结果；未观察区域和先验如何区分。尚无HAR/轨迹/布局推断或防护实验结果。GitHub最终交付整项研究，App仅为采集模块。
 
 | 当前能力 | 已有证据与限制 |
@@ -13,11 +15,11 @@
 | 腕部与雷达 | 9Pro只有历史30条样例；S5入口/出口仍未验。MID-360真实接收/录包/RViz已有，几何参考/重复误差未验 |
 | 环境与网站 | Ubuntu/ROS/XGBoost基础验收已有；showcase六页本地展示含真实曲线与明确人工场景；[完整成果计划](docs/research/2026-10-14-完整研究成果交付与下一步.md) |
 | 独立审查 | DS014报告重算源码/ZIP/展示数据一致，并有限阅读源码；不是完整独立代码走查、真机测试或审美验收；[采纳与纠正](docs/reviews/2026-10-14-deepseek-014-audit.md) |
-| 版本/备份 | 124文件白名单已首提交并推送[私有源码仓库](https://github.com/tuoLuoSuan/imu-layout-privacy-research)，初始提交aea339e已重新检出逐字节验证、远程检查通过；详见[备份状态](docs/maintenance/2026-10-14-source-backup-status.md)。原件未上传，独立备份仍待办 |
+| 版本/备份 | 首批124文件白名单已首提交并推送[私有源码仓库](https://github.com/tuoLuoSuan/imu-layout-privacy-research)，初始提交aea339e已重新检出逐字节验证、远程检查通过；详见[备份状态](docs/maintenance/2026-10-14-source-backup-status.md)。原件未上传，独立备份仍待办 |
 
 证据总入口：[environment/reports/INDEX.md](environment/reports/INDEX.md)。冻结0.2.2与`source_digest`只覆盖范围说明见[本轮验收](environment/2026-10-14-采集器频率配置与记录删除验收.md)及源码`app/build.gradle`；不能把app/src/main摘要当全仓摘要。
 
-下一步依次：①数据字典、质量词表和前瞻性会话记录表；②0.2.2选回100Hz，做有线四状态短试→拔线短试→30分钟；③标签/HAR小试，S5入口与雷达参考分别过门后再联采和空间证伪。继续使用r2同会话[2,60)秒基线，不拿别次记录替代短会话判据。
+下一步依次：①本轮已备[数据/质量字典](docs/data/phone-v1-data-dictionary.md)、[空会话模板](templates/session-context-v1.template.json)；DS015重点核对权限/出口、空间输出、间接观测、真值用途、参考误差和CCF-A增量；②核对后0.2.2选回100Hz，做有线四状态短试→拔线短试→30分钟；③标签/HAR小试，S5入口与雷达参考分别过门后再联采和空间证伪。继续使用r2同会话[2,60)秒基线，不拿别次记录替代短会话判据。
 
 用户与导师并行确认：xpboost是否确指XGBoost及具体方法链接；受试者/真实房间采集需要的学校伦理和知情同意流程。正式招募与扩大规模待输入和协议合格。腕部不通时，纯手机只保留为需重新评估的新候选路线，不能预先保证论文成立。
 
