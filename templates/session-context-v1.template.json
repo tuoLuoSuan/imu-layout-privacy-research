@@ -53,6 +53,7 @@
     "Copy before use; keep original recorder ZIP and manifest unchanged.",
     "Plans are not actual phase boundaries; preserve unknown values as null.",
     "Do not pass grouping, manual observations, or reference fields to test inference.",
+    "Test layout labels and candidate maps are evaluation-only and must not be provided to the attack model.",
     "Store completed private context files outside the source allowlist."
   ]
 }
