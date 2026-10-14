@@ -1,0 +1,5 @@
+#!/bin/sh
+python tools/repository_guard.py --staged --report backups/pre-commit-scan.json || {
+    echo 'Source check rejected commit. See backups/pre-commit-scan.json.' >&2
+    exit 1
+}

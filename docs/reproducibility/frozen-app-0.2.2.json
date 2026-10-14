@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "app_version": "0.2.2",
+  "snapshot_manifest_sha256": "c121350403bbc01ccef9f0810ccb7853eae20344f3bfeaa2ece02106d8b0ddfd",
+  "source_digest_scope": "app/src/main: 36 files, case-sensitive path-string order as used in original build, concatenated file bytes; not whole repository",
+  "source_digest": "2c60c7cfdb28db310e38c474805892066a98d197aef104f2c668e2f94da5ddd3",
+  "apk": {
+    "bytes": 258952,
+    "sha256": "baf0789a4bb72237e44eab62501e4baabcdd262c06f536801d45c871b4a9943d",
+    "included_in_repository": false
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "ea0bf0c5bf47f65c52bcc8df40c245bbeeeb331e3102367076ab32fdb1762bd4",
+      "bytes": 105
+    },
+    {
+      "path": "README.md",
+      "sha256": "27704b0efe18a73cfb22f861c21e9fae14d29ddf15db9131cd7376c54bfa1fd2",
+      "bytes": 7067
+    },
+    {
+      "path": "app/build.gradle",
+      "sha256": "ae0a98bfb6fb97916fc675df1419d81577ce8d82478fce2481dd2358ac1a9b63",
+      "bytes": 915
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "sha256": "2e56af8669d9e03c516c74f35f489a3f9f9b9c57bb9b3ccac6aead3346451f30",
+      "bytes": 1379
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/AndroidRecordingRuntime.java",
+      "sha256": "367a0a2e93ea39a3fd6fbb4a3e59dcd54f3c2886ef84c830275b2f359d9363ff",
+      "bytes": 3919
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/MainActivity.java",
+      "sha256": "9374f7c804a3eded7bfa658c21fee1eed31ffb7e8910509b4a8e72cee865430a",
+      "bytes": 21669
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/RecorderService.java",
+      "sha256": "faf6ec143e0d53b38a5dc72847e50a18931384aa3932dcf9806a2cbcdb5e55dc",
+      "bytes": 17509
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/SessionExporter.java",
+      "sha256": "1a8f33be85b4ecbd5b118a80ce28ae1537182b728e9a02c47c4db124f0d33042",
+      "bytes": 4181
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/ClockMapping.java",
+      "sha256": "23f687dba0c71d974b21c5f003589f7d6c2f24fe6de82c0803ca6fc9d27a0d7a",
+      "bytes": 1629
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/IntegrityAnalyzer.java",
+      "sha256": "87bfa8de043a18abac09f49eab5a93109668504e9bbba99fc847b5bcbb278098",
+      "bytes": 11614
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/Jsons.java",
+      "sha256": "85be6e21d9891ee82d7117203219774c70c54d7cdeb990615521d8a923584a26",
+      "bytes": 1762
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/OperationGate.java",
+      "sha256": "9209b2788feeb6d4184cb01ab710675025f313d2f90b4bcd5e13fae5c1e2a92a",
+      "bytes": 788
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/RecordingConfig.java",
+      "sha256": "6f877b759444c5aa8c06d3091a5de6d9188164acb04a15e8d21d736c76476701",
+      "bytes": 1208
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/RecordingContract.java",
+      "sha256": "02a59b5e53b962a6e31e256a7cb6fc551c7053cb1b59599f0787ff96a03536e0",
+      "bytes": 925
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/SessionController.java",
+      "sha256": "af5d98a8d5971e207645480c6c4be8bf1f6dc53145d066b5147af738fe2fa4f5",
+      "bytes": 1950
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/SessionDeletion.java",
+      "sha256": "cc87309a0c2862bb38b6e22b8a12a6394880673ce036dec70ccadc093a370505",
+      "bytes": 4646
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/SessionFiles.java",
+      "sha256": "ecbfdeff9948ba290248aca29857383ed4bcd107768c102e85e66afc77d63209",
+      "bytes": 5988
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/core/WakeLeasePolicy.java",
+      "sha256": "462dc3295b924f5096d50709845bc990394671d3a9333bd91d04e5d53a872acb",
+      "bytes": 962
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/ui/FrequencyDialog.java",
+      "sha256": "6f3618c784d5a04dce1a009a582520a1c57ee141c00b6e9f3639de5e1a7f743c",
+      "bytes": 2689
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/ui/RecorderPresentation.java",
+      "sha256": "e5cbbbc84dce6efe4a758b791a6c438418cc5416198f2c9b1480fc89b3327519",
+      "bytes": 2496
+    },
+    {
+      "path": "app/src/main/java/org/imulayout/recorder/ui/SessionEntry.java",
+      "sha256": "f9fd49a03e8bf46f2fa8e9f5664235ba1e374df918b0c8753a77e825ae13b932",
+      "bytes": 2549
+    },
+    {
+      "path": "app/src/main/res/color/action_text.xml",
+      "sha256": "484d8c30478e0fb050de9b7c4356c728162cd95c6543099dc9f632356b5f462d",
+      "bytes": 237
+    },
+    {
+      "path": "app/src/main/res/color/nav_text.xml",
+      "sha256": "0afb7dc0f485ae6707218c21c49b53e18694b55d75fbed261581faa32bd3ed22",
+      "bytes": 236
+    },
+    {
+      "path": "app/src/main/res/drawable/bg_action.xml",
+      "sha256": "f11df06ea4cfabd90c734cccf647e9614c4afa8eda821478cff731775280d558",
+      "bytes": 523
+    },
+    {
+      "path": "app/src/main/res/drawable/bg_card.xml",
+      "sha256": "e55cd4b6a34a3ec68095bb7dac738659d9d3cd2feb1e96b4f36794cd48e8fc7f",
+      "bytes": 261
+    },
+    {
+      "path": "app/src/main/res/drawable/bg_nav.xml",
+      "sha256": "84c2a55c37e0e39a4112ee123c0c0daa26625b899ce9f48f0325626388d966f6",
+      "bytes": 479
+    },
+    {
+      "path": "app/src/main/res/drawable/bg_record.xml",
+      "sha256": "6dcd9268b454133f9106673f4cecb7f3268195de52d5036110982c0e3f9edf7e",
+      "bytes": 585
+    },
+    {
+      "path": "app/src/main/res/drawable/bg_soft.xml",
+      "sha256": "22f3299fb6d894d3a742ca10183584a323af04b171195e050cfb9b5f457be8cd",
+      "bytes": 202
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_app.xml",
+      "sha256": "a7d659a23f9a583ba5a860e18fad79a3974d7687e5e301e70c405645408d9543",
+      "bytes": 633
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_collect.xml",
+      "sha256": "3c542a7c8188d9cba4e222fd96c7d7c42f8206531de55388b34c395ce56ec8a9",
+      "bytes": 445
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_dot.xml",
+      "sha256": "67aa9cc5df4091960af005ed32af7d2eed849204bdbe11701cfd62ae6e859dd9",
+      "bytes": 309
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_records.xml",
+      "sha256": "3e39a7eb257b3d1746eff8fe0b00793bf7c6cf2ea59d81f1dd111ad96883b6a6",
+      "bytes": 508
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_warning.xml",
+      "sha256": "6ed3f7b03013c870b753e3f8641da5d475fc21798673d70d622a982d5fde90bb",
+      "bytes": 454
+    },
+    {
+      "path": "app/src/main/res/layout/activity_main.xml",
+      "sha256": "fa973216567a583543dde7c48cf24c8e2df1c5189db10b72acb04cac7f2626c1",
+      "bytes": 12863
+    },
+    {
+      "path": "app/src/main/res/layout/row_record.xml",
+      "sha256": "b70738f95c0f0a813b0392cbf32c0eac1cf65b7a7cca73790437c57ce9ecd18a",
+      "bytes": 1671
+    },
+    {
+      "path": "app/src/main/res/values/colors.xml",
+      "sha256": "65dfc8199a9b7794649b3a32ec7973822f71badacb1d87c748dba96b2eeafa2f",
+      "bytes": 436
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "sha256": "0f4c7db804882bf4220b3f3f761af41160423c592d4277f24e33a41fd8335089",
+      "bytes": 5762
+    },
+    {
+      "path": "app/src/main/res/values/styles.xml",
+      "sha256": "fdfe5ca1a4d9d6091a686263873cd611821e9a67544191114193867f70fcc4ee",
+      "bytes": 2539
+    },
+    {
+      "path": "app/src/main/res/xml/data_extraction_rules.xml",
+      "sha256": "8b55ff5489071bb19a4e89967b604a16c0e4d1e87a2df3c73c64417314a59f22",
+      "bytes": 671
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/ClockMappingTest.java",
+      "sha256": "fd6c748505f0561c9ed299632d8dd4f7465f1e9ff3ebce17bf7b48a2eb0b1aa2",
+      "bytes": 1832
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/IntegrityAnalyzerTest.java",
+      "sha256": "58fd5990602434eabea3bfdc9a594def62c58ba6194910fa6255b692e8470dc7",
+      "bytes": 3361
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/OperationGateTest.java",
+      "sha256": "da1dba2b8fbd5eeacf364f7d65de9271ddf98fdc9288c1ab57a6e6ad91b1bdad",
+      "bytes": 926
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/RecordingConfigTest.java",
+      "sha256": "effc8386d4836bd9fcb85c0b73b8ba70b8db3db4680e882ad0696585b3b01872",
+      "bytes": 1437
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/SessionControllerTest.java",
+      "sha256": "78b3eeacc7138ecbb4067490666cedbee6ba7bf94150dfdde538d87b01a9d456",
+      "bytes": 2197
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/SessionDeletionTest.java",
+      "sha256": "7f767ca731f810688db4eadb0df90cb547e27af9a66261036980125da1d291d7",
+      "bytes": 3738
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/SessionExporterTest.java",
+      "sha256": "4eaf23981b76ee3a06cf0882f15342317ce1d919bd7f23594529a0022f50a27f",
+      "bytes": 2497
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/SessionFilesTest.java",
+      "sha256": "17eab0a54ed5cf78433e42bfa0a0d05b7174309d572bb2b1eea09261a7c4f00e",
+      "bytes": 2011
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/core/WakeLeasePolicyTest.java",
+      "sha256": "093b30b6bcc42fcb1877d34744bab5c98dd7c4160f858c460f2dbd4f633458fc",
+      "bytes": 1425
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/ui/RecorderPresentationTest.java",
+      "sha256": "aedd514d0715623bdc7b13a88bdbd7ed26255fabd287edd1730614602804fd6b",
+      "bytes": 2389
+    },
+    {
+      "path": "app/src/test/java/org/imulayout/recorder/ui/SessionEntryTest.java",
+      "sha256": "340f10df92414824fffc7b2e108b86f5ae75b12d46f1365a4aed16591cdf89a4",
+      "bytes": 3261
+    },
+    {
+      "path": "build.gradle",
+      "sha256": "c67a38b1900478d47960c2a89545cf6645b50a0b91ac213c2cba38a0761e4ac6",
+      "bytes": 69
+    },
+    {
+      "path": "docs/compatibility.md",
+      "sha256": "8ace3e313eda60ef5731d7e846adf48c5ba322e022e35ac7d3267683b0384e06",
+      "bytes": 3673
+    },
+    {
+      "path": "docs/device-test.md",
+      "sha256": "f0e7097fb7d331f326d1594157f297fd243a8cb3a2495a6194fb9d4fe31b407d",
+      "bytes": 4950
+    },
+    {
+      "path": "docs/export-format.md",
+      "sha256": "dd81d042aad701303926b068b6859826d4e12a4c0aa51dbe60256fd98c9dfcd2",
+      "bytes": 5582
+    },
+    {
+      "path": "docs/open-source-release.md",
+      "sha256": "9390bdc6d6522676d262a9f737082c3f5993efd2b40b907ce73f665f3a118fe1",
+      "bytes": 1873
+    },
+    {
+      "path": "gradle.properties",
+      "sha256": "f2972c3ef44585ff4e20fc5abff4c561794855acd785b649d196ecb70b36ffdd",
+      "bytes": 143
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
+      "bytes": 48462
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "9cdfbeeb8e2ba15639e40db0e566b3944debad91b46af6e8147e601570a7d8df",
+      "bytes": 380
+    },
+    {
+      "path": "gradlew",
+      "sha256": "a5a5c199ba02189ae8c46a334223371a20599d9c298ef65e7540ede4a3f72d59",
+      "bytes": 8656
+    },
+    {
+      "path": "gradlew.bat",
+      "sha256": "d539676c48b596afda64c963ec8f7ee56c7b3fe7e3b81d1dbe2d1a1e3dd9e9f8",
+      "bytes": 2848
+    },
+    {
+      "path": "settings.gradle",
+      "sha256": "a29b6af9118d0e3a0484437526bfba986e8c152cd19b273f1f24cfa39e463dea",
+      "bytes": 279
+    },
+    {
+      "path": "toolchain-lock.json",
+      "sha256": "86d08bd11caabef8d0afdf1ce28af0365b2f8ffd9ac0e3951a41b9b32ce35fba",
+      "bytes": 2598
+    },
+    {
+      "path": "tools/build.ps1",
+      "sha256": "7668c88ef6fb96a8522096812ab2cf0d4d8c803e8a12d28a1c52456e93d19941",
+      "bytes": 1175
+    },
+    {
+      "path": "tools/capture_state.ps1",
+      "sha256": "ba30a1a9cda6495e3db180a1890c1affa8a1bee1cf97cf7d8e8c528aed52db6c",
+      "bytes": 3763
+    },
+    {
+      "path": "tools/check_export.py",
+      "sha256": "e4882f8ffa12cf95814250045ac9499da1f5d62a83ac161b2faf7af835e37865",
+      "bytes": 10090
+    },
+    {
+      "path": "tools/test_check_export.py",
+      "sha256": "4621f69b2bffb0b3e5082c24cbb567f4565f156612f1d815fc3d9855679d7c6c",
+      "bytes": 2561
+    }
+  ]
+}

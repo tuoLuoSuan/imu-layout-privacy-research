@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "jdk": {
+    "home": "C:/Program Files/Java/latest/jdk-21",
+    "version": "21.0.11",
+    "reused_existing": true
+  },
+  "agp": "9.4.1",
+  "gradle": "9.6.1",
+  "compile_sdk": 37,
+  "target_sdk": 37,
+  "min_sdk": 34,
+  "sdk_packages": [
+    "platforms;android-37.0",
+    "build-tools;37.0.0",
+    "cmdline-tools;latest"
+  ],
+  "sdk_root": "D:\\Project\\imu环境重建\\.cache\\android-sdk",
+  "gradle_user_home": "D:\\Project\\imu环境重建\\.cache\\gradle-home",
+  "agp_compatibility_url": "https://developer.android.com/build/releases/gradle-plugin",
+  "repository_url": "https://dl.google.com/android/repository/repository2-3.xml",
+  "archives": [
+    {
+      "package": "cmdline-tools;latest",
+      "url": "https://dl.google.com/android/repository/commandlinetools-win-16111833_latest.zip",
+      "size": 154957218,
+      "sha1": "57d04f2d75eb8e8fffc5000a987e5de4b5a63e9d",
+      "verified_hash_algorithm": "sha1",
+      "verified_hash": "57d04f2d75eb8e8fffc5000a987e5de4b5a63e9d",
+      "sha256": "e5885e2e59038c0778a85fc19f01de7ce7c567c105553f7617b936b1e0e87b2b",
+      "local_archive": "D:\\Project\\imu环境重建\\.cache\\android-native\\commandlinetools-win-16111833_latest.zip"
+    },
+    {
+      "package": "gradle;9.6.1",
+      "url": "https://services.gradle.org/distributions/gradle-9.6.1-bin.zip",
+      "checksum_url": "https://services.gradle.org/distributions/gradle-9.6.1-bin.zip.sha256",
+      "verified_hash_algorithm": "sha256",
+      "verified_hash": "9c0f7faeeb306cb14e4279a3e084ca6b596894089a0638e68a07c945a32c9e14",
+      "sha256": "9c0f7faeeb306cb14e4279a3e084ca6b596894089a0638e68a07c945a32c9e14",
+      "local_archive": "D:\\Project\\imu环境重建\\.cache\\android-native\\gradle-9.6.1-bin.zip"
+    }
+  ],
+  "runtime_dependencies": [],
+  "test_dependencies": [
+    "junit:junit:4.13.2",
+    "org.json:json:20240303"
+  ],
+  "sdk_files": {
+    "platforms/android-37.0/android.jar": {
+      "bytes": 43044472,
+      "sha256": "bf1b4387cc7ca94fc6ef684f040d9d16fbf16248e181819f020736ea2053f177"
+    },
+    "platforms/android-37.0/source.properties": {
+      "bytes": 343,
+      "sha256": "fa89029fc0cee414cb5e44a37cd3033771217eeecb5086577bb6d9b1b03b5b5f"
+    },
+    "build-tools/37.0.0/aapt2.exe": {
+      "bytes": 5036696,
+      "sha256": "4b09f89d449cc4498fcf5076a4ad6b28f079e565d2737f7881a674580960c8df"
+    },
+    "build-tools/37.0.0/source.properties": {
+      "bytes": 38,
+      "sha256": "fbd87c8567afbc6dc78e140097fcde234f4a61fa7065e85081d43e442ccd3d24"
+    }
+  }
+}

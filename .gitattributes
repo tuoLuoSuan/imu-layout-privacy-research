@@ -1,0 +1,3 @@
+# Preserve the bytes of frozen source snapshots on every operating system.
+# Source digests must not change because Git converted line endings.
+* -text

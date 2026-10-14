@@ -1,0 +1,12 @@
+{
+  "package": "org.imuresearch.bandprobe",
+  "name": "活动采集",
+  "icon": "/common/icon.png",
+  "versionName": "0.1.0",
+  "versionCode": 1,
+  "minAPILevel": 2,
+  "features": [{"name": "system.sensor"}, {"name": "system.file"}],
+  "config": {"designWidth": 336},
+  "router": {"entry": "Probe", "pages": {"Probe": {"component": "index"}}},
+  "deviceTypeList": ["watch"]
+}

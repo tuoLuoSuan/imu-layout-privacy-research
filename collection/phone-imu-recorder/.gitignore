@@ -1,0 +1,12 @@
+.gradle/
+.cache/
+build/
+local.properties
+__pycache__/
+*.py[cod]
+*.apk
+*.keystore
+*.jks
+*.p12
+*.pem
+*.log
