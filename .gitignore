@@ -40,6 +40,7 @@ secrets/
 attachments/
 datasets/
 data/raw/
+data/derived/
 data/ground_truth/
 data/session_context/
 data/annotations/
