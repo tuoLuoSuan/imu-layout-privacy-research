@@ -1,6 +1,6 @@
 # 项目当前状态
 
-更新：2026-10-15。用户已要求休息，设备采集/调试等其恢复后继续；本轮仅审阅机位照片、归档并准备DS018，未自动发送。本文是当前状态导航；事实以链接的原件、源码和验收记录为准，历史记录不回写。负责人：Codex整合实现，DS独立审查，用户操作设备并与导师确认研究要求。不开子代理。
+更新：2026-10-15。已收到并本机复核DS018：照片/点云预览JSON复算一致，但其重复扣除3秒启动时间、频率与部分径向比例解释不成立；详见本机docs/reviews/2026-10-15-deepseek-018-audit.md。用户此前要求休息，设备采集/调试等其恢复后继续；本轮无设备连接或新采。本文是当前状态导航；事实以链接的原件、源码和验收记录为准，历史记录不回写。负责人：Codex整合实现，DS独立审查，用户操作设备并与导师确认研究要求。不开子代理。
 
 本次研究口径：[CCF-A研究合同v1](docs/research/2026-10-14-research-contract-v1.md)（Codex整合，DS015已核验处理）；[主张—证据表](docs/research/claim-evidence-matrix.md)列C01–C12当前状态。主目标为CCS/USENIX Security正式长文，不以完成工具或扩大人数替代科学贡献。DS为独立审查；其新增门槛未全盘采纳，处理见本机docs/reviews/2026-10-14-deepseek-015-audit.md。
 
@@ -17,7 +17,7 @@
 | 旧记录 | 升级时40文件一致；用户随后主动删除16个手机旧文件，其电脑备份匹配，24旧文件保留。历史失败继续保留 |
 | 腕部与雷达 | 9Pro只有历史30条样例；S5入口/出口仍未验。MID-360旧596帧已离线整理；新桌外机位15秒取得144帧/2873IMU，原包/配置未改。现场照片已阅：短三脚架置于椅面；扫描中心高度、边缘/地面可见性和点云目标对应仍未确认；独立误差未过、驱动退出异常未定位；[视野记录](environment/2026-10-14-MID360参考准备与视野检查.md)/[照片收尾](environment/2026-10-15-MID360机位照片与收尾.md) |
 | 环境与网站 | Ubuntu/ROS/XGBoost基础验收已有；showcase六页本地展示含真实曲线与明确人工场景；[完整成果计划](docs/research/2026-10-14-完整研究成果交付与下一步.md) |
-| 独立审查 | DS016两条原件复算产物已由Codex重跑，JSON完全一致，66冻结文件未改；有线告警/UTCpartial/工具原pending状态保留。详见本机docs/reviews/2026-10-14-deepseek-016-audit.md；新30分钟DS017产物已由Codex重跑核验，关键数值一致、人工审查支持继续；已纠正其锚点行数和UTC端点解释，并补记短暂accuracy=LOW。处理见本机docs/reviews/2026-10-14-deepseek-017-audit.md |
+| 独立审查 | DS018脚本重跑与原JSON完全一致，DS原产物不变；144帧按143个bag间隔复算约10.00115次/秒，不采纳12Hz/239Hz推论。网站本机内部笔记可读已确认、尚未修复；当前源码无signals.json请求。本轮66冻结文件仍一致。DS016两条原件复算产物已由Codex重跑，JSON完全一致，66冻结文件未改；有线告警/UTCpartial/工具原pending状态保留。详见本机docs/reviews/2026-10-14-deepseek-016-audit.md；新30分钟DS017产物已由Codex重跑核验，关键数值一致、人工审查支持继续；已纠正其锚点行数和UTC端点解释，并补记短暂accuracy=LOW。处理见本机docs/reviews/2026-10-14-deepseek-017-audit.md |
 | 版本/备份 | 首批124文件白名单已首提交并推送[私有源码仓库](https://github.com/tuoLuoSuan/imu-layout-privacy-research)，初始提交aea339e已重新检出逐字节验证、远程检查通过；详见[备份状态](docs/maintenance/2026-10-14-source-backup-status.md)。原件未上传，独立备份仍待办 |
 
 证据总入口：[environment/reports/INDEX.md](environment/reports/INDEX.md)。冻结0.2.2与`source_digest`只覆盖范围说明见[本轮验收](environment/2026-10-14-采集器频率配置与记录删除验收.md)及源码`app/build.gradle`；不能把app/src/main摘要当全仓摘要。
