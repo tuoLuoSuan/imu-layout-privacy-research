@@ -1,0 +1,30 @@
+<template>
+  <div class="screen">
+    <div class="panel">
+      <text class="title">S5 启动检查</text>
+      <text class="status">阶段 {{phase}}</text>
+      <text class="note">本页不采集数据</text>
+      <div class="button" onclick="tap"><text>点一下</text></div>
+      <text class="status">点击 {{clicks}} 次</text>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  private: {phase: 'D0', clicks: 0},
+  onInit() { this.phase = 'D1'; },
+  onShow() { this.phase = 'D2'; },
+  tap() { this.clicks = this.clicks + 1; this.phase = 'D3'; }
+}
+</script>
+
+<style>
+.screen { width: 466px; height: 466px; background-color: #101820; justify-content: center; align-items: center; }
+.panel { width: 280px; height: 240px; flex-direction: column; align-items: center; justify-content: center; }
+.title { width: 270px; height: 40px; font-size: 26px; color: #66e0c4; text-align: center; }
+.status { width: 270px; height: 36px; font-size: 23px; color: #ffffff; text-align: center; }
+.note { width: 270px; height: 36px; font-size: 20px; color: #bdcbd5; text-align: center; }
+.button { width: 190px; height: 48px; background-color: #176655; justify-content: center; align-items: center; }
+text { font-size: 23px; color: #ffffff; }
+</style>

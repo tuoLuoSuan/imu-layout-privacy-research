@@ -1,0 +1,12 @@
+{
+  "package": "org.imuresearch.s5start",
+  "name": "S5 启动检查",
+  "icon": "/common/icon.png",
+  "versionName": "0.0.1",
+  "versionCode": 1,
+  "minAPILevel": 2,
+  "features": [],
+  "config": {"designWidth": 466},
+  "router": {"entry": "Probe", "pages": {"Probe": {"component": "index"}}},
+  "deviceTypeList": ["watch"]
+}
