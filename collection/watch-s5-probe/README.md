@@ -1,5 +1,7 @@
 # Watch S5 activity probe 0.1.0
 
+新UI分支已按用户选择完成离线实现：[手机同款科研界面0.2.0/code3](variants/research-ui/README.md)，采集/记录两页、同手机矢量来源的图标，原src与0.1.1包不变。25Node+6Python、实际RPK签名/内容摘要和浏览器布局预览通过，尚未上表；当前先取回0.1.1已有原记录，不覆盖安装。2/10/30秒与2000回调是本版工程短试上限，不是测得的S5存储/持续录制能力。
+
 后续兼容进展：源码格式最小启动0.0.2已由用户确认D2→D3/点击1/退出正常。采集版[0.1.1源码格式2秒协议](../../docs/protocols/2026-10-15-s5-acquisition-2s-source.md)已准备；专用`tools/build_acquisition_source.cjs`在临时副本升manifest/导出版本、关闭两格式，输出`dist/source-format`并拒绝覆盖。新RPK SHA `44c801da39a1e1da56e427268afdad3e4004756e5b34f2179cf52ee91decc8af`。21Node+6Python及实际签名/归档通过；用户报告0.1.1安装、首页与2秒自动保存正常，但具体条数和原始导出尚未取得。根因仍未确认，两个旧包继续停用。下段保留离线审查阶段口径，当前状态以本段和新协议为准。
 
 历史失败与审查：0.1.0采集版和最小启动0.0.1均被用户报告整表短暂黑屏卡住。DS021由Codex复核后，四包包内证书/签名/内容摘要通过，无node_modules副本19Node+3Python通过，才按[最小启动协议](../../docs/protocols/2026-10-15-s5-source-startup-check.md)安排用户检查0.0.2。其SHA `ae37e804ede0c81a60de29c13fa3644e581808a75800b1d9baf6f4ade27ad4df`；后续反馈见上段。下文保留原采集版历史说明，不能据此恢复0.1.0试装/采集，任何整表再卡立即停止变体。

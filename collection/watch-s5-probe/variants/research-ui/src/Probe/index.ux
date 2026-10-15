@@ -1,0 +1,323 @@
+<template>
+  <div class="screen">
+    <div if="{{!exportMode}}" class="panel">
+      <div class="heading">
+        <image class="brand" src="/common/icon.png"></image>
+        <text class="title">IMU采集 · 腕部</text>
+        <text class="version">v{{version}}</text>
+      </div>
+      <text class="status">{{status}}</text>
+      <div if="{{!settingsMode}}" class="body">
+        <div if="{{tab === 'collect'}}" class="body">
+          <div class="card timer-card">
+            <text class="caption">采集时长 · 秒</text>
+            <text class="timer">{{elapsed}}</text>
+            <text class="count">加速度 {{samples}} 条</text>
+          </div>
+          <text class="axes">X {{x}}  Y {{y}}  Z {{z}}</text>
+          <div class="parameter" onclick="openSettings"><text class="parameter-text">{{labelText}} · {{durationSeconds}}秒 · 调整</text></div>
+          <div class="row">
+            <div class="button primary" onclick="startRecording"><text class="light">{{recording ? '采集中' : '开始采集'}}</text></div>
+            <div class="button secondary" onclick="stopRecording"><text>停止并保存</text></div>
+          </div>
+        </div>
+        <div if="{{tab === 'records'}}" class="body">
+          <div class="card record-card">
+            <text class="card-title">最近记录</text>
+            <text if="{{hasRecord}}" class="record-number">{{samples}} 条</text>
+            <text if="{{!hasRecord}}" class="empty-title">尚未载入记录</text>
+            <text class="caption">恢复最近一条 · 本机保存</text>
+          </div>
+          <div class="row">
+            <div class="button secondary" onclick="loadLatest"><text>恢复最近</text></div>
+            <div class="button primary" onclick="openExport"><text class="light">导出二维码</text></div>
+          </div>
+          <div if="{{hasRecord}}" class="retry" onclick="saveRecord"><text class="parameter-text">保存失败时，点此重新保存</text></div>
+          <text class="note">导出后需拍齐全部二维码页</text>
+        </div>
+        <div class="navigation">
+          <div class="{{tab === 'collect' ? 'navitem active' : 'navitem'}}" onclick="showCollect"><text class="nav-text">采集</text></div>
+          <div class="{{tab === 'records' ? 'navitem active' : 'navitem'}}" onclick="showRecords"><text class="nav-text">记录</text></div>
+        </div>
+      </div>
+      <div if="{{settingsMode}}" class="body settings">
+        <text class="card-title">采集设置</text>
+        <text class="caption">动作指令：{{labelText}}</text>
+        <div class="row">
+          <div class="button secondary" onclick="chooseStill"><text>静止</text></div>
+          <div class="button secondary" onclick="chooseWalk"><text>走路</text></div>
+          <div class="button secondary" onclick="chooseArm"><text>摆手</text></div>
+        </div>
+        <text class="caption">录制时长：{{durationSeconds}} 秒</text>
+        <div class="row">
+          <div class="button secondary" onclick="choose2"><text>2秒</text></div>
+          <div class="button secondary" onclick="choose10"><text>10秒</text></div>
+          <div class="button secondary" onclick="choose30"><text>30秒</text></div>
+        </div>
+        <text class="note">加速度 · game请求档位</text>
+        <div class="row"><div class="button primary" onclick="closeSettings"><text class="light">返回采集</text></div></div>
+      </div>
+    </div>
+    <div if="{{exportMode}}" class="qrpanel">
+      <text class="qrtitle">导出二维码</text>
+      <text class="qrinfo">{{qrIndex + 1}} / {{qrTotal}} 页 · {{autoText}}</text>
+      <div class="qrbox"><qrcode class="qr" value="{{qrValue}}"></qrcode></div>
+      <div class="qrrow">
+        <div class="button secondary" onclick="previousQr"><text>上一页</text></div>
+        <div class="button secondary" onclick="nextQr"><text>下一页</text></div>
+      </div>
+      <div class="qrrow">
+        <div class="button primary" onclick="toggleAuto"><text class="light">自动/暂停</text></div>
+        <div class="button secondary" onclick="closeExport"><text>返回记录</text></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import sensor from '@system.sensor'
+import file from '@system.file'
+import recorderModule from '../common/recorder.js'
+
+export default {
+  private: {
+    tab: 'collect', hasRecord: false, version: '0.2.0',
+    status: '待采集：先选动作，再开始', x: '--', y: '--', z: '--',
+    samples: 0, elapsed: '0.0', label: 'still', labelText: '静止',
+    durationSeconds: 2, recording: false, saving: false,
+    settingsMode: false, exportMode: false, qrIndex: 0, qrTotal: 0, qrValue: '', autoText: '已暂停'
+  },
+  onInit() {
+    this._recorder = null;
+    this._record = null;
+    this._pageState = 'visible';
+    this._timer = null;
+    this._qrTimer = null;
+    this._frames = [];
+    this._loading = false;
+    this._error = '';
+    this._saved = false;
+  },
+  onShow() {
+    this._pageState = 'visible';
+    if (this.recording) {
+      this._recorder.event('page_show');
+      this.tick();
+    }
+  },
+  onHide() {
+    this._pageState = 'hidden';
+    this.pauseQr();
+    if (this.recording) this._recorder.event('page_hide');
+  },
+  onDestroy() {
+    if (this.recording) {
+      this._recorder.event('page_destroy');
+      this.finish('page_destroy');
+    }
+    this.pauseQr();
+    this.clearTimer();
+    try { sensor.unsubscribeAccelerometer(); } catch (error) {}
+  },
+  showCollect() {
+    if (this.saving || this._loading) return;
+    this.tab = 'collect'; this.settingsMode = false;
+  },
+  showRecords() {
+    if (this.recording || this.saving || this._loading) return;
+    this.tab = 'records'; this.settingsMode = false; this.hasRecord = !!this._record;
+  },
+  openSettings() {
+    if (this.recording || this.saving || this._loading) return;
+    this.settingsMode = true;
+  },
+  closeSettings() { this.settingsMode = false; },
+  chooseLabel(label, text) {
+    if (this.recording || this.saving || this._loading) return;
+    this.label = label; this.labelText = text;
+  },
+  chooseStill() { this.chooseLabel('still', '静止'); },
+  chooseWalk() { this.chooseLabel('walk', '走路'); },
+  chooseArm() { this.chooseLabel('arm_move', '摆手'); },
+  chooseDuration(seconds) {
+    if (!this.recording && !this.saving && !this._loading) this.durationSeconds = seconds;
+  },
+  choose2() { this.chooseDuration(2); },
+  choose10() { this.chooseDuration(10); },
+  choose30() { this.chooseDuration(30); },
+  startRecording() {
+    if (this.recording || this.saving || this._loading) return;
+    this.pauseQr(); this.exportMode = false; this._frames = [];
+    this._error = ''; this._saved = false; this._record = null;
+    this.hasRecord = false; this.tab = 'collect';
+    this._recorder = recorderModule.createRecorder({
+      durationMs: this.durationSeconds * 1000, maxSamples: 2000, label: this.label
+    });
+    const initial = this._recorder.start();
+    this._started = initial.started_epoch_ms;
+    this.recording = true; this.samples = 0; this.elapsed = '0.0';
+    this.x = '--'; this.y = '--'; this.z = '--';
+    this.status = '采集中：' + this.labelText;
+    this._lastUi = 0;
+    this._timer = setInterval(() => this.tick(), 200);
+    try {
+      sensor.subscribeAccelerometer({
+        interval: 'game',
+        callback: (ret) => {
+          if (!this.recording) return;
+          const result = this._recorder.append(ret, this._pageState);
+          this.samples = this._recorder.count();
+          // Stored SDK values are untouched; only display values are rounded.
+          if (result.accepted && Date.now() - this._lastUi >= 200) {
+            this._lastUi = Date.now();
+            this.x = ret.x.toFixed(2); this.y = ret.y.toFixed(2); this.z = ret.z.toFixed(2);
+          }
+          if (result.stopReason) this.finish(result.stopReason);
+        },
+        fail: (msg, code) => this.sensorFailure(msg, code)
+      });
+    } catch (error) { this.sensorFailure(String(error), 'exception'); }
+  },
+  sensorFailure(msg, code) {
+    if (!this.recording) return;
+    this._error = '接口失败 ' + String(code) + '：' + String(msg);
+    this._recorder.event('sensor_fail', this._error);
+    this.finish('sensor_fail');
+  },
+  tick() {
+    if (!this.recording) return;
+    const passed = Date.now() - this._started;
+    this.elapsed = (passed / 1000).toFixed(1);
+    if (passed >= this.durationSeconds * 1000) this.finish('duration');
+  },
+  clearTimer() {
+    if (this._timer !== null) clearInterval(this._timer);
+    this._timer = null;
+  },
+  stopRecording() { if (this.recording) this.finish('manual'); },
+  finish(reason) {
+    if (!this.recording) return;
+    this.recording = false;
+    this.clearTimer();
+    try { sensor.unsubscribeAccelerometer(); } catch (error) {}
+    this._record = this._recorder.stop(reason);
+    this.hasRecord = true;
+    this.samples = this._record.rows.length;
+    this.elapsed = ((this._record.stopped_epoch_ms - this._record.started_epoch_ms) / 1000).toFixed(1);
+    this.saveRecord();
+  },
+  saveRecord() {
+    if (this.recording || this.saving || this._loading || !this._record) return;
+    const uri = 'internal://files/imus5_' + this._record.session_id + '.json';
+    this.saving = true; this.status = this._error || '正在保存，请等完成';
+    file.writeText({uri: uri, text: JSON.stringify(this._record), append: false,
+      success: () => {
+        this._saved = true;
+        file.writeText({uri: 'internal://files/imus5_latest.txt', text: uri, append: false,
+          success: () => { this.saving = false; this.status = this._error || '已保存 ' + this.samples + ' 条，可导出'; },
+          fail: (msg, code) => {
+            this.saving = false;
+            this.status = '数据已存，恢复索引失败 ' + code + '；先导出';
+          }
+        });
+      },
+      fail: (msg, code) => {
+        this.saving = false; this._saved = false;
+        this.status = '保存失败 ' + code + '；可重存或直接导出';
+      }
+    });
+  },
+  loadLatest() {
+    if (this.recording || this.saving || this._loading) return;
+    this._loading = true; this.status = '正在读取最近保存记录';
+    file.readText({uri: 'internal://files/imus5_latest.txt',
+      success: (data) => {
+        if (!/^internal:\/\/files\/imus5_[A-Za-z0-9_-]+\.json$/.test(data.text)) {
+          this._loading = false; this.status = '恢复索引无效'; return;
+        }
+        file.readText({uri: data.text, success: (saved) => {
+          try {
+            const record = JSON.parse(saved.text);
+            if (record.schema_version !== 1 || !record.rows || !record.session_id) throw new Error('格式不符');
+            this._record = record; this.samples = record.rows.length; this.hasRecord = true;
+            this._frames = []; this._saved = true; this._error = '';
+            this.status = '已恢复 ' + this.samples + ' 条，点导出';
+          } catch (error) { this.status = '保存记录无法解析'; }
+          this._loading = false;
+        }, fail: (msg, code) => { this._loading = false; this.status = '读取记录失败 ' + code; }});
+      },
+      fail: (msg, code) => { this._loading = false; this.status = '尚无可恢复记录，或读取失败 ' + code; }
+    });
+  },
+  openExport() {
+    if (this.recording || this.saving || this._loading) return;
+    try {
+      this._frames = recorderModule.encodeChunks(this._record, 320);
+      this.qrIndex = 0; this.qrTotal = this._frames.length;
+      this.qrValue = this._frames[0]; this.exportMode = true;
+    } catch (error) { this.status = String(error.message || error); }
+  },
+  nextQr() {
+    if (!this._frames.length) return;
+    this.qrIndex = (this.qrIndex + 1) % this._frames.length;
+    this.qrValue = this._frames[this.qrIndex];
+  },
+  previousQr() {
+    if (!this._frames.length) return;
+    this.qrIndex = (this.qrIndex + this._frames.length - 1) % this._frames.length;
+    this.qrValue = this._frames[this.qrIndex];
+  },
+  pauseQr() {
+    if (this._qrTimer !== null) clearInterval(this._qrTimer);
+    this._qrTimer = null; this.autoText = '已暂停';
+  },
+  toggleAuto() {
+    if (this._qrTimer !== null) { this.pauseQr(); return; }
+    this._qrTimer = setInterval(() => this.nextQr(), 2000);
+    this.autoText = '自动播放';
+  },
+  closeExport() { this.pauseQr(); this.exportMode = false; }
+}
+</script>
+
+<style>
+.screen { width: 466px; height: 466px; background-color: #F3F6FA; justify-content: center; align-items: center; }
+.panel { width: 318px; height: 332px; flex-direction: column; align-items: center; }
+.heading { width: 300px; height: 30px; flex-direction: row; align-items: center; justify-content: center; }
+.brand { width: 28px; height: 28px; margin-right: 5px; }
+.title { width: 196px; height: 30px; font-size: 23px; color: #102A43; }
+.version { width: 56px; height: 24px; font-size: 15px; color: #52677C; }
+.status { width: 310px; height: 42px; font-size: 18px; color: #176B6D; text-align: center; }
+.body { width: 318px; flex-direction: column; align-items: center; }
+.card { width: 310px; border-radius: 22px; background-color: #FFFFFF; flex-direction: column; align-items: center; justify-content: center; }
+.timer-card { height: 108px; }
+.caption { width: 300px; height: 23px; font-size: 17px; color: #52677C; text-align: center; }
+.timer { width: 300px; height: 52px; font-size: 44px; color: #102A43; text-align: center; }
+.count { width: 300px; height: 24px; font-size: 19px; color: #102A43; text-align: center; }
+.axes { width: 316px; height: 27px; font-size: 17px; color: #52677C; text-align: center; }
+.parameter { width: 310px; height: 31px; border-radius: 12px; background-color: #E4F1F0; justify-content: center; align-items: center; }
+.parameter-text { color: #176B6D; font-size: 17px; text-align: center; }
+.row { width: 318px; height: 48px; flex-direction: row; justify-content: space-around; align-items: center; }
+.button { height: 40px; flex: 1; margin: 3px; border-radius: 14px; justify-content: center; align-items: center; }
+.primary { background-color: #176B6D; }
+.secondary { background-color: #E4F1F0; }
+text { font-size: 18px; color: #102A43; }
+.light { color: #FFFFFF; }
+.navigation { width: 300px; height: 40px; flex-direction: row; justify-content: space-around; align-items: center; margin-top: 5px; }
+.navitem { width: 142px; height: 36px; border-radius: 14px; justify-content: center; align-items: center; }
+.active { background-color: #E4F1F0; }
+.nav-text { font-size: 19px; color: #176B6D; }
+.record-card { height: 108px; }
+.card-title { width: 300px; height: 32px; font-size: 23px; color: #102A43; text-align: center; }
+.record-number { width: 300px; height: 48px; font-size: 38px; color: #102A43; text-align: center; }
+.empty-title { width: 300px; height: 48px; font-size: 25px; color: #52677C; text-align: center; }
+.retry { width: 310px; height: 30px; justify-content: center; align-items: center; }
+.note { width: 310px; height: 25px; font-size: 16px; color: #52677C; text-align: center; }
+.settings { justify-content: center; }
+.qrpanel { width: 466px; height: 466px; flex-direction: column; align-items: center; padding-top: 42px; }
+.qrtitle { width: 260px; height: 26px; font-size: 21px; color: #102A43; text-align: center; }
+.qrinfo { width: 260px; height: 22px; font-size: 17px; color: #52677C; text-align: center; }
+.qrbox { width: 240px; height: 240px; padding: 10px; background-color: #FFFFFF; }
+.qr { width: 220px; height: 220px; color: #000000; background-color: #FFFFFF; }
+.qrrow { width: 260px; height: 46px; flex-direction: row; justify-content: space-around; align-items: center; }
+</style>
