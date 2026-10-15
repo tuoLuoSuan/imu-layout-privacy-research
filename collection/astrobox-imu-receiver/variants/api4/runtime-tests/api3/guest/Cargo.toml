@@ -1,0 +1,19 @@
+[package]
+name = "s5-api3-guest-probe"
+version = "0.0.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+async-export = []
+blocking = []
+drop-after = []
+
+[dependencies]
+wit-bindgen = { version = "=0.57.1", features = ["async", "async-spawn"] }
+
+[profile.release]
+opt-level = "s"
+strip = true

@@ -1,0 +1,10 @@
+[package]
+name = "s5-api3-host-probe"
+version = "0.0.0"
+edition = "2024"
+
+[dependencies]
+wasmtime = { version = "=38.0.4", default-features = false, features = ["std", "runtime", "cranelift", "component-model", "component-model-async", "async"] }
+anyhow = "1.0"
+tokio = { version = "1", features = ["rt", "macros", "time"] }
+futures-util = "0.3"

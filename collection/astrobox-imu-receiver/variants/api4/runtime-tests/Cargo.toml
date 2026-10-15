@@ -1,0 +1,7 @@
+[package]
+name = "imus5-runtime-check"
+version = "0.0.0"
+edition = "2024"
+[dependencies]
+wasmtime = { version = "=48.0.2", default-features = false, features = ["std", "runtime", "cranelift", "component-model", "component-model-async", "async"] }
+tokio = { version = "1", features = ["rt", "macros", "time", "sync"] }

@@ -1,0 +1,11 @@
+package research:api3-probe;
+
+interface host {
+    draw: func(value: u32);
+    query: func() -> future<u32>;
+}
+
+world probe {
+    import host;
+    export event: func(action: u32) -> future<string>;
+}

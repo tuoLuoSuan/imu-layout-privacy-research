@@ -39,3 +39,15 @@ jobs:
       - run: cargo fetch --locked --manifest-path collection/astrobox-imu-receiver/Cargo.toml
       - run: python collection/astrobox-imu-receiver/tools/build_local.py --test --package
       - run: node collection/astrobox-imu-receiver/tools/test_roundtrip.cjs .cache/s5-transfer-research/receiver-target/debug/receiver_sim
+
+  receiver-api4-runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: rustup toolchain install stable --profile minimal --no-self-update
+      - run: rustup default stable
+      - run: rustup target add wasm32-wasip2
+      - run: python collection/astrobox-imu-receiver/variants/api4/tools/build_local.py --test --package --reproduce-api3
