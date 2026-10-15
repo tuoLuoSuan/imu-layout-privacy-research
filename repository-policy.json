@@ -230,12 +230,23 @@
     "docs/data/watch-transfer-v1.md",
     "docs/protocols/2026-10-15-s5-transfer-first-run.md",
     "docs/superpowers/specs/2026-10-15-s5-file-transfer-design.md",
-    "docs/superpowers/plans/2026-10-15-s5-file-transfer.md"
+    "docs/superpowers/plans/2026-10-15-s5-file-transfer.md",
+    "collection/astrobox-imu-receiver/src/ui_state.rs",
+    "collection/astrobox-imu-receiver/tests/ui_state.rs",
+    "collection/watch-s5-probe/tests/transfer-round.test.cjs",
+    "collection/watch-s5-probe/tools/export_round_icon.py",
+    "collection/watch-s5-probe/tools/build_transfer_round_source.cjs",
+    "collection/watch-s5-probe/variants/transfer-round/icon.svg",
+    "collection/watch-s5-probe/variants/transfer-round/icon.png",
+    "collection/watch-s5-probe/variants/transfer-round/README.md",
+    "docs/superpowers/specs/2026-10-15-s5-receiver-interaction-design.md",
+    "docs/superpowers/plans/2026-10-15-s5-receiver-interaction.md"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
     "collection/band9pro-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e",
     "collection/watch-s5-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e",
-    "collection/watch-s5-probe/variants/research-ui/src/common/icon.png": "fe050c0bae0c15fd85b04a6c63b0ece63e35f719dcef3794f3b34ddfd3558b6a"
+    "collection/watch-s5-probe/variants/research-ui/src/common/icon.png": "fe050c0bae0c15fd85b04a6c63b0ece63e35f719dcef3794f3b34ddfd3558b6a",
+    "collection/watch-s5-probe/variants/transfer-round/icon.png": "793af99f73d68c8deebc99c4d23900168961411c95818f467ad5f1ebf4752b45"
   }
 }

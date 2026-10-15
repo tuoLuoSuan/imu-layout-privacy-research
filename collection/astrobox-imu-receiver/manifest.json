@@ -1,7 +1,7 @@
 {
   "name": "IMU 腕部接收",
   "icon": "icon.png",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "接收已保存的腕部IMU记录，保存本地文件后交电脑独立核验。",
   "author": "IMU Layout Research",
   "website": "https://github.com/tuoLuoSuan/imu-layout-privacy-research",

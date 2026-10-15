@@ -1,8 +1,10 @@
 # 项目当前状态
 
-本轮传输：用户确认0.3.0已更新、首页正常（用户反馈，原始记录仍未收到）。已准备[手表0.3.1传输入口](collection/watch-s5-probe/variants/research-transfer/README.md)与[普通AstroBox接收插件](collection/astrobox-imu-receiver/README.md)，优先复用手机接收后一次保存TXT到电脑。43Node/18Python/5Rust、本机15,000行真实发送模块→接收核心→独立Python逐文件复算及7态Chrome布局通过；不是真实蓝牙/宿主运行证明。插件与0.3.1尚未安装、链路与功能待用户操作，按[首次步骤](docs/protocols/2026-10-15-s5-transfer-first-run.md)先接收插件→短记录原件→功能→最后合并DS。旧DS022不作本轮验收；手机冻结、原0.3.0和旧手表包不改。
+当前阻点：用户报告v0.3.1首页/退出正常、旧版记录可只读载入；手机插件0.1.0能打开，但点准备接收后文字完全不变、无权限提示。没有设备日志、记录传输、系统保存或S5原件，不能定位为蓝牙失败或声称普通出口通过。
 
-当前手表新里程碑：用户已授权自主完善；[0.3.0独立科研记录器](collection/watch-s5-probe/variants/research-recorder/README.md)已实现分块保存、分钟时长选项、三档请求/实测回调率、匿名标签、多会话/回收恢复、分段QR及独立核验。软件合成流与布局检查不当真机能力；仍无S5原始导出/0.3.0上表结果。当前先取回0.1.1已存2秒原件，再按[分级协议](docs/protocols/2026-10-15-s5-0.3.0-staged-validation.md)短试。新功能授权覆盖此前手表“仅UI/不扩时长”的范围，手机66冻结/r2和旧手表源包不改。完整定义见[腕部v2字典](docs/data/watch-s5-v2-data-dictionary.md)。
+本轮离线修订：按用户要求交付[浅色接收插件0.1.1](collection/astrobox-imu-receiver/README.md)与[手表圆标0.3.2覆盖层](collection/watch-s5-probe/variants/transfer-round/README.md)。插件点击先同步显示次数/动作，增加无需设备的界面检查，异步查询/注册/发送逐阶段可见，根因仍待宿主验证；保持API3、普通三权限、原缓存和协议。圆标包只改版本/元数据版本/图标，旧0.3.1源码及包保留。44Node/19Python/9Rust、120文件合成字节往返、三态静态浅色布局检查和实际两包/同证书/透明圆标通过；静态预览不是宿主实测。81既有源文件（含手机66）与本轮前HEAD匹配，旧两包哈希保持。现只请用户更新手机插件并点一次界面检查，先不点准备接收或新录；手表圆标包也已放Download但尚未确认安装。待交互与链路、功能实测后最后合并DS。报告在本机environment/2026-10-15-S5接收交互诊断与浅色圆标.md；首次流程见[协议](docs/protocols/2026-10-15-s5-transfer-first-run.md)。旧源码b7549a8的229文件已取回一致/CI通过，新里程碑备份以本机source-sync.json为准。
+
+当前手表新里程碑：用户已授权自主完善；[0.3.0独立科研记录器](collection/watch-s5-probe/variants/research-recorder/README.md)已实现分块保存、分钟时长选项、三档请求/实测回调率、匿名标签、多会话/回收恢复、分段QR及独立核验。软件合成流与布局检查不当真机能力；用户已报告0.3.0及随后0.3.1首页正常，仍无原始导出或功能/持续性验收。当前先取回0.1.1已存2秒原件，再按[分级协议](docs/protocols/2026-10-15-s5-0.3.0-staged-validation.md)短试。新功能授权覆盖此前手表“仅UI/不扩时长”的范围，手机66冻结/r2和旧手表源包不改。完整定义见[腕部v2字典](docs/data/watch-s5-v2-data-dictionary.md)。
 
 新UI：用户已选A并要求同手机图标，[手表0.2.0/code3工作副本](collection/watch-s5-probe/variants/research-ui/README.md)已离线完成，25Node+6Python、实际RPK/签名/版本/图标与Chrome布局预览通过，尚未上表。原src、五旧包和手机66冻结/r2未改；先取回0.1.1已保存会话原件再安排UI升级。2/10/30秒和2000回调是软件短试限制，不是S5硬件容量测量，分钟级持续性未验。官方公开调试页未确认S5正式固件USB/ADB路径；普通手机中转、桌面AstroBox蓝牙接收均为文档候选，未实现/实测，见本机docs/reviews/2026-10-15-s5-debug-access-feasibility.md。完整成果进入同一GitHub方向不变。
 

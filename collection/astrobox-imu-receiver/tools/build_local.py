@@ -42,14 +42,15 @@ def main():
     if args.package:
         subprocess.run(base+['build','--locked','--manifest-path',str(ROOT/'Cargo.toml'),'--target','wasm32-wasip2','--lib','--features','astrobox','--release'],env=env,check=True)
         manifest=json.loads((ROOT/'manifest.json').read_text(encoding='utf-8'))
-        output=Path(args.output_dir).resolve() if args.output_dir else ROOT/'dist/receiver-0.1.0'
+        version=manifest['version']
+        output=Path(args.output_dir).resolve() if args.output_dir else ROOT/('dist/receiver-'+version)
         if not output.is_relative_to((ROOT/'dist').resolve()):raise ValueError('Output must stay in this module dist directory')
         output.mkdir(parents=True,exist_ok=False)
         wasm=Path(env['CARGO_TARGET_DIR'])/'wasm32-wasip2/release/imus5_receiver.wasm'
         assets={'manifest.json':(ROOT/'manifest.json').read_bytes(),'imus5_receiver.wasm':wasm.read_bytes(),
           'icon.png':(REPO/'collection/watch-s5-probe/variants/research-ui/src/common/icon.png').read_bytes()}
         assert assets['imus5_receiver.wasm'][:8]==b'\x00asm\x0d\x00\x01\x00','not a WebAssembly component'
-        package=output/'IMU-S5-Receiver-0.1.0.abp'
+        package=output/('IMU-S5-Receiver-'+version+'.abp')
         with zipfile.ZipFile(package,'x',zipfile.ZIP_DEFLATED) as archive:
             for name,data in assets.items():archive.writestr(name,data)
         report={'sha256':hashlib.sha256(package.read_bytes()).hexdigest(),'bytes':package.stat().st_size,

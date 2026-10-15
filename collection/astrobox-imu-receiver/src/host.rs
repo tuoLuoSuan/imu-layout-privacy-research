@@ -1,5 +1,6 @@
 //! Ordinary AstroBox API level 3 adapter. No firmware/transport/network or raw file extraction.
 use crate::receiver;
+use crate::ui_state::{Action, State};
 use astrobox_ng_wit::{
     FutureReader,
     astrobox::psys_host::{device, dialog, interconnect, register, ui_v3 as ui},
@@ -15,26 +16,9 @@ use std::{
 };
 const PACKAGE: &str = "org.imuresearch.s5probe";
 const ROOT: &str = "received";
-struct State {
-    root_id: Option<String>,
-    addr: Option<String>,
-    status: String,
-    keys: Vec<String>,
-    selected: usize,
-    working: bool,
-}
 static STATE: OnceLock<Mutex<State>> = OnceLock::new();
 fn state() -> &'static Mutex<State> {
-    STATE.get_or_init(|| {
-        Mutex::new(State {
-            root_id: None,
-            addr: None,
-            status: "先保持AstroBox已连接S5，再点准备接收".into(),
-            keys: Vec::new(),
-            selected: 0,
-            working: false,
-        })
-    })
+    STATE.get_or_init(|| Mutex::new(State::new()))
 }
 fn mutate(f: impl FnOnce(&mut State)) {
     if let Ok(mut s) = state().lock() {
@@ -50,16 +34,19 @@ fn refresh_keys() {
 }
 fn text(value: &str) -> ui::Element {
     ui::Element::new(ui::ElementType::P, Some(value))
+        .without_default_styles()
         .size(16)
         .text_color("#52677C")
 }
 fn button(label: &str, id: &str) -> ui::Element {
     ui::Element::new(ui::ElementType::Button, Some(label))
+        .without_default_styles()
         .on(ui::Event::Click, id)
         .bg("#176B6D")
         .text_color("#FFFFFF")
-        .padding(12)
-        .radius(12)
+        .size(16)
+        .padding(14)
+        .radius(14)
 }
 fn render() {
     let Ok(s) = state().lock() else {
@@ -79,22 +66,33 @@ fn render() {
         )
     };
     let mut root = ui::Element::new(ui::ElementType::Div, None)
+        .without_default_styles()
+        .bg("#F3F6FA")
+        .text_color("#102A43")
         .flex()
         .flex_direction(ui::FlexDirection::Column)
         .width_full()
+        .min_height(560)
         .padding(18)
         .gap(12)
         .child(
             ui::Element::new(ui::ElementType::P, Some("IMU 腕部接收"))
+                .without_default_styles()
                 .size(26)
                 .text_color("#102A43"),
         )
-        .child(text("普通蓝牙消息 · 本地保存 · 不自动上传"))
+        .child(text("v0.1.1 · 普通消息 · 本地保存"))
         .child(
-            ui::Element::new(ui::ElementType::Card, None)
+            ui::Element::new(ui::ElementType::Div, None)
+                .without_default_styles()
+                .bg("#FFFFFF")
+                .border(1, "#DCE6EF")
+                .radius(16)
                 .padding(16)
                 .child(text(&s.status)),
         )
+        .child(text(&s.feedback))
+        .child(button("界面检查（无需手表）", "probe"))
         .child(button(
             if s.addr.is_some() {
                 "接收已准备（单设备）"
@@ -121,16 +119,14 @@ fn render() {
     ui::render(&id, root);
 }
 async fn prepare() {
-    let blocked = state().lock().map(|s| s.working).unwrap_or(true);
-    if blocked {
-        return;
-    }
+    // The click boundary already reserved this operation and rendered its first stage.
     let existing = state().lock().ok().and_then(|s| s.addr.clone());
     if let Some(addr) = existing {
         let ok = interconnect::send_qaic_message(&addr, PACKAGE, "{\"p\":\"S5HELLO1\"}")
             .await
             .is_ok();
         mutate(|s| {
+            s.working = false;
             s.status = if ok {
                 "已准备接收，请在手表选择蓝牙传输".into()
             } else {
@@ -140,11 +136,6 @@ async fn prepare() {
         render();
         return;
     }
-    mutate(|s| {
-        s.working = true;
-        s.status = "正在查询AstroBox已连接设备…".into();
-    });
-    render();
     let devices = device::get_connected_device_list().await;
     let mut candidates: Vec<_> = devices
         .iter()
@@ -162,11 +153,12 @@ async fn prepare() {
         return;
     }
     let addr = candidates[0].addr.clone();
+    mutate(|s| s.status = "已找到目标设备，正在注册消息接收…".into());
+    render();
     match register::register_interconnect_recv(&addr, PACKAGE).await {
         Ok(()) => mutate(|s| {
             s.addr = Some(addr);
-            s.working = false;
-            s.status = "已准备接收：在手表选记录，再点蓝牙传输".into();
+            s.status = "接收已注册，正在确认普通消息发送…".into();
         }),
         Err(()) => mutate(|s| {
             s.working = false;
@@ -174,14 +166,18 @@ async fn prepare() {
         }),
     }
     let registered = state().lock().ok().and_then(|s| s.addr.clone());
+    render();
     if let Some(addr) = registered {
         if interconnect::send_qaic_message(&addr, PACKAGE, "{\"p\":\"S5HELLO1\"}")
             .await
             .is_err()
         {
             mutate(|s| s.status = "接收已注册；确认消息未送出，请检查连接与普通消息权限".into());
+        } else {
+            mutate(|s| s.status = "已准备接收，请在手表选择蓝牙传输".into());
         }
     }
+    mutate(|s| s.working = false);
     refresh_keys();
     render();
 }
@@ -247,13 +243,10 @@ async fn save() {
         let Ok(mut s) = state().lock() else {
             return;
         };
-        if s.working {
-            return;
-        }
         let Some(key) = s.keys.get(s.selected).cloned() else {
+            s.working = false;
             return;
         };
-        s.working = true;
         key
     };
     mutate(|s| s.status = "请选择保存位置；取消后仍可重试".into());
@@ -325,25 +318,26 @@ impl event::Guest for Plugin {
     }
     fn on_ui_event_v3(id: String, event: ui::Event, _payload: String) -> FutureReader<String> {
         let (w, r) = astrobox_ng_wit::wit_future::new::<String>(String::new);
+        // Follow the public template's synchronous UI boundary. Local feedback must
+        // not depend on a host future, permission prompt, or spawned task running.
+        let action = if matches!(event, ui::Event::Click) {
+            state()
+                .lock()
+                .map(|mut s| s.click(&id))
+                .unwrap_or(Action::None)
+        } else {
+            Action::None
+        };
+        if action == Action::Refresh {
+            refresh_keys();
+            mutate(|s| s.status = format!("已刷新 · {} 条完整接收记录", s.keys.len()));
+        }
+        render();
         astrobox_ng_wit::spawn(async move {
-            if matches!(event, ui::Event::Click) {
-                match id.as_str() {
-                    "prepare" => prepare().await,
-                    "save" => save().await,
-                    "next" => {
-                        mutate(|s| {
-                            if !s.keys.is_empty() {
-                                s.selected = (s.selected + 1) % s.keys.len();
-                            }
-                        });
-                        render();
-                    }
-                    "refresh" => {
-                        refresh_keys();
-                        render();
-                    }
-                    _ => {}
-                }
+            match action {
+                Action::Prepare => prepare().await,
+                Action::Save => save().await,
+                _ => {}
             }
             let _ = w.write(String::new()).await;
         });
