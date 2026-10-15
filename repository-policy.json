@@ -144,10 +144,31 @@
     "environment/lidar/render_identification.py",
     "environment/lidar/tests/test_reference.py",
     "showcase/tests/server.test.mjs",
-    "templates/lidar-reference-session-v1.template.json"
+    "templates/lidar-reference-session-v1.template.json",
+    "collection/watch-s5-probe/.gitignore",
+    "collection/watch-s5-probe/README.md",
+    "collection/watch-s5-probe/package-lock.json",
+    "collection/watch-s5-probe/package.json",
+    "collection/watch-s5-probe/quickapp.config.js",
+    "collection/watch-s5-probe/src/Probe/index.ux",
+    "collection/watch-s5-probe/src/app.ux",
+    "collection/watch-s5-probe/src/common/icon.png",
+    "collection/watch-s5-probe/src/common/recorder.js",
+    "collection/watch-s5-probe/src/manifest.json",
+    "collection/watch-s5-probe/tests/page.test.cjs",
+    "collection/watch-s5-probe/tests/recorder.test.cjs",
+    "collection/watch-s5-probe/tests/s5.test.cjs",
+    "collection/watch-s5-probe/tools/build_rpk.cjs",
+    "collection/watch-s5-probe/tools/check_rpk.py",
+    "collection/watch-s5-probe/tools/decode_export.py",
+    "collection/watch-s5-probe/导出CSV.cmd",
+    "docs/superpowers/specs/2026-10-15-watch-s5-probe-design.md",
+    "docs/superpowers/plans/2026-10-15-watch-s5-probe.md",
+    "docs/tutorials/2026-10-15-S5安装与入口短试.md"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
-    "collection/band9pro-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e"
+    "collection/band9pro-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e",
+    "collection/watch-s5-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e"
   }
 }

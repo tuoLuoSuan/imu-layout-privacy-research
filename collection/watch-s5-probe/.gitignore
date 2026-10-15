@@ -1,0 +1,5 @@
+node_modules/
+build/
+sign/private.pem
+__pycache__/
+recordings/

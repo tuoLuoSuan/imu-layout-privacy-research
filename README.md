@@ -10,7 +10,7 @@
 | 数据合同 | [字段/质量字典](docs/data/phone-v1-data-dictionary.md)、[空会话模板](templates/session-context-v1.template.json)，真实补充记录另存 |
 | 当前状态 | [PROJECT_STATE.md](PROJECT_STATE.md)，区分已验证、未知与下一步 |
 | 手机采集 | [IMU采集App](collection/phone-imu-recorder/README.md)：0.2.2，双通道、频率请求、单条删除、手动ZIP导出 |
-| 腕部原型 | [9Pro探针](collection/band9pro-probe/README.md)：普通快应用加速度原型，S5入口与出口仍待真机验证 |
+| 腕部原型 | [9Pro探针](collection/band9pro-probe/README.md)、[S5独立短试包](collection/watch-s5-probe/README.md)：S5软件构建/17测试通过，真机入口与出口仍待验证；[安装指导](docs/tutorials/2026-10-15-S5安装与入口短试.md) |
 | 环境 | [Ubuntu脚本](environment/setup_ubuntu.sh)、[CPU依赖](environment/requirements-cpu.txt)，ML与ROS分离 |
 | 研究路线 | [路线v2](docs/superpowers/plans/2026-10-13-ccfa-imu-layout-research-roadmap-v2.md)，历史规划，当前进度以项目状态为准 |
 | 完整研究交付 | [交付清单](docs/research/2026-10-14-完整研究成果交付与下一步.md)：协议、数据合同、模型、实验、图表、论文与网站 |

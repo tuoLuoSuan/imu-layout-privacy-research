@@ -1,0 +1,273 @@
+<template>
+  <div class="screen">
+    <div if="{{!exportMode}}" class="screen">
+      <div if="{{!settingsMode}}" class="panel">
+        <text class="title">活动采集 · S5</text>
+        <text class="status">{{status}}</text>
+        <text class="numbers">X {{x}}  Y {{y}}  Z {{z}}</text>
+        <text class="info">{{samples}} 条 · {{elapsed}} 秒</text>
+        <text class="info">{{labelText}} · {{durationSeconds}} 秒 · game档</text>
+        <div class="row">
+          <div class="button start" onclick="startRecording"><text>开始</text></div>
+          <div class="button" onclick="stopRecording"><text>停止</text></div>
+          <div class="button" onclick="openSettings"><text>设置</text></div>
+        </div>
+        <div class="row">
+          <div class="button" onclick="openExport"><text>导出二维码</text></div>
+          <div class="button" onclick="loadLatest"><text>恢复最新</text></div>
+        </div>
+        <text class="note">先录2秒；保存失败可在设置重存</text>
+      </div>
+      <div if="{{settingsMode}}" class="panel settings">
+        <text class="title">短试设置</text>
+        <text class="info">动作指令：{{labelText}}</text>
+        <div class="row">
+          <div class="button" onclick="chooseStill"><text>静止</text></div>
+          <div class="button" onclick="chooseWalk"><text>走路</text></div>
+          <div class="button" onclick="chooseArm"><text>摆手</text></div>
+        </div>
+        <text class="info">录制时长：{{durationSeconds}} 秒</text>
+        <div class="row">
+          <div class="button" onclick="choose2"><text>2秒</text></div>
+          <div class="button" onclick="choose10"><text>10秒</text></div>
+          <div class="button" onclick="choose30"><text>30秒</text></div>
+        </div>
+        <text class="info">3.102.036 · 用户提供</text>
+        <div class="row">
+          <div class="button" onclick="saveRecord"><text>重存</text></div>
+          <div class="button start" onclick="closeSettings"><text>返回采集</text></div>
+        </div>
+        <text class="note">三轴加速度 · 单位与实际频率待验</text>
+      </div>
+    </div>
+    <div if="{{exportMode}}" class="qrpanel">
+      <text class="qrtitle">拍摄所有二维码页</text>
+      <text class="qrinfo">{{qrIndex + 1}} / {{qrTotal}} 页 · {{autoText}}</text>
+      <div class="qrbox"><qrcode class="qr" value="{{qrValue}}"></qrcode></div>
+      <div class="qrrow">
+        <div class="button" onclick="previousQr"><text>上一页</text></div>
+        <div class="button" onclick="nextQr"><text>下一页</text></div>
+      </div>
+      <div class="qrrow">
+        <div class="button" onclick="toggleAuto"><text>自动/暂停</text></div>
+        <div class="button" onclick="closeExport"><text>返回</text></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import sensor from '@system.sensor'
+import file from '@system.file'
+import recorderModule from '../common/recorder.js'
+
+export default {
+  private: {
+    status: '待采集：先选动作，再开始', x: '--', y: '--', z: '--',
+    samples: 0, elapsed: '0.0', label: 'still', labelText: '静止',
+    durationSeconds: 2, recording: false, saving: false,
+    settingsMode: false, exportMode: false, qrIndex: 0, qrTotal: 0, qrValue: '', autoText: '已暂停'
+  },
+  onInit() {
+    this._recorder = null;
+    this._record = null;
+    this._pageState = 'visible';
+    this._timer = null;
+    this._qrTimer = null;
+    this._frames = [];
+    this._loading = false;
+    this._error = '';
+    this._saved = false;
+  },
+  onShow() {
+    this._pageState = 'visible';
+    if (this.recording) {
+      this._recorder.event('page_show');
+      this.tick();
+    }
+  },
+  onHide() {
+    this._pageState = 'hidden';
+    this.pauseQr();
+    if (this.recording) this._recorder.event('page_hide');
+  },
+  onDestroy() {
+    if (this.recording) {
+      this._recorder.event('page_destroy');
+      this.finish('page_destroy');
+    }
+    this.pauseQr();
+    this.clearTimer();
+    try { sensor.unsubscribeAccelerometer(); } catch (error) {}
+  },
+  openSettings() {
+    if (this.recording || this.saving || this._loading) return;
+    this.settingsMode = true;
+  },
+  closeSettings() { this.settingsMode = false; },
+  chooseLabel(label, text) {
+    if (this.recording || this.saving || this._loading) return;
+    this.label = label; this.labelText = text;
+  },
+  chooseStill() { this.chooseLabel('still', '静止'); },
+  chooseWalk() { this.chooseLabel('walk', '走路'); },
+  chooseArm() { this.chooseLabel('arm_move', '摆手'); },
+  chooseDuration(seconds) {
+    if (!this.recording && !this.saving && !this._loading) this.durationSeconds = seconds;
+  },
+  choose2() { this.chooseDuration(2); },
+  choose10() { this.chooseDuration(10); },
+  choose30() { this.chooseDuration(30); },
+  startRecording() {
+    if (this.recording || this.saving || this._loading) return;
+    this.pauseQr(); this.exportMode = false; this._frames = [];
+    this._error = ''; this._saved = false; this._record = null;
+    this._recorder = recorderModule.createRecorder({
+      durationMs: this.durationSeconds * 1000, maxSamples: 2000, label: this.label
+    });
+    const initial = this._recorder.start();
+    this._started = initial.started_epoch_ms;
+    this.recording = true; this.samples = 0; this.elapsed = '0.0';
+    this.x = '--'; this.y = '--'; this.z = '--';
+    this.status = '采集中：' + this.labelText;
+    this._lastUi = 0;
+    this._timer = setInterval(() => this.tick(), 200);
+    try {
+      sensor.subscribeAccelerometer({
+        interval: 'game',
+        callback: (ret) => {
+          if (!this.recording) return;
+          const result = this._recorder.append(ret, this._pageState);
+          this.samples = this._recorder.count();
+          // Stored SDK values are untouched; only display values are rounded.
+          if (result.accepted && Date.now() - this._lastUi >= 200) {
+            this._lastUi = Date.now();
+            this.x = ret.x.toFixed(2); this.y = ret.y.toFixed(2); this.z = ret.z.toFixed(2);
+          }
+          if (result.stopReason) this.finish(result.stopReason);
+        },
+        fail: (msg, code) => this.sensorFailure(msg, code)
+      });
+    } catch (error) { this.sensorFailure(String(error), 'exception'); }
+  },
+  sensorFailure(msg, code) {
+    if (!this.recording) return;
+    this._error = '接口失败 ' + String(code) + '：' + String(msg);
+    this._recorder.event('sensor_fail', this._error);
+    this.finish('sensor_fail');
+  },
+  tick() {
+    if (!this.recording) return;
+    const passed = Date.now() - this._started;
+    this.elapsed = (passed / 1000).toFixed(1);
+    if (passed >= this.durationSeconds * 1000) this.finish('duration');
+  },
+  clearTimer() {
+    if (this._timer !== null) clearInterval(this._timer);
+    this._timer = null;
+  },
+  stopRecording() { if (this.recording) this.finish('manual'); },
+  finish(reason) {
+    if (!this.recording) return;
+    this.recording = false;
+    this.clearTimer();
+    try { sensor.unsubscribeAccelerometer(); } catch (error) {}
+    this._record = this._recorder.stop(reason);
+    this.samples = this._record.rows.length;
+    this.elapsed = ((this._record.stopped_epoch_ms - this._record.started_epoch_ms) / 1000).toFixed(1);
+    this.saveRecord();
+  },
+  saveRecord() {
+    if (this.recording || this.saving || this._loading || !this._record) return;
+    const uri = 'internal://files/imus5_' + this._record.session_id + '.json';
+    this.saving = true; this.status = this._error || '正在保存，请等完成';
+    file.writeText({uri: uri, text: JSON.stringify(this._record), append: false,
+      success: () => {
+        this._saved = true;
+        file.writeText({uri: 'internal://files/imus5_latest.txt', text: uri, append: false,
+          success: () => { this.saving = false; this.status = this._error || '已保存 ' + this.samples + ' 条，可导出'; },
+          fail: (msg, code) => {
+            this.saving = false;
+            this.status = '数据已存，恢复索引失败 ' + code + '；先导出';
+          }
+        });
+      },
+      fail: (msg, code) => {
+        this.saving = false; this._saved = false;
+        this.status = '保存失败 ' + code + '；可重存或直接导出';
+      }
+    });
+  },
+  loadLatest() {
+    if (this.recording || this.saving || this._loading) return;
+    this._loading = true; this.status = '正在读取最近保存记录';
+    file.readText({uri: 'internal://files/imus5_latest.txt',
+      success: (data) => {
+        if (!/^internal:\/\/files\/imus5_[A-Za-z0-9_-]+\.json$/.test(data.text)) {
+          this._loading = false; this.status = '恢复索引无效'; return;
+        }
+        file.readText({uri: data.text, success: (saved) => {
+          try {
+            const record = JSON.parse(saved.text);
+            if (record.schema_version !== 1 || !record.rows || !record.session_id) throw new Error('格式不符');
+            this._record = record; this.samples = record.rows.length;
+            this._frames = []; this._saved = true; this._error = '';
+            this.status = '已恢复 ' + this.samples + ' 条，点导出';
+          } catch (error) { this.status = '保存记录无法解析'; }
+          this._loading = false;
+        }, fail: (msg, code) => { this._loading = false; this.status = '读取记录失败 ' + code; }});
+      },
+      fail: (msg, code) => { this._loading = false; this.status = '尚无可恢复记录，或读取失败 ' + code; }
+    });
+  },
+  openExport() {
+    if (this.recording || this.saving || this._loading) return;
+    try {
+      this._frames = recorderModule.encodeChunks(this._record, 320);
+      this.qrIndex = 0; this.qrTotal = this._frames.length;
+      this.qrValue = this._frames[0]; this.exportMode = true;
+    } catch (error) { this.status = String(error.message || error); }
+  },
+  nextQr() {
+    if (!this._frames.length) return;
+    this.qrIndex = (this.qrIndex + 1) % this._frames.length;
+    this.qrValue = this._frames[this.qrIndex];
+  },
+  previousQr() {
+    if (!this._frames.length) return;
+    this.qrIndex = (this.qrIndex + this._frames.length - 1) % this._frames.length;
+    this.qrValue = this._frames[this.qrIndex];
+  },
+  pauseQr() {
+    if (this._qrTimer !== null) clearInterval(this._qrTimer);
+    this._qrTimer = null; this.autoText = '已暂停';
+  },
+  toggleAuto() {
+    if (this._qrTimer !== null) { this.pauseQr(); return; }
+    this._qrTimer = setInterval(() => this.nextQr(), 2000);
+    this.autoText = '自动播放';
+  },
+  closeExport() { this.pauseQr(); this.exportMode = false; }
+}
+</script>
+
+<style>
+.screen { width: 466px; height: 466px; background-color: #101820; justify-content: center; align-items: center; }
+.panel { width: 318px; height: 318px; flex-direction: column; align-items: center; }
+.title { width: 300px; height: 30px; font-size: 23px; color: #66e0c4; text-align: center; }
+.status { width: 308px; height: 40px; font-size: 18px; text-align: center; }
+.numbers { width: 314px; height: 26px; font-size: 17px; text-align: center; }
+.info { width: 310px; height: 24px; font-size: 18px; text-align: center; }
+.row { width: 318px; height: 44px; flex-direction: row; justify-content: space-around; align-items: center; }
+.button { height: 36px; flex: 1; margin: 3px; border-radius: 8px; background-color: #293b49; justify-content: center; align-items: center; }
+text { font-size: 18px; color: #ffffff; }
+.start { background-color: #176655; }
+.note { width: 306px; height: 30px; font-size: 16px; text-align: center; color: #bdcbd5; }
+.settings { justify-content: center; }
+.qrpanel { width: 466px; height: 466px; flex-direction: column; align-items: center; padding-top: 55px; }
+.qrtitle { width: 260px; height: 26px; font-size: 19px; text-align: center; color: #66e0c4; }
+.qrinfo { width: 260px; height: 22px; font-size: 17px; text-align: center; }
+.qrbox { width: 240px; height: 240px; padding: 10px; background-color: #ffffff; }
+.qr { width: 220px; height: 220px; color: #000000; background-color: #ffffff; }
+.qrrow { width: 260px; height: 40px; flex-direction: row; justify-content: space-around; align-items: center; }
+</style>
