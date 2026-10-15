@@ -170,7 +170,10 @@
     "collection/watch-s5-probe/diagnostics/startup-minimal/src/app.ux",
     "collection/watch-s5-probe/diagnostics/startup-minimal/src/Probe/index.ux",
     "collection/watch-s5-probe/tools/build_startup_probe.cjs",
-    "collection/watch-s5-probe/tests/startup-probe.test.cjs"
+    "collection/watch-s5-probe/tests/startup-probe.test.cjs",
+    "collection/watch-s5-probe/tools/build_startup_source.cjs",
+    "collection/watch-s5-probe/tools/check_startup_source.py",
+    "collection/watch-s5-probe/tests/test_startup_source_archive.py"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
