@@ -1,5 +1,7 @@
 # 项目当前状态
 
+计划中：用户要求S5界面与手机浅色UI统一，并询问电脑直读。官方当前公开调试页未确认S5正式固件直连路径，普通手机中转通信尚未实现；具体限制见本机docs/reviews/2026-10-15-s5-debug-access-feasibility.md。[手表UI统一方案](docs/superpowers/specs/2026-10-15-s5-ui-unification-design.md)待用户确认，未改UI/构建/安装；可先离线准备，UI新版试装须等当前0.1.1原始记录取回。手机0.2.2/r2继续冻结，完整成果进入同一GitHub方向不变。
+
 更新：2026-10-15。DS021已由Codex离线复核，见本机docs/reviews/2026-10-15-deepseek-021-audit.md。用户确认源码最小0.0.2安装、D2→D3/点击1、退出正常。随后采集版0.1.1/code2按同一源码格式构建，21Node+6Python和实际归档/同证书RSA/内容摘要通过，原src与四旧RPK不变，手机66冻结文件匹配。用户分段确认0.1.1安装成功、首页正常、2秒自动停止显示已保存；没有具体条数或原始导出，S5原始数据仍待核，根因未证。新包SHA `44c801da39a1e1da56e427268afdad3e4004756e5b34f2179cf52ee91decc8af`，按[2秒原件协议](docs/protocols/2026-10-15-s5-acquisition-2s-source.md)导出同一会话，不另录长数据。S5标准版/3.102.036、AstroBox2.2.0和上述操作均为用户报告，未回读设备字节。两旧失败包继续停用；Codex本轮只本机复算/构建，无远程设备调用。雷达兼容副本已有四次短采正常退出、原安装未替换；移位同时转向、杯子对照多处变化，桌面/地面仍未唯一对应，无独立几何误差。网站未接入家庭点云/照片，雷达现场仍暂停。Codex主导实现/整合，DS独立审查；手机0.2.2的66文件/r2冻结，不开子代理。
 
 本次研究口径：[CCF-A研究合同v1](docs/research/2026-10-14-research-contract-v1.md)（Codex整合，DS015已核验处理）；[主张—证据表](docs/research/claim-evidence-matrix.md)列C01–C12当前状态。主目标为CCS/USENIX Security正式长文，不以完成工具或扩大人数替代科学贡献。DS为独立审查；其新增门槛未全盘采纳，处理见本机docs/reviews/2026-10-14-deepseek-015-audit.md。
