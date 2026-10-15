@@ -6,7 +6,9 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import zipfile
+from check_async_component import check_async_component
 
 ROOT=Path(__file__).resolve().parents[1]
 REPO=ROOT.parents[1]
@@ -33,6 +35,7 @@ def main():
     cargo,env,native=configuration()
     base=[cargo,'--offline']
     if args.test:
+        subprocess.run([sys.executable,'-m','unittest','discover','-s',str(ROOT/'tests'),'-p','test_*.py','-v'],env=env,check=True)
         command=base+['test','--locked','--manifest-path',str(ROOT/'Cargo.toml')]
         if native:command+=['--target',native]
         subprocess.run(command,env=env,check=True)
@@ -48,14 +51,16 @@ def main():
         output.mkdir(parents=True,exist_ok=False)
         wasm=Path(env['CARGO_TARGET_DIR'])/'wasm32-wasip2/release/imus5_receiver.wasm'
         assets={'manifest.json':(ROOT/'manifest.json').read_bytes(),'imus5_receiver.wasm':wasm.read_bytes(),
+          'THIRD_PARTY_LICENSES.txt':(ROOT/'wit/LICENSE').read_bytes(),
           'icon.png':(REPO/'collection/watch-s5-probe/variants/research-ui/src/common/icon.png').read_bytes()}
         assert assets['imus5_receiver.wasm'][:8]==b'\x00asm\x0d\x00\x01\x00','not a WebAssembly component'
+        async_abi=check_async_component(assets['imus5_receiver.wasm'])
         package=output/('IMU-S5-Receiver-'+version+'.abp')
         with zipfile.ZipFile(package,'x',zipfile.ZIP_DEFLATED) as archive:
             for name,data in assets.items():archive.writestr(name,data)
         report={'sha256':hashlib.sha256(package.read_bytes()).hexdigest(),'bytes':package.stat().st_size,
           'files':{n:hashlib.sha256(b).hexdigest() for n,b in assets.items()},'manifest':manifest,
-          'device_or_host_installation':'not_performed','actual_wireless_transfer':'not_verified'}
+          'async_abi':async_abi,'device_or_host_installation':'not_performed','actual_wireless_transfer':'not_verified'}
         (output/'build-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(package)
 
 if __name__=='__main__':main()

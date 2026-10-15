@@ -1,13 +1,13 @@
 //! Ordinary AstroBox API level 3 adapter. No firmware/transport/network or raw file extraction.
+use crate::bindings::exports::astrobox::psys_plugin::{
+    event_v3::{self as event, EventType},
+    lifecycle,
+};
 use crate::receiver;
 use crate::ui_state::{Action, State};
 use astrobox_ng_wit::{
     FutureReader,
     astrobox::psys_host::{device, dialog, interconnect, register, ui_v3 as ui},
-    exports::astrobox::psys_plugin::{
-        event_v3::{self as event, EventType},
-        lifecycle,
-    },
 };
 use std::{
     io::{Read, Write},
@@ -81,7 +81,7 @@ fn render() {
                 .size(26)
                 .text_color("#102A43"),
         )
-        .child(text("v0.1.1 · 普通消息 · 本地保存"))
+        .child(text("v0.1.2 · 普通消息 · 本地保存"))
         .child(
             ui::Element::new(ui::ElementType::Div, None)
                 .without_default_styles()
@@ -136,6 +136,8 @@ async fn prepare() {
         render();
         return;
     }
+    mutate(|s| s.status = "查询任务已启动，正在等待设备列表／授权…".into());
+    render();
     let devices = device::get_connected_device_list().await;
     let mut candidates: Vec<_> = devices
         .iter()
@@ -306,7 +308,7 @@ impl lifecycle::Guest for Plugin {
     }
 }
 impl event::Guest for Plugin {
-    fn on_event(kind: EventType, payload: String) -> FutureReader<String> {
+    async fn on_event(kind: EventType, payload: String) -> FutureReader<String> {
         let (w, r) = astrobox_ng_wit::wit_future::new::<String>(String::new);
         astrobox_ng_wit::spawn(async move {
             if matches!(kind, EventType::InterconnectMessage) {
@@ -316,7 +318,11 @@ impl event::Guest for Plugin {
         });
         r
     }
-    fn on_ui_event_v3(id: String, event: ui::Event, _payload: String) -> FutureReader<String> {
+    async fn on_ui_event_v3(
+        id: String,
+        event: ui::Event,
+        _payload: String,
+    ) -> FutureReader<String> {
         let (w, r) = astrobox_ng_wit::wit_future::new::<String>(String::new);
         // Follow the public template's synchronous UI boundary. Local feedback must
         // not depend on a host future, permission prompt, or spawned task running.
@@ -335,6 +341,14 @@ impl event::Guest for Plugin {
         render();
         astrobox_ng_wit::spawn(async move {
             match action {
+                Action::Check => {
+                    astrobox_ng_wit::yield_async().await;
+                    mutate(|s| {
+                        s.working = false;
+                        s.status = "运行检查通过 · 可以准备接收".into();
+                    });
+                    render();
+                }
                 Action::Prepare => prepare().await,
                 Action::Save => save().await,
                 _ => {}
@@ -343,7 +357,7 @@ impl event::Guest for Plugin {
         });
         r
     }
-    fn on_ui_render(id: String) -> FutureReader<()> {
+    async fn on_ui_render(id: String) -> FutureReader<()> {
         mutate(|s| s.root_id = Some(id));
         render();
         let (w, r) = astrobox_ng_wit::wit_future::new::<()>(|| ());
@@ -352,7 +366,7 @@ impl event::Guest for Plugin {
         });
         r
     }
-    fn on_card_render(_id: String) -> FutureReader<()> {
+    async fn on_card_render(_id: String) -> FutureReader<()> {
         let (w, r) = astrobox_ng_wit::wit_future::new::<()>(|| ());
         astrobox_ng_wit::spawn(async move {
             let _ = w.write(()).await;
@@ -360,4 +374,4 @@ impl event::Guest for Plugin {
         r
     }
 }
-astrobox_ng_wit::export!(Plugin);
+crate::bindings::export!(Plugin with_types_in crate::bindings);

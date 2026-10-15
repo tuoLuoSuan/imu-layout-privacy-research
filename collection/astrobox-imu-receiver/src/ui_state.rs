@@ -2,6 +2,7 @@
 #[derive(Debug, PartialEq, Eq)]
 pub enum Action {
     None,
+    Check,
     Prepare,
     Save,
     Refresh,
@@ -48,7 +49,12 @@ impl State {
         self.feedback = format!("已响应 {} 次 · {}", self.clicks, label);
         if id == "probe" {
             self.feedback = format!("界面响应正常 · 已响应 {} 次", self.clicks);
-            return Action::None;
+            if self.working {
+                return Action::None;
+            }
+            self.working = true;
+            self.status = "正在检查运行状态…".into();
+            return Action::Check;
         }
         if self.working {
             self.feedback.push_str(" · 上一操作仍在等待，请看上方状态");

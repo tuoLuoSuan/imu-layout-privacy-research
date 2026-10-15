@@ -1,0 +1,31 @@
+//! Same public API3 world, with explicit asynchronous task exports.
+wit_bindgen::generate!({
+    path: "wit",
+    world: "receiver-async-v3",
+    generate_all,
+    pub_export_macro: true,
+    default_bindings_module: "crate::bindings",
+    with: {
+        "astrobox:psys-host/os": astrobox_ng_wit::astrobox::psys_host::os,
+        "astrobox:psys-host/transport": astrobox_ng_wit::astrobox::psys_host::transport,
+        "astrobox:psys-host/ui-v3": astrobox_ng_wit::astrobox::psys_host::ui_v3,
+        "astrobox:psys-host/clipboard": astrobox_ng_wit::astrobox::psys_host::clipboard,
+        "astrobox:psys-host/dialog": astrobox_ng_wit::astrobox::psys_host::dialog,
+        "astrobox:psys-host/device": astrobox_ng_wit::astrobox::psys_host::device,
+        "astrobox:psys-host/register": astrobox_ng_wit::astrobox::psys_host::register,
+        "astrobox:psys-host/event": astrobox_ng_wit::astrobox::psys_host::event,
+        "astrobox:psys-host/provider-callback": astrobox_ng_wit::astrobox::psys_host::provider_callback,
+        "astrobox:psys-host/queue": astrobox_ng_wit::astrobox::psys_host::queue,
+        "astrobox:psys-host/timer": astrobox_ng_wit::astrobox::psys_host::timer,
+        "astrobox:psys-host/interconnect": astrobox_ng_wit::astrobox::psys_host::interconnect,
+        "astrobox:psys-host/thirdpartyapp": astrobox_ng_wit::astrobox::psys_host::thirdpartyapp,
+        "astrobox:psys-host/watchface": astrobox_ng_wit::astrobox::psys_host::watchface,
+        "astrobox:psys-host/i18n": astrobox_ng_wit::astrobox::psys_host::i18n,
+    },
+    async: [
+        "export:astrobox:psys-plugin/event-v3#on-event",
+        "export:astrobox:psys-plugin/event-v3#on-ui-event-v3",
+        "export:astrobox:psys-plugin/event-v3#on-ui-render",
+        "export:astrobox:psys-plugin/event-v3#on-card-render",
+    ],
+});

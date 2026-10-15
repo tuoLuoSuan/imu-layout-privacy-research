@@ -22,10 +22,12 @@ fn repeated_click_cannot_launch_a_second_operation_or_change_selection() {
 #[test]
 fn local_probe_is_observable_without_a_device_and_preserves_pending_work() {
     let mut s = State::new();
-    assert_eq!(s.click("probe"), Action::None);
+    assert_eq!(s.click("probe"), Action::Check);
     assert!(s.feedback.contains("界面响应正常"));
     assert!(s.addr.is_none());
-    assert!(!s.working);
+    assert!(s.working);
+    assert!(!s.status.contains("通过"));
+    s.working = false; // The host's async check completes before the next action.
     s.click("prepare");
     let stage = s.status.clone();
     s.click("probe");
