@@ -18,6 +18,7 @@ jobs:
       - run: node --test showcase/tests/*.test.mjs
       - run: node --test collection/watch-s5-probe/tests/*.test.cjs
       - run: python -m unittest discover -s collection/watch-s5-probe/tests -p 'test_*source_archive.py' -v
+      - run: python -m unittest discover -s collection/watch-s5-probe/tests -p 'test_research_export.py' -v
       - run: python -m unittest discover -s collection/phone-imu-recorder/tools -p 'test_*.py' -v
 
       - run: python -m unittest discover -s environment/lidar/tests -v

@@ -45,6 +45,7 @@ data/ground_truth/
 data/session_context/
 data/annotations/
 collection/band9pro-probe/recordings/
+collection/watch-s5-probe/recordings/
 showcase/data/
 docs/evidence/**
 !docs/evidence/**/

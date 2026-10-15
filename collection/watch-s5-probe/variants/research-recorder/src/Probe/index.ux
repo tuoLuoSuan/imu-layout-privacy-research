@@ -1,0 +1,216 @@
+<template>
+  <div class="screen">
+    <div if="{{!exportMode}}" class="panel">
+      <div class="heading"><image class="brand" src="/common/icon.png"></image><text class="title">IMU采集 · 腕部</text><text class="version">v0.3.0</text></div>
+      <text class="{{alert ? 'status warning' : 'status'}}">{{status}}</text>
+      <div if="{{settingsMode}}" class="body">
+        <text class="caption">采集设置 {{settingIndex + 1}} / 6 · {{settingName}}</text>
+        <div class="card setting-card"><text class="setting-value">{{settingValue}}</text><text class="caption">{{settingHint}}</text></div>
+        <div class="row"><div class="button secondary" onclick="previousValue"><text class="button-text">− 上一项</text></div><div class="button primary" onclick="nextValue"><text class="button-text light">下一项 ＋</text></div></div>
+        <div class="row"><div class="button secondary" onclick="nextSetting"><text class="button-text">下个设置</text></div><div class="button primary" onclick="closeSettings"><text class="button-text light">完成</text></div></div>
+        <text class="note">参数仅用于下一条记录</text>
+      </div>
+      <div if="{{!settingsMode &amp;&amp; !confirmMode}}" class="body">
+        <div if="{{tab === 'collect'}}" class="body">
+          <div class="card timer-card"><text class="caption">已记录 {{samples}} 条 · 已保存 {{persisted}}</text><text class="timer">{{elapsed}}</text><text class="caption">实测回调 {{measured}} Hz</text></div>
+          <div class="parameter" onclick="openSettings"><text class="parameter-text">请求 {{interval}}档 · {{durationSeconds}}秒 · 调整</text></div>
+          <div class="row"><div class="button primary" onclick="startRecording"><text class="button-text light">{{recording ? '正在采集' : '开始采集'}}</text></div><div class="button secondary" onclick="stopRecording"><text class="button-text">停止并保存</text></div></div>
+          <div class="retry" onclick="retrySave"><text class="parameter-text">{{retryable ? '保存失败 · 点此重试' : '三轴加速度 · 单位与轴向待验'}}</text></div>
+        </div>
+        <div if="{{tab === 'records'}}" class="body">
+          <div class="card record-card"><text class="card-title">{{trashMode ? '回收区' : '本机记录'}} {{recordPosition}}</text><text class="record-info">{{recordTitle}}</text><text class="caption">{{recordDetail}}</text><text class="caption">{{recordQuality}}</text></div>
+          <div class="row"><div class="button secondary" onclick="previousRecord"><text class="button-text">上一条</text></div><div class="button secondary" onclick="nextRecord"><text class="button-text">下一条</text></div><div class="button primary" onclick="openExport"><text class="button-text light">导出</text></div></div>
+          <div class="row"><div class="button secondary" onclick="toggleTrash"><text class="button-text">{{trashMode ? '返回记录' : '回收区'}}</text></div><div class="button secondary" onclick="recordAction"><text class="button-text">{{trashMode ? '恢复记录' : '移到回收区'}}</text></div></div>
+          <div class="retry" onclick="extraAction"><text class="parameter-text">{{trashMode ? '永久删除…' : '恢复旧版最近一条（只读）'}}</text></div>
+        </div>
+        <div class="navigation"><div class="{{tab === 'collect' ? 'navitem active' : 'navitem'}}" onclick="showCollect"><text class="{{tab === 'collect' ? 'nav-text nav-active-text' : 'nav-text'}}">采集</text></div><div class="{{tab === 'records' ? 'navitem active' : 'navitem'}}" onclick="showRecords"><text class="{{tab === 'records' ? 'nav-text nav-active-text' : 'nav-text'}}">记录</text></div></div>
+      </div>
+      <div if="{{confirmMode}}" class="body">
+        <div class="card confirm-card"><text class="card-title">{{confirmTitle}}</text><text class="record-info">{{recordTitle}}</text><text class="caption">{{recordDetail}}</text><text class="caption">{{confirmHint}}</text></div>
+        <div class="row"><div class="button secondary" onclick="cancelConfirm"><text class="button-text">取消</text></div><div class="button danger" onclick="confirmAction"><text class="button-text light">{{confirmButton}}</text></div></div>
+      </div>
+    </div>
+    <div if="{{exportMode}}" class="qrpanel">
+      <text class="qrtitle">导出 {{partIndex + 1}} / {{partTotal}} 段</text><text class="qrinfo">{{qrIndex + 1}} / {{qrTotal}} 页 · {{autoText}}</text>
+      <div class="qrbox"><qrcode class="qr" value="{{qrValue}}"></qrcode></div>
+      <div class="row"><div class="button secondary" onclick="previousQr"><text class="button-text">上一页</text></div><div class="button secondary" onclick="nextQr"><text class="button-text">下一页</text></div></div>
+      <div class="row"><div class="button secondary" onclick="previousPart"><text class="button-text">上一段</text></div><div class="button primary" onclick="nextPart"><text class="button-text light">下一段</text></div></div>
+      <div class="row"><div class="button secondary" onclick="toggleAuto"><text class="button-text">播放/暂停</text></div><div class="button secondary" onclick="closeExport"><text class="button-text">返回记录</text></div></div>
+    </div>
+  </div>
+</template>
+
+<script>
+import sensor from '@system.sensor'
+import file from '@system.file'
+import research from '../common/research.js'
+import legacyCore from '../common/recorder.js'
+
+export default {
+  private: {
+    tab:'collect',status:'准备就绪 · 先做2秒短试',alert:false,recording:false,saving:false,loading:false,retryable:false,
+    samples:0,persisted:0,elapsed:'0.0秒',measured:'--',interval:'game',durationSeconds:2,
+    settingsMode:false,settingIndex:0,settingName:'时长',settingValue:'2秒',settingHint:'分钟档尚待真机验收',
+    trashMode:false,recordPosition:'0 / 0',recordTitle:'尚无记录',recordDetail:'开始采集后自动分块保存',recordQuality:'',
+    confirmMode:false,confirmTitle:'',confirmHint:'',confirmButton:'',exportMode:false,
+    partIndex:0,partTotal:0,qrIndex:0,qrTotal:0,qrValue:'',autoText:'暂停'
+  },
+  onInit(){
+    this._store=research.createStore(file);this._session=null;this._timer=null;this._qrTimer=null;this._frames=[];
+    this._items=[];this._selection=0;this._inventory=null;this._legacy=null;this._pageState='visible';this._destroyed=false;
+    this._values=[0,0,0,0,0,0];this._lists=[[2,10,30,60,180,300],['game','ui','normal'],['not_recorded','still','walk','arm_move'],['not_recorded','left','right'],['未记录','P01','P02','P03','P04','P05','P06','P07','P08','P09','P10','P11','P12','P13','P14','P15','P16','P17','P18','P19','P20'],['未记录','R01','R02','R03','R04','R05','R06','R07','R08','R09','R10','R11','R12','R13','R14','R15','R16','R17','R18','R19','R20']];
+  },
+  onShow(){this._pageState='visible';if(this._session)this._session.event('page_show');},
+  onHide(){this._pageState='hidden';this.pauseQr();if(this._session)this._session.event('page_hide');},
+  onDestroy(){this._destroyed=true;this.pauseQr();if(this._session){this._session.event('page_destroy');this._session.stop('page_destroy');}this.unsubscribe();this.clearTimer();},
+  busy(){return this.recording||this.saving||this.loading;},
+  reportError(error){this.alert=true;this.status=String(error.message||error);this.loading=false;},
+  showCollect(){if(this.busy())return;this.tab='collect';this.settingsMode=false;},
+  showRecords(){if(this.busy())return;this.tab='records';this.settingsMode=false;this.refreshRecords();},
+  openSettings(){if(this.busy())return;this.settingsMode=true;this.renderSetting();},
+  closeSettings(){this.settingsMode=false;},
+  renderSetting(){
+    const i=this.settingIndex,value=this._lists[i][this._values[i]];
+    this.settingName=['录制时长','请求档位','动作指令','佩戴腕侧','匿名参与者','匿名房间'][i];
+    this.settingValue=i===0?String(value)+' 秒':i===2?{not_recorded:'未记录',still:'静止',walk:'走路',arm_move:'摆手'}[value]:i===3?{not_recorded:'未记录',left:'左腕',right:'右腕'}[value]:String(value);
+    this.settingHint=['分钟档尚待真机验收','game ≈20ms · ui ≈60ms · normal ≈200ms','动作指令不等于动作标注','默认未记录，按实际选择','仅用研究编号，不填姓名','仅用研究编号，不填地址'][i];
+    this.durationSeconds=this._lists[0][this._values[0]];this.interval=this._lists[1][this._values[1]];
+  },
+  nextSetting(){if(this.busy())return;this.settingIndex=(this.settingIndex+1)%6;this.renderSetting();},
+  previousValue(){this.changeValue(-1);},nextValue(){this.changeValue(1);},
+  changeValue(delta){if(this.busy())return;const i=this.settingIndex;this._values[i]=(this._values[i]+delta+this._lists[i].length)%this._lists[i].length;this.renderSetting();},
+  startRecording(){
+    if(this.busy())return;
+    if(this._session&&this._session.state().status!=='sealed'){this.status='请先重试保存上一条；勿覆盖';this.alert=true;return;}
+    this.loading=true;this.alert=false;this.status='准备存储…';this.pauseQr();this._legacy=null;
+    const options={durationSeconds:this.durationSeconds,interval:this.interval,label:this._lists[2][this._values[2]],wrist:this._lists[3][this._values[3]],
+      participant:this._values[4]?this._lists[4][this._values[4]]:null,room:this._values[5]?this._lists[5][this._values[5]]:null};
+    this._store.start(options,s=>this.updateSession(s)).then(s=>{
+      this.loading=false;this._session=s;
+      if(this._destroyed){s.stop('page_destroy');return;}
+      this.samples=0;this.persisted=0;this.elapsed='0.0秒';this.measured='--';this.recording=true;this.status='采集中 · 分块保存';
+      this._timer=setInterval(()=>s.tick(),250);
+      try{sensor.subscribeAccelerometer({interval:this.interval,callback:ret=>{s.push(ret,this._pageState);},fail:(msg,code)=>{s.event('sensor_fail',String(code));s.stop('sensor_fail');}});}
+      catch(e){s.event('sensor_exception',String(e));s.stop('sensor_fail');}
+    }).catch(e=>this.reportError(e));
+  },
+  updateSession(s){
+    this.samples=s.count;this.persisted=s.persisted;this.elapsed=(s.elapsed_ms/1000).toFixed(1)+'秒';
+    this.measured=s.measured_callback_hz===null?'--':s.measured_callback_hz.toFixed(1);this.retryable=s.retryable;
+    this.recording=s.status==='recording';this.saving=s.status==='stopping';
+    if(!this.recording)this.unsubscribe();
+    if(s.status==='sealed'||s.status==='failed'){
+      this.clearTimer();this.alert=s.status==='failed'||s.warnings.length>0;
+      this.status=s.status==='failed'?'保存异常 · '+s.error:(s.warnings.length?'已保存，需核验 · '+s.stop_reason:'已保存 '+s.persisted+'条 · 可导出');
+    }else if(s.status==='stopping')this.status='正在保存余下数据，请稍等';
+  },
+  unsubscribe(){try{sensor.unsubscribeAccelerometer();}catch(e){}},
+  clearTimer(){if(this._timer!==null)clearInterval(this._timer);this._timer=null;},
+  stopRecording(){if(this._session)this._session.stop('manual');},
+  retrySave(){if(this.busy()||!this._session||!this.retryable)return;this._timer=setInterval(()=>this._session.tick(),250);this._session.retry();},
+  refreshRecords(){
+    if(this.busy())return;this.loading=true;this._legacy=null;
+    this._store.list(this.trashMode).then(items=>{this.loading=false;this._items=items;this._selection=0;this.renderRecord();}).catch(e=>this.reportError(e));
+  },
+  renderRecord(){
+    const item=this._items[this._selection];this.recordPosition=this._items.length?String(this._selection+1)+' / '+this._items.length:'0 / 0';
+    this.recordTitle=item?'会话 '+item.id.slice(-6):'尚无记录';
+    this.recordDetail=item?(item.count===null?'条数待核':item.count+'条')+' · '+(item.duration_ms===null?'时长待核':(item.duration_ms/1000).toFixed(1)+'秒'):'可开始新采集或恢复旧记录';
+    this.recordQuality=item?(item.state==='sealed'?(item.tail.quality.warnings.length?'有告警 · 请核报告':'已封口 · 尚待外部核验'):item.state==='interrupted'?'中断记录 · 部分数据可导出':item.state==='deleting'?'删除未完成 · 可再次确认':'损坏 · 请保留文件'):'新旧记录分别保留';
+  },
+  previousRecord(){if(this.busy()||!this._items.length)return;this._legacy=null;this._selection=(this._selection+this._items.length-1)%this._items.length;this.renderRecord();},
+  nextRecord(){if(this.busy()||!this._items.length)return;this._legacy=null;this._selection=(this._selection+1)%this._items.length;this.renderRecord();},
+  toggleTrash(){if(this.busy())return;this.trashMode=!this.trashMode;this.refreshRecords();},
+  recordAction(){
+    if(this.busy()||this._legacy)return;const item=this._items[this._selection];if(!item)return;
+    if(this.trashMode){this.loading=true;this._store.restore(item.id).then(()=>{this.loading=false;this.status='已恢复记录';this.refreshRecords();}).catch(e=>this.reportError(e));return;}
+    this.confirmMode=true;this.confirmTitle='移到回收区？';this.confirmHint='可在回收区恢复 · 未确认外部备份';this.confirmButton='移到回收区';this._confirm='trash';
+  },
+  extraAction(){
+    if(this.busy())return;
+    if(!this.trashMode){this.loadLegacy();return;}
+    const item=this._items[this._selection];if(!item)return;
+    this.confirmMode=true;this.confirmTitle='永久删除这条记录？';this.confirmHint='无法撤销 · 请先完成外部导出';this.confirmButton='永久删除';this._confirm='purge';
+  },
+  cancelConfirm(){if(!this.loading)this.confirmMode=false;},
+  confirmAction(){
+    if(this.busy())return;const item=this._items[this._selection];if(!item)return;
+    this.loading=true;const operation=this._confirm==='purge'?this._store.purge(item.id,item.id):this._store.trash(item.id);
+    operation.then(()=>{this.loading=false;this.confirmMode=false;this.status=this._confirm==='purge'?'已永久删除':'已移到回收区，可恢复';this.refreshRecords();}).catch(e=>{this.confirmMode=false;this.reportError(e);});
+  },
+  loadLegacy(){
+    if(this.busy())return;this.loading=true;
+    file.readText({uri:'internal://files/imus5_latest.txt',success:data=>{
+      if(!/^internal:\/\/files\/imus5_[A-Za-z0-9_-]+\.json$/.test(data.text)){this.reportError(Error('旧版索引无效'));return;}
+      file.readText({uri:data.text,success:saved=>{try{
+        if(saved.text.length>524288)throw Error('旧版记录过大');const r=JSON.parse(saved.text);
+        if(r.schema_version!==1||!Array.isArray(r.rows)||r.rows.length>2000)throw Error('旧版格式无效');
+        this._legacy=r;this.loading=false;this.recordTitle='旧版最近一条';this.recordDetail=r.rows.length+'条 · 原版本保留';this.recordQuality='只读恢复 · 请导出原件';this.status='旧版记录已载入';
+      }catch(e){this.reportError(e);}},fail:(m,c)=>this.reportError(Error('旧记录读取失败 '+c))});
+    },fail:(m,c)=>this.reportError(Error('没有旧版最近记录 '+c))});
+  },
+  openExport(){
+    if(this.busy())return;this.pauseQr();
+    if(this._legacy){try{this._frames=legacyCore.encodeChunks(this._legacy,320);this.partIndex=0;this.partTotal=1;this.exportMode=true;this.setFrames();}catch(e){this.reportError(e);}return;}
+    const item=this._items[this._selection];if(!item)return;this.loading=true;
+    this._store.inventory(item.id).then(inv=>{this._inventory=inv;this.partIndex=0;this.partTotal=inv.files.length+1;this.loading=false;this.exportMode=true;this.status='二维码传输较慢，请拍齐每段';this.loadPart();}).catch(e=>this.reportError(e));
+  },
+  loadPart(){
+    this.pauseQr();this.loading=true;this.qrValue='';this._frames=[];
+    const inv=this._inventory,index=this.partIndex;
+    const promise=index===0?Promise.resolve(research.ascii({kind:'manifest',schema_version:2,session_id:inv.id,files:inv.files})):this._store.readPart(inv.id,inv.files[index-1]);
+    promise.then(text=>{this._frames=research.frames(inv.id,index,text);this.loading=false;this.setFrames();}).catch(e=>{this.loading=false;this.exportMode=false;this.reportError(e);});
+  },
+  setFrames(){this.qrIndex=0;this.qrTotal=this._frames.length;this.qrValue=this._frames[0];},
+  nextPart(){if(this.loading||this._legacy)return;this.partIndex=(this.partIndex+1)%this.partTotal;this.loadPart();},
+  previousPart(){if(this.loading||this._legacy)return;this.partIndex=(this.partIndex+this.partTotal-1)%this.partTotal;this.loadPart();},
+  nextQr(){if(!this._frames.length||this.loading)return;this.qrIndex=(this.qrIndex+1)%this._frames.length;this.qrValue=this._frames[this.qrIndex];},
+  previousQr(){if(!this._frames.length||this.loading)return;this.qrIndex=(this.qrIndex+this._frames.length-1)%this._frames.length;this.qrValue=this._frames[this.qrIndex];},
+  pauseQr(){if(this._qrTimer!==null)clearInterval(this._qrTimer);this._qrTimer=null;this.autoText='暂停';},
+  toggleAuto(){if(this.loading)return;if(this._qrTimer!==null){this.pauseQr();return;}this._qrTimer=setInterval(()=>this.nextQr(),1500);this.autoText='播放';},
+  closeExport(){if(this.loading)return;this.pauseQr();this.exportMode=false;this._frames=[];this.qrValue='';}
+}
+</script>
+
+<style>
+.screen { width: 466px; height: 466px; background-color: #F3F6FA; justify-content: center; align-items: center; }
+.panel { width: 318px; height: 340px; flex-direction: column; align-items: center; }
+.heading { width: 300px; height: 30px; flex-direction: row; align-items: center; justify-content: center; }
+.brand { width: 28px; height: 28px; margin-right: 5px; }
+.title { width: 196px; height: 30px; font-size: 23px; color: #102A43; }
+.version { width: 56px; height: 24px; font-size: 15px; color: #52677C; }
+.status { width: 306px; height: 42px; font-size: 17px; color: #176B6D; text-align: center; }
+.warning { color: #AC3629; }
+.body { width: 318px; flex-direction: column; align-items: center; }
+.card { width: 310px; border-radius: 22px; background-color: #FFFFFF; flex-direction: column; align-items: center; justify-content: center; }
+.timer-card { height: 105px; }
+.timer { width: 300px; height: 52px; font-size: 43px; color: #102A43; text-align: center; }
+.caption { width: 302px; height: 24px; font-size: 16px; color: #52677C; text-align: center; }
+.card-title { width: 302px; height: 26px; font-size: 21px; color: #102A43; text-align: center; }
+.record-card { height: 105px; }
+.record-info { width: 302px; height: 28px; font-size: 20px; color: #102A43; text-align: center; }
+.setting-card { height: 102px; margin-top: 6px; margin-bottom: 6px; }
+.setting-value { width: 302px; height: 52px; font-size: 37px; color: #102A43; text-align: center; }
+.confirm-card { height: 150px; margin-top: 14px; margin-bottom: 14px; }
+.parameter { width: 310px; height: 34px; justify-content: center; align-items: center; }
+.parameter-text { width: 310px; height: 26px; font-size: 17px; color: #176B6D; text-align: center; }
+.row { width: 310px; height: 42px; flex-direction: row; justify-content: center; align-items: center; }
+.button { flex: 1; height: 36px; margin-left: 3px; margin-right: 3px; border-radius: 14px; align-items: center; justify-content: center; }
+.button-text { font-size: 18px; color: #176B6D; text-align: center; }
+.primary { background-color: #176B6D; }
+.secondary { background-color: #E4F1F0; }
+.danger { background-color: #AC3629; }
+.light { color: #FFFFFF; }
+.retry { width: 310px; height: 30px; justify-content: center; align-items: center; }
+.navigation { width: 250px; height: 38px; margin-top: 5px; flex-direction: row; justify-content: center; align-items: center; }
+.navitem { width: 110px; height: 34px; border-radius: 15px; justify-content: center; align-items: center; }
+.nav-text { font-size: 19px; color: #52677C; }
+.active { background-color: #E4F1F0; }
+.nav-active-text { color: #176B6D; }
+.note { width: 306px; height: 24px; font-size: 16px; color: #52677C; text-align: center; }
+.qrpanel { width: 310px; height: 354px; flex-direction: column; align-items: center; }
+.qrtitle { width: 300px; height: 25px; font-size: 20px; color: #102A43; text-align: center; }
+.qrinfo { width: 300px; height: 23px; font-size: 17px; color: #52677C; text-align: center; }
+.qrbox { width: 172px; height: 172px; background-color: #FFFFFF; justify-content: center; align-items: center; }
+.qr { width: 158px; height: 158px; }
+</style>
