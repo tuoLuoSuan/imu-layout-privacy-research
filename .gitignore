@@ -46,6 +46,7 @@ data/session_context/
 data/annotations/
 collection/band9pro-probe/recordings/
 collection/watch-s5-probe/recordings/
+collection/astrobox-imu-receiver/received/
 showcase/data/
 docs/evidence/**
 !docs/evidence/**/
@@ -61,6 +62,8 @@ docs/evidence/**
 *.las
 *.laz
 *.rpk
+*.abp
+target/
 *.pt
 *.pth
 *.onnx

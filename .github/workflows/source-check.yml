@@ -22,3 +22,20 @@ jobs:
       - run: python -m unittest discover -s collection/phone-imu-recorder/tools -p 'test_*.py' -v
 
       - run: python -m unittest discover -s environment/lidar/tests -v
+
+  receiver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: rustup toolchain install stable --profile minimal --no-self-update
+      - run: rustup default stable
+      - run: rustup target add wasm32-wasip2
+      - run: cargo fetch --locked --manifest-path collection/astrobox-imu-receiver/Cargo.toml
+      - run: python collection/astrobox-imu-receiver/tools/build_local.py --test --package
+      - run: node collection/astrobox-imu-receiver/tools/test_roundtrip.cjs .cache/s5-transfer-research/receiver-target/debug/receiver_sim
