@@ -84,16 +84,16 @@ function initRoom(){
   const host=$('scene');
   try{
     const scene=new THREE.Scene();scene.background=new THREE.Color('#f7f9fc');
-    const camera=new THREE.PerspectiveCamera(38,1,.1,100);camera.position.set(10,10,12);
+    const camera=new THREE.PerspectiveCamera(38,1,.1,100);camera.position.set(9,9,11);
     const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));host.append(renderer.domElement);
     const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.3,0);controls.minDistance=5;controls.maxDistance=27;controls.maxPolarAngle=Math.PI*.48;
-    scene.add(new THREE.AmbientLight(0xffffff,2));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(5,12,7);scene.add(light);
+    scene.add(new THREE.AmbientLight(0xffffff,.9));const light=new THREE.DirectionalLight(0xffffff,2);light.position.set(5,12,7);scene.add(light);
     const material=color=>new THREE.MeshStandardMaterial({color,roughness:.8,metalness:0});
-    function box(parent,w,h,d,x,y,z,color){const geo=new THREE.BoxGeometry(w,h,d);const mesh=new THREE.Mesh(geo,material(color));mesh.position.set(x,y,z);parent.add(mesh);const edge=new THREE.LineSegments(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color:'#b1c1d4',transparent:true,opacity:.7}));edge.position.copy(mesh.position);parent.add(edge);return mesh;}
+    function box(parent,w,h,d,x,y,z,color){const geo=new THREE.BoxGeometry(w,h,d);const mesh=new THREE.Mesh(geo,material(color));mesh.position.set(x,y,z);parent.add(mesh);const edge=new THREE.LineSegments(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color:'#637b98',transparent:true,opacity:.85}));edge.position.copy(mesh.position);parent.add(edge);return mesh;}
     box(scene,8,.08,6,0,-.06,0,'#eaf0f7');
     const grid=new THREE.GridHelper(8,16,'#c6d3e2','#dde5ef');grid.position.y=.002;grid.scale.z=.75;scene.add(grid);
     const corners=[[-4,0,-3],[-4,2.4,-3],[4,2.4,-3],[4,0,-3],[-4,0,-3],[-4,0,3],[-4,2.4,3],[-4,2.4,-3],[4,2.4,-3],[4,2.4,3],[4,0,3],[-4,0,3]];
-    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(corners.map(p=>new THREE.Vector3(...p))),new THREE.LineBasicMaterial({color:'#b8c8dc',transparent:true,opacity:.65})));
+    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(corners.map(p=>new THREE.Vector3(...p))),new THREE.LineBasicMaterial({color:'#8198b5',transparent:true,opacity:.8})));
     const objects=new THREE.Group();scene.add(objects);
     box(objects,1.8,.12,.8,-2,.82,-2,'#c8d8e9');for(const x of [-2.7,-1.3])box(objects,.08,.76,.08,x,.38,-2,'#b2c4d9');
     box(objects,.7,.1,.7,-2,.46,-.95,'#e3edf6');box(objects,.08,.75,.7,-2.32,.75,-.95,'#cad8e6');for(const x of [-2.27,-1.73])for(const z of [-1.2,-.7])box(objects,.05,.43,.05,x,.21,z,'#b8c9db');
@@ -108,7 +108,7 @@ function initRoom(){
     controls.addEventListener('change',drawScene);
     $('show-objects').addEventListener('change',e=>{objects.visible=e.target.checked;drawScene();});
     $('show-path').addEventListener('change',e=>{pathGroup.visible=e.target.checked;drawScene();});
-    $('reset-view').addEventListener('click',()=>{camera.position.set(10,10,12);controls.target.set(0,.3,0);controls.update();drawScene();});
+    $('reset-view').addEventListener('click',()=>{camera.position.set(9,9,11);controls.target.set(0,.3,0);controls.update();drawScene();});
     new ResizeObserver(drawScene).observe(host);drawScene();
   }catch(e){host.textContent='三维视图无法启动，请检查浏览器的图形支持。真实信号与其他页面仍可查看。';console.error(e);}
 }
