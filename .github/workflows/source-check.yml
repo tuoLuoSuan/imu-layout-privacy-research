@@ -15,5 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test showcase/tests/data.test.mjs
+      - run: node --test showcase/tests/*.test.mjs
       - run: python -m unittest discover -s collection/phone-imu-recorder/tools -p 'test_*.py' -v
+
+      - run: python -m unittest discover -s environment/lidar/tests -v

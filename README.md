@@ -14,6 +14,7 @@
 | 环境 | [Ubuntu脚本](environment/setup_ubuntu.sh)、[CPU依赖](environment/requirements-cpu.txt)，ML与ROS分离 |
 | 研究路线 | [路线v2](docs/superpowers/plans/2026-10-13-ccfa-imu-layout-research-roadmap-v2.md)，历史规划，当前进度以项目状态为准 |
 | 完整研究交付 | [交付清单](docs/research/2026-10-14-完整研究成果交付与下一步.md)：协议、数据合同、模型、实验、图表、论文与网站 |
+| 雷达参考准备 | [新参考工具](environment/lidar/README.md)、[下一次协议](docs/protocols/2026-10-15-reference-and-phone-pilot.md)：离线已测，ROS/机位/几何仍待验 |
 | 展示 | [本地六页工作台](showcase/README.md)：人工三维示意、信号、XGBoost说明、采集准备与成果 |
 | 版本与证据 | [复现/备份说明](docs/reproducibility/README.md)、[冻结App清单](docs/reproducibility/frozen-app-0.2.2.json) |
 | 协作 | [CONTRIBUTING.md](CONTRIBUTING.md)、[源码白名单](repository-policy.json) |

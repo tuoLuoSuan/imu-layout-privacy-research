@@ -1,1 +1,1 @@
-{"name":"imu-research-workbench","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test tests/data.test.mjs"},"dependencies":{"three":"0.180.0"}}
+{"name":"imu-research-workbench","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test tests/*.test.mjs"},"dependencies":{"three":"0.180.0"}}

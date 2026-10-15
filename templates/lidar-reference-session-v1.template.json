@@ -1,0 +1,52 @@
+{
+  "schema_version": "lidar-reference-session/v1-draft",
+  "record_kind": "template_not_collected",
+  "session_id": null,
+  "bag_sha256": null,
+  "capture_summary_sha256": null,
+  "physical_room_id_eval_only": null,
+  "layout_variant_id_eval_only": null,
+  "pose_for_this_session_only": {
+    "sensor_center_height_above_floor_m": null,
+    "sensor_center_height_relative_to_table_m": null,
+    "orientation_description": null,
+    "tilt_measurement_deg": null,
+    "measurement_method_and_precision": null,
+    "support_description": null,
+    "stability_evidence_ref": null,
+    "photo_private_ref": null
+  },
+  "correspondence_eval_only": {
+    "source_preview_sha256": null,
+    "confirmed_table_regions": [],
+    "confirmed_floor_regions": [],
+    "visible_edges": [],
+    "occluded_or_unknown_edges": [],
+    "confirmed_by": null
+  },
+  "measurements_eval_only": [],
+  "measurement_entry_schema": {
+    "target_and_endpoints": null,
+    "role": "control_or_heldout_validation",
+    "instrument": null,
+    "instrument_precision_m": null,
+    "repeat_readings_m": [],
+    "measured_at": null,
+    "point_cloud_estimate_m": null,
+    "estimate_frozen_at": null,
+    "absolute_difference_m": null,
+    "visibility_limitation": null
+  },
+  "repeat_capture_ref": null,
+  "shutdown_review_ref": null,
+  "geometry_quality": "not_assessed",
+  "instructions": [
+    "Copy before use; all nulls are unknown, not zero.",
+    "A new pose measurement cannot fill an old capture's missing pose.",
+    "Grid IDs identify image regions, not furniture identities or confirmed geometry.",
+    "Keep registration controls distinct from held-out validation measurements.",
+    "Freeze cloud estimates before consulting held-out measurements; no scale fitting or completing hidden edges.",
+    "This entire reference context is evaluation-only, never an input to the main test attack.",
+    "Keep completed forms, photographs and true room geometry outside the source allowlist."
+  ]
+}

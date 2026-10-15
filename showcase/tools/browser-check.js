@@ -1,14 +1,15 @@
 async (page) => {
-  const errors=[];const posts=[];
+  const errors=[];const posts=[];const httpFailures=[];
   page.on('pageerror',error=>errors.push(error.message));
+  page.on('response',res=>{if(res.status()>=400)httpFailures.push({url:res.url(),status:res.status()});});
   page.on('request',req=>{if(req.method()==='POST')posts.push(req.url());});
   const check=(ok,message)=>{if(!ok)throw Error(message);};
   await page.setViewportSize({width:1440,height:1000});
   await page.goto('http://127.0.0.1:8765/',{waitUntil:'networkidle'});
   check(await page.locator('#scene canvas').count()===1,'3D canvas missing');
   check(await page.locator('#overview').evaluate(el=>el.classList.contains('active')),'progress is not initial page');
-  check((await page.locator('#overview').textContent()).includes('短于60秒'),'short trial limitation missing');
-  await page.screenshot({path:'output/playwright/2026-10-14-evidence-update/desktop-progress.png',fullPage:true});
+  check((await page.locator('#overview').textContent()).includes('30分钟'),'long trial status missing');
+  await page.screenshot({path:'output/playwright/2026-10-15-offline-update/desktop-progress.png',fullPage:true});
   await page.locator('[data-tab="space"]').click();
   await page.locator('#show-path').uncheck();check(!await page.locator('#show-path').isChecked(),'route control');
   await page.locator('#show-path').check();
@@ -34,17 +35,18 @@ async (page) => {
   check(await page.locator('#count').textContent()==='30','bad CSV altered data');
   await page.locator('#restore-sample').click();
   await page.locator('#signal-dataset').selectOption('phone-accel');
-  await page.screenshot({path:'output/playwright/2026-10-14-evidence-update/desktop-signals.png',fullPage:true});
+  await page.screenshot({path:'output/playwright/2026-10-15-offline-update/desktop-signals.png',fullPage:true});
   await page.setViewportSize({width:390,height:844});
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mobile signal overflow');
-  await page.screenshot({path:'output/playwright/2026-10-14-evidence-update/mobile-signals.png',fullPage:true});
+  await page.screenshot({path:'output/playwright/2026-10-15-offline-update/mobile-signals.png',fullPage:true});
   await page.locator('[data-tab="space"]').click();
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mobile scene overflow');
-  await page.screenshot({path:'output/playwright/2026-10-14-evidence-update/mobile-space.png',fullPage:true});
+  await page.screenshot({path:'output/playwright/2026-10-15-offline-update/mobile-space.png',fullPage:true});
   for(const name of ['overview','model','prepare','artifact']){await page.locator(`[data-tab="${name}"]`).click();check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`mobile ${name} overflow`);}
-  check((await page.locator('#artifact').textContent()).includes('尚无远程仓库'),'remote status missing');
-  await page.screenshot({path:'output/playwright/2026-10-14-evidence-update/mobile-artifact.png',fullPage:true});
+  check((await page.locator('#artifact').textContent()).includes('私有仓库'),'remote status missing');
+  await page.screenshot({path:'output/playwright/2026-10-15-offline-update/mobile-artifact.png',fullPage:true});
   check(errors.length===0,'browser errors: '+errors.join(';'));
   check(posts.length===0,'unexpected uploads');
-  return {status:'passed',phone_accel_rows:1334,phone_gyro_rows:1335,historical_rows:30,csv_import:'passed',bad_clock_rejection:'passed',mobile_width:390,page_errors:errors,upload_requests:posts};
+  check(httpFailures.length===0,'HTTP failures: '+JSON.stringify(httpFailures));
+  return {status:'passed',phone_accel_rows:1334,phone_gyro_rows:1335,historical_rows:30,csv_import:'passed',bad_clock_rejection:'passed',mobile_width:390,page_errors:errors,upload_requests:posts,http_failures:httpFailures};
 }

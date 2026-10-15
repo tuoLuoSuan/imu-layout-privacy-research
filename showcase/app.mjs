@@ -40,7 +40,7 @@ function showDataset(){
   }
   if(!phonePreview)return;
   const gyro=choice==='phone-gyro',channel=gyro?'gyroscope':'accelerometer';
-  updateRecord(phonePreview.channels[channel].rows,`小米17 Pro · App ${phonePreview.version} · 会话88aded49 · 请求120Hz / 8333µs`,false,{event:true,unit:gyro?'rad/s':'m/s²',title:gyro?'角速度':'含重力加速度',badge:'真实记录 · 功能短试',context:'各通道首个原始事件为零点，仅将纳秒差换算为毫秒；XYZ保留原值，不插值或重采样。约11秒短试基线不足，不证明长期稳定、活动识别或跨设备同步。'});
+  updateRecord(phonePreview.channels[channel].rows,`小米17 Pro · App ${phonePreview.version} · 会话88aded49 · 请求120Hz / 8333µs`,false,{event:true,unit:gyro?'rad/s':'m/s²',title:gyro?'角速度':'含重力加速度',badge:'真实记录 · 功能短试',context:'请求120Hz是设置，实测平均事件率见上方数值；两者分别报告。当前曲线来自约11秒功能短试，30分钟验收见进展页。各通道首事件单独作零点，XYZ保留原值，不插值或重采样；短试基线不足，不证明长期稳定、活动识别或跨设备同步。'});
 }
 $('restore-sample').addEventListener('click',showDataset);
 $('signal-dataset').addEventListener('change',showDataset);
