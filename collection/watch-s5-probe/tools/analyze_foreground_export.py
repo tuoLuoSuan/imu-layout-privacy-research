@@ -13,7 +13,7 @@ def analyze(record):
     head, tail = record['metadata'], record['tail']
     meta = head['metadata']
     report = tail.get('screen_observation')
-    if meta.get('app_version') != '0.4.3' or meta.get('screen_policy') != POLICY or meta['screen_policy'].get('physical_screen_verified') is not False:
+    if meta.get('app_version') not in ('0.4.3', '0.4.4') or meta.get('screen_policy') != POLICY or meta['screen_policy'].get('physical_screen_verified') is not False:
         raise ValueError('unknown foreground screen policy')
     if not isinstance(report, dict) or any(report.get(k) != v for k, v in POLICY.items()) or report.get('physical_screen_verified') is not False:
         raise ValueError('missing or invalid screen observation')

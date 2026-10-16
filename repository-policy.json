@@ -388,7 +388,15 @@
     "collection/watch-s5-probe/tools/analyze_foreground_export.py",
     "collection/watch-s5-probe/tests/test_foreground_source_archive.py",
     "docs/data/watch-s5-foreground-screen-v1.md",
-    "docs/protocols/2026-10-16-s5-foreground-first-run.md"
+    "docs/protocols/2026-10-16-s5-foreground-first-run.md",
+    "collection/watch-s5-probe/tests/catalog-page.test.cjs",
+    "collection/watch-s5-probe/tests/catalog-recorder.test.cjs",
+    "collection/watch-s5-probe/tools/build_catalog_recorder_source.cjs",
+    "collection/watch-s5-probe/variants/catalog-recorder/README.md",
+    "collection/watch-s5-probe/variants/catalog-recorder/catalog-overlay.cjs",
+    "collection/watch-s5-probe/variants/catalog-recorder/src/common/record-catalog.js",
+    "docs/superpowers/plans/2026-10-16-s5-record-catalog.md",
+    "docs/superpowers/specs/2026-10-16-s5-record-catalog-design.md"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
