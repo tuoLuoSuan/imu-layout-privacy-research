@@ -364,7 +364,17 @@
     "docs/protocols/2026-10-16-s5-precise-recorder-first-run.md",
     "docs/superpowers/specs/2026-10-16-s5-precise-recorder-design.md",
     "docs/superpowers/plans/2026-10-16-s5-precise-recorder.md",
-    "docs/data/watch-s5-precise-short-trials.md"
+    "docs/data/watch-s5-precise-short-trials.md",
+    "collection/watch-s5-probe/variants/continuity-recorder/src/common/continuity-observer.js",
+    "collection/watch-s5-probe/variants/continuity-recorder/README.md",
+    "collection/watch-s5-probe/tools/build_continuity_recorder_source.cjs",
+    "collection/watch-s5-probe/tools/analyze_continuity_export.py",
+    "collection/watch-s5-probe/tests/continuity-recorder.test.cjs",
+    "collection/watch-s5-probe/tests/test_continuity_source_archive.py",
+    "docs/data/watch-s5-continuity-v1.md",
+    "docs/protocols/2026-10-16-s5-continuity-first-run.md",
+    "docs/superpowers/specs/2026-10-16-s5-continuity-recorder-design.md",
+    "docs/superpowers/plans/2026-10-16-s5-continuity-recorder.md"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
