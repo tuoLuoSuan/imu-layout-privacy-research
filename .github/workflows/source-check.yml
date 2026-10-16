@@ -42,6 +42,20 @@ jobs:
 
   receiver-api4-runtime:
     runs-on: ubuntu-latest
+    # These preserved standalone harnesses have the same executable name.
+    # Give each variant its own runner/cache rather than reusing a prior binary.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: api4
+            extra: --reproduce-api3
+          - variant: api4-observation
+            extra: ''
+          - variant: api4-envelope-diagnostic
+            extra: ''
+          - variant: api4-envelope-adapter
+            extra: ''
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -50,7 +64,4 @@ jobs:
       - run: rustup toolchain install stable --profile minimal --no-self-update
       - run: rustup default stable
       - run: rustup target add wasm32-wasip2
-      - run: python collection/astrobox-imu-receiver/variants/api4/tools/build_local.py --test --package --reproduce-api3
-      - run: python collection/astrobox-imu-receiver/variants/api4-observation/tools/build_local.py --test --package
-      - run: python collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/tools/build_local.py --test --package
-      - run: python collection/astrobox-imu-receiver/variants/api4-envelope-adapter/tools/build_local.py --test --package
+      - run: python collection/astrobox-imu-receiver/variants/${{ matrix.variant }}/tools/build_local.py --test --package ${{ matrix.extra }}
