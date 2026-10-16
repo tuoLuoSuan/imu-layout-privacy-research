@@ -53,3 +53,4 @@ jobs:
       - run: python collection/astrobox-imu-receiver/variants/api4/tools/build_local.py --test --package --reproduce-api3
       - run: python collection/astrobox-imu-receiver/variants/api4-observation/tools/build_local.py --test --package
       - run: python collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/tools/build_local.py --test --package
+      - run: python collection/astrobox-imu-receiver/variants/api4-envelope-adapter/tools/build_local.py --test --package
