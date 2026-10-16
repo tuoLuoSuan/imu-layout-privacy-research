@@ -11,6 +11,8 @@ function prepareStage(stage){
  c=one(c,"const ROOT = 'internal://files/';","const continuityObserver = require('./continuity-observer.js');\nconst ROOT = 'internal://files/';");
  c=one(c,"record_purpose:options.inputProbe===true?'input_probe':'recording',acquisition_api:","record_purpose:options.inputProbe===true?'input_probe':'recording',sensor_path:options.inputProbe===true||options.sensorPath==='generic'?'generic':'legacy',continuity_policy:continuityObserver.policy(),acquisition_api:");
  c=one(c,'const id=head.session_id;','const id=head.session_id;const continuity=continuityObserver.create(head.started_epoch_ms,event);');
+ c=one(c,'  function event(type,detail){','  function event(type,detail,observedAt){');
+ c=one(c,'events.push({callback_epoch_ms:now(),type:','events.push({callback_epoch_ms:type===\'capture_heartbeat\'&&finite(observedAt)?observedAt:now(),type:');
  c=one(c,"    status='stopping';stopReason=reason||'manual';stopped=now();event('stop_requested',stopReason);",`    const cut=now(),observed=continuity.snapshot(cut,count);
     if(observed.silence_observed)warn('sensor_silence_observed');
     if(observed.late_tick_count||observed.terminal_tick_gap_ms>head.metadata.continuity_policy.tick_delay_warning_ms)warn('heartbeat_tick_delay');

@@ -8,7 +8,7 @@ function create(started,emit){
   tick:function(t,count){
    ticks++;const gap=t-lastTick;maxTickGap=Math.max(maxTickGap,gap);if(gap>p.tick_delay_warning_ms)late++;lastTick=t;
    if(t-lastHeartbeat>=p.heartbeat_period_ms){
-    lastHeartbeat=t;beats++;if(emit)emit('capture_heartbeat',JSON.stringify({i:beats,n:count,a:last,g:quiet(t)}));
+    lastHeartbeat=t;beats++;if(emit)emit('capture_heartbeat',JSON.stringify({i:beats,n:count,a:last,g:quiet(t)}),t);
    }
   },
   snapshot:function(t,count){

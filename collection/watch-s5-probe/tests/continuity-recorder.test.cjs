@@ -7,10 +7,10 @@ function staged(){
  }finally{assert.equal(path.dirname(fs.realpathSync(dir)),tmp);fs.rmSync(dir,{recursive:true,force:true});}
 }
 async function rig(duration=10){
- const profile=staged(),files=new Map();let t=1000;
+ const profile=staged(),files=new Map();let t=1000,advance=false;
  const file={list:o=>o.success({fileList:[]}),writeText:o=>{files.set(o.uri,o.text);o.success();}};
- const s=await profile.core.createStore(file,{now:()=>t}).start({sensorPath:'generic',interval:'high',durationSeconds:duration});
- return {s,profile,files,time:v=>{t=v;},push:()=>s.push({x:0.125,y:2.5,z:9.75},'visible',t),objects:()=>[...files.values()].map(JSON.parse),tail:()=>[...files.values()].map(JSON.parse).find(o=>o.kind==='tail')};
+ const s=await profile.core.createStore(file,{now:()=>advance?t++:t}).start({sensorPath:'generic',interval:'high',durationSeconds:duration});
+ return {s,profile,files,time:v=>{t=v;},advanceClock:()=>{advance=true;},push:()=>s.push({x:0.125,y:2.5,z:9.75},'visible',t),objects:()=>[...files.values()].map(JSON.parse),tail:()=>[...files.values()].map(JSON.parse).find(o=>o.kind==='tail')};
 }
 test('ordinary pre-deadline 3s silence protection already works',async()=>{
  const r=await rig();r.push();r.time(4250);r.s.tick();assert.equal(r.tail().stop_reason,'sensor_silence');
@@ -43,6 +43,11 @@ test('late ticks produce one observed heartbeat and do not fabricate missed even
 test('zero callbacks retain silence evidence without inventing a last callback',async()=>{
  const r=await rig();r.time(11000);r.s.tick();const t=r.tail();assert.equal(t.stop_reason,'sensor_silence');
  assert.equal(t.count,0);assert.equal(t.continuity_observation.last_accepted_epoch_ms,null);assert.ok(t.quality.warnings.includes('no_samples'));
+});
+test('heartbeat uses the same observed tick time when wall-clock reads advance during insertion',async()=>{
+ const r=await rig();r.push();r.time(2000);r.advanceClock();r.s.tick();r.s.stop('manual');
+ const e=r.objects().filter(o=>o.kind==='block').flatMap(o=>o.events).find(e=>e.type==='capture_heartbeat');
+ assert.equal(e.callback_epoch_ms,r.tail().continuity_observation.last_tick_epoch_ms);
 });
 test('actual page driver seals final counters and shows a visible interruption warning',async()=>{
  const profile=staged(),files=new Map(),unsubs=[];let t=1000,native;

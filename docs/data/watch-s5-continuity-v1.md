@@ -21,7 +21,7 @@ tail.continuity_observation：
 | heartbeat_count | 实际写入的心跳事件计数，不补齐延后期间的事件。 |
 | semantics / external_liveness_reference | JS_wall_clock_observations_only / false，共享事件循环与墙钟，非外部参考。 |
 
-capture_heartbeat事件原时间在callback_epoch_ms。detail是有界JSON文本，i为1起连续编号，n为该tick已接纳行数，a为其末行时间（无行为null），g为距该末行/开始的间隔。每次tick至多写一条；事件缓存/块边界沿用原32条/128行上限。落盘可能晚于事件时间，未声称fsync持久化。
+capture_heartbeat事件时间在callback_epoch_ms，与摘要及detail使用同一次实际tick读数，不在排入事件时重读时钟。detail是有界JSON文本，i为1起连续编号，n为该tick已接纳行数，a为其末行时间（无行为null），g为距该末行/开始的间隔。每次tick至多写一条；事件缓存/块边界沿用原32条/128行上限。落盘可能晚于事件时间，未声称fsync持久化。
 
 sensor_silence_observed和heartbeat_tick_delay为设备告警。到时且末尾空窗>3000ms时stop_reason=sensor_silence；manual保留原停止原因并加告警。异常或无封口不改成完成。
 
