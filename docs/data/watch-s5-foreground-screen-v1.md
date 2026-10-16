@@ -1,6 +1,6 @@
 # S5前台屏幕策略字段
 
-适用0.4.3/0.4.4正式录制；0.4.4只优化记录摘要读取，运输仍schema2。0.4.2及更早原件不补字段、不交给本分析器冒充新版。输入检查继续使用自己的分析器。
+适用0.4.3/0.4.4/0.4.5正式录制；0.4.4优化记录摘要读取，0.4.5增加导出保亮，运输仍schema2。0.4.2及更早原件不补字段、不交给本分析器冒充新版。输入检查继续使用自己的分析器。
 
 - head.metadata.screen_policy：schema_version=1、mode=foreground_keep_awake、api=@system.brightness.setKeepScreenOn、physical_screen_verified=false。表示本版采集政策，不是屏幕电源测量。
 - tail.screen_observation：同政策字段，acquire/release各含status、requested_epoch_ms、completed_epoch_ms，失败另有受控error.message/error.code。正式采集要求acquire=success，release必须终结为success/failed/exception/timeout，不能以pending封口。
@@ -26,3 +26,13 @@
 首次high接近5次/秒的原因未定位：文件确实声明high，采集驱动与0.4.2逐字节相同；切mid再切high后恢复约16.71次/秒不足以证明修复、固件限速或某个因果机制。49条原件及全部差异保留，不按计数删异常、不宣告一分钟/息屏持续性或同步通过。
 
 三条TXT的SHA依次为`f6af5b408fc2a31c881062297038fc9ee1deea435d900162ff869a748caedf8e`、`8bf40549979c80bedfb01f2bb07428f1c48a253de8011c737a46a9ca3adeeb1c`、`9e56b3c1884ad2eb405a34961687b3ec4cf9dcfdadb2a743feedfdfa5771e5bb`。原件私有保留，不随源码发布。
+
+## 同日0.4.4一分钟不触屏录制
+
+普通USB取回115386字节，手机取回前后与电脑SHA均为`096d857c50a3bcaca9e88535b49b958a8c21d6e7fb2e3b21c9d72d2701449530`。项目与独立标准库逐CRC/清单/序号/封口/首末XYZ/心跳复算相符；999条接纳保存、1000次驱动回调，28块/31part/347运输行、2997个小数标量。
+
+请求60000ms/high/通用入口，实际采集截止60036ms，回调跨度59880ms、到达16.666667次/秒；正间隔中位/p95/最大60/67/110ms，6处>100ms，无>1秒/同毫秒/倒退/hidden行。58心跳/233tick，最大tick325ms，末tick到截止164ms；开始/末尾样本空窗92/64ms，原/派生告警为空，duration停止。屏幕开启/释放接口成功，时序符合策略。
+
+三个预定20秒窗口各333条，到达16.687610/16.658304/16.655797次/秒。用户补记原文“全程亮屏，我也没触屏，保存后恢复息屏。”；切页未单独文字确认，原件未观察到捕获期page_hide/hidden。由原件与用户报告支持这一次一分钟前台不触屏工程分项，不外推五分钟/后台/硬件Hz/单位轴向或同步。
+
+用户另报导出时息屏会停止，这是采集后的独立问题，不回写采集告警。0.4.5导出阶段使用单独保亮生命周期，最近接口观察仅在页面内存`_lastExportScreen`中，绝不塞回这条已封口0.4.4记录；重传时metadata仍保留0.4.4。
