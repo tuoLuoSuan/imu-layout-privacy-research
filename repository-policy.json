@@ -376,7 +376,10 @@
     "docs/superpowers/specs/2026-10-16-s5-continuity-recorder-design.md",
     "docs/superpowers/plans/2026-10-16-s5-continuity-recorder.md",
     "docs/protocols/2026-10-16-s5-continuity-60s-foreground.md",
-    "docs/data/watch-s5-continuity-native-trials.md"
+    "docs/data/watch-s5-continuity-native-trials.md",
+    "docs/protocols/2026-10-16-s5-natural-screen-off-60s.md",
+    "docs/superpowers/specs/2026-10-16-s5-foreground-screen-policy-design.md",
+    "docs/superpowers/plans/2026-10-16-s5-foreground-screen-policy.md"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
