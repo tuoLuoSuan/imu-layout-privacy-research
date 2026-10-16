@@ -10,7 +10,7 @@
 | 数据合同 | [字段/质量字典](docs/data/phone-v1-data-dictionary.md)、[空会话模板](templates/session-context-v1.template.json)，真实补充记录另存 |
 | 当前状态 | [PROJECT_STATE.md](PROJECT_STATE.md)，区分已验证、未知与下一步 |
 | 手机采集 | [IMU采集App](collection/phone-imu-recorder/README.md)：0.2.2，双通道、频率请求、单条删除、手动ZIP导出 |
-| 腕部原型 | [9Pro探针](collection/band9pro-probe/README.md)、[S5独立短试包](collection/watch-s5-probe/README.md)：S5软件构建通过但用户报告启动整表短暂卡住，最小启动诊断也失败，源码格式候选仅离线核验，真机入口与出口未过；[安装指导](docs/tutorials/2026-10-15-S5安装与入口短试.md) |
+| 腕部采集 | [S5记录器](collection/watch-s5-probe/README.md)：0.4.2通用加速度入口与手机0.2.3普通出口已有原件核验，小数三轴、三档短试和一分钟内部连续性分别有证据；[连续性分项结果](docs/data/watch-s5-continuity-native-trials.md)仍区分待补的前台条件/手机源哈希，未宣告单位、轴向、硬件Hz、息屏或同步通过。[9Pro历史探针](collection/band9pro-probe/README.md)及旧启动失败记录保留 |
 | 环境 | [Ubuntu脚本](environment/setup_ubuntu.sh)、[CPU依赖](environment/requirements-cpu.txt)，ML与ROS分离 |
 | 研究路线 | [路线v2](docs/superpowers/plans/2026-10-13-ccfa-imu-layout-research-roadmap-v2.md)，历史规划，当前进度以项目状态为准 |
 | 完整研究交付 | [交付清单](docs/research/2026-10-14-完整研究成果交付与下一步.md)：协议、数据合同、模型、实验、图表、论文与网站 |
