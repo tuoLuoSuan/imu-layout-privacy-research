@@ -10,7 +10,7 @@
 | 数据合同 | [字段/质量字典](docs/data/phone-v1-data-dictionary.md)、[空会话模板](templates/session-context-v1.template.json)，真实补充记录另存 |
 | 当前状态 | [PROJECT_STATE.md](PROJECT_STATE.md)，区分已验证、未知与下一步 |
 | 手机采集 | [IMU采集App](collection/phone-imu-recorder/README.md)：0.2.2，双通道、频率请求、单条删除、手动ZIP导出 |
-| 腕部采集 | [S5记录器](collection/watch-s5-probe/README.md)：用户已更新0.4.4，手机出口0.2.3；14条原件3896行私有保留。一分钟999条自动保亮录制完成原件/用户条件核对，见[前台分项](docs/data/watch-s5-foreground-screen-v1.md)。[0.4.5导出保亮候选](collection/watch-s5-probe/variants/export-screen/README.md)本机已核、真机传输待验；自然息屏旧告警及首次high到达率差异保留，未宣告硬件Hz、单位轴向、后台或同步通过。[9Pro历史探针](collection/band9pro-probe/README.md)保留 |
+| 腕部采集 | [S5记录器](collection/watch-s5-probe/README.md)：用户已更新0.4.5且报告首页/退出正常，手机出口0.2.3；14条原件3896行私有保留。0.4.4一分钟999条录制完成原件/用户条件核对，见[前台分项](docs/data/watch-s5-foreground-screen-v1.md)。[0.4.6文件等待退出候选](collection/watch-s5-probe/variants/export-file-wait/README.md)离线153Node/40Python与999条原字节往返通过，未安装或真机验证；用户当前暂停设备操作。自然息屏旧告警及首次high到达率差异保留，未宣告硬件Hz、单位轴向、后台或同步通过。[9Pro历史探针](collection/band9pro-probe/README.md)保留 |
 | 环境 | [Ubuntu脚本](environment/setup_ubuntu.sh)、[CPU依赖](environment/requirements-cpu.txt)，ML与ROS分离 |
 | 研究路线 | [路线v2](docs/superpowers/plans/2026-10-13-ccfa-imu-layout-research-roadmap-v2.md)，历史规划，当前进度以项目状态为准 |
 | 完整研究交付 | [交付清单](docs/research/2026-10-14-完整研究成果交付与下一步.md)：协议、数据合同、模型、实验、图表、论文与网站 |

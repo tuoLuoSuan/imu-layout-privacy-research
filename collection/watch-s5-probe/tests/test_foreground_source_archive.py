@@ -32,7 +32,7 @@ class ForegroundAnalysis(unittest.TestCase):
         r['metadata']['metadata']['app_version'] = '0.4.4'
         self.assertEqual(analysis.analyze(r)['screen_policy_verification']['release_status'], 'success')
         self.assertEqual(r['metadata']['metadata']['app_version'], '0.4.4')
-        r['metadata']['metadata']['app_version'] = '0.4.6'
+        r['metadata']['metadata']['app_version'] = '0.4.7'
         with self.assertRaises(ValueError):
             analysis.analyze(r)
     def test_export_screen_profile_keeps_capture_screen_policy_and_raw_version(self):
@@ -40,6 +40,12 @@ class ForegroundAnalysis(unittest.TestCase):
         r['metadata']['metadata']['app_version'] = '0.4.5'
         self.assertFalse(analysis.analyze(r)['screen_policy_verification']['physical_screen_verified'])
         self.assertEqual(r['metadata']['metadata']['app_version'], '0.4.5')
+    def test_file_wait_profile_keeps_sealed_capture_evidence_separate(self):
+        r = fixture()
+        r['metadata']['metadata']['app_version'] = '0.4.6'
+        before = copy.deepcopy(r)
+        self.assertFalse(analysis.analyze(r)['screen_policy_verification']['physical_screen_verified'])
+        self.assertEqual(r, before)
     def test_screen_report_is_required_and_not_physical_screen_proof(self):
         r = analysis.analyze(fixture())
         self.assertIn('screen_policy_verification', r)

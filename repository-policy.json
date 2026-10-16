@@ -403,7 +403,14 @@
     "collection/watch-s5-probe/variants/export-screen/export-overlay.cjs",
     "collection/watch-s5-probe/variants/export-screen/README.md",
     "collection/watch-s5-probe/tools/build_export_screen_source.cjs",
-    "docs/protocols/2026-10-16-s5-export-screen-first-run.md"
+    "docs/protocols/2026-10-16-s5-export-screen-first-run.md",
+    "docs/superpowers/specs/2026-10-16-s5-export-file-wait-design.md",
+    "docs/superpowers/plans/2026-10-16-s5-export-file-wait.md",
+    "collection/watch-s5-probe/tests/export-file-wait-page.test.cjs",
+    "collection/watch-s5-probe/variants/export-file-wait/file-wait-overlay.cjs",
+    "collection/watch-s5-probe/variants/export-file-wait/README.md",
+    "collection/watch-s5-probe/tools/build_export_file_wait_source.cjs",
+    "docs/protocols/2026-10-16-s5-export-file-wait-first-run.md"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
