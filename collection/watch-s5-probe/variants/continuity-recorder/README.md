@@ -13,4 +13,4 @@ node collection/watch-s5-probe/tools/build_continuity_recorder_source.cjs
 python collection/watch-s5-probe/tools/analyze_continuity_export.py INPUT.txt --output NEW_PRIVATE_DIRECTORY
 ```
 
-已完成本机红绿回归及60秒1000行/60心跳合成导出、33个运输part原JSON字节相同；不当作真机结果。真实S5仍仅有0.4.1三档10秒原件。新版先按[首次协议](../../../../docs/protocols/2026-10-16-s5-continuity-first-run.md)分级检查；不直接分钟/息屏或正式联采。
+已完成本机红绿回归及60秒1000行/60心跳合成导出、33个运输part原JSON字节相同。随后真实0.4.2的10秒166行、60秒998行原件已分别完成项目与独立标准库核验，见[真机分项结果](../../../../docs/data/watch-s5-continuity-native-trials.md)。一分钟的亮屏/触屏条件及手机源哈希仍待补，不将内部校验相符提升为完整前台验收；息屏、单位/轴向及正式联采仍另验。
