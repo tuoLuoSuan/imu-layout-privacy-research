@@ -1,6 +1,6 @@
 # 小数入口正式录制观察字段 v1
 
-沿用schema2六列和普通传输。head.metadata.record_purpose=recording；acquisition_api和requested_interval记录实际调用组合。通用入口仅high/mid/low，原入口仅game/ui/normal；名称互斥，不能都称请求50Hz。只有S5 3.102.036上一条generic/high原件实测约16.850974次/秒，非硬件采样率或所有档位的性能。
+沿用schema2六列和普通传输。head.metadata.record_purpose=recording；acquisition_api和requested_interval记录实际调用组合。通用入口仅high/mid/low，原入口仅game/ui/normal；名称互斥，不能都称请求50Hz。S5 3.102.036上的0.4.0探测及0.4.1三档短原件已分项核验；正式短试high/mid/low约16.65/8.32/5.00回调次/秒，具体范围与全部大间隔计数见[短试结果](watch-s5-precise-short-trials.md)，非硬件采样率或性能保证。
 
 tail.acquisition_observation的schema_version=1，不改变运输版本：
 

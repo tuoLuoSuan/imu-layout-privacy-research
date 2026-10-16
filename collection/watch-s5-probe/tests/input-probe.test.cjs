@@ -2,6 +2,9 @@ const test=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const probe=require('../variants/input-probe/src/common/input-probe.js');
 const settle=()=>new Promise(setImmediate);
+function injectBlockWriteFailure(file){
+ const write=file.writeText;file.writeText=o=>/_b[0-9]{4}\.json$/.test(o.uri)?queueMicrotask(()=>o.fail('disk full',301)):write(o);
+}
 function core(){
  const base=fs.realpathSync(os.tmpdir()),dir=fs.mkdtempSync(path.join(base,'imus5-input-test-'));
  try{require('../tools/build_input_probe_source.cjs').prepareStage(dir);return require(path.join(dir,'src/common/research.js'));}
@@ -76,7 +79,15 @@ test('ordinary core rejects externally supplied arrival and probe metadata unles
  assert.equal(files.find(p=>p.kind==='block').rows[0][1],1010);assert.throws(()=>s.setInputProbe({}),/probe/);
 });
 test('asynchronous block write failure immediately unsubscribes and retains a visible storage failure',async()=>{
- const r=rig((s,file)=>{const write=file.writeText;file.writeText=o=>o.uri.includes('_b')?queueMicrotask(()=>o.fail('disk full',301)):write(o);});
+ const r=rig((s,file)=>injectBlockWriteFailure(file));
  await r.run.start();for(let i=0;i<128;i++)r.emit({x:i+0.5,y:1,z:2});await settle();await settle();
  assert.deepEqual(r.cleaned,[77]);assert.equal(r.run.state().phase,'storage_failed');
+});
+test('fault injection matches block suffix only, even when the random session token begins with b',async()=>{
+ const written=[],failed=[],file={writeText:o=>{written.push(o.uri);o.success();}};injectBlockWriteFailure(file);
+ for(const digit of '0123456789abcdef')for(const suffix of ['head','b0000','tail']){
+  const uri='internal://files/s5r_1000_'+digit+'00000_'+suffix+'.json';
+  await new Promise(resolve=>file.writeText({uri,success:resolve,fail:()=>{failed.push(uri);resolve();}}));
+ }
+ assert.equal(written.length,32);assert.equal(failed.length,16);assert.ok(written.every(uri=>/_(head|tail)\.json$/.test(uri)));assert.ok(failed.every(uri=>/_b0000\.json$/.test(uri)));
 });
