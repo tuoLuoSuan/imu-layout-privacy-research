@@ -10,13 +10,13 @@
 | 数据合同 | [字段/质量字典](docs/data/phone-v1-data-dictionary.md)、[空会话模板](templates/session-context-v1.template.json)，真实补充记录另存 |
 | 当前状态 | [PROJECT_STATE.md](PROJECT_STATE.md)，区分已验证、未知与下一步 |
 | 手机采集 | [IMU采集App](collection/phone-imu-recorder/README.md)：0.2.2，双通道、频率请求、单条删除、手动ZIP导出 |
-| 腕部采集 | [S5记录器](collection/watch-s5-probe/README.md)：用户已更新0.4.5且报告首页/退出正常，手机出口0.2.3；14条原件3896行私有保留。0.4.4一分钟999条录制完成原件/用户条件核对，见[前台分项](docs/data/watch-s5-foreground-screen-v1.md)。[0.4.6文件等待退出候选](collection/watch-s5-probe/variants/export-file-wait/README.md)离线153Node/40Python与999条原字节往返通过，未安装或真机验证；用户当前暂停设备操作。自然息屏旧告警及首次high到达率差异保留，未宣告硬件Hz、单位轴向、后台或同步通过。[9Pro历史探针](collection/band9pro-probe/README.md)保留 |
+| 腕部采集 | [S5日常记录器0.4.15](docs/tutorials/S5日常采集与导出.md)、AstroBox接收0.2.5冻结；一条0.4.13/600.044秒/9886行前台完整原件通过，0415保持采集与运输核心。日常版安装目视未确认，后台、更长时长、硬件Hz/单位轴/同步未验；不再例行重录。 |
 | 环境 | [Ubuntu脚本](environment/setup_ubuntu.sh)、[CPU依赖](environment/requirements-cpu.txt)，ML与ROS分离 |
-| 研究路线 | [路线v2](docs/superpowers/plans/2026-10-13-ccfa-imu-layout-research-roadmap-v2.md)，历史规划，当前进度以项目状态为准 |
+| 研究路线 | [回到研究与现有传感器能力](docs/research/2026-10-17-research-restart-and-sensor-capabilities.md)：手机六轴优先做最小空间证伪，手表三轴随后验空间增益；日常活动和受控路线分开 |
 | 完整研究交付 | [交付清单](docs/research/2026-10-14-完整研究成果交付与下一步.md)：协议、数据合同、模型、实验、图表、论文与网站 |
 | 雷达参考准备 | [新参考工具](environment/lidar/README.md)、[下一次协议](docs/protocols/2026-10-15-reference-and-phone-pilot.md)：离线已测，ROS/机位/几何仍待验 |
 | 展示 | [本地六页工作台](showcase/README.md)：人工三维示意、信号、XGBoost说明、采集准备与成果 |
-| 版本与证据 | [复现/备份说明](docs/reproducibility/README.md)、[冻结App清单](docs/reproducibility/frozen-app-0.2.2.json) |
+| 版本与证据 | [采集软件冻结](docs/reproducibility/collection-freeze-2026-10-17.md)、[精确清单](docs/reproducibility/frozen-collection-2026-10-17.json)，保留旧手机66文件冻结清单 |
 | 协作 | [CONTRIBUTING.md](CONTRIBUTING.md)、[源码白名单](repository-policy.json) |
 
 网站启动：在`showcase/`执行`npm ci`、`npm start`，浏览器访问`http://127.0.0.1:8765`。服务只监听本机。源码备份不含真实曲线/截图；缺素材时信号页提示不可用，人工房间和本地CSV导入可用。不要将人工场景理解为恢复结果。

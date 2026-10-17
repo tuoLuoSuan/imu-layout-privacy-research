@@ -1,0 +1,1487 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-10-17",
+  "scope": "source baseline and local package identities; not a scientific layout result",
+  "phone": {
+    "version": "0.2.2",
+    "prior_manifest": "docs/reproducibility/frozen-app-0.2.2.json",
+    "verified_source_files": 66,
+    "channels": [
+      "accelerometer_xyz",
+      "gyroscope_xyz"
+    ],
+    "timestamp": "sensor event nanoseconds and receive monotonic nanoseconds"
+  },
+  "watch": {
+    "version": "0.4.15",
+    "version_code": 24,
+    "channels": [
+      "generic_accelerometer_xyz"
+    ],
+    "timestamp": "Date.now callback arrival milliseconds",
+    "package": {
+      "path": "collection/watch-s5-probe/dist/daily-finish-0.4.15/org.imuresearch.s5probe.release.0.4.15.rpk",
+      "bytes": 40625,
+      "sha256": "9b4eab7b70c1c2a51c4e46a9d286ad01f96e0439369602cc2896d751b7c73228"
+    },
+    "restaged_inputs": [
+      {
+        "path": "package.json",
+        "bytes": 403,
+        "sha256": "0c61e60f0e8f43ad0d6229a796821558e4a9eb2d128063260ed091e84f0fbdad"
+      },
+      {
+        "path": "quickapp.config.js",
+        "bytes": 61,
+        "sha256": "fc6dd8e6fac839a9a325d38ede881af86b4b8d4e03a43a7f0935cce3b6840e05"
+      },
+      {
+        "path": "src/app.ux",
+        "bytes": 72,
+        "sha256": "f1bea509bfc5f4f4db0aefef2e639320d829da583ae484425ce87bdc94d7c2d7"
+      },
+      {
+        "path": "src/common/continuity-observer.js",
+        "bytes": 1710,
+        "sha256": "b9e621d670ee0ce05e62f0e83202ddd14cf8cad5800a9fa213af46d8cae6f9d2"
+      },
+      {
+        "path": "src/common/directory-entries.js",
+        "bytes": 749,
+        "sha256": "3415055947dc07920be455e30d3e7ead1ae30b8cf0ea486f48bddc0c16bba50d"
+      },
+      {
+        "path": "src/common/icon.png",
+        "bytes": 6417,
+        "sha256": "793af99f73d68c8deebc99c4d23900168961411c95818f467ad5f1ebf4752b45"
+      },
+      {
+        "path": "src/common/input-probe.js",
+        "bytes": 7017,
+        "sha256": "b7d9e140030fbfe94185594cb6ce6ce71cc4c55e3087eee87b103e1529583468"
+      },
+      {
+        "path": "src/common/record-catalog.js",
+        "bytes": 7617,
+        "sha256": "4ed553195d62f7e5590e136ad14404a4ece2c440d353b0f631aad16b547f5506"
+      },
+      {
+        "path": "src/common/recorder.js",
+        "bytes": 5061,
+        "sha256": "efa3a2c8f2288d87e534e8aebbab55d136cb11f5ef4b5b4ff7ce4ccc15e4a694"
+      },
+      {
+        "path": "src/common/research.js",
+        "bytes": 24832,
+        "sha256": "09f874d97cedb2087aaa702486733a4de169bb6f97fa280bacd08ec159c1cfb8"
+      },
+      {
+        "path": "src/common/runtime-timing.js",
+        "bytes": 3054,
+        "sha256": "b149d62873e7155eea28eed7802ee73ffeb7a93ddc0ff22168cbdd6088653616"
+      },
+      {
+        "path": "src/common/screen-guard.js",
+        "bytes": 3050,
+        "sha256": "6e8f91240ed4993edb95b3ff4c8811cda470c9a17ce3da2b2a67a21915670fd3"
+      },
+      {
+        "path": "src/common/sensor-capture.js",
+        "bytes": 6062,
+        "sha256": "12378cecd55c6d157e8b9882b7d2c368207262a441d8f073ecdea6fb99ad1de4"
+      },
+      {
+        "path": "src/common/storage-diagnostic.js",
+        "bytes": 3376,
+        "sha256": "69cc63cfdefb06be32114a905849abecb346ea9511c6ef3859f9bedb1c4f4632"
+      },
+      {
+        "path": "src/common/transfer.js",
+        "bytes": 4347,
+        "sha256": "f34cf49a0c07e23c07e0ce35c389dab91b99333d125591c4fdf11ffab948ad48"
+      },
+      {
+        "path": "src/manifest.json",
+        "bytes": 567,
+        "sha256": "c084c63c41f71458b342cdb6b61564138230b60a31b9455ad6d182fba3224e8c"
+      },
+      {
+        "path": "src/Probe/index.ux",
+        "bytes": 51761,
+        "sha256": "a91759a4efeb10e900eaf088ff8cc79a9accf3576ac6db2b9641a30dbb2f134d"
+      }
+    ]
+  },
+  "receiver": {
+    "version": "0.2.5",
+    "api_level": 4,
+    "wasi_version": 3,
+    "package": {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/dist/receiver-0.2.5/IMU-S5-Receiver-0.2.5.abp",
+      "bytes": 132196,
+      "sha256": "055fea6f74aea29be0e15ea75c92d3a680a707e326312ba8075a7ed4c46b0aec"
+    }
+  },
+  "accepted_engineering_session": {
+    "capture_version": "0.4.13",
+    "rows": 9886,
+    "duration_ms": 600044,
+    "bytes": 1083054,
+    "sha256": "930fbb733a686b25da53551b2868e04ab50d1d4608b771e1ea9a9e92844a42cd",
+    "foreground_only": true
+  },
+  "open_items": [
+    "0415/025 native UI confirmation pending",
+    "DS050 destructive-operation design independent review pending",
+    "watch units axes hardware timing and background unknown",
+    "15/20/30 minute watch native validation not done",
+    "cross-device synchronization and spatial research not done"
+  ],
+  "source_files": [
+    {
+      "path": "collection/astrobox-imu-receiver/Cargo.lock",
+      "bytes": 11503,
+      "sha256": "7af186ab312992eea35d8242551fc63a8caa1670bfc355ffd1d8cf23ff92a9bf"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/Cargo.toml",
+      "bytes": 492,
+      "sha256": "00efeb984d2521fa0e6e35cf931b2ad29d9ab359e4e4606f7412c0ad3b22649b"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/NOTICE.md",
+      "bytes": 2357,
+      "sha256": "058247272e8dbf9323594cc790b3036b393053d46f23cb5428278ff50a6668d9"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/README.md",
+      "bytes": 7085,
+      "sha256": "7a648360f32ed8fc1c74b5d92fd63e89da51e95e379fabbee05afe361a65f365"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/manifest.json",
+      "bytes": 488,
+      "sha256": "7a56243d2b5562205ed4657d17ecb952b120aa48880be27d4f1cfe935d5ac999"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/src/bin/receiver_sim.rs",
+      "bytes": 1527,
+      "sha256": "2d00adf031ac22b0147e355b2039079a9c198d59b227ea902128e91973271e23"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/src/bindings.rs",
+      "bytes": 1850,
+      "sha256": "63036bcd077af421175ae0045caba022f0d23cde4c83a6796d6f7aa16dcce8f3"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/src/host.rs",
+      "bytes": 12935,
+      "sha256": "a7cc7b2c16ae2299f8bc846f996939ce813df71420cd4e57251ca3b5e53004c1"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/src/lib.rs",
+      "bytes": 118,
+      "sha256": "b2077af5c5f55b96d99a0014433f60fba5891cf4363c87a8da406392acbb4566"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/src/receiver.rs",
+      "bytes": 11288,
+      "sha256": "ea2d087309339b602de2873b62a6099d4bdb11d4bc57734f674fa4469d15793d"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/src/ui_state.rs",
+      "bytes": 2833,
+      "sha256": "55fa8a7d67f0071a8a15b8c51d620aee9079380916a57057b6016d4a7f313141"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/tests/receiver.rs",
+      "bytes": 3266,
+      "sha256": "12c863238bf475a3a26ad0f18e1d8a013239206e571a036c80c29760e6f5c45e"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/tests/test_async_component.py",
+      "bytes": 1599,
+      "sha256": "2646a39b06567b020648ea7bd5211381544b72823e7fd1707ce6d62f1632e7fe"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/tests/ui_state.rs",
+      "bytes": 1711,
+      "sha256": "4971988b412d41905937670c2957428469098ec39f1c3ac0909424f45486e1d7"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/tools/build_local.py",
+      "bytes": 3930,
+      "sha256": "bc42a47adaed62046d49e7dd41203dba21666125aa19ac484c183d7af21c9d9d"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/tools/check_async_component.py",
+      "bytes": 2965,
+      "sha256": "7b4cc100b153cd6f8d8e31880dc4905a3c4383d9ecdb8b0172d2773120d38554"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/tools/test_roundtrip.cjs",
+      "bytes": 4009,
+      "sha256": "acbfd3a6f3d6d4d933392f47daaddbae8c714e0579aa61faa6f0c4388264a665"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/Cargo.lock",
+      "bytes": 11493,
+      "sha256": "5b9800de548ec28b6f89bdfa39b942dd0fc62101c0946769daf1dbd17f42a03c"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/Cargo.toml",
+      "bytes": 387,
+      "sha256": "97c954eea8518983ea358dbbf387f030cbcf8db2919816b68fe8b2d9b649177c"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/README.md",
+      "bytes": 626,
+      "sha256": "9ef114daf26806caf6a81ac6aaa2eb5f1d1139625c96b8e23b2ce508b08ffb8f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/SDK_LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "34772baa8ca881c92b51f271cd32a54027a7ae39372c85ea0290742d133384cb"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/build.rs",
+      "bytes": 2229,
+      "sha256": "d9fffaf2b1980299e96be8b8ce1aa46c8bab99e4df0e126c70090ffd8c953965"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/manifest.json",
+      "bytes": 516,
+      "sha256": "9a7589cac84783e3f54c2279b94cdb309b1a9d86a98a46944b1f5c7eed9b7cfa"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/runtime-tests/Cargo.lock",
+      "bytes": 50105,
+      "sha256": "acbe7b10d74b5bf45fb18324da598cb07cb1cf92d4fb4e846dc49c02d252ca4c"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/runtime-tests/Cargo.toml",
+      "bytes": 439,
+      "sha256": "48d96adc1ad500e45876f3be3ac7877c189b3a4ebe413219decc26f303d5c0ca"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/runtime-tests/src/main.rs",
+      "bytes": 16037,
+      "sha256": "186d499cafff0755da9064064a638f432a414cb847bfff13feed4defdb43f090"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/src/lib.rs",
+      "bytes": 634,
+      "sha256": "1ddcf052e39454254fd66be3e133ea1f8577c98f85306b9ba4737a213c3703b6"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-clean/tools/build_local.py",
+      "bytes": 5941,
+      "sha256": "3cd403637d0a35c3120f52a83e9e7afc6befeca0fed49289d27c51443c856afc"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/Cargo.lock",
+      "bytes": 11949,
+      "sha256": "87a0f107542423ce39a36f814f1df8b65a974a937080fbf3c416c7fa8a93cbf7"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/Cargo.toml",
+      "bytes": 408,
+      "sha256": "7e0c4cd7af2d1ef4523cb9c1f881b940eb191c36eb657d541424964fb76c261f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/SDK_LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "34772baa8ca881c92b51f271cd32a54027a7ae39372c85ea0290742d133384cb"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/build.rs",
+      "bytes": 796,
+      "sha256": "2c89c390d8d6586664505807d74d06ed9ec9a2a7be6850aa991af0a885cf592f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/manifest.json",
+      "bytes": 516,
+      "sha256": "9b3c7de7be88be98eab211502e5feb3e3db5e35584eb7407dc2326e58a22feca"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/runtime-tests/Cargo.lock",
+      "bytes": 50105,
+      "sha256": "5abf041cfc95f02b3be38b91f50a7bd300790b13791e6f7ce6086f9c907ab41e"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/runtime-tests/Cargo.toml",
+      "bytes": 439,
+      "sha256": "b9b4cc958bae4df1b3ed9a98a291b937f2d2857ed0af6d54f0e67f59a2254356"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/runtime-tests/src/main.rs",
+      "bytes": 16037,
+      "sha256": "f0e8ea0fa77c695f17fda8ca241b1b8ded79c5982157528f4e6df6824bc3a9c4"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/src/lib.rs",
+      "bytes": 634,
+      "sha256": "1ddcf052e39454254fd66be3e133ea1f8577c98f85306b9ba4737a213c3703b6"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/src/render_ui.rs",
+      "bytes": 1941,
+      "sha256": "20df0246f897f6b7c7263dac1e19dd2b95b2adb6a606e795aca93f6070a98284"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-daily/tools/build_local.py",
+      "bytes": 5941,
+      "sha256": "5d25fd368693c6b834cf5d5cc1f69b036e4cdb180e45aeb43f6c08ac1e5dd37b"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/Cargo.lock",
+      "bytes": 11504,
+      "sha256": "81813253890d464905a97bd06bc6ae1f4a5dd5be7a0b48ef3dfcea874a5ea8be"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/Cargo.toml",
+      "bytes": 398,
+      "sha256": "fdd25674268ac2003d14808e01572b852c2572ca4547e757305e77829c34bc4a"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/README.md",
+      "bytes": 1918,
+      "sha256": "8c1efbe2e15e373b5f634e4f88c7cda78098792fd3543ce1792c2627d7114b59"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/SDK_LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "34772baa8ca881c92b51f271cd32a54027a7ae39372c85ea0290742d133384cb"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/build.rs",
+      "bytes": 1489,
+      "sha256": "8063967bfdf9c62e7c8cdf78a826267d086ddf5b044981dcf9720e9b83d3b827"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/manifest.json",
+      "bytes": 547,
+      "sha256": "0d6ec11e9049c01fc03dc296c86e0f34109b1f0fdb1c57b7abe584007a56f916"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/runtime-tests/Cargo.lock",
+      "bytes": 50111,
+      "sha256": "1d7a0f05876fef8bea023783b1a0c79347bfa9086ff2bf13a78faf744bb4f3a8"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/runtime-tests/Cargo.toml",
+      "bytes": 445,
+      "sha256": "3923f3cb30392c2586baf7ee7ed7ecee3565bca246fc6dbcb10e5cfca009188d"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/runtime-tests/README.md",
+      "bytes": 2304,
+      "sha256": "03d2acdb346dc9bfb5bbef946244a663599de481131321be8ed2e6a618ba2b3d"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/runtime-tests/src/main.rs",
+      "bytes": 15652,
+      "sha256": "482d1e8a616b7770fd66aeb14a73deb18b16cb8db86f7e8649fe9776e6b6bf7e"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/src/envelope.rs",
+      "bytes": 1387,
+      "sha256": "ccb2fcffa6e3872099f13ea01e0f68f998b93914e492d328a424276de857adb4"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/src/envelope_tests.rs",
+      "bytes": 2163,
+      "sha256": "d501d05144255f5afcbebe58aaa279c23990b56cb653436342888d10378d73b0"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/src/lib.rs",
+      "bytes": 320,
+      "sha256": "983bc9c9d15b1a6a306d85a3e9cf5680d8f8795f18986e9a4b3bc33e223fbdcc"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/src/receive.rs",
+      "bytes": 2310,
+      "sha256": "b7edd99c92f340a6acf4f8bcd19c8f5a8e703516a9534ba873ff8cce05e331c6"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/src/structure.rs",
+      "bytes": 2180,
+      "sha256": "8229302c827560c972089f413f0a97ada4cd52f52d646c4293c693d0af6d458c"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/src/telemetry.rs",
+      "bytes": 3035,
+      "sha256": "3ab33fb56644744492654588b819a2f83d1bc90fd217bec97c6c793869db24c1"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/src/telemetry_tests.rs",
+      "bytes": 2846,
+      "sha256": "9eff3f22fbee9d274226ebac1a40452c5942aff0761d4fcf1ef28610a1050d2a"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-adapter/tools/build_local.py",
+      "bytes": 5740,
+      "sha256": "f2dda4b7c08194da8e8851254d98c9785baa17c01422bf429215ebc02f233e30"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/Cargo.lock",
+      "bytes": 11507,
+      "sha256": "6afbf31b4d09b5eef550f19dc9e5059fa6e01b7bac29e7652e1a36e20c4c5365"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/Cargo.toml",
+      "bytes": 401,
+      "sha256": "f2204045c09b1a4f796f12724e78c9934b50298ee47de12ed36a8b4d8961390f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/README.md",
+      "bytes": 2043,
+      "sha256": "3eb840270c102ad78df4700ef8f556820bfc8ba3e102acea209191dba28fd571"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/SDK_LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "34772baa8ca881c92b51f271cd32a54027a7ae39372c85ea0290742d133384cb"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/build.rs",
+      "bytes": 1489,
+      "sha256": "b4e33db901d13cc36cf96ce32fd0a9061cc973251ef91f93fc877eece1a3ea6f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/manifest.json",
+      "bytes": 550,
+      "sha256": "0c653e170af1f54c25cf7ba80bc39d7df368771276a4e7f4e1b9cce87c981249"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/runtime-tests/Cargo.lock",
+      "bytes": 50111,
+      "sha256": "1d7a0f05876fef8bea023783b1a0c79347bfa9086ff2bf13a78faf744bb4f3a8"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/runtime-tests/Cargo.toml",
+      "bytes": 445,
+      "sha256": "3923f3cb30392c2586baf7ee7ed7ecee3565bca246fc6dbcb10e5cfca009188d"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/runtime-tests/README.md",
+      "bytes": 2045,
+      "sha256": "046aaff084d689513a7bcffc2d71cb3d23769cd7a78759b6dc00e7837fef3718"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/runtime-tests/src/main.rs",
+      "bytes": 15221,
+      "sha256": "214163fa28a602220b620970c92f3d9af7dc0d51746dbe6cf2921a45b403f98b"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/src/lib.rs",
+      "bytes": 268,
+      "sha256": "93ca6814ae0338f22e60d985c155daaf357ea683d1d0d2b2e03e562ab5d90d4f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/src/receive.rs",
+      "bytes": 2445,
+      "sha256": "a88dc514bdb7f1725ecd462da0ce4802dd674054654a4217f2d1e0c8c731966f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/src/structure.rs",
+      "bytes": 2180,
+      "sha256": "8229302c827560c972089f413f0a97ada4cd52f52d646c4293c693d0af6d458c"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/src/telemetry.rs",
+      "bytes": 3035,
+      "sha256": "3ab33fb56644744492654588b819a2f83d1bc90fd217bec97c6c793869db24c1"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/src/telemetry_tests.rs",
+      "bytes": 2846,
+      "sha256": "9eff3f22fbee9d274226ebac1a40452c5942aff0761d4fcf1ef28610a1050d2a"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-envelope-diagnostic/tools/build_local.py",
+      "bytes": 5701,
+      "sha256": "20b0dab2edc3c216ba74b5867deb327ed1c750ca04a9a27f44f6ca5edeb29093"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/Cargo.lock",
+      "bytes": 11499,
+      "sha256": "e655ecf73277238b6764e5b6ee11c5e7dbecfa6d90b6cf51e378ae8f6ec61660"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/Cargo.toml",
+      "bytes": 414,
+      "sha256": "ebf824758b23f9ed7a489525aa21d92dd2bd2d42e431b03f311cc68b467d8606"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/README.md",
+      "bytes": 2359,
+      "sha256": "9a4e3db4ccef232e7202a5b8605fe795ab80b6b5f26fd979d921fe993c52c879"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/SDK_LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "34772baa8ca881c92b51f271cd32a54027a7ae39372c85ea0290742d133384cb"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/build.rs",
+      "bytes": 1489,
+      "sha256": "b10b697de2042d89365fbf2b331688db86af6837313042028bebf86952c0eb7a"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/manifest.json",
+      "bytes": 561,
+      "sha256": "2e1f294f0f4e5e2e9127f537596465e4f3a9dfe66875335cf0f6703264f77cd7"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/runtime-tests/Cargo.lock",
+      "bytes": 50111,
+      "sha256": "1d7a0f05876fef8bea023783b1a0c79347bfa9086ff2bf13a78faf744bb4f3a8"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/runtime-tests/Cargo.toml",
+      "bytes": 445,
+      "sha256": "3923f3cb30392c2586baf7ee7ed7ecee3565bca246fc6dbcb10e5cfca009188d"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/runtime-tests/README.md",
+      "bytes": 1817,
+      "sha256": "b6186c8ad599c9ecc128f6d714fd647eccea75570d2b2601ac707d361f0ad8ca"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/runtime-tests/src/main.rs",
+      "bytes": 14044,
+      "sha256": "d907ec95761c873d48bc34d131fa11617dbf080edf6c2f8218d4e4a58e0f52ee"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/src/lib.rs",
+      "bytes": 253,
+      "sha256": "9db3a2a6f69682ea11d86127ee107bbe121071de8993c5108e8e772e487fab95"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/src/receive.rs",
+      "bytes": 2445,
+      "sha256": "a88dc514bdb7f1725ecd462da0ce4802dd674054654a4217f2d1e0c8c731966f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/src/telemetry.rs",
+      "bytes": 2752,
+      "sha256": "ca63ab4e653d65968f130c2248c578320eadd7f59ef76a7ecd4ab02482fce43a"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/src/telemetry_tests.rs",
+      "bytes": 1458,
+      "sha256": "830284c85fa3f4a1a3ae368aae4b815d74cb8adfbd34144d235d5e6cda1c4a6d"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4-observation/tools/build_local.py",
+      "bytes": 5659,
+      "sha256": "a99fa22f21a880424867c98afe24c34d4e9b73db9387197e36dd44a7df30dbde"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/Cargo.lock",
+      "bytes": 11492,
+      "sha256": "4926ab96fbc2188d375a26a8052d6d9689d380c39b489257dc9c2f9172470a51"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/Cargo.toml",
+      "bytes": 386,
+      "sha256": "631228717fcee0b8a7395ad2804819ffdad13f142b5663f105c11ba159069e3e"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/README.md",
+      "bytes": 1785,
+      "sha256": "32adec01ec598ec74d0656db06b54a2a9723e2c665455e4f945e1648c24f92f1"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/SDK_LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "34772baa8ca881c92b51f271cd32a54027a7ae39372c85ea0290742d133384cb"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/manifest.json",
+      "bytes": 536,
+      "sha256": "e9b60634baaf98010ae9fefc83c2ae623b4b81b2fc70caa0e62b3da996babcab"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/Cargo.lock",
+      "bytes": 30716,
+      "sha256": "1a4a54f4f1ff9dbaa9f1618a729445911365d8c95e4e91363592321ba7e2556b"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/Cargo.toml",
+      "bytes": 318,
+      "sha256": "ee958953ee7173790a7aee2da76f8e83916f03688888bc76c3787da041096662"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/README.md",
+      "bytes": 1756,
+      "sha256": "5e798f480533589a6675fa2ed4f72d4f059ac8dd85dc09104f3b0f7c6235292f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/api3/guest/Cargo.lock",
+      "bytes": 11210,
+      "sha256": "be34fff9a86ba12176f6a7cf35bf215f3fe3e26f30b1c4aa9388dcdf53ba035a"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/api3/guest/Cargo.toml",
+      "bytes": 304,
+      "sha256": "a181f8f080a2a591ab348123a4ad0b1ba51a8fce605b77673c3c9051e8ae57ca"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/api3/guest/src/lib.rs",
+      "bytes": 1723,
+      "sha256": "9ec254a696fb0262018f0685042813925f4414820cbb71caae4c021caca204a1"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/api3/guest/wit/probe.wit",
+      "bytes": 200,
+      "sha256": "8502ae85b272e91a77f600582725d4edf0f922d270a88eeff65c3b1fb18d31d4"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/api3/host/Cargo.lock",
+      "bytes": 31503,
+      "sha256": "b9896d2904c23889d09ad1eb03d564d5b76fd22138ec4332c63b9614837c648e"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/api3/host/Cargo.toml",
+      "bytes": 346,
+      "sha256": "5b659ec61845dc2a09afbef013285dd9b4b7c368b5e2d13f695dd0901752b6ac"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/api3/host/src/main.rs",
+      "bytes": 2922,
+      "sha256": "5e4cadc8dc48620493d75dc5317783b3e6704bc0c9c5431a533ea2115891e8ba"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/src/main.rs",
+      "bytes": 8758,
+      "sha256": "a5fc4494f8afef4bd6418f729c542dd5c4561654c81b3988ab063991c8494b15"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/runtime-tests/windows/tool-proxy.c",
+      "bytes": 925,
+      "sha256": "d9c5157632a03f786ece2aca3ac28e37eb65029760a9bf53f45300fe6cec6240"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/src/host.rs",
+      "bytes": 11830,
+      "sha256": "129fbb29e85f43bc5e496c4d38bdf63c05b6417656aedfdcbd7e6261958e57b8"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/src/lib.rs",
+      "bytes": 149,
+      "sha256": "55288867a2e6a0ba93fb8fca481f2f5aeb94d1b900a838722b0a3c11a84180e2"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/variants/api4/tools/build_local.py",
+      "bytes": 7803,
+      "sha256": "b916dfba06e2192ab83d311a70d5a34b80f0969865aff5c15ce637417742636a"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/wit/LICENSE",
+      "bytes": 1068,
+      "sha256": "2025db477d3e75ab1494ca32f518d27e7bceddbbd5d0b418cf5ae18a4a5b7e7f"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/wit/deps/astrobox-psys-host.wit",
+      "bytes": 12983,
+      "sha256": "6898e46070a1784ce66dc03e02142057f6529081e1b3ca81d625260e257ffbd2"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/wit/deps/astrobox-psys-plugin.wit",
+      "bytes": 1628,
+      "sha256": "95acbef9cfeea4f001460ff462211f3b33ea57316bc0a2ac482c98b2a0185c27"
+    },
+    {
+      "path": "collection/astrobox-imu-receiver/wit/main.wit",
+      "bytes": 1761,
+      "sha256": "a12e6b9eb0c6b53e632765c92b5ad5224cdbe64da5a26dc9947384b3b5ae1769"
+    },
+    {
+      "path": "collection/watch-s5-probe/.gitignore",
+      "bytes": 63,
+      "sha256": "84ba0c82cb59f19f39dab33b4f6a53608338d274639cbe647d6192de08d3ec07"
+    },
+    {
+      "path": "collection/watch-s5-probe/README.md",
+      "bytes": 6245,
+      "sha256": "f189248d11e98d0e8b64ff40c34a9dee2f8a1812ab8cb6a6949d677cae33416a"
+    },
+    {
+      "path": "collection/watch-s5-probe/diagnostics/startup-minimal/README.md",
+      "bytes": 2253,
+      "sha256": "b6460e25184280670bbf036b825222d78dd7932a46dfb30a0ddebc2b3ee8ff5c"
+    },
+    {
+      "path": "collection/watch-s5-probe/diagnostics/startup-minimal/src/Probe/index.ux",
+      "bytes": 1250,
+      "sha256": "55e690d005a0200604e3585c7fcccf42230e414db50902ec20bc2e616af775fe"
+    },
+    {
+      "path": "collection/watch-s5-probe/diagnostics/startup-minimal/src/app.ux",
+      "bytes": 72,
+      "sha256": "f1bea509bfc5f4f4db0aefef2e639320d829da583ae484425ce87bdc94d7c2d7"
+    },
+    {
+      "path": "collection/watch-s5-probe/diagnostics/startup-minimal/src/manifest.json",
+      "bytes": 327,
+      "sha256": "550df7eaed993231a2a37913c8d6aa95d98b906b0f1465434dab9bef842d1b0e"
+    },
+    {
+      "path": "collection/watch-s5-probe/package-lock.json",
+      "bytes": 370321,
+      "sha256": "f0b96bd3ff4b84b1ad3dde3b1d60fa0d3cb4e0cccc200f0da2f969c48bb9801c"
+    },
+    {
+      "path": "collection/watch-s5-probe/package.json",
+      "bytes": 403,
+      "sha256": "0c61e60f0e8f43ad0d6229a796821558e4a9eb2d128063260ed091e84f0fbdad"
+    },
+    {
+      "path": "collection/watch-s5-probe/quickapp.config.js",
+      "bytes": 71,
+      "sha256": "f92891db93dc70f6b00deaaa3d3c794f4634155610f81602d7684238318265a0"
+    },
+    {
+      "path": "collection/watch-s5-probe/src/Probe/index.ux",
+      "bytes": 12167,
+      "sha256": "9c4a8f86e66b00d32121b753114370359a514098539b819325e6d9ecbb638dd7"
+    },
+    {
+      "path": "collection/watch-s5-probe/src/app.ux",
+      "bytes": 72,
+      "sha256": "f1bea509bfc5f4f4db0aefef2e639320d829da583ae484425ce87bdc94d7c2d7"
+    },
+    {
+      "path": "collection/watch-s5-probe/src/common/icon.png",
+      "bytes": 1373,
+      "sha256": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e"
+    },
+    {
+      "path": "collection/watch-s5-probe/src/common/recorder.js",
+      "bytes": 5061,
+      "sha256": "41a0701e19561d432097de722debcdb713a5701be840b38a65c343315f696d28"
+    },
+    {
+      "path": "collection/watch-s5-probe/src/manifest.json",
+      "bytes": 469,
+      "sha256": "79574e28683210323f883b1d039939a0a4008cc6c2f8a851140e14a877b129b5"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/acquisition-source.test.cjs",
+      "bytes": 3278,
+      "sha256": "d7d50562b51b250a7619d6a2aa0e43d393f1da483f1e45e64d196b6c6a964ead"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/catalog-page.test.cjs",
+      "bytes": 4932,
+      "sha256": "c879f49751ed6829b7b119d49bb6d8d66ff50ca0f4c9e9eda38666e340f2c34c"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/catalog-performance.test.cjs",
+      "bytes": 12064,
+      "sha256": "3808ae43b85ab824a4c1bd8c2b52e2a373bc41fccc7dc0589fd57d3880907bae"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/catalog-recorder.test.cjs",
+      "bytes": 4912,
+      "sha256": "7a0ba60f5c913c60cf3dc3fb74eed528937e2bbc816b88d6a5668651387ca8b0"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/catalog-recovery.test.cjs",
+      "bytes": 14205,
+      "sha256": "32a289a423c7e9507fbc930fdbcf3cde1c4e8f26414cce6f48710a991675918b"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/continuity-recorder.test.cjs",
+      "bytes": 6293,
+      "sha256": "7cf4e784b574bfa94fee0c96999dd4323980265c61095676ecab9004b7fceb6a"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/daily-finish.test.cjs",
+      "bytes": 3254,
+      "sha256": "ff46002ffde53a0babf208c0612882a6ecb04872b2733c519f708a500bad0409"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/directory-uri.test.cjs",
+      "bytes": 4574,
+      "sha256": "603fff472bd7ab7cd42e3aab621190030b5d2ad073f1ae8d55d03ded3709e183"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/export-file-wait-page.test.cjs",
+      "bytes": 6789,
+      "sha256": "50d1b8c597e9d2eb8befa6560cdf647ab581e75493f564515fded5e4d30579f5"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/export-screen-page.test.cjs",
+      "bytes": 9564,
+      "sha256": "4846499a6123534f962c4abb5326d50ce1768ec3d2c84389801816f203e5f27d"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/foreground-recorder.test.cjs",
+      "bytes": 9122,
+      "sha256": "96055237d0643927f421681e0ad3b3dcac6afc58256f6f1ba664147c7c2dacfd"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/input-probe-page.test.cjs",
+      "bytes": 3229,
+      "sha256": "09ceb66a9ff5321c865dd1e0f37e59649569dadbf5f2688754bebee4d95d1bba"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/input-probe.test.cjs",
+      "bytes": 8590,
+      "sha256": "21d84fc9a8cb1c2fa3b66b60d79f333783d0e7eda9196d80c815822c18d82abd"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/lifecycle-reporting.test.cjs",
+      "bytes": 8585,
+      "sha256": "757512fc4a838aa416609cd001afee34db5a5493fe2f356ac8a976e6f9aa60de"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/long-recorder.test.cjs",
+      "bytes": 5504,
+      "sha256": "e8543849322aea48a7256f6c31b7f3cdbac5248dc9a30088778361c7464d7bb2"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/page.test.cjs",
+      "bytes": 4625,
+      "sha256": "ed7e1d6f7df0fc8f8711e97b492c86a7d766e48b4c66cb1278b78d01768e29df"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/precise-capture.test.cjs",
+      "bytes": 4441,
+      "sha256": "33691d960772e993fe716d5b99a1e134eb00dc259862e21aed225cb9eeb34c05"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/precise-recorder.test.cjs",
+      "bytes": 7670,
+      "sha256": "17f285df1578b6c71adb10eb7cb919eeeafb8fbdca46159df24564af30d74f0f"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/progressive-recorder.test.cjs",
+      "bytes": 3375,
+      "sha256": "45070bc4ef5e651fad82c70f4109cf00efe278a9d2c8bd8808e650832d9cb5da"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/recorder.test.cjs",
+      "bytes": 4577,
+      "sha256": "ace13d47cdb0c0f83f00d16b96206a10100e4628ec8a56bc15e9a5db07cc8104"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/research-page.test.cjs",
+      "bytes": 4132,
+      "sha256": "1f3c0843e9e584e1f21b1fd80f708014fe05e036d40674f47efad0c3a6874c40"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/research-ready.test.cjs",
+      "bytes": 11532,
+      "sha256": "338054380b89d7b9736fd1ab8fec44faee5e582245ffd42abd4954494e6de2f7"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/research-recorder.test.cjs",
+      "bytes": 6601,
+      "sha256": "405db3a5f6786dacd73f34f8ab9d7e8579a956e4c897f36312aba547af3361dc"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/research-roundtrip.test.cjs",
+      "bytes": 2431,
+      "sha256": "a639138d9ac4ebf58c2e7fd4a9d2e497c2f949ebcc42e06f6c3ad28559c7cd2b"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/runtime-timing.test.cjs",
+      "bytes": 5190,
+      "sha256": "0a1cad0d6c2d408b1a6079335e11021461bb0273e21375aa2c712749bc3646c0"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/s5.test.cjs",
+      "bytes": 2092,
+      "sha256": "154ae44198f0ac16cd810a251100466de76f5d931cc103ee330f601ce9600bab"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/startup-probe.test.cjs",
+      "bytes": 1442,
+      "sha256": "f99f6ebe1b3904bb0c90818dbbc10df596eac36e309dd2af6ade17f731b03a3b"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/storage-diagnostic-page.test.cjs",
+      "bytes": 3800,
+      "sha256": "827b59bf9304055482b847f28b9a886a6de0468ac712134ac35de265ccdd8865"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/storage-diagnostic.test.cjs",
+      "bytes": 3578,
+      "sha256": "9cbb22849207f43eaf8d098bab2b5c00f5f0c38d03c3faf91f51fa89e8205718"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_acquisition_source_archive.py",
+      "bytes": 2081,
+      "sha256": "f6e89e092d0090c57810a5dd1a1725f0cc3ca7d0e465d757458e5f4b6b75ac77"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_catalog_performance_analysis.py",
+      "bytes": 927,
+      "sha256": "42e30da8a7d784d1a10f00a8ed71d3ee02f9f66c73e5d0699047c6676fc53489"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_catalog_recovery_analysis.py",
+      "bytes": 1455,
+      "sha256": "6cca8679f6586ad31b5e818476f7aa705f3142cdebbd9cd1a095f55ef7cb9d3c"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_continuity_source_archive.py",
+      "bytes": 3647,
+      "sha256": "77e81d4cae8c34ec5863e37cef294477a1ec0f14b37c368ce1d626e6c6ab38ce"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_daily_finish_analysis.py",
+      "bytes": 1289,
+      "sha256": "75ca36ab29960c5412bee9a1250eac937929fc2bfd7e182307b5102310de6d7d"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_foreground_source_archive.py",
+      "bytes": 6512,
+      "sha256": "f6f38b803ef9c533aa7b60ee8dec14f8bc4e8da20525ab616cd7b6d199041b99"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_input_probe_source_archive.py",
+      "bytes": 2888,
+      "sha256": "7429a46b7dba85edfa739e502f4c52c0b5a1aa6adf402b96b8a981070db01db0"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_lifecycle_reporting_analysis.py",
+      "bytes": 1634,
+      "sha256": "462ca9d2735758f79cb963d202306638c485649b165ee221ca3ac6b9b88f506c"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_precise_source_archive.py",
+      "bytes": 2644,
+      "sha256": "eb44daf4e2cf2eed5087c9954b2042f731ed76442d3902539aee70b546d64dbe"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_research_export.py",
+      "bytes": 3881,
+      "sha256": "26858db3d9ace6e6fc470f3465297e2bc452b4744200f0ebb0734f633241958f"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_research_ready_analysis.py",
+      "bytes": 4940,
+      "sha256": "7e3da5f1b69e75d602be9bd4cff41760a39a3119878c8d699683ec79255939df"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_research_source_archive.py",
+      "bytes": 1594,
+      "sha256": "a584539b0f11260c1de7855f32f645116db2b5b09fd5fd00443b1751c614a024"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_runtime_timing_analysis.py",
+      "bytes": 3314,
+      "sha256": "4411684f7d129561da47f6acf805e5f4d08f9dd6d1f85a4d4f77ec8bf7603142"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_startup_source_archive.py",
+      "bytes": 1841,
+      "sha256": "4006c6d5a88e1a6a31c14d7da07004cc9b74bb96e5a8b6d12903dec4df91f495"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/test_transfer_source_archive.py",
+      "bytes": 2091,
+      "sha256": "14ba2bbddd9dbc4da8422c4643d2c2e58fde670e01b48ff0782cdb94b8f6524e"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/transfer-page.test.cjs",
+      "bytes": 2582,
+      "sha256": "02a7f0b3cd2a90fe6b5f62d6d3292d6638474c8124c646620e0c39b0fdf31f24"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/transfer-round.test.cjs",
+      "bytes": 1518,
+      "sha256": "64c399c7c8a49175897473295206dea690ab74748c41b8ac823c92341df03483"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/transfer.test.cjs",
+      "bytes": 2443,
+      "sha256": "5b41c697dfe969b3284cda2ede4d2fb309b5a57d549e3ad0552f9ad3fa1ea58f"
+    },
+    {
+      "path": "collection/watch-s5-probe/tests/ui-page.test.cjs",
+      "bytes": 4705,
+      "sha256": "e90b632c7fc577168a1038a3fd59a739363ab7cf27fbe4d69bec64ed8d3550b1"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/analyze_continuity_export.py",
+      "bytes": 6004,
+      "sha256": "852521a2017fab577dc21f5ab09c7d365d84933d01711d2350d76d1aa41d6847"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/analyze_foreground_export.py",
+      "bytes": 5835,
+      "sha256": "0f93192bdb5ce2e04d32bc4075d842772b67263abd26828999e46352e8fe851a"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/analyze_input_export.py",
+      "bytes": 5743,
+      "sha256": "13df3eb9ec49c70c2152c5dd6cd9949120801c1a47db7c5c880fa44b4bf84566"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/analyze_precise_export.py",
+      "bytes": 4081,
+      "sha256": "2275fb7ef4728205b8fdd95e78a849200db0ae0df777255d3a62d4c212d396e8"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_acquisition_source.cjs",
+      "bytes": 5422,
+      "sha256": "a1af08e78c3bb7a12c007204cdb660df082b6cec0f473145a6eb3f27c80df185"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_catalog_performance_source.cjs",
+      "bytes": 4203,
+      "sha256": "9e932505c3c3a8cf7c65d1d21eef10d0cd3c1d711ccd6a504d6d54d40874c942"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_catalog_recorder_source.cjs",
+      "bytes": 3909,
+      "sha256": "c7de3e20943c425667d0c2ff473ceea09ec544161cd3ac484c03a87662622cf5"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_catalog_recovery_source.cjs",
+      "bytes": 4528,
+      "sha256": "c9cdc7e035115a9c1c059e18c417d16acd001a8dfdebebd7c0d3155375af60a1"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_clean_interface_source.cjs",
+      "bytes": 3932,
+      "sha256": "0e8f1e204af257259d13866b2ce7811315f5a6ab481e919898238b41c0272ee1"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_continuity_recorder_source.cjs",
+      "bytes": 6539,
+      "sha256": "64063a2fe945d04f593628743e0375e9a8d9f3a4a04e4aa2c6ee641b355a2206"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_daily_finish_source.cjs",
+      "bytes": 4454,
+      "sha256": "10d2808315bc89335a765118988ed1ae10c9251516b52fea6e5c888153b5e121"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_directory_uri_fix_source.cjs",
+      "bytes": 4298,
+      "sha256": "c810214c521eded41e2d290386cffe67cb9a745c89ecb109d22ff56bf5047bba"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_export_file_wait_source.cjs",
+      "bytes": 3823,
+      "sha256": "2662da98f319c633d08f75dd0a393751d62aea6fbc5d4cd844c8460f193a8d4c"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_export_screen_source.cjs",
+      "bytes": 3763,
+      "sha256": "5a03e3d6f396281aa71fe10a46dd602362520cdee76403ca5381f6ef482bd43c"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_foreground_recorder_source.cjs",
+      "bytes": 3905,
+      "sha256": "5df4639937ed30344851183c6198129714c8b5034a9044fa4a9d74cc3df0cb0e"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_input_probe_source.cjs",
+      "bytes": 5450,
+      "sha256": "d3a6e3d94bbab0f5d531bda11156213956cc9831cea5406695289ce68da3ab12"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_lifecycle_reporting_source.cjs",
+      "bytes": 4240,
+      "sha256": "fbbc67ea3b9001b5a80aadfaf79ccea261277757245ef9841973c200be2f9044"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_long_recorder_source.cjs",
+      "bytes": 3930,
+      "sha256": "ada58442009feeaf1b244b2e1d5041f2e355f4dd72e3f70e4d94249fb1ce585a"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_precise_recorder_source.cjs",
+      "bytes": 6342,
+      "sha256": "545b0df4e5f62dcea21503de8db1e4542d13e5b3cce6444e121ea650cfdefdb8"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_progressive_recorder_source.cjs",
+      "bytes": 4013,
+      "sha256": "4b879c647538afeb308af41b04f0f4785c99b726b273124221736139e69f4eab"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_research_ready_source.cjs",
+      "bytes": 4394,
+      "sha256": "48b14b8d1478a22368713cb001491935e055a90b0c759d574b82d8abdca78e43"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_research_source.cjs",
+      "bytes": 3862,
+      "sha256": "cf8c66151151342c983c5f26b1425329305f96427b5dbd88ea26736c804f3810"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_rpk.cjs",
+      "bytes": 3283,
+      "sha256": "a9017c51c7559f1e709c44da8479d95d712f92c6fd07ff81cfd1844fa4bec7e3"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_runtime_timing_source.cjs",
+      "bytes": 4159,
+      "sha256": "250bdcd3950a82762a8b1afe9a1ef7e277ea26fff1c0a4f0cc30799757f8d752"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_startup_probe.cjs",
+      "bytes": 2956,
+      "sha256": "6de4be75b0ddbb26d7b135761950dbac5a312f565f32080eef3aa4da45ae56db"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_startup_source.cjs",
+      "bytes": 3548,
+      "sha256": "9e4ee02fcd662546cf96eb0310109358f9cf841d205c63f453409037e447d8e6"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_storage_diagnostic_source.cjs",
+      "bytes": 8643,
+      "sha256": "59d39607b954df84c7cde9b8ddfb1f3161859a87f15e7e9ed8e40fe08d053ad4"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_transfer_round_source.cjs",
+      "bytes": 3676,
+      "sha256": "ee56f354591a58de0da75af26c5dbea8ea027dff2ca842536018ad5da1c20a8d"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_transfer_source.cjs",
+      "bytes": 3632,
+      "sha256": "aa9f90931f714eb63d47f231f0194860c9a8ecd42127ebb0319e2c139ccb79eb"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/build_ui_source.cjs",
+      "bytes": 5198,
+      "sha256": "abf5eae1c8cd6b31c69f87caa687b9d306b58d5397b9dbefb799104daebd285a"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/check_acquisition_source.py",
+      "bytes": 2259,
+      "sha256": "00861ec853654ce96cac6ae614730b976e16c0ebe42fc53ffb7a8c4e9fe6df22"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/check_research_source.py",
+      "bytes": 1960,
+      "sha256": "9f018e1b7b9ae36c798b8e1ac8e54a51b18b5f92ba6bc8d7fb173f08b355e4bd"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/check_rpk.py",
+      "bytes": 4668,
+      "sha256": "af9448d546a6e7abe27a58a915a20af4b13465ae5ac5a995d8b2beabb1f22505"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/check_startup_source.py",
+      "bytes": 1583,
+      "sha256": "9e2db49e2e8a7b16a1c25eb28d0ba00b63e2872179ec0ef9f09061d38d532a6f"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/check_transfer_source.py",
+      "bytes": 1845,
+      "sha256": "d3b0015be386e6303f892814c81566d0689d7bc3a4afbd02daffa3b1fd81fb60"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/decode_export.py",
+      "bytes": 11955,
+      "sha256": "ff48d822195c5f40804e35604744678a21f017f8bd1fa9661114bb4f8937f0cc"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/decode_research_export.py",
+      "bytes": 11961,
+      "sha256": "7e25edb5df2dd393b6b0428959389b8663ddaf7ab5ddd6882df7bdf269b06a09"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/export_phone_icon.py",
+      "bytes": 1560,
+      "sha256": "daaa661b3d91b008dac89dafe2be40446fa3c52baddc96f0cfae017b36dc93d4"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/export_round_icon.py",
+      "bytes": 986,
+      "sha256": "7ad9576b4af316a82f1c2834f1ef3ecad2e25f817e8eaa48b422f092e3550538"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/preview_research_ui.cjs",
+      "bytes": 5514,
+      "sha256": "5d1fef8a1ac2bdd6e1604454051bfdf61b2a160a4afaf556a03552ca292b4250"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/preview_ui.cjs",
+      "bytes": 5019,
+      "sha256": "34c3a0a8496feee60779d3f1e7d5c6b9514b3e116ca2dc0db5f808d6947dd966"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/runtime_timing_contract.py",
+      "bytes": 3704,
+      "sha256": "c028100f17e884918f9e0f979a45e21b2f8654c12a3ae5c19ce367935f3aa041"
+    },
+    {
+      "path": "collection/watch-s5-probe/tools/startup_rate_contract.py",
+      "bytes": 4050,
+      "sha256": "e28f01539248f21b338ce889a9d56ec4d29bd270bddcf921f86b9e8f95528387"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/catalog-performance/overlay.cjs",
+      "bytes": 5826,
+      "sha256": "0559568539ff52e90d0865f615180cdf382d4d4bebe83d7575bf34a744488dd6"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/catalog-performance/src/common/record-catalog.js",
+      "bytes": 6732,
+      "sha256": "cf6cb5ff0037d5a10544442a25aff7c698c31e06c7b6cc1b7701008978bc4db5"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/catalog-recorder/README.md",
+      "bytes": 897,
+      "sha256": "977707efa3cd206964ef7cb1bf8b9f4008fcab9b75e3700caae097ee61178a32"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/catalog-recorder/catalog-overlay.cjs",
+      "bytes": 1301,
+      "sha256": "775c4a8cea763ed81c116c5d8234d5e74e84740321e4dcdcd4fdab0454ada10a"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/catalog-recorder/src/common/record-catalog.js",
+      "bytes": 4600,
+      "sha256": "87228a0fb221d78322d9f0c149625a428d3c32331a3339a94e4902ec79df264c"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/catalog-recovery/catalog-page.cjs",
+      "bytes": 11766,
+      "sha256": "f919cd01c0b0c898932d3e489c2871ed077e63b76a6ae761e139262aeee82f9a"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/catalog-recovery/overlay.cjs",
+      "bytes": 11756,
+      "sha256": "504290d31bd1b1d308583c350106bbec11173d28995ea50bb008a80312fb4aa2"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/clean-interface/README.md",
+      "bytes": 490,
+      "sha256": "cf5d55504b91258fae5e5f39683380351fe7322395894b6955a3f51262e50733"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/clean-interface/page-overlay.cjs",
+      "bytes": 2678,
+      "sha256": "c5bf3183e91f4bb75659b1ce357514eb42c9f609af20fe140f5a5289bb6567ee"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/continuity-recorder/README.md",
+      "bytes": 1722,
+      "sha256": "9377df7212bcd5cd8f9853e5f20886ba98d231b6449308de3912a205d66c0e6c"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/continuity-recorder/src/common/continuity-observer.js",
+      "bytes": 1710,
+      "sha256": "b9e621d670ee0ce05e62f0e83202ddd14cf8cad5800a9fa213af46d8cae6f9d2"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/daily-finish/overlay.cjs",
+      "bytes": 1587,
+      "sha256": "f155bd3f78c1bfb27331de1020960dd8b304302af7a644c0c161c73508e3a70b"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/directory-uri-fix/README.md",
+      "bytes": 1782,
+      "sha256": "b226ee4712d82992d39db26d40da1c24755ed72a7fee134f513e5db4a86c2873"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/directory-uri-fix/src/common/directory-entries.js",
+      "bytes": 749,
+      "sha256": "3415055947dc07920be455e30d3e7ead1ae30b8cf0ea486f48bddc0c16bba50d"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/export-file-wait/README.md",
+      "bytes": 1606,
+      "sha256": "c619aa669f2a6d187a3286bdcad25c5cf8039d35ddace1b322a791043175b54e"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/export-file-wait/file-wait-overlay.cjs",
+      "bytes": 3863,
+      "sha256": "bbec6e4834c0aa6c39e2275b3f304f037bb1387024f34ab191eee3c790537408"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/export-screen/README.md",
+      "bytes": 1113,
+      "sha256": "bb6f2cb596b3101b7549fbb05860c5c08e6b471913e0631327ce608e482efd53"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/export-screen/export-overlay.cjs",
+      "bytes": 5452,
+      "sha256": "5321f93aa2e6fae584b7e7478dece5b0d9832267036a67119c2fb1bd35f9ecb4"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/foreground-recorder/README.md",
+      "bytes": 1178,
+      "sha256": "ee1962cfa7f714ed1169397b98df7cf3f7f9fb1d8ca42c1d95698333ff65fc4a"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/foreground-recorder/screen-overlay.cjs",
+      "bytes": 4524,
+      "sha256": "30f7f05c16697994dc8e1246dfdf47c206719d72067974bb07993cf29b991442"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/foreground-recorder/src/common/screen-guard.js",
+      "bytes": 3050,
+      "sha256": "6e8f91240ed4993edb95b3ff4c8811cda470c9a17ce3da2b2a67a21915670fd3"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/input-probe/README.md",
+      "bytes": 2564,
+      "sha256": "f1d26042cfe9376d11d7f0e1be53b48b541181112374dd367defd235bd4ff1e1"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/input-probe/page-overlay.cjs",
+      "bytes": 5267,
+      "sha256": "4a61efdfc977caf99acc2e57463ddf09fc2ad3b90ef2a3ad2726cb2ce9c60a53"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/input-probe/src/common/input-probe.js",
+      "bytes": 7017,
+      "sha256": "b7d9e140030fbfe94185594cb6ce6ce71cc4c55e3087eee87b103e1529583468"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/lifecycle-reporting/overlay.cjs",
+      "bytes": 1321,
+      "sha256": "eeaa69d4ea789bd29dbf868ac44c0884c306792285b82433429fb3254e095d11"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/long-recorder/README.md",
+      "bytes": 762,
+      "sha256": "6f522ce7206dc9c6cde968514455023c76c0c5b5fa0b6c0c85cffabd50bb45c8"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/long-recorder/overlay.cjs",
+      "bytes": 1388,
+      "sha256": "a88e1e92b9bfde052b9e298f0c66a3247d16733a941de5d5cdb0ab7d9a8596c1"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/precise-recorder/README.md",
+      "bytes": 2476,
+      "sha256": "0fe6587822b6ca1a989be393ae8808992b560fd7cb774e6d07cb4be4b8522c1c"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/precise-recorder/page-overlay.cjs",
+      "bytes": 3443,
+      "sha256": "bb55e08e39cf5a1d9fd76c1514daffbdb94cce30419c70a7d53282afabaf1a7b"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/precise-recorder/src/common/sensor-capture.js",
+      "bytes": 5692,
+      "sha256": "4bc268a5c0427f75707f573d502b85c71519197941226c1afe088d3aa9bc84a5"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/progressive-recorder/README.md",
+      "bytes": 360,
+      "sha256": "1ee3c390b55445d70f6d6cb06b0e934cfa941b09284c95811660b0e62abe0bb1"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/progressive-recorder/overlay.cjs",
+      "bytes": 689,
+      "sha256": "a74ec9d6eeeb9dceb84ac509ae3f62d63e36a9e1d17089cf53615ad16eabd3a3"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-ready/overlay.cjs",
+      "bytes": 6943,
+      "sha256": "c1d5e33e1391de6eb68ededee650719b384ec267d7b6ee95f215044a3e3b1e01"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-recorder/README.md",
+      "bytes": 3819,
+      "sha256": "ec96299fe47ac3f73e784816f8e6eb85df51248c79261f7302b6309b6f670d58"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-recorder/src/Probe/index.ux",
+      "bytes": 20523,
+      "sha256": "9a206a376cbc9568ceb99b84d92eea81e0b010cdcf6485eda1f9f3666f3c0756"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-recorder/src/common/research.js",
+      "bytes": 15470,
+      "sha256": "f1036670e9c77ff8c058cc8d729fe45e86959ef53be172d3b5830e1617228f29"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-transfer/README.md",
+      "bytes": 1623,
+      "sha256": "95190107b05394da7ca153670a9f392caa854faf3ff7ae6d2e2ff67fd4871f83"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-transfer/src/Probe/index.ux",
+      "bytes": 25866,
+      "sha256": "045b6f8144aef24bb5d33f49dd440d24f895555e1200519c08ecc7352190b5e1"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-transfer/src/common/transfer.js",
+      "bytes": 4347,
+      "sha256": "f34cf49a0c07e23c07e0ce35c389dab91b99333d125591c4fdf11ffab948ad48"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-ui/README.md",
+      "bytes": 3064,
+      "sha256": "944c03bd6963b517b390cb9622b0a572ec4d178acbfd0dca4d83104d1f2d261e"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-ui/icon.svg",
+      "bytes": 389,
+      "sha256": "1b88162e7c2a362a2ee21783b5c33026ae3ad8701d557266fed5f96387275510"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-ui/src/Probe/index.ux",
+      "bytes": 15990,
+      "sha256": "4a8fd1bd65e9194c36bb57258b406db2a0677628fc08205f700fe5d750e2502e"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/research-ui/src/common/icon.png",
+      "bytes": 4670,
+      "sha256": "fe050c0bae0c15fd85b04a6c63b0ece63e35f719dcef3794f3b34ddfd3558b6a"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/runtime-timing/README.md",
+      "bytes": 826,
+      "sha256": "3e2030e706644a60a343890648d576b5a2fc69f3cd40ca1df9c97445612606be"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/runtime-timing/overlay.cjs",
+      "bytes": 3874,
+      "sha256": "8b6c3e9248a280b9cd66db99f7cbb6809879b1bbdfb9238b8792778fc5ba46af"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/runtime-timing/src/common/runtime-timing.js",
+      "bytes": 3054,
+      "sha256": "b149d62873e7155eea28eed7802ee73ffeb7a93ddc0ff22168cbdd6088653616"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/storage-diagnostic/README.md",
+      "bytes": 1855,
+      "sha256": "6804eea46369023aee4f44da9cb63749390085228e0bd265f730a423ff548afb"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/storage-diagnostic/src/common/storage-diagnostic.js",
+      "bytes": 3376,
+      "sha256": "69cc63cfdefb06be32114a905849abecb346ea9511c6ef3859f9bedb1c4f4632"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/transfer-round/README.md",
+      "bytes": 1027,
+      "sha256": "1951b6f2526012ad0d0600c4bb43bf52e90bdc59287d61ace5e760709cf0d1c5"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/transfer-round/icon.png",
+      "bytes": 6417,
+      "sha256": "793af99f73d68c8deebc99c4d23900168961411c95818f467ad5f1ebf4752b45"
+    },
+    {
+      "path": "collection/watch-s5-probe/variants/transfer-round/icon.svg",
+      "bytes": 339,
+      "sha256": "b22811f0085776514d75283b0bf4c1d2a107f2b52731ae422e93902015af3100"
+    },
+    {
+      "path": "collection/watch-s5-probe/导出CSV.cmd",
+      "bytes": 89,
+      "sha256": "32251f68e64e6f6f154ff6bc7b7a380bb534aec54f1bbe227b4ae0637a7e77fc"
+    }
+  ]
+}

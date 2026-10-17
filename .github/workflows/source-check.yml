@@ -1,5 +1,8 @@
 name: Source admission checks
-on: [push, pull_request]
+on:
+  push:
+    branches: ['**']
+  pull_request:
 permissions:
   contents: read
 jobs:
@@ -17,8 +20,7 @@ jobs:
           node-version: '22'
       - run: node --test showcase/tests/*.test.mjs
       - run: node --test collection/watch-s5-probe/tests/*.test.cjs
-      - run: python -m unittest discover -s collection/watch-s5-probe/tests -p 'test_*source_archive.py' -v
-      - run: python -m unittest discover -s collection/watch-s5-probe/tests -p 'test_research_export.py' -v
+      - run: python -m unittest discover -s collection/watch-s5-probe/tests -p 'test_*.py' -v
       - run: python -m unittest discover -s collection/phone-imu-recorder/tools -p 'test_*.py' -v
 
       - run: python -m unittest discover -s environment/lidar/tests -v
@@ -56,6 +58,10 @@ jobs:
             extra: ''
           - variant: api4-envelope-adapter
             extra: ''
+          - variant: api4-clean
+            extra: ''
+          - variant: api4-daily
+            extra: ''
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -64,4 +70,6 @@ jobs:
       - run: rustup toolchain install stable --profile minimal --no-self-update
       - run: rustup default stable
       - run: rustup target add wasm32-wasip2
+      - run: cargo fetch --locked --manifest-path collection/astrobox-imu-receiver/variants/${{ matrix.variant }}/Cargo.toml
+      - run: cargo fetch --locked --manifest-path collection/astrobox-imu-receiver/variants/${{ matrix.variant }}/runtime-tests/Cargo.toml
       - run: python collection/astrobox-imu-receiver/variants/${{ matrix.variant }}/tools/build_local.py --test --package ${{ matrix.extra }}

@@ -34,3 +34,7 @@ python tools/repository_guard.py --revision HEAD
 源码包保留六页网站；`showcase/data/`真实曲线和`showcase/assets/`真实手机截图未打包。没有私有素材时，真实信号页会提示样例读取失败、截图不显示；人工三维演示和本地CSV导入仍可用。不要用合成数据填入真实样例位置。
 
 本轮未验收干净clone下的完整视觉效果，只验证源码、依赖与静态服务入口。继续使用本机私有素材时的历史浏览器验收不能当作无数据源码包的视觉验收。
+
+## 2026-10-17采集基线冻结
+
+新增[手机/手表/插件冻结](collection-freeze-2026-10-17.md)与[机器可读清单](frozen-collection-2026-10-17.json)。Git标签只固定源码；真实数据与签名不上传，网站继续本机。后续研究按[路线](../research/2026-10-17-research-restart-and-sensor-capabilities.md)执行。

@@ -32,7 +32,7 @@ class ForegroundAnalysis(unittest.TestCase):
         r['metadata']['metadata']['app_version'] = '0.4.4'
         self.assertEqual(analysis.analyze(r)['screen_policy_verification']['release_status'], 'success')
         self.assertEqual(r['metadata']['metadata']['app_version'], '0.4.4')
-        r['metadata']['metadata']['app_version'] = '0.4.7'
+        r['metadata']['metadata']['app_version'] = '0.4.10'
         with self.assertRaises(ValueError):
             analysis.analyze(r)
     def test_export_screen_profile_keeps_capture_screen_policy_and_raw_version(self):
@@ -46,6 +46,42 @@ class ForegroundAnalysis(unittest.TestCase):
         before = copy.deepcopy(r)
         self.assertFalse(analysis.analyze(r)['screen_policy_verification']['physical_screen_verified'])
         self.assertEqual(r, before)
+    def test_clean_ui_profile_keeps_recording_evidence_and_raw_unchanged(self):
+        r = fixture()
+        r['metadata']['metadata']['app_version'] = '0.4.7'
+        before = copy.deepcopy(r)
+        self.assertEqual(analysis.analyze(r)['screen_policy_verification']['release_status'], 'success')
+        self.assertEqual(r, before)
+    def test_long_profile_requires_its_exact_storage_policy_without_claiming_durability(self):
+        for duration, flush in [(1800000, 8000), (60000, 2000)]:
+            r = fixture()
+            r['metadata']['metadata'].update(app_version='0.4.8', requested_duration_ms=duration,
+                storage_policy={'schema_version': 1, 'row_trigger': 128, 'timed_flush_ms': flush,
+                    'write_timeout_ms': 8000, 'max_buffered_rows': 512,
+                    'semantics': 'JS_scheduling_dependent_no_durability_guarantee'})
+            before = copy.deepcopy(r)
+            result = analysis.analyze(r)
+            self.assertEqual(result['storage_policy_verification']['timed_flush_ms'], flush)
+            self.assertFalse(result['storage_policy_verification']['durability_verified'])
+            self.assertEqual(r, before)
+            r['metadata']['metadata']['storage_policy']['timed_flush_ms'] = 1234
+            with self.assertRaises(ValueError):
+                analysis.analyze(r)
+            del r['metadata']['metadata']['storage_policy']
+            with self.assertRaises(ValueError):
+                analysis.analyze(r)
+    def test_progressive_profile_accepts_only_declared_steps_with_matching_flush_policy(self):
+        for duration in (300000, 600000, 900000, 1200000, 1800000):
+            r = fixture()
+            flush = 2000 if duration <= 300000 else 8000
+            r['metadata']['metadata'].update(app_version='0.4.9', requested_duration_ms=duration,
+                storage_policy={'schema_version': 1, 'row_trigger': 128, 'timed_flush_ms': flush,
+                    'write_timeout_ms': 8000, 'max_buffered_rows': 512,
+                    'semantics': 'JS_scheduling_dependent_no_durability_guarantee'})
+            self.assertEqual(analysis.analyze(r)['storage_policy_verification']['timed_flush_ms'], flush)
+            r['metadata']['metadata']['requested_duration_ms'] = 720000
+            with self.assertRaises(ValueError):
+                analysis.analyze(r)
     def test_screen_report_is_required_and_not_physical_screen_proof(self):
         r = analysis.analyze(fixture())
         self.assertIn('screen_policy_verification', r)

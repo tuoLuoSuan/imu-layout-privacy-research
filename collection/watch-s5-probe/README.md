@@ -1,3 +1,5 @@
+2026-10-17当前入口：S5 **0.4.15** / 接收 **0.2.5**日常版冻结。见[冻结与边界](../../docs/reproducibility/collection-freeze-2026-10-17.md)、[下一阶段研究](../../docs/research/2026-10-17-research-restart-and-sensor-capabilities.md)。本次十分钟前台原件9886行完整；日常版真机界面确认仍待，以下旧版本与待验文字是历史记录，不代表当前状态。
+
 # Watch S5 activity probe 0.1.0
 
 当前传输工作副本：[0.3.1普通蓝牙消息导出](variants/research-transfer/README.md)与[AstroBox接收插件](../astrobox-imu-receiver/README.md)已离线准备，手机接收后一次保存TXT到电脑核验；真实蓝牙与宿主仍待验。用户报告已装0.3.0首页正常，不当采集原件已验。先短记录传输，再功能，最后合并DS。
