@@ -6,6 +6,24 @@ on:
 permissions:
   contents: read
 jobs:
+  joint-suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install numpy
+      - run: node --test collection/imu-capture-suite/tests/*.test.cjs
+      - run: python -m unittest discover -s collection/imu-capture-suite/tests -p 'test_*.py' -v
+      - run: python -m unittest discover -s analysis/phone_pdr/tests -v
+      - run: python -m unittest discover -s analysis/phone_ronin/tests -v
+      - run: python -m unittest discover -s analysis/joint_privacy/tests -v
+      - run: rustup toolchain install stable --profile minimal --no-self-update
+      - run: cargo +stable test --locked --manifest-path collection/imu-capture-suite/plugin/Cargo.toml
   source:
     runs-on: ubuntu-latest
     steps:

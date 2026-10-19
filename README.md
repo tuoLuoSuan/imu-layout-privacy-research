@@ -2,19 +2,21 @@
 
 研究普通应用实际可读的手机和腕部惯性数据：随观察时间、活动覆盖与交互增加，可以区分多少空间信息；腕部是否增加空间层泄露；未观察区域如何保留不确定性。
 
-当前处于采集入口与可行性验证，尚无HAR、轨迹、布局推断或防护效果结果。GitHub最终承载整项研究，App是采集模块。当前远程只用于私有源码备份。
+当前统一使用手机六轴＋S5三轴采集套件0.2.2，一条20秒同会话整包已完成完整性核验，接着恢复MID-360独立几何参考。RoNIN/PDR和联合评价脚手架已有，没有独立轨迹精度、真实oracle、腕部空间增益、布局或防护结论。GitHub承载经检查的私有源码与说明，App是其中的采集模块。
+
+当前入口与证据边界见[2026-10-19联合快照](docs/reproducibility/joint-suite-2026-10-19.md)。历史冻结材料继续保留；本机完整实验日志与原始记录不随源码同步。
 
 | 材料 | 入口与状态 |
 |---|---|
 | 统一研究合同 | [CCF-A合同与流程](docs/research/2026-10-14-research-contract-v1.md)、[主张—证据矩阵](docs/research/claim-evidence-matrix.md)，明确待验证主张与继续门槛 |
 | 数据合同 | [字段/质量字典](docs/data/phone-v1-data-dictionary.md)、[空会话模板](templates/session-context-v1.template.json)，真实补充记录另存 |
-| 当前状态 | [PROJECT_STATE.md](PROJECT_STATE.md)，区分已验证、未知与下一步 |
-| 手机采集 | [IMU采集App](collection/phone-imu-recorder/README.md)：0.2.2，双通道、频率请求、单条删除、手动ZIP导出 |
-| 腕部采集 | [S5日常记录器0.4.15](docs/tutorials/S5日常采集与导出.md)、AstroBox接收0.2.5冻结；一条0.4.13/600.044秒/9886行前台完整原件通过，0415保持采集与运输核心。日常版安装目视未确认，后台、更长时长、硬件Hz/单位轴/同步未验；不再例行重录。 |
+| 当前状态 | [联合快照](docs/reproducibility/joint-suite-2026-10-19.md)；[PROJECT_STATE.md](PROJECT_STATE.md)为历史冻结正文，本机后续完整实验日志不上传 |
+| 当前采集入口 | [IMU联合采集0.2.2](collection/imu-capture-suite/README.md)、[使用卡](collection/imu-capture-suite/安装与使用.md)：手机/表/插件同身份更新，手机一次导出整包；20秒与1/2/5/10分钟 |
+| 历史采集基线 | 手机独立0.2.2、S5记录器0.4.15与接收插件0.2.5保留；旧S5十分钟9886条为工程证据，不替代新版联合十分钟实测 |
 | 环境 | [Ubuntu脚本](environment/setup_ubuntu.sh)、[CPU依赖](environment/requirements-cpu.txt)，ML与ROS分离 |
-| 研究路线 | [回到研究与现有传感器能力](docs/research/2026-10-17-research-restart-and-sensor-capabilities.md)：手机六轴优先做最小空间证伪，手表三轴随后验空间增益；日常活动和受控路线分开 |
+| 研究路线 | [联合研究边界](docs/reproducibility/joint-suite-2026-10-19.md)：比较时长、覆盖与交互；手机单端只是对照，S5三轴固定，腕部增益仍待验证 |
 | 完整研究交付 | [交付清单](docs/research/2026-10-14-完整研究成果交付与下一步.md)：协议、数据合同、模型、实验、图表、论文与网站 |
-| 雷达参考准备 | [新参考工具](environment/lidar/README.md)、[下一次协议](docs/protocols/2026-10-15-reference-and-phone-pilot.md)：离线已测，ROS/机位/几何仍待验 |
+| 雷达参考准备 | [参考工具](environment/lidar/README.md)：已有15秒静态候选，坐标/几何仍待核，机位改变须重新记录；只进评价侧 |
 | 展示 | [本地六页工作台](showcase/README.md)：人工三维示意、信号、XGBoost说明、采集准备与成果 |
 | 版本与证据 | [采集软件冻结](docs/reproducibility/collection-freeze-2026-10-17.md)、[精确清单](docs/reproducibility/frozen-collection-2026-10-17.json)，保留旧手机66文件冻结清单 |
 | 协作 | [CONTRIBUTING.md](CONTRIBUTING.md)、[源码白名单](repository-policy.json) |

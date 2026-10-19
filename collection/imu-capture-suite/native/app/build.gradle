@@ -1,0 +1,26 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'org.imulayout.recorder'
+    compileSdk 37
+    buildToolsVersion '37.0.0'
+    defaultConfig {
+        applicationId 'org.imulayout.jointprobe'
+        minSdk 34
+        targetSdk 37
+        versionCode 5
+        versionName '0.2.2'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures { buildConfig true }
+    def sourceDigest = java.security.MessageDigest.getInstance('SHA-256')
+    fileTree('src/main').files.sort { it.path }.each { sourceDigest.update(it.bytes) }
+    defaultConfig { buildConfigField 'String', 'SOURCE_DIGEST', '"' + sourceDigest.digest().encodeHex().toString() + '"' }
+    buildTypes { release { minifyEnabled false } }
+}
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+}
