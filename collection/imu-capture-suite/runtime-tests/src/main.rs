@@ -57,6 +57,7 @@ async fn main()->Result<()> {
     let busy=std::env::args().any(|s|s=="busy");
     let v2=std::env::args().any(|s|s=="v2");
     let reply_deny=std::env::args().any(|s|s=="reply-denied");
+    let watch_failure=std::env::args().any(|s|s=="watch-failure");
     let structure_only=std::env::args().any(|s|s=="structure-only");
     let enveloped=std::env::args().any(|s|s=="enveloped");
     let mut cfg=Config::new();cfg.wasm_component_model(true).wasm_component_model_async(true);
@@ -118,6 +119,10 @@ async fn main()->Result<()> {
         if v["p"]=="J_DATA_ACK1" {
             let text=std::fs::read_to_string(std::path::Path::new(&c.run_root).join(format!("joint_records/{}.jsonl",v["native_sid"].as_str().unwrap()))).unwrap();
             assert!(text.contains("watch_data"),"ACK before persistence");
+        }
+        if v["p"]=="J_FAIL_ACK1" {
+            let text=std::fs::read_to_string(std::path::Path::new(&c.run_root).join(format!("joint_records/{}.jsonl",v["native_sid"].as_str().unwrap()))).unwrap();
+            assert!(text.contains("watch_failure"),"failure ACK before persistence");
         }
         c.replies.push(data);denied});
         Ok((if rejected {Err("synthetic reply denied".to_string())}else{Ok(())},))
@@ -184,6 +189,18 @@ async fn main()->Result<()> {
         event.call_concurrent(a,&[Val::Enum("interconnect-message".into()),Val::String(r#"{"p":"J_HELLO1","sid":"watch-session","w1_ms":1792300000000}"#.into())],&mut result).await?;
         let hello=a.with(|mut s|s.data_mut().replies.last().unwrap().clone());assert_eq!(serde_json::from_str::<serde_json::Value>(&hello)?["native_sid"],"native-session");
         let w1=std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_millis()as u64;
+        if watch_failure{
+            let fail=serde_json::json!({"p":"J_FAIL1","sid":"watch-session","native_sid":"native-session","stage":"block","error":"synthetic local block timeout","count":16,"blocks":2,"start_ms":w1,"stop_ms":w1+8000,"stop_reason":"failure"}).to_string();
+            for _ in 0..2{event.call_concurrent(a,&[Val::Enum("interconnect-message".into()),Val::String(fail.clone())],&mut result).await?;let rep=a.with(|mut s|s.data_mut().replies.last().unwrap().clone());let rep:serde_json::Value=serde_json::from_str(&rep)?;assert_eq!(rep["p"],"J_FAIL_ACK1");assert_eq!(rep["saved"],true);}
+            handle.call_concurrent(a,&[Val::U32(23),http_request(r#"{"kind":"native_clock_req","sid":"native-session","seq":1,"nonce":"failed-poll","n1_ns":2000000000}"#)],&mut hr).await?;let(status,rep)=http_response(&hr[0]);assert_eq!(status,200);assert_eq!(rep["watch_failed"],true);assert_eq!(rep["watch_failure_stage"],"block");assert_eq!(rep["watch_rows"],0);
+            event.call_concurrent(a,&[Val::Enum("interconnect-message".into()),Val::String(r#"{"p":"J_HELLO1","sid":"wrong-new-watch","w1_ms":1792300000000}"#.into())],&mut result).await?;let rep=a.with(|mut s|s.data_mut().replies.last().unwrap().clone());assert_eq!(serde_json::from_str::<serde_json::Value>(&rep)?["p"],"J_ERR1");
+            let original=std::fs::read(&journal)?;
+            click.call_concurrent(a,&[Val::String("cancel".into()),Val::Enum("CLICK".into()),Val::String(String::new())],&mut result).await?;
+            click.call_concurrent(a,&[Val::String("save".into()),Val::Enum("CLICK".into()),Val::String(String::new())],&mut result).await?;
+            click.call_concurrent(a,&[Val::String("prepare".into()),Val::Enum("CLICK".into()),Val::String(String::new())],&mut result).await?;
+            handle.call_concurrent(a,&[Val::U32(23),http_request(r#"{"kind":"native_clock_req","sid":"next-session","seq":0,"nonce":"next","n1_ns":3000000000}"#)],&mut hr).await?;assert_eq!(http_response(&hr[0]).0,200);assert_eq!(std::fs::read(&journal)?,original);
+            return Ok(());
+        }
         let req=serde_json::json!({"p":"J_CLK_REQ1","sid":"watch-session","native_sid":"native-session","seq":0,"w1_ms":w1}).to_string();
         event.call_concurrent(a,&[Val::Enum("interconnect-message".into()),Val::String(req)],&mut result).await?;
         let rep=a.with(|mut s|s.data_mut().replies.last().unwrap().clone());let rep:serde_json::Value=serde_json::from_str(&rep)?;assert_eq!(rep["p"],"J_CLK_REP1");
@@ -217,6 +234,7 @@ async fn main()->Result<()> {
     }).await??;
     let c=store.data();
     if deny||busy||std::env::args().any(|s|s=="http-denied"){assert_eq!(c.sends,0);assert!(!journal.exists());if busy{assert_eq!(c.http_starts,0);}}
+    else if watch_failure{let raw=std::fs::read(&journal)?;let text=std::str::from_utf8(&raw)?;assert_eq!(text.lines().filter(|s|s.contains("\"kind\":\"watch_failure\"")).count(),1);assert!(text.contains("watch_failure_duplicate"));assert!(!text.contains("watch_end"));assert!(c.save_finished);assert_eq!(c.saved_bytes,raw);assert_eq!(c.http_stops,1);}
     else if !collision&&!reply_deny{let raw=std::fs::read(&journal)?;let text=std::str::from_utf8(&raw)?;assert_eq!(text.lines().filter(|s|s.contains("\"kind\":\"watch_data\"")).count(),1);assert!(text.contains("watch_data_duplicate"));assert!(text.contains("watch_end"));if c.save_cancelled{assert!(!c.save_finished);assert!(c.saved_bytes.is_empty());}else{assert!(c.save_finished);assert_eq!(c.saved_bytes,raw);}assert_eq!(c.http_stops,1);}
     println!("PASS new HTTP-world WASM: isolated WASI persistence, native and watch sid/nonce binding, CRC blocks, duplicate idempotence, canceled late isolation, system-save byte equality. Mock host only, not Android/BLE/physical sync.");
     Ok(())

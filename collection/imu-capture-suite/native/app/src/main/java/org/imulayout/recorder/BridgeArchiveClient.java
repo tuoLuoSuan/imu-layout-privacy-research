@@ -14,7 +14,8 @@ public final class BridgeArchiveClient {
   if(!sid.matches("[A-Za-z0-9_-]{1,64}"))throw new IOException("记录身份无效");
   String nonce=UUID.randomUUID().toString();HttpURLConnection c=(HttpURLConnection)new URL("http://127.0.0.1:"+port+"/export").openConnection();
   try{
-   c.setRequestMethod("POST");c.setInstanceFollowRedirects(false);c.setConnectTimeout(2500);c.setReadTimeout(8000);c.setDoOutput(true);c.setUseCaches(false);c.setRequestProperty("Content-Type","application/json; charset=utf-8");
+   // Export must not leave an old bridge-generation socket available to the next recording.
+   c.setRequestMethod("POST");c.setInstanceFollowRedirects(false);c.setConnectTimeout(2500);c.setReadTimeout(8000);c.setDoOutput(true);c.setUseCaches(false);c.setRequestProperty("Content-Type","application/json; charset=utf-8");c.setRequestProperty("Connection","close");
    byte[] body=new JSONObject().put("kind","export_session").put("sid",sid).put("nonce",nonce).toString().getBytes(StandardCharsets.UTF_8);c.setFixedLengthStreamingMode(body.length);
    try(OutputStream o=c.getOutputStream()){o.write(body);}
    int code=c.getResponseCode();if(code!=200)throw new IOException("连接插件未能导出本条日志（"+code+"）");

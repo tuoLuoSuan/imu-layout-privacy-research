@@ -34,7 +34,8 @@ public final class ClockBridgeClient {
    try{
     String nonce=UUID.randomUUID().toString();JSONObject req=Jsons.object("kind","native_clock_req","sid",sid,"seq",seq,"nonce",nonce);
     HttpURLConnection c=(HttpURLConnection)new URL("http://127.0.0.1:"+port+"/bridge").openConnection();active=c;
-    c.setRequestMethod("POST");c.setInstanceFollowRedirects(false);c.setConnectTimeout(2500);c.setReadTimeout(5000);c.setDoOutput(true);c.setRequestProperty("Content-Type","application/json; charset=utf-8");c.setUseCaches(false);
+    // A prepared bridge has a new server id; never pool a socket from its predecessor.
+    c.setRequestMethod("POST");c.setInstanceFollowRedirects(false);c.setConnectTimeout(2500);c.setReadTimeout(5000);c.setDoOutput(true);c.setRequestProperty("Content-Type","application/json; charset=utf-8");c.setRequestProperty("Connection","close");c.setUseCaches(false);
     long n1=clock.getAsLong();req.put("n1_ns",n1);byte[] body=req.toString().getBytes(StandardCharsets.UTF_8);c.setFixedLengthStreamingMode(body.length);
     try(OutputStream out=c.getOutputStream()){out.write(body);}
     int code=c.getResponseCode();ByteArrayOutputStream bytes=new ByteArrayOutputStream();
@@ -48,7 +49,9 @@ public final class ClockBridgeClient {
     JSONObject rep=new JSONObject(raw);ClockBridgeRules.checkReply(rep,sid,seq,nonce,n1);
     long[] interval=ClockBridgeRules.bounds(n1,n4,ClockBridgeRules.integer(rep,"p2_us"),ClockBridgeRules.integer(rep,"p3_us"));
     emit("joint_native_exchange",Jsons.object("request",req,"reply",rep,"n1_ns",n1,"n4_ns",n4,"native_minus_plugin_ns_low",interval[0],"native_minus_plugin_ns_high",interval[1],"physical_clock_accepted",false));
-    count++;status=rep.optString("watch_sid","").isEmpty()?"手机已连接，请在表上开始":"已连接 · 腕部 "+rep.optLong("watch_rows")+" 条";
+    count++;
+    if(rep.optBoolean("watch_failed",false)){String stage=rep.isNull("watch_failure_stage")?"unknown":rep.optString("watch_failure_stage","unknown");status="腕部采集失败（"+(stage.isEmpty()?"unknown":stage)+"），部分记录保留";emit("joint_watch_failure",Jsons.object("stage",stage,"watch_rows",rep.optLong("watch_rows"),"completed_exchanges",count,"partial_preserved",true));if(!cancelled)failed.accept(status);return;}
+    status=rep.optString("watch_sid","").isEmpty()?"手机已连接，请在表上开始":"已连接 · 腕部 "+rep.optLong("watch_rows")+" 条";
     if(rep.getBoolean("watch_finished")){status="本次联机记录已接收，正在保存";if(!cancelled)finished.run();return;}
     Thread.sleep(1000);
    }catch(InterruptedException e){Thread.currentThread().interrupt();return;}

@@ -43,7 +43,7 @@ def analyze(native_zip,plugin_jsonl):
         values=list(csv.DictReader(io.StringIO(blobs[channel+'.csv'].decode('utf-8'))));native_rows.append(len(values))
     insist(native_rows==meta['received']==meta['confirmed'],'native accepted/persisted CSV counts mismatch')
     insist(meta.get('dropped')==[0,0],'native dropped rows: inspect partial files')
-    plugin_native={};watch_requests={};native_intervals=[];watch_intervals=[];watch_sid=None;rows=[];block_index=0;end=None
+    plugin_native={};watch_requests={};native_intervals=[];watch_intervals=[];watch_sid=None;rows=[];block_index=0;end=None;failure=None
     for v in logs[1:]:
         k=v['kind']
         if k=='native_request':
@@ -73,7 +73,16 @@ def analyze(native_zip,plugin_jsonl):
             p=v['packet'];i=integer(p,'index');insist(i<block_index,'unbound duplicate block')
             original=[x['packet']for x in logs if x['kind']=='watch_data'and x['packet']['index']==i];insist(len(original)==1 and original[0]==p,'conflicting duplicate')
         elif k=='watch_end':
-            insist(end in [None,v['packet']],'conflicting end');end=v['packet']
+            insist(failure is None,'end after failure');insist(end in [None,v['packet']],'conflicting end');end=v['packet']
+        elif k=='watch_failure':
+            p=v['packet'];insist(end is None,'failure after end');insist(failure in [None,p],'conflicting failure')
+            insist(p.get('sid')==watch_sid and p.get('native_sid')==sid,'failure identity mismatch')
+            insist(p.get('stop_reason')=='failure' and isinstance(p.get('stage'),str) and 0<len(p['stage'])<=32,'failure stage invalid')
+            insist(isinstance(p.get('error'),str) and 0<len(p['error'])<=240,'failure message invalid')
+            insist(integer(p,'count')>=len(rows) and integer(p,'blocks')>=block_index,'failure counts regressed')
+            failure=p
+        elif k=='watch_failure_duplicate':
+            insist(failure==v['packet'],'unbound failure duplicate')
         else:raise ValueError('unknown plugin journal kind: '+str(k))
     insist([r['seq']for r in watch_intervals]==list(range(len(watch_intervals))),'watch observation sequence')
     native_events=[e for e in events if e.get('type')=='joint_native_exchange']
@@ -91,11 +100,23 @@ def analyze(native_zip,plugin_jsonl):
         insist(integer(end,'count')==len(rows)and integer(end,'blocks')==block_index and integer(end,'clock_observations')==len(watch_intervals),'watch end counts mismatch')
         start,stop=integer(end,'start_ms'),integer(end,'stop_ms');insist(stop>=start and all(start<=r[1]<=stop for r in rows),'watch samples outside recording support')
         insist(end['acquisition'].get('accepted_rows')==len(rows),'watch acquisition accepted count mismatch')
+    if failure is not None:
+        insist(failure['native_sid']==sid and failure['sid']==watch_sid,'foreign failure')
+        reported_rows,reported_blocks=integer(failure,'count'),integer(failure,'blocks')
+        insist(len(rows)<=reported_rows<=20000 and block_index<=reported_blocks<=reported_rows,'failure counts mismatch')
+        start,stop=integer(failure,'start_ms'),integer(failure,'stop_ms');insist(stop>=start and all(start<=r[1]<=stop for r in rows),'watch samples outside failure support')
     gaps=[b[1]-a[1]for a,b in zip(rows,rows[1:])]
     beacon=[e['details']for e in events if e.get('type')=='joint_beacon_draw']
+    status='same_session_transport_failed_partial'if failure is not None else('same_session_transport_complete_probe_only'if end is not None else'partial_probe_only')
     return {
-        'schema_version':1,'status':'same_session_transport_complete_probe_only'if end is not None else'partial_probe_only',
+        'schema_version':1,'status':status,
         'native_sid':sid,'watch_sid':watch_sid,'native_rows':native_rows,'watch_rows':len(rows),'watch_blocks':block_index,
+        'watch_failed':failure is not None,'watch_failure_stage':None if failure is None else failure['stage'],
+        'watch_failure_message':None if failure is None else failure['error'],
+        'watch_failure_reported_rows':None if failure is None else integer(failure,'count'),
+        'watch_failure_reported_blocks':None if failure is None else integer(failure,'blocks'),
+        'watch_local_persisted_rows':None,
+        'failure_count_semantics':'watch_rows/blocks are received records; failure-reported counts are local accepted/queued counts, not verified local persistence',
         'watch_end_reason':None if end is None else end['stop_reason'],'watch_max_callback_gap_ms':max(gaps)if gaps else None,
         'last_sample_shares_recorded_stop_ms':bool(rows and end is not None and rows[-1][1]==end['stop_ms']),
         'stop_tie_semantics':'ordered callbacks may share one quantized Date.now millisecond; retained, not a physical half-open boundary claim',

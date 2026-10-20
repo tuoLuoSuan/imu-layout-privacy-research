@@ -44,12 +44,14 @@ pub struct Action{pub reply:Value,pub journal:Value,pub fresh:bool}
 #[derive(Default)]
 pub struct Server{
  native_sid:Option<String>,native_next:u64,watch_sid:Option<String>,data:BTreeMap<u64,(String,String)>,rows:u64,first_time:u64,last_time:u64,
- clock_next:u64,pending:Option<Value>,clock_count:u64,end:Option<Value>,
+ clock_next:u64,pending:Option<Value>,clock_count:u64,end:Option<Value>,failure:Option<Value>,
 }
 impl Server{
  pub fn sid(&self)->Option<&str>{self.native_sid.as_deref()}
  pub fn rows(&self)->u64{self.rows}
  pub fn complete(&self)->bool{self.end.is_some()}
+ pub fn failed(&self)->bool{self.failure.is_some()}
+ pub fn failure_stage(&self)->Option<&str>{self.failure.as_ref().and_then(|f|f.get("stage")).and_then(Value::as_str)}
  pub fn native(&mut self,v:Value,p2:u64,p3:u64)->Result<Action,String>{
   keys(&v,&["kind","sid","seq","nonce","n1_ns"])?;
   if string(&v,"kind")?!="native_clock_req"{return Err("invalid native kind".into());}
@@ -57,22 +59,40 @@ impl Server{
   if seq>=2048||n1==0||p2<1_000_000_000_000_000||p3<p2||p3-p2>5_000_000{return Err("native clock bounds invalid".into());}
   if self.native_sid.as_ref().is_some_and(|s|s!=&sid)||seq!=self.native_next{return Err("native session/sequence mismatch".into());}
   let fresh=self.native_sid.is_none();self.native_sid=Some(sid.clone());self.native_next+=1;
-  let reply=json!({"kind":"native_clock_reply","sid":sid,"seq":seq,"nonce":nonce,"n1_ns":n1,"p2_us":p2,"p3_us":p3,"watch_sid":self.watch_sid,"watch_rows":self.rows,"watch_clock_observations":self.clock_count,"watch_finished":self.complete(),"watch_stop_reason":self.end.as_ref().map(|e|&e["stop_reason"]),"physical_clock_accepted":false});
+  let reply=json!({"kind":"native_clock_reply","sid":sid,"seq":seq,"nonce":nonce,"n1_ns":n1,"p2_us":p2,"p3_us":p3,"watch_sid":self.watch_sid,"watch_rows":self.rows,"watch_clock_observations":self.clock_count,"watch_finished":self.complete()||self.failure.is_some(),"watch_failed":self.failure.is_some(),"watch_failure_stage":self.failure_stage(),"watch_stop_reason":self.end.as_ref().map(|e|e["stop_reason"].clone()).or_else(||if self.failure.is_some(){Some(json!("failure"))}else{None}),"physical_clock_accepted":false});
   Ok(Action{reply:reply.clone(),journal:json!({"kind":"native_request","request":v,"reply":reply}),fresh})
  }
  pub fn watch(&mut self,v:Value,p2:u64,p3:u64)->Result<Action,String>{
   let p=string(&v,"p")?;let sid=identity(&v,"sid")?;let native=self.native_sid.clone().ok_or("start native phone recorder first")?;
+  if self.failure.is_some()&&p!="J_FAIL1"{return Err("watch session failed; end this session and start a new one".into());}
   if p=="J_HELLO1"{
    let duration=if v.get("duration_ms").is_some(){keys(&v,&["p","sid","w1_ms","duration_ms"])?;u(&v,"duration_ms")?}else{keys(&v,&["p","sid","w1_ms"])?;20000};
    if ![20000,60000,120000,300000,600000].contains(&duration){return Err("unsupported watch duration".into());}
    if u(&v,"w1_ms")?<1_000_000_000_000{return Err("watch wall clock invalid".into());}
    if self.watch_sid.as_ref().is_some_and(|old|old!=&sid){return Err("another watch session active".into());}
-   if self.complete(){return Err("session is already sealed".into());}self.watch_sid=Some(sid.clone());
+   if self.complete()||self.failure.is_some(){return Err("session is already sealed".into());}self.watch_sid=Some(sid.clone());
    let reply=json!({"p":"J_HELLO_ACK1","sid":sid,"native_sid":native,"duration_ms":duration});
    return Ok(Action{reply:reply.clone(),journal:json!({"kind":"watch_hello","request":v,"reply":reply}),fresh:false});
   }
   if self.watch_sid.as_ref()!=Some(&sid)||string(&v,"native_sid")?!=native{return Err("watch session not bound".into());}
   match p{
+   "J_FAIL1"=>{
+    keys(&v,&["p","sid","native_sid","stage","error","count","blocks","start_ms","stop_ms","stop_reason"])?;
+    if self.end.is_some(){return Err("session already sealed".into());}
+    if let Some(old)=&self.failure{
+     if old==&v{return Ok(Action{reply:json!({"p":"J_FAIL_ACK1","sid":sid,"native_sid":native,"saved":true}),journal:json!({"kind":"watch_failure_duplicate","packet":v}),fresh:false});}
+     return Err("conflicting watch failure".into());
+    }
+    let stage=string(&v,"stage")?;
+    if !["unknown","cancel","hello","mkdir","list","head","block","tail","sensor","transport","clock","tick"].contains(&stage){return Err("watch failure stage invalid".into());}
+    let message=string(&v,"error")?;if message.is_empty()||message.len()>240{return Err("watch failure message invalid".into());}
+    if string(&v,"stop_reason")?!="failure"{return Err("watch failure reason invalid".into());}
+    let count=u(&v,"count")?;let blocks=u(&v,"blocks")?;let start=u(&v,"start_ms")?;let stop=u(&v,"stop_ms")?;
+    if count>20000||blocks>20000||stop<start||stop-start>900000{return Err("watch failure bounds invalid".into());}
+    if count<self.rows||blocks<self.data.len() as u64{return Err("watch failure counts behind received data".into());}
+    self.failure=Some(v.clone());
+    Ok(Action{reply:json!({"p":"J_FAIL_ACK1","sid":sid,"native_sid":native,"saved":true}),journal:json!({"kind":"watch_failure","packet":v}),fresh:false})
+   },
    "J_CLK_REQ1"=>{
     keys(&v,&["p","sid","native_sid","seq","w1_ms"])?;let seq=u(&v,"seq")?;let w1=u(&v,"w1_ms")?;
     if self.complete()||self.pending.is_some()||seq!=self.clock_next||seq>=512||w1<1_000_000_000_000||p2<1_000_000_000_000_000||p3<p2{return Err("watch clock request rejected".into());}

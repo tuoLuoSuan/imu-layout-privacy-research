@@ -52,3 +52,19 @@ class AnalyzerTest(unittest.TestCase):
  def test_stop_ms_tie_is_retained_and_disclosed(self):
     with tempfile.TemporaryDirectory()as d:
         p=Path(d);log,_,wl,_=fixture(p);end=next(v for v in log if v['kind']=='watch_end')['packet'];end['stop_ms']=W+61;end['stop_reason']='user';wl();r=mod.analyze(p/'native.zip',p/'plugin.jsonl');self.assertEqual(r['watch_rows'],2);self.assertTrue(r['last_sample_shares_recorded_stop_ms'])
+ def test_watch_failure_is_readable_and_not_complete(self):
+    with tempfile.TemporaryDirectory()as d:
+        p=Path(d);log,_,wl,_=fixture(p);log[:]=[v for v in log if v['kind']!='watch_end']
+        log.append({'kind':'watch_failure','packet':{'p':'J_FAIL1','sid':'watch-session','native_sid':'native-session','stage':'block','error':'synthetic block write timeout','count':2,'blocks':1,'start_ms':W,'stop_ms':W+61,'stop_reason':'failure'}});wl()
+        r=mod.analyze(p/'native.zip',p/'plugin.jsonl');self.assertEqual(r['watch_rows'],2);self.assertTrue(r['watch_failed']);self.assertEqual(r['watch_failure_stage'],'block');self.assertEqual(r['status'],'same_session_transport_failed_partial');self.assertFalse(r['joint_result'])
+ def test_end_after_failure_is_rejected(self):
+    with tempfile.TemporaryDirectory()as d:
+        p=Path(d);log,_,wl,_=fixture(p);end=next(v for v in log if v['kind']=='watch_end');log.remove(end);log.append({'kind':'watch_failure','packet':{'p':'J_FAIL1','sid':'watch-session','native_sid':'native-session','stage':'block','error':'synthetic block write timeout','count':2,'blocks':1,'start_ms':W,'stop_ms':W+61,'stop_reason':'failure'}});log.append(end);wl();self.assertRaises(ValueError,mod.analyze,p/'native.zip',p/'plugin.jsonl')
+ def test_local_failure_before_upload_keeps_reported_and_received_counts_separate(self):
+    with tempfile.TemporaryDirectory()as d:
+        p=Path(d);log,_,wl,_=fixture(p);log[:]=[v for v in log if v['kind']not in ['watch_data','watch_end']]
+        log.append({'kind':'watch_failure','packet':{'p':'J_FAIL1','sid':'watch-session','native_sid':'native-session','stage':'block','error':'synthetic local write timeout','count':16,'blocks':2,'start_ms':W,'stop_ms':W+2000,'stop_reason':'failure'}});wl()
+        r=mod.analyze(p/'native.zip',p/'plugin.jsonl');self.assertEqual(r['watch_rows'],0);self.assertEqual(r['watch_blocks'],0);self.assertEqual(r['watch_failure_reported_rows'],16);self.assertEqual(r['watch_failure_reported_blocks'],2);self.assertIsNone(r['watch_local_persisted_rows']);self.assertEqual(r['status'],'same_session_transport_failed_partial');self.assertFalse(r['oracle_ready'])
+ def test_failure_cannot_underreport_received_rows(self):
+    with tempfile.TemporaryDirectory()as d:
+        p=Path(d);log,_,wl,_=fixture(p);log[:]=[v for v in log if v['kind']!='watch_end'];log.append({'kind':'watch_failure','packet':{'p':'J_FAIL1','sid':'watch-session','native_sid':'native-session','stage':'block','error':'synthetic','count':1,'blocks':0,'start_ms':W,'stop_ms':W+2000,'stop_reason':'failure'}});wl();self.assertRaises(ValueError,mod.analyze,p/'native.zip',p/'plugin.jsonl')

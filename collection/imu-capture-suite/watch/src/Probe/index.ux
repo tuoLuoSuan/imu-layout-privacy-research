@@ -17,15 +17,15 @@ import sensor from '@system.sensor'
 import file from '@system.file'
 const joint=require('../common/joint.js');
 export default {
- data:{message:'先在手机开始采集',count:0,clocks:0,timeText:'00:00',durationMs:60000,durationLabel:'1分钟',actionLabel:'开始采集',busy:false,footer:'手机六轴 + 手表三轴 · v0.2.2'},
- onInit(){this._generation=0;this._started=false;this._timer=null;this._ready=null;this._engine=null;},
+ data:{message:'先在手机开始采集',count:0,clocks:0,timeText:'00:00',durationMs:60000,durationLabel:'1分钟',actionLabel:'开始采集',busy:false,footer:'手机六轴 + 手表三轴 · v0.2.5'},
+ onInit(){this._generation=0;this._started=false;this._destroyed=false;this._timer=null;this._ready=null;this._engine=null;},
  keep(on){try{brightness.setKeepScreenOn({keepScreenOn:on,success:()=>{},fail:()=>{}});}catch(e){}},
  clear(){if(this._timer){clearInterval(this._timer);this._timer=null;}if(this._ready){clearTimeout(this._ready);this._ready=null;}},
  cycleDuration(){if(this._started)return;const d=[20000,60000,120000,300000,600000],words=['20秒检查','1分钟','2分钟','5分钟','10分钟'];const i=(d.indexOf(this.durationMs)+1)%d.length;this.durationMs=d[i];this.durationLabel=words[i];},
  primary(){if(this._started)this.stop();else this.start();},
- update(s){this.count=s.count;this.clocks=s.clock_observations;const seconds=Math.floor((s.elapsed_ms||0)/1000);this.timeText=('0'+Math.floor(seconds/60)).slice(-2)+':'+('0'+seconds%60).slice(-2);const words={idle:'先在手机开始采集',connecting:'正在连接手机',opening:'正在准备记录',recording:'正在采集',finishing:'正在保存',uploading:'正在发送到手机',complete:'已发到手机',failed:'已停止：'+s.error};this.message=words[s.phase]||s.phase;this.busy=['idle','complete','failed'].indexOf(s.phase)<0;this.actionLabel=this.busy?'停止并保存':'开始采集';this.footer=s.phase==='complete'?'在手机点“导出整包”':s.phase==='failed'?'已有记录保留，请交回错误信息':'保持当前页面 · 自动保存';if(s.phase==='complete'||s.phase==='failed'){this.clear();this.keep(false);this._started=false;}},
+ update(s,generation){if(this._destroyed){if(s.phase==='complete'||s.phase==='failed')this.clear();return;}if(generation!==undefined&&generation!==this._generation)return;this.count=s.count;this.clocks=s.clock_observations;const seconds=Math.floor((s.elapsed_ms||0)/1000);this.timeText=('0'+Math.floor(seconds/60)).slice(-2)+':'+('0'+seconds%60).slice(-2);const words={idle:'先在手机开始采集',connecting:'正在连接手机',opening:s.file_operation==='mkdir'?'创建本次记录目录':'核对本次记录目录',recording:'正在采集',finishing:'正在保存',uploading:'正在发送到手机',complete:'已发到手机',failed:'已停止：'+(s.error||'')+(s.stage?' · '+s.stage:'')};this.message=words[s.phase]||s.phase;this.busy=['idle','complete','failed'].indexOf(s.phase)<0;this.actionLabel=this.busy?'停止并保存':'开始采集';this.footer=s.phase==='complete'?'在手机点“导出整包”':s.phase==='failed'?(s.failure_notified?'手机已确认失败；结束连接后重开':'失败通知未确认；先停止手机并结束连接'):'保持当前页面 · 自动保存';if(s.phase==='complete'||s.phase==='failed'){this.clear();this.keep(false);this._started=false;}},
  start(){if(this._started)return;this._started=true;const generation=++this._generation;this.keep(true);this.message='正在核对普通连接';
-  try{this._connection=interconnect.instance();this._engine=joint.create({requestedDurationMs:this.durationMs,sensor:sensor,file:file,send:(packet,fail)=>this._connection.send({data:packet,fail:(m,c)=>fail('发送失败 '+c)}),onStatus:s=>this.update(s)});
+  try{this._connection=interconnect.instance();this._engine=joint.create({requestedDurationMs:this.durationMs,sensor:sensor,file:file,send:(packet,fail)=>this._connection.send({data:packet,fail:(m,c)=>fail('发送失败 '+c)}),onStatus:s=>this.update(s,generation)});
    this._connection.onmessage=value=>{const arrival=Date.now();if(generation===this._generation)this._engine.receive(value,arrival);};
    this._connection.onclose=()=>{if(generation===this._generation)this.stop();};
    this._ready=setTimeout(()=>{if(generation===this._generation){this._generation++;this.clear();this.message='连接超时，未开始采集';this.keep(false);this._started=false;this.busy=false;}},8000);
@@ -34,7 +34,7 @@ export default {
  },
  stop(){if(this._engine)this._engine.stop('user');},
  onHide(){if(this._engine)this._engine.stop('hidden');this.keep(false);},
- onDestroy(){if(this._engine)this._engine.stop('hidden');this._generation++;this.clear();this.keep(false);}
+ onDestroy(){let phase='idle';try{phase=this._engine&&this._engine.state?this._engine.state().phase||'idle':'idle';}catch(e){}this._destroyed=true;if(this._engine)this._engine.stop('hidden');if(['recording','finishing','uploading'].indexOf(phase)<0){this._generation++;this.clear();}this.keep(false);}
 }
 </script>
 <style>

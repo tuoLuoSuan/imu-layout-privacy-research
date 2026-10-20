@@ -4,6 +4,7 @@ use bindings::astrobox::psys_host_v4::{device,dialog,interconnect,register,ui,ht
 use std::{io::Write,path::Path,sync::{Mutex,OnceLock},time::{SystemTime,UNIX_EPOCH}};
 use serde_json::{Value,json};
 const DIR:&str="joint_records";
+const VERSION:&str="0.2.4";
 struct State{root:Option<String>,addr:Option<String>,generation:u64,preparing:bool,working:bool,server_id:Option<u32>,storage_failed:bool,status:String,core:Server,keys:Vec<String>,selected:usize}
 static STATE:OnceLock<Mutex<State>>=OnceLock::new();
 fn state()->&'static Mutex<State>{STATE.get_or_init(||Mutex::new(State{root:None,addr:None,generation:0,preparing:false,working:false,server_id:None,storage_failed:false,status:"先点准备，再打开手机联机采集".into(),core:Server::default(),keys:vec![],selected:0}))}
@@ -15,12 +16,13 @@ fn button(t:&str,id:&str)->ui::Element{ui::Element::new(ui::ElementType::Button,
 fn render(){
  let Ok(s)=state().lock()else{return};let Some(id)=s.root.clone()else{return};
  let label=if s.keys.is_empty(){"还没有采集记录".into()}else{let key=&s.keys[s.selected];format!("记录 {} / {} · {}",s.selected+1,s.keys.len(),&key[..key.len().min(8)])};
- let prepare_label=if s.core.complete(){"准备下一轮"}else{"准备采集"};
+ let prepare_label=if s.core.failed(){"结束连接后准备"}else if s.core.complete(){"准备下一轮"}else{"准备采集"};
  let card=ui::Element::new(ui::ElementType::Div,None).without_default_styles().bg("#FFFFFF").padding(22).radius(24).flex().flex_direction(ui::FlexDirection::Column).gap(14)
   .child(text("手机六轴  ↔  S5 三轴")).child(text(&s.status)).child(button(prepare_label,"prepare"));
+ let version_text=format!("连接器 · {}",VERSION);
  let el=ui::Element::new(ui::ElementType::Div,None).without_default_styles().bg("#F2F5F4").flex().flex_direction(ui::FlexDirection::Column).width_full().min_height(620).padding(22).gap(16)
   .child(ui::Element::new(ui::ElementType::P,Some("IMU 联合采集")).without_default_styles().size(28).text_color("#18363D"))
-  .child(text("连接器 · 0.2.0")).child(card)
+  .child(text(&version_text)).child(card)
   .child(text("准备后打开手机开始采集，再在表上开始。AstroBox保持后台运行。"))
   .child(button("结束连接 · 保留记录","cancel"))
   .child(text(&label)).child(button("查看下一条记录","next")).child(button("单独保存手表日志","save"))
@@ -72,7 +74,7 @@ impl http::Guest for Plugin{
   let result={let Ok(mut s)=state().lock()else{return response(503,json!({"error":"state unavailable"}));};
    if s.server_id!=Some(server_id)||s.addr.is_none()||s.storage_failed{return response(503,json!({"error":"not prepared"}));}
    let (Some(p2),Some(p3))=(p2,stamp())else{return response(503,json!({"error":"clock unavailable"}));};
-   match s.core.native(v,p2,p3){Ok(a)=>{let sid=s.core.sid().unwrap().to_string();match journal(&sid,a.fresh,&a.journal){Ok(())=>{s.status=format!("手机已连，腕部已保存 {} 条{}",s.core.rows(),if s.core.complete(){"，可保存日志"}else{""});response(200,a.reply)},Err(e)=>{s.storage_failed=true;s.status=format!("日志保存失败，部分保留：{e}");response(500,json!({"error":"journal write failed"}))}}},Err(e)=>response(409,json!({"error":e}))}
+   match s.core.native(v,p2,p3){Ok(a)=>{let sid=s.core.sid().unwrap().to_string();match journal(&sid,a.fresh,&a.journal){Ok(())=>{s.status=if s.core.failed(){format!("腕部失败（{}），部分日志保留；结束连接后导出",s.core.failure_stage().unwrap_or("unknown"))}else{format!("手机已连，腕部已保存 {} 条{}",s.core.rows(),if s.core.complete(){"，可保存日志"}else{""})};response(200,a.reply)},Err(e)=>{s.storage_failed=true;s.status=format!("日志保存失败，部分保留：{e}");response(500,json!({"error":"journal write failed"}))}}},Err(e)=>response(409,json!({"error":e}))}
   };refresh();render();result
  }
 }
@@ -80,7 +82,7 @@ async fn receive(payload:String,p2:Option<u64>){
  let Some(v)=protocol::unwrap(&payload)else{return;};
  let action={let Ok(mut s)=state().lock()else{return;};let Some(addr)=s.addr.clone()else{return;};if s.storage_failed{return;}
   let identity=(v.get("sid").cloned(),v.get("native_sid").cloned());let (Some(p2),Some(p3))=(p2,stamp())else{return;};
-  match s.core.watch(v,p2,p3){Ok(a)=>{let sid=s.core.sid().unwrap().to_string();if let Err(e)=journal(&sid,false,&a.journal){s.storage_failed=true;s.status=format!("日志保存失败，部分保留：{e}");None}else{s.status=format!("腕部已保存 {} 条{}",s.core.rows(),if s.core.complete(){"，等待手机收尾"}else{""});Some((addr,s.generation,a.reply))}},Err(e)=>{s.status=format!("消息未接受：{e}");Some((addr,s.generation,json!({"p":"J_ERR1","sid":identity.0,"native_sid":identity.1,"error":e})))}}
+  match s.core.watch(v,p2,p3){Ok(a)=>{let sid=s.core.sid().unwrap().to_string();if let Err(e)=journal(&sid,false,&a.journal){s.storage_failed=true;s.status=format!("日志保存失败，部分保留：{e}");None}else{s.status=if s.core.failed(){format!("腕部失败（{}），部分日志保留；结束连接后导出",s.core.failure_stage().unwrap_or("unknown"))}else{format!("腕部已保存 {} 条{}",s.core.rows(),if s.core.complete(){"，等待手机收尾"}else{""})};Some((addr,s.generation,a.reply))}},Err(e)=>{s.status=format!("消息未接受：{e}");Some((addr,s.generation,json!({"p":"J_ERR1","sid":identity.0,"native_sid":identity.1,"error":e})))}}
  };
  if let Some((addr,g,reply))=action{if state().lock().is_ok_and(|s|s.generation==g&&s.addr.is_some()){if interconnect::send_qaic_message(addr,PACKAGE.into(),reply.to_string()).await.is_err(){change(|s|s.status="回复未送出，部分日志和表端文件保留".into());}}}
  refresh();render();
@@ -100,7 +102,7 @@ impl event::Guest for Plugin{
   let mut stop_id=None;
   let run={let Ok(mut s)=state().lock()else{return String::new()};match id.as_str(){
    "cancel"=>{s.generation+=1;s.addr=None;s.preparing=false;stop_id=s.server_id.take();s.status="连接已停止，部分日志保留，可导出".into();false},
-   "prepare" if !s.preparing&&!s.working=>{if s.server_id.is_some(){if s.core.complete(){s.generation+=1;s.core=Server::default();s.storage_failed=false;s.status="已准备新一轮 · 请在手机开始".into();}else{s.status=if s.core.sid().is_some(){"本轮尚未结束；需要重来时先点结束连接，记录会保留".into()}else{"已准备 · 请在手机开始".into()};}false}else{s.generation+=1;s.preparing=true;s.storage_failed=false;s.core=Server::default();s.status="正在连接S5与手机".into();true}},
+   "prepare" if !s.preparing&&!s.working=>{if s.server_id.is_some(){if s.core.complete(){s.generation+=1;s.core=Server::default();s.storage_failed=false;s.status="已准备新一轮 · 请在手机开始".into();}else{s.status=if s.core.failed(){"上一轮腕部失败；先结束连接，再开始新记录".into()}else if s.core.sid().is_some(){"本轮尚未结束；需要重来时先点结束连接，记录会保留".into()}else{"已准备 · 请在手机开始".into()};}false}else{s.generation+=1;s.preparing=true;s.storage_failed=false;s.core=Server::default();s.status="正在连接S5与手机".into();true}},
    "next"=>{if !s.keys.is_empty(){s.selected=(s.selected+1)%s.keys.len();}false},
    "save" if !s.working=>{if s.addr.is_some()&&!s.core.complete(){s.status="请先停止连接，再导出部分日志".into();false}else{s.working=true;true}},_=>false}};
   render();if let Some(sid)=stop_id{let _=http_server::stop(sid).await;}
