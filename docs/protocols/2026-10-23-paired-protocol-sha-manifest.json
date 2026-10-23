@@ -1,0 +1,62 @@
+{
+  "created_at_utc": "2026-10-23T05:06:41.257459+00:00",
+  "timing": "after user reported acquisition; before new sensor numeric or classification analysis",
+  "trusted_preregistration_timestamp": false,
+  "formal_recording_released": false,
+  "stage2_released": false,
+  "phone_only_brier": null,
+  "ceiling_status": "unknown_no_independent_frozen_phone_model",
+  "days": 48,
+  "sessions_per_day": 2,
+  "total_planning_sessions": 96,
+  "shadow_equivalence_margin": 0.01,
+  "protocols": [
+    {
+      "path": "docs/protocols/2026-10-23-paired-increment-preregistration.md",
+      "sha256": "dff2c5717f7c44a70995e64c3e1b85866059cb9647b675aa1f9724481658becc"
+    },
+    {
+      "path": "docs/protocols/2026-10-23-first-paired-development-card.md",
+      "sha256": "bcd3b635c00407296d948cfed794502c3fa3687feef2067baa6c808f7c41952f"
+    },
+    {
+      "path": "docs/protocols/2026-10-23-paired-stage1-v2-amendment.md",
+      "sha256": "abee67f2dc3bcfbd73d7e89f61404b8ebe11ddf55455d6e5dc45734a957e5fac"
+    }
+  ],
+  "scope": "Protocol Git seal after development acquisition, before sensor numeric analysis; not retrospective trusted preregistration.",
+  "original_local_freeze_sha256": "f627b130aceeac8358b7936b8f5d5503b3fb583ac8320ff954c123b18c22a9d2",
+  "supporting_sources": [
+    {
+      "path": "analysis/paired_session/core.py",
+      "sha256": "eac517f55955288880ccdc2ffef504010e79dfd8c8e7ba0f1e01dd867e68e3a5"
+    },
+    {
+      "path": "analysis/session_readiness/pair_probe.py",
+      "sha256": "019c8ffd320bca7de42aa5fb0f109f9d0517eac6edcc36aa715710eed0563f8a"
+    },
+    {
+      "path": "analysis/session_readiness/quality.py",
+      "sha256": "cfe8098c162847a57691f4984a79e89da1667fb49abe11651fff01b1912c3f09"
+    },
+    {
+      "path": "analysis/session_readiness/coverage.py",
+      "sha256": "3a56ddef4c357edaf4c7c16cfc4c1086644f88d751734fcb80baf188353effa0"
+    },
+    {
+      "path": "analysis/session_readiness/aggregation.py",
+      "sha256": "35644cd86fa36b38bbdcac8932c81c2f2359698ff25382ffce52667b0a958120"
+    },
+    {
+      "path": "analysis/session_readiness/sources.py",
+      "sha256": "cd4a05c3b06c9c867947a0ca923b96dec2a3729b5ba52a767729ab410d7dc38c"
+    },
+    {
+      "path": "docs/reviews/evidence/2026-10-23-publish-and-paired-stage/prospective-freeze.json",
+      "sha256": "f627b130aceeac8358b7936b8f5d5503b3fb583ac8320ff954c123b18c22a9d2"
+    }
+  ],
+  "raw_data_uploaded": false,
+  "device_logs_uploaded": false,
+  "signing_or_binary_uploaded": false
+}
