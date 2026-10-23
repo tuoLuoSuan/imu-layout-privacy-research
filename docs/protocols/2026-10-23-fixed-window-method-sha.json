@@ -1,0 +1,33 @@
+{
+  "version": "fixed-window-development-v3",
+  "scope": "Already-seen development data; no formal predictions or ceiling release.",
+  "paths": [
+    {
+      "path": "analysis/fixed_window_dev/__init__.py",
+      "sha256": "f18272d06c47facabc23468434ea46098c21414feaa91733919db56234de7c84"
+    },
+    {
+      "path": "analysis/fixed_window_dev/core.py",
+      "sha256": "1a6bb08b5e82789f6613b78fb71e64a5964d141fa5bf90c9dd1a2ddcd8361b52"
+    },
+    {
+      "path": "analysis/fixed_window_dev/tests/test_core.py",
+      "sha256": "ac13932ed882641c06c57ca2f5c637cb9bce173e4e95bd37ee3b69cd092224b2"
+    },
+    {
+      "path": "analysis/fixed_window_dev/README.md",
+      "sha256": "28350fbd72cc3957ed4d8eb3870e0367b72c1988ebca21c6e4a47bab35ca6d2f"
+    },
+    {
+      "path": "docs/protocols/2026-10-23-fixed-window-development-method-v3.md",
+      "sha256": "1129eed2ba8147077d79acd15b68d285c9514dd2cb0f559350619287dc9f5e6f"
+    }
+  ],
+  "local_method_freeze_sha256": "64ba2f4d9cb3ce4af4dccb307cef8464ee8dc95c95edca726d6954d722565d97",
+  "local_prediction_seal_sha256": "7d2e04b1be0fdaf33c3b2901c8622fcc99ed2435294d098bfc091171899b66ff",
+  "local_baseline_result_sha256": "5dd3a06feb02668b9ea751220ca5acb4156bec46ef9f1cb36b77c43d1ef019bd",
+  "formal_score": null,
+  "phone_only_brier": null,
+  "physical_clock_accepted": false,
+  "raw_data_or_device_identifiers_uploaded": false
+}
