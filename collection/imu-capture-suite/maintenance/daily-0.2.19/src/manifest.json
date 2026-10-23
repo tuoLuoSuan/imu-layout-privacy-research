@@ -1,0 +1,45 @@
+{
+  "package": "org.imuresearch.s5joint",
+  "name": "IMU 联合采集",
+  "icon": "/common/icon.png",
+  "versionName": "0.2.19",
+  "versionCode": 21,
+  "minAPILevel": 2,
+  "features": [
+    {
+      "name": "system.interconnect"
+    },
+    {
+      "name": "system.sensor"
+    },
+    {
+      "name": "system.file"
+    },
+    {
+      "name": "system.brightness"
+    },
+    {
+      "name": "system.router"
+    }
+  ],
+  "config": {
+    "designWidth": 466
+  },
+  "router": {
+    "entry": "Menu",
+    "pages": {
+      "Menu": {
+        "component": "index"
+      },
+      "Probe": {
+        "component": "index"
+      },
+      "Manage": {
+        "component": "index"
+      }
+    }
+  },
+  "deviceTypeList": [
+    "watch"
+  ]
+}

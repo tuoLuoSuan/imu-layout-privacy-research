@@ -1,6 +1,15 @@
 # 构建与测试
 
-当前候选：手机0.2.4/code7、手表0.2.5/code7、插件0.2.4/API4/WASI3。三个组件不必同号，不运行历史脚本把版本强制改成一致。当前手机APK沿用已构建0.2.4；手表RPK与插件WASM/ABP已重新构建，尚未进行候选真机验收。
+当前本地日常候选：手机0.2.4/code7、手表0.2.19/code21、插件0.2.4/API4/WASI3。三个组件不必同号。本轮仅构建手表；手机与插件沿用，不要求重装。0.2.18 已收到用户删除成功反馈，用户已确认当前无阻断并授权同步；未独立回读设备安装版本。
+
+日常版源码独立保留在 `maintenance/daily-0.2.19/src`，现有默认 `watch/src` 为旧0.2.5。构建日常版必须显式提供源码：
+
+```text
+node collection/imu-capture-suite/tools/build_watch.cjs collection/imu-capture-suite/dist/NEW_DIRECTORY collection/imu-capture-suite/maintenance/daily-0.2.19/src
+node --test collection/imu-capture-suite/maintenance/daily-0.2.19/tests/*.test.cjs
+```
+
+不带第三个参数时保留历史默认行为。新入口仍依赖下述本地 Vela 工具链和签名，不称干净 clone 已可直接出包。
 
 ## 通用检查入口
 

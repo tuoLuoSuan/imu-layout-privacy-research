@@ -1,0 +1,52 @@
+<template>
+ <div class="page">
+  <image class="brand" src="/common/brand-32.png" />
+  <text class="title">联合采集</text>
+  <text class="status">{{message}}</text>
+  <text class="timer">{{timeText}}</text>
+  <text class="count">{{count}} 条腕部数据</text>
+  <input class="duration" type="button" value="{{durationLabel}} · 点击切换" onclick="cycleDuration" disabled="{{busy}}" />
+  <input class="button" type="button" value="{{actionLabel}}" onclick="primary" />
+  <text class="note">{{footer}}</text>
+ </div>
+</template>
+<script>
+import interconnect from '@system.interconnect'
+import brightness from '@system.brightness'
+import sensor from '@system.sensor'
+import file from '@system.file'
+const joint=require('../common/joint.js');
+const sessionIndex=require('../common/session-index.js');
+const catalogIndex=require('../common/catalog-index.js');
+export default {
+ data:{message:'先在手机开始采集',count:0,clocks:0,timeText:'00:00',durationMs:60000,durationLabel:'1分钟',actionLabel:'开始采集',busy:false,footer:'手机六轴 + 手表三轴 · v0.2.19'},
+ onInit(){this._generation=0;this._started=false;this._destroyed=false;this._timer=null;this._ready=null;this._engine=null;},
+ keep(on){try{brightness.setKeepScreenOn({keepScreenOn:on,success:()=>{},fail:()=>{}});}catch(e){}},
+ clear(){if(this._timer){clearInterval(this._timer);this._timer=null;}if(this._ready){clearTimeout(this._ready);this._ready=null;}},
+ cycleDuration(){if(this._started)return;const d=[20000,60000,120000,300000,600000],words=['20秒','1分钟','2分钟','5分钟','10分钟'];const i=(d.indexOf(this.durationMs)+1)%d.length;this.durationMs=d[i];this.durationLabel=words[i];},
+ primary(){if(this._started)this.stop();else this.start();},
+ update(s,generation){if((generation===undefined||generation===this._generation)&&s.phase==='failed'&&s.sid&&this._failedIndexedSid!==s.sid){this._failedIndexedSid=s.sid;catalogIndex.add(file,[s.native_sid,s.sid,'i']).catch(()=>{});}if((generation===undefined||generation===this._generation)&&s.phase==='complete'&&this._indexedSid!==s.sid){this._indexedSid=s.sid;sessionIndex.remember(file,s).then(r=>{if(r.status==='unavailable'&&!this._destroyed&&(generation===undefined||generation===this._generation))this.footer='记录已发送；列表更新未确认';});}if(this._destroyed){if(s.phase==='complete'||s.phase==='failed')this.clear();return;}if(generation!==undefined&&generation!==this._generation)return;this.count=s.count;this.clocks=s.clock_observations;const seconds=Math.floor((s.elapsed_ms||0)/1000);this.timeText=('0'+Math.floor(seconds/60)).slice(-2)+':'+('0'+seconds%60).slice(-2);const words={idle:'先在手机开始采集',connecting:'正在连接手机',opening:s.file_operation==='mkdir'?'创建本次记录目录':'核对本次记录目录',recording:'正在采集',finishing:'正在保存',uploading:'正在发送到手机',complete:'已发到手机',failed:'已停止：'+(s.error||'')+(s.stage?' · '+s.stage:'')};this.message=words[s.phase]||s.phase;this.busy=['idle','complete','failed'].indexOf(s.phase)<0;this.actionLabel=this.busy?'停止并保存':'开始采集';this.footer=s.phase==='complete'?'在手机点“导出整包”':s.phase==='failed'?(s.failure_notified?'手机已确认失败；结束连接后重开':'失败通知未确认；先停止手机并结束连接'):'保持当前页面 · 自动保存';if(s.phase==='complete'||s.phase==='failed'){this.clear();this.keep(false);this._started=false;}},
+ start(){if(this._started)return;this._started=true;const generation=++this._generation;this.keep(true);this.message='正在核对普通连接';
+  try{this._connection=interconnect.instance();this._engine=joint.create({requestedDurationMs:this.durationMs,sensor:sensor,file:file,send:(packet,fail)=>this._connection.send({data:packet,fail:(m,c)=>fail('发送失败 '+c)}),onStatus:s=>this.update(s,generation)});
+   this._connection.onmessage=value=>{const arrival=Date.now();if(generation===this._generation)this._engine.receive(value,arrival);};
+   this._connection.onclose=()=>{if(generation===this._generation)this.stop();};
+   this._ready=setTimeout(()=>{if(generation===this._generation){this._generation++;this.clear();this.message='连接超时，未开始采集';this.keep(false);this._started=false;this.busy=false;}},8000);
+   this._connection.getReadyState({success:r=>{if(generation!==this._generation)return;this.clear();if(r.status!==1){this._generation++;this.message='连接未就绪，请先在手机准备';this.keep(false);this._started=false;this.busy=false;return;}this._engine.start();const phase=this._engine.state().phase;if(phase==='failed'||phase==='complete')return;this._timer=setInterval(()=>{if(generation===this._generation)this._engine.tick();},100);},fail:(m,c)=>{if(generation!==this._generation)return;this._generation++;this.clear();this.message='连接失败 '+c;this.keep(false);this._started=false;this.busy=false;}});
+  }catch(e){this._generation++;this.clear();this.message='无法开始：'+String(e.message||e);this.keep(false);this._started=false;this.busy=false;}
+ },
+ stop(){if(this._engine)this._engine.stop('user');},
+ onHide(){if(this._engine)this._engine.stop('hidden');this.keep(false);},
+ onDestroy(){let phase='idle';try{phase=this._engine&&this._engine.state?this._engine.state().phase||'idle':'idle';}catch(e){}this._destroyed=true;if(this._engine)this._engine.stop('hidden');if(['recording','finishing','uploading'].indexOf(phase)<0){this._generation++;this.clear();}this.keep(false);}
+}
+</script>
+<style>
+.page{width:466px;height:466px;background-color:#F2F5F4;flex-direction:column;align-items:center;justify-content:flex-start;padding:0px;}
+.brand{width:32px;height:32px;object-fit:contain;flex-shrink:0;margin-top:42px;margin-bottom:4px;}
+.title{width:300px;height:32px;line-height:32px;font-size:26px;color:#18363D;text-align:center;flex-shrink:0;margin-bottom:2px;}
+.status{width:322px;height:42px;line-height:21px;font-size:18px;color:#476D6C;text-align:center;max-lines:2;flex-shrink:0;margin-bottom:2px;}
+.timer{width:300px;height:76px;line-height:76px;font-size:64px;color:#18363D;text-align:center;flex-shrink:0;}
+.count{width:300px;height:26px;line-height:26px;font-size:18px;color:#61777D;text-align:center;flex-shrink:0;margin-bottom:8px;}
+.duration{width:250px;height:34px;border-radius:17px;background-color:#E0EDEA;color:#285D5E;font-size:17px;flex-shrink:0;margin-bottom:10px;}
+.button{width:288px;height:54px;border-radius:27px;background-color:#176F70;color:#FFFFFF;font-size:24px;flex-shrink:0;}
+.note{width:294px;height:36px;line-height:18px;font-size:15px;color:#61777D;text-align:center;max-lines:2;flex-shrink:0;margin-top:8px;}
+</style>

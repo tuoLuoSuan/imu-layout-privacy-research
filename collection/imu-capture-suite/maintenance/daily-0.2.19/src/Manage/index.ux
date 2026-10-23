@@ -1,0 +1,105 @@
+<template>
+ <div class="page">
+  <text class="title">{{heading}}</text>
+  <text class="position">{{position}}</text>
+  <text class="message">{{message}}</text>
+  <input class="record" type="button" value="{{row0}}" onclick="toggle0" disabled="{{!can0}}" />
+  <input class="record" type="button" value="{{row1}}" onclick="toggle1" disabled="{{!can1}}" />
+  <input class="record" type="button" value="{{row2}}" onclick="toggle2" disabled="{{!can2}}" />
+  <div class="row">
+   <input class="small" type="button" value="上一页" onclick="previous" disabled="{{!canPrevious}}" />
+   <input class="small" type="button" value="全选 / 清空" onclick="toggleAll" disabled="{{!canSelect}}" />
+   <input class="small" type="button" value="下一页" onclick="next" disabled="{{!canNext}}" />
+  </div>
+  <input class="primary" type="button" value="{{primaryLabel}}" onclick="primary" disabled="{{!primaryEnabled}}" />
+  <div class="bottom">
+   <input class="secondary" type="button" value="{{secondaryLabel}}" onclick="secondary" />
+   <input class="refresh" type="button" value="刷新" onclick="refresh" disabled="{{!canRefresh}}" />
+  </div>
+ </div>
+</template>
+<script>
+import file from '@system.file'
+import brightness from '@system.brightness'
+import router from '@system.router'
+const records=require('../common/records-bounded.js'),hints=require('../common/recovery-hints.js'),screen=require('../common/screen-guard.js'),lane=require('../common/file-lane.js');
+export default {
+ data:{stage:'loading',busy:false,heading:'记录管理',position:'正在读取',message:'查找本地记录',totalCount:0,selectedCount:0,pageIndex:0,row0:'',row1:'',row2:'',can0:false,can1:false,can2:false,canPrevious:false,canNext:false,canSelect:false,canRefresh:false,primaryLabel:'正在读取',primaryEnabled:false,secondaryLabel:'停止读取'},
+ onInit(){this._gone=false;this._destroyed=false;this._started=false;this._generation=0;this._items=[];this._chosen={};this._ready=null;this._intent=null;this._selectedIds=[];this._fileLane=lane.create(file);this._engine=records.create({file:this._fileLane.file,recoveryDirectories:hints,onStatus:s=>this.status(s)});},
+ keep(on){
+  if(!on){if(this._guard){const g=this._guard;this._guard=null;this._keep=null;this._barrier=g.release().then(s=>{if(['success','not_requested'].indexOf(s.release.status)<0)throw Error('保亮释放未确认，请退出此页');return s;});this._barrier.catch(()=>{});}return this._barrier||Promise.resolve();}
+  if(!this._guard){const g=screen.create({load:()=>brightness});this._guard=g;this._keep=(this._barrier||Promise.resolve()).then(()=>g.acquire());}return this._keep;
+ },
+ current(g){return !this._destroyed&&!this._gone&&g===this._generation;},
+ check(g){if(!this.current(g))throw Error('页面已退出，操作已停止');},
+ paint(){try{return this.renderRows();}catch(e){this.fail(e);}},
+ renderRows(){
+  this.totalCount=this._items.length;this.selectedCount=Object.keys(this._chosen).filter(k=>this._chosen[k]).length;
+  this.pageIndex=Math.max(0,Math.min(this.pageIndex,Math.max(0,Math.ceil(this.totalCount/3)-1)));
+  const list=this.stage==='list'&&!this.busy;
+  for(let i=0;i<3;i++){const n=this.pageIndex*3+i,item=this._items[n];this['row'+i]=item?this.label(item,n):'';this['can'+i]=!!(list&&item&&item.eligible);}
+  this.canPrevious=list&&this.pageIndex>0;this.canNext=list&&(this.pageIndex+1)*3<this.totalCount;this.canSelect=list&&this._items.some(r=>r.eligible);
+  this.canRefresh=!this.busy&&(this.stage==='list'||this.stage==='error');
+  this.position='记录'+this.totalCount+'条 · 已选'+this.selectedCount+' · '+(this.pageIndex+1)+'/'+Math.max(1,Math.ceil(this.totalCount/3))+'页';
+  this.heading=this.stage==='confirm'?'确认永久删除':this.busy?(this._intent==='deleting'?'正在删除':this._intent==='preparing'?'核对所选':'读取记录'):this.stage==='error'?'操作已停止':'记录管理';
+  this.primaryLabel=this.busy?'请稍候':this.stage==='confirm'?'确认永久删除':this.stage==='error'?'重新读取列表':'删除所选 '+this.selectedCount+' 条';
+  this.primaryEnabled=!this.busy&&(this.stage==='confirm'?!!this._ready:this.stage==='list'?this.selectedCount>0:this.stage==='error');
+  this.secondaryLabel=this.busy?'停止操作':this.stage==='confirm'?'取消删除':'返回首页';
+ },
+ label(item,n){const s=item.summary,kind=s.partial?'缺块':s.incomplete?'未完成':s.sealed?'待核对':s.complete?'完整':'无法核对',duration=typeof s.duration_ms==='number'&&isFinite(s.duration_ms)?' '+Math.round(s.duration_ms/1000)+'s':'',count=s.rows===null||s.rows===undefined?'':(' '+s.rows+'条');return (this._chosen[item.id]?'[x] ':'[ ] ')+(n+1)+' '+kind+duration+count;},
+ status(s){
+  if(this._destroyed||this._gone||!this.busy)return;
+  if(s.phase==='discovering')this.message='查找目录 '+s.checked+'/'+s.files;
+  else if(s.phase==='snapshotting')this.message='核对第'+s.session_index+'/'+s.sessions+'条，已读'+s.checked+'文件';
+  else if(s.phase==='rechecking')this.message='删除前复核 '+s.checked+'/'+s.files+'文件';
+  else if(s.phase==='deleting')this.message='已请求移除 '+s.deleted+'/'+s.files+'文件';
+  else if(s.phase==='verifying')this.message='确认删除结果 '+(s.verified_absent_files||0)+'/'+s.files;
+ },
+ fail(e,g){
+  if(g!==undefined&&!this.current(g))return;const s=this._engine.state();if(s.removed_ids&&s.removed_ids.length)this._items=this._items.filter(item=>s.removed_ids.indexOf(item.id)<0);this.totalCount=this._items.length;this._generation++;this._ready=null;this._intent=null;this._chosen={};this.busy=false;this.stage='error';this._engine.cancel();
+  // Terminal display never calls the formatter that may have just failed.
+  this.heading='操作已停止';this.position='当前结果需重新核对';this.selectedCount=0;this.row0='';this.row1='';this.row2='';this.can0=false;this.can1=false;this.can2=false;this.canPrevious=false;this.canNext=false;this.canSelect=false;this.canRefresh=true;this.primaryLabel='重新读取列表';this.primaryEnabled=true;this.secondaryLabel='返回首页';
+  let text='页面显示失败，未继续操作';try{text=String(e&&e.message||e).slice(0,90);}catch(ignore){}this.message=(s.removed_ids&&s.removed_ids.length?'已核实删除'+s.removed_ids.length+'条；其余停止。':'')+(s.uncertain?'删除结果未确认，请勿重复删除。':'')+text;
+ },
+ load(){
+  if(this.busy||this._gone||this._destroyed)return Promise.resolve();const g=++this._generation;this._started=true;this._ready=null;this._intent='reading';this.busy=true;this.stage='loading';this.message='读取本地记录，尚未删除';this.paint();
+  return this.keep(true).then(()=>{this.check(g);return this._engine.scan();}).then(entries=>{
+   const items=[];let at=0;const next=()=>{this.check(g);if(at>=entries.length)return items;const e=entries[at++];this.message='读取摘要 '+at+'/'+entries.length;return this._engine.summary(e.id).then(s=>{items.push({id:e.id,summary:s,eligible:!!(s.sealed||s.complete||s.partial||s.incomplete)});return next();});};return next();
+  }).then(items=>{this.check(g);this._engine.releaseInventories();this._items=items;this._chosen={};this._intent=null;this.busy=false;this.stage='list';this.pageIndex=0;this.message=items.length?'仅列已核对身份；删除前再核内容':'暂无已登记记录';this.paint();}).catch(e=>this.fail(e,g));
+ },
+ toggle(i){if(this.busy||this.stage!=='list')return;const item=this._items[this.pageIndex*3+i];if(!item||!item.eligible)return;this._chosen[item.id]=!this._chosen[item.id];this.paint();},
+ toggle0(){this.toggle(0);},toggle1(){this.toggle(1);},toggle2(){this.toggle(2);},
+ toggleAll(){if(this.busy||this.stage!=='list')return;const eligible=this._items.filter(r=>r.eligible),all=eligible.length&&eligible.every(r=>this._chosen[r.id]);this._chosen={};if(!all)eligible.forEach(r=>{this._chosen[r.id]=true;});this.paint();},
+ previous(){if(this.canPrevious){this.pageIndex--;this.paint();}},next(){if(this.canNext){this.pageIndex++;this.paint();}},
+ primary(){if(this.busy||this._gone||this._destroyed)return Promise.resolve();if(this.stage==='list')return this.requestDelete();if(this.stage==='confirm')return this.confirmDelete();if(this.stage==='error')return this.refresh();return Promise.resolve();},
+ requestDelete(){
+  const ids=Object.keys(this._chosen).filter(k=>this._chosen[k]).sort();if(this.busy||this.stage!=='list'||!ids.length)return Promise.resolve();const g=++this._generation;this._selectedIds=ids;this._ready=null;this._intent='preparing';this.busy=true;this.stage='working';this.message='核对所选记录，尚未删除';this.paint();
+  return this.keep(true).then(()=>{this.check(g);return this._engine.prepareSelection(ids);}).then(s=>{this.check(g);this._ready=s;this._intent=null;this.busy=false;this.stage='confirm';const broken=s.partial_sessions+s.incomplete_sessions;this.message=ids.length+'条/'+s.files+'文件'+(broken?'，缺块'+s.partial_sessions+'/未完成'+s.incomplete_sessions:'')+'。确认已保留所需导出；接受永久丢失，无法撤销。';this.paint();}).catch(e=>this.fail(e,g));
+ },
+ confirmDelete(){
+  if(this.busy||this._gone||this.stage!=='confirm'||!this._ready)return Promise.resolve();const s=this._ready,g=++this._generation,ids=this._selectedIds.slice();this._ready=null;this._intent='deleting';this.busy=true;this.stage='working';this.message='复核内容后仅删除所选手表副本';this.paint();
+  return this.keep(true).then(()=>{this.check(g);return this._engine.purge({token:s.token,preparedId:s.prepared_id,confirmBackup:true,confirmUnbackedLoss:true,confirmFailedRecord:true,confirmPartial:true,confirmPermanent:true});}).then(r=>{this.check(g);this._engine.forgetDeleted(ids);this._items=this._items.filter(e=>ids.indexOf(e.id)<0);this._chosen={};this._intent=null;this.busy=false;this.stage='list';this.message='已核实删除'+r.sessions+'条手表副本';this.paint();}).catch(e=>this.fail(e,g));
+ },
+ cancelConfirm(){if(this.busy||this.stage!=='confirm')return;this._generation++;this._ready=null;this._engine.cancel();this.stage='list';this.message='已取消，尚未删除';this.paint();},
+ stopWork(){if(!this.busy)return;const deleting=this._intent==='deleting';this._generation++;this._ready=null;this._engine.cancel();this._chosen={};this._intent=null;this.busy=false;this.stage='error';this.message=deleting?'已停止；在途删除无法撤销，结果未确认，请勿重复删除':'已停止读取，没有删除记录';this.paint();},
+ secondary(){if(this.busy)return this.stopWork();if(this.stage==='confirm')return this.cancelConfirm();return this.back();},
+ refresh(){if(this.busy||this._gone||this._destroyed||(this.stage!=='list'&&this.stage!=='error'))return Promise.resolve();return this.load();},
+ onShow(){this._gone=false;if(this._destroyed)return Promise.resolve();if(!this._started)return this.load();const g=this._generation;return this.keep(true).catch(e=>this.fail(e,g));},
+ onHide(){if(this.busy)this.stopWork();else if(this.stage==='confirm')this.cancelConfirm();this._gone=true;this.keep(false);},
+ onDestroy(){this._destroyed=true;this._gone=true;this._generation++;this._ready=null;this._engine.cancel();this._fileLane.close();this.keep(false);},
+ back(){if(this.busy)return;this.onDestroy();router.replace({uri:'/Menu'});}
+}
+</script>
+<style>
+.page{width:466px;height:466px;flex-direction:column;align-items:center;justify-content:center;background-color:#F2F5F4;}
+.title{width:300px;height:32px;text-align:center;font-size:25px;color:#18363D;}
+.position{width:330px;height:25px;text-align:center;font-size:17px;color:#476D6C;}
+.message{width:330px;height:66px;font-size:17px;line-height:22px;max-lines:3;text-align:center;color:#18363D;}
+.record{width:330px;height:38px;margin-top:4px;border-radius:14px;font-size:19px;background-color:#E0EDEA;color:#18363D;}
+.row{width:330px;height:32px;margin-top:7px;flex-direction:row;justify-content:space-between;}
+.small{width:104px;height:32px;border-radius:16px;font-size:16px;background-color:#E0EDEA;color:#285D5E;}
+.primary{width:300px;height:43px;margin-top:8px;border-radius:21px;font-size:21px;background-color:#176F70;color:#FFFFFF;}
+.bottom{width:300px;height:32px;margin-top:7px;flex-direction:row;justify-content:space-between;}
+.secondary{width:210px;height:32px;border-radius:16px;font-size:18px;background-color:#E0EDEA;color:#285D5E;}
+.refresh{width:80px;height:32px;border-radius:16px;font-size:17px;background-color:#E0EDEA;color:#285D5E;}
+</style>
