@@ -9,6 +9,7 @@ async function fixture(t) {
   const root=await mkdtemp(path.join(tmpdir(),'imu-showcase-'));
   for(const name of ['index.html','style.css','app.mjs','data.mjs','data/first-session.json',
     'data/phone-config-smoke.json','assets/recorder-0.2.2-records.png',
+    'data/latest-signal-catalog-20261026.json','data/signal-20261025-bed-phone-accel.json','radar.mjs','radar-data.mjs','data/dorm-room-20261026.json','data/dorm-points-20261026.json','assets/room-polygon-20261026.png',
     'node_modules/three/build/three.module.js','node_modules/three/build/three.core.js',
     'node_modules/three/examples/jsm/controls/OrbitControls.js','README.md','验证记录.md',
     'server.mjs','package.json','data/private.json']) {
@@ -25,6 +26,7 @@ test('serves required page, private previews and exact Three dependencies with M
   const {url}=await fixture(t);
   for(const [name,type] of [['/','text/html'],['/app.mjs','text/javascript'],
     ['/data/phone-config-smoke.json','application/json'],['/assets/recorder-0.2.2-records.png','image/png'],
+    ['/data/latest-signal-catalog-20261026.json','application/json'],['/data/signal-20261025-bed-phone-accel.json','application/json'],['/radar.mjs','text/javascript'],['/data/dorm-room-20261026.json','application/json'],['/data/dorm-points-20261026.json','application/json'],['/assets/room-polygon-20261026.png','image/png'],
     ['/node_modules/three/build/three.core.js','text/javascript'],
     ['/node_modules/three/examples/jsm/controls/OrbitControls.js','text/javascript']]) {
     const r=await fetch(url+name);assert.equal(r.status,200,name);
@@ -38,7 +40,7 @@ test('serves required page, private previews and exact Three dependencies with M
 test('blocks internal notes, server sources, unreviewed data and path aliases',async t=>{
   const {url}=await fixture(t);
   for(const name of ['/README.md','/'+encodeURIComponent('验证记录.md'),'/server.mjs','/package.json',
-    '/data/private.json','/data/signals.json','/node_modules/three/package.json',
+    '/data/private.json','/data/signals.json','/data/raw/lidar/bag_0.db3','/secrets/private.pem','/node_modules/three/package.json',
     '/data/../README.md','/%00','/..%5cPROJECT_STATE.md']) {
     const r=await fetch(url+name);assert.equal(r.status,404,name);
   }

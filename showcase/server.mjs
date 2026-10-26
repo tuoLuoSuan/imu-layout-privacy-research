@@ -6,6 +6,23 @@ const defaultRoot=path.dirname(fileURLToPath(import.meta.url));
 // Reviewed browser assets only. Private examples stay local and outside Git.
 const assets=new Set([
   '/index.html','/style.css','/app.mjs','/data.mjs',
+  '/radar.mjs','/radar-data.mjs',
+  '/data/signal-20261025-bed-phone-accel.json',
+  '/data/signal-20261025-bed-phone-gyro.json',
+  '/data/signal-20261025-bed-watch-accel.json',
+  '/data/signal-20261025-ground-phone-accel.json',
+  '/data/signal-20261025-ground-phone-gyro.json',
+  '/data/signal-20261025-ground-watch-accel.json',
+  '/data/signal-20261025-calibration-phone-accel.json',
+  '/data/signal-20261025-calibration-phone-gyro.json',
+  '/data/signal-20261025-calibration-watch-accel.json',
+  '/data/latest-signal-catalog-20261026.json',
+  '/data/dorm-room-20261026.json','/data/dorm-points-20261026.json',
+  '/assets/room-polygon-20261026.png',
+  '/assets/room-density-20261026.png',
+  '/assets/room-bands-20261026.png',
+  '/assets/room-elevation-20261026.png',
+
   '/data/first-session.json','/data/phone-config-smoke.json',
   '/assets/recorder-0.2.2-records.png',
   '/node_modules/three/build/three.module.js',

@@ -3,6 +3,8 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {parseCsv} from './data.mjs';
 const $=id=>document.getElementById(id);
 let rows=[],original=[],phonePreview=null,selected=0,drawScene=()=>{};
+let latestCatalog=null,signalLoadVersion=0;
+const latestSignalCache=new Map();
 function openTab(name){
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.id===name));
   document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));
@@ -30,9 +32,23 @@ function updateSelected(){
   $('sample-value').textContent=`第 ${selected+1} 条  ·  t = ${r[0]} ms  ·  X ${r[1].toFixed(4)}  Y ${r[2].toFixed(4)}  Z ${r[3].toFixed(4)}`;
 }
 $('sample-slider').addEventListener('input',()=>{selected=Number($('sample-slider').value);updateSelected();plot();});
-function showDataset(){
+async function showDataset(){
   const choice=$('signal-dataset').value;
+  const version=++signalLoadVersion;
   $('import-message').textContent='';
+  const current=latestCatalog?.datasets.find(d=>d.id===choice);
+  if(current){
+    $('signal-source').textContent='正在读取：'+current.source;
+    try{
+      let loaded=latestSignalCache.get(current.id);
+      if(!loaded){const response=await fetch('./data/'+current.file);if(!response.ok)throw Error('最新记录素材未取得，未用旧样例替代。');loaded=await response.json();latestSignalCache.set(current.id,loaded);}
+      if(version!==signalLoadVersion||$('signal-dataset').value!==choice)return;
+      if(loaded.rows.length!==current.count)throw Error('记录条数与来源清单不一致，停止展示。');
+      updateRecord(loaded.rows,current.source,false,{event:current.event,unit:current.unit,title:current.title,badge:'2026-10-25 · 最新联合记录',context:current.context+(current.requested_rate_hz?' 本次请求'+current.requested_rate_hz+' Hz，实际事件率见统计。':'')});
+    }catch(error){if(version===signalLoadVersion){$('signal-source').textContent=error.message;$('signal-badge').textContent='最新素材不可用';}}
+    return;
+  }
+  if(!['phone-accel','phone-gyro','band'].includes(choice)){$('signal-source').textContent='最新记录目录尚未取得；未回退到旧短试。';return;}
   if(choice==='band'){
     if(!original.length)return;
     updateRecord(original,'小米手环9 Pro · 2026-10-13首个真实会话 · Date.now回调到达时间',false,{unit:'待确认',title:'腕部三轴加速度',badge:'真实历史样例',context:'30条历史腕部样例；使用回调到达时间，单位待核。没有同步手机，不提供活动标签或布局预测。'});
@@ -40,13 +56,14 @@ function showDataset(){
   }
   if(!phonePreview)return;
   const gyro=choice==='phone-gyro',channel=gyro?'gyroscope':'accelerometer';
-  updateRecord(phonePreview.channels[channel].rows,`小米17 Pro · App ${phonePreview.version} · 会话88aded49 · 请求120Hz / 8333µs`,false,{event:true,unit:gyro?'rad/s':'m/s²',title:gyro?'角速度':'含重力加速度',badge:'真实记录 · 功能短试',context:'请求120Hz是设置，实测平均事件率见上方数值；两者分别报告。当前曲线来自约11秒功能短试，30分钟验收见进展页。各通道首事件单独作零点，XYZ保留原值，不插值或重采样；短试基线不足，不证明长期稳定、活动识别或跨设备同步。'});
+  updateRecord(phonePreview.channels[channel].rows,`历史短试 · 手机 App ${phonePreview.version} · 会话88aded49 · 请求120Hz / 8333µs`,false,{event:true,unit:gyro?'rad/s':'m/s²',title:gyro?'角速度':'含重力加速度',badge:'历史短试 · 非最新记录',context:'这条约11秒的旧功能短试仅作历史保留，不能当当前采集。XYZ保持原值，各通道首事件独立归零。请求120Hz与实测事件率分别报告；不提供跨设备同步或动作识别结论。'});
 }
 $('restore-sample').addEventListener('click',showDataset);
 $('signal-dataset').addEventListener('change',showDataset);
 $('choose-file').addEventListener('click',()=>$('csv-file').click());
 $('csv-file').addEventListener('change',async e=>{
   const file=e.target.files[0];if(!file)return;
+  signalLoadVersion++;
   try{
     if(file.size>12*1024*1024)throw Error('文件超过 12 MB，请先按会话分块。');
     updateRecord(parseCsv(await file.text()),`本地导入：${file.name} · 单位与来源待核`,true);
@@ -114,6 +131,10 @@ function initRoom(){
 }
 new ResizeObserver(plot).observe($('wave'));
 initRoom();
-Promise.all(['./data/first-session.json','./data/phone-config-smoke.json'].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error('未取得样例');return r.json();}))).then(([band,phone])=>{
-  original=band.rows.map(r=>r.slice(0,4));phonePreview=phone;showDataset();
-}).catch(e=>{$('signal-source').textContent=`样例读取失败：${e.message}`;});
+Promise.allSettled(['./data/latest-signal-catalog-20261026.json','./data/first-session.json','./data/phone-config-smoke.json'].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error('未取得记录目录');return r.json();}))).then(([latest,band,phone])=>{
+  if(latest.status==='fulfilled')latestCatalog=latest.value;
+  if(band.status==='fulfilled')original=band.value.rows.map(r=>r.slice(0,4));
+  if(phone.status==='fulfilled')phonePreview=phone.value;
+  if(!latestCatalog){$('signal-source').textContent='最新联合记录目录未取得，未回退为旧数据。';return;}
+  showDataset();
+});

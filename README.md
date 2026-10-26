@@ -3,7 +3,7 @@
 更新于2026-10-26。当前软件组合：手机0.2.4、AstroBox插件0.2.5、S5手表0.2.23/code25。
 源码在 [联合采集](collection/imu-capture-suite/README.md)，安装包与摘要在 [私有Release](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/tag/joint-watch-v0.2.23)。
 
-研究工作台继续在本机8765访问。单人监督标定的动作条件结果与真实宿舍雷达几何参考已经取得，未知布局联合推断尚待功能区标注与评价。
+当前汇总见 [2026-10-26快照](docs/reproducibility/current-2026-10-26.md)。研究工作台继续在本机8765访问。单人监督标定的动作条件结果与真实宿舍雷达几何参考已经取得，未知布局联合推断尚待功能区标注与评价。
 原始IMU、点云、私人素材和签名私钥不入库。下面的旧版本和冻结状态是历史记录，当前软件入口以上面为准。
 
 ---
