@@ -1,0 +1,59 @@
+{
+  "schema": "joint-suite-release-v1",
+  "date": "2026-10-26",
+  "release_tag": "joint-watch-v0.2.23",
+  "phone_version": "0.2.4",
+  "watch_version": "0.2.23",
+  "watch_version_code": 25,
+  "plugin_version": "0.2.5",
+  "signing_certificate_sha256": "6ff7663ead44acbe1a73bac726d1f4f71b11fcd134df6e8ca68219abcdb585e0",
+  "same_identity_update_from": [
+    "0.2.20",
+    "0.2.21",
+    "0.2.22"
+  ],
+  "old_identity_requires_backup_verified_migration": true,
+  "watch_source": "collection/imu-capture-suite/maintenance/daily-0.2.23/src",
+  "plugin_source": "collection/imu-capture-suite/maintenance/bridge-0.2.5",
+  "watch_source_inputs": {
+    "app.ux": "6aac440ccfe2daeca3ac78691d75b7efeae258623073d751a55dee43d05ef849",
+    "common/ascii-sha256.js": "e2bf1cb22a9ef7ec609ec3d0227061c8368a8f3bedf3255f4f36d2fe430ac4e0",
+    "common/brand-32.png": "a9b06185eaf4ab8855b78a73e83dab5f66b6de1f940306afad6420c72bf194bb",
+    "common/catalog-index.js": "36653f2f24989f57b5107f20f69305a1ad4fa2895534a6fa43e67e6184227cf5",
+    "common/cleanup.js": "ca69e2155ee3d944398347f51b504a69db94f214e5a41026056e2ed847f82d96",
+    "common/file-directory.js": "4dd16032c0feed13ccfdd3199b1aba8564a281ab882bcd71dfea3b2f61013f6f",
+    "common/file-lane.js": "3a7e6f22c0ab6de0426c42a6b4ec6f8765cf2ed0ed475dc7926b03296fe6a92a",
+    "common/icon.png": "2944fc385aa6e1572597c80dd72472b094486a04d98232336d049d7f0d700315",
+    "common/joint.js": "f1b7c551e7f74404f11b8082316ec25d8290b2eefc2bf26f01bb7684268ad12f",
+    "common/record-layout.js": "63035d00384c3d5727eb650f7bf86215aab83d163c52b2635e5e22602fbd2b50",
+    "common/records-bounded.js": "abf3db3a012e2924a3122bff37a388d7ae1eaf74565b11e025847ecebf25963f",
+    "common/records-fast-delete.js": "05a0c56b40f0106ac9923c3389cb7545c2e181a15e7212b923462247a3c0dd66",
+    "common/records.js": "9616b821584c84f0b8cccb83ef75215ffa9eecde83e02f5a459d48407dba6075",
+    "common/recovery-hints.js": "a30f3c401e3d9e15f6fd8c3f3ef7cacc744b730b59097d207d937f60a55d9a30",
+    "common/screen-guard.js": "dbeb2e0e7b257c117ce9f6e74d4b02c82dbe4a37778453b2b5b051f49e4614db",
+    "common/sensor-capture.js": "4a7bf102aba4e7eb7f6adbec93ec85e85b3ac6746b4866eaf56c58d067a79605",
+    "common/session-index.js": "7ca59aad775711d946bb6d697cad0b0699731d89f988d17ea9cde872ed0623e7",
+    "common/view-cache.js": "756e16be86330b2e78b89082e24d5ac0742da8dc90a07d6b7e135ba703b0b8db",
+    "Manage/index.ux": "b68d383e9a4757394228d03b773782144fb27e86453adf1175f9ffcd92f9b328",
+    "manifest.json": "861ec16e335b6809bca959c9fa145a2aa18dfada73c23df55ab79eac04ad33dd",
+    "Menu/index.ux": "793cc9391f1a770084f6e2ed02d2132ae176d19bdf158bc4a82648746975d1bf",
+    "Probe/index.ux": "1c3767e9f921451038c418a69966020fcb40fa59b5daf3da273e869cd7321614"
+  },
+  "artifacts": [
+    {
+      "name": "org.imuresearch.s5joint.release.0.2.23.rpk",
+      "bytes": 55426,
+      "sha256": "1ccc868de25d7d8aa539d841fef9273deb6eafe959ad8f775b9fe3b3b18b797c"
+    },
+    {
+      "name": "IMU-Bridge-0.2.5-clock-discard.abp",
+      "bytes": 138249,
+      "sha256": "b9cfc2199fc6a20d0b7129bc94fea20080a22d6794f19a62eca809be4e81c71d"
+    }
+  ],
+  "package_tested_not_device_installation_claim": true,
+  "private_keys_included": false,
+  "raw_recordings_included": false,
+  "formal_score": null,
+  "physical_clock_accepted": false
+}

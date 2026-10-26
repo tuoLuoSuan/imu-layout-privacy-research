@@ -1,0 +1,20 @@
+{
+  "name": "IMU 联合时间桥",
+  "icon": "icon.png",
+  "version": "0.2.5",
+  "description": "IMU联合采集连接器：连接手机与S5，记录留存，手机一次导出整包。",
+  "author": "IMU Layout Research",
+  "website": "https://github.com/tuoLuoSuan/imu-layout-privacy-research",
+  "entry": "imu_joint_bridge.wasm",
+  "wasi_version": 3,
+  "api_level": 4,
+  "permissions": [
+    "device",
+    "register_interconnect_recv",
+    "interconnect",
+    "http-server"
+  ],
+  "additional_files": [
+    "THIRD_PARTY_LICENSES.txt"
+  ]
+}
