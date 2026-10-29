@@ -1750,6 +1750,261 @@
     ],
     "not_a_proof_of_safe_open_set_rejection": true
   },
+  "real_label_only_control": {
+    "nominal": [
+      {
+        "frontend": "ronin",
+        "condition": "calibrated_10_classes",
+        "variant": "geom",
+        "watch_offset_s": 0.0,
+        "event_count": 11,
+        "clock_scenario_s": 0,
+        "tp": 5,
+        "fp": 11,
+        "fn": 2,
+        "predicted_reference_groups": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "lower": 1.7023809523809523,
+        "upper": 3.2214285714285715,
+        "denominator": 5,
+        "details": [
+          {
+            "visit": 4,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "known_correct": [
+              2
+            ],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.25,
+            "upper": 0.75
+          },
+          {
+            "visit": 5,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4,
+              5
+            ],
+            "known_correct": [],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.0,
+            "upper": 0.4
+          },
+          {
+            "visit": 6,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              6
+            ],
+            "known_correct": [
+              4
+            ],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.16666666666666666,
+            "upper": 0.5
+          },
+          {
+            "visit": 7,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "known_correct": [
+              2,
+              5
+            ],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.2857142857142857,
+            "upper": 0.5714285714285714
+          },
+          {
+            "visit": 8,
+            "target_missing": false,
+            "selected": [
+              3
+            ],
+            "known_correct": [
+              3
+            ],
+            "unlabelled": [],
+            "lower": 1.0,
+            "upper": 1.0
+          }
+        ]
+      },
+      {
+        "frontend": "eqnio",
+        "condition": "calibrated_10_classes",
+        "variant": "geom",
+        "watch_offset_s": 0.0,
+        "event_count": 11,
+        "clock_scenario_s": 0,
+        "tp": 5,
+        "fp": 11,
+        "fn": 2,
+        "predicted_reference_groups": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "lower": 1.7023809523809523,
+        "upper": 3.2214285714285715,
+        "denominator": 5,
+        "details": [
+          {
+            "visit": 4,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "known_correct": [
+              2
+            ],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.25,
+            "upper": 0.75
+          },
+          {
+            "visit": 5,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4,
+              5
+            ],
+            "known_correct": [],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.0,
+            "upper": 0.4
+          },
+          {
+            "visit": 6,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              6
+            ],
+            "known_correct": [
+              4
+            ],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.16666666666666666,
+            "upper": 0.5
+          },
+          {
+            "visit": 7,
+            "target_missing": false,
+            "selected": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "known_correct": [
+              2,
+              5
+            ],
+            "unlabelled": [
+              0,
+              1
+            ],
+            "lower": 0.2857142857142857,
+            "upper": 0.5714285714285714
+          },
+          {
+            "visit": 8,
+            "target_missing": false,
+            "selected": [
+              3
+            ],
+            "known_correct": [
+              3
+            ],
+            "unlabelled": [],
+            "lower": 1.0,
+            "upper": 1.0
+          }
+        ]
+      }
+    ],
+    "oracle_coarse_control": {
+      "tp": 7,
+      "fp": 6,
+      "fn": 0,
+      "random_same_class_revisit_expectation": 3.3333333333333335,
+      "denominator": 5
+    },
+    "no_trajectory_no_true_place_count": true,
+    "reused_session_exploratory": true,
+    "formal_score": null
+  },
+  "real_forced_three_groups_is_not_oracle_count_for_all_proposals": true,
   "density_noiseless_unknown_count": [
     {
       "k": 3,
