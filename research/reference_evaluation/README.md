@@ -35,3 +35,11 @@ NumPy and SciPy; no ROS or hardware connection is required.
 
 See the aggregate reference-readiness report under docs/research. This code does
 not change the attacker's information set, classifiers or frozen capture tools.
+
+## Relative-place query
+
+`relative_places.py` ranks pairs and chooses the closest previous visit from
+unaligned XY points. Site labels are passed separately to the evaluator. It does
+not detect new sites, estimate their number, or identify a room region. Historical
+tie decisions use only data available by that visit. The 105-partition rank is
+conditional, not a population p-value. See the [aggregate result](../../docs/research/2026-10-29-relative-place-results.md).
