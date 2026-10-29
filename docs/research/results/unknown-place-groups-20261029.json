@@ -1,0 +1,1857 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "main_parameter_cells": 882,
+  "trials_per_cell": 1440,
+  "main_trial_cells": 1270080,
+  "density_overlapping_cells": 162,
+  "density_trial_cells": 233280,
+  "development_seed": 2026102903,
+  "test_seed": 2026102904,
+  "selected_parameters": {
+    "geometry": {
+      "alpha": 0.2,
+      "weight": 0.0,
+      "macro_pair_f1": 0.5004091235394076,
+      "noiseless_admissible": true,
+      "cells": 192
+    },
+    "joint": {
+      "alpha": 0.2,
+      "weight": 0.0,
+      "macro_pair_f1": 0.5004091235394076,
+      "noiseless_admissible": true,
+      "cells": 192
+    },
+    "test_results_seen": false,
+    "rule": "perfect noiseless development gate, then macro pair-F1; exact tie smaller weight then alpha",
+    "label_mark_distance": "geometry_distance * sqrt(1 + weight * mark_difference**2)",
+    "selection_is_synthetic_hyperparameter_development": true,
+    "old_classifier_fitting": false
+  },
+  "synthetic_grouping": [
+    {
+      "noise_ratio": 0.0,
+      "method": "geometry",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 0.0,
+      "method": "adaptive_density",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 0.0,
+      "method": "known_count",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 0.0,
+      "method": "oracle_group",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "geometry",
+      "pair_f1": 0.9117049617581828,
+      "exact_partition": 0.4418981481481481
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "adaptive_density",
+      "pair_f1": 0.9554405162738494,
+      "exact_partition": 0.6048611111111111
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "known_count",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "oracle_group",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "geometry",
+      "pair_f1": 0.5167641319537952,
+      "exact_partition": 0.022222222222222223
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "adaptive_density",
+      "pair_f1": 0.8966958410957271,
+      "exact_partition": 0.35451388888888896
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "known_count",
+      "pair_f1": 0.9702768197231314,
+      "exact_partition": 0.8231481481481481
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "oracle_group",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "geometry",
+      "pair_f1": 0.2220511069758563,
+      "exact_partition": 0.0
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "adaptive_density",
+      "pair_f1": 0.5509366867385725,
+      "exact_partition": 0.005092592592592592
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "known_count",
+      "pair_f1": 0.6630391470440513,
+      "exact_partition": 0.05555555555555556
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "oracle_group",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "geometry",
+      "pair_f1": 0.09089420066748916,
+      "exact_partition": 0.0
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "adaptive_density",
+      "pair_f1": 0.3246196594343333,
+      "exact_partition": 0.0
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "known_count",
+      "pair_f1": 0.41396378829680197,
+      "exact_partition": 0.00011574074074074075
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "oracle_group",
+      "pair_f1": 1.0,
+      "exact_partition": 1.0
+    }
+  ],
+  "synthetic_family": [
+    {
+      "noise_ratio": 0.0,
+      "method": "geometry",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 1.0,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.0,
+      "method": "adaptive_density",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 1.0,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.0,
+      "method": "known_count",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 1.0,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.0,
+      "method": "oracle_group",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 1.0,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "geometry",
+      "answer_coverage": 0.7208333333333333,
+      "correct_over_all_trials": 0.7206018518518519,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.1363425925925926,
+          "correct_over_all_trials": 0.1363425925925926
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.5895833333333332,
+          "correct_over_all_trials": 0.5895833333333332
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.7164351851851852,
+          "correct_over_all_trials": 0.7164351851851852
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.7208333333333333,
+          "correct_over_all_trials": 0.7206018518518519
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "adaptive_density",
+      "answer_coverage": 0.6048611111111111,
+      "correct_over_all_trials": 0.6048611111111111,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.1076388888888889,
+          "correct_over_all_trials": 0.1076388888888889
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.5194444444444445,
+          "correct_over_all_trials": 0.5194444444444445
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.6047453703703702,
+          "correct_over_all_trials": 0.6047453703703702
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.6048611111111111,
+          "correct_over_all_trials": 0.6048611111111111
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "known_count",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 1.0,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.1787037037037037,
+          "correct_over_all_trials": 0.1787037037037037
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.8600694444444444,
+          "correct_over_all_trials": 0.8600694444444444
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.9997685185185184,
+          "correct_over_all_trials": 0.9997685185185184
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.1,
+      "method": "oracle_group",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 1.0,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.1787037037037037,
+          "correct_over_all_trials": 0.1787037037037037
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.8600694444444444,
+          "correct_over_all_trials": 0.8600694444444444
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.9997685185185184,
+          "correct_over_all_trials": 0.9997685185185184
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 1.0,
+          "correct_over_all_trials": 1.0
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "geometry",
+      "answer_coverage": 0.4134259259259259,
+      "correct_over_all_trials": 0.3344907407407407,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.001736111111111111,
+          "correct_over_all_trials": 0.001736111111111111
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.03819444444444444,
+          "correct_over_all_trials": 0.037731481481481484
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.17002314814814815,
+          "correct_over_all_trials": 0.16145833333333334
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.32465277777777773,
+          "correct_over_all_trials": 0.29421296296296295
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "adaptive_density",
+      "answer_coverage": 0.4773148148148148,
+      "correct_over_all_trials": 0.45266203703703706,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.0033564814814814816,
+          "correct_over_all_trials": 0.0033564814814814816
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.08368055555555555,
+          "correct_over_all_trials": 0.08333333333333333
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.32199074074074074,
+          "correct_over_all_trials": 0.3170138888888889
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.4653935185185185,
+          "correct_over_all_trials": 0.4475694444444444
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "known_count",
+      "answer_coverage": 0.9975694444444444,
+      "correct_over_all_trials": 0.9583333333333334,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.008333333333333333,
+          "correct_over_all_trials": 0.008333333333333333
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.17395833333333335,
+          "correct_over_all_trials": 0.1738425925925926
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.6989583333333335,
+          "correct_over_all_trials": 0.6877314814814816
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.9899305555555556,
+          "correct_over_all_trials": 0.9530092592592593
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.25,
+      "method": "oracle_group",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 0.9672453703703705,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.008333333333333333,
+          "correct_over_all_trials": 0.008333333333333333
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.1832175925925926,
+          "correct_over_all_trials": 0.1829861111111111
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.720138888888889,
+          "correct_over_all_trials": 0.7092592592592593
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.996412037037037,
+          "correct_over_all_trials": 0.9645833333333335
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "geometry",
+      "answer_coverage": 0.23136574074074076,
+      "correct_over_all_trials": 0.11018518518518518,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.0,
+          "correct_over_all_trials": 0.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.0010416666666666667,
+          "correct_over_all_trials": 0.000925925925925926
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.011574074074074075,
+          "correct_over_all_trials": 0.008449074074074076
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.07662037037037037,
+          "correct_over_all_trials": 0.0511574074074074
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "adaptive_density",
+      "answer_coverage": 0.2969907407407408,
+      "correct_over_all_trials": 0.16261574074074073,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.00011574074074074075,
+          "correct_over_all_trials": 0.00011574074074074075
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.0025462962962962965,
+          "correct_over_all_trials": 0.001851851851851852
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.02523148148148148,
+          "correct_over_all_trials": 0.020833333333333332
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.13194444444444445,
+          "correct_over_all_trials": 0.09560185185185184
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "known_count",
+      "answer_coverage": 0.7842592592592593,
+      "correct_over_all_trials": 0.5172453703703704,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.0002314814814814815,
+          "correct_over_all_trials": 0.0002314814814814815
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.01099537037037037,
+          "correct_over_all_trials": 0.009606481481481481
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.1221064814814815,
+          "correct_over_all_trials": 0.09733796296296297
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.5009259259259259,
+          "correct_over_all_trials": 0.37256944444444445
+        }
+      ]
+    },
+    {
+      "noise_ratio": 0.5,
+      "method": "oracle_group",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 0.8015046296296297,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.0008101851851851852,
+          "correct_over_all_trials": 0.0008101851851851852
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.0224537037037037,
+          "correct_over_all_trials": 0.020717592592592593
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.21122685185185186,
+          "correct_over_all_trials": 0.18599537037037037
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.7828703703703703,
+          "correct_over_all_trials": 0.65
+        }
+      ]
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "geometry",
+      "answer_coverage": 0.12939814814814818,
+      "correct_over_all_trials": 0.03229166666666667,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.0,
+          "correct_over_all_trials": 0.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.0002314814814814815,
+          "correct_over_all_trials": 0.0
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.001388888888888889,
+          "correct_over_all_trials": 0.00034722222222222224
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.021064814814814814,
+          "correct_over_all_trials": 0.00648148148148148
+        }
+      ]
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "adaptive_density",
+      "answer_coverage": 0.2662037037037038,
+      "correct_over_all_trials": 0.0638888888888889,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.0,
+          "correct_over_all_trials": 0.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.0008101851851851852,
+          "correct_over_all_trials": 0.00034722222222222224
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.005787037037037038,
+          "correct_over_all_trials": 0.001851851851851852
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.06041666666666667,
+          "correct_over_all_trials": 0.01840277777777778
+        }
+      ]
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "known_count",
+      "answer_coverage": 0.5752314814814815,
+      "correct_over_all_trials": 0.13171296296296295,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.0,
+          "correct_over_all_trials": 0.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.000925925925925926,
+          "correct_over_all_trials": 0.00011574074074074075
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.02152777777777778,
+          "correct_over_all_trials": 0.005671296296296296
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.18425925925925926,
+          "correct_over_all_trials": 0.04131944444444444
+        }
+      ]
+    },
+    {
+      "noise_ratio": 1.0,
+      "method": "oracle_group",
+      "answer_coverage": 1.0,
+      "correct_over_all_trials": 0.4708333333333334,
+      "cutoff_curve": [
+        {
+          "cutoff": 0.02,
+          "answer_coverage": 0.00011574074074074075,
+          "correct_over_all_trials": 0.0
+        },
+        {
+          "cutoff": 0.05,
+          "answer_coverage": 0.0033564814814814816,
+          "correct_over_all_trials": 0.001736111111111111
+        },
+        {
+          "cutoff": 0.1,
+          "answer_coverage": 0.04050925925925925,
+          "correct_over_all_trials": 0.02361111111111111
+        },
+        {
+          "cutoff": 0.2,
+          "answer_coverage": 0.31550925925925927,
+          "correct_over_all_trials": 0.1806712962962963
+        }
+      ]
+    }
+  ],
+  "event_stress": [
+    {
+      "scenario": "clean",
+      "method": "geometry",
+      "pair_f1": 0.5167641319537952,
+      "strict_revisit": 0.537451774691358,
+      "answer_coverage": 0.4134259259259259,
+      "correct_over_all_trials": 0.3344907407407407
+    },
+    {
+      "scenario": "clean",
+      "method": "adaptive_density",
+      "pair_f1": 0.8966958410957271,
+      "strict_revisit": 0.9172260802469135,
+      "answer_coverage": 0.4773148148148148,
+      "correct_over_all_trials": 0.45266203703703706
+    },
+    {
+      "scenario": "miss25",
+      "method": "geometry",
+      "pair_f1": 0.5335100155081399,
+      "strict_revisit": 0.34367283950617283,
+      "answer_coverage": 0.30787037037037035,
+      "correct_over_all_trials": 0.23414351851851853
+    },
+    {
+      "scenario": "miss25",
+      "method": "adaptive_density",
+      "pair_f1": 0.8964886507289345,
+      "strict_revisit": 0.6263117283950618,
+      "answer_coverage": 0.5827546296296297,
+      "correct_over_all_trials": 0.5262731481481481
+    },
+    {
+      "scenario": "split3",
+      "method": "geometry",
+      "pair_f1": 0.5167641319537952,
+      "strict_revisit": 0.537451774691358,
+      "answer_coverage": 0.4134259259259259,
+      "correct_over_all_trials": 0.3344907407407407
+    },
+    {
+      "scenario": "split3",
+      "method": "adaptive_density",
+      "pair_f1": 0.8966958410957271,
+      "strict_revisit": 0.9172260802469135,
+      "answer_coverage": 0.4773148148148148,
+      "correct_over_all_trials": 0.45266203703703706
+    },
+    {
+      "scenario": "extra25",
+      "method": "geometry",
+      "pair_f1": 0.39923019354131206,
+      "strict_revisit": 0.4358796296296297,
+      "answer_coverage": 0.20185185185185184,
+      "correct_over_all_trials": 0.12037037037037036
+    },
+    {
+      "scenario": "extra25",
+      "method": "adaptive_density",
+      "pair_f1": 0.6997138875289245,
+      "strict_revisit": 0.796117862654321,
+      "answer_coverage": 0.11064814814814812,
+      "correct_over_all_trials": 0.09247685185185185
+    },
+    {
+      "scenario": "combined",
+      "method": "geometry",
+      "pair_f1": 0.3923816436746043,
+      "strict_revisit": 0.2675443672839506,
+      "answer_coverage": 0.28738425925925926,
+      "correct_over_all_trials": 0.14050925925925928
+    },
+    {
+      "scenario": "combined",
+      "method": "adaptive_density",
+      "pair_f1": 0.6450424561500837,
+      "strict_revisit": 0.5357542438271605,
+      "answer_coverage": 0.26458333333333334,
+      "correct_over_all_trials": 0.17013888888888887
+    }
+  ],
+  "real_known_reference_relations": [
+    {
+      "source": "fixed",
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "geometry",
+      "groups": 10,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 0,
+      "fp": 0,
+      "fn": 7,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 0,
+      "predicted_reference_groups": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "exact_on_all_declared_visits": false,
+      "pair_f1": 0.0
+    },
+    {
+      "source": "fixed",
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "joint",
+      "groups": 10,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 0,
+      "fp": 0,
+      "fn": 7,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 0,
+      "predicted_reference_groups": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "exact_on_all_declared_visits": false,
+      "pair_f1": 0.0
+    },
+    {
+      "source": "fixed",
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "given_three_places",
+      "groups": 3,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 7,
+      "fp": 6,
+      "fn": 0,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 0,
+      "predicted_reference_groups": [
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2
+      ],
+      "exact_on_all_declared_visits": false,
+      "pair_f1": 0.7
+    },
+    {
+      "source": "fixed",
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "geometry",
+      "groups": 10,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 0,
+      "fp": 0,
+      "fn": 7,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 0,
+      "predicted_reference_groups": [
+        2,
+        3,
+        4,
+        1,
+        5,
+        6,
+        7,
+        8
+      ],
+      "exact_on_all_declared_visits": false,
+      "pair_f1": 0.0
+    },
+    {
+      "source": "fixed",
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "joint",
+      "groups": 10,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 0,
+      "fp": 0,
+      "fn": 7,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 0,
+      "predicted_reference_groups": [
+        2,
+        3,
+        4,
+        1,
+        5,
+        6,
+        7,
+        8
+      ],
+      "exact_on_all_declared_visits": false,
+      "pair_f1": 0.0
+    },
+    {
+      "source": "fixed",
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "given_three_places",
+      "groups": 3,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 7,
+      "fp": 6,
+      "fn": 0,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 0,
+      "predicted_reference_groups": [
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2
+      ],
+      "exact_on_all_declared_visits": false,
+      "pair_f1": 0.7
+    },
+    {
+      "source": "density",
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "adaptive_density",
+      "groups": 4,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 4,
+      "fp": 2,
+      "fn": 3,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 1,
+      "predicted_reference_groups": [
+        1,
+        2,
+        3,
+        3,
+        2,
+        -1,
+        3,
+        2
+      ],
+      "exact_on_all_declared_visits": false,
+      "pair_f1": 0.6153846153846154
+    },
+    {
+      "source": "density",
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "adaptive_density",
+      "groups": 4,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "reference_to_detected": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "unlabelled_events_used_in_inference": [
+        0,
+        1,
+        10
+      ],
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "true_same_pairs": 7,
+      "true_different_pairs": 21,
+      "missing_visits": 0,
+      "unassigned_or_missing_visits": 0,
+      "predicted_reference_groups": [
+        1,
+        2,
+        3,
+        1,
+        2,
+        3,
+        1,
+        2
+      ],
+      "exact_on_all_declared_visits": true,
+      "pair_f1": 1.0
+    }
+  ],
+  "real_revisit": [
+    {
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "geometry",
+      "groups": 10,
+      "supported_groups": 1,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "matched_windows": 8,
+      "lower": 0.0,
+      "upper": 0.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      ]
+    },
+    {
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "joint",
+      "groups": 10,
+      "supported_groups": 1,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "matched_windows": 8,
+      "lower": 0.0,
+      "upper": 0.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      ]
+    },
+    {
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "given_three_places",
+      "groups": 3,
+      "supported_groups": 3,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "matched_windows": 8,
+      "lower": 3.0,
+      "upper": 3.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [
+            4
+          ],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [
+            3
+          ],
+          "known_correct": [
+            3
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [
+            4
+          ],
+          "known_correct": [
+            4
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [
+            4
+          ],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [
+            6
+          ],
+          "known_correct": [
+            6
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        }
+      ]
+    },
+    {
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "geometry",
+      "groups": 10,
+      "supported_groups": 1,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "matched_windows": 8,
+      "lower": 0.0,
+      "upper": 1.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [
+            1
+          ],
+          "known_correct": [],
+          "unlabelled": [
+            1
+          ],
+          "lower": 0.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      ]
+    },
+    {
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "joint",
+      "groups": 10,
+      "supported_groups": 1,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "matched_windows": 8,
+      "lower": 0.0,
+      "upper": 1.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [
+            1
+          ],
+          "known_correct": [],
+          "unlabelled": [
+            1
+          ],
+          "lower": 0.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      ]
+    },
+    {
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "given_three_places",
+      "groups": 3,
+      "supported_groups": 3,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "matched_windows": 8,
+      "lower": 4.0,
+      "upper": 5.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [
+            1
+          ],
+          "known_correct": [],
+          "unlabelled": [
+            1
+          ],
+          "lower": 0.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [
+            3
+          ],
+          "known_correct": [
+            3
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [
+            4
+          ],
+          "known_correct": [
+            4
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [
+            5
+          ],
+          "known_correct": [
+            5
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [
+            6
+          ],
+          "known_correct": [
+            6
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        }
+      ]
+    },
+    {
+      "frontend": "ronin",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "adaptive_density",
+      "groups": 4,
+      "unassigned": 1,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "lower": 2.0,
+      "upper": 2.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [
+            4
+          ],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [
+            3
+          ],
+          "known_correct": [
+            3
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [
+            4
+          ],
+          "known_correct": [],
+          "unlabelled": [],
+          "lower": 0.0,
+          "upper": 0.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [
+            6
+          ],
+          "known_correct": [
+            6
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        }
+      ]
+    },
+    {
+      "frontend": "eqnio",
+      "condition": "calibrated_10_classes",
+      "variant": "geom",
+      "watch_offset_s": 0.0,
+      "method": "adaptive_density",
+      "groups": 4,
+      "unassigned": 0,
+      "event_count": 11,
+      "clock_scenario_s": 0,
+      "lower": 4.0,
+      "upper": 5.0,
+      "denominator": 5,
+      "details": [
+        {
+          "visit": 4,
+          "target_missing": false,
+          "selected": [
+            1
+          ],
+          "known_correct": [],
+          "unlabelled": [
+            1
+          ],
+          "lower": 0.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 5,
+          "target_missing": false,
+          "selected": [
+            3
+          ],
+          "known_correct": [
+            3
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 6,
+          "target_missing": false,
+          "selected": [
+            4
+          ],
+          "known_correct": [
+            4
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 7,
+          "target_missing": false,
+          "selected": [
+            5
+          ],
+          "known_correct": [
+            5
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        {
+          "visit": 8,
+          "target_missing": false,
+          "selected": [
+            6
+          ],
+          "known_correct": [
+            6
+          ],
+          "unlabelled": [],
+          "lower": 1.0,
+          "upper": 1.0
+        }
+      ]
+    }
+  ],
+  "density_negative_controls": {
+    "rows": [
+      {
+        "control": "no_revisit",
+        "assigned_groups": 5,
+        "unassigned": 4,
+        "predicted_same_pairs": 10,
+        "true_same_pairs": 0,
+        "false_same_pairs": 10
+      },
+      {
+        "control": "repeated_single_site",
+        "assigned_groups": 1,
+        "unassigned": 0,
+        "predicted_same_pairs": 120,
+        "true_same_pairs": 120,
+        "false_same_pairs": 0
+      }
+    ],
+    "not_a_proof_of_safe_open_set_rejection": true
+  },
+  "density_noiseless_unknown_count": [
+    {
+      "k": 3,
+      "noise_ratio": 0.0,
+      "pair_precision": 1.0,
+      "pair_recall": 1.0,
+      "pair_f1": 1.0,
+      "exact_partition": 1.0,
+      "groups_total": 3.0,
+      "groups_supported": 3.0,
+      "count_correct": 1.0,
+      "strict_revisit": 1.0,
+      "revisit_answer_coverage": 1.0,
+      "reference_coverage": 1.0,
+      "missing_queries": 0.0,
+      "false_pair_count": 0.0,
+      "family_coverage_unfiltered": 0.0,
+      "family_credit_unfiltered": 0.0,
+      "best_shape_residual": 0.5622908520812414,
+      "family_coverage_0.02": 0.0,
+      "family_credit_0.02": 0.0,
+      "family_coverage_0.05": 0.0,
+      "family_credit_0.05": 0.0,
+      "family_coverage_0.1": 0.0,
+      "family_credit_0.1": 0.0,
+      "family_coverage_0.2": 0.0,
+      "family_credit_0.2": 0.0
+    },
+    {
+      "k": 5,
+      "noise_ratio": 0.0,
+      "pair_precision": 1.0,
+      "pair_recall": 1.0,
+      "pair_f1": 1.0,
+      "exact_partition": 1.0,
+      "groups_total": 5.0,
+      "groups_supported": 5.0,
+      "count_correct": 1.0,
+      "strict_revisit": 1.0,
+      "revisit_answer_coverage": 1.0,
+      "reference_coverage": 1.0,
+      "missing_queries": 0.0,
+      "false_pair_count": 0.0,
+      "family_coverage_unfiltered": 0.0,
+      "family_credit_unfiltered": 0.0,
+      "best_shape_residual": 0.24167713646382233,
+      "family_coverage_0.02": 0.0,
+      "family_credit_0.02": 0.0,
+      "family_coverage_0.05": 0.0,
+      "family_credit_0.05": 0.0,
+      "family_coverage_0.1": 0.0,
+      "family_credit_0.1": 0.0,
+      "family_coverage_0.2": 0.0,
+      "family_credit_0.2": 0.0
+    },
+    {
+      "k": 6,
+      "noise_ratio": 0.0,
+      "pair_precision": 1.0,
+      "pair_recall": 1.0,
+      "pair_f1": 1.0,
+      "exact_partition": 1.0,
+      "groups_total": 6.0,
+      "groups_supported": 6.0,
+      "count_correct": 1.0,
+      "strict_revisit": 1.0,
+      "revisit_answer_coverage": 1.0,
+      "reference_coverage": 1.0,
+      "missing_queries": 0.0,
+      "false_pair_count": 0.0,
+      "family_coverage_unfiltered": 0.0,
+      "family_credit_unfiltered": 0.0,
+      "best_shape_residual": 0.3071705530334977,
+      "family_coverage_0.02": 0.0,
+      "family_credit_0.02": 0.0,
+      "family_coverage_0.05": 0.0,
+      "family_credit_0.05": 0.0,
+      "family_coverage_0.1": 0.0,
+      "family_credit_0.1": 0.0,
+      "family_coverage_0.2": 0.0,
+      "family_credit_0.2": 0.0
+    }
+  ],
+  "inference": "offline final-budget grouping; full proposal set; reference labels only for evaluation",
+  "real_evidence": "one reused session; script labels; personal calibration and software clock assumptions",
+  "verification": {
+    "tests": 29,
+    "scalar_cases": 17640,
+    "summary_difference": 0.0,
+    "scalar_difference": 1.1102230246251565e-16,
+    "squared_profile_difference": 6.678685382510707e-16,
+    "primary_replay_files": 25,
+    "density_replay_files": 20,
+    "count_control_replay_files": 2,
+    "old_inputs_unchanged": true
+  },
+  "new_protocol_restrictions_applied": false,
+  "new_recording_required_now": false,
+  "real_room_ranking": null,
+  "formal_score": null,
+  "physical_accuracy_validated": false,
+  "physical_clock_accepted": false,
+  "generalization_accuracy_validated": false,
+  "raw_data_included": false
+}
