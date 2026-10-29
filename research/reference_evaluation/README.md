@@ -43,3 +43,13 @@ unaligned XY points. Site labels are passed separately to the evaluator. It does
 not detect new sites, estimate their number, or identify a room region. Historical
 tie decisions use only data available by that visit. The 105-partition rank is
 conditional, not a population p-value. See the [aggregate result](../../docs/research/2026-10-29-relative-place-results.md).
+
+## Automatic stop proposals
+
+`automatic_stops.py` detects proposals from a fixed sensor mask or trailing IMU
+statistics. Reference windows and site labels enter only the evaluator. All
+proposals are retained; a missing target stays in the query denominator and an
+unlabelled predecessor produces unresolved credit, not a silently correct match.
+Low model speed is not physical zero-speed truth. The exact random-ranking AP
+expectation differs from constant-score prevalence in small samples. See the
+[aggregate closeout](../../docs/research/2026-10-29-automatic-stop-and-simulation-closeout.md).

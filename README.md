@@ -1,6 +1,6 @@
 # IMU 室内空间隐私研究 · 当前入口
 
-更新于2026-10-29：已有记录的7次停留中，RoNIN找对4/4次回访，EqNIO为2/4；这是给定窗口后的单人单次探索结果，四区编号仍未解决。见[结果与对照](docs/research/2026-10-29-relative-place-results.md)和[计算规则](research/reference_evaluation/README.md)。手机与手表联合研究继续，腕部位置增益尚未验证。
+更新于2026-10-29：给定窗口的回访结果已明确标为oracle-segmentation upper bound参考条件，自动停留补试和固定四区模拟核查已完成。主时间假设下RoNIN近零速规则四查全中，IMU主规则确认2次、1次未定，全部时间情景与失败项并列。见[结果与限制](docs/research/2026-10-29-automatic-stop-and-simulation-closeout.md)。本轮先收尾实验，没有论文稿；腕部地点增益仍未验证。
 
 更新于2026-10-26。当前软件组合：手机0.2.4、AstroBox插件0.2.5、S5手表0.2.23/code25。
 源码在 [联合采集](collection/imu-capture-suite/README.md)，安装包与摘要在 [私有Release](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/tag/joint-watch-v0.2.23)。

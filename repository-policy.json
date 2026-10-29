@@ -750,7 +750,10 @@
     "docs/research/2026-10-29-joint180-reference-and-conditional-holdout.md",
     "research/reference_evaluation/relative_places.py",
     "research/reference_evaluation/test_relative_places.py",
-    "docs/research/2026-10-29-relative-place-results.md"
+    "docs/research/2026-10-29-relative-place-results.md",
+    "research/reference_evaluation/automatic_stops.py",
+    "research/reference_evaluation/test_automatic_stops.py",
+    "docs/research/2026-10-29-automatic-stop-and-simulation-closeout.md"
   ],
   "binary_sha256": {
     "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
