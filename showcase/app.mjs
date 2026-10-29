@@ -44,7 +44,7 @@ async function showDataset(){
       if(!loaded){const response=await fetch('./data/'+current.file);if(!response.ok)throw Error('最新记录素材未取得，未用旧样例替代。');loaded=await response.json();latestSignalCache.set(current.id,loaded);}
       if(version!==signalLoadVersion||$('signal-dataset').value!==choice)return;
       if(loaded.rows.length!==current.count)throw Error('记录条数与来源清单不一致，停止展示。');
-      updateRecord(loaded.rows,current.source,false,{event:current.event,unit:current.unit,title:current.title,badge:'2026-10-25 · 最新联合记录',context:current.context+(current.requested_rate_hz?' 本次请求'+current.requested_rate_hz+' Hz，实际事件率见统计。':'')});
+      updateRecord(loaded.rows,current.source,false,{event:current.event,unit:current.unit,title:current.title,badge:current.badge||`${current.recording_date} · 联合记录`,context:current.context+(current.requested_rate_hz?' 本次请求'+current.requested_rate_hz+' Hz，实际事件率见统计。':'')});
     }catch(error){if(version===signalLoadVersion){$('signal-source').textContent=error.message;$('signal-badge').textContent='最新素材不可用';}}
     return;
   }
@@ -131,10 +131,11 @@ function initRoom(){
 }
 new ResizeObserver(plot).observe($('wave'));
 initRoom();
-Promise.allSettled(['./data/latest-signal-catalog-20261026.json','./data/first-session.json','./data/phone-config-smoke.json'].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error('未取得记录目录');return r.json();}))).then(([latest,band,phone])=>{
+Promise.allSettled(['./data/latest-signal-catalog-20261028.json','./data/first-session.json','./data/phone-config-smoke.json'].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error('未取得记录目录');return r.json();}))).then(([latest,band,phone])=>{
   if(latest.status==='fulfilled')latestCatalog=latest.value;
   if(band.status==='fulfilled')original=band.value.rows.map(r=>r.slice(0,4));
   if(phone.status==='fulfilled')phonePreview=phone.value;
   if(!latestCatalog){$('signal-source').textContent='最新联合记录目录未取得，未回退为旧数据。';return;}
+  if(latestCatalog.datasets.some(d=>d.id===latestCatalog.default_id))$('signal-dataset').value=latestCatalog.default_id;
   showDataset();
 });

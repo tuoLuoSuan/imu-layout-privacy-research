@@ -1,0 +1,592 @@
+{
+  "family_slice": [
+    {
+      "noise_ratio": 0.25,
+      "geometry_unknown_scale": 0.9795138888888889,
+      "geometry_oracle_scale": 0.997800925925926,
+      "joint_unknown_scale": 0.989699074074074
+    },
+    {
+      "noise_ratio": 0.5,
+      "geometry_unknown_scale": 0.8520833333333332,
+      "geometry_oracle_scale": 0.9379629629629629,
+      "joint_unknown_scale": 0.9127314814814814
+    },
+    {
+      "noise_ratio": 1.0,
+      "geometry_unknown_scale": 0.5415509259259259,
+      "geometry_oracle_scale": 0.6434027777777778,
+      "joint_unknown_scale": 0.6821759259259258
+    }
+  ],
+  "event_slice": [
+    {
+      "scenario": "clean",
+      "raw_geometry_strict": 0.7442033179012344,
+      "time_merged_geometry_strict": 0.7442033179012344,
+      "oracle_merge_geometry": 0.7442033179012344,
+      "naive_fragment_same_place_credit": 0.7442033179012344,
+      "within_visit_match_credit": 0.0,
+      "raw_reference_coverage": 1.0
+    },
+    {
+      "scenario": "miss25",
+      "raw_geometry_strict": 0.49586226851851856,
+      "time_merged_geometry_strict": 0.49586226851851856,
+      "oracle_merge_geometry": 0.49586226851851856,
+      "naive_fragment_same_place_credit": 0.6637369436761806,
+      "within_visit_match_credit": 0.0,
+      "raw_reference_coverage": 0.7447916666666677
+    },
+    {
+      "scenario": "split2",
+      "raw_geometry_strict": 0.0,
+      "time_merged_geometry_strict": 0.7442033179012344,
+      "oracle_merge_geometry": 0.7442033179012344,
+      "naive_fragment_same_place_credit": 0.8721016589506174,
+      "within_visit_match_credit": 0.5,
+      "raw_reference_coverage": 0.0
+    },
+    {
+      "scenario": "split3",
+      "raw_geometry_strict": 0.0,
+      "time_merged_geometry_strict": 0.7442033179012344,
+      "oracle_merge_geometry": 0.7442033179012344,
+      "naive_fragment_same_place_credit": 0.9147344393004069,
+      "within_visit_match_credit": 0.6666666666666529,
+      "raw_reference_coverage": 1.0
+    },
+    {
+      "scenario": "extra50",
+      "raw_geometry_strict": 0.5630401234567902,
+      "time_merged_geometry_strict": 0.5630401234567902,
+      "oracle_merge_geometry": 0.7442033179012344,
+      "naive_fragment_same_place_credit": 0.5630401234567902,
+      "within_visit_match_credit": 0.0,
+      "raw_reference_coverage": 1.0
+    },
+    {
+      "scenario": "join_offset2",
+      "raw_geometry_strict": 0.7442033179012344,
+      "time_merged_geometry_strict": 0.7442033179012344,
+      "oracle_merge_geometry": 0.7442033179012344,
+      "naive_fragment_same_place_credit": 0.7442033179012344,
+      "within_visit_match_credit": 0.0,
+      "raw_reference_coverage": 1.0
+    },
+    {
+      "scenario": "join_offset6",
+      "raw_geometry_strict": 0.5731963734567901,
+      "time_merged_geometry_strict": 0.5731963734567901,
+      "oracle_merge_geometry": 0.5731963734567901,
+      "naive_fragment_same_place_credit": 0.6253051346801373,
+      "within_visit_match_credit": 0.0,
+      "raw_reference_coverage": 0.9166666666666717
+    },
+    {
+      "scenario": "combined",
+      "raw_geometry_strict": 0.0,
+      "time_merged_geometry_strict": 0.34742476851851856,
+      "oracle_merge_geometry": 0.45292245370370376,
+      "naive_fragment_same_place_credit": 0.7480458450793486,
+      "within_visit_match_credit": 0.47703881279639115,
+      "raw_reference_coverage": 0.0
+    },
+    {
+      "scenario": "combined_strong",
+      "raw_geometry_strict": 0.09921392746913577,
+      "time_merged_geometry_strict": 0.1070119598765431,
+      "oracle_merge_geometry": 0.21130401234567917,
+      "naive_fragment_same_place_credit": 0.40226112593888247,
+      "within_visit_match_credit": 0.211591544355228,
+      "raw_reference_coverage": 0.455497685185185
+    }
+  ],
+  "coverage": [
+    {
+      "distinct_places": 1,
+      "subsets": 24,
+      "unique": 0,
+      "minimum": 6,
+      "maximum": 6
+    },
+    {
+      "distinct_places": 2,
+      "subsets": 36,
+      "unique": 0,
+      "minimum": 6,
+      "maximum": 6
+    },
+    {
+      "distinct_places": 3,
+      "subsets": 24,
+      "unique": 13,
+      "minimum": 1,
+      "maximum": 2
+    },
+    {
+      "distinct_places": 4,
+      "subsets": 6,
+      "unique": 6,
+      "minimum": 1,
+      "maximum": 1
+    }
+  ],
+  "unit_count_policies": [
+    {
+      "visits": 8,
+      "observed_distinct_places": 4,
+      "unit_counts": [
+        4,
+        6,
+        8
+      ],
+      "conditioned_same_four_place_subset_posterior": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "iid_uniform_over_all_units_posterior": [
+        0.5380063460825142,
+        0.314882543660548,
+        0.14711111025693757
+      ],
+      "iid_count_formula": "(K)_4 * S(n,4) / K**n; common Stirling factor cancels in posterior",
+      "iid_policy_is_not_used_by_the_cyclic_real_recording": true
+    },
+    {
+      "visits": 16,
+      "observed_distinct_places": 4,
+      "unit_counts": [
+        4,
+        6,
+        8
+      ],
+      "conditioned_same_four_place_subset_posterior": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "iid_uniform_over_all_units_posterior": [
+        0.9766533956822092,
+        0.02230342594715726,
+        0.0010431783706322442
+      ],
+      "iid_count_formula": "(K)_4 * S(n,4) / K**n; common Stirling factor cancels in posterior",
+      "iid_policy_is_not_used_by_the_cyclic_real_recording": true
+    },
+    {
+      "visits": 32,
+      "observed_distinct_places": 4,
+      "unit_counts": [
+        4,
+        6,
+        8
+      ],
+      "conditioned_same_four_place_subset_posterior": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "iid_uniform_over_all_units_posterior": [
+        0.9999652176113693,
+        3.476609104922507e-05,
+        1.6297578167355644e-08
+      ],
+      "iid_count_formula": "(K)_4 * S(n,4) / K**n; common Stirling factor cancels in posterior",
+      "iid_policy_is_not_used_by_the_cyclic_real_recording": true
+    }
+  ],
+  "ood_joint": [
+    {
+      "out_of_family_shape": "trapezoid",
+      "noise_ratio": 0.1,
+      "method": "joint_unknown_scale",
+      "trials": 1440,
+      "mean_maximum_known_family_posterior": 0.9989650650248042,
+      "fraction_maximum_above_point9": 0.9979166666666667,
+      "fraction_maximum_above_point99": 0.9902777777777778,
+      "posterior_entropy_bits": 0.003762933121261472,
+      "forced_known_template_counts": [
+        1419,
+        0,
+        0,
+        21,
+        0,
+        0
+      ],
+      "true_template_is_absent": true,
+      "real_unknown_detection_accuracy": null
+    },
+    {
+      "out_of_family_shape": "trapezoid",
+      "noise_ratio": 0.5,
+      "method": "joint_unknown_scale",
+      "trials": 1440,
+      "mean_maximum_known_family_posterior": 0.7627613078799407,
+      "fraction_maximum_above_point9": 0.30277777777777776,
+      "fraction_maximum_above_point99": 0.04791666666666667,
+      "posterior_entropy_bits": 0.7958640766836914,
+      "forced_known_template_counts": [
+        904,
+        0,
+        12,
+        267,
+        0,
+        257
+      ],
+      "true_template_is_absent": true,
+      "real_unknown_detection_accuracy": null
+    },
+    {
+      "out_of_family_shape": "T_corridor",
+      "noise_ratio": 0.1,
+      "method": "joint_unknown_scale",
+      "trials": 1440,
+      "mean_maximum_known_family_posterior": 0.9903061755994818,
+      "fraction_maximum_above_point9": 0.9673611111111111,
+      "fraction_maximum_above_point99": 0.9263888888888889,
+      "posterior_entropy_bits": 0.0363050755441279,
+      "forced_known_template_counts": [
+        1302,
+        0,
+        9,
+        129,
+        0,
+        0
+      ],
+      "true_template_is_absent": true,
+      "real_unknown_detection_accuracy": null
+    },
+    {
+      "out_of_family_shape": "T_corridor",
+      "noise_ratio": 0.5,
+      "method": "joint_unknown_scale",
+      "trials": 1440,
+      "mean_maximum_known_family_posterior": 0.7729091423574118,
+      "fraction_maximum_above_point9": 0.2638888888888889,
+      "fraction_maximum_above_point99": 0.025,
+      "posterior_entropy_bits": 0.6973308753482136,
+      "forced_known_template_counts": [
+        775,
+        14,
+        11,
+        640,
+        0,
+        0
+      ],
+      "true_template_is_absent": true,
+      "real_unknown_detection_accuracy": null
+    },
+    {
+      "out_of_family_shape": "irregular_cluster",
+      "noise_ratio": 0.1,
+      "method": "joint_unknown_scale",
+      "trials": 1440,
+      "mean_maximum_known_family_posterior": 0.9892927029787216,
+      "fraction_maximum_above_point9": 0.9638888888888889,
+      "fraction_maximum_above_point99": 0.9291666666666667,
+      "posterior_entropy_bits": 0.03871215139453206,
+      "forced_known_template_counts": [
+        1197,
+        0,
+        140,
+        103,
+        0,
+        0
+      ],
+      "true_template_is_absent": true,
+      "real_unknown_detection_accuracy": null
+    },
+    {
+      "out_of_family_shape": "irregular_cluster",
+      "noise_ratio": 0.5,
+      "method": "joint_unknown_scale",
+      "trials": 1440,
+      "mean_maximum_known_family_posterior": 0.7506877470504543,
+      "fraction_maximum_above_point9": 0.21944444444444444,
+      "fraction_maximum_above_point99": 0.019444444444444445,
+      "posterior_entropy_bits": 0.7968536419981903,
+      "forced_known_template_counts": [
+        806,
+        0,
+        44,
+        529,
+        0,
+        61
+      ],
+      "true_template_is_absent": true,
+      "real_unknown_detection_accuracy": null
+    }
+  ],
+  "real_nominal": [
+    {
+      "frontend": "ronin",
+      "variant": "phone",
+      "method": "completed_raw_history",
+      "events": 33,
+      "matched": 4,
+      "lower": 0.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "phone",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 5,
+      "lower": 1.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "watch",
+      "method": "completed_raw_history",
+      "events": 25,
+      "matched": 8,
+      "lower": 1.0,
+      "upper": 5.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "watch",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 8,
+      "lower": 3.0,
+      "upper": 5.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "joint",
+      "method": "completed_raw_history",
+      "events": 28,
+      "matched": 4,
+      "lower": 0.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "joint",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 4,
+      "lower": 2.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "geom",
+      "method": "completed_raw_history",
+      "events": 35,
+      "matched": 8,
+      "lower": 0.0,
+      "upper": 5.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "geom",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 8,
+      "lower": 3.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "joint_wrong_watch",
+      "method": "completed_raw_history",
+      "events": 35,
+      "matched": 2,
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "joint_wrong_watch",
+      "method": "merge1s_completed_history",
+      "events": 14,
+      "matched": 2,
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "geom_wrong_watch",
+      "method": "completed_raw_history",
+      "events": 53,
+      "matched": 4,
+      "lower": 0.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "geom_wrong_watch",
+      "method": "merge1s_completed_history",
+      "events": 10,
+      "matched": 5,
+      "lower": 1.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "watch_wrong_time",
+      "method": "completed_raw_history",
+      "events": 26,
+      "matched": 3,
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    {
+      "frontend": "ronin",
+      "variant": "watch_wrong_time",
+      "method": "merge1s_completed_history",
+      "events": 12,
+      "matched": 3,
+      "lower": 1.0,
+      "upper": 1.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "phone",
+      "method": "completed_raw_history",
+      "events": 33,
+      "matched": 4,
+      "lower": 0.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "phone",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 5,
+      "lower": 2.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "watch",
+      "method": "completed_raw_history",
+      "events": 25,
+      "matched": 8,
+      "lower": 0.0,
+      "upper": 5.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "watch",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 8,
+      "lower": 3.0,
+      "upper": 5.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "joint",
+      "method": "completed_raw_history",
+      "events": 28,
+      "matched": 4,
+      "lower": 0.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "joint",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 4,
+      "lower": 2.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "geom",
+      "method": "completed_raw_history",
+      "events": 35,
+      "matched": 8,
+      "lower": 0.0,
+      "upper": 5.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "geom",
+      "method": "merge1s_completed_history",
+      "events": 11,
+      "matched": 8,
+      "lower": 4.0,
+      "upper": 5.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "joint_wrong_watch",
+      "method": "completed_raw_history",
+      "events": 35,
+      "matched": 2,
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "joint_wrong_watch",
+      "method": "merge1s_completed_history",
+      "events": 14,
+      "matched": 2,
+      "lower": 1.0,
+      "upper": 1.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "geom_wrong_watch",
+      "method": "completed_raw_history",
+      "events": 53,
+      "matched": 4,
+      "lower": 0.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "geom_wrong_watch",
+      "method": "merge1s_completed_history",
+      "events": 10,
+      "matched": 5,
+      "lower": 2.0,
+      "upper": 3.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "watch_wrong_time",
+      "method": "completed_raw_history",
+      "events": 26,
+      "matched": 3,
+      "lower": 0.0,
+      "upper": 1.0
+    },
+    {
+      "frontend": "eqnio",
+      "variant": "watch_wrong_time",
+      "method": "merge1s_completed_history",
+      "events": 12,
+      "matched": 3,
+      "lower": 1.0,
+      "upper": 1.0
+    }
+  ],
+  "date": "2026-10-29",
+  "total_trial_cells": 4985280,
+  "all_22_replay_files_identical": true,
+  "counterexample_tests": 12,
+  "reference_grade": "script/user declaration and software timing assumptions",
+  "place_grouping_in_family_ranking": "oracle; not an implemented real-world inference",
+  "noise_units": "dimensionless ratio to minimum synthetic place spacing",
+  "formal_score": null,
+  "real_room_ranking": null,
+  "real_room_family_count": null,
+  "physical_accuracy_validated": false,
+  "physical_clock_accepted": false,
+  "sensor_window_join_allowed": false,
+  "generalization_accuracy_validated": false,
+  "raw_data_included": false,
+  "full_replay_receipt_sha256": "6de550363612be1432c6594cb5c04de565f71e9138736282dfe63c0b82776713"
+}

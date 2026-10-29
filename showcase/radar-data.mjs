@@ -8,3 +8,11 @@ export function validateRadarSummary(summary){
   if(summary.geometry_verified!==false||summary.formal_score!==null)throw Error('Room remains a candidate');
   return summary;
 }
+export function groupRadarPoints(points,bounds,{hideUpper=false,upperLimit=2.2}={}){
+  const groups={room:[],balcony:[],other_outside:[]};let hiddenUpper=0;
+  for(const point of points){
+    if(hideUpper&&point[2]>upperLimit){hiddenUpper++;continue;}
+    groups[pointRegion(point,bounds)].push(point);
+  }
+  return {groups,hiddenUpper,displayable:points.length-hiddenUpper};
+}
