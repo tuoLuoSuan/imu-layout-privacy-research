@@ -45,7 +45,7 @@ def holm(items):
         last=max(last,min(1.,items[index]['p_exact']*(len(items)-i)));items[index]['p_holm_within_batch_task']=last
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--research-root',required=True);p.add_argument('--out',required=True);p.add_argument('--snapshot',required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--research-root',required=True);p.add_argument('--out',required=True);p.add_argument('--snapshot',required=True);p.add_argument('--restored-root');a=p.parse_args()
     root=Path(a.research_root).resolve();out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
     inventory={}
     def track(path,role='evidence'):
@@ -57,6 +57,16 @@ def main():
         path=Path(path);assert not path.exists(),str(path);path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(json.dumps(value,ensure_ascii=False,sort_keys=True,indent=2,allow_nan=False)+'\n',encoding='utf-8',newline='\n')
     track(Path(__file__),'export-audit-code')
+    restored=None
+    if a.restored_root:
+        restored=Path(a.restored_root).resolve();manifest=json.loads(track(restored/'MANIFEST-sha256.json','restoration-manifest').read_text(encoding='utf-8'))
+        restored_count=0;restored_bytes=0
+        for directory,entry in manifest['sets'].items():
+            for item in entry['files']:
+                path=track(restored/directory/item['name'],'restored-original')
+                assert path.stat().st_size==item['bytes'] and sha(path)==item['sha256'],'Restored original hash mismatch'
+                restored_count+=1;restored_bytes+=item['bytes']
+        write(out/'restored-originals-verification.json',dict(files=restored_count,bytes=restored_bytes,all_manifest_sha256_match=True,source_originals_modified=False))
     table_path=track(root/'output/action-recognition/2026-10-31-v5-165-cue-package-001/ready/event-table-151.json','cue-labels')
     table={(r['part'],r['step_id']):r for r in json.loads(table_path.read_text(encoding='utf-8'))}
     for rel in ['output/action-recognition/2026-11-02-accuracy-rebuild-001/dataset_ext.py','analysis/action_recognition/pipeline.py']:track(root/rel,'feature-source')
@@ -64,6 +74,8 @@ def main():
     for batch,folder,script,freeze_name in [('T2','2026-11-03-heldout2-eval-001','score_t2_arms.py','2026-11-03-heldout2-freeze-001'),('T3','2026-11-04-t3-eval-001','score_t3_arms.py','2026-11-04-t3-freeze-001')]:
         base=root/'output/action-recognition'/folder;source=track(base/script,'scoring-source')
         spec=importlib.util.spec_from_file_location('readonly_'+batch,source);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+        if restored:
+            mod.PULL=restored/('phone-'+batch.lower());mod.WATCH=restored/('watch-'+batch.lower())
         freeze=load('output/action-recognition/'+freeze_name+'/freeze.json')
         keys=['joint','phone','watch'] if batch=='T2' else ['9-joint','9-phone','9-watch','8-joint','8-phone','8-watch']
         missing_raw=[(mod.PULL/zname).as_posix() for part,sid,zname in mod.ROSTER if not (mod.PULL/zname).is_file()]
@@ -89,7 +101,7 @@ def main():
             for slot in slots:
                 _,aug,quality=mod.features_for(phone,wrist,slot,start,1.)
                 label=table[part,slot['step_id']]['label']
-                rows.append(dict(part=part,sid=sid,step_id=slot['step_id'],label=label,label8='cabinet' if label in ('open_cabinet','close_cabinet') else label,augmented=aug,quality=quality))
+                rows.append(dict(part=part,sid=sid,step_id=slot['step_id'],label=label,label8='cabinet' if label in ('open_cabinet','close_cabinet') else label,cue_slot_start_wall_ms=slot['wall_ms'],window_wall_ms=[slot['wall_ms']+1000,slot['wall_ms']+4000],augmented=aug,quality=quality))
         reference=json.loads(track(base/('t2-arms-eval.json' if batch=='T2' else 't3-arms-eval.json'),'historical-predictions').read_text(encoding='utf-8'))
         if not raw_available:
             rows=[dict(r) for r in reference['events']]
@@ -107,6 +119,7 @@ def main():
                 if r.get(key)!=old.get(key):mismatch.append(dict(sid=r['sid'],step_id=r['step_id'],field=key,new=r.get(key),old=old.get(key)))
         write(out/(batch+'-prediction-comparison.json'),dict(mismatches=mismatch,count=len(mismatch) if raw_available else None,raw_replay_performed=raw_available,scope='raw predictor replay' if raw_available else 'stored-event recount only; historical event agreement is not independently tested'))
         assert not mismatch,'STOP: frozen predictor replay mismatch'
+        if raw_available:write(out/(batch+'-event-features.json'),dict(rows=[{k:v for k,v in r.items() if not k.startswith('pred_')} for r in rows],window_offset_s=1.0,window_width_s=3.0,scaler_fitted=False,model_training_performed=False))
         result={};pairs={}
         for task in ([9] if batch=='T2' else [9,8]):
             labs=LABELS if task==9 else ['cabinet']+[x for x in LABELS if x not in ('close_cabinet','open_cabinet')]
@@ -140,6 +153,15 @@ def main():
     if (root/auto_base/'verification.json').is_file():
         auto=load(auto_base+'run/results.json');prefix=load(auto_base+'prefix-results.json');verified=load(auto_base+'verification.json')
         radar['automatic_interface']=dict(frames=auto['frames'],event_count=auto['automatic_event_count'],matched_visits=ratio(auto['matched_declared_visits'],8),duration_median_s=auto['duration_median_s'],groups={k:v['groups'] for k,v in auto['grouping'].items()},relation_metrics={k:v['visit_relations'] for k,v in auto['grouping'].items()},spatial_counterfactual={k:v['spatial_counterfactual'] for k,v in auto['grouping'].items()},prefix_metrics={k:{f:x for f,x in v.items() if f!='queries'} for k,v in prefix['methods'].items()},replay_files=len(verified['replay']),post_audit_exploratory=True,scope=auto['stage_scope'],source_sha256=sha(root/auto_base/'run/results.json'))
+        radar['automatic_interface']['candidate_frame_counts']=auto['candidate_frame_counts']
+        channel={}
+        for name,g in auto['grouping'].items():
+            expected=sum(k*(k-1)//2 for k in g['groups']['cluster_sizes']);actual=g['labels_only_counterfactual']['fp'];assert expected==actual
+            channel[name]=dict(expected_pairs=expected,observed_relabelled_false_pairs=actual)
+        radar['automatic_interface']['label_channel_consistency_check']=dict(methods=channel,scope='algebraic identity under fixed predictions; excluded from negative-control evidence')
+    sensitivity_base='output/research-sync/2026-11-01-restored-raw-and-simulation-closeout-001/radar-sensitivity/'
+    if (root/sensitivity_base/'results.json').is_file():
+        sen=load(sensitivity_base+'results.json');radar['post_audit_sensitivity']=dict(events=[{k:v for k,v in r.items() if k!='intervals'} for r in sen['events']],grouping=sen['complete_linkage'],scope=sen['warning'],main_settings_changed=False)
     base='output/prospective-space/2026-10-30-simulation-abstention-and-action-plan-001/six-family-geometry-library-001/'
     simulation={}
     for stage,rel in [('partial','partial-candidate-matching-001/run/test-qualified-summary.json'),('count_penalty','count-penalty-and-layout-classes-001/run/test-summary.json'),('group_errors','group-error-propagation-001/run/test-summary.json')]:
@@ -147,8 +169,17 @@ def main():
         selected=[r for r in x.get('rows',[]) if r.get('cohort')=='all' and (stage!='count_penalty' or r.get('selected_lambda'))]
         simulation[stage]=dict(source_sha256=sha(root/base/rel),independent_unit=x.get('independent_unit'),rows=selected,export_scope='all-house cohort only; count-penalty keeps the development-selected lambda; no test-score filtering',scope={k:v for k,v in x.items() if k not in ('rows','query_coverage') and not isinstance(v,(dict,list))})
         if stage=='count_penalty':simulation[stage]['primary_strata']=[r for r in x['rows'] if r.get('cohort') in ('all','singleton','alias') and r.get('selected_lambda') and r.get('visits')==32 and r.get('structure')=='brownian' and r.get('sigma')==.5]
+    integration_base='output/prospective-space/2026-11-01-auto-group-ranking-closeout-001/'
+    if (root/integration_base/'report-facts.json').is_file():
+        fact=load(integration_base+'report-facts.json');v=load(integration_base+'verification.json')
+        simulation['automatic_group_ranking']=dict(**fact,validation=dict(replay_files=len(v['replay_files']),brute_force_checks=len(v['brute_force_probes']),ratio_checks=v['ratio_objects_checked'],input_changes=v['input_changes']),source_sha256=sha(root/integration_base/'report-facts.json'))
     rates=[v for batch in raw_audits.values() for s in batch['sessions'] for v in s['phone_rate_hz'].values()]
     snapshot=dict(schema='current-evidence-snapshot-v1',updated_client_date='2026-11-01',batch_labels_are_not_verified_calendar_dates=True,batches=batches,combined_T2_T3=dict(events=142,recording_sessions=12,metrics=combined,joint_vs_phone=cp,scope='same person and room; descriptive pooling across batch-specific frozen predictors'),radar=radar,simulation=simulation,phone_measured_rate_hz_range=[min(rates),max(rates)] if rates else None,action_raw_replay_available={k:v['features_rebuilt'] for k,v in raw_audits.items()},limitations=['Cue-declared labels; execution unverified.','Physical clocks and radar/IMU joins remain unaccepted.','T is a second look; T2 and T3 follow earlier batch feedback.','8-class and 9-class tasks must be shown together; task coarsening is not algorithmic improvement.','T3 model binaries have current SHA inventories, but no binary digest field was found in the original T3 freeze JSON.','Event-level intervals and tests are descriptive; events share sessions.','When original ZIP paths are unavailable, only stored event predictions are independently recounted; raw-feature replay is not claimed.'],flags=FLAGS)
+    if restored:
+        assert all(snapshot['action_raw_replay_available'].values()),'Restored mode requires complete original replay'
+        snapshot['restored_originals']=dict(files=restored_count,bytes=restored_bytes,all_manifest_sha256_match=True)
+        snapshot['limitations'][-1]='Originals restored and verified; raw features and frozen predictors replayed without retraining. Historical unavailable-path statement superseded.'
+    snapshot['site_data_mode']='versioned exported snapshot; not a live paper-ledger reader'
     write(Path(a.snapshot),snapshot)
     for item in inventory.values():assert sha(item['path'])==item['sha256'],'Input changed'
     write(out/'input-sha256.json',dict(scope='Only listed inputs verified; no claim about unread files',files=list(inventory.values()),unchanged=True,model_checks=hash_checks))

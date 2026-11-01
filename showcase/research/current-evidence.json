@@ -1,7 +1,7 @@
 {
   "action_raw_replay_available": {
-    "T2": false,
-    "T3": false
+    "T2": true,
+    "T3": true
   },
   "batch_labels_are_not_verified_calendar_dates": true,
   "batches": {
@@ -4080,11 +4080,18 @@
     "8-class and 9-class tasks must be shown together; task coarsening is not algorithmic improvement.",
     "T3 model binaries have current SHA inventories, but no binary digest field was found in the original T3 freeze JSON.",
     "Event-level intervals and tests are descriptive; events share sessions.",
-    "When original ZIP paths are unavailable, only stored event predictions are independently recounted; raw-feature replay is not claimed."
+    "Originals restored and verified; raw features and frozen predictors replayed without retraining. Historical unavailable-path statement superseded."
   ],
-  "phone_measured_rate_hz_range": null,
+  "phone_measured_rate_hz_range": [
+    118.32870942901693,
+    118.3864966156168
+  ],
   "radar": {
     "automatic_interface": {
+      "candidate_frame_counts": {
+        "0": 1266,
+        "1": 1396
+      },
       "duration_median_s": 17.4503255085,
       "event_count": 8,
       "frames": 2662,
@@ -4111,6 +4118,19 @@
           "total_proposal_groups": 3,
           "unassigned_events": 0
         }
+      },
+      "label_channel_consistency_check": {
+        "methods": {
+          "density": {
+            "expected_pairs": 7,
+            "observed_relabelled_false_pairs": 7
+          },
+          "fixed": {
+            "expected_pairs": 7,
+            "observed_relabelled_false_pairs": 7
+          }
+        },
+        "scope": "algebraic identity under fixed predictions; excluded from negative-control evidence"
       },
       "matched_visits": {
         "denominator": 8,
@@ -4392,6 +4412,458 @@
         }
       }
     },
+    "post_audit_sensitivity": {
+      "events": [
+        {
+          "events": 20,
+          "matched": 7,
+          "median_duration_s": 5.199445038,
+          "parameter": "maximum_gap_s",
+          "value": 0.2
+        },
+        {
+          "events": 9,
+          "matched": 8,
+          "median_duration_s": 17.099740499999996,
+          "parameter": "maximum_gap_s",
+          "value": 0.35
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 0.4
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 0.45
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 0.5
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 0.55
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 0.6
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 0.7
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 1.0
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_gap_s",
+          "value": 2.0
+        },
+        {
+          "events": 9,
+          "matched": 8,
+          "median_duration_s": 14.899571406999996,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.05
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 15.452093023500012,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.08
+        },
+        {
+          "events": 9,
+          "matched": 8,
+          "median_duration_s": 15.600906980000019,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.1
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 15.848499940500005,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.12
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 16.499373453999993,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.15
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 16.751244592999996,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.25
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.35
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.949668559499997,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.5
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.900928819500002,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.55
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.449196352499996,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.6
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 18.00042564249999,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.65
+        },
+        {
+          "events": 7,
+          "matched": 7,
+          "median_duration_s": 18.39987546399999,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.7
+        },
+        {
+          "events": 6,
+          "matched": 6,
+          "median_duration_s": 19.0005274855,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 0.75
+        },
+        {
+          "events": 2,
+          "matched": 2,
+          "median_duration_s": 71.6003981255,
+          "parameter": "maximum_xy_diameter_m",
+          "value": 1.0
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_duration_s",
+          "value": 1.0
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_duration_s",
+          "value": 2.0
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_duration_s",
+          "value": 3.0
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_duration_s",
+          "value": 4.0
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_duration_s",
+          "value": 5.0
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_frames",
+          "value": 8
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_frames",
+          "value": 16
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_frames",
+          "value": 24
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_frames",
+          "value": 32
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_fraction_received",
+          "value": 0.6
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_fraction_received",
+          "value": 0.7
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_fraction_received",
+          "value": 0.8
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_fraction_received",
+          "value": 0.9
+        },
+        {
+          "events": 8,
+          "matched": 8,
+          "median_duration_s": 17.4503255085,
+          "parameter": "minimum_unique_fraction_received",
+          "value": 0.95
+        }
+      ],
+      "grouping": [
+        {
+          "alpha": 0.05,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.15,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.2,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.25,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.3,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.4,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.5,
+          "labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "sizes": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "alpha": 0.75,
+          "labels": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "sizes": [
+            5,
+            3
+          ]
+        },
+        {
+          "alpha": 1.0,
+          "labels": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "sizes": [
+            5,
+            3
+          ]
+        }
+      ],
+      "main_settings_changed": false,
+      "scope": "Explicit tested points, not a continuous safe interval; event count is nonmonotone under greedy segmentation."
+    },
     "run007b": {
       "empty_post": {
         "denominator": 167,
@@ -4507,8 +4979,3227 @@
     },
     "scope": "stand-window radar candidate availability, independent of phone/watch classification; no simultaneous tri-device experiment"
   },
+  "restored_originals": {
+    "all_manifest_sha256_match": true,
+    "bytes": 53943481,
+    "files": 47
+  },
   "schema": "current-evidence-snapshot-v1",
   "simulation": {
+    "automatic_group_ranking": {
+      "automatic_raw_IMU_pipeline_validated": false,
+      "flags": {
+        "collection_open": false,
+        "formal_score": null,
+        "generalization_accuracy_validated": false,
+        "physical_accuracy_validated": false,
+        "physical_clock_accepted": false,
+        "real_candidate_rank": null,
+        "real_room_family_count": null,
+        "real_room_ranking": null,
+        "scientific_geometry_ground_truth_verified": false,
+        "sensor_window_join_allowed": false
+      },
+      "initial_release_complete_scope": "given event-coordinate proposals, closed synthetic catalog; prescribed 32-visit Brownian integration added",
+      "oracle_metrics_recovered": true,
+      "rows": [
+        {
+          "answered_identity_top1": {
+            "denominator": 2400,
+            "numerator": 1259.1055555555554,
+            "value": 0.5246273148148147
+          },
+          "ceiling_attainment": {
+            "denominator": 0.82,
+            "numerator": 0.5246273148148147,
+            "value": 0.6397894083107497
+          },
+          "cohort": "all",
+          "complete_02m_representation_ceiling": {
+            "denominator": 600,
+            "numerator": 492.0,
+            "value": 0.82
+          },
+          "degenerate_q_below3": {
+            "denominator": 2400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 2400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 600,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.5925,
+                0.6350104166666667
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 1474.0,
+                "value": 0.6141666666666666
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.5030798032407406,
+                0.5439898148148149
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 1259.1055555555554,
+                "value": 0.5246273148148147
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.9300033564814815,
+                0.9506222222222219
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 2259.2,
+                "value": 0.9413333333333332
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.8481891203703704,
+                0.8791384259259257
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 2074.6666666666665,
+                "value": 0.8644444444444443
+              }
+            }
+          },
+          "predicted_groups_mean": 7.412083333333333,
+          "queries": 2400,
+          "rank_answer_rate": {
+            "denominator": 2400,
+            "numerator": 2400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 1008112,
+            "tp": 182288
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 2400,
+            "numerator": 2400.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 2396,
+            "numerator": 681.2388888888888,
+            "value": 0.2843234093860137
+          },
+          "ceiling_attainment": {
+            "denominator": 0.82,
+            "numerator": 0.283849537037037,
+            "value": 0.34615797199638665
+          },
+          "cohort": "all",
+          "complete_02m_representation_ceiling": {
+            "denominator": 600,
+            "numerator": 492.0,
+            "value": 0.82
+          },
+          "degenerate_q_below3": {
+            "denominator": 2400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 2400,
+            "numerator": 4.0,
+            "value": 0.0016666666666666668
+          },
+          "grouping": "complete_fixed",
+          "houses": 600,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.3001354166666666,
+                0.34069791666666666
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.3153524305555555,
+                -0.2747204861111111
+              ],
+              "paired_delta_vs_oracle": -0.29493055555555553,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 766.1666666666666,
+                "value": 0.3192361111111111
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.2651715277777777,
+                0.3039212962962964
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.25922476851851856,
+                -0.22321197916666666
+              ],
+              "paired_delta_vs_oracle": -0.24077777777777779,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 681.2388888888888,
+                "value": 0.283849537037037
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.4194256944444444,
+                0.4639118055555555
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5221569444444444,
+                -0.478103125
+              ],
+              "paired_delta_vs_oracle": -0.49891666666666673,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 1061.8,
+                "value": 0.4424166666666666
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.39041649305555554,
+                0.433874074074074
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.47421307870370366,
+                -0.4293027777777778
+              ],
+              "paired_delta_vs_oracle": -0.4516967592592593,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 990.5944444444444,
+                "value": 0.4127476851851852
+              }
+            }
+          },
+          "predicted_groups_mean": 9.032916666666667,
+          "queries": 2400,
+          "rank_answer_rate": {
+            "denominator": 2400,
+            "numerator": 2396.0,
+            "value": 0.9983333333333333
+          },
+          "relation_counts": {
+            "fn": 46323,
+            "fp": 5927,
+            "tn": 1002185,
+            "tp": 135965
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 2400,
+            "numerator": 1107.0,
+            "value": 0.46125
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 2397,
+            "numerator": 173.77777777777777,
+            "value": 0.07249802994483845
+          },
+          "ceiling_attainment": {
+            "denominator": 0.82,
+            "numerator": 0.0724074074074074,
+            "value": 0.08830171635049684
+          },
+          "cohort": "all",
+          "complete_02m_representation_ceiling": {
+            "denominator": 600,
+            "numerator": 492.0,
+            "value": 0.82
+          },
+          "degenerate_q_below3": {
+            "denominator": 2400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 2400,
+            "numerator": 3.0,
+            "value": 0.00125
+          },
+          "grouping": "density_fixed",
+          "houses": 600,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.063328125,
+                0.08708333333333333
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.561046875,
+                -0.517078125
+              ],
+              "paired_delta_vs_oracle": -0.5385416666666667,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 181.5,
+                "value": 0.075625
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.06052893518518518,
+                0.0834525462962963
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.47457546296296294,
+                -0.4303732060185186
+              ],
+              "paired_delta_vs_oracle": -0.4522199074074074,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 173.77777777777777,
+                "value": 0.0724074074074074
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.13583333333333333,
+                0.1725
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.8072848379629629,
+                -0.7672928240740742
+              ],
+              "paired_delta_vs_oracle": -0.7871666666666666,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 370.0,
+                "value": 0.15416666666666667
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.1077644675925926,
+                0.13944791666666664
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7614262731481481,
+                -0.7207319444444444
+              ],
+              "paired_delta_vs_oracle": -0.7405324074074074,
+              "rate": {
+                "denominator": 2400,
+                "numerator": 297.3888888888889,
+                "value": 0.12391203703703704
+              }
+            }
+          },
+          "predicted_groups_mean": 10.6175,
+          "queries": 2400,
+          "rank_answer_rate": {
+            "denominator": 2400,
+            "numerator": 2397.0,
+            "value": 0.99875
+          },
+          "relation_counts": {
+            "fn": 77693,
+            "fp": 7564,
+            "tn": 1000548,
+            "tp": 104595
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 2400,
+            "numerator": 494.0,
+            "value": 0.20583333333333334
+          },
+          "unassigned_events_mean": 1.2470833333333333
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 1684,
+            "numerator": 1114.0,
+            "value": 0.661520190023753
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.661520190023753,
+            "value": 0.661520190023753
+          },
+          "cohort": "singleton",
+          "complete_02m_representation_ceiling": {
+            "denominator": 421,
+            "numerator": 421.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 1684,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 1684,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 421,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.6353770783847981,
+                0.6846941805225654
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 1114.0,
+                "value": 0.661520190023753
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.6353770783847981,
+                0.6846941805225654
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 1114.0,
+                "value": 0.661520190023753
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.9590261282660333,
+                0.9780285035629454
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 1632.0,
+                "value": 0.9691211401425178
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.9020190023752969,
+                0.9299287410926366
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 1544.0,
+                "value": 0.9168646080760094
+              }
+            }
+          },
+          "predicted_groups_mean": 8.149049881235154,
+          "queries": 1684,
+          "rank_answer_rate": {
+            "denominator": 1684,
+            "numerator": 1684.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 719841,
+            "tp": 115423
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 1684,
+            "numerator": 1684.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 1681,
+            "numerator": 627.5,
+            "value": 0.3732897085068412
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.372624703087886,
+            "value": 0.372624703087886
+          },
+          "cohort": "singleton",
+          "complete_02m_representation_ceiling": {
+            "denominator": 421,
+            "numerator": 421.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 1684,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 1684,
+            "numerator": 3.0,
+            "value": 0.0017814726840855108
+          },
+          "grouping": "complete_fixed",
+          "houses": 421,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.3479809976247031,
+                0.39815914489311166
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.31354661520190025,
+                -0.26275979809976246
+              ],
+              "paired_delta_vs_oracle": -0.288895486935867,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 627.5,
+                "value": 0.372624703087886
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.3479809976247031,
+                0.39815914489311166
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.31354661520190025,
+                -0.26275979809976246
+              ],
+              "paired_delta_vs_oracle": -0.288895486935867,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 627.5,
+                "value": 0.372624703087886
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.47327790973871736,
+                0.5267369358669834
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.49643705463182897,
+                -0.44239904988123513
+              ],
+              "paired_delta_vs_oracle": -0.4691211401425178,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 842.0,
+                "value": 0.5
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.4507125890736342,
+                0.503562945368171
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.4667458432304038,
+                -0.41270783847980996
+              ],
+              "paired_delta_vs_oracle": -0.44002375296912116,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 803.0,
+                "value": 0.47684085510688834
+              }
+            }
+          },
+          "predicted_groups_mean": 9.554631828978623,
+          "queries": 1684,
+          "rank_answer_rate": {
+            "denominator": 1684,
+            "numerator": 1681.0,
+            "value": 0.9982185273159145
+          },
+          "relation_counts": {
+            "fn": 26551,
+            "fp": 3643,
+            "tn": 716198,
+            "tp": 88872
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 1684,
+            "numerator": 871.0,
+            "value": 0.5172209026128266
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 1683,
+            "numerator": 167.5,
+            "value": 0.09952465834818776
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.09946555819477435,
+            "value": 0.09946555819477435
+          },
+          "cohort": "singleton",
+          "complete_02m_representation_ceiling": {
+            "denominator": 421,
+            "numerator": 421.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 1684,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 1684,
+            "numerator": 1.0,
+            "value": 0.0005938242280285036
+          },
+          "grouping": "density_fixed",
+          "houses": 421,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.08431561757719715,
+                0.11728028503562946
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5858150237529691,
+                -0.5329572446555819
+              ],
+              "paired_delta_vs_oracle": -0.5620546318289786,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 167.5,
+                "value": 0.09946555819477435
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.08431561757719715,
+                0.11728028503562946
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5858150237529691,
+                -0.5329572446555819
+              ],
+              "paired_delta_vs_oracle": -0.5620546318289786,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 167.5,
+                "value": 0.09946555819477435
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.17280285035629453,
+                0.22268408551068883
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7969121140142518,
+                -0.746437054631829
+              ],
+              "paired_delta_vs_oracle": -0.7737529691211401,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 329.0,
+                "value": 0.19536817102137768
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.14072149643705462,
+                0.1840855106888361
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7790973871733967,
+                -0.7315914489311164
+              ],
+              "paired_delta_vs_oracle": -0.7565320665083135,
+              "rate": {
+                "denominator": 1684,
+                "numerator": 270.0,
+                "value": 0.16033254156769597
+              }
+            }
+          },
+          "predicted_groups_mean": 10.75,
+          "queries": 1684,
+          "rank_answer_rate": {
+            "denominator": 1684,
+            "numerator": 1683.0,
+            "value": 0.9994061757719715
+          },
+          "relation_counts": {
+            "fn": 45686,
+            "fp": 5407,
+            "tn": 714434,
+            "tp": 69737
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 1684,
+            "numerator": 440.0,
+            "value": 0.26128266033254155
+          },
+          "unassigned_events_mean": 1.1918052256532066
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 716,
+            "numerator": 145.10555555555555,
+            "value": 0.20266139044072004
+          },
+          "ceiling_attainment": {
+            "denominator": 0.39664804469273746,
+            "numerator": 0.20266139044072004,
+            "value": 0.5109350547730829
+          },
+          "cohort": "alias",
+          "complete_02m_representation_ceiling": {
+            "denominator": 179,
+            "numerator": 71.0,
+            "value": 0.39664804469273746
+          },
+          "degenerate_q_below3": {
+            "denominator": 716,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 716,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 179,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.4622905027932961,
+                0.5446927374301676
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 716,
+                "numerator": 360.0,
+                "value": 0.5027932960893855
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.1842863516449411,
+                0.22045371663563001
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 716,
+                "numerator": 145.10555555555555,
+                "value": 0.20266139044072004
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.8504570142768468,
+                0.9008228584729983
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 716,
+                "numerator": 627.2,
+                "value": 0.875977653631285
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.7093179702048417,
+                0.7739247749844816
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 716,
+                "numerator": 530.6666666666666,
+                "value": 0.7411545623836127
+              }
+            }
+          },
+          "predicted_groups_mean": 5.67877094972067,
+          "queries": 716,
+          "rank_answer_rate": {
+            "denominator": 716,
+            "numerator": 716.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 288271,
+            "tp": 66865
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 716,
+            "numerator": 716.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 715,
+            "numerator": 53.738888888888894,
+            "value": 0.07515928515928516
+          },
+          "ceiling_attainment": {
+            "denominator": 0.39664804469273746,
+            "numerator": 0.07505431409062695,
+            "value": 0.18922143974960878
+          },
+          "cohort": "alias",
+          "complete_02m_representation_ceiling": {
+            "denominator": 179,
+            "numerator": 71.0,
+            "value": 0.39664804469273746
+          },
+          "degenerate_q_below3": {
+            "denominator": 716,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 716,
+            "numerator": 1.0,
+            "value": 0.0013966480446927375
+          },
+          "grouping": "complete_fixed",
+          "houses": 179,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.16061452513966482,
+                0.22626862197392925
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.34591480446927375,
+                -0.2658170391061453
+              ],
+              "paired_delta_vs_oracle": -0.3091247672253259,
+              "rate": {
+                "denominator": 716,
+                "numerator": 138.66666666666666,
+                "value": 0.19366852886405958
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.06277680788330228,
+                0.08879034761018002
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.14455035692116697,
+                -0.10875756517690875
+              ],
+              "paired_delta_vs_oracle": -0.1276070763500931,
+              "rate": {
+                "denominator": 716,
+                "numerator": 53.738888888888894,
+                "value": 0.07505431409062695
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.26913058659217876,
+                0.3458647579143389
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.6089082867783985,
+                -0.5295728584729982
+              ],
+              "paired_delta_vs_oracle": -0.5689944134078213,
+              "rate": {
+                "denominator": 716,
+                "numerator": 219.8,
+                "value": 0.3069832402234637
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.2270779019242707,
+                0.2994489059590316
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5163799658597145,
+                -0.4428842721911856
+              ],
+              "paired_delta_vs_oracle": -0.479151148355059,
+              "rate": {
+                "denominator": 716,
+                "numerator": 187.59444444444443,
+                "value": 0.2620034140285537
+              }
+            }
+          },
+          "predicted_groups_mean": 7.805865921787709,
+          "queries": 716,
+          "rank_answer_rate": {
+            "denominator": 716,
+            "numerator": 715.0,
+            "value": 0.9986033519553073
+          },
+          "relation_counts": {
+            "fn": 19772,
+            "fp": 2284,
+            "tn": 285987,
+            "tp": 47093
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 716,
+            "numerator": 236.0,
+            "value": 0.329608938547486
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 714,
+            "numerator": 6.277777777777778,
+            "value": 0.00879240585122938
+          },
+          "ceiling_attainment": {
+            "denominator": 0.39664804469273746,
+            "numerator": 0.008767846058348851,
+            "value": 0.02210485133020344
+          },
+          "cohort": "alias",
+          "complete_02m_representation_ceiling": {
+            "denominator": 179,
+            "numerator": 71.0,
+            "value": 0.39664804469273746
+          },
+          "degenerate_q_below3": {
+            "denominator": 716,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 716,
+            "numerator": 2.0,
+            "value": 0.002793296089385475
+          },
+          "grouping": "density_fixed",
+          "houses": 179,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.0111731843575419,
+                0.030726256983240222
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5251396648044693,
+                -0.44549581005586597
+              ],
+              "paired_delta_vs_oracle": -0.48324022346368717,
+              "rate": {
+                "denominator": 716,
+                "numerator": 14.0,
+                "value": 0.019553072625698324
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.004577901924270639,
+                0.014123603351955304
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.2120133069522036,
+                -0.17589016914959654
+              ],
+              "paired_delta_vs_oracle": -0.1938935443823712,
+              "rate": {
+                "denominator": 716,
+                "numerator": 6.277777777777778,
+                "value": 0.008767846058348851
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.03770949720670391,
+                0.07960893854748603
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.8493986654252018,
+                -0.7874984481688393
+              ],
+              "paired_delta_vs_oracle": -0.8187150837988826,
+              "rate": {
+                "denominator": 716,
+                "numerator": 41.0,
+                "value": 0.05726256983240224
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.023585893854748602,
+                0.054162787088764736
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7358240223463688,
+                -0.6686272113594041
+              ],
+              "paired_delta_vs_oracle": -0.7029019242706394,
+              "rate": {
+                "denominator": 716,
+                "numerator": 27.388888888888893,
+                "value": 0.03825263811297332
+              }
+            }
+          },
+          "predicted_groups_mean": 10.30586592178771,
+          "queries": 716,
+          "rank_answer_rate": {
+            "denominator": 716,
+            "numerator": 714.0,
+            "value": 0.9972067039106145
+          },
+          "relation_counts": {
+            "fn": 32007,
+            "fp": 2157,
+            "tn": 286114,
+            "tp": 34858
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 716,
+            "numerator": 54.0,
+            "value": 0.07541899441340782
+          },
+          "unassigned_events_mean": 1.3770949720670391
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 197.66666666666666,
+            "value": 0.49416666666666664
+          },
+          "ceiling_attainment": {
+            "denominator": 0.8499999999999999,
+            "numerator": 0.49416666666666664,
+            "value": 0.5813725490196079
+          },
+          "cohort": "dorm",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 85.0,
+            "value": 0.8499999999999999
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.53,
+                0.6375
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 233.0,
+                "value": 0.5825
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.4366562499999999,
+                0.5504375
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 197.66666666666666,
+                "value": 0.49416666666666664
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.965,
+                0.9925
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 392.0,
+                "value": 0.98
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.8862187499999999,
+                0.9425
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 366.5,
+                "value": 0.91625
+              }
+            }
+          },
+          "predicted_groups_mean": 8.3675,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 173638,
+            "tp": 24762
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 398,
+            "numerator": 78.33333333333334,
+            "value": 0.1968174204355109
+          },
+          "ceiling_attainment": {
+            "denominator": 0.8499999999999999,
+            "numerator": 0.19583333333333336,
+            "value": 0.23039215686274517
+          },
+          "cohort": "dorm",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 85.0,
+            "value": 0.8499999999999999
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 2.0,
+            "value": 0.005
+          },
+          "grouping": "complete_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.1825,
+                0.2775
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.4075625,
+                -0.3
+              ],
+              "paired_delta_vs_oracle": -0.355,
+              "rate": {
+                "denominator": 400,
+                "numerator": 91.0,
+                "value": 0.2275
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.15581249999999996,
+                0.24376041666666665
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.3466666666666666,
+                -0.24958333333333332
+              ],
+              "paired_delta_vs_oracle": -0.29833333333333334,
+              "rate": {
+                "denominator": 400,
+                "numerator": 78.33333333333334,
+                "value": 0.19583333333333336
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.29,
+                0.41
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.6875,
+                -0.57
+              ],
+              "paired_delta_vs_oracle": -0.6325,
+              "rate": {
+                "denominator": 400,
+                "numerator": 139.0,
+                "value": 0.3475
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.265,
+                0.37875
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.655,
+                -0.5362187500000001
+              ],
+              "paired_delta_vs_oracle": -0.59625,
+              "rate": {
+                "denominator": 400,
+                "numerator": 128.0,
+                "value": 0.32
+              }
+            }
+          },
+          "predicted_groups_mean": 10.69,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 398.0,
+            "value": 0.995
+          },
+          "relation_counts": {
+            "fn": 7183,
+            "fp": 408,
+            "tn": 173230,
+            "tp": 17579
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 140.0,
+            "value": 0.35
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 27.666666666666664,
+            "value": 0.06916666666666665
+          },
+          "ceiling_attainment": {
+            "denominator": 0.8499999999999999,
+            "numerator": 0.06916666666666665,
+            "value": 0.08137254901960785
+          },
+          "cohort": "dorm",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 85.0,
+            "value": 0.8499999999999999
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "density_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.04993750000000001,
+                0.11
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5625,
+                -0.455
+              ],
+              "paired_delta_vs_oracle": -0.505,
+              "rate": {
+                "denominator": 400,
+                "numerator": 31.0,
+                "value": 0.0775
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.04248958333333334,
+                0.09834375
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.47709375,
+                -0.37291666666666673
+              ],
+              "paired_delta_vs_oracle": -0.425,
+              "rate": {
+                "denominator": 400,
+                "numerator": 27.666666666666664,
+                "value": 0.06916666666666665
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.155,
+                0.2475
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.8225,
+                -0.73
+              ],
+              "paired_delta_vs_oracle": -0.78,
+              "rate": {
+                "denominator": 400,
+                "numerator": 80.0,
+                "value": 0.2
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.115,
+                0.19503125
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.80253125,
+                -0.715
+              ],
+              "paired_delta_vs_oracle": -0.7625,
+              "rate": {
+                "denominator": 400,
+                "numerator": 61.5,
+                "value": 0.15375
+              }
+            }
+          },
+          "predicted_groups_mean": 10.785,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 8859,
+            "fp": 1139,
+            "tn": 172499,
+            "tp": 15903
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 104.0,
+            "value": 0.26
+          },
+          "unassigned_events_mean": 1.0425
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 374.0,
+            "value": 0.935
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.935,
+            "value": 0.935
+          },
+          "cohort": "apartment",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 100.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.91,
+                0.9575
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 374.0,
+                "value": 0.935
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.91,
+                0.9575
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 374.0,
+                "value": 0.935
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.99,
+                1.0
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 399.0,
+                "value": 0.9975
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.9875,
+                1.0
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 398.0,
+                "value": 0.995
+              }
+            }
+          },
+          "predicted_groups_mean": 9.04,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 176080,
+            "tp": 22320
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 251.0,
+            "value": 0.6275
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.6275,
+            "value": 0.6275
+          },
+          "cohort": "apartment",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 100.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "complete_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.5725,
+                0.685
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.36,
+                -0.255
+              ],
+              "paired_delta_vs_oracle": -0.3075,
+              "rate": {
+                "denominator": 400,
+                "numerator": 251.0,
+                "value": 0.6275
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.5725,
+                0.685
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.36,
+                -0.255
+              ],
+              "paired_delta_vs_oracle": -0.3075,
+              "rate": {
+                "denominator": 400,
+                "numerator": 251.0,
+                "value": 0.6275
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.6199375,
+                0.7325625
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.38,
+                -0.265
+              ],
+              "paired_delta_vs_oracle": -0.3225,
+              "rate": {
+                "denominator": 400,
+                "numerator": 270.0,
+                "value": 0.675
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.615,
+                0.7275
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.3825,
+                -0.27
+              ],
+              "paired_delta_vs_oracle": -0.3275,
+              "rate": {
+                "denominator": 400,
+                "numerator": 267.0,
+                "value": 0.6675
+              }
+            }
+          },
+          "predicted_groups_mean": 9.8875,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 3003,
+            "fp": 560,
+            "tn": 175520,
+            "tp": 19317
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 271.0,
+            "value": 0.6775
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 76.0,
+            "value": 0.19
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.19,
+            "value": 0.19
+          },
+          "cohort": "apartment",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 100.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "density_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.1425,
+                0.2425
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7925,
+                -0.695
+              ],
+              "paired_delta_vs_oracle": -0.745,
+              "rate": {
+                "denominator": 400,
+                "numerator": 76.0,
+                "value": 0.19
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.1425,
+                0.2425
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7925,
+                -0.695
+              ],
+              "paired_delta_vs_oracle": -0.745,
+              "rate": {
+                "denominator": 400,
+                "numerator": 76.0,
+                "value": 0.19
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.2399375,
+                0.3725
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.76,
+                -0.6249375
+              ],
+              "paired_delta_vs_oracle": -0.695,
+              "rate": {
+                "denominator": 400,
+                "numerator": 121.0,
+                "value": 0.3025
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.205,
+                0.32
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7875624999999999,
+                -0.6775
+              ],
+              "paired_delta_vs_oracle": -0.735,
+              "rate": {
+                "denominator": 400,
+                "numerator": 104.0,
+                "value": 0.26
+              }
+            }
+          },
+          "predicted_groups_mean": 10.84,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 7011,
+            "fp": 1228,
+            "tn": 174852,
+            "tp": 15309
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 146.0,
+            "value": 0.365
+          },
+          "unassigned_events_mean": 0.9
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 227.0,
+            "value": 0.5675
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.5675,
+            "value": 0.5675
+          },
+          "cohort": "conference",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 100.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.515,
+                0.6225
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 227.0,
+                "value": 0.5675
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.515,
+                0.6225
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 227.0,
+                "value": 0.5675
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.9025,
+                0.9600624999999999
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 373.0,
+                "value": 0.9325
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.825,
+                0.9050625
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 347.0,
+                "value": 0.8675
+              }
+            }
+          },
+          "predicted_groups_mean": 9.985,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 179610,
+            "tp": 18790
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 134.0,
+            "value": 0.335
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.335,
+            "value": 0.335
+          },
+          "cohort": "conference",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 100.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "complete_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.2875,
+                0.3875
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.2775,
+                -0.185
+              ],
+              "paired_delta_vs_oracle": -0.2325,
+              "rate": {
+                "denominator": 400,
+                "numerator": 134.0,
+                "value": 0.335
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.2875,
+                0.3875
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.2775,
+                -0.185
+              ],
+              "paired_delta_vs_oracle": -0.2325,
+              "rate": {
+                "denominator": 400,
+                "numerator": 134.0,
+                "value": 0.335
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.4425,
+                0.545
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.4975,
+                -0.38493750000000004
+              ],
+              "paired_delta_vs_oracle": -0.4375,
+              "rate": {
+                "denominator": 400,
+                "numerator": 198.0,
+                "value": 0.495
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.4125,
+                0.5150625
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.4625,
+                -0.35
+              ],
+              "paired_delta_vs_oracle": -0.405,
+              "rate": {
+                "denominator": 400,
+                "numerator": 185.0,
+                "value": 0.4625
+              }
+            }
+          },
+          "predicted_groups_mean": 11.1625,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 3112,
+            "fp": 951,
+            "tn": 178659,
+            "tp": 15678
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 216.0,
+            "value": 0.54
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 40.0,
+            "value": 0.1
+          },
+          "ceiling_attainment": {
+            "denominator": 1.0,
+            "numerator": 0.1,
+            "value": 0.1
+          },
+          "cohort": "conference",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 100.0,
+            "value": 1.0
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "density_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.0725,
+                0.13
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5200625,
+                -0.4124375
+              ],
+              "paired_delta_vs_oracle": -0.4675,
+              "rate": {
+                "denominator": 400,
+                "numerator": 40.0,
+                "value": 0.1
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.0725,
+                0.13
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5200625,
+                -0.4124375
+              ],
+              "paired_delta_vs_oracle": -0.4675,
+              "rate": {
+                "denominator": 400,
+                "numerator": 40.0,
+                "value": 0.1
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.1675,
+                0.255
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7725,
+                -0.6724375
+              ],
+              "paired_delta_vs_oracle": -0.7225,
+              "rate": {
+                "denominator": 400,
+                "numerator": 84.0,
+                "value": 0.21
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.125,
+                0.2025
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7525624999999999,
+                -0.6575
+              ],
+              "paired_delta_vs_oracle": -0.705,
+              "rate": {
+                "denominator": 400,
+                "numerator": 65.0,
+                "value": 0.1625
+              }
+            }
+          },
+          "predicted_groups_mean": 11.2225,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 4773,
+            "fp": 1634,
+            "tn": 177976,
+            "tp": 14017
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 130.0,
+            "value": 0.325
+          },
+          "unassigned_events_mean": 1.2175
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 91.88333333333333,
+            "value": 0.22970833333333332
+          },
+          "ceiling_attainment": {
+            "denominator": 0.5046666666666666,
+            "numerator": 0.22970833333333332,
+            "value": 0.45516842800528406
+          },
+          "cohort": "office",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 50.46666666666667,
+            "value": 0.5046666666666666
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.3975,
+                0.505
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 180.0,
+                "value": 0.45
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.18839930555555556,
+                0.27317430555555566
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 91.88333333333333,
+                "value": 0.22970833333333332
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.7897437500000002,
+                0.869873611111111
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 331.73333333333335,
+                "value": 0.8293333333333334
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.6142131944444443,
+                0.719548611111111
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 266.3722222222222,
+                "value": 0.6659305555555555
+              }
+            }
+          },
+          "predicted_groups_mean": 5.48,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 163409,
+            "tp": 34991
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 33.18333333333334,
+            "value": 0.08295833333333334
+          },
+          "ceiling_attainment": {
+            "denominator": 0.5046666666666666,
+            "numerator": 0.08295833333333334,
+            "value": 0.164382430647292
+          },
+          "cohort": "office",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 50.46666666666667,
+            "value": 0.5046666666666666
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "complete_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.12871875,
+                0.2075
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.3325,
+                -0.23871875
+              ],
+              "paired_delta_vs_oracle": -0.28375,
+              "rate": {
+                "denominator": 400,
+                "numerator": 66.5,
+                "value": 0.16625
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.05879930555555556,
+                0.11162708333333331
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.18238090277777777,
+                -0.11237500000000003
+              ],
+              "paired_delta_vs_oracle": -0.14675000000000002,
+              "rate": {
+                "denominator": 400,
+                "numerator": 33.18333333333334,
+                "value": 0.08295833333333334
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.25315208333333333,
+                0.3516958333333334
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5800194444444444,
+                -0.47877083333333337
+              ],
+              "paired_delta_vs_oracle": -0.5281666666666667,
+              "rate": {
+                "denominator": 400,
+                "numerator": 120.46666666666665,
+                "value": 0.30116666666666664
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.19714861111111112,
+                0.28587083333333335
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.4805041666666667,
+                -0.3760701388888889
+              ],
+              "paired_delta_vs_oracle": -0.424375,
+              "rate": {
+                "denominator": 400,
+                "numerator": 96.62222222222223,
+                "value": 0.24155555555555558
+              }
+            }
+          },
+          "predicted_groups_mean": 7.365,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 9409,
+            "fp": 2554,
+            "tn": 160855,
+            "tp": 25582
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 138.0,
+            "value": 0.345
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 3.5,
+            "value": 0.00875
+          },
+          "ceiling_attainment": {
+            "denominator": 0.5046666666666666,
+            "numerator": 0.00875,
+            "value": 0.017338177014531046
+          },
+          "cohort": "office",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 50.46666666666667,
+            "value": 0.5046666666666666
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "density_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.0025,
+                0.0225
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.4925625,
+                -0.3825
+              ],
+              "paired_delta_vs_oracle": -0.4375,
+              "rate": {
+                "denominator": 400,
+                "numerator": 5.0,
+                "value": 0.0125
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.0025,
+                0.0175
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.2641545138888889,
+                -0.18106284722222227
+              ],
+              "paired_delta_vs_oracle": -0.22095833333333334,
+              "rate": {
+                "denominator": 400,
+                "numerator": 3.5,
+                "value": 0.00875
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.02,
+                0.0525
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.8358347222222222,
+                -0.7533604166666665
+              ],
+              "paired_delta_vs_oracle": -0.7943333333333332,
+              "rate": {
+                "denominator": 400,
+                "numerator": 14.0,
+                "value": 0.035
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.01583333333333333,
+                0.0475
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.6842815972222221,
+                -0.5855972222222222
+              ],
+              "paired_delta_vs_oracle": -0.6350972222222222,
+              "rate": {
+                "denominator": 400,
+                "numerator": 12.333333333333332,
+                "value": 0.03083333333333333
+              }
+            }
+          },
+          "predicted_groups_mean": 10.1675,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 15956,
+            "fp": 1947,
+            "tn": 161462,
+            "tp": 19035
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 23.0,
+            "value": 0.0575
+          },
+          "unassigned_events_mean": 1.445
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 198.05555555555554,
+            "value": 0.49513888888888885
+          },
+          "ceiling_attainment": {
+            "denominator": 0.7453333333333333,
+            "numerator": 0.49513888888888885,
+            "value": 0.6643187239117472
+          },
+          "cohort": "classroom",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 74.53333333333333,
+            "value": 0.7453333333333333
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.5625,
+                0.6775
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 248.0,
+                "value": 0.62
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.4285604166666666,
+                0.563001388888889
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 198.05555555555554,
+                "value": 0.49513888888888885
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.8914972222222222,
+                0.9497847222222222
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 368.4666666666667,
+                "value": 0.9211666666666667
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.7784729166666667,
+                0.8758871527777777
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 330.7944444444445,
+                "value": 0.8269861111111112
+              }
+            }
+          },
+          "predicted_groups_mean": 8.12,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 172618,
+            "tp": 25782
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 398,
+            "numerator": 141.72222222222223,
+            "value": 0.35608598548297044
+          },
+          "ceiling_attainment": {
+            "denominator": 0.7453333333333333,
+            "numerator": 0.3543055555555556,
+            "value": 0.4753652355396542
+          },
+          "cohort": "classroom",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 74.53333333333333,
+            "value": 0.7453333333333333
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 2.0,
+            "value": 0.005
+          },
+          "grouping": "complete_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.3666666666666667,
+                0.49166666666666664
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.24002083333333332,
+                -0.14583333333333334
+              ],
+              "paired_delta_vs_oracle": -0.19333333333333336,
+              "rate": {
+                "denominator": 400,
+                "numerator": 170.66666666666666,
+                "value": 0.42666666666666664
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.2977708333333334,
+                0.4200881944444445
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.18001041666666667,
+                -0.10239861111111113
+              ],
+              "paired_delta_vs_oracle": -0.14083333333333334,
+              "rate": {
+                "denominator": 400,
+                "numerator": 141.72222222222223,
+                "value": 0.3543055555555556
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.5608125,
+                0.6783750000000001
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.352225,
+                -0.2514166666666667
+              ],
+              "paired_delta_vs_oracle": -0.30033333333333334,
+              "rate": {
+                "denominator": 400,
+                "numerator": 248.33333333333331,
+                "value": 0.6208333333333332
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.509578125,
+                0.6339027777777777
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.30027847222222226,
+                -0.21230347222222223
+              ],
+              "paired_delta_vs_oracle": -0.25455555555555553,
+              "rate": {
+                "denominator": 400,
+                "numerator": 228.97222222222223,
+                "value": 0.5724305555555556
+              }
+            }
+          },
+          "predicted_groups_mean": 8.9,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 398.0,
+            "value": 0.995
+          },
+          "relation_counts": {
+            "fn": 3679,
+            "fp": 1454,
+            "tn": 171164,
+            "tp": 22103
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 256.0,
+            "value": 0.64
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 23.61111111111111,
+            "value": 0.059027777777777776
+          },
+          "ceiling_attainment": {
+            "denominator": 0.7453333333333333,
+            "numerator": 0.059027777777777776,
+            "value": 0.07919648181276089
+          },
+          "cohort": "classroom",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 74.53333333333333,
+            "value": 0.7453333333333333
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "density_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.03746875,
+                0.09753124999999997
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.60875,
+                -0.495
+              ],
+              "paired_delta_vs_oracle": -0.55375,
+              "rate": {
+                "denominator": 400,
+                "numerator": 26.5,
+                "value": 0.06625
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.03125,
+                0.08903472222222222
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.4995041666666667,
+                -0.37705416666666675
+              ],
+              "paired_delta_vs_oracle": -0.4361111111111111,
+              "rate": {
+                "denominator": 400,
+                "numerator": 23.61111111111111,
+                "value": 0.059027777777777776
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.1125,
+                0.2275
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.8102791666666667,
+                -0.6930499999999999
+              ],
+              "paired_delta_vs_oracle": -0.7536666666666667,
+              "rate": {
+                "denominator": 400,
+                "numerator": 67.0,
+                "value": 0.1675
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.08,
+                0.17500694444444442
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7583746527777778,
+                -0.6410809027777777
+              ],
+              "paired_delta_vs_oracle": -0.7005972222222222,
+              "rate": {
+                "denominator": 400,
+                "numerator": 50.55555555555556,
+                "value": 0.12638888888888888
+              }
+            }
+          },
+          "predicted_groups_mean": 10.5375,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 9400,
+            "fp": 1616,
+            "tn": 171002,
+            "tp": 16382
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 87.0,
+            "value": 0.2175
+          },
+          "unassigned_events_mean": 1.035
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 170.5,
+            "value": 0.42625
+          },
+          "ceiling_attainment": {
+            "denominator": 0.82,
+            "numerator": 0.42625,
+            "value": 0.5198170731707318
+          },
+          "cohort": "hotel",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 82.0,
+            "value": 0.82
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "oracle_groups",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.47493749999999996,
+                0.5875
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 212.0,
+                "value": 0.53
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.37496875,
+                0.47625
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 170.5,
+                "value": 0.42625
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.9775,
+                0.9975
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 395.0,
+                "value": 0.9875
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.885,
+                0.94
+              ],
+              "paired_delta_house_bootstrap95": [
+                0.0,
+                0.0
+              ],
+              "paired_delta_vs_oracle": 0.0,
+              "rate": {
+                "denominator": 400,
+                "numerator": 366.0,
+                "value": 0.915
+              }
+            }
+          },
+          "predicted_groups_mean": 3.48,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 142757,
+            "tp": 55643
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 400,
+            "numerator": 43.0,
+            "value": 0.1075
+          },
+          "ceiling_attainment": {
+            "denominator": 0.82,
+            "numerator": 0.1075,
+            "value": 0.13109756097560976
+          },
+          "cohort": "hotel",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 82.0,
+            "value": 0.82
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "grouping": "complete_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.095,
+                0.1725
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.455,
+                -0.34
+              ],
+              "paired_delta_vs_oracle": -0.3975,
+              "rate": {
+                "denominator": 400,
+                "numerator": 53.0,
+                "value": 0.1325
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.07496875,
+                0.14253124999999997
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.37128125,
+                -0.2675
+              ],
+              "paired_delta_vs_oracle": -0.31875,
+              "rate": {
+                "denominator": 400,
+                "numerator": 43.0,
+                "value": 0.1075
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.1675,
+                0.265
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.8225,
+                -0.7175
+              ],
+              "paired_delta_vs_oracle": -0.7725,
+              "rate": {
+                "denominator": 400,
+                "numerator": 86.0,
+                "value": 0.215
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.165,
+                0.2625
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.7575,
+                -0.64625
+              ],
+              "paired_delta_vs_oracle": -0.7025,
+              "rate": {
+                "denominator": 400,
+                "numerator": 85.0,
+                "value": 0.2125
+              }
+            }
+          },
+          "predicted_groups_mean": 6.1925,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 400.0,
+            "value": 1.0
+          },
+          "relation_counts": {
+            "fn": 19937,
+            "fp": 0,
+            "tn": 142757,
+            "tp": 35706
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 86.0,
+            "value": 0.215
+          },
+          "unassigned_events_mean": 0.0
+        },
+        {
+          "answered_identity_top1": {
+            "denominator": 397,
+            "numerator": 3.0,
+            "value": 0.007556675062972292
+          },
+          "ceiling_attainment": {
+            "denominator": 0.82,
+            "numerator": 0.0075,
+            "value": 0.009146341463414634
+          },
+          "cohort": "hotel",
+          "complete_02m_representation_ceiling": {
+            "denominator": 100,
+            "numerator": 82.0,
+            "value": 0.82
+          },
+          "degenerate_q_below3": {
+            "denominator": 400,
+            "numerator": 0.0,
+            "value": 0.0
+          },
+          "empty_catalog_rate": {
+            "denominator": 400,
+            "numerator": 3.0,
+            "value": 0.0075
+          },
+          "grouping": "density_fixed",
+          "houses": 100,
+          "metrics": {
+            "class_top1": {
+              "house_bootstrap95": [
+                0.0,
+                0.0175
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.5775,
+                -0.4675
+              ],
+              "paired_delta_vs_oracle": -0.5225,
+              "rate": {
+                "denominator": 400,
+                "numerator": 3.0,
+                "value": 0.0075
+              }
+            },
+            "identity_top1": {
+              "house_bootstrap95": [
+                0.0,
+                0.0175
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.47125,
+                -0.3675
+              ],
+              "paired_delta_vs_oracle": -0.41875,
+              "rate": {
+                "denominator": 400,
+                "numerator": 3.0,
+                "value": 0.0075
+              }
+            },
+            "identity_top10": {
+              "house_bootstrap95": [
+                0.0024375000000000035,
+                0.02
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.9925,
+                -0.96
+              ],
+              "paired_delta_vs_oracle": -0.9775,
+              "rate": {
+                "denominator": 400,
+                "numerator": 4.0,
+                "value": 0.01
+              }
+            },
+            "identity_top5": {
+              "house_bootstrap95": [
+                0.0024375000000000035,
+                0.02
+              ],
+              "paired_delta_house_bootstrap95": [
+                -0.93375,
+                -0.8749687500000001
+              ],
+              "paired_delta_vs_oracle": -0.905,
+              "rate": {
+                "denominator": 400,
+                "numerator": 4.0,
+                "value": 0.01
+              }
+            }
+          },
+          "predicted_groups_mean": 10.1525,
+          "queries": 400,
+          "rank_answer_rate": {
+            "denominator": 400,
+            "numerator": 397.0,
+            "value": 0.9925
+          },
+          "relation_counts": {
+            "fn": 31694,
+            "fp": 0,
+            "tn": 142757,
+            "tp": 23949
+          },
+          "relation_denominator_per_route": 496,
+          "score": "fixed_penalty",
+          "split": "test",
+          "target_capacity_retained": {
+            "denominator": 400,
+            "numerator": 4.0,
+            "value": 0.01
+          },
+          "unassigned_events_mean": 1.8425
+        }
+      ],
+      "source_sha256": "ea740d15c6ed6291675f4cd3d10fd4a63f6982f6b886dbbd77372b339bca55b8",
+      "validation": {
+        "brute_force_checks": 36,
+        "input_changes": [],
+        "ratio_checks": 972,
+        "replay_files": 7
+      },
+      "verification_passed": true,
+      "whole_experiment_confirmatory": false
+    },
     "count_penalty": {
       "export_scope": "all-house cohort only; count-penalty keeps the development-selected lambda; no test-score filtering",
       "independent_unit": "house, four routes retained",
@@ -8987,5 +12678,6 @@
       "source_sha256": "2f7a9b61c44aaa279d3f5601e199346a9dff09dab82bb2449782d0cde3c1f4f0"
     }
   },
+  "site_data_mode": "versioned exported snapshot; not a live paper-ledger reader",
   "updated_client_date": "2026-11-01"
 }
