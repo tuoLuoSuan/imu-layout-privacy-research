@@ -1,0 +1,7 @@
+#current-overview,#current-action,#current-radar,#current-simulation,#current-artifact{margin:0 0 24px}
+.research-history{margin:24px 0;border-top:1px solid #dce4df;padding-top:15px}
+.research-history>summary{cursor:pointer;color:#61746c;font-size:13px;margin-bottom:20px}
+#current-action h3,#current-radar h2,#current-simulation h2,#current-artifact h2{margin:24px 0 12px}
+#current-overview .milestone-grid h3{font-size:24px;line-height:1.3}
+#current-radar .note{margin:16px 0}
+@media(max-width:700px){#current-overview .milestone-grid h3{font-size:21px}.evidence-table{min-width:580px}}

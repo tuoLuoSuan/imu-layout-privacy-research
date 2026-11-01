@@ -5,6 +5,7 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 const defaultRoot=path.dirname(fileURLToPath(import.meta.url));
 // Reviewed browser assets only. Private examples stay local and outside Git.
 const assets=new Set([
+  '/research.mjs','/research.css','/research/current-evidence.json','/research/current-status.md',
   '/assets/checkpoint-20261029-prototype-and-prior-boundaries.png',
   '/assets/checkpoint-20261029-prototype-and-prior-boundaries.svg',
   '/assets/checkpoint-20261029-prototype-and-prior-boundaries.pdf',
