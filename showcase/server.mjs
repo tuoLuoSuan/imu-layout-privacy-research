@@ -5,6 +5,7 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 const defaultRoot=path.dirname(fileURLToPath(import.meta.url));
 // Reviewed browser assets only. Private examples stay local and outside Git.
 const assets=new Set([
+  '/defence.mjs','/research/defence-evidence.json',
   '/research/defence-conditions.md',
   '/simulation.mjs','/simulation.css','/research/simulation-index.json',
   '/research/simulation-dorm.json','/research/simulation-apartment.json','/research/simulation-conference.json',

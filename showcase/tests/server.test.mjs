@@ -7,7 +7,7 @@ import {createShowcaseServer} from '../server.mjs';
 
 async function fixture(t) {
   const root=await mkdtemp(path.join(tmpdir(),'imu-showcase-'));
-  for(const name of ['simulation.mjs','simulation.css','research/simulation-index.json','research/simulation-dorm.json','research/simulation-dorm-1.json','research/simulation-dorm-2.json',
+  for(const name of ['defence.mjs','research/defence-evidence.json','simulation.mjs','simulation.css','research/simulation-index.json','research/simulation-dorm.json','research/simulation-dorm-1.json','research/simulation-dorm-2.json',
     'index.html','style.css','app.mjs','data.mjs','data/first-session.json',
     'data/phone-config-smoke.json','assets/recorder-0.2.2-records.png',
     'data/dorm-room-20261027.json','assets/room-semantics-20261027.png','assets/room-stability-20261027.png','data/dorm-points-full-20261027.json',
@@ -26,7 +26,7 @@ async function fixture(t) {
 
 test('serves required page, private previews and exact Three dependencies with MIME',async t=>{
   const {url}=await fixture(t);
-  for(const [name,type] of [['/simulation.mjs','text/javascript'],['/simulation.css','text/css'],['/research/simulation-index.json','application/json'],['/research/simulation-dorm-1.json','application/json'],['/research/simulation-dorm-2.json','application/json'],
+  for(const [name,type] of [['/defence.mjs','text/javascript'],['/research/defence-evidence.json','application/json'],['/simulation.mjs','text/javascript'],['/simulation.css','text/css'],['/research/simulation-index.json','application/json'],['/research/simulation-dorm-1.json','application/json'],['/research/simulation-dorm-2.json','application/json'],
     ['/','text/html'],['/app.mjs','text/javascript'],['/dorm-units.mjs','text/javascript'],['/dorm-unit-view.mjs','text/javascript'],
     ['/data/phone-config-smoke.json','application/json'],['/data/dorm-room-20261027.json','application/json'],['/data/dorm-points-full-20261027.json','application/json'],['/assets/room-semantics-20261027.png','image/png'],['/assets/room-stability-20261027.png','image/png'],['/assets/recorder-0.2.2-records.png','image/png'],
     ['/data/latest-signal-catalog-20261026.json','application/json'],['/data/signal-20261025-bed-phone-accel.json','application/json'],['/radar.mjs','text/javascript'],['/data/dorm-room-20261026.json','application/json'],['/data/dorm-points-20261026.json','application/json'],['/assets/room-polygon-20261026.png','image/png'],
