@@ -1,0 +1,1 @@
+{"schema":"simulation-family-v1","family":"office","houses":100,"parts":[{"file":"simulation-office-1.json","bytes":1129034,"sha256":"f20c3430f5e5ed7745aecd05db268c8142a87f44c19502b9d24fac59a48efa51"},{"file":"simulation-office-2.json","bytes":1124091,"sha256":"f76dd5aa9acdeaad3bade6633277173687d4e6a37bed8d7ed6043706c4ead459"}]}

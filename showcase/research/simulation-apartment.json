@@ -1,0 +1,1 @@
+{"schema":"simulation-family-v1","family":"apartment","houses":100,"parts":[{"file":"simulation-apartment-1.json","bytes":1279915,"sha256":"bdb776fc22604aa65f63a41cf74c4ff3c97ee9977baf999a6351fe41f5c758ee"},{"file":"simulation-apartment-2.json","bytes":1293279,"sha256":"da736b7e76d7033a34715f4ae6cce9660eb33d206e581c303d13f9dd227a58f7"}]}

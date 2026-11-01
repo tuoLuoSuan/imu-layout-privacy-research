@@ -1,0 +1,1 @@
+{"schema":"simulation-family-v1","family":"classroom","houses":100,"parts":[{"file":"simulation-classroom-1.json","bytes":1202417,"sha256":"cacf71c400289d1fb59de3faddaabb8e8aa3c99779d9d3a35e7c02560c71ff5e"},{"file":"simulation-classroom-2.json","bytes":1214461,"sha256":"2576b0b92d7c732c2f5ceb683f74c8e05dc8e227b95654e1fdb9ccd41d7ce8eb"}]}

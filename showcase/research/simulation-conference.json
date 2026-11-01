@@ -1,0 +1,1 @@
+{"schema":"simulation-family-v1","family":"conference","houses":100,"parts":[{"file":"simulation-conference-1.json","bytes":1276126,"sha256":"72bcc50f3ff572745a7867aa98122fcc9af00ba9c60270a4d747436b019232ab"},{"file":"simulation-conference-2.json","bytes":1285741,"sha256":"21957c3003220ae27d485c25c90304caf1d112f319a7bab57b1775aaecf0e2ca"}]}

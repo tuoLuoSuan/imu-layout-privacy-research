@@ -5,6 +5,16 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 const defaultRoot=path.dirname(fileURLToPath(import.meta.url));
 // Reviewed browser assets only. Private examples stay local and outside Git.
 const assets=new Set([
+  '/research/defence-conditions.md',
+  '/simulation.mjs','/simulation.css','/research/simulation-index.json',
+  '/research/simulation-dorm.json','/research/simulation-apartment.json','/research/simulation-conference.json',
+  '/research/simulation-office.json','/research/simulation-classroom.json','/research/simulation-hotel.json',
+  '/research/simulation-dorm-1.json','/research/simulation-dorm-2.json',
+  '/research/simulation-apartment-1.json','/research/simulation-apartment-2.json',
+  '/research/simulation-conference-1.json','/research/simulation-conference-2.json',
+  '/research/simulation-office-1.json','/research/simulation-office-2.json',
+  '/research/simulation-classroom-1.json','/research/simulation-classroom-2.json',
+  '/research/simulation-hotel-1.json','/research/simulation-hotel-2.json',
   '/research.mjs','/research.css','/research/current-evidence.json','/research/current-status.md',
   '/assets/checkpoint-20261029-prototype-and-prior-boundaries.png',
   '/assets/checkpoint-20261029-prototype-and-prior-boundaries.svg',
