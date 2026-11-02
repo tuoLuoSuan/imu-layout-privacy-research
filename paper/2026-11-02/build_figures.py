@@ -22,7 +22,7 @@ def require_matplotlib_panel_alignment(fig, **kwargs):
                 assert max(values)-min(values)<1e-8, (group,key)
     Path(kwargs['json_out']).write_text(json.dumps({'backend':'matplotlib','comparable_groups_checked':True}),encoding='utf-8')
 if Path('C:/Windows/Fonts/simsun.ttc').exists(): font_manager.fontManager.addfont('C:/Windows/Fonts/simsun.ttc')
-plt.rcParams.update({'font.family':'SimSun','font.size':9.5,'axes.labelsize':9,
+plt.rcParams.update({'font.family':['SimSun','Times New Roman','Arial'],'font.size':9.5,'axes.labelsize':9,
  'xtick.labelsize':8.5,'ytick.labelsize':8.5,'legend.fontsize':8.5,'axes.spines.top':False,
  'axes.spines.right':False,'axes.linewidth':.65,'axes.unicode_minus':False,
  'svg.fonttype':'none','pdf.fonttype':42,'figure.facecolor':'white','savefig.facecolor':'white',
@@ -42,7 +42,10 @@ def finish(fig,name,axes,ids,rows=(),cols=(),reason=''):
       json_out=str(OUT/(name+'.alignment.json')),overlay_svg=str(OUT/(name+'.alignment.svg')),
       tolerance_pt=1.5,gutter_tolerance_pt=1.5,strict=True)
     (OUT/(name+'.design.json')).write_bytes(json.dumps({'comparable_rows':rows,'comparable_columns':cols,'intentional_heterogeneity':reason,'invented_data':False},ensure_ascii=False,indent=2).encode('utf-8'))
-    for ext in ['pdf','svg','png']:fig.savefig(OUT/(name+'.'+ext),dpi=600,metadata={'Creator':'Matplotlib; frozen source data'})
+    fig.savefig(OUT/(name+'.pdf'),dpi=600,metadata={'Creator':'Matplotlib; frozen source data'})
+    fig.savefig(OUT/(name+'.svg'),dpi=600,metadata={'Creator':'Matplotlib; frozen source data'})
+    fig.savefig(OUT/(name+'.png'),dpi=600,metadata={'Creator':'Matplotlib; frozen source data'})
+    fig.savefig(OUT/(name+'.tiff'),dpi=600,pil_kwargs={'compression':'tiff_lzw'})
     plt.close(fig)
 
 # 1. What is represented? Two audited aliases and their shared distance spectrum.
