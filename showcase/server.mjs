@@ -5,6 +5,7 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 const defaultRoot=path.dirname(fileURLToPath(import.meta.url));
 // Reviewed browser assets only. Private examples stay local and outside Git.
 const assets=new Set([
+  '/research/paper-20261102.html','/research/paper-20261102.css','/research/paper-20261102-summary.json','/assets/paper-20261102.pdf','/assets/paper-20261102.docx','/research/paper-20261102-figures/fig1-evidence-levels.svg','/research/paper-20261102-figures/fig2-budget-and-error.svg','/research/paper-20261102-figures/fig3-grouping-and-rule.svg','/research/paper-20261102-figures/fig4-action-and-utility.svg','/research/paper-20261102-figures/fig5-real-pilot-boundaries.svg',
   '/defence.mjs','/research/defence-evidence.json',
   '/research/defence-conditions.md',
   '/simulation.mjs','/simulation.css','/research/simulation-index.json',
@@ -115,7 +116,7 @@ const assets=new Set([
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8',
   '.mjs':'text/javascript; charset=utf-8','.js':'text/javascript; charset=utf-8',
   '.json':'application/json; charset=utf-8','.png':'image/png',
-  '.svg':'image/svg+xml','.pdf':'application/pdf','.md':'text/plain; charset=utf-8'};
+  '.svg':'image/svg+xml','.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document','.pdf':'application/pdf','.md':'text/plain; charset=utf-8'};
 
 export function createShowcaseServer({root=defaultRoot}={}) {
   return http.createServer(async(req,res)=>{
