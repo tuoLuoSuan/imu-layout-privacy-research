@@ -1,0 +1,42 @@
+{
+  "classes": [
+    {
+      "classes": 421,
+      "identities": 421,
+      "size": 1
+    },
+    {
+      "classes": 55,
+      "identities": 110,
+      "size": 2
+    },
+    {
+      "classes": 8,
+      "identities": 24,
+      "size": 3
+    },
+    {
+      "classes": 1,
+      "identities": 4,
+      "size": 4
+    },
+    {
+      "classes": 4,
+      "identities": 20,
+      "size": 5
+    },
+    {
+      "classes": 2,
+      "identities": 12,
+      "size": 6
+    },
+    {
+      "classes": 1,
+      "identities": 9,
+      "size": 9
+    }
+  ],
+  "equivalence_classes": 492,
+  "identities": 600,
+  "representation_m": 0.2
+}

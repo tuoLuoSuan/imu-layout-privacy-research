@@ -5,6 +5,13 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 const defaultRoot=path.dirname(fileURLToPath(import.meta.url));
 // Reviewed browser assets only. Private examples stay local and outside Git.
 const assets=new Set([
+  '/research/paper-20261102-figures/fig7-gate-sensitivity.svg',
+  '/research/paper-20261102-figures/fig6-real-pilot.svg',
+  '/research/paper-20261102-figures/fig5-action-and-utility.svg',
+  '/research/paper-20261102-figures/fig4-grouping-and-rules.svg',
+  '/research/paper-20261102-figures/fig3-noise-and-budget.svg',
+  '/research/paper-20261102-figures/fig2-representation.svg',
+  '/research/paper-20261102-figures/fig1-threat-model.svg',
   '/research/paper-20261102-figures/fig6-event-gate-sensitivity.svg',
   '/research/paper-20261102-figures/fig0-threat-and-evidence.svg',
   '/research/paper-20261102.html','/research/paper-20261102.css','/research/paper-20261102-summary.json','/assets/paper-20261102.pdf','/assets/paper-20261102.docx','/research/paper-20261102-figures/fig1-evidence-levels.svg','/research/paper-20261102-figures/fig2-budget-and-error.svg','/research/paper-20261102-figures/fig3-grouping-and-rule.svg','/research/paper-20261102-figures/fig4-action-and-utility.svg','/research/paper-20261102-figures/fig5-real-pilot-boundaries.svg',

@@ -1,0 +1,184 @@
+{
+  "date": "2026-11-02",
+  "artifact_type": "reviewed_snapshot_not_live_scoring",
+  "identity": {
+    "top1": {
+      "denominator": 2400,
+      "numerator": 1259.1055555555556,
+      "value": 0.5246273148148148
+    },
+    "test_houses": 600,
+    "routes_per_house": 4,
+    "visits": 32,
+    "lambda": 0.0003,
+    "noise": "Brownian endpoint per-axis sigma=0.5m",
+    "representation_reference": {
+      "numerator": 492,
+      "denominator": 600,
+      "value": 0.82
+    },
+    "singleton_top1": 0.6615,
+    "alias_top1": 0.2027
+  },
+  "actions": {
+    "confirmatory": {
+      "numerator": 65,
+      "denominator": 71,
+      "value": 0.9154929577464789
+    },
+    "second_look": {
+      "numerator": 67,
+      "denominator": 71,
+      "value": 0.9436619718309859
+    },
+    "second_look_selection": "Development expansion was influenced by the T confusion matrix; same T evaluated again.",
+    "T2_joint": {
+      "numerator": 61,
+      "denominator": 71,
+      "value": 0.8591549295774648
+    },
+    "T3_joint": {
+      "numerator": 64,
+      "denominator": 71,
+      "value": 0.9014084507042254
+    },
+    "hz20_T3_joint": {
+      "numerator": 65,
+      "denominator": 71,
+      "value": 0.9154929577464789
+    },
+    "main_display": {
+      "task": "T3 native eight-class",
+      "cabinet_open_close_merged": true,
+      "joint": {
+        "numerator": 67,
+        "denominator": 71,
+        "value": 0.9436619718309859
+      },
+      "phone": {
+        "numerator": 60,
+        "denominator": 71,
+        "value": 0.8450704225352113
+      },
+      "watch": {
+        "numerator": 62,
+        "denominator": 71,
+        "value": 0.8732394366197183
+      },
+      "macro_f1_joint": 0.9041666666666667,
+      "paired": [
+        {
+          "a": "joint",
+          "b": "phone",
+          "only_a": 7,
+          "only_b": 0,
+          "p_exact": 0.015625,
+          "p_holm": 0.046875
+        },
+        {
+          "a": "joint",
+          "b": "watch",
+          "only_a": 5,
+          "only_b": 0,
+          "p_exact": 0.0625,
+          "p_holm": 0.125
+        },
+        {
+          "a": "phone",
+          "b": "watch",
+          "only_a": 5,
+          "only_b": 7,
+          "p_exact": 0.7744140625,
+          "p_holm": 0.7744140625
+        }
+      ],
+      "historical_nine_class_result_retained": true,
+      "utility_20hz_joint": {
+        "numerator": 69,
+        "denominator": 71,
+        "value": 0.971830985915493
+      }
+    }
+  },
+  "pilot": {
+    "records": 2,
+    "people": 1,
+    "rooms": 1,
+    "reference": "cue-declared windows, independent station truth unavailable",
+    "event_counts": [
+      10,
+      9
+    ],
+    "coverage": [
+      {
+        "numerator": 56,
+        "denominator": 64,
+        "value": 0.875
+      },
+      {
+        "numerator": 57.5,
+        "denominator": 64,
+        "value": 0.8984375
+      }
+    ],
+    "nearest_marker": {
+      "phone": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 8,
+        "value": 0.5
+      },
+      "watch": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 3,
+        "value": 0.1875
+      },
+      "joint": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 7,
+        "value": 0.4375
+      }
+    },
+    "random_marker_reference": {
+      "numerator": 54,
+      "denominator": 240,
+      "value": 0.225
+    },
+    "raw_phone_duration_s": [
+      310.8202684040298,
+      271.7348553109914
+    ],
+    "seven_arm_completed": false,
+    "spatial_20hz_completed": false
+  },
+  "scope": {
+    "formal_score": null,
+    "real_candidate_rank": null,
+    "real_room_ranking": null,
+    "real_room_family_count": null,
+    "physical_clock_accepted": false,
+    "sensor_window_join_allowed": false,
+    "scientific_geometry_ground_truth_verified": false,
+    "generalization_accuracy_validated": false,
+    "collection_open": false
+  },
+  "reader": "research/paper-20261102.html",
+  "source_data_recomputed_from_raw": {
+    "bundle_integrity": true,
+    "sixteen_visit_features": true,
+    "simulation_scores": false
+  },
+  "revision": {
+    "id": "paper-visual-revision-003",
+    "references": 44,
+    "figures": 7,
+    "tables": 4,
+    "score_conditions_with_house_intervals": 27,
+    "interval_reaggregation_from_saved_scores": true,
+    "new_training": false,
+    "new_collection": false,
+    "station_diagnostic_interpretation": "Exploratory count-preserving within-round exact permutation; Holm-adjusted p: phone 0.10633928571428572, watch 0.7376785714285714, joint 0.11664540816326531; no independent position truth"
+  }
+}

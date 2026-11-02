@@ -1,0 +1,412 @@
+{
+  "nn": [
+    {
+      "arm": "phone",
+      "declared_marker_accuracy": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 8,
+        "value": 0.5
+      },
+      "declared_marker_random_loo": {
+        "defined": true,
+        "denominator": 240,
+        "numerator": 54,
+        "value": 0.225
+      },
+      "dimensions": 70,
+      "n": 16,
+      "nearest": [
+        {
+          "neighbor": 1,
+          "query": 0,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 0,
+          "query": 1,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 1,
+          "query": 2,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 0,
+          "query": 3,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 11,
+          "query": 4,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 10,
+          "query": 5,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 0,
+          "query": 6,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 15,
+          "query": 7,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 14,
+          "query": 8,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 15,
+          "query": 9,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 5,
+          "query": 10,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 4,
+          "query": 11,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 11,
+          "query": 12,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 3,
+          "query": 13,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 8,
+          "query": 14,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 11,
+          "query": 15,
+          "same_declared_marker": false,
+          "same_role": false
+        }
+      ],
+      "note": "Descriptive transductive scaling on 16 visits; labels are declarations, no independent position truth.",
+      "physical_between_mean": 12.203548925248409,
+      "physical_within_between_ratio": {
+        "defined": true,
+        "denominator": 12.203548925248409,
+        "numerator": 10.366270035120746,
+        "value": 0.8494471648057685
+      },
+      "physical_within_mean": 10.366270035120746,
+      "route_role_accuracy": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 8,
+        "value": 0.5
+      },
+      "route_role_random_loo": {
+        "defined": true,
+        "denominator": 240,
+        "numerator": 72,
+        "value": 0.3
+      }
+    },
+    {
+      "arm": "watch",
+      "declared_marker_accuracy": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 3,
+        "value": 0.1875
+      },
+      "declared_marker_random_loo": {
+        "defined": true,
+        "denominator": 240,
+        "numerator": 54,
+        "value": 0.225
+      },
+      "dimensions": 37,
+      "n": 16,
+      "nearest": [
+        {
+          "neighbor": 3,
+          "query": 0,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 3,
+          "query": 1,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 3,
+          "query": 2,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 7,
+          "query": 3,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 15,
+          "query": 4,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 12,
+          "query": 5,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 1,
+          "query": 6,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 3,
+          "query": 7,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 12,
+          "query": 8,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 11,
+          "query": 9,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 13,
+          "query": 10,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 9,
+          "query": 11,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 5,
+          "query": 12,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 15,
+          "query": 13,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 13,
+          "query": 14,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 13,
+          "query": 15,
+          "same_declared_marker": false,
+          "same_role": false
+        }
+      ],
+      "note": "Descriptive transductive scaling on 16 visits; labels are declarations, no independent position truth.",
+      "physical_between_mean": 8.463123772151736,
+      "physical_within_between_ratio": {
+        "defined": true,
+        "denominator": 8.463123772151736,
+        "numerator": 7.66767864408236,
+        "value": 0.9060104579012751
+      },
+      "physical_within_mean": 7.66767864408236,
+      "route_role_accuracy": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 3,
+        "value": 0.1875
+      },
+      "route_role_random_loo": {
+        "defined": true,
+        "denominator": 240,
+        "numerator": 72,
+        "value": 0.3
+      }
+    },
+    {
+      "arm": "joint",
+      "declared_marker_accuracy": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 7,
+        "value": 0.4375
+      },
+      "declared_marker_random_loo": {
+        "defined": true,
+        "denominator": 240,
+        "numerator": 54,
+        "value": 0.225
+      },
+      "dimensions": 107,
+      "n": 16,
+      "nearest": [
+        {
+          "neighbor": 3,
+          "query": 0,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 0,
+          "query": 1,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 0,
+          "query": 2,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 0,
+          "query": 3,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 11,
+          "query": 4,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 12,
+          "query": 5,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 0,
+          "query": 6,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 0,
+          "query": 7,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 14,
+          "query": 8,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 12,
+          "query": 9,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 5,
+          "query": 10,
+          "same_declared_marker": true,
+          "same_role": true
+        },
+        {
+          "neighbor": 4,
+          "query": 11,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 5,
+          "query": 12,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 3,
+          "query": 13,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 12,
+          "query": 14,
+          "same_declared_marker": false,
+          "same_role": false
+        },
+        {
+          "neighbor": 12,
+          "query": 15,
+          "same_declared_marker": true,
+          "same_role": true
+        }
+      ],
+      "note": "Descriptive transductive scaling on 16 visits; labels are declarations, no independent position truth.",
+      "physical_between_mean": 15.038816486765437,
+      "physical_within_between_ratio": {
+        "defined": true,
+        "denominator": 15.038816486765437,
+        "numerator": 13.059168109206896,
+        "value": 0.8683640844144428
+      },
+      "physical_within_mean": 13.059168109206896,
+      "route_role_accuracy": {
+        "defined": true,
+        "denominator": 16,
+        "numerator": 7,
+        "value": 0.4375
+      },
+      "route_role_random_loo": {
+        "defined": true,
+        "denominator": 240,
+        "numerator": 72,
+        "value": 0.3
+      }
+    }
+  ]
+}

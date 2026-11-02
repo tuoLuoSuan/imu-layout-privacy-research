@@ -1,0 +1,334 @@
+{
+  "bootstrap_replicates": 1000,
+  "conditioning": "fixed generator, fixed six-family quotas (100 each), no cross-generator or cross-person coverage",
+  "independent_unit": "house with four routes retained",
+  "post_audit_exploratory": true,
+  "rows": [
+    {
+      "condition": "noise/none/8",
+      "house_bootstrap95": [
+        0.6565152880297627,
+        0.6925264487581476
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1618.2781601404731,
+        "value": 0.6742825667251972
+      }
+    },
+    {
+      "condition": "noise/none/16",
+      "house_bootstrap95": [
+        0.749009905453343,
+        0.7871160628607503
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1843.228116883117,
+        "value": 0.7680117153679654
+      }
+    },
+    {
+      "condition": "noise/none/32",
+      "house_bootstrap95": [
+        0.7562138227513228,
+        0.79474800986051
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1861.4588744588746,
+        "value": 0.7756078643578644
+      }
+    },
+    {
+      "condition": "noise/common/8",
+      "house_bootstrap95": [
+        0.6565152880297627,
+        0.6925264487581476
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1618.2781601404731,
+        "value": 0.6742825667251972
+      }
+    },
+    {
+      "condition": "noise/common/16",
+      "house_bootstrap95": [
+        0.749009905453343,
+        0.7871160628607503
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1843.228116883117,
+        "value": 0.7680117153679654
+      }
+    },
+    {
+      "condition": "noise/common/32",
+      "house_bootstrap95": [
+        0.7562138227513228,
+        0.79474800986051
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1861.4588744588746,
+        "value": 0.7756078643578644
+      }
+    },
+    {
+      "condition": "noise/brownian/8",
+      "house_bootstrap95": [
+        0.2095686714616402,
+        0.2407757134589947
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 540.5956746031746,
+        "value": 0.22524819775132277
+      }
+    },
+    {
+      "condition": "noise/brownian/16",
+      "house_bootstrap95": [
+        0.33297972883597887,
+        0.3700276016865079
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 844.9993650793651,
+        "value": 0.35208306878306883
+      }
+    },
+    {
+      "condition": "noise/brownian/32",
+      "house_bootstrap95": [
+        0.4035443369708995,
+        0.4411023561507936
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1016.0373015873015,
+        "value": 0.42334887566137563
+      }
+    },
+    {
+      "condition": "noise/iid/8",
+      "house_bootstrap95": [
+        0.0040036338141025635,
+        0.010262499999999997
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 16.95692307692308,
+        "value": 0.007065384615384617
+      }
+    },
+    {
+      "condition": "noise/iid/16",
+      "house_bootstrap95": [
+        0.015627065972222222,
+        0.029173281249999995
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 53.50333333333333,
+        "value": 0.022293055555555556
+      }
+    },
+    {
+      "condition": "noise/iid/32",
+      "house_bootstrap95": [
+        0.04149766865079365,
+        0.06347854662698413
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 125.53730158730158,
+        "value": 0.052307208994709
+      }
+    },
+    {
+      "condition": "strong/full_normalized",
+      "house_bootstrap95": [
+        0.46897997685185183,
+        0.5077635416666667
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1173.5222222222221,
+        "value": 0.48896759259259254
+      }
+    },
+    {
+      "condition": "strong/partial_metric",
+      "house_bootstrap95": [
+        0.5431777529761905,
+        0.5862195105820106
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1354.74126984127,
+        "value": 0.5644755291005291
+      }
+    },
+    {
+      "condition": "strong/partial_normalized",
+      "house_bootstrap95": [
+        0.4035443369708995,
+        0.4411023561507936
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1016.0373015873015,
+        "value": 0.42334887566137563
+      }
+    },
+    {
+      "condition": "group/oracle/hard",
+      "house_bootstrap95": [
+        0.5030798032407409,
+        0.5439898148148148
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 1259.1055555555554,
+        "value": 0.5246273148148147
+      }
+    },
+    {
+      "condition": "group/complete/hard",
+      "house_bootstrap95": [
+        0.2651715277777778,
+        0.30392129629629633
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 681.2388888888888,
+        "value": 0.283849537037037
+      }
+    },
+    {
+      "condition": "group/density/hard",
+      "house_bootstrap95": [
+        0.06052893518518518,
+        0.0834525462962963
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 173.77777777777777,
+        "value": 0.0724074074074074
+      }
+    },
+    {
+      "condition": "group/oracle/soft",
+      "house_bootstrap95": [
+        0.37497401620370374,
+        0.41475052083333336
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 949.2722222222221,
+        "value": 0.39553009259259253
+      }
+    },
+    {
+      "condition": "group/complete/soft",
+      "house_bootstrap95": [
+        0.3032130787037037,
+        0.3372120949074075
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 769.1222222222223,
+        "value": 0.3204675925925926
+      }
+    },
+    {
+      "condition": "group/density/soft",
+      "house_bootstrap95": [
+        0.24485914351851848,
+        0.2803008680555556
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 629.0611111111111,
+        "value": 0.2621087962962963
+      }
+    },
+    {
+      "condition": "group/single/hard",
+      "house_bootstrap95": [
+        0.3134050884589947,
+        0.35059825148809526
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 797.1928571428571,
+        "value": 0.33216369047619043
+      }
+    },
+    {
+      "condition": "group/single/soft",
+      "house_bootstrap95": [
+        0.275784019510582,
+        0.31001681134259257
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 703.2706349206348,
+        "value": 0.2930294312169312
+      }
+    },
+    {
+      "condition": "group/spectral/hard",
+      "house_bootstrap95": [
+        0.007860176282051282,
+        0.01881710737179487
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 30.692307692307693,
+        "value": 0.012788461538461538
+      }
+    },
+    {
+      "condition": "group/spectral/soft",
+      "house_bootstrap95": [
+        0.010790630787037037,
+        0.02266265046296296
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 38.73111111111112,
+        "value": 0.016137962962962965
+      }
+    },
+    {
+      "condition": "group/hdbscan/hard",
+      "house_bootstrap95": [
+        0.1623689236111111,
+        0.19258697916666667
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 424.8611111111111,
+        "value": 0.17702546296296295
+      }
+    },
+    {
+      "condition": "group/hdbscan/soft",
+      "house_bootstrap95": [
+        0.17944994212962964,
+        0.21304427083333335
+      ],
+      "rate": {
+        "denominator": 2400,
+        "numerator": 470.1388888888889,
+        "value": 0.19589120370370372
+      }
+    }
+  ],
+  "scoring_recomputed": false,
+  "seed": 2026110201
+}

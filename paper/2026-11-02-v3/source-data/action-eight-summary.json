@@ -1,0 +1,1163 @@
+{
+  "task": "native eight-class frozen models; cabinet opening/closing merged in training labels",
+  "test_batch": "T3",
+  "label_order": [
+    "cabinet",
+    "idle",
+    "lie_down",
+    "lying",
+    "sit_down",
+    "stand_up",
+    "upright",
+    "walk"
+  ],
+  "label_names_zh": [
+    "柜门交互",
+    "静止",
+    "躺下",
+    "躺着",
+    "坐下",
+    "起立",
+    "直立/坐姿",
+    "行走"
+  ],
+  "n": 71,
+  "arms": {
+    "joint": {
+      "accuracy": {
+        "numerator": 67,
+        "denominator": 71,
+        "value": 0.9436619718309859
+      },
+      "wilson95": [
+        0.8639039420002305,
+        0.9778754806983033
+      ],
+      "macro_f1": 0.9041666666666667,
+      "confusion": [
+        [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "cabinet",
+          "support": 14,
+          "tp": 14,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 28,
+            "denominator": 28,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.7846891972623643,
+            1.0
+          ]
+        },
+        {
+          "label": "idle",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "lie_down",
+          "support": 6,
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6096657120978346,
+            1.0
+          ]
+        },
+        {
+          "label": "lying",
+          "support": 5,
+          "tp": 1,
+          "fp": 0,
+          "fn": 4,
+          "precision": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 1,
+            "denominator": 5,
+            "value": 0.2
+          },
+          "f1": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          },
+          "recall_wilson95": [
+            0.03622410863243014,
+            0.6244653702374747
+          ]
+        },
+        {
+          "label": "sit_down",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "stand_up",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "upright",
+          "support": 18,
+          "tp": 18,
+          "fp": 4,
+          "fn": 0,
+          "precision": {
+            "numerator": 18,
+            "denominator": 22,
+            "value": 0.8181818181818182
+          },
+          "recall": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 36,
+            "denominator": 40,
+            "value": 0.9
+          },
+          "recall_wilson95": [
+            0.8241207763533425,
+            1.0
+          ]
+        },
+        {
+          "label": "walk",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        }
+      ],
+      "per_part": [
+        {
+          "part": "T-Ba",
+          "accuracy": {
+            "numerator": 9,
+            "denominator": 12,
+            "value": 0.75
+          }
+        },
+        {
+          "part": "T-Bb",
+          "accuracy": {
+            "numerator": 9,
+            "denominator": 10,
+            "value": 0.9
+          }
+        },
+        {
+          "part": "T-G1a",
+          "accuracy": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          }
+        },
+        {
+          "part": "T-G1b",
+          "accuracy": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          }
+        },
+        {
+          "part": "T-G2a",
+          "accuracy": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          }
+        },
+        {
+          "part": "T-G2b",
+          "accuracy": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          }
+        }
+      ]
+    },
+    "phone": {
+      "accuracy": {
+        "numerator": 60,
+        "denominator": 71,
+        "value": 0.8450704225352113
+      },
+      "wilson95": [
+        0.7434903714672241,
+        0.9112269572983023
+      ],
+      "macro_f1": 0.8208333333333333,
+      "confusion": [
+        [
+          7,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "cabinet",
+          "support": 14,
+          "tp": 7,
+          "fp": 0,
+          "fn": 7,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 14,
+            "value": 0.5
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 21,
+            "value": 0.6666666666666666
+          },
+          "recall_wilson95": [
+            0.26799202452413634,
+            0.7320079754758637
+          ]
+        },
+        {
+          "label": "idle",
+          "support": 7,
+          "tp": 7,
+          "fp": 7,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 14,
+            "value": 0.5
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 21,
+            "value": 0.6666666666666666
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "lie_down",
+          "support": 6,
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6096657120978346,
+            1.0
+          ]
+        },
+        {
+          "label": "lying",
+          "support": 5,
+          "tp": 1,
+          "fp": 0,
+          "fn": 4,
+          "precision": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 1,
+            "denominator": 5,
+            "value": 0.2
+          },
+          "f1": {
+            "numerator": 2,
+            "denominator": 6,
+            "value": 0.3333333333333333
+          },
+          "recall_wilson95": [
+            0.03622410863243014,
+            0.6244653702374747
+          ]
+        },
+        {
+          "label": "sit_down",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "stand_up",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "upright",
+          "support": 18,
+          "tp": 18,
+          "fp": 4,
+          "fn": 0,
+          "precision": {
+            "numerator": 18,
+            "denominator": 22,
+            "value": 0.8181818181818182
+          },
+          "recall": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 36,
+            "denominator": 40,
+            "value": 0.9
+          },
+          "recall_wilson95": [
+            0.8241207763533425,
+            1.0
+          ]
+        },
+        {
+          "label": "walk",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        }
+      ],
+      "per_part": [
+        {
+          "part": "T-Ba",
+          "accuracy": {
+            "numerator": 9,
+            "denominator": 12,
+            "value": 0.75
+          }
+        },
+        {
+          "part": "T-Bb",
+          "accuracy": {
+            "numerator": 9,
+            "denominator": 10,
+            "value": 0.9
+          }
+        },
+        {
+          "part": "T-G1a",
+          "accuracy": {
+            "numerator": 11,
+            "denominator": 13,
+            "value": 0.8461538461538461
+          }
+        },
+        {
+          "part": "T-G1b",
+          "accuracy": {
+            "numerator": 11,
+            "denominator": 12,
+            "value": 0.9166666666666666
+          }
+        },
+        {
+          "part": "T-G2a",
+          "accuracy": {
+            "numerator": 11,
+            "denominator": 12,
+            "value": 0.9166666666666666
+          }
+        },
+        {
+          "part": "T-G2b",
+          "accuracy": {
+            "numerator": 9,
+            "denominator": 12,
+            "value": 0.75
+          }
+        }
+      ]
+    },
+    "watch": {
+      "accuracy": {
+        "numerator": 62,
+        "denominator": 71,
+        "value": 0.8732394366197183
+      },
+      "wilson95": [
+        0.7763089172134625,
+        0.9318547241043516
+      ],
+      "macro_f1": 0.7931819338069338,
+      "confusion": [
+        [
+          13,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "cabinet",
+          "support": 14,
+          "tp": 13,
+          "fp": 0,
+          "fn": 1,
+          "precision": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 13,
+            "denominator": 14,
+            "value": 0.9285714285714286
+          },
+          "f1": {
+            "numerator": 26,
+            "denominator": 27,
+            "value": 0.9629629629629629
+          },
+          "recall_wilson95": [
+            0.6853129557584889,
+            0.9872777847521093
+          ]
+        },
+        {
+          "label": "idle",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "lie_down",
+          "support": 6,
+          "tp": 6,
+          "fp": 1,
+          "fn": 0,
+          "precision": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "recall": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 12,
+            "denominator": 13,
+            "value": 0.9230769230769231
+          },
+          "recall_wilson95": [
+            0.6096657120978346,
+            1.0
+          ]
+        },
+        {
+          "label": "lying",
+          "support": 5,
+          "tp": 0,
+          "fp": 0,
+          "fn": 5,
+          "precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "recall": {
+            "numerator": 0,
+            "denominator": 5,
+            "value": 0.0
+          },
+          "f1": {
+            "numerator": 0,
+            "denominator": 5,
+            "value": 0.0
+          },
+          "recall_wilson95": [
+            0.0,
+            0.43448246478317476
+          ]
+        },
+        {
+          "label": "sit_down",
+          "support": 7,
+          "tp": 4,
+          "fp": 0,
+          "fn": 3,
+          "precision": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 4,
+            "denominator": 7,
+            "value": 0.5714285714285714
+          },
+          "f1": {
+            "numerator": 8,
+            "denominator": 11,
+            "value": 0.7272727272727273
+          },
+          "recall_wilson95": [
+            0.2504583645276572,
+            0.8417801447485302
+          ]
+        },
+        {
+          "label": "stand_up",
+          "support": 7,
+          "tp": 7,
+          "fp": 2,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 9,
+            "value": 0.7777777777777778
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 16,
+            "value": 0.875
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        },
+        {
+          "label": "upright",
+          "support": 18,
+          "tp": 18,
+          "fp": 6,
+          "fn": 0,
+          "precision": {
+            "numerator": 18,
+            "denominator": 24,
+            "value": 0.75
+          },
+          "recall": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 36,
+            "denominator": 42,
+            "value": 0.8571428571428571
+          },
+          "recall_wilson95": [
+            0.8241207763533425,
+            1.0
+          ]
+        },
+        {
+          "label": "walk",
+          "support": 7,
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "f1": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "recall_wilson95": [
+            0.6456695649333126,
+            1.0
+          ]
+        }
+      ],
+      "per_part": [
+        {
+          "part": "T-Ba",
+          "accuracy": {
+            "numerator": 9,
+            "denominator": 12,
+            "value": 0.75
+          }
+        },
+        {
+          "part": "T-Bb",
+          "accuracy": {
+            "numerator": 8,
+            "denominator": 10,
+            "value": 0.8
+          }
+        },
+        {
+          "part": "T-G1a",
+          "accuracy": {
+            "numerator": 12,
+            "denominator": 13,
+            "value": 0.9230769230769231
+          }
+        },
+        {
+          "part": "T-G1b",
+          "accuracy": {
+            "numerator": 10,
+            "denominator": 12,
+            "value": 0.8333333333333334
+          }
+        },
+        {
+          "part": "T-G2a",
+          "accuracy": {
+            "numerator": 11,
+            "denominator": 12,
+            "value": 0.9166666666666666
+          }
+        },
+        {
+          "part": "T-G2b",
+          "accuracy": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          }
+        }
+      ]
+    }
+  },
+  "utility": {
+    "joint": {
+      "raw": {
+        "numerator": 67,
+        "denominator": 71,
+        "value": 0.9436619718309859
+      },
+      "hz20": {
+        "numerator": 69,
+        "denominator": 71,
+        "value": 0.971830985915493
+      },
+      "only_raw": 0,
+      "only_20hz": 2,
+      "p_exact": 0.5
+    },
+    "phone": {
+      "raw": {
+        "numerator": 60,
+        "denominator": 71,
+        "value": 0.8450704225352113
+      },
+      "hz20": {
+        "numerator": 61,
+        "denominator": 71,
+        "value": 0.8591549295774648
+      },
+      "only_raw": 1,
+      "only_20hz": 2,
+      "p_exact": 1.0
+    },
+    "watch": {
+      "raw": {
+        "numerator": 62,
+        "denominator": 71,
+        "value": 0.8732394366197183
+      },
+      "hz20": {
+        "numerator": 62,
+        "denominator": 71,
+        "value": 0.8732394366197183
+      },
+      "only_raw": 0,
+      "only_20hz": 0,
+      "p_exact": 1.0
+    }
+  },
+  "paired": [
+    {
+      "a": "joint",
+      "b": "phone",
+      "only_a": 7,
+      "only_b": 0,
+      "p_exact": 0.015625,
+      "p_holm": 0.046875
+    },
+    {
+      "a": "joint",
+      "b": "watch",
+      "only_a": 5,
+      "only_b": 0,
+      "p_exact": 0.0625,
+      "p_holm": 0.125
+    },
+    {
+      "a": "phone",
+      "b": "watch",
+      "only_a": 5,
+      "only_b": 7,
+      "p_exact": 0.7744140625,
+      "p_holm": 0.7744140625
+    }
+  ],
+  "not_nine_class_second_look": true
+}

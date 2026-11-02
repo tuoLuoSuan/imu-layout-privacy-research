@@ -1,0 +1,350 @@
+{
+  "contrasts": [
+    {
+      "house_bootstrap95": [
+        0.032137404927248675,
+        0.06425652281746032
+      ],
+      "name": "single_minus_complete_hard",
+      "rate": {
+        "denominator": 2400,
+        "numerator": 115.95396825396826,
+        "value": 0.04831415343915344
+      }
+    },
+    {
+      "house_bootstrap95": [
+        -0.04120064070767196,
+        -0.014052525628306878
+      ],
+      "name": "single_minus_complete_soft",
+      "rate": {
+        "denominator": 2400,
+        "numerator": -65.8515873015873,
+        "value": -0.027438161375661376
+      }
+    },
+    {
+      "house_bootstrap95": [
+        0.059174710648148145,
+        0.09215549768518519
+      ],
+      "name": "difference_of_differences",
+      "rate": {
+        "denominator": 2400,
+        "numerator": 181.80555555555554,
+        "value": 0.07575231481481481
+      }
+    }
+  ],
+  "intervals": {
+    "draws": 1000,
+    "scope": "post-hoc pointwise, conditional on generator and fixed family counts; not confirmation or causal identification",
+    "seed": 2026110101,
+    "unit": "house; all four routes retained"
+  },
+  "methods": [
+    {
+      "hard": {
+        "denominator": 2400,
+        "numerator": 1259.1055555555556,
+        "value": 0.5246273148148148
+      },
+      "hard_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      },
+      "mean_groups": {
+        "denominator": 2400,
+        "numerator": 17789.0,
+        "value": 7.412083333333333
+      },
+      "name": "Oracle",
+      "pair_counts": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 1008112,
+        "tp": 182288
+      },
+      "pair_precision": {
+        "denominator": 182288,
+        "numerator": 182288,
+        "value": 1.0
+      },
+      "pair_recall": {
+        "denominator": 182288,
+        "numerator": 182288,
+        "value": 1.0
+      },
+      "soft": {
+        "denominator": 2400,
+        "numerator": 949.2722222222222,
+        "value": 0.3955300925925926
+      },
+      "soft_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      }
+    },
+    {
+      "hard": {
+        "denominator": 2400,
+        "numerator": 681.2388888888889,
+        "value": 0.2838495370370371
+      },
+      "hard_answered": {
+        "denominator": 2400,
+        "numerator": 2396.0,
+        "value": 0.9983333333333333
+      },
+      "mean_groups": {
+        "denominator": 2400,
+        "numerator": 21679.0,
+        "value": 9.032916666666667
+      },
+      "name": "Complete-linkage",
+      "pair_counts": {
+        "fn": 46323,
+        "fp": 5927,
+        "tn": 1002185,
+        "tp": 135965
+      },
+      "pair_precision": {
+        "denominator": 141892,
+        "numerator": 135965,
+        "value": 0.9582287937304429
+      },
+      "pair_recall": {
+        "denominator": 182288,
+        "numerator": 135965,
+        "value": 0.7458801457035021
+      },
+      "soft": {
+        "denominator": 2400,
+        "numerator": 769.1222222222223,
+        "value": 0.3204675925925926
+      },
+      "soft_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      }
+    },
+    {
+      "hard": {
+        "denominator": 2400,
+        "numerator": 173.77777777777777,
+        "value": 0.0724074074074074
+      },
+      "hard_answered": {
+        "denominator": 2400,
+        "numerator": 2397.0,
+        "value": 0.99875
+      },
+      "mean_groups": {
+        "denominator": 2400,
+        "numerator": 25482.0,
+        "value": 10.6175
+      },
+      "name": "Density",
+      "pair_counts": {
+        "fn": 77693,
+        "fp": 7564,
+        "tn": 1000548,
+        "tp": 104595
+      },
+      "pair_precision": {
+        "denominator": 112159,
+        "numerator": 104595,
+        "value": 0.9325600263911055
+      },
+      "pair_recall": {
+        "denominator": 182288,
+        "numerator": 104595,
+        "value": 0.5737898270868077
+      },
+      "soft": {
+        "denominator": 2400,
+        "numerator": 629.0611111111111,
+        "value": 0.2621087962962963
+      },
+      "soft_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      }
+    },
+    {
+      "hard": {
+        "denominator": 2400,
+        "numerator": 797.1928571428572,
+        "value": 0.3321636904761905
+      },
+      "hard_answered": {
+        "denominator": 2400,
+        "numerator": 2399.0,
+        "value": 0.9995833333333334
+      },
+      "mean_groups": {
+        "denominator": 2400,
+        "numerator": 18159.0,
+        "value": 7.56625
+      },
+      "name": "Single-linkage",
+      "pair_counts": {
+        "fn": 8100,
+        "fp": 25401,
+        "tn": 982711,
+        "tp": 174188
+      },
+      "pair_precision": {
+        "denominator": 199589,
+        "numerator": 174188,
+        "value": 0.8727334672752506
+      },
+      "pair_recall": {
+        "denominator": 182288,
+        "numerator": 174188,
+        "value": 0.9555648205038181
+      },
+      "soft": {
+        "denominator": 2400,
+        "numerator": 703.270634920635,
+        "value": 0.29302943121693126
+      },
+      "soft_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      }
+    },
+    {
+      "hard": {
+        "denominator": 2400,
+        "numerator": 30.692307692307693,
+        "value": 0.012788461538461538
+      },
+      "hard_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      },
+      "mean_groups": {
+        "denominator": 2400,
+        "numerator": 5776.0,
+        "value": 2.4066666666666667
+      },
+      "name": "Spectral",
+      "pair_counts": {
+        "fn": 2076,
+        "fp": 387452,
+        "tn": 620660,
+        "tp": 180212
+      },
+      "pair_precision": {
+        "denominator": 567664,
+        "numerator": 180212,
+        "value": 0.3174624425716621
+      },
+      "pair_recall": {
+        "denominator": 182288,
+        "numerator": 180212,
+        "value": 0.9886114280698675
+      },
+      "soft": {
+        "denominator": 2400,
+        "numerator": 38.73111111111111,
+        "value": 0.01613796296296296
+      },
+      "soft_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      }
+    },
+    {
+      "hard": {
+        "denominator": 2400,
+        "numerator": 424.8611111111111,
+        "value": 0.17702546296296295
+      },
+      "hard_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      },
+      "mean_groups": {
+        "denominator": 2400,
+        "numerator": 16440.0,
+        "value": 6.85
+      },
+      "name": "HDBSCAN",
+      "pair_counts": {
+        "fn": 21253,
+        "fp": 32159,
+        "tn": 975953,
+        "tp": 161035
+      },
+      "pair_precision": {
+        "denominator": 193194,
+        "numerator": 161035,
+        "value": 0.8335403791008003
+      },
+      "pair_recall": {
+        "denominator": 182288,
+        "numerator": 161035,
+        "value": 0.8834097691564996
+      },
+      "soft": {
+        "denominator": 2400,
+        "numerator": 470.1388888888889,
+        "value": 0.19589120370370372
+      },
+      "soft_answered": {
+        "denominator": 2400,
+        "numerator": 2400.0,
+        "value": 1.0
+      }
+    }
+  ],
+  "noise": [
+    {
+      "invariance_control": false,
+      "original_top1": 0.7756078643578644,
+      "queries": 2400,
+      "sigma": 0.0,
+      "soft_top1": 0.7744967532467533,
+      "source_answer_fields_are_candidate_entry_totals": true,
+      "structure": "none"
+    },
+    {
+      "invariance_control": true,
+      "original_top1": 0.7756078643578644,
+      "queries": 2400,
+      "sigma": 0.5,
+      "soft_top1": 0.7744967532467533,
+      "source_answer_fields_are_candidate_entry_totals": true,
+      "structure": "common"
+    },
+    {
+      "invariance_control": false,
+      "original_top1": 0.42334887566137563,
+      "queries": 2400,
+      "sigma": 0.5,
+      "soft_top1": 0.31890443121693113,
+      "source_answer_fields_are_candidate_entry_totals": true,
+      "structure": "brownian"
+    },
+    {
+      "invariance_control": false,
+      "original_top1": 0.052307208994709,
+      "queries": 2400,
+      "sigma": 0.5,
+      "soft_top1": 0.04272387566137566,
+      "source_answer_fields_are_candidate_entry_totals": true,
+      "structure": "iid"
+    }
+  ]
+}

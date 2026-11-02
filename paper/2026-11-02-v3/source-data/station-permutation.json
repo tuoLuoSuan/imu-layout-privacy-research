@@ -1,0 +1,417 @@
+{
+  "conditions": "fixed directed neighbor graphs, declaration counts fixed separately within R1 and R2",
+  "independent_observations_assumed": false,
+  "inputs": [
+    {
+      "name": "EXPLORATORY-PERMUTATION-PROTOCOL.md",
+      "sha256": "1bb165a598e9b3fd09398b5505de78be7fb4729514143d0e0e14c4a0e54a30ba"
+    },
+    {
+      "name": "pilot-display.json",
+      "sha256": "c4042223008c5a7af937dfe94ea04925530af7adda9928897502cdce2f7f599d"
+    },
+    {
+      "name": "pilot-audit.json",
+      "sha256": "7c878bd174a4747ff6af7ca6d7ab2c1e67a279076d16e15d2ecee42ca06f718a"
+    },
+    {
+      "name": "audit_station_inference.py",
+      "sha256": "d5f74f49a2413ba00501df7719d815c8dc65313d3cf8185399508d89b99c6594"
+    }
+  ],
+  "permutations": 313600,
+  "post_hoc": true,
+  "rows": [
+    {
+      "arm": "phone",
+      "binomial_counterfactual_holm": 0.04356318285875001,
+      "binomial_independence_counterfactual_p": 0.014521060952916668,
+      "nearest": [
+        1,
+        0,
+        1,
+        0,
+        11,
+        10,
+        0,
+        15,
+        14,
+        15,
+        5,
+        4,
+        11,
+        3,
+        8,
+        11
+      ],
+      "null_distribution": [
+        {
+          "denominator": 313600,
+          "numerator": 9904,
+          "value": 0.03158163265306122
+        },
+        {
+          "denominator": 313600,
+          "numerator": 29144,
+          "value": 0.09293367346938776
+        },
+        {
+          "denominator": 313600,
+          "numerator": 50300,
+          "value": 0.1603954081632653
+        },
+        {
+          "denominator": 313600,
+          "numerator": 62468,
+          "value": 0.19919642857142858
+        },
+        {
+          "denominator": 313600,
+          "numerator": 59706,
+          "value": 0.1903890306122449
+        },
+        {
+          "denominator": 313600,
+          "numerator": 45838,
+          "value": 0.14616709183673468
+        },
+        {
+          "denominator": 313600,
+          "numerator": 29158,
+          "value": 0.09297831632653061
+        },
+        {
+          "denominator": 313600,
+          "numerator": 15966,
+          "value": 0.05091198979591837
+        },
+        {
+          "denominator": 313600,
+          "numerator": 7190,
+          "value": 0.022927295918367348
+        },
+        {
+          "denominator": 313600,
+          "numerator": 2786,
+          "value": 0.008883928571428572
+        },
+        {
+          "denominator": 313600,
+          "numerator": 870,
+          "value": 0.002774234693877551
+        },
+        {
+          "denominator": 313600,
+          "numerator": 210,
+          "value": 0.0006696428571428571
+        },
+        {
+          "denominator": 313600,
+          "numerator": 56,
+          "value": 0.00017857142857142857
+        },
+        {
+          "denominator": 313600,
+          "numerator": 4,
+          "value": 1.2755102040816327e-05
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        }
+      ],
+      "null_hit_quantiles95": [
+        0,
+        8
+      ],
+      "null_mean": {
+        "denominator": 5017600,
+        "numerator": 1166200,
+        "value": 0.232421875
+      },
+      "observed": {
+        "denominator": 16,
+        "numerator": 8,
+        "value": 0.5
+      },
+      "p_exact": {
+        "denominator": 313600,
+        "numerator": 11116,
+        "value": 0.03544642857142857
+      },
+      "p_holm": 0.10633928571428572
+    },
+    {
+      "arm": "watch",
+      "binomial_counterfactual_holm": 0.7330849082460869,
+      "binomial_independence_counterfactual_p": 0.7330849082460869,
+      "nearest": [
+        3,
+        3,
+        3,
+        7,
+        15,
+        12,
+        1,
+        3,
+        12,
+        11,
+        13,
+        9,
+        5,
+        15,
+        13,
+        13
+      ],
+      "null_distribution": [
+        {
+          "denominator": 313600,
+          "numerator": 7764,
+          "value": 0.02475765306122449
+        },
+        {
+          "denominator": 313600,
+          "numerator": 26336,
+          "value": 0.08397959183673469
+        },
+        {
+          "denominator": 313600,
+          "numerator": 48164,
+          "value": 0.15358418367346938
+        },
+        {
+          "denominator": 313600,
+          "numerator": 61312,
+          "value": 0.19551020408163267
+        },
+        {
+          "denominator": 313600,
+          "numerator": 60056,
+          "value": 0.19150510204081633
+        },
+        {
+          "denominator": 313600,
+          "numerator": 47392,
+          "value": 0.15112244897959184
+        },
+        {
+          "denominator": 313600,
+          "numerator": 31594,
+          "value": 0.10074617346938776
+        },
+        {
+          "denominator": 313600,
+          "numerator": 17714,
+          "value": 0.0564859693877551
+        },
+        {
+          "denominator": 313600,
+          "numerator": 8460,
+          "value": 0.02697704081632653
+        },
+        {
+          "denominator": 313600,
+          "numerator": 3280,
+          "value": 0.010459183673469388
+        },
+        {
+          "denominator": 313600,
+          "numerator": 1130,
+          "value": 0.003603316326530612
+        },
+        {
+          "denominator": 313600,
+          "numerator": 326,
+          "value": 0.0010395408163265307
+        },
+        {
+          "denominator": 313600,
+          "numerator": 68,
+          "value": 0.00021683673469387755
+        },
+        {
+          "denominator": 313600,
+          "numerator": 4,
+          "value": 1.2755102040816327e-05
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        }
+      ],
+      "null_hit_quantiles95": [
+        1,
+        8
+      ],
+      "null_mean": {
+        "denominator": 5017600,
+        "numerator": 1210300,
+        "value": 0.2412109375
+      },
+      "observed": {
+        "denominator": 16,
+        "numerator": 3,
+        "value": 0.1875
+      },
+      "p_exact": {
+        "denominator": 313600,
+        "numerator": 231336,
+        "value": 0.7376785714285714
+      },
+      "p_holm": 0.7376785714285714
+    },
+    {
+      "arm": "joint",
+      "binomial_counterfactual_holm": 0.09640939518722488,
+      "binomial_independence_counterfactual_p": 0.04820469759361244,
+      "nearest": [
+        3,
+        0,
+        0,
+        0,
+        11,
+        12,
+        0,
+        0,
+        14,
+        12,
+        5,
+        4,
+        5,
+        3,
+        12,
+        12
+      ],
+      "null_distribution": [
+        {
+          "denominator": 313600,
+          "numerator": 3718,
+          "value": 0.011855867346938775
+        },
+        {
+          "denominator": 313600,
+          "numerator": 22918,
+          "value": 0.07308035714285714
+        },
+        {
+          "denominator": 313600,
+          "numerator": 52186,
+          "value": 0.1664094387755102
+        },
+        {
+          "denominator": 313600,
+          "numerator": 70052,
+          "value": 0.22338010204081632
+        },
+        {
+          "denominator": 313600,
+          "numerator": 67144,
+          "value": 0.21410714285714286
+        },
+        {
+          "denominator": 313600,
+          "numerator": 51044,
+          "value": 0.16276785714285713
+        },
+        {
+          "denominator": 313600,
+          "numerator": 28248,
+          "value": 0.0900765306122449
+        },
+        {
+          "denominator": 313600,
+          "numerator": 12220,
+          "value": 0.03896683673469388
+        },
+        {
+          "denominator": 313600,
+          "numerator": 4794,
+          "value": 0.015286989795918367
+        },
+        {
+          "denominator": 313600,
+          "numerator": 1182,
+          "value": 0.0037691326530612246
+        },
+        {
+          "denominator": 313600,
+          "numerator": 94,
+          "value": 0.0002997448979591837
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        },
+        {
+          "denominator": 313600,
+          "numerator": 0,
+          "value": 0.0
+        }
+      ],
+      "null_hit_quantiles95": [
+        1,
+        7
+      ],
+      "null_mean": {
+        "denominator": 5017600,
+        "numerator": 1166200,
+        "value": 0.232421875
+      },
+      "observed": {
+        "denominator": 16,
+        "numerator": 7,
+        "value": 0.4375
+      },
+      "p_exact": {
+        "denominator": 313600,
+        "numerator": 18290,
+        "value": 0.058322704081632655
+      },
+      "p_holm": 0.11664540816326531
+    }
+  ],
+  "within_round_exchangeability": "exploratory assumption; does not remove route/time/cue confounding"
+}

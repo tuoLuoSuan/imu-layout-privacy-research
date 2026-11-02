@@ -46,14 +46,15 @@
     }  </style>
   <link rel="stylesheet" href="paper-20261102.css" />
 </head>
-<body><nav class="paper-nav"><a href="../index.html">返回研究工作台</a><a href="/assets/paper-20261102.pdf">阅读PDF</a><a href="/assets/paper-20261102.docx">可编辑Word</a><a href="paper-20261102-summary.json">数值与证据范围</a></nav><div class="paper-note">中文修订稿 · 八类活动主展示 · 44条参考文献 · 七张科研图 · 数值来自冻结产物，此处不重新评分</div>
+<body><nav class="paper-nav"><a href="../index.html">返回研究工作台</a><a href="/assets/paper-20261102.pdf">阅读PDF</a><a href="/assets/paper-20261102.docx">可编辑Word</a><a href="paper-20261102-summary.json">数值与证据范围</a><a href="https://github.com/tuoLuoSuan/imu-layout-privacy-research">公开代码</a></nav><div class="paper-note">图文修订v3 · 八类活动主展示 · 七图中英文版 · GitHub公开 · 数值来自冻结产物，此处不重新评分</div>
 <h1
 id="可穿戴惯性记录中的空间身份线索">可穿戴惯性记录中的空间身份线索</h1>
 <p>活动表现、访问几何与候选匹配的分层测量</p>
-<p>中文研究论文初稿　2026年11月2日　供导师讨论</p>
+<p>中文研究论文修订稿　2026年11月2日　供导师讨论</p>
 <h2 id="摘要">摘要</h2>
 <p>活动识别的高准确率能否作为空间身份泄露的证据？本文将这一问题拆为活动判别、访问片段与几何身份三个端点，结合手机手表记录、雷达访问分析及600候选空间的受控闭库测量。在单被试第三批留出记录中，八类联合活动识别达到67/71=94.37%；两布局试点对各八个计划停留窗的平均覆盖为87.50%和89.84%。空间身份需另行评价：16访次的手机静止特征近邻命中为8/16，属于依赖声明标记的小样本诊断。在32次访问、正确分组、末访每轴标准差0.5
-m的随机游走误差与固定计数惩罚下，合成闭库身份top-1为52.46%（整房95%区间50.31%–54.40%）。无计数惩罚时，无扰动、共同平移、随机游走与独立扰动分别为77.56%、77.56%、42.33%和5.23%；替换分组或评分规则也会改变身份结果。相对几何因此具有条件身份信息，而活动表现本身不能替代空间身份测量。本文给出两类证据之间的接口、强对照及可重放记录，使空间隐私评价落到明确的输入与端点。</p>
+m的随机游走误差与固定计数惩罚下，合成闭库身份top-1为52.46%（整房95%区间50.31%–54.40%）。无计数惩罚时，无扰动、共同平移、随机游走与独立扰动分别为77.56%、77.56%、42.33%和5.23%；替换分组或评分规则也会改变身份结果。相对几何因此具有条件身份信息，而活动表现本身不能替代空间身份测量。本文给出两类证据之间的接口、强对照及可重放记录，使空间隐私评价落到明确的输入与端点。代码与匿名派生数据公开于<a
+href="https://github.com/tuoLuoSuan/imu-layout-privacy-research">https://github.com/tuoLuoSuan/imu-layout-privacy-research</a>。</p>
 <p>关键词：空间隐私；惯性传感器；空间可辨性；访问几何；手机手表</p>
 <h1 id="引言">引言</h1>
 <p>手机和手表中的惯性测量单元（inertial measurement
@@ -65,8 +66,8 @@ role="doc-biblioref">2</a></sup></span>。同一记录也可能被用于用户�
 class="citation" data-cites="missile walk2map imu4d"><sup><a
 href="#ref-missile" role="doc-biblioref">3</a>–<a href="#ref-imu4d"
 role="doc-biblioref">5</a></sup></span>。对空间隐私而言，问题不止是“设备记录了什么活动”，还包括“由记录获得的线索能区分哪个具体空间”。</p>
-<p>这两个问题需要不同的证据。坐下的类别标签不等于椅子身份，相对轨迹不提供房间原点，正确的同地关系也未必对应唯一候选布局。候选空间可能具有相同的点集表示；前端误差可能保留或破坏相对距离；自动分组还会改变匹配器接收的点数和几何。如果把动作准确率、分组精度和候选排名合称“空间恢复率”，就无法判断哪一种信息支撑了结论。</p>
-<p>本文围绕三个可分别检验的问题组织测量：给定访问几何，在有限候选内保留多少身份区分；误差结构与读取规则如何改变这一结果；真实设备记录究竟支持了哪些前端输入。合成实验直接提供带指定误差的坐标，不将其冒充已由原始IMU恢复的轨迹。真实动作、雷达与两布局试点分别评价相应模块。图0给出这些证据之间的关系，表1列明分析者的输入。</p>
+<p>这两个问题对应不同的证据。动作类别、相对轨迹和同地关系分别描述行为、运动和访问关联，候选身份还取决于空间表示与目录。候选空间可能具有相同的点集表示；前端误差可能保留或破坏相对距离；自动分组还会改变匹配器接收的点数和几何。如果把动作准确率、分组精度和候选排名合称“空间恢复率”，就无法判断哪一种信息支撑了结论。</p>
+<p>本文围绕三个可分别检验的问题组织测量：给定访问几何，在有限候选内保留多少身份区分；误差结构与读取规则如何改变这一结果；真实设备记录究竟支持了哪些前端输入。合成实验直接提供带指定误差的坐标，与原始IMU模块分开评价。真实动作、雷达与两布局试点分别评价相应模块。图1给出这些证据之间的关系，表1列明分析者的输入。</p>
 <p>本文的贡献如下。</p>
 <ol type="1">
 <li>将活动判别、访问关联和候选身份定义为不同评价端点，给出其输入、参考与可比较范围，避免用模块高分替代空间身份结果。</li>
@@ -136,10 +137,11 @@ href="#ref-openset" role="doc-biblioref">34</a>,<a
 href="#ref-opensurvey" role="doc-biblioref">35</a></sup></span>。</p>
 <h1 id="威胁模型与评价条件">威胁模型与评价条件</h1>
 <p>本文考虑能够读到运动记录或其派生几何的被动分析者。真实模块使用手机与腕部原件；合成身份实验中的分析者则直接获得二维访问坐标、指定误差过程与600个候选站位点集。二者的信息层不同。合成自动臂不知道真实地点分区或被访地点数；正确分组参照单独获得分区。雷达、录像与卷尺用于参考诊断，不作为惯性分析者的额外输入。</p>
-<p><img src="paper-20261102-figures/fig0-threat-and-evidence.svg"
+<p><img src="paper-20261102-figures/fig1-threat-model.svg"
 style="width:16cm" /></p>
-<p>图0　运动记录、真实模块与条件空间身份的证据流程</p>
-<p>三行分别表示活动判别、真实访问分析与给定坐标的合成身份测量，行间没有已实现端到端生成关系。52.46%属于32访、正确分组、指定随机游走与λ=0.0003；67/71属于T3八类提示窗。雷达为参考模块，600候选不表示600个真实采集房间。</p>
+<p>图1　运动记录、真实模块与条件空间身份的证据流程</p>
+<p>手机与手表为原始记录模块的设备示意，左侧列出T3八类活动67/71和雷达8片段两个端点。右侧用同一冻结实例表示32访坐标、组代表几何、归一化距离谱与600候选目录。二维坐标由模拟直接提供，左侧模块没有连接到右侧的坐标生成链。自动臂不读真实分区；52.46%属于正确分组参照、随机游走末访每轴σ=0.5
+m、λ=0.0003和2400路线。</p>
 <p>表1　分析者输入与参考信息</p>
 <table>
 <thead>
@@ -237,39 +239,33 @@ style="width:16cm" /></p>
 </table>
 <p>模拟区间重抽房屋，四路线成组保留；真实事件共享人、房间和会话。不同任务的百分比不组成一项空间恢复率。</p>
 <h1 id="结果">结果</h1>
-<h2
-id="活动表现与空间身份需要分别评价">活动表现与空间身份需要分别评价</h2>
-<p>T3八类联合模型答对67/71个声明窗，而两布局试点中手机静止特征的声明标记近邻命中为8/16、联合为7/16。后两项均高于标签配额匹配的22.5%随机点参照，但样本仅16访次、特征共同标准化、标记归属依赖脚本，因此本稿不给出“高于随机”的显著性判断，更不能把它写成真实链路不可分。活动与空间诊断来自不同数据和参考，也不直接比较两种准确率。它们界定的是一个证据要求：活动识别的高分不能替代空间身份的检验。</p>
-<p>随后先在可控坐标中测量几何本身携带的身份信息，再检查误差和规则，最后回到真实模块，逐项说明现有记录实际支持的输入。八类活动的设备比较与错误位置见表4和图4，真实片段及标记诊断见图5。</p>
-<h2
-id="相对访问几何保留了有条件的空间身份区分">相对访问几何保留了有条件的空间身份区分</h2>
+<h2 id="活动表现与空间身份的分层评价">活动表现与空间身份的分层评价</h2>
+<p>T3八类联合模型答对67/71个声明窗。两布局试点的静止特征近邻诊断则得到手机8/16、手表3/16、联合7/16，标签配额匹配的留一随机点参照为54/240=22.50%。前者评价活动类别，后者评价声明标记的关联，二者使用不同数据与参考。本文据此分别呈现活动表现与空间端点，将坐标身份的测量集中在输入条件可控的闭库。</p>
+<p>主要评价条件与统计单位见表2。随后先在可控坐标中测量几何本身携带的身份信息，再检查误差和规则，最后回到真实模块，逐项说明现有记录实际支持的输入。八类活动的设备比较与错误位置见表4和图5，真实片段及标记诊断见图6。</p>
+<h2 id="访问几何的表示别名">访问几何的表示别名</h2>
 <p>合成候选包含宿舍、公寓、会议室、办公室、教室和酒店六类，每类100套测试房屋，每房四条路线，共2400条查询。独立实验单位是房屋，四条路线整体保留。站位位于0.2
 m格点，600个身份在既定点集表示下对应492个等价类。其中421个身份为单例，另外179个身份处于71个多成员类，最大类含9个身份。在均匀先验、类内观测律相同且没有额外区分信息时，完整表示的理想参考为492/600=82.00%。这一参考不约束允许额外语义或访问习惯的所有攻击者。</p>
 <p>在32次访问、正确分组参照、随机游走末访每轴标准差0.5
-m和原匹配规则下，首位身份命中率（top-1）为1259.105556/2400=52.46%，按房型分层重抽整房的95%区间为[50.31%,54.40%]。421个单例与179个有别名身份分别为66.15%和20.27%。这些数值评价给定坐标的条件身份区分，适用范围为所声明闭库和误差过程。图1以两个已审核候选说明表示别名，并给出完整等价类大小分布。</p>
-<p><img src="paper-20261102-figures/fig1-evidence-levels.svg"
+m和原匹配规则下，首位身份命中率（top-1）为1259.105556/2400=52.46%，按房型分层重抽整房的95%区间为[50.31%,54.40%]。421个单例与179个有别名身份分别为66.15%和20.27%。这些数值评价给定坐标的条件身份区分，适用范围为所声明闭库和误差过程。图2以两个冻结候选说明表示别名，并给出完整类大小分布。</p>
+<p><img src="paper-20261102-figures/fig2-representation.svg"
 style="width:16cm" /></p>
-<p>图1　候选空间的表示别名与等价类分布</p>
-<p>a、b，冻结库中的办公室T0319与教室T0448，灰色为生成几何，绿色为0.2
-m格点站位；两图使用相同物理尺度。c，两候选归一化距离谱之差为零。d，492个等价类的完整大小分布，含421个单例类、71个多成员类，最大类9身份。示例解释0.2
-m点集表示的别名，不表示家具或真实房间相同。</p>
+<p>图2　候选空间的表示别名与等价类分布</p>
+<p>a、b，办公室T0319与教室T0448，使用相同米制范围；灰色轮廓与浅灰矩形为冻结生成几何，青色点为0.2
+m格点站位，两者的归一化谱差为零。c，全部492个等价类的类大小分布，纵轴为对数计数；421个单例类、71个多成员类共覆盖600身份，类大小7和8的计数为零。</p>
 <p>无计数惩罚、正确分组的既有扫描中，访问8、16和32次的top-1依次为22.52%、35.21%和42.33%，top-5为45.04%、63.72%和68.56%。三个预算是同一32步误差过程的嵌套前缀。扩展前缀同时增加空间覆盖、回访与误差积累，因而这里描述该冻结过程中的预算表现，不单独识别访问次数的因果效应。计数惩罚后的52.46%与无惩罚的42.33%也不是两个访问预算。</p>
-<h2
-id="相同标称误差下的匹配结果随误差结构变化">相同标称误差下的匹配结果随误差结构变化</h2>
-<p>图2a以冻结路线展示四种误差对访问几何的作用，图2b、c比较全测试集上的访问积累与身份结果。32次访问、正确分组、无计数惩罚时，原规则在无扰动、共同平移、随机游走和独立扰动下的top-1分别为77.56%、77.56%、42.33%和5.23%。共同平移不改变两两距离，其与无扰动同值是表示不变性的控制，不构成第二次独立证据。</p>
-<p><img src="paper-20261102-figures/fig2-budget-and-error.svg"
+<h2 id="误差结构与访问预算">误差结构与访问预算</h2>
+<p>图3a以冻结路线展示四种误差对访问几何的作用，图3b、c比较全测试集上的访问积累与身份结果。32次访问、正确分组、无计数惩罚时，原规则在无扰动、共同平移、随机游走和独立扰动下的top-1分别为77.56%、77.56%、42.33%和5.23%。共同平移不改变两两距离，其与无扰动同值是表示不变性的控制，不构成第二次独立证据。</p>
+<p><img src="paper-20261102-figures/fig3-noise-and-budget.svg"
 style="width:16cm" /></p>
-<p>图2　访问预算与误差结构下的身份区分</p>
-<p>a，T0319首路线前32访，采用原冻结种子重建；空心点为真实站位，小点与折线为逐访观测，大点为正确分组后的代表，比例尺均为2
-m。该图仅解释输入过程，不是另一次评分。b，同一600房屋、四路线的8/16/32访前缀，正确分组、原规则、λ=0。c，32访四格对照；原规则为整房95%区间，软规则只有聚合存档，作点估计。d，同一32访、随机游走条件下的三种几何读法，全部λ=0。b–d原规则区间均以600房按六房型分层重抽1000次，四路线整体保留，条件于每房型100套设计；完整源数据另附。共同平移与无扰动同值是平移不变性控制；随机游走σ指第32访每轴标准差，独立扰动σ指每访每轴标准差，均标称0.5
-m但逐访方差不同。</p>
-<p>这些过程通过相对误差而非原点误差进入距离谱。共同偏移在作差时消失；独立误差与随机游走则具有不同的两点误差差分。四格比较同时包含不同的逐访方差分布，不能当成等均方根误差（root
-mean square，RMS）条件下仅改变相关性的单因素实验。它说明“位置误差0.5
+<p>图3　访问预算与误差结构下的身份区分</p>
+<p>a1–a4依次为无扰动、共同平移、随机游走与独立扰动；同一冻结路线、相同比例尺2
+m，绘图区包含全部点。b，600房屋各四路线的8/16/32访前缀，原规则、正确分组、λ=0；色带及误差棒均为按六房型分层重抽整房1000次的95%区间。无扰动与共同平移曲线逐项同值，合并标识为不变性控制。c，32访四格，圆为原规则，方为Ward软规则；每组数字按原/软次序给出，原规则有整房区间，软规则因仅有聚合存档而显示点估计。d，同32访随机游走与λ=0下的三种几何读法及整房区间。区间条件于每房型100套的设计，各格分母均为2400。</p>
+<p>这些过程通过两点差分进入距离谱。共同偏移在作差时消失；独立误差与随机游走则具有不同的两点误差差分。四格比较同时包含不同的逐访方差分布，同时改变逐访均方根误差（root
+mean square，RMS）分布与相关性。它说明“位置误差0.5
 m”不足以定义当前匹配器的输入条件。</p>
-<p>更强的几何读法也必须纳入比较。同一32访、随机游走和λ=0条件下，完整候选归一化谱分位曲线为48.90%，部分米制距离谱为56.45%，部分归一化距离谱为42.33%。本文实现没有超过这两项强对照。米制与归一化读法同时改变目标函数，约14个百分点的差值不能全部归因于尺度信息，也不能用56.45%替换已冻结的主配置。</p>
-<h2
-id="自动分组和匹配规则共同限定身份结果">自动分组和匹配规则共同限定身份结果</h2>
-<p>将同一批含噪坐标交给自动地点分组后，原固定完整连接和密度法的身份top-1分别为28.38%和7.24%，见表3。正确分组参照只替换访问分区，坐标和候选保持相同；它不是所有攻击者可达能力的上界。</p>
+<p>更强的几何读法也必须纳入比较。同一32访、随机游走和λ=0条件下，完整候选归一化谱分位曲线为48.90%，部分米制距离谱为56.45%，部分归一化距离谱为42.33%。本文实现没有超过这两项强对照。米制与归一化读法同时改变目标函数，约14个百分点的差值不能全部归因于尺度信息，冻结主配置保持不变。</p>
+<h2 id="分组输入与评分规则">分组输入与评分规则</h2>
+<p>将同一批含噪坐标交给自动地点分组后，原固定完整连接和密度法的身份top-1分别为28.38%和7.24%，见表3。正确分组参照只替换访问分区，坐标和候选保持相同；其特权是给定访问分区。</p>
 <p>表3　同坐标、同候选和同2400查询分母下的分组输入对照</p>
 <table>
 <thead>
@@ -303,15 +299,15 @@ id="自动分组和匹配规则共同限定身份结果">自动分组和匹配�
 </table>
 <p>主条件为32访、Brownian末访每轴σ=0.5
 m、λ=0.0003；软规则欠容量支路λ=0。真值资格指原规则下真实候选满足K≥Q，不是有限得分候选比例。并列信用为解析期望，故正确数可为非整数。</p>
-<p>原规则在观测组数Q超过候选站位数K时排除该候选。完整连接和密度法分别有1293、1906条查询在这一条件下失去真实候选。Ward软规则允许将欠容量观测合并到K个代表，使自动臂得分上升，但正确分组参照也下降12.91个百分点。两自动臂与各自参照的差距从24.08/45.22个百分点收窄到7.51/13.34个百分点。软化同时改变候选资格、合并近似和惩罚，不能把差距收窄解释为纯分组误差被消除。</p>
-<p>全部六种分组输入的结果见图3。单连接相对完整连接在原规则下高4.83个百分点，在软规则下低2.74个百分点；λ=0时方向仍反转。各房型并不一致，反转只在公寓和办公室两个房型出现。另一方面，既定谱配置的关系召回为98.86%，关系精度为31.75%，原规则身份top-1仅1.28%。这些比较限定了固定方法组合的解释，不支持按某一个关系指标给整个算法家族排序。</p>
-<p><img src="paper-20261102-figures/fig3-grouping-and-rule.svg"
+<p>原规则在观测组数Q超过候选站位数K时排除该候选。完整连接和密度法分别有1293、1906条查询在这一条件下失去真实候选。Ward软规则允许将欠容量观测合并到K个代表，使自动臂得分上升，但正确分组参照也下降12.91个百分点。两自动臂与各自参照的差距从24.08/45.22个百分点收窄到7.51/13.34个百分点。软化同时改变候选资格、合并近似和惩罚，这一差距变化反映复合规则替换。</p>
+<p>全部六种分组输入的结果见图4。单连接相对完整连接在原规则下高4.83个百分点，在软规则下低2.74个百分点；λ=0时方向仍反转。各房型并不一致，反转只在公寓和办公室两个房型出现。另一方面，既定谱配置的关系召回为98.86%，关系精度为31.75%，原规则身份top-1仅1.28%。同地关系指标与身份排序在这些配置中呈现不同变化。</p>
+<p><img src="paper-20261102-figures/fig4-grouping-and-rules.svg"
 style="width:16cm" /></p>
-<p>图3　六种分组输入对匹配规则的依赖</p>
-<p>同一600房屋、2400路线、32访和λ=0.0003。a，绿色圆点为原规则，橙色方点为Ward软规则，全部六配置均保留；误差棒为按房型分层重抽整房1000次的95%区间，条件于固定配额设计。b，原规则真值资格为2400/2400、1107/2400、494/2400。c，同地配对召回与精度，数字1–6依次对应a的六行。更高关系精度不自动带来更高身份结果；规则替换为复合干预，不能唯一归因为容量或惩罚。</p>
-<h2 id="八类联合活动识别达到94.37">八类联合活动识别达到94.37%</h2>
-<p>主展示采用八类活动定义：将柜门打开与关闭合为“柜门交互”，其余类别保持不变。这里使用已冻结的原生八类模型，不从九类测试预测事后改标签换算。T3的71个声明窗中，联合模型答对67个，正确率为94.37%，事件级Wilson
-95%区间为[86.39%,97.79%]、宏平均F1为0.9042；手机与手表分别为60/71和62/71，见表4。该结果对应单人固定佩戴条件下的提示窗任务。</p>
+<p>图4　六种分组输入对匹配规则的依赖</p>
+<p>同一600房屋、2400路线、32访及λ=0.0003。a，圆为原规则，方为Ward软规则，六配置全部保留；误差棒为按房型分层重抽整房1000次的95%区间。b，原规则下真实候选满足K≥Q的数量，三行分母均为2400。c，六配置的同地配对召回与精度，分别使用实心圆和空心方，两指标均从0起；每路线评价全部496对关系。规则替换的组成与解释见方法。</p>
+<h2 id="联合活动识别与采样效用">联合活动识别与采样效用</h2>
+<p>主展示采用八类活动定义：将柜门打开与关闭合为“柜门交互”，其余类别保持不变。这里使用已冻结的八类原生模型，预测结果单独封存。T3的71个声明窗中，联合模型答对67个，正确率为94.37%，事件级Wilson
+95%区间为[86.39%,97.79%]、宏平均F1为90.42%；手机与手表分别为60/71和62/71，见表4。该结果对应单人固定佩戴条件下的提示窗任务。</p>
 <p>表4　T3八类动作主结果</p>
 <table>
 <colgroup>
@@ -336,70 +332,79 @@ style="width:16cm" /></p>
 <td>67/71</td>
 <td>94.37%</td>
 <td>86.39%–97.79%</td>
-<td>0.9042</td>
+<td>90.42%</td>
 </tr>
 <tr>
 <td>手机</td>
 <td>60/71</td>
 <td>84.51%</td>
 <td>74.35%–91.12%</td>
-<td>0.8208</td>
+<td>82.08%</td>
 </tr>
 <tr>
 <td>手表</td>
 <td>62/71</td>
 <td>87.32%</td>
 <td>77.63%–93.19%</td>
-<td>0.7932</td>
+<td>79.32%</td>
 </tr>
 </tbody>
 </table>
-<p>全部71个声明窗均入分母，缺失0。八类合并了柜门开合，改变了任务粒度，不能解释为九类算法改进。标签按提示脚本定义；区间作事件级描述，统计单位与参考来源见方法。</p>
-<p>图4a、b保留完整八类混淆和三设备逐类召回。联合模型的柜门交互为14/14，静止、躺下（过渡）、坐下、起立与行走均未出现错误；四个错误全部为躺卧（持续）被判成upright，躺卧（持续）的召回为1/5。upright在地面和床上覆盖不同姿势，图中标为“直立/坐姿”，未据此重新标注。总体94.37%因而不能替代少样本姿势类别的可靠性。</p>
-<p>八类联合相对手机的不一致对为7:0，双侧精确McNemar原始p=0.015625，任务内三项设备比较经Holm校正后为0.046875；联合相对手表为5:0，原始p=0.0625、校正后0.125。这一批八类任务支持联合相对手机的差异，不支持腕部相对任一单设备的普遍优势。</p>
-<p>20Hz处理后的八类联合、手机和手表分别为69/71、61/71、62/71，原始为67/71、60/71、62/71。联合原始独对0条、处理后独对2条，双侧精确McNemar为0.5；手机为1:2、p=1.0。原先样本工程容忍线是针对九类联合基线64/71规定的≥62/71，九类处理后65/71满足该线；该判据不移植为新八类预注册验收。两任务的处理结果均未评价空间攻击变化。</p>
-<p><img src="paper-20261102-figures/fig4-action-and-utility.svg"
+<p>全部71个声明窗均入分母，缺失0。八类合并了柜门开合，改变了任务粒度，属于任务粒度变化。标签按提示脚本定义；区间作事件级描述，统计单位与参考来源见方法。</p>
+<p><img src="paper-20261102-figures/fig5-action-and-utility.svg"
 style="width:16cm" /></p>
-<p>图4　八类联合识别、设备对照与采样效用</p>
-<p>a，T3八类联合混淆矩阵，行是声明类别、列是预测，数字为事件数、底色为行归一化比例，白色空格为0。b，与a相同行序的逐类召回，“躺下（过渡）”与“躺卧（持续）”分别对应lie_down和lying。c，三设备正确率及描述性事件级Wilson区间。d，冻结八类模型在原始与20Hz手机处理流上的结果，腕部不变，全部分母为71。联合从67/71变为69/71，配对精确p=0.5；c、d百分比轴均从0起，属于已见T3后的效用探索，隐私端点与统计解释见方法。</p>
-<h2 id="两布局试点覆盖全部计划停留窗">两布局试点覆盖全部计划停留窗</h2>
-<p>固定雷达run007b在2662帧中得到1266帧零候选、1396帧唯一候选，无多候选帧。固定规则不读人工站点窗，形成8个片段，中位时长17.4503
-s；全记录分组的关系计数为同地配对找对7、误并0、漏配0、异地配对正确拒绝21（TP/FP/FN/TN=7/0/0/21）。七次历史查询中，完整连接作答5/7且5/5正确，密度法作答7/7但仅5/7正确；两次新地点均被密度法误联。空间反事实零回访输入上，两者误并分别为0/28和21/28。单会话关系结果不提供惯性定位精度或跨房间泛化。</p>
+<p>图5　八类联合识别、设备对照与采样效用</p>
+<p>a，T3八类联合混淆矩阵，行是脚本声明、列是预测，格内为事件数，色标为行归一化比例，零计数格为浅灰；行侧列出支撑数n。躺下为过渡类别，躺卧为持续类别；upright包含地面直立与床上坐姿。b，同一71窗在六个留出会话中的正确数/分母；地面和床上会话分别为蓝与橙色。c，冻结八类模型在20Hz手机处理流上的配对变化，单位为百分点，各臂分母71；联合、手机、手表分别增加2、1、0个正确窗。联合双侧精确McNemar
+p=0.500，手机p=1.000，腕部输入保持原样。</p>
+<p>图5a保留完整八类混淆，图5b给出六段记录的分层结果。联合模型的柜门交互为14/14，静止、躺下（过渡）、坐下、起立与行走均未出现错误；四个错误全部为躺卧（持续）被判成upright，躺卧（持续）的召回为1/5。upright在地面和床上覆盖不同姿势，图中标为“直立/坐姿”，未据此重新标注。总体错误集中在躺卧持续类别。</p>
+<p>八类联合相对手机的不一致对为7:0，双侧精确McNemar原始p=0.016，任务内三项设备比较经Holm校正后为0.047；联合相对手表为5:0，原始p=0.063、校正后0.125。本批八类的差异出现在联合相对手机的比较。</p>
+<p>20Hz处理后的八类联合、手机和手表分别为69/71、61/71、62/71，原始为67/71、60/71、62/71。联合原始独对0条、处理后独对2条，双侧精确McNemar为0.5；手机为1:2、p=1.000。原先样本工程容忍线是针对九类联合基线64/71规定的≥62/71，九类处理后65/71满足该线；该容忍判据属于九类工程检查；空间端点另行评价。</p>
+<h2 id="真实访问片段与声明标记诊断">真实访问片段与声明标记诊断</h2>
+<p>固定雷达run007b在2662帧中得到1266帧零候选、1396帧唯一候选，无多候选帧。固定规则不读人工站点窗，形成8个片段，中位时长约17.5
+s；全记录分组的关系计数为同地配对找对7、误并0、漏配0、异地配对正确拒绝21（TP/FP/FN/TN=7/0/0/21）。七次历史查询中，完整连接作答5/7且5/5正确，密度法作答7/7但仅5/7正确；两次新地点均被密度法误联。空间反事实零回访输入上，两者误并分别为0/28和21/28。该结果使用一段雷达记录。</p>
 <p>新的R1/L0与R2/L1记录完成手机、手表和固定录像收件。原始手机加速度行数为36766和32142，手表为4233和3722行；手表584、563个数据块的循环冗余校验（cyclic
 redundancy
-check，CRC）全部通过。两份重组包保留原始phone.zip，在manifest中记录单独手表日志的补入来源，原包未改动。跨端时间采用软件桥观测中位数与软件映射，physical_clock_accepted仍为false。</p>
+check，CRC）全部通过。两份重组包保留原始phone.zip，在manifest中记录单独手表日志的补入来源，原包未改动。跨端时间采用软件桥观测中位数与软件映射。</p>
 <p>样片的30组开发设置产生相同的3个事件，按预声明并列规则选择阈值0.3、最短停留4
-s、合并间隙0。样片未区分这些设置，选中项不是由数据选出的最优点。现有评分先从参考中排除三个校准窗，将静止参考切为6个碎片；其一对一匹配结果实际为命中3、误检0、未匹配碎片3，这6个碎片源于校准区间的排除，不能与3次完整静止区间等同。</p>
-<p>正式记录中，所选门在R1、R2分别输出10、9个全段事件。自动区间对两段各8个脚本预期停留窗的平均覆盖为56/64=87.50%和57.5/64=89.84375%，最低为6.5/8=81.25%，见图5b、c。相对计划到达提示，事件起点提前的中位数为6.5和6.25
-s。由于实际脚位与停留边界没有独立核验，这些数值是计划窗覆盖，不能写成8/8定位或真实停留检测准确率。30组设置的事后敏感性均达到每个计划窗至少60%覆盖，仅说明所测设置下这一描述稳定，不能反向证明未调参。</p>
-<p>静止期特征的最近邻结果为手机8/16、手表3/16、联合7/16。原报告跨两段按A/B/C同名比较，但A实际从P0换为P3。按P0/P3/P1/P2的声明标记重汇总后，三个命中数恰好不变；标签频数匹配的留一随机参照应为22.5%，而原路线角色标签参照为30%，均不应直接写为1/3。标记标签下，同点/异点平均特征距离比分别为0.849、0.906和0.868。特征在这16个样本上共同标准化，且标记归属仍依赖脚本声明，因此这些数值只作描述性诊断，既未建立可靠站点身份识别，也不足以断言静止惯性信号不含位置相关信息。</p>
-<p><img src="paper-20261102-figures/fig5-real-pilot-boundaries.svg"
+s、合并间隙0。样片未区分这些设置，选中项不是由数据选出的最优点。现有评分先从参考中排除三个校准窗，将静止参考切为6个碎片；其一对一匹配结果实际为命中3、误检0、未匹配碎片3，这6个碎片源于校准区间的排除，与三次完整静止区间的计数层级不同。</p>
+<p>正式记录中，所选门在R1、R2分别输出10、9个全段事件。自动区间对两段各8个脚本预期停留窗的平均覆盖为56/64=87.50%和57.5/64=89.84%，最低为6.5/8=81.25%，见图6b、c。相对计划到达提示，事件起点提前的中位数为6.5和6.25
+s。这里的分母是脚本计划窗总时长，覆盖按0.5
+s网格计算；图6保留了全部额外事件和提前边界。</p>
+<p>按P0/P3/P1/P2声明标记重汇总后，静止期特征近邻命中为手机8/16、手表3/16、联合7/16，同点/异点平均特征距离比分别为0.849、0.906和0.868。原A/B/C路线角色跨两段复用了A，而物理标记A由P0换成P3，因此本文采用标记标签。图6e给出保留两回合配额的探索置换参照，三设备Holm调整p依次为0.106、0.738、0.117。具体零模型与诊断范围在方法及局限中说明。</p>
+<p><img src="paper-20261102-figures/fig6-real-pilot.svg"
 style="width:16cm" /></p>
-<p>图5　从两布局输入到事件输出及声明标记诊断</p>
-<p>a，按卷尺边长重建两三角形，P1/P2共用，A分别为P0/P3；交叉边残差5.8
-cm。b，冻结九类手机模型的前向窗行走概率及0.3阈值，主文八类展示没有替换该门。c，完整自动区间与计划窗；全部额外事件和提前边界均保留。d，16访次的转导标准化联合特征距离，按声明标记排列，色值0–25、对角留白，颜色反映标准化特征距离。e，声明标记近邻诊断及留一随机参照54/240=22.5%。两段共享一个人和一个房间，结果作描述性比较。</p>
-<h2 id="所测事件设置下计划窗覆盖稳定">所测事件设置下计划窗覆盖稳定</h2>
+<p>图6　从两布局输入到事件输出及声明标记诊断</p>
+<p>a，两三角形使用五条卷尺边长重建，旁列全部六条实测边（cm）；†为P0–P3，实测119
+cm、重建113.2 cm，残差5.8
+cm。P0/P3分别是两段的A，P1/P2共用。b，冻结手机门的前向窗行走概率，R1实线、R2虚线，水平点线为0.3阈值。c，灰框为计划窗、彩色填充为与自动区间的重叠、细线为完整自动区间；A/C/B标在计划窗内，平均覆盖R1为87.5%、R2为89.8%。d，16访次按声明标记排列的联合标准化特征距离，色标范围由完整矩阵确定，对角为浅灰。e，点为观察命中数，灰线为固定近邻图、回合内保持配额的313600种分配所生成的中央95%范围，灰点为零模型均值；此范围是置换参照分布，不是命中率置信区间。该诊断的声明参考、全样本标准化与置换假设见方法。</p>
+<h2 id="事件门的参数敏感性">事件门的参数敏感性</h2>
 <p>事后敏感性保留全部30组设置：行走概率阈值0.3–0.7五档、最短时长2/3/4
 s与合并间隙0/0.5
-s。R1与R2中，每组设置都满足八个计划窗各至少60%覆盖，图6展示完整网格。稳定的是这一二元判据；R1全段事件数仍为9–11，R2为9–10，平均覆盖也随设置变化。30组是同两段记录的重读，不是30次独立验证，亦不能据此反证任何历史选择效应。</p>
-<p><img src="paper-20261102-figures/fig6-event-gate-sensitivity.svg"
+s。R1与R2中，每组设置都满足八个计划窗各至少60%覆盖，图7将每段在保存精度内重合的六种组合压为一条线，完整网格保留在源数据。稳定的是这一二元判据；R1全段事件数仍为9–11，R2为9–10，平均覆盖也随设置变化。这组事后敏感性评价的是同两段记录在所测设置下的覆盖稳定性。</p>
+<p><img src="paper-20261102-figures/fig7-gate-sensitivity.svg"
 style="width:16cm" /></p>
-<p>图6　两段记录的完整事件门设置敏感性</p>
-<p>a、b为R1，c、d为R2；列分别为合并间隙0与0.5
-s。每格打印平均计划窗覆盖百分比，按源文件三位小数汇总，底色范围60%–100%。所有格都达到八窗各至少60%覆盖。橙框表示样片并列时按预声明保守角选择的0.3阈值、4
-s最短时长和0间隙；该设置不是正式记录上的最优点。事件数与均值并非不变，完整事件另见图5c。</p>
+<p>图7　两段记录的完整事件门设置敏感性</p>
+<p>每个阈值对应最短时长2/3/4 s与合并间隙0/0.5
+s的六种组合；同一记录的六个平均覆盖读数在保存精度内完全相同，合并为一条线。空心点为样片并列时按预声明保守角选定的0.3阈值，全部30设置仍保留在源数据。纵轴显示80%–100%；两记录在全部设置下均满足八个计划窗各至少60%覆盖。全段事件数仍随设置变化。</p>
 <h1 id="讨论">讨论</h1>
-<p>相对访问几何在声明候选和误差条件下保留了可测的身份区分，其可利用程度同时取决于候选表示、访问过程和读取规则。无扰动与含噪声结果、完整表示中的别名指出两个不同限制：观测几何的失真与候选本身的不可区分。自动关联和评分规则还会改变真实候选能否参与竞争。</p>
-<p>这一端点与既有惯性场景推断相邻，但不能直接按百分比排名。MISSILE研究有地点监督条件下的敏感室内位置推断，Walk2Map从轨迹推断平面结构，IMU-to-4D的输入和训练任务又覆盖更完整的人体与场景信息<span
+<p>空间身份线索在本库中主要由相对访问几何提供，但其可用程度随误差过程与读法改变。无扰动与共同平移同值，说明原点偏移没有进入距离谱；随机游走和独立扰动的结果相差较大，则说明误差的相关结构参与决定候选区分。候选自身的表示别名又引入另一层限制：完整点集也可能对应多个身份。</p>
+<p>这一结果补充了惯性定位与场景推断工作之间的一个评价接口。MISSILE在地点监督条件下研究敏感室内位置，Walk2Map从轨迹提取平面结构，IMU-to-4D则从可穿戴惯性输入研究人体与场景<span
 class="citation" data-cites="missile walk2map imu4d"><sup><a
 href="#ref-missile" role="doc-biblioref">3</a>–<a href="#ref-imu4d"
-role="doc-biblioref">5</a></sup></span>。本文补充的是给定坐标、候选和规则时的身份测量。它把轨迹到候选身份之间的条件显式化，而真实模块诊断保留了从原始传感到可比坐标的独立缺口。</p>
-<p>防护评价也应对准分析者真正使用的信息。给所有坐标添加同一平移无法改变距离谱；仅隐藏原点不能据此宣称保护了空间身份。独立扰动与随机游走造成不同结果，提示防护需要同时说明误差相关结构、相对几何畸变和应用效用。20Hz检查目前只覆盖动作效用，其对真实空间端点的影响尚未完成；这里不提供适应性攻击测试或形式化隐私保证。隐私变换若只保留活动效用而不测试空间端点，仍不能证明空间隐私获益；这与既有传感匿名化以明确保护属性定义效用权衡的做法一致<span
+role="doc-biblioref">5</a></sup></span>。本文把坐标到候选身份的条件写入测量，给出表示参考、几何强对照以及分组和评分规则的配对结果。真实模块则分别提供活动、片段和回访证据。</p>
+<p>对防护而言，应先明确要移除的信息。所有坐标共享一个平移时，两两距离保持不变，隐藏原点因此保留了这条读法使用的几何。独立扰动和随机游走改变相对距离的方式不同，保护评价需要同时报告相关结构、几何畸变与应用效用。已有移动传感匿名化以具体保护属性定义效用权衡<span
 class="citation" data-cites="mobileanon"><sup><a href="#ref-mobileanon"
-role="doc-biblioref">33</a></sup></span>。</p>
-<p>真实试点限制了从条件测量到设备攻击的外推。较高的动作正确率和计划窗覆盖没有自动转化为站点身份。软件对齐尚未成为物理时间桥，脚位遮挡使视频无法提供独立站点归属，静止特征的最近邻又受转导标准化与小样本影响。现有记录可以核对信号完整性和执行性，不能支持真实房间端到端恢复。该结论保留了系统链路中仍需验证的接口，而没有用一个模块分数替代另一个端点。</p>
-<p>本研究还受到一个合成生成器、六房型固定配额、0.2
-m格点、单人同场景记录以及已见测试结果后续汇总的限制。生成器排除了紧前一次同站，因而gap=1启发式受到构造性削弱。原始正式记录时长超过先前计划上限，真实参考和时钟证据也未达到最初目标。跨人、跨环境、库外拒识和真实噪声标定均不由本稿推断。当前结果适合表述为受控空间可辨性测量及真实模块诊断，而不是通用空间攻击系统。</p>
+role="doc-biblioref">33</a></sup></span>；本文20Hz检查完成的是动作效用一侧，后续空间评价应使用相同的保护变换与固定分母。</p>
+<h1 id="局限">局限</h1>
+<p>合成身份测量条件于一个生成器、六房型固定配额、0.2
+m格点与已知600候选，区间只描述此设计内的整房变异。访问过程排除了紧前一次同站，削弱了gap=1启发式。真实噪声的尺度和时间相关性尚未在同一端到端链路上标定。82.00%是带先验及表示条件的参考，额外语义或访问习惯可能提供其他区分信息。</p>
+<p>两种匹配规则的替换同时改变候选资格、Ward合并近似与欠容量惩罚，因而分组与评分的效应无法唯一分解。表A的历史结果没有绑定修复后的源码SHA，本稿保留这一绑定缺口。三个附加分组族各使用一个开发集选定配置，四格软规则只有聚合存档，这些结果界定的是所测方法组合。</p>
+<p>真实记录来自单人、同一场景。动作标签来自提示脚本，upright跨地面站姿和床上坐姿；八类合并柜门开关改变了任务。历史T的开发集扩充受T床上混淆影响，第二次评估单列保留。事件共享会话，因此事件级区间和检验不提供跨人效应。技术重录与断电重录保留于既有台账。</p>
+<p>两布局的跨端时间为软件对齐，physical_clock_accepted=false；脚位遮挡使标记归属仍依赖声明。计划窗覆盖只统计最大重叠时长，也不充分惩罚窗外区间。最近邻特征共同标准化于16访次，查询共享近邻，置换分析的回合内可交换性仍是探索假设。它没有完全控制路线、脚本行为与时间的混杂，非显著结果也不证明某设备没有空间信号。原始记录超过原定240
+s长度，完整文件保留，分析窗仍沿用冻结任务区间。</p>
+<p>真实房间端到端身份、库外拒识和适应性攻击下的保护效果仍不在现有验证范围内；formal_score及real_*保留null。活动准确率、计划窗覆盖和闭库身份表现因此分别报告。</p>
+<h1 id="结论">结论</h1>
+<p>本文将可穿戴记录中的活动表现、访问关联与空间身份定义为独立评价端点，并在冻结闭库中测量了相对几何的条件身份信息。给定坐标、正确分组和指定误差时，600候选内的身份top-1达到52.46%；误差结构与读取规则共同改变这一结果。真实模块提供了活动及访问证据，也明确了坐标级输入仍需单独评价。空间防护的效用与保护效果应在同一变换、明确输入和固定分母下联合报告。</p>
 <h1 id="方法">方法</h1>
 <h2 id="任务表示与固定分母">任务、表示与固定分母</h2>
 <p>合成分析者得到每条记录的二维访问坐标及全部600候选站位点集。原点和绝对朝向不提供，自动臂不读测试真实分区或真实地点数。候选点数属于已知目录信息，真实粗类型仅在明确标记的特权对照中使用。正确分组参照单独获得访问分区，用于隔离这一输入条件。</p>
@@ -410,7 +415,7 @@ m格点、单人同场景记录以及已见测试结果后续汇总的限制。�
 <p>式（1） 中的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
 为点对数，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
-中的每个点为二维站位。该谱不使用原点、整体旋转、点编号或统一尺度，但不保证对不同几何一一对应。若归一化分母为零或有效点数不足，则按冻结实现记录不可评分，不把退化点集填成正确答案。</p>
+中的每个点为二维站位。该谱不使用原点、整体旋转、点编号或统一尺度，但可能把不同几何映为同谱。若归一化分母为零或有效点数不足，则按冻结实现记录不可评分，退化点集按原口径计入分母。</p>
 <p>对查询
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>，令
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>r</mi></msub><annotation encoding="application/x-tex">T_r</annotation></semantics></math>
@@ -418,7 +423,7 @@ m格点、单人同场景记录以及已见测试结果后续汇总的限制。�
 为真实候选身份。身份信用与总体top-1为：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mo stretchy="false" form="prefix">|</mo><msub><mi>T</mi><mi>r</mi></msub><msup><mo stretchy="false" form="prefix">|</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>h</mi><mi>r</mi></msub><mo>∈</mo><msub><mi>T</mi><mi>r</mi></msub><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">其他情形</mtext><mo>,</mo></mtd></mtr></mtable></mrow><mspace width="2.0em"></mspace><mi>A</mi><mo>=</mo><mfrac><mn>1</mn><mi>R</mi></mfrac><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>R</mi></munderover><msub><mi>a</mi><mi>r</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><mi>R</mi><mo>=</mo><mn>2400</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">a_r=\begin{cases}|T_r|^{-1},&amp;h_r\in T_r,\\0,&amp;\text{其他情形},\end{cases}\qquad A=\frac{1}{R}\sum_{r=1}^{R}a_r,\quad R=2400.</annotation></semantics></math></p>
 <p>按 式（2）
-计算时，不按ID顺序破并列。未作答记0，分母仍为全部查询。作答率和已答精度另行计算，不以少答获得的高精度替代固定分母表现。对
+计算时，不按ID顺序破并列。未作答记0，分母仍为全部查询。作答率和已答精度另行计算，固定分母表现与拒答指标分别列示。对
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
 个均匀先验身份，若表示划分为
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
@@ -427,7 +432,7 @@ m格点、单人同场景记录以及已见测试结果后续汇总的限制。�
 <p>式（3） 中的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
 遍历等价类。本库
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>492</mn></mrow><annotation encoding="application/x-tex">m=492</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">N=600</annotation></semantics></math>；这是一项附带假设的表示参考，不是原始IMU信号的通用信息上界。非均匀先验下相应表达为各类最大先验概率之和。</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>492</mn></mrow><annotation encoding="application/x-tex">m=492</annotation></semantics></math>、<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>600</mn></mrow><annotation encoding="application/x-tex">N=600</annotation></semantics></math>；这是一项附带假设的表示参考，其范围限于指定表示及观测条件。非均匀先验下相应表达为各类最大先验概率之和。</p>
 <h2 id="误差过程与候选匹配">误差过程与候选匹配</h2>
 <p>随机游走以32访为固定完整过程。真实位置
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐱</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\mathbf{x}_i</annotation></semantics></math>
@@ -436,7 +441,7 @@ m格点、单人同场景记录以及已见测试结果后续汇总的限制。�
 <p>式（4） 中的
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
 是第32访每轴误差标准差。8访、16访末次标准差分别为0.25 m、约0.3536
-m，各预算分母始终为√32。共同平移为所有点共享同一误差，独立扰动为每访独立采样。RoNIN刚性拟合RMS、雷达回访散布与这里的σ定义不同，不能直接互换。</p>
+m，各预算分母始终为√32。共同平移为所有点共享同一误差，独立扰动为每访独立采样。RoNIN刚性拟合RMS、雷达回访散布与这里的σ定义不同，分别按其测量定义记录。</p>
 <p>给定
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
 个观测组代表与
@@ -448,7 +453,7 @@ m，各预算分母始终为√32。共同平移为所有点共享同一误差�
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msqrt><mrow><msup><mi>d</mi><mn>2</mn></msup><mo>+</mo><mi>λ</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>K</mi><mi>Q</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt><mo>,</mo><mspace width="2.0em"></mspace><mi>λ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>0.0003</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">S=\sqrt{d^2+\lambda\log{K\choose Q}},\qquad\lambda\in\{0,0.0003\}.</annotation></semantics></math></p>
 <p>式（5） 在
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>&gt;</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">Q&gt;K</annotation></semantics></math>
-时硬排除候选。Ward软规则在K≥Q时不变；2≤K&lt;Q时将Q个观测代表按Ward准则合并为K个点，与候选完整谱比较，该支路λ=0。它是确定性近似，不是最优空间指派。源码修复前的表A存档未绑定当前源码SHA，表B和四格则绑定各自快照；本稿保留该历史绑定缺口，不以当前哈希补证过去。</p>
+时硬排除候选。Ward软规则在K≥Q时不变；2≤K&lt;Q时将Q个观测代表按Ward准则合并为K个点，与候选完整谱比较，该支路λ=0。它是确定性近似，采用确定性的层次合并近似。源码修复前的表A存档未绑定当前源码SHA，表B和四格则绑定各自快照；历史绑定缺口见局限。</p>
 <h2 id="分组与统计单位">分组与统计单位</h2>
 <p>固定完整连接以正两两距离中位数作尺度，截断值α=0.2。固定密度配置采用层次密度聚类HDBSCAN（hierarchical
 density-based
@@ -459,35 +464,35 @@ role="doc-biblioref">36</a></sup></span>。未分配访问各保留为单例，3
 class="citation" data-cites="bootstrap bootstrapbook"><sup><a
 href="#ref-bootstrap" role="doc-biblioref">37</a>,<a
 href="#ref-bootstrapbook"
-role="doc-biblioref">38</a></sup></span>。本轮从冻结逐路线分数重汇总，统一采用种子2026110201和同一抽样索引；不重算匹配分数。区间条件于当前生成器与每类100套的设计，不覆盖跨生成器或跨种子的变异。规则反转与相应对比是在已有封存分数上提出的事后汇总，不称新的确认性检验。421/179子集与全库重叠，不增加独立样本量。</p>
+role="doc-biblioref">38</a></sup></span>。本轮从冻结逐路线分数重汇总，统一采用种子2026110201和同一抽样索引；不重算匹配分数。区间条件于当前生成器与每类100套的设计，不覆盖跨生成器或跨种子的变异。规则反转与相应对比是在已有封存分数上提出的事后汇总，按事后探索汇总记录。421/179子集与全库重叠，共享相同独立房屋。</p>
 <p>动作区间使用事件级Wilson方法，设备差异采用精确McNemar并在各T3任务的三项设备比较内做Holm校正<span
 class="citation" data-cites="wilson mcnemar holm"><sup><a
 href="#ref-wilson" role="doc-biblioref">39</a>–<a href="#ref-holm"
-role="doc-biblioref">41</a></sup></span>。事件共享会话，区间和检验不支持跨人推断。两布局的16访站、56对关系或逐窗输出也不能当作16/56个独立房间样本。</p>
+role="doc-biblioref">41</a></sup></span>。活动事件共享会话；两布局的16访次与56对关系来自同一人和房间，按重复观测记账。</p>
 <h2 id="动作任务与历史评价">动作任务与历史评价</h2>
-<p>九类历史结果单独保留以交代任务变化。原13会话、165个事件中，最初五会话开发集对应T确认性65/71=91.55%，Wilson区间[82.76%,96.07%]；受T床上混淆影响加入D-Ba与D-G1a复录后，同一T第二次评估为67/71=94.37%，区间[86.39%,97.79%]、宏平均F1为0.9380，不能替代确认性结果。它与T3八类的94.37%恰好相同，但任务、批次和宏平均F1不同。模型选择与评价复用可能带来偏差，小样本区间亦不能覆盖跨人的变异；这些是独立于模型分数的评价问题<span
+<p>九类历史结果单独保留以交代任务变化。原13会话、165个事件中，最初五会话开发集对应T确认性65/71=91.55%，Wilson区间[82.76%,96.07%]；受T床上混淆影响加入D-Ba与D-G1a复录后，同一T第二次评估为67/71=94.37%，区间[86.39%,97.79%]、宏平均F1为93.80%，与确认性结果并列。它与T3八类的94.37%恰好相同，但任务、批次和宏平均F1不同。模型选择与评价复用可能带来偏差，小样本区间亦不能覆盖跨人的变异；这些是独立于模型分数的评价问题<span
 class="citation" data-cites="varma varoq"><sup><a href="#ref-varma"
 role="doc-biblioref">42</a>,<a href="#ref-varoq"
-role="doc-biblioref">43</a></sup></span>。T2九类联合/手机/手表为61/63/56，T3为64/58/56，各分母71。T3九类联合相对手机6:0的原始p=0.03125、Holm后0.0625，未达0.05；T2/T3合并6:2的原始p=0.2891，仍不支持普遍腕部收益。</p>
+role="doc-biblioref">43</a></sup></span>。T2九类联合/手机/手表为61/63/56，T3为64/58/56，各分母71。T3九类联合相对手机6:0的原始p=0.031、Holm后0.063，未达0.05；T2/T3合并6:2的原始p=0.289，两批方向存在差异。</p>
 <h2 id="真实动作雷达与两布局输入">真实动作、雷达与两布局输入</h2>
 <p>历史动作标签以提示脚本声明为参考，执行未经独立视频核验。动作窗固定为提示起点后1至4
 s的三秒窗，基础统计附加三个1 s子窗模长、首尾0.5
 s方向、积分及手机陀螺能量。八类模型合并柜门开合后使用已冻结原生模型，九类历史臂另存；联合臂拼接手机与腕部特征，随机森林400棵树、random_state=0，不作标准化<span
 class="citation" data-cites="rf"><sup><a href="#ref-rf"
-role="doc-biblioref">44</a></sup></span>。扩展开发集为7会话94事件，1个事件缺有效腕部输入，联合与手表训练量93、手机94。重录台账登记T2两笔技术故障、T3五笔断电；D-Ba原先缺手机记录，经补录进入扩展开发集。这些中断与补录不扩大独立样本量，评价沿用各批次封存分母。当前分析只加载冻结模型，不重新拟合。既有手机轨迹接口复用预训练RoNIN及已核验权重，其可运行性不等于新试点的位置精度已验证<span
+role="doc-biblioref">44</a></sup></span>。扩展开发集为7会话94事件，1个事件缺有效腕部输入，联合与手表训练量93、手机94。重录台账登记T2两笔技术故障、T3五笔断电；D-Ba原先缺手机记录，经补录进入扩展开发集。这些中断与补录不扩大独立样本量，评价沿用各批次封存分母。当前分析只加载冻结模型，不重新拟合。既有手机轨迹接口复用预训练RoNIN及已核验权重，该轨迹接口只核验可运行性<span
 class="citation" data-cites="ronin"><sup><a href="#ref-ronin"
 role="doc-biblioref">16</a></sup></span>。</p>
 <p>雷达候选采用5 cm唯一体素、0.15 m格26邻接、至少20体素和z跨度0.30
 m等既定门。自动片段按时间间隔、空间直径、持续时长及唯一候选比例生成，不读取脚本站点窗。参考窗口仅在事后评价使用。雷达不是惯性攻击者输入，也没有与新两段建立三端物理对时。</p>
 <p>两局部布局共享P1/P2，A分别为P0/P3，路线均为A C B A C B A
 C。六条卷尺边长恢复的两三角形归一化谱差为0.1203；交叉边一致性残差为5.8
-cm，不能据此宣称所有脚位均有独立精确真值。脚位被身体遮挡，标记归属来自声明与画面可见标记，不构成独立位置验证。</p>
+cm，该残差描述卷尺边之间的一致性。脚位被身体遮挡，标记归属来自声明与画面可见标记，参考层级见局限。</p>
 <p>两段原始手机传感跨度为310.82 s和271.74 s，超过此前每段实际≤240
 s的计划；视频音轨分别为291.072 s和276.757
-s。本稿保留完整原件，不裁剪成合规时长，分析任务窗仍为提示零点后[40,187)
-s。手表为单独导出的同次日志，补入新包并保留repair清单；文件完整性不等于物理时钟通过。</p>
+s。本稿保留完整原件，分析任务窗仍为提示零点后[40,187)
+s。手表为单独导出的同次日志，补入新包并保留repair清单；文件完整性与时间映射分别验收。</p>
 <p>实际诊断代码以0.5
-s步长提取[s,s+3)前向窗，区间输出标到s，须与输入结束和可用时刻区别。该实现是离线诊断，不能写成已经验证的实时尾窗检测。选择规则先最大化命中减误检，再依次选择少误检、低阈值、长最短停留和小合并间隙。样片去掉校准段后参考被切成碎片，其匹配计数与物理停留次数不同。</p>
+s步长提取[s,s+3)前向窗，区间输出标到s，须与输入结束和可用时刻区别。该实现是离线诊断，保留前向窗的可用时刻差异。选择规则先最大化命中减误检，再依次选择少误检、低阈值、长最短停留和小合并间隙。样片去掉校准段后参考被切成碎片，其匹配计数与物理停留次数不同。</p>
 <p>计划窗覆盖定义为自动事件与每个脚本预期停留窗的最大重叠时长，除以该计划窗长度：</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>j</mi></msub><mo>=</mo><mfrac><mrow><munder><mi mathvariant="normal">max</mi><mi>i</mi></munder><mo stretchy="false" form="prefix">|</mo><msub><mi>E</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>W</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>W</mi><mi>j</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">c_j=\frac{\max_i|E_i\cap W_j|}{|W_j|}.</annotation></semantics></math></p>
 <p>式（6） 中的
@@ -495,52 +500,59 @@ s步长提取[s,s+3)前向窗，区间输出标到s，须与输入结束和可�
 为自动区间，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>j</mi></msub><annotation encoding="application/x-tex">W_j</annotation></semantics></math>
 为8
 s脚本计划窗，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
-为访次。该定义不是时间交并比，也不惩罚区间伸入窗外的全部时长，因此正文同时给出完整事件图与提前边界。站点最近邻诊断在16个提示后[4,7)
-s窗上，以模型列序提取特征，逐特征共同标准化后用欧氏距离留一取近邻；这是转导描述，不是独立分类验证。按声明物理标记计数为3/3/6/4，随机留一标签匹配概率为54/240=22.5%。</p>
-<p>20Hz效用处理先将手机加速度、角速度在原支持内插值到200Hz处理网格，经4阶8Hz单向Butterworth低通后每10点保留1点，手表原流不变。处理不提高原始带宽。旧T3在看过结果后开展配对探索，满足样本容忍不等于总体效用保留。本轮未完成七臂空间排名与相应20Hz空间分数，不用活动效用结果填补这一端点。</p>
+为访次。该定义只计算窗内重叠，因此正文同时给出完整事件图与提前边界。站点最近邻诊断在16个提示后[4,7)
+s窗上，以模型列序提取特征，逐特征共同标准化后用欧氏距离留一取近邻；该步骤为转导诊断。按声明物理标记计数为3/3/6/4，随机留一标签匹配概率为54/240=22.5%。</p>
+<p>20Hz效用处理先将手机加速度、角速度在原支持内插值到200Hz处理网格，经4阶8Hz单向Butterworth低通后每10点保留1点，手表原流不变。处理沿用原始信号的有效带宽。旧T3在看过结果后开展配对探索，样本容忍只针对当前批次。本轮未完成七臂空间排名与相应20Hz空间分数，该端点与活动效用分别记账。</p>
+<h2 id="声明标记近邻的探索置换">声明标记近邻的探索置换</h2>
+<p>16个留一查询共享特征和近邻，故本轮采用固定有向近邻图、回合内保持声明标记配额的探索零模型。先核对三设备全部近邻索引与保存结果，随后枚举两回合各560种3/3/2配额分配，共313600种组合；统计量为近邻两端标记相同的有向边数。上尾p包含与观测相等的分配，三设备构成一个Holm家族。手机、手表、联合的原始p分别为0.035、0.738、0.058，调整后为0.106、0.738、0.117；完整尾部计数与零分布随源数据提供。此分析在已见8/16、3/16、7/16后制定，协议和代码分别封存，按事后探索报告。</p>
+<p>若把16窗视为独立二项试验，并使用总体配额参照0.225，确可复算原始p=0.015、0.733、0.048；其独立性假设与共享近邻的结构不符，因此该读数仅留在统计审查文件中。图6e的灰线是条件零模型的中央95%范围，不是观察命中率的置信区间。</p>
 <h2 id="可重放性与来源范围">可重放性与来源范围</h2>
 <p>试点27件产物有逐文件SHA256清单，重组包保留原手机包并登记补入手表日志的来源。既有雷达自动接口的run与replay逐字节相同。此处“可重放”按层记账：恢复原件后的冻结特征和模型重放、模拟保存分数的重汇总，以及汇总值的绘图，是三个不同范围。表A的历史源码绑定缺口仍保留，当前源码散列不能补证过去版本。</p>
 <p>本轮27个评分条件的区间、等价类直方图与30组门设置由列明输入导出。两遍独立运行生成的五个JSON逐字节一致，七项输入的SHA256前后相同；这仅证明本轮重汇总可重放，不声称重新运行了全部原始匹配器。图表随附分子、分母、值及区间来源；模拟并列信用允许分子为非整数。网站读取这些冻结产物，本身不重算分数。</p>
 <h1 id="数据与代码可用性">数据与代码可用性</h1>
-<p>来源索引、图表源数据和可重建脚本与本稿一同整理。既有GitHub仓库为私有，允许共享的源码与匿名派生结果按本轮提交记录提供；原始视频、传感器包、模型权重与签名材料不随论文展示页公开。完整原始评分重放、冻结特征重放与保存汇总重绘的范围分别记账，不能统称独立重做了全部实验。</p>
+<p>源码、匿名逐房分数、图表源数据与重建入口已公开。仓库地址如下。</p>
+<p><a
+href="https://github.com/tuoLuoSuan/imu-layout-privacy-research">https://github.com/tuoLuoSuan/imu-layout-privacy-research</a></p>
+<p>本稿对应版本标签paper-figures-v3-20261102，仓库首页指向当前论文目录与复现说明。图件同时提供中文与英文版本，数值相同。原始参与者录像、手机手表导出包、点云原件、模型权重与签名材料不随该仓库分发。</p>
+<p>复现范围分层记录：恢复原件后的冻结特征及预测重放属于既有审核，本文27个条件的区间从保存分数重汇总；图表代码直接读取匿名派生数据。近邻置换分析固定既有图与标签配额，不训练模型或改变原匹配分数。</p>
 <h1 id="作者声明">作者声明</h1>
 <p>作者姓名、顺序、单位、贡献、基金、利益冲突以及伦理适用性需由作者和所在机构在投稿前确认。本稿不虚构伦理批准编号或独立位置真值。本文结构整理、代码与语言编辑使用大型语言模型辅助；作者须在提交前复核数据、引用、分析与结论，并按目标期刊要求披露相关使用。当前文件用于导师讨论，不是已完成签字或正式提交的版本。</p>
 <h1 class="unnumbered" id="参考文献">参考文献</h1>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0"
 role="list">
 <div id="ref-mobilesensing" class="csl-entry" role="listitem">
-1.Lane, N. <em>等</em>. <a
+1. Lane, N. <em>等</em>. <a
 href="https://doi.org/10.1109/mcom.2010.5560598"><span>A survey of
 mobile phone sensing</span></a>. <em>IEEE Communications Magazine</em>
 <strong>48</strong>, 140～150 (2010年).
 </div>
 <div id="ref-harreview" class="csl-entry" role="listitem">
-2.Lara, O. D. &amp; Labrador, M. A. <a
+2. Lara, O. D. &amp; Labrador, M. A. <a
 href="https://doi.org/10.1109/surv.2012.110112.00192"><span>A Survey on
 Human Activity Recognition using Wearable Sensors</span></a>. <em>IEEE
 Communications Surveys &amp; Tutorials</em> <strong>15</strong>,
 1192～1209 (2013年).
 </div>
 <div id="ref-missile" class="csl-entry" role="listitem">
-3.Zheng, H. &amp; Hu, H. <a
+3. Zheng, H. &amp; Hu, H. <a
 href="https://doi.org/10.1109/tifs.2019.2944034"><span>MISSILE: A System
 of Mobile Inertial Sensor-Based Sensitive Indoor Location
 Eavesdropping</span></a>. <em>IEEE Transactions on Information Forensics
 and Security</em> <strong>15</strong>, 3137～3151 (2020年).
 </div>
 <div id="ref-walk2map" class="csl-entry" role="listitem">
-4.Mura, C., Pajarola, R., Schindler, K. &amp; Mitra, N. <a
+4. Mura, C., Pajarola, R., Schindler, K. &amp; Mitra, N. <a
 href="https://doi.org/10.1111/cgf.142640"><span>Walk2Map: Extracting
 Floor Plans from Indoor Walk Trajectories</span></a>. <em>Computer
 Graphics Forum</em> <strong>40</strong>, 375～388 (2021年).
 </div>
 <div id="ref-imu4d" class="csl-entry" role="listitem">
-5.Hsu, H.-Y., Cheng, T., Wen, J., Schwing, A. G. &amp; Wang, S. <a
+5. Hsu, H.-Y., Cheng, T., Wen, J., Schwing, A. G. &amp; Wang, S. <a
 href="https://arxiv.org/abs/2604.21926v1">Seeing Without Eyes: 4D
 Human-Scene Understanding from Wearable IMUs</a>. (2026).
 </div>
 <div id="ref-accomplice" class="csl-entry" role="listitem">
-6.Han, J., Owusu, E., Nguyen, L. T., Perrig, A. &amp; Zhang, J.
+6. Han, J., Owusu, E., Nguyen, L. T., Perrig, A. &amp; Zhang, J.
 <span>ACComplice: Location inference using accelerometers on
 smartphones</span>. 收入 <em>2012 Fourth International Conference on
 Communication Systems and Networks (COMSNETS 2012)</em> 1～9 (IEEE,
@@ -548,130 +560,130 @@ Communication Systems and Networks (COMSNETS 2012)</em> 1～9 (IEEE,
 href="https://doi.org/10.1109/comsnets.2012.6151305">10.1109/comsnets.2012.6151305</a>.
 </div>
 <div id="ref-pinme" class="csl-entry" role="listitem">
-7.Mosenia, A., Dai, X., Mittal, P. &amp; Jha, N. K. <a
+7. Mosenia, A., Dai, X., Mittal, P. &amp; Jha, N. K. <a
 href="https://doi.org/10.1109/tmscs.2017.2751462"><span>PinMe: Tracking
 a Smartphone User around the World</span></a>. <em>IEEE Transactions on
 Multi-Scale Computing Systems</em> <strong>4</strong>, 420～435
 (2018年).
 </div>
 <div id="ref-tapprints" class="csl-entry" role="listitem">
-8.Miluzzo, E., Varshavsky, A., Balakrishnan, S. &amp; Choudhury, R. R.
+8. Miluzzo, E., Varshavsky, A., Balakrishnan, S. &amp; Choudhury, R. R.
 <span>Tapprints: your finger taps have fingerprints</span>. 收入
 <em>Proceedings of the 10th international conference on Mobile systems,
 applications, and services</em> 323～336 (ACM, 2012). doi:<a
 href="https://doi.org/10.1145/2307636.2307666">10.1145/2307636.2307666</a>.
 </div>
 <div id="ref-accelprint" class="csl-entry" role="listitem">
-9.Dey, S., Roy, N., Xu, W., Choudhury, R. R. &amp; Nelakuditi, S.
+9. Dey, S., Roy, N., Xu, W., Choudhury, R. R. &amp; Nelakuditi, S.
 <span>AccelPrint: Imperfections of Accelerometers Make Smartphones
 Trackable</span>. 收入 <em>Proceedings 2014 Network and Distributed
 System Security Symposium</em> (Internet Society, 2014). doi:<a
 href="https://doi.org/10.14722/ndss.2014.23059">10.14722/ndss.2014.23059</a>.
 </div>
 <div id="ref-sidechannelsurvey" class="csl-entry" role="listitem">
-10.Spreitzer, R., Moonsamy, V., Korak, T. &amp; Mangard, S. <a
+10. Spreitzer, R., Moonsamy, V., Korak, T. &amp; Mangard, S. <a
 href="https://doi.org/10.1109/comst.2017.2779824"><span>Systematic
 Classification of Side-Channel Attacks: A Case Study for Mobile
 Devices</span></a>. <em>IEEE Communications Surveys &amp; Tutorials</em>
 <strong>20</strong>, 465～488 (2018年).
 </div>
 <div id="ref-mobility" class="csl-entry" role="listitem">
-11.González, M. C., Hidalgo, C. A. &amp; Barabási, A.-L. <a
+11. González, M. C., Hidalgo, C. A. &amp; Barabási, A.-L. <a
 href="https://doi.org/10.1038/nature06958"><span>Understanding
 individual human mobility patterns</span></a>. <em>Nature</em>
 <strong>453</strong>, 779～782 (2008年).
 </div>
 <div id="ref-predictability" class="csl-entry" role="listitem">
-12.Song, C., Qu, Z., Blumm, N. &amp; Barabási, A.-L. <a
+12. Song, C., Qu, Z., Blumm, N. &amp; Barabási, A.-L. <a
 href="https://doi.org/10.1126/science.1177170"><span>Limits of
 Predictability in Human Mobility</span></a>. <em>Science</em>
 <strong>327</strong>, 1018～1021 (2010年).
 </div>
 <div id="ref-unique" class="csl-entry" role="listitem">
-13.Montjoye, Y.-A. de, Hidalgo, C. A., Verleysen, M. &amp; Blondel, V.
+13. Montjoye, Y.-A. de, Hidalgo, C. A., Verleysen, M. &amp; Blondel, V.
 D. <a href="https://doi.org/10.1038/srep01376"><span>Unique in the
 Crowd: The privacy bounds of human mobility</span></a>. <em>Scientific
 Reports</em> <strong>3</strong>, 1376 (2013年).
 </div>
 <div id="ref-ionet" class="csl-entry" role="listitem">
-14.Chen, C., Lu, X., Markham, A. &amp; Trigoni, N. <a
+14. Chen, C., Lu, X., Markham, A. &amp; Trigoni, N. <a
 href="https://doi.org/10.1609/aaai.v32i1.12102"><span>IONet: Learning to
 Cure the Curse of Drift in Inertial Odometry</span></a>. <em>Proceedings
 of the AAAI Conference on Artificial Intelligence</em>
 <strong>32</strong>, (2018年).
 </div>
 <div id="ref-ridi" class="csl-entry" role="listitem">
-15.Yan, H., Shan, Q. &amp; Furukawa, Y. <span>RIDI: Robust IMU Double
+15. Yan, H., Shan, Q. &amp; Furukawa, Y. <span>RIDI: Robust IMU Double
 Integration</span>. 收入 <em>Computer Vision – ECCV 2018</em> 641～656
 (Springer International Publishing, 2018). doi:<a
 href="https://doi.org/10.1007/978-3-030-01261-8_38">10.1007/978-3-030-01261-8_38</a>.
 </div>
 <div id="ref-ronin" class="csl-entry" role="listitem">
-16.Herath, S., Yan, H. &amp; Furukawa, Y. <span>RoNIN: Robust Neural
+16. Herath, S., Yan, H. &amp; Furukawa, Y. <span>RoNIN: Robust Neural
 Inertial Navigation in the Wild: Benchmark, Evaluations, &amp; New
 Methods</span>. 收入 <em>2020 IEEE International Conference on Robotics
 and Automation (ICRA)</em> 3146～3152 (IEEE, 2020). doi:<a
 href="https://doi.org/10.1109/icra40945.2020.9196860">10.1109/icra40945.2020.9196860</a>.
 </div>
 <div id="ref-tlio" class="csl-entry" role="listitem">
-17.Liu, W. <em>等</em>. <a
+17. Liu, W. <em>等</em>. <a
 href="https://doi.org/10.1109/lra.2020.3007421"><span>TLIO: Tight
 Learned Inertial Odometry</span></a>. <em>IEEE Robotics and Automation
 Letters</em> <strong>5</strong>, 5653～5660 (2020年).
 </div>
 <div id="ref-oxiod" class="csl-entry" role="listitem">
-18.Chen, C. <em>等</em>. <a
+18. Chen, C. <em>等</em>. <a
 href="https://doi.org/10.1109/jiot.2020.2966773"><span>Deep-Learning-Based
 Pedestrian Inertial Navigation: Methods, Data Set, and On-Device
 Inference</span></a>. <em>IEEE Internet of Things Journal</em>
 <strong>7</strong>, 4431～4441 (2020年).
 </div>
 <div id="ref-imunet" class="csl-entry" role="listitem">
-19.Zeinali, B., Zanddizari, H. &amp; Chang, M. J. <a
+19. Zeinali, B., Zanddizari, H. &amp; Chang, M. J. <a
 href="https://doi.org/10.1109/tim.2024.3381717"><span>IMUNet: Efficient
 Regression Architecture for Inertial IMU Navigation and
 Positioning</span></a>. <em>IEEE Transactions on Instrumentation and
 Measurement</em> <strong>73</strong>, 1～13 (2024年).
 </div>
 <div id="ref-eqnio" class="csl-entry" role="listitem">
-20.Jayanth, R. K. <em>等</em>. <a
+20. Jayanth, R. K. <em>等</em>. <a
 href="https://arxiv.org/abs/2408.06321v3"><span>EqNIO: Subequivariant
 Neural Inertial Odometry</span></a>. (2024).
 </div>
 <div id="ref-indoorsurvey" class="csl-entry" role="listitem">
-21.Zafari, F., Gkelias, A. &amp; Leung, K. K. <a
+21. Zafari, F., Gkelias, A. &amp; Leung, K. K. <a
 href="https://doi.org/10.1109/comst.2019.2911558"><span>A Survey of
 Indoor Localization Systems and Technologies</span></a>. <em>IEEE
 Communications Surveys &amp; Tutorials</em> <strong>21</strong>,
 2568～2599 (2019年).
 </div>
 <div id="ref-hartutorial" class="csl-entry" role="listitem">
-22.Bulling, A., Blanke, U. &amp; Schiele, B. <a
+22. Bulling, A., Blanke, U. &amp; Schiele, B. <a
 href="https://doi.org/10.1145/2499621"><span>A tutorial on human
 activity recognition using body-worn inertial sensors</span></a>.
 <em>ACM Computing Surveys</em> <strong>46</strong>, 1～33 (2014年).
 </div>
 <div id="ref-bao" class="csl-entry" role="listitem">
-23.Bao, L. &amp; Intille, S. S. <span>Activity Recognition from
+23. Bao, L. &amp; Intille, S. S. <span>Activity Recognition from
 User-Annotated Acceleration Data</span>. 收入 <em>Pervasive
 Computing</em> 1～17 (Springer Berlin Heidelberg, 2004). doi:<a
 href="https://doi.org/10.1007/978-3-540-24646-6_1">10.1007/978-3-540-24646-6_1</a>.
 </div>
 <div id="ref-opportunity" class="csl-entry" role="listitem">
-24.Roggen, D. <em>等</em>. <span>Collecting complex activity datasets in
-highly rich networked sensor environments</span>. 收入 <em>2010 Seventh
-International Conference on Networked Sensing Systems (INSS)</em>
-233～240 (IEEE, 2010). doi:<a
+24. Roggen, D. <em>等</em>. <span>Collecting complex activity datasets
+in highly rich networked sensor environments</span>. 收入 <em>2010
+Seventh International Conference on Networked Sensing Systems
+(INSS)</em> 233～240 (IEEE, 2010). doi:<a
 href="https://doi.org/10.1109/inss.2010.5573462">10.1109/inss.2010.5573462</a>.
 </div>
 <div id="ref-pamap" class="csl-entry" role="listitem">
-25.Reiss, A. &amp; Stricker, D. <span>Introducing a New Benchmarked
+25. Reiss, A. &amp; Stricker, D. <span>Introducing a New Benchmarked
 Dataset for Activity Monitoring</span>. 收入 <em>2012 16th International
 Symposium on Wearable Computers</em> 108～109 (IEEE, 2012). doi:<a
 href="https://doi.org/10.1109/iswc.2012.13">10.1109/iswc.2012.13</a>.
 </div>
 <div id="ref-ucihar" class="csl-entry" role="listitem">
-26.Anguita, D., Ghio, A., Oneto, L., Parra, X. &amp; Reyes-Ortiz, J. L.
+26. Anguita, D., Ghio, A., Oneto, L., Parra, X. &amp; Reyes-Ortiz, J. L.
 <span>Human Activity Recognition on Smartphones Using a Multiclass
 Hardware-Friendly Support Vector Machine</span>. 收入 <em>Ambient
 Assisted Living and Home Care</em> 216～223 (Springer Berlin Heidelberg,
@@ -679,14 +691,14 @@ Assisted Living and Home Care</em> 216～223 (Springer Berlin Heidelberg,
 href="https://doi.org/10.1007/978-3-642-35395-6_30">10.1007/978-3-642-35395-6_30</a>.
 </div>
 <div id="ref-deepconv" class="csl-entry" role="listitem">
-27.Ordóñez, F. &amp; Roggen, D. <a
+27. Ordóñez, F. &amp; Roggen, D. <a
 href="https://doi.org/10.3390/s16010115"><span>Deep Convolutional and
 LSTM Recurrent Neural Networks for Multimodal Wearable Activity
 Recognition</span></a>. <em>Sensors</em> <strong>16</strong>, 115
 (2016年).
 </div>
 <div id="ref-imutube" class="csl-entry" role="listitem">
-28.Kwon, H. <em>等</em>. <a
+28. Kwon, H. <em>等</em>. <a
 href="https://doi.org/10.1145/3411841"><span>IMUTube: Automatic
 Extraction of Virtual on-body Accelerometry from Video for Human
 Activity Recognition</span></a>. <em>Proceedings of the ACM on
@@ -694,24 +706,26 @@ Interactive, Mobile, Wearable and Ubiquitous Technologies</em>
 <strong>4</strong>, 1～29 (2020年).
 </div>
 <div id="ref-locationprivacy" class="csl-entry" role="listitem">
-29.Krumm, J. <a href="https://doi.org/10.1007/s00779-008-0212-5"><span>A
-survey of computational location privacy</span></a>. <em>Personal and
-Ubiquitous Computing</em> <strong>13</strong>, 391～399 (2009年).
+29. Krumm, J. <a
+href="https://doi.org/10.1007/s00779-008-0212-5"><span>A survey of
+computational location privacy</span></a>. <em>Personal and Ubiquitous
+Computing</em> <strong>13</strong>, 391～399 (2009年).
 </div>
 <div id="ref-quantpriv" class="csl-entry" role="listitem">
-30.Shokri, R., Theodorakopoulos, G., Le Boudec, J.-Y. &amp; Hubaux,
+30. Shokri, R., Theodorakopoulos, G., Le Boudec, J.-Y. &amp; Hubaux,
 J.-P. <span>Quantifying Location Privacy</span>. 收入 <em>2011 IEEE
 Symposium on Security and Privacy</em> 247～262 (IEEE, 2011). doi:<a
 href="https://doi.org/10.1109/sp.2011.18">10.1109/sp.2011.18</a>.
 </div>
 <div id="ref-sensitivity" class="csl-entry" role="listitem">
-31.Dwork, C., McSherry, F., Nissim, K. &amp; Smith, A. <span>Calibrating
-Noise to Sensitivity in Private Data Analysis</span>. 收入 <em>Theory of
-Cryptography</em> 265～284 (Springer Berlin Heidelberg, 2006). doi:<a
+31. Dwork, C., McSherry, F., Nissim, K. &amp; Smith, A.
+<span>Calibrating Noise to Sensitivity in Private Data Analysis</span>.
+收入 <em>Theory of Cryptography</em> 265～284 (Springer Berlin
+Heidelberg, 2006). doi:<a
 href="https://doi.org/10.1007/11681878_14">10.1007/11681878_14</a>.
 </div>
 <div id="ref-geoi" class="csl-entry" role="listitem">
-32.Andrés, M. E., Bordenabe, N. E., Chatzikokolakis, K. &amp;
+32. Andrés, M. E., Bordenabe, N. E., Chatzikokolakis, K. &amp;
 Palamidessi, C. <span>Geo-indistinguishability: differential privacy for
 location-based systems</span>. 收入 <em>Proceedings of the 2013 ACM
 SIGSAC conference on Computer &amp; communications security - CCS
@@ -719,76 +733,76 @@ SIGSAC conference on Computer &amp; communications security - CCS
 href="https://doi.org/10.1145/2508859.2516735">10.1145/2508859.2516735</a>.
 </div>
 <div id="ref-mobileanon" class="csl-entry" role="listitem">
-33.Malekzadeh, M., Clegg, R. G., Cavallaro, A. &amp; Haddadi, H.
+33. Malekzadeh, M., Clegg, R. G., Cavallaro, A. &amp; Haddadi, H.
 <span>Mobile sensor data anonymization</span>. 收入 <em>Proceedings of
 the International Conference on Internet of Things Design and
 Implementation</em> 49～58 (ACM, 2019). doi:<a
 href="https://doi.org/10.1145/3302505.3310068">10.1145/3302505.3310068</a>.
 </div>
 <div id="ref-openset" class="csl-entry" role="listitem">
-34.Scheirer, W. J., Rezende Rocha, A. de, Sapkota, A. &amp; Boult, T. E.
-<a href="https://doi.org/10.1109/tpami.2012.256"><span>Toward Open Set
-Recognition</span></a>. <em>IEEE Transactions on Pattern Analysis and
-Machine Intelligence</em> <strong>35</strong>, 1757～1772 (2013年).
+34. Scheirer, W. J., Rezende Rocha, A. de, Sapkota, A. &amp; Boult, T.
+E. <a href="https://doi.org/10.1109/tpami.2012.256"><span>Toward Open
+Set Recognition</span></a>. <em>IEEE Transactions on Pattern Analysis
+and Machine Intelligence</em> <strong>35</strong>, 1757～1772 (2013年).
 </div>
 <div id="ref-opensurvey" class="csl-entry" role="listitem">
-35.Geng, C., Huang, S.-J. &amp; Chen, S. <a
+35. Geng, C., Huang, S.-J. &amp; Chen, S. <a
 href="https://doi.org/10.1109/tpami.2020.2981604"><span>Recent Advances
 in Open Set Recognition: A Survey</span></a>. <em>IEEE Transactions on
 Pattern Analysis and Machine Intelligence</em> <strong>43</strong>,
 3614～3631 (2021年).
 </div>
 <div id="ref-hdbscan" class="csl-entry" role="listitem">
-36.McInnes, L., Healy, J. &amp; Astels, S. <a
+36. McInnes, L., Healy, J. &amp; Astels, S. <a
 href="https://doi.org/10.21105/joss.00205"><span>hdbscan: Hierarchical
 density based clustering</span></a>. <em>The Journal of Open Source
 Software</em> <strong>2</strong>, 205 (2017年).
 </div>
 <div id="ref-bootstrap" class="csl-entry" role="listitem">
-37.Efron, B. <a
+37. Efron, B. <a
 href="https://doi.org/10.1214/aos/1176344552"><span>Bootstrap Methods:
 Another Look at the Jackknife</span></a>. <em>The Annals of
 Statistics</em> <strong>7</strong>, 1～26 (1979年).
 </div>
 <div id="ref-bootstrapbook" class="csl-entry" role="listitem">
-38.Davison, A. C. &amp; Hinkley, D. V. <em><span>Bootstrap Methods and
+38. Davison, A. C. &amp; Hinkley, D. V. <em><span>Bootstrap Methods and
 their Application</span></em>. (Cambridge University Press, 1997).
 doi:<a
 href="https://doi.org/10.1017/cbo9780511802843">10.1017/cbo9780511802843</a>.
 </div>
 <div id="ref-wilson" class="csl-entry" role="listitem">
-39.Wilson, E. B. <a
+39. Wilson, E. B. <a
 href="https://doi.org/10.1080/01621459.1927.10502953"><span>Probable
 Inference, the Law of Succession, and Statistical Inference</span></a>.
 <em>Journal of the American Statistical Association</em>
 <strong>22</strong>, 209～212 (1927年).
 </div>
 <div id="ref-mcnemar" class="csl-entry" role="listitem">
-40.McNemar, Q. <a href="https://doi.org/10.1007/bf02295996"><span>Note
+40. McNemar, Q. <a href="https://doi.org/10.1007/bf02295996"><span>Note
 on the Sampling Error of the Difference Between Correlated Proportions
 or Percentages</span></a>. <em>Psychometrika</em> <strong>12</strong>,
 153～157 (1947年).
 </div>
 <div id="ref-holm" class="csl-entry" role="listitem">
-41.Holm, S. <a href="https://doi.org/10.2307/4615733"><span>A Simple
+41. Holm, S. <a href="https://doi.org/10.2307/4615733"><span>A Simple
 Sequentially Rejective Multiple Test Procedure</span></a>.
 <em>Scandinavian Journal of Statistics</em> <strong>6</strong>, 65～70
 (1979年).
 </div>
 <div id="ref-varma" class="csl-entry" role="listitem">
-42.Varma, S. &amp; Simon, R. <a
+42. Varma, S. &amp; Simon, R. <a
 href="https://doi.org/10.1186/1471-2105-7-91"><span>Bias in error
 estimation when using cross-validation for model selection</span></a>.
 <em>BMC Bioinformatics</em> <strong>7</strong>, 91 (2006年).
 </div>
 <div id="ref-varoq" class="csl-entry" role="listitem">
-43.Varoquaux, G. <a
+43. Varoquaux, G. <a
 href="https://doi.org/10.1016/j.neuroimage.2017.06.061"><span>Cross-validation
 failure: Small sample sizes lead to large error bars</span></a>.
 <em>NeuroImage</em> <strong>180</strong>, 68～77 (2018年).
 </div>
 <div id="ref-rf" class="csl-entry" role="listitem">
-44.Breiman, L. <a
+44. Breiman, L. <a
 href="https://doi.org/10.1023/a:1010933404324"><span>Random
 Forests</span></a>. <em>Machine Learning</em> <strong>45</strong>, 5～32
 (2001年).

@@ -1,0 +1,4481 @@
+{
+  "geometry": {
+    "inputs_cm": {
+      "P0-P1": 91,
+      "P0-P2": 150,
+      "P0-P3": 119,
+      "P1-P2": 203,
+      "P1-P3": 118,
+      "P2-P3": 102
+    },
+    "reconstructed_cm": {
+      "P0-P1": 91.0,
+      "P0-P2": 150.0,
+      "P0-P3": 113.2,
+      "P1-P2": 203.0,
+      "P1-P3": 118.0,
+      "P2-P3": 102.0
+    },
+    "consistency_P0P3_residual_cm": 5.8,
+    "sides_cm": {
+      "P0": [
+        91.0,
+        150.0,
+        203.0
+      ],
+      "P3": [
+        102.0,
+        118.0,
+        203.0
+      ]
+    },
+    "spectrum": {
+      "P0": [
+        0.5874,
+        0.9683,
+        1.3105
+      ],
+      "P3": [
+        0.6901,
+        0.7984,
+        1.3735
+      ]
+    },
+    "distortion": 0.1203,
+    "min_pair_cm": 91.0,
+    "A_dist_cm": 113.2,
+    "min_angle_deg": 21.0,
+    "standoff_cm": {
+      "P0": 62.1,
+      "P3": 42.3
+    },
+    "both_same_side_hypothesis_P0P3": 48.0,
+    "legs_cm": {
+      "L0": [
+        91.0,
+        150.0,
+        203.0
+      ],
+      "L1": [
+        102.0,
+        118.0,
+        203.0
+      ]
+    }
+  },
+  "events": {
+    "R1": {
+      "events": [
+        {
+          "start": 0.0,
+          "end": 39.0
+        },
+        {
+          "start": 43.0,
+          "end": 57.0
+        },
+        {
+          "start": 61.5,
+          "end": 75.0
+        },
+        {
+          "start": 79.0,
+          "end": 92.5
+        },
+        {
+          "start": 97.5,
+          "end": 110.5
+        },
+        {
+          "start": 115.5,
+          "end": 129.0
+        },
+        {
+          "start": 133.0,
+          "end": 147.5
+        },
+        {
+          "start": 153.0,
+          "end": 164.5
+        },
+        {
+          "start": 170.0,
+          "end": 193.5
+        },
+        {
+          "start": 194.5,
+          "end": 206.5
+        }
+      ],
+      "series": [
+        {
+          "s": 0.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 0.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 1.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 1.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 2.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 2.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 3.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 3.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 4.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 4.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 5.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 5.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 6.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 6.5,
+          "p_walk_phone": 0.025
+        },
+        {
+          "s": 7.0,
+          "p_walk_phone": 0.0425
+        },
+        {
+          "s": 7.5,
+          "p_walk_phone": 0.065
+        },
+        {
+          "s": 8.0,
+          "p_walk_phone": 0.075
+        },
+        {
+          "s": 8.5,
+          "p_walk_phone": 0.07
+        },
+        {
+          "s": 9.0,
+          "p_walk_phone": 0.1275
+        },
+        {
+          "s": 9.5,
+          "p_walk_phone": 0.14
+        },
+        {
+          "s": 10.0,
+          "p_walk_phone": 0.09
+        },
+        {
+          "s": 10.5,
+          "p_walk_phone": 0.1425
+        },
+        {
+          "s": 11.0,
+          "p_walk_phone": 0.195
+        },
+        {
+          "s": 11.5,
+          "p_walk_phone": 0.255
+        },
+        {
+          "s": 12.0,
+          "p_walk_phone": 0.2275
+        },
+        {
+          "s": 12.5,
+          "p_walk_phone": 0.22
+        },
+        {
+          "s": 13.0,
+          "p_walk_phone": 0.275
+        },
+        {
+          "s": 13.5,
+          "p_walk_phone": 0.2825
+        },
+        {
+          "s": 14.0,
+          "p_walk_phone": 0.215
+        },
+        {
+          "s": 14.5,
+          "p_walk_phone": 0.0975
+        },
+        {
+          "s": 15.0,
+          "p_walk_phone": 0.095
+        },
+        {
+          "s": 15.5,
+          "p_walk_phone": 0.075
+        },
+        {
+          "s": 16.0,
+          "p_walk_phone": 0.015
+        },
+        {
+          "s": 16.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 17.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 17.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 18.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 18.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 19.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 19.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 20.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 20.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 21.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 21.5,
+          "p_walk_phone": 0.0575
+        },
+        {
+          "s": 22.0,
+          "p_walk_phone": 0.065
+        },
+        {
+          "s": 22.5,
+          "p_walk_phone": 0.09
+        },
+        {
+          "s": 23.0,
+          "p_walk_phone": 0.105
+        },
+        {
+          "s": 23.5,
+          "p_walk_phone": 0.17
+        },
+        {
+          "s": 24.0,
+          "p_walk_phone": 0.2625
+        },
+        {
+          "s": 24.5,
+          "p_walk_phone": 0.18
+        },
+        {
+          "s": 25.0,
+          "p_walk_phone": 0.23
+        },
+        {
+          "s": 25.5,
+          "p_walk_phone": 0.2725
+        },
+        {
+          "s": 26.0,
+          "p_walk_phone": 0.235
+        },
+        {
+          "s": 26.5,
+          "p_walk_phone": 0.26
+        },
+        {
+          "s": 27.0,
+          "p_walk_phone": 0.1975
+        },
+        {
+          "s": 27.5,
+          "p_walk_phone": 0.2275
+        },
+        {
+          "s": 28.0,
+          "p_walk_phone": 0.255
+        },
+        {
+          "s": 28.5,
+          "p_walk_phone": 0.2375
+        },
+        {
+          "s": 29.0,
+          "p_walk_phone": 0.195
+        },
+        {
+          "s": 29.5,
+          "p_walk_phone": 0.0925
+        },
+        {
+          "s": 30.0,
+          "p_walk_phone": 0.0925
+        },
+        {
+          "s": 30.5,
+          "p_walk_phone": 0.07
+        },
+        {
+          "s": 31.0,
+          "p_walk_phone": 0.02
+        },
+        {
+          "s": 31.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 32.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 32.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 33.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 33.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 34.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 34.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 35.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 35.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 36.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 36.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 37.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 37.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 38.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 38.5,
+          "p_walk_phone": 0.1725
+        },
+        {
+          "s": 39.0,
+          "p_walk_phone": 0.3075
+        },
+        {
+          "s": 39.5,
+          "p_walk_phone": 0.615
+        },
+        {
+          "s": 40.0,
+          "p_walk_phone": 0.7775
+        },
+        {
+          "s": 40.5,
+          "p_walk_phone": 0.9075
+        },
+        {
+          "s": 41.0,
+          "p_walk_phone": 0.9
+        },
+        {
+          "s": 41.5,
+          "p_walk_phone": 0.905
+        },
+        {
+          "s": 42.0,
+          "p_walk_phone": 0.8125
+        },
+        {
+          "s": 42.5,
+          "p_walk_phone": 0.53
+        },
+        {
+          "s": 43.0,
+          "p_walk_phone": 0.1925
+        },
+        {
+          "s": 43.5,
+          "p_walk_phone": 0.135
+        },
+        {
+          "s": 44.0,
+          "p_walk_phone": 0.045
+        },
+        {
+          "s": 44.5,
+          "p_walk_phone": 0.0175
+        },
+        {
+          "s": 45.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 45.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 46.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 46.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 47.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 47.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 48.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 48.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 49.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 49.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 50.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 50.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 51.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 51.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 52.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 52.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 53.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 53.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 54.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 54.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 55.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 55.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 56.0,
+          "p_walk_phone": 0.065
+        },
+        {
+          "s": 56.5,
+          "p_walk_phone": 0.225
+        },
+        {
+          "s": 57.0,
+          "p_walk_phone": 0.415
+        },
+        {
+          "s": 57.5,
+          "p_walk_phone": 0.775
+        },
+        {
+          "s": 58.0,
+          "p_walk_phone": 0.895
+        },
+        {
+          "s": 58.5,
+          "p_walk_phone": 0.8925
+        },
+        {
+          "s": 59.0,
+          "p_walk_phone": 0.855
+        },
+        {
+          "s": 59.5,
+          "p_walk_phone": 0.8575
+        },
+        {
+          "s": 60.0,
+          "p_walk_phone": 0.815
+        },
+        {
+          "s": 60.5,
+          "p_walk_phone": 0.7775
+        },
+        {
+          "s": 61.0,
+          "p_walk_phone": 0.59
+        },
+        {
+          "s": 61.5,
+          "p_walk_phone": 0.1625
+        },
+        {
+          "s": 62.0,
+          "p_walk_phone": 0.1075
+        },
+        {
+          "s": 62.5,
+          "p_walk_phone": 0.0075
+        },
+        {
+          "s": 63.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 63.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 64.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 64.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 65.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 65.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 66.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 66.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 67.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 67.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 68.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 68.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 69.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 69.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 70.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 70.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 71.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 71.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 72.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 72.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 73.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 73.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 74.0,
+          "p_walk_phone": 0.0175
+        },
+        {
+          "s": 74.5,
+          "p_walk_phone": 0.1425
+        },
+        {
+          "s": 75.0,
+          "p_walk_phone": 0.435
+        },
+        {
+          "s": 75.5,
+          "p_walk_phone": 0.695
+        },
+        {
+          "s": 76.0,
+          "p_walk_phone": 0.8025
+        },
+        {
+          "s": 76.5,
+          "p_walk_phone": 0.875
+        },
+        {
+          "s": 77.0,
+          "p_walk_phone": 0.87
+        },
+        {
+          "s": 77.5,
+          "p_walk_phone": 0.795
+        },
+        {
+          "s": 78.0,
+          "p_walk_phone": 0.655
+        },
+        {
+          "s": 78.5,
+          "p_walk_phone": 0.4075
+        },
+        {
+          "s": 79.0,
+          "p_walk_phone": 0.1675
+        },
+        {
+          "s": 79.5,
+          "p_walk_phone": 0.035
+        },
+        {
+          "s": 80.0,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 80.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 81.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 81.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 82.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 82.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 83.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 83.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 84.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 84.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 85.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 85.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 86.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 86.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 87.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 87.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 88.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 88.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 89.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 89.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 90.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 90.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 91.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 91.5,
+          "p_walk_phone": 0.015
+        },
+        {
+          "s": 92.0,
+          "p_walk_phone": 0.24
+        },
+        {
+          "s": 92.5,
+          "p_walk_phone": 0.305
+        },
+        {
+          "s": 93.0,
+          "p_walk_phone": 0.715
+        },
+        {
+          "s": 93.5,
+          "p_walk_phone": 0.8425
+        },
+        {
+          "s": 94.0,
+          "p_walk_phone": 0.92
+        },
+        {
+          "s": 94.5,
+          "p_walk_phone": 0.94
+        },
+        {
+          "s": 95.0,
+          "p_walk_phone": 0.9675
+        },
+        {
+          "s": 95.5,
+          "p_walk_phone": 0.9425
+        },
+        {
+          "s": 96.0,
+          "p_walk_phone": 0.93
+        },
+        {
+          "s": 96.5,
+          "p_walk_phone": 0.7925
+        },
+        {
+          "s": 97.0,
+          "p_walk_phone": 0.57
+        },
+        {
+          "s": 97.5,
+          "p_walk_phone": 0.245
+        },
+        {
+          "s": 98.0,
+          "p_walk_phone": 0.1125
+        },
+        {
+          "s": 98.5,
+          "p_walk_phone": 0.04
+        },
+        {
+          "s": 99.0,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 99.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 100.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 100.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 101.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 101.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 102.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 102.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 103.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 103.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 104.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 104.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 105.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 105.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 106.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 106.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 107.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 107.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 108.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 108.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 109.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 109.5,
+          "p_walk_phone": 0.015
+        },
+        {
+          "s": 110.0,
+          "p_walk_phone": 0.225
+        },
+        {
+          "s": 110.5,
+          "p_walk_phone": 0.365
+        },
+        {
+          "s": 111.0,
+          "p_walk_phone": 0.755
+        },
+        {
+          "s": 111.5,
+          "p_walk_phone": 0.8725
+        },
+        {
+          "s": 112.0,
+          "p_walk_phone": 0.9125
+        },
+        {
+          "s": 112.5,
+          "p_walk_phone": 0.8825
+        },
+        {
+          "s": 113.0,
+          "p_walk_phone": 0.8975
+        },
+        {
+          "s": 113.5,
+          "p_walk_phone": 0.875
+        },
+        {
+          "s": 114.0,
+          "p_walk_phone": 0.835
+        },
+        {
+          "s": 114.5,
+          "p_walk_phone": 0.6375
+        },
+        {
+          "s": 115.0,
+          "p_walk_phone": 0.51
+        },
+        {
+          "s": 115.5,
+          "p_walk_phone": 0.1475
+        },
+        {
+          "s": 116.0,
+          "p_walk_phone": 0.1275
+        },
+        {
+          "s": 116.5,
+          "p_walk_phone": 0.0175
+        },
+        {
+          "s": 117.0,
+          "p_walk_phone": 0.0075
+        },
+        {
+          "s": 117.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 118.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 118.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 119.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 119.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 120.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 120.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 121.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 121.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 122.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 122.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 123.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 123.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 124.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 124.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 125.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 125.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 126.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 126.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 127.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 127.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 128.0,
+          "p_walk_phone": 0.08
+        },
+        {
+          "s": 128.5,
+          "p_walk_phone": 0.1325
+        },
+        {
+          "s": 129.0,
+          "p_walk_phone": 0.5125
+        },
+        {
+          "s": 129.5,
+          "p_walk_phone": 0.6975
+        },
+        {
+          "s": 130.0,
+          "p_walk_phone": 0.8575
+        },
+        {
+          "s": 130.5,
+          "p_walk_phone": 0.91
+        },
+        {
+          "s": 131.0,
+          "p_walk_phone": 0.93
+        },
+        {
+          "s": 131.5,
+          "p_walk_phone": 0.8925
+        },
+        {
+          "s": 132.0,
+          "p_walk_phone": 0.7875
+        },
+        {
+          "s": 132.5,
+          "p_walk_phone": 0.635
+        },
+        {
+          "s": 133.0,
+          "p_walk_phone": 0.2275
+        },
+        {
+          "s": 133.5,
+          "p_walk_phone": 0.135
+        },
+        {
+          "s": 134.0,
+          "p_walk_phone": 0.015
+        },
+        {
+          "s": 134.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 135.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 135.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 136.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 136.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 137.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 137.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 138.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 138.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 139.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 139.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 140.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 140.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 141.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 141.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 142.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 142.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 143.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 143.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 144.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 144.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 145.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 145.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 146.0,
+          "p_walk_phone": 0.025
+        },
+        {
+          "s": 146.5,
+          "p_walk_phone": 0.1025
+        },
+        {
+          "s": 147.0,
+          "p_walk_phone": 0.1475
+        },
+        {
+          "s": 147.5,
+          "p_walk_phone": 0.3575
+        },
+        {
+          "s": 148.0,
+          "p_walk_phone": 0.7575
+        },
+        {
+          "s": 148.5,
+          "p_walk_phone": 0.835
+        },
+        {
+          "s": 149.0,
+          "p_walk_phone": 0.9375
+        },
+        {
+          "s": 149.5,
+          "p_walk_phone": 0.9475
+        },
+        {
+          "s": 150.0,
+          "p_walk_phone": 0.9625
+        },
+        {
+          "s": 150.5,
+          "p_walk_phone": 0.935
+        },
+        {
+          "s": 151.0,
+          "p_walk_phone": 0.8425
+        },
+        {
+          "s": 151.5,
+          "p_walk_phone": 0.7375
+        },
+        {
+          "s": 152.0,
+          "p_walk_phone": 0.5125
+        },
+        {
+          "s": 152.5,
+          "p_walk_phone": 0.405
+        },
+        {
+          "s": 153.0,
+          "p_walk_phone": 0.075
+        },
+        {
+          "s": 153.5,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 154.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 154.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 155.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 155.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 156.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 156.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 157.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 157.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 158.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 158.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 159.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 159.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 160.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 160.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 161.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 161.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 162.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 162.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 163.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 163.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 164.0,
+          "p_walk_phone": 0.225
+        },
+        {
+          "s": 164.5,
+          "p_walk_phone": 0.5275
+        },
+        {
+          "s": 165.0,
+          "p_walk_phone": 0.7625
+        },
+        {
+          "s": 165.5,
+          "p_walk_phone": 0.8975
+        },
+        {
+          "s": 166.0,
+          "p_walk_phone": 0.935
+        },
+        {
+          "s": 166.5,
+          "p_walk_phone": 0.945
+        },
+        {
+          "s": 167.0,
+          "p_walk_phone": 0.945
+        },
+        {
+          "s": 167.5,
+          "p_walk_phone": 0.94
+        },
+        {
+          "s": 168.0,
+          "p_walk_phone": 0.93
+        },
+        {
+          "s": 168.5,
+          "p_walk_phone": 0.7325
+        },
+        {
+          "s": 169.0,
+          "p_walk_phone": 0.6
+        },
+        {
+          "s": 169.5,
+          "p_walk_phone": 0.345
+        },
+        {
+          "s": 170.0,
+          "p_walk_phone": 0.245
+        },
+        {
+          "s": 170.5,
+          "p_walk_phone": 0.075
+        },
+        {
+          "s": 171.0,
+          "p_walk_phone": 0.0125
+        },
+        {
+          "s": 171.5,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 172.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 172.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 173.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 173.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 174.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 174.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 175.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 175.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 176.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 176.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 177.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 177.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 178.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 178.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 179.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 179.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 180.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 180.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 181.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 181.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 182.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 182.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 183.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 183.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 184.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 184.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 185.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 185.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 186.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 186.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 187.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 187.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 188.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 188.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 189.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 189.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 190.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 190.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 191.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 191.5,
+          "p_walk_phone": 0.0925
+        },
+        {
+          "s": 192.0,
+          "p_walk_phone": 0.125
+        },
+        {
+          "s": 192.5,
+          "p_walk_phone": 0.1125
+        },
+        {
+          "s": 193.0,
+          "p_walk_phone": 0.185
+        },
+        {
+          "s": 193.5,
+          "p_walk_phone": 0.325
+        },
+        {
+          "s": 194.0,
+          "p_walk_phone": 0.3275
+        },
+        {
+          "s": 194.5,
+          "p_walk_phone": 0.175
+        },
+        {
+          "s": 195.0,
+          "p_walk_phone": 0.2475
+        },
+        {
+          "s": 195.5,
+          "p_walk_phone": 0.265
+        },
+        {
+          "s": 196.0,
+          "p_walk_phone": 0.3075
+        },
+        {
+          "s": 196.5,
+          "p_walk_phone": 0.2425
+        },
+        {
+          "s": 197.0,
+          "p_walk_phone": 0.235
+        },
+        {
+          "s": 197.5,
+          "p_walk_phone": 0.27
+        },
+        {
+          "s": 198.0,
+          "p_walk_phone": 0.2325
+        },
+        {
+          "s": 198.5,
+          "p_walk_phone": 0.18
+        },
+        {
+          "s": 199.0,
+          "p_walk_phone": 0.08
+        },
+        {
+          "s": 199.5,
+          "p_walk_phone": 0.0725
+        },
+        {
+          "s": 200.0,
+          "p_walk_phone": 0.0525
+        },
+        {
+          "s": 200.5,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 201.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 201.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 202.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 202.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 203.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 203.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 204.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 204.5,
+          "p_walk_phone": 0.0875
+        },
+        {
+          "s": 205.0,
+          "p_walk_phone": 0.12
+        },
+        {
+          "s": 205.5,
+          "p_walk_phone": 0.13
+        },
+        {
+          "s": 206.0,
+          "p_walk_phone": 0.225
+        },
+        {
+          "s": 206.5,
+          "p_walk_phone": 0.3425
+        },
+        {
+          "s": 207.0,
+          "p_walk_phone": 0.345
+        },
+        {
+          "s": 207.5,
+          "p_walk_phone": 0.29
+        },
+        {
+          "s": 208.0,
+          "p_walk_phone": 0.3
+        },
+        {
+          "s": 208.5,
+          "p_walk_phone": 0.37
+        },
+        {
+          "s": 209.0,
+          "p_walk_phone": 0.2875
+        }
+      ]
+    },
+    "R2": {
+      "events": [
+        {
+          "start": 0.0,
+          "end": 39.0
+        },
+        {
+          "start": 42.5,
+          "end": 57.0
+        },
+        {
+          "start": 62.5,
+          "end": 75.0
+        },
+        {
+          "start": 79.5,
+          "end": 93.0
+        },
+        {
+          "start": 97.5,
+          "end": 111.0
+        },
+        {
+          "start": 116.5,
+          "end": 130.0
+        },
+        {
+          "start": 135.0,
+          "end": 147.0
+        },
+        {
+          "start": 151.0,
+          "end": 164.5
+        },
+        {
+          "start": 170.0,
+          "end": 206.5
+        }
+      ],
+      "series": [
+        {
+          "s": 0.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 0.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 1.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 1.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 2.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 2.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 3.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 3.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 4.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 4.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 5.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 5.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 6.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 6.5,
+          "p_walk_phone": 0.0275
+        },
+        {
+          "s": 7.0,
+          "p_walk_phone": 0.0575
+        },
+        {
+          "s": 7.5,
+          "p_walk_phone": 0.095
+        },
+        {
+          "s": 8.0,
+          "p_walk_phone": 0.105
+        },
+        {
+          "s": 8.5,
+          "p_walk_phone": 0.14
+        },
+        {
+          "s": 9.0,
+          "p_walk_phone": 0.25
+        },
+        {
+          "s": 9.5,
+          "p_walk_phone": 0.18
+        },
+        {
+          "s": 10.0,
+          "p_walk_phone": 0.1725
+        },
+        {
+          "s": 10.5,
+          "p_walk_phone": 0.1775
+        },
+        {
+          "s": 11.0,
+          "p_walk_phone": 0.175
+        },
+        {
+          "s": 11.5,
+          "p_walk_phone": 0.21
+        },
+        {
+          "s": 12.0,
+          "p_walk_phone": 0.1625
+        },
+        {
+          "s": 12.5,
+          "p_walk_phone": 0.2275
+        },
+        {
+          "s": 13.0,
+          "p_walk_phone": 0.255
+        },
+        {
+          "s": 13.5,
+          "p_walk_phone": 0.2225
+        },
+        {
+          "s": 14.0,
+          "p_walk_phone": 0.1875
+        },
+        {
+          "s": 14.5,
+          "p_walk_phone": 0.08
+        },
+        {
+          "s": 15.0,
+          "p_walk_phone": 0.08
+        },
+        {
+          "s": 15.5,
+          "p_walk_phone": 0.055
+        },
+        {
+          "s": 16.0,
+          "p_walk_phone": 0.0125
+        },
+        {
+          "s": 16.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 17.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 17.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 18.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 18.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 19.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 19.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 20.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 20.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 21.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 21.5,
+          "p_walk_phone": 0.0475
+        },
+        {
+          "s": 22.0,
+          "p_walk_phone": 0.06
+        },
+        {
+          "s": 22.5,
+          "p_walk_phone": 0.08
+        },
+        {
+          "s": 23.0,
+          "p_walk_phone": 0.1125
+        },
+        {
+          "s": 23.5,
+          "p_walk_phone": 0.16
+        },
+        {
+          "s": 24.0,
+          "p_walk_phone": 0.2
+        },
+        {
+          "s": 24.5,
+          "p_walk_phone": 0.1525
+        },
+        {
+          "s": 25.0,
+          "p_walk_phone": 0.1775
+        },
+        {
+          "s": 25.5,
+          "p_walk_phone": 0.215
+        },
+        {
+          "s": 26.0,
+          "p_walk_phone": 0.155
+        },
+        {
+          "s": 26.5,
+          "p_walk_phone": 0.2225
+        },
+        {
+          "s": 27.0,
+          "p_walk_phone": 0.1775
+        },
+        {
+          "s": 27.5,
+          "p_walk_phone": 0.2175
+        },
+        {
+          "s": 28.0,
+          "p_walk_phone": 0.2475
+        },
+        {
+          "s": 28.5,
+          "p_walk_phone": 0.1875
+        },
+        {
+          "s": 29.0,
+          "p_walk_phone": 0.1525
+        },
+        {
+          "s": 29.5,
+          "p_walk_phone": 0.075
+        },
+        {
+          "s": 30.0,
+          "p_walk_phone": 0.075
+        },
+        {
+          "s": 30.5,
+          "p_walk_phone": 0.0525
+        },
+        {
+          "s": 31.0,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 31.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 32.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 32.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 33.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 33.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 34.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 34.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 35.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 35.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 36.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 36.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 37.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 37.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 38.0,
+          "p_walk_phone": 0.0925
+        },
+        {
+          "s": 38.5,
+          "p_walk_phone": 0.19
+        },
+        {
+          "s": 39.0,
+          "p_walk_phone": 0.5325
+        },
+        {
+          "s": 39.5,
+          "p_walk_phone": 0.7175
+        },
+        {
+          "s": 40.0,
+          "p_walk_phone": 0.8025
+        },
+        {
+          "s": 40.5,
+          "p_walk_phone": 0.81
+        },
+        {
+          "s": 41.0,
+          "p_walk_phone": 0.7025
+        },
+        {
+          "s": 41.5,
+          "p_walk_phone": 0.5925
+        },
+        {
+          "s": 42.0,
+          "p_walk_phone": 0.3325
+        },
+        {
+          "s": 42.5,
+          "p_walk_phone": 0.145
+        },
+        {
+          "s": 43.0,
+          "p_walk_phone": 0.0175
+        },
+        {
+          "s": 43.5,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 44.0,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 44.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 45.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 45.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 46.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 46.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 47.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 47.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 48.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 48.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 49.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 49.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 50.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 50.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 51.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 51.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 52.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 52.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 53.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 53.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 54.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 54.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 55.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 55.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 56.0,
+          "p_walk_phone": 0.06
+        },
+        {
+          "s": 56.5,
+          "p_walk_phone": 0.205
+        },
+        {
+          "s": 57.0,
+          "p_walk_phone": 0.4875
+        },
+        {
+          "s": 57.5,
+          "p_walk_phone": 0.7025
+        },
+        {
+          "s": 58.0,
+          "p_walk_phone": 0.8375
+        },
+        {
+          "s": 58.5,
+          "p_walk_phone": 0.89
+        },
+        {
+          "s": 59.0,
+          "p_walk_phone": 0.88
+        },
+        {
+          "s": 59.5,
+          "p_walk_phone": 0.88
+        },
+        {
+          "s": 60.0,
+          "p_walk_phone": 0.885
+        },
+        {
+          "s": 60.5,
+          "p_walk_phone": 0.8825
+        },
+        {
+          "s": 61.0,
+          "p_walk_phone": 0.87
+        },
+        {
+          "s": 61.5,
+          "p_walk_phone": 0.6975
+        },
+        {
+          "s": 62.0,
+          "p_walk_phone": 0.46
+        },
+        {
+          "s": 62.5,
+          "p_walk_phone": 0.1825
+        },
+        {
+          "s": 63.0,
+          "p_walk_phone": 0.13
+        },
+        {
+          "s": 63.5,
+          "p_walk_phone": 0.015
+        },
+        {
+          "s": 64.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 64.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 65.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 65.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 66.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 66.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 67.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 67.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 68.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 68.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 69.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 69.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 70.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 70.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 71.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 71.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 72.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 72.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 73.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 73.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 74.0,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 74.5,
+          "p_walk_phone": 0.02
+        },
+        {
+          "s": 75.0,
+          "p_walk_phone": 0.3125
+        },
+        {
+          "s": 75.5,
+          "p_walk_phone": 0.4975
+        },
+        {
+          "s": 76.0,
+          "p_walk_phone": 0.7725
+        },
+        {
+          "s": 76.5,
+          "p_walk_phone": 0.8575
+        },
+        {
+          "s": 77.0,
+          "p_walk_phone": 0.9025
+        },
+        {
+          "s": 77.5,
+          "p_walk_phone": 0.92
+        },
+        {
+          "s": 78.0,
+          "p_walk_phone": 0.7675
+        },
+        {
+          "s": 78.5,
+          "p_walk_phone": 0.6875
+        },
+        {
+          "s": 79.0,
+          "p_walk_phone": 0.4425
+        },
+        {
+          "s": 79.5,
+          "p_walk_phone": 0.215
+        },
+        {
+          "s": 80.0,
+          "p_walk_phone": 0.01
+        },
+        {
+          "s": 80.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 81.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 81.5,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 82.0,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 82.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 83.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 83.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 84.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 84.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 85.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 85.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 86.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 86.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 87.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 87.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 88.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 88.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 89.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 89.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 90.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 90.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 91.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 91.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 92.0,
+          "p_walk_phone": 0.0825
+        },
+        {
+          "s": 92.5,
+          "p_walk_phone": 0.22
+        },
+        {
+          "s": 93.0,
+          "p_walk_phone": 0.525
+        },
+        {
+          "s": 93.5,
+          "p_walk_phone": 0.7275
+        },
+        {
+          "s": 94.0,
+          "p_walk_phone": 0.9125
+        },
+        {
+          "s": 94.5,
+          "p_walk_phone": 0.93
+        },
+        {
+          "s": 95.0,
+          "p_walk_phone": 0.9425
+        },
+        {
+          "s": 95.5,
+          "p_walk_phone": 0.87
+        },
+        {
+          "s": 96.0,
+          "p_walk_phone": 0.8275
+        },
+        {
+          "s": 96.5,
+          "p_walk_phone": 0.7075
+        },
+        {
+          "s": 97.0,
+          "p_walk_phone": 0.445
+        },
+        {
+          "s": 97.5,
+          "p_walk_phone": 0.2625
+        },
+        {
+          "s": 98.0,
+          "p_walk_phone": 0.0475
+        },
+        {
+          "s": 98.5,
+          "p_walk_phone": 0.0125
+        },
+        {
+          "s": 99.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 99.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 100.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 100.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 101.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 101.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 102.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 102.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 103.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 103.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 104.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 104.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 105.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 105.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 106.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 106.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 107.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 107.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 108.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 108.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 109.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 109.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 110.0,
+          "p_walk_phone": 0.0575
+        },
+        {
+          "s": 110.5,
+          "p_walk_phone": 0.2125
+        },
+        {
+          "s": 111.0,
+          "p_walk_phone": 0.4975
+        },
+        {
+          "s": 111.5,
+          "p_walk_phone": 0.6925
+        },
+        {
+          "s": 112.0,
+          "p_walk_phone": 0.8275
+        },
+        {
+          "s": 112.5,
+          "p_walk_phone": 0.89
+        },
+        {
+          "s": 113.0,
+          "p_walk_phone": 0.885
+        },
+        {
+          "s": 113.5,
+          "p_walk_phone": 0.9075
+        },
+        {
+          "s": 114.0,
+          "p_walk_phone": 0.88
+        },
+        {
+          "s": 114.5,
+          "p_walk_phone": 0.9125
+        },
+        {
+          "s": 115.0,
+          "p_walk_phone": 0.815
+        },
+        {
+          "s": 115.5,
+          "p_walk_phone": 0.69
+        },
+        {
+          "s": 116.0,
+          "p_walk_phone": 0.425
+        },
+        {
+          "s": 116.5,
+          "p_walk_phone": 0.22
+        },
+        {
+          "s": 117.0,
+          "p_walk_phone": 0.04
+        },
+        {
+          "s": 117.5,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 118.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 118.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 119.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 119.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 120.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 120.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 121.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 121.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 122.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 122.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 123.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 123.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 124.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 124.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 125.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 125.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 126.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 126.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 127.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 127.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 128.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 128.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 129.0,
+          "p_walk_phone": 0.05
+        },
+        {
+          "s": 129.5,
+          "p_walk_phone": 0.1125
+        },
+        {
+          "s": 130.0,
+          "p_walk_phone": 0.4725
+        },
+        {
+          "s": 130.5,
+          "p_walk_phone": 0.665
+        },
+        {
+          "s": 131.0,
+          "p_walk_phone": 0.8125
+        },
+        {
+          "s": 131.5,
+          "p_walk_phone": 0.9325
+        },
+        {
+          "s": 132.0,
+          "p_walk_phone": 0.94
+        },
+        {
+          "s": 132.5,
+          "p_walk_phone": 0.9175
+        },
+        {
+          "s": 133.0,
+          "p_walk_phone": 0.91
+        },
+        {
+          "s": 133.5,
+          "p_walk_phone": 0.8075
+        },
+        {
+          "s": 134.0,
+          "p_walk_phone": 0.4625
+        },
+        {
+          "s": 134.5,
+          "p_walk_phone": 0.3125
+        },
+        {
+          "s": 135.0,
+          "p_walk_phone": 0.125
+        },
+        {
+          "s": 135.5,
+          "p_walk_phone": 0.0275
+        },
+        {
+          "s": 136.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 136.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 137.0,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 137.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 138.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 138.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 139.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 139.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 140.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 140.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 141.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 141.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 142.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 142.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 143.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 143.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 144.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 144.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 145.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 145.5,
+          "p_walk_phone": 0.0025
+        },
+        {
+          "s": 146.0,
+          "p_walk_phone": 0.1375
+        },
+        {
+          "s": 146.5,
+          "p_walk_phone": 0.195
+        },
+        {
+          "s": 147.0,
+          "p_walk_phone": 0.59
+        },
+        {
+          "s": 147.5,
+          "p_walk_phone": 0.765
+        },
+        {
+          "s": 148.0,
+          "p_walk_phone": 0.9
+        },
+        {
+          "s": 148.5,
+          "p_walk_phone": 0.9375
+        },
+        {
+          "s": 149.0,
+          "p_walk_phone": 0.935
+        },
+        {
+          "s": 149.5,
+          "p_walk_phone": 0.88
+        },
+        {
+          "s": 150.0,
+          "p_walk_phone": 0.8275
+        },
+        {
+          "s": 150.5,
+          "p_walk_phone": 0.67
+        },
+        {
+          "s": 151.0,
+          "p_walk_phone": 0.2975
+        },
+        {
+          "s": 151.5,
+          "p_walk_phone": 0.1575
+        },
+        {
+          "s": 152.0,
+          "p_walk_phone": 0.06
+        },
+        {
+          "s": 152.5,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 153.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 153.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 154.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 154.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 155.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 155.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 156.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 156.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 157.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 157.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 158.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 158.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 159.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 159.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 160.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 160.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 161.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 161.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 162.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 162.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 163.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 163.5,
+          "p_walk_phone": 0.0125
+        },
+        {
+          "s": 164.0,
+          "p_walk_phone": 0.2
+        },
+        {
+          "s": 164.5,
+          "p_walk_phone": 0.3075
+        },
+        {
+          "s": 165.0,
+          "p_walk_phone": 0.6275
+        },
+        {
+          "s": 165.5,
+          "p_walk_phone": 0.8425
+        },
+        {
+          "s": 166.0,
+          "p_walk_phone": 0.885
+        },
+        {
+          "s": 166.5,
+          "p_walk_phone": 0.8875
+        },
+        {
+          "s": 167.0,
+          "p_walk_phone": 0.9
+        },
+        {
+          "s": 167.5,
+          "p_walk_phone": 0.87
+        },
+        {
+          "s": 168.0,
+          "p_walk_phone": 0.8675
+        },
+        {
+          "s": 168.5,
+          "p_walk_phone": 0.76
+        },
+        {
+          "s": 169.0,
+          "p_walk_phone": 0.675
+        },
+        {
+          "s": 169.5,
+          "p_walk_phone": 0.33
+        },
+        {
+          "s": 170.0,
+          "p_walk_phone": 0.14
+        },
+        {
+          "s": 170.5,
+          "p_walk_phone": 0.025
+        },
+        {
+          "s": 171.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 171.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 172.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 172.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 173.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 173.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 174.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 174.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 175.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 175.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 176.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 176.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 177.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 177.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 178.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 178.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 179.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 179.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 180.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 180.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 181.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 181.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 182.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 182.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 183.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 183.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 184.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 184.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 185.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 185.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 186.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 186.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 187.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 187.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 188.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 188.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 189.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 189.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 190.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 190.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 191.0,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 191.5,
+          "p_walk_phone": 0.0725
+        },
+        {
+          "s": 192.0,
+          "p_walk_phone": 0.09
+        },
+        {
+          "s": 192.5,
+          "p_walk_phone": 0.1025
+        },
+        {
+          "s": 193.0,
+          "p_walk_phone": 0.195
+        },
+        {
+          "s": 193.5,
+          "p_walk_phone": 0.2825
+        },
+        {
+          "s": 194.0,
+          "p_walk_phone": 0.2875
+        },
+        {
+          "s": 194.5,
+          "p_walk_phone": 0.19
+        },
+        {
+          "s": 195.0,
+          "p_walk_phone": 0.2675
+        },
+        {
+          "s": 195.5,
+          "p_walk_phone": 0.3
+        },
+        {
+          "s": 196.0,
+          "p_walk_phone": 0.2925
+        },
+        {
+          "s": 196.5,
+          "p_walk_phone": 0.2775
+        },
+        {
+          "s": 197.0,
+          "p_walk_phone": 0.2675
+        },
+        {
+          "s": 197.5,
+          "p_walk_phone": 0.3
+        },
+        {
+          "s": 198.0,
+          "p_walk_phone": 0.1925
+        },
+        {
+          "s": 198.5,
+          "p_walk_phone": 0.1625
+        },
+        {
+          "s": 199.0,
+          "p_walk_phone": 0.0725
+        },
+        {
+          "s": 199.5,
+          "p_walk_phone": 0.07
+        },
+        {
+          "s": 200.0,
+          "p_walk_phone": 0.045
+        },
+        {
+          "s": 200.5,
+          "p_walk_phone": 0.005
+        },
+        {
+          "s": 201.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 201.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 202.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 202.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 203.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 203.5,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 204.0,
+          "p_walk_phone": 0.0
+        },
+        {
+          "s": 204.5,
+          "p_walk_phone": 0.075
+        },
+        {
+          "s": 205.0,
+          "p_walk_phone": 0.1425
+        },
+        {
+          "s": 205.5,
+          "p_walk_phone": 0.195
+        },
+        {
+          "s": 206.0,
+          "p_walk_phone": 0.2175
+        },
+        {
+          "s": 206.5,
+          "p_walk_phone": 0.3425
+        },
+        {
+          "s": 207.0,
+          "p_walk_phone": 0.3325
+        },
+        {
+          "s": 207.5,
+          "p_walk_phone": 0.275
+        },
+        {
+          "s": 208.0,
+          "p_walk_phone": 0.275
+        },
+        {
+          "s": 208.5,
+          "p_walk_phone": 0.315
+        },
+        {
+          "s": 209.0,
+          "p_walk_phone": 0.2775
+        }
+      ]
+    }
+  },
+  "feature_distances": {
+    "matrices": {
+      "joint": [
+        [
+          0.0,
+          7.983822924843519,
+          14.079740150191078,
+          7.351813885888046,
+          15.32698411175174,
+          13.67483565411486,
+          15.974761646915445,
+          10.520424035246707,
+          13.355767680006192,
+          13.566941015863192,
+          11.811474638761887,
+          15.100062577326213,
+          11.775161110139823,
+          12.129067146198535,
+          14.83460582077299,
+          12.986056470458871
+        ],
+        [
+          7.983822924843519,
+          0.0,
+          14.611798294994449,
+          8.853515448261355,
+          15.072216882031338,
+          14.730252717458798,
+          16.382409293407544,
+          10.809629932186716,
+          14.47487799123645,
+          14.697014154836081,
+          11.945881371097924,
+          15.602573585818085,
+          13.495981990366047,
+          14.085041080799632,
+          16.337221654370094,
+          12.061367781719333
+        ],
+        [
+          14.079740150191078,
+          14.611798294994449,
+          0.0,
+          14.40145586093642,
+          21.942417967643284,
+          21.205170088626527,
+          18.523018808863082,
+          16.788848026762768,
+          20.386704063881474,
+          18.09794107414758,
+          20.704445570122484,
+          20.847288337898135,
+          18.38684007478143,
+          16.283405632143744,
+          21.62250799710245,
+          19.866553291107692
+        ],
+        [
+          7.351813885888046,
+          8.853515448261355,
+          14.40145586093642,
+          0.0,
+          15.865504106310526,
+          14.823956908834127,
+          18.191616829846197,
+          11.196578387953533,
+          15.536429685797474,
+          14.748067485575874,
+          13.204435453383836,
+          14.814259511994159,
+          13.02447909682347,
+          11.690295068453334,
+          16.52609980785046,
+          12.775066106652414
+        ],
+        [
+          15.32698411175174,
+          15.072216882031338,
+          21.942417967643284,
+          15.865504106310526,
+          0.0,
+          11.960291231758085,
+          24.837511890491513,
+          11.654817121978887,
+          11.049464888208707,
+          13.947107465698377,
+          14.10753666982606,
+          9.4606409158678,
+          10.686122539737138,
+          19.976931015957963,
+          11.793347400846795,
+          10.384455049716673
+        ],
+        [
+          13.67483565411486,
+          14.730252717458798,
+          21.205170088626527,
+          14.823956908834127,
+          11.960291231758085,
+          0.0,
+          22.88973547738878,
+          13.618705939001762,
+          13.759220530518933,
+          12.03442414625465,
+          10.519310220460467,
+          12.861800208149075,
+          9.382082311171484,
+          17.452059091978164,
+          12.4875250756155,
+          11.179122155414433
+        ],
+        [
+          15.974761646915445,
+          16.382409293407544,
+          18.523018808863082,
+          18.191616829846197,
+          24.837511890491513,
+          22.88973547738878,
+          0.0,
+          20.11605010933588,
+          22.187861871564532,
+          20.843462209808052,
+          21.163220170872048,
+          23.219483881573982,
+          21.613774330922435,
+          20.0074246732638,
+          23.53204008873366,
+          23.458971765203856
+        ],
+        [
+          10.520424035246707,
+          10.809629932186716,
+          16.788848026762768,
+          11.196578387953533,
+          11.654817121978887,
+          13.618705939001762,
+          20.11605010933588,
+          0.0,
+          12.447283647317374,
+          12.950540300243237,
+          12.866931122599247,
+          12.340882927605813,
+          10.590594904905391,
+          16.4924011720746,
+          13.942926446534178,
+          11.131794124401496
+        ],
+        [
+          13.355767680006192,
+          14.47487799123645,
+          20.386704063881474,
+          15.536429685797474,
+          11.049464888208707,
+          13.759220530518933,
+          22.187861871564532,
+          12.447283647317374,
+          0.0,
+          14.144682376298066,
+          14.190472080042515,
+          11.128057801406689,
+          10.389745658945197,
+          18.396671829219674,
+          9.867827280313021,
+          11.53613003699593
+        ],
+        [
+          13.566941015863192,
+          14.697014154836081,
+          18.09794107414758,
+          14.748067485575874,
+          13.947107465698377,
+          12.03442414625465,
+          20.843462209808052,
+          12.950540300243237,
+          14.144682376298066,
+          0.0,
+          14.08288117709957,
+          11.179276279984313,
+          10.274573292351596,
+          17.419497012947556,
+          12.72722385390865,
+          11.084015573451648
+        ],
+        [
+          11.811474638761887,
+          11.945881371097924,
+          20.704445570122484,
+          13.204435453383836,
+          14.10753666982606,
+          10.519310220460467,
+          21.163220170872048,
+          12.866931122599247,
+          14.190472080042515,
+          14.08288117709957,
+          0.0,
+          13.413687374338725,
+          11.60328342761395,
+          14.609140331886055,
+          13.529201806907574,
+          11.156443317532187
+        ],
+        [
+          15.100062577326213,
+          15.602573585818085,
+          20.847288337898135,
+          14.814259511994159,
+          9.4606409158678,
+          12.861800208149075,
+          23.219483881573982,
+          12.340882927605813,
+          11.128057801406689,
+          11.179276279984313,
+          13.413687374338725,
+          0.0,
+          10.436666520285106,
+          17.743197241402484,
+          10.407386048748277,
+          10.406085846255996
+        ],
+        [
+          11.775161110139823,
+          13.495981990366047,
+          18.38684007478143,
+          13.02447909682347,
+          10.686122539737138,
+          9.382082311171484,
+          21.613774330922435,
+          10.590594904905391,
+          10.389745658945197,
+          10.274573292351596,
+          11.60328342761395,
+          10.436666520285106,
+          0.0,
+          14.943840243836503,
+          9.571798809489904,
+          10.062313406627133
+        ],
+        [
+          12.129067146198535,
+          14.085041080799632,
+          16.283405632143744,
+          11.690295068453334,
+          19.976931015957963,
+          17.452059091978164,
+          20.0074246732638,
+          16.4924011720746,
+          18.396671829219674,
+          17.419497012947556,
+          14.609140331886055,
+          17.743197241402484,
+          14.943840243836503,
+          0.0,
+          18.547092056746692,
+          16.13960757852156
+        ],
+        [
+          14.83460582077299,
+          16.337221654370094,
+          21.62250799710245,
+          16.52609980785046,
+          11.793347400846795,
+          12.4875250756155,
+          23.53204008873366,
+          13.942926446534178,
+          9.867827280313021,
+          12.72722385390865,
+          13.529201806907574,
+          10.407386048748277,
+          9.571798809489904,
+          18.547092056746692,
+          0.0,
+          12.18413257105935
+        ],
+        [
+          12.986056470458871,
+          12.061367781719333,
+          19.866553291107692,
+          12.775066106652414,
+          10.384455049716673,
+          11.179122155414433,
+          23.458971765203856,
+          11.131794124401496,
+          11.53613003699593,
+          11.084015573451648,
+          11.156443317532187,
+          10.406085846255996,
+          10.062313406627133,
+          16.13960757852156,
+          12.18413257105935,
+          0.0
+        ]
+      ],
+      "phone": [
+        [
+          0.0,
+          5.99814774212161,
+          10.108391290140718,
+          6.295107112665278,
+          13.13187782792398,
+          12.262667151018178,
+          9.810018893371465,
+          9.460934947946948,
+          11.205251272175053,
+          10.770476926902026,
+          10.164810131220447,
+          11.883469050310092,
+          10.213076006216252,
+          10.06924903031065,
+          13.313957862637853,
+          10.626697755967964
+        ],
+        [
+          5.99814774212161,
+          0.0,
+          9.9391982002314,
+          7.577762680582113,
+          13.199860502755271,
+          12.77782180424985,
+          10.512665720390434,
+          9.767056293975607,
+          11.554395272242814,
+          11.411345307838578,
+          9.272132149442706,
+          11.886003737955498,
+          11.578453108648278,
+          11.573577135677969,
+          14.147039617395835,
+          9.630429104598862
+        ],
+        [
+          10.108391290140718,
+          9.9391982002314,
+          0.0,
+          10.622617358486977,
+          18.715950923101722,
+          18.692312067040476,
+          12.123153505625394,
+          13.579191114733222,
+          16.7823027287203,
+          14.966778983681845,
+          16.578643054172705,
+          17.246960841154333,
+          15.456732780391746,
+          11.097343121736124,
+          18.65191059029969,
+          15.44374863184051
+        ],
+        [
+          6.295107112665278,
+          7.577762680582113,
+          10.622617358486977,
+          0.0,
+          14.222042753812804,
+          14.062906494101602,
+          11.798976940403838,
+          10.591964780449892,
+          13.640536941592329,
+          12.75250753118626,
+          11.66948428153258,
+          12.322668422237223,
+          12.139487998242549,
+          9.844499821928606,
+          15.273377835235587,
+          11.24125403914999
+        ],
+        [
+          13.13187782792398,
+          13.199860502755271,
+          18.715950923101722,
+          14.222042753812804,
+          0.0,
+          9.39312053521765,
+          18.581245430656534,
+          8.93394024221022,
+          8.401574267059745,
+          10.713371365968772,
+          10.47679852398293,
+          4.564460712044777,
+          8.109050160794732,
+          18.326479217572146,
+          8.698227573017443,
+          7.881838014620137
+        ],
+        [
+          12.262667151018178,
+          12.77782180424985,
+          18.692312067040476,
+          14.062906494101602,
+          9.39312053521765,
+          0.0,
+          17.080127768157954,
+          11.90574268941475,
+          11.882495339107203,
+          9.954445532449162,
+          8.032166880860517,
+          10.279059916585489,
+          8.672849965645858,
+          16.57728417436457,
+          10.554899834772,
+          9.577322375840135
+        ],
+        [
+          9.810018893371465,
+          10.512665720390434,
+          12.123153505625394,
+          11.798976940403838,
+          18.581245430656534,
+          17.080127768157954,
+          0.0,
+          14.347948160166684,
+          15.062395864756976,
+          15.57126749047609,
+          14.242978912678408,
+          16.518936898569645,
+          15.302211705149851,
+          11.097611747157522,
+          17.395591657652954,
+          16.284850194526395
+        ],
+        [
+          9.460934947946948,
+          9.767056293975607,
+          13.579191114733222,
+          10.591964780449892,
+          8.93394024221022,
+          11.90574268941475,
+          14.347948160166684,
+          0.0,
+          9.36660482043349,
+          10.386387802829713,
+          11.274493429521819,
+          8.703254365544064,
+          8.921229071905653,
+          14.890882936998302,
+          12.44964468207005,
+          8.060461947741814
+        ],
+        [
+          11.205251272175053,
+          11.554395272242814,
+          16.7823027287203,
+          13.640536941592329,
+          8.401574267059745,
+          11.882495339107203,
+          15.062395864756976,
+          9.36660482043349,
+          0.0,
+          11.064261411001729,
+          11.492198614087432,
+          8.065558551833233,
+          8.308676246687623,
+          17.190728493473383,
+          6.77240423827919,
+          9.537186476911183
+        ],
+        [
+          10.770476926902026,
+          11.411345307838578,
+          14.966778983681845,
+          12.75250753118626,
+          10.713371365968772,
+          9.954445532449162,
+          15.57126749047609,
+          10.386387802829713,
+          11.064261411001729,
+          0.0,
+          11.079310523453415,
+          9.885531157906014,
+          8.337129407701022,
+          15.864015397155619,
+          11.354256722223113,
+          7.645986652166843
+        ],
+        [
+          10.164810131220447,
+          9.272132149442706,
+          16.578643054172705,
+          11.66948428153258,
+          10.47679852398293,
+          8.032166880860517,
+          14.242978912678408,
+          11.274493429521819,
+          11.492198614087432,
+          11.079310523453415,
+          0.0,
+          9.832137399482935,
+          9.99408713064749,
+          13.960194163652929,
+          12.018831546065792,
+          8.77925601040115
+        ],
+        [
+          11.883469050310092,
+          11.886003737955498,
+          17.246960841154333,
+          12.322668422237223,
+          4.564460712044777,
+          10.279059916585489,
+          16.518936898569645,
+          8.703254365544064,
+          8.065558551833233,
+          9.885531157906014,
+          9.832137399482935,
+          0.0,
+          8.089637142074155,
+          16.173785058292676,
+          8.921388530981295,
+          7.056313925360565
+        ],
+        [
+          10.213076006216252,
+          11.578453108648278,
+          15.456732780391746,
+          12.139487998242549,
+          8.109050160794732,
+          8.672849965645858,
+          15.302211705149851,
+          8.921229071905653,
+          8.308676246687623,
+          8.337129407701022,
+          9.99408713064749,
+          8.089637142074155,
+          0.0,
+          14.353022444973696,
+          8.154773666793364,
+          8.711354235142998
+        ],
+        [
+          10.06924903031065,
+          11.573577135677969,
+          11.097343121736124,
+          9.844499821928606,
+          18.326479217572146,
+          16.57728417436457,
+          11.097611747157522,
+          14.890882936998302,
+          17.190728493473383,
+          15.864015397155619,
+          13.960194163652929,
+          16.173785058292676,
+          14.353022444973696,
+          0.0,
+          17.94362396363869,
+          15.682078856889243
+        ],
+        [
+          13.313957862637853,
+          14.147039617395835,
+          18.65191059029969,
+          15.273377835235587,
+          8.698227573017443,
+          10.554899834772,
+          17.395591657652954,
+          12.44964468207005,
+          6.77240423827919,
+          11.354256722223113,
+          12.018831546065792,
+          8.921388530981295,
+          8.154773666793364,
+          17.94362396363869,
+          0.0,
+          10.419133642790877
+        ],
+        [
+          10.626697755967964,
+          9.630429104598862,
+          15.44374863184051,
+          11.24125403914999,
+          7.881838014620137,
+          9.577322375840135,
+          16.284850194526395,
+          8.060461947741814,
+          9.537186476911183,
+          7.645986652166843,
+          8.77925601040115,
+          7.056313925360565,
+          8.711354235142998,
+          15.682078856889243,
+          10.419133642790877,
+          0.0
+        ]
+      ],
+      "watch": [
+        [
+          0.0,
+          5.2691225226728555,
+          9.800995266926206,
+          3.7974720344997035,
+          7.903810895660954,
+          6.052117357618798,
+          12.607796753892234,
+          4.601090282977795,
+          7.267659475355004,
+          8.249770620749528,
+          6.015610371221974,
+          9.316386272020377,
+          5.860673823119592,
+          6.761988894000101,
+          6.542480866583838,
+          7.463977321592837
+        ],
+        [
+          5.2691225226728555,
+          0.0,
+          10.710601689453286,
+          4.578454821157401,
+          7.2756720958817125,
+          7.328547950244945,
+          12.564521228763702,
+          4.631707095784286,
+          8.71883264858056,
+          9.261934103237973,
+          7.5320413657663465,
+          10.107582185774012,
+          6.934043084313632,
+          8.027496155858646,
+          8.171051428540377,
+          7.261640863275482
+        ],
+        [
+          9.800995266926206,
+          10.710601689453286,
+          0.0,
+          9.724295931823093,
+          11.453509824975164,
+          10.012827176974252,
+          14.004691173765247,
+          9.872739575988337,
+          11.574628188839094,
+          10.175018328088532,
+          12.402526389752037,
+          11.711181528229872,
+          9.958177528601881,
+          11.916302892230734,
+          10.937965231990168,
+          12.496822310689478
+        ],
+        [
+          3.7974720344997035,
+          4.578454821157401,
+          9.724295931823093,
+          0.0,
+          7.031907312818968,
+          4.688748166955235,
+          13.846265418652132,
+          3.629552270914032,
+          7.437499534573699,
+          7.408039297016313,
+          6.179017093813872,
+          8.222781028600174,
+          4.7190981007091315,
+          6.3046666877442465,
+          6.311569088679089,
+          6.069309817156587
+        ],
+        [
+          7.903810895660954,
+          7.2756720958817125,
+          11.453509824975164,
+          7.031907312818968,
+          0.0,
+          7.4039079518415,
+          16.481484009518468,
+          7.484615814815681,
+          7.176644351703417,
+          8.930032510275643,
+          9.447713140139049,
+          8.28670169290482,
+          6.95963507836388,
+          7.950970525932007,
+          7.963911099771205,
+          6.76117860959722
+        ],
+        [
+          6.052117357618798,
+          7.328547950244945,
+          10.012827176974252,
+          4.688748166955235,
+          7.4039079518415,
+          0.0,
+          15.238412832320495,
+          6.612294795791335,
+          6.937034966291388,
+          6.762867636843108,
+          6.792656528361452,
+          7.730901100492049,
+          3.578427303578139,
+          5.456007326998343,
+          6.673257974337271,
+          5.766079107583393
+        ],
+        [
+          12.607796753892234,
+          12.564521228763702,
+          14.004691173765247,
+          13.846265418652132,
+          16.481484009518468,
+          15.238412832320495,
+          0.0,
+          14.099356566683518,
+          16.291882802333777,
+          13.855884873646243,
+          15.653096808421127,
+          16.317755834297447,
+          15.264257523994297,
+          16.64752400706112,
+          15.847722284857312,
+          16.885704321184395
+        ],
+        [
+          4.601090282977795,
+          4.631707095784286,
+          9.872739575988337,
+          3.629552270914032,
+          7.484615814815681,
+          6.612294795791335,
+          14.099356566683518,
+          0.0,
+          8.197657246714249,
+          7.735595806235895,
+          6.200299542875524,
+          8.74932882463054,
+          5.707221065141372,
+          7.0894923497568225,
+          6.277861513578268,
+          7.677616402052519
+        ],
+        [
+          7.267659475355004,
+          8.71883264858056,
+          11.574628188839094,
+          7.437499534573699,
+          7.176644351703417,
+          6.937034966291388,
+          16.291882802333777,
+          8.197657246714249,
+          0.0,
+          8.812159721394929,
+          8.324594216466833,
+          7.666840006051914,
+          6.238005601576473,
+          6.551060086404869,
+          7.176946151910849,
+          6.4903289851210255
+        ],
+        [
+          8.249770620749528,
+          9.261934103237973,
+          10.175018328088532,
+          7.408039297016313,
+          8.930032510275643,
+          6.762867636843108,
+          13.855884873646243,
+          7.735595806235895,
+          8.812159721394929,
+          0.0,
+          8.693469996106261,
+          5.220391926885306,
+          6.004925443263344,
+          7.195268699840072,
+          5.750050548764998,
+          8.02460524558094
+        ],
+        [
+          6.015610371221974,
+          7.5320413657663465,
+          12.402526389752037,
+          6.179017093813872,
+          9.447713140139049,
+          6.792656528361452,
+          15.653096808421127,
+          6.200299542875524,
+          8.324594216466833,
+          8.693469996106261,
+          0.0,
+          9.124477143057737,
+          5.89528699272281,
+          4.305805400833916,
+          6.211842705616824,
+          6.884104255539994
+        ],
+        [
+          9.316386272020377,
+          10.107582185774012,
+          11.711181528229872,
+          8.222781028600174,
+          8.28670169290482,
+          7.730901100492049,
+          16.317755834297447,
+          8.74932882463054,
+          7.666840006051914,
+          5.220391926885306,
+          9.124477143057737,
+          0.0,
+          6.594071501372603,
+          7.295870423428672,
+          5.359338676269278,
+          7.648206092046157
+        ],
+        [
+          5.860673823119592,
+          6.934043084313632,
+          9.958177528601881,
+          4.7190981007091315,
+          6.95963507836388,
+          3.578427303578139,
+          15.264257523994297,
+          5.707221065141372,
+          6.238005601576473,
+          6.004925443263344,
+          5.89528699272281,
+          6.594071501372603,
+          0.0,
+          4.16042160452385,
+          5.01188576213842,
+          5.0361154159773065
+        ],
+        [
+          6.761988894000101,
+          8.027496155858646,
+          11.916302892230734,
+          6.3046666877442465,
+          7.950970525932007,
+          5.456007326998343,
+          16.64752400706112,
+          7.0894923497568225,
+          6.551060086404869,
+          7.195268699840072,
+          4.305805400833916,
+          7.295870423428672,
+          4.16042160452385,
+          0.0,
+          4.692652002116464,
+          3.815669733477709
+        ],
+        [
+          6.542480866583838,
+          8.171051428540377,
+          10.937965231990168,
+          6.311569088679089,
+          7.963911099771205,
+          6.673257974337271,
+          15.847722284857312,
+          6.277861513578268,
+          7.176946151910849,
+          5.750050548764998,
+          6.211842705616824,
+          5.359338676269278,
+          5.01188576213842,
+          4.692652002116464,
+          0.0,
+          6.3162283558158885
+        ],
+        [
+          7.463977321592837,
+          7.261640863275482,
+          12.496822310689478,
+          6.069309817156587,
+          6.76117860959722,
+          5.766079107583393,
+          16.885704321184395,
+          7.677616402052519,
+          6.4903289851210255,
+          8.02460524558094,
+          6.884104255539994,
+          7.648206092046157,
+          5.0361154159773065,
+          3.815669733477709,
+          6.3162283558158885,
+          0.0
+        ]
+      ]
+    },
+    "visits": [
+      {
+        "declared_marker": "P0",
+        "role": "A",
+        "round": "R1",
+        "slot": 1
+      },
+      {
+        "declared_marker": "P1",
+        "role": "C",
+        "round": "R1",
+        "slot": 2
+      },
+      {
+        "declared_marker": "P2",
+        "role": "B",
+        "round": "R1",
+        "slot": 3
+      },
+      {
+        "declared_marker": "P0",
+        "role": "A",
+        "round": "R1",
+        "slot": 4
+      },
+      {
+        "declared_marker": "P1",
+        "role": "C",
+        "round": "R1",
+        "slot": 5
+      },
+      {
+        "declared_marker": "P2",
+        "role": "B",
+        "round": "R1",
+        "slot": 6
+      },
+      {
+        "declared_marker": "P0",
+        "role": "A",
+        "round": "R1",
+        "slot": 7
+      },
+      {
+        "declared_marker": "P1",
+        "role": "C",
+        "round": "R1",
+        "slot": 8
+      },
+      {
+        "declared_marker": "P3",
+        "role": "A",
+        "round": "R2",
+        "slot": 1
+      },
+      {
+        "declared_marker": "P1",
+        "role": "C",
+        "round": "R2",
+        "slot": 2
+      },
+      {
+        "declared_marker": "P2",
+        "role": "B",
+        "round": "R2",
+        "slot": 3
+      },
+      {
+        "declared_marker": "P3",
+        "role": "A",
+        "round": "R2",
+        "slot": 4
+      },
+      {
+        "declared_marker": "P1",
+        "role": "C",
+        "round": "R2",
+        "slot": 5
+      },
+      {
+        "declared_marker": "P2",
+        "role": "B",
+        "round": "R2",
+        "slot": 6
+      },
+      {
+        "declared_marker": "P3",
+        "role": "A",
+        "round": "R2",
+        "slot": 7
+      },
+      {
+        "declared_marker": "P1",
+        "role": "C",
+        "round": "R2",
+        "slot": 8
+      }
+    ]
+  },
+  "scope": "declared marker geometry; nominal time alignment; offline forward-window diagnostic; not independent location validation"
+}
