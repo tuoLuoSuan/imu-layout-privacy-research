@@ -46,6 +46,58 @@
       "numerator": 65,
       "denominator": 71,
       "value": 0.9154929577464789
+    },
+    "main_display": {
+      "task": "T3 native eight-class",
+      "cabinet_open_close_merged": true,
+      "joint": {
+        "numerator": 67,
+        "denominator": 71,
+        "value": 0.9436619718309859
+      },
+      "phone": {
+        "numerator": 60,
+        "denominator": 71,
+        "value": 0.8450704225352113
+      },
+      "watch": {
+        "numerator": 62,
+        "denominator": 71,
+        "value": 0.8732394366197183
+      },
+      "macro_f1_joint": 0.9041666666666667,
+      "paired": [
+        {
+          "a": "joint",
+          "b": "phone",
+          "only_a": 7,
+          "only_b": 0,
+          "p_exact": 0.015625,
+          "p_holm": 0.046875
+        },
+        {
+          "a": "joint",
+          "b": "watch",
+          "only_a": 5,
+          "only_b": 0,
+          "p_exact": 0.0625,
+          "p_holm": 0.125
+        },
+        {
+          "a": "phone",
+          "b": "watch",
+          "only_a": 5,
+          "only_b": 7,
+          "p_exact": 0.7744140625,
+          "p_holm": 0.7744140625
+        }
+      ],
+      "historical_nine_class_result_retained": true,
+      "utility_20hz_joint": {
+        "numerator": 69,
+        "denominator": 71,
+        "value": 0.971830985915493
+      }
     }
   },
   "pilot": {

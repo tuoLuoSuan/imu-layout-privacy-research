@@ -3,6 +3,18 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 
 const d=JSON.parse(await readFile(new URL('../research/paper-20261102-summary.json',import.meta.url),'utf8'));
+
+test('main action display is the native eight-class T3 task with its own metric provenance',()=>{
+  const a=d.actions.main_display;
+  assert.equal(a.task,'T3 native eight-class');
+  assert.equal(a.cabinet_open_close_merged,true);
+  assert.deepEqual([a.joint.numerator,a.phone.numerator,a.watch.numerator],[67,60,62]);
+  assert.ok(Math.abs(a.macro_f1_joint-0.9041666666666667)<1e-12);
+  assert.equal(a.paired[0].only_a,7);
+  assert.equal(a.paired[0].only_b,0);
+  assert.equal(a.paired[0].p_holm,0.046875);
+  assert.equal(a.historical_nine_class_result_retained,true);
+});
 test('paper snapshot keeps synthetic identity and action confirmation as separate endpoints',()=>{
   assert.equal(d.identity.top1.denominator,2400);
   assert.equal(d.identity.representation_reference.numerator,492);
