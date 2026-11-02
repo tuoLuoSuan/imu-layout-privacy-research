@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="252pt" viewBox="0 0 518.4 252" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-02T13:09:42.403622</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib; frozen source data</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 252
+L 518.4 252
+L 518.4 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 17.83296 92.33
+L 152.20224 92.33
+L 152.20224 55.043333
+L 17.83296 55.043333
+z
+" clip-path="url(#p5f5370c682)" style="fill: #347c9b; fill-opacity: 0.078431; stroke: #347c9b; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 189.52704 92.33
+L 323.89632 92.33
+L 323.89632 55.043333
+L 189.52704 55.043333
+z
+" clip-path="url(#p5f5370c682)" style="fill: #347c9b; fill-opacity: 0.078431; stroke: #347c9b; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 361.22112 92.33
+L 495.5904 92.33
+L 495.5904 55.043333
+L 361.22112 55.043333
+z
+" clip-path="url(#p5f5370c682)" style="fill: #347c9b; fill-opacity: 0.078431; stroke: #347c9b; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 17.83296 153.743333
+L 152.20224 153.743333
+L 152.20224 116.456667
+L 17.83296 116.456667
+z
+" clip-path="url(#p5f5370c682)" style="fill: #8797a2; fill-opacity: 0.078431; stroke: #8797a2; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 189.52704 153.743333
+L 323.89632 153.743333
+L 323.89632 116.456667
+L 189.52704 116.456667
+z
+" clip-path="url(#p5f5370c682)" style="fill: #8797a2; fill-opacity: 0.078431; stroke: #8797a2; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 361.22112 153.743333
+L 495.5904 153.743333
+L 495.5904 116.456667
+L 361.22112 116.456667
+z
+" clip-path="url(#p5f5370c682)" style="fill: #8797a2; fill-opacity: 0.078431; stroke: #8797a2; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 17.83296 215.156667
+L 152.20224 215.156667
+L 152.20224 177.87
+L 17.83296 177.87
+z
+" clip-path="url(#p5f5370c682)" style="fill: #26877d; fill-opacity: 0.078431; stroke: #26877d; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 189.52704 215.156667
+L 323.89632 215.156667
+L 323.89632 177.87
+L 189.52704 177.87
+z
+" clip-path="url(#p5f5370c682)" style="fill: #26877d; fill-opacity: 0.078431; stroke: #26877d; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 361.22112 215.156667
+L 495.5904 215.156667
+L 495.5904 177.87
+L 361.22112 177.87
+z
+" clip-path="url(#p5f5370c682)" style="fill: #26877d; fill-opacity: 0.078431; stroke: #26877d; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="82.52928" y="23.24" transform="rotate(-0 82.52928 23.24)">观测输入</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="254.22336" y="23.24" transform="rotate(-0 254.22336 23.24)">处理</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="425.91744" y="23.24" transform="rotate(-0 425.91744 23.24)">评价属性</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="85.0176" y="76.741354" transform="rotate(-0 85.0176 76.741354)">手机 + 手表原始记录</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="256.71168" y="76.741354" transform="rotate(-0 256.71168 76.741354)">冻结窗特征与分类器</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="428.40576" y="76.741354" transform="rotate(-0 428.40576 76.741354)">八类动作 · 67/71</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 159.179985 73.686667
+Q 172.107839 73.686667 183.917659 73.686667
+" style="fill: none; stroke: #347c9b; stroke-linecap: round"/>
+    <path d="M 180.117659 71.786667
+L 183.917659 73.686667
+L 180.117659 75.586667
+" style="fill: none; stroke: #347c9b; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 330.874065 73.686667
+Q 343.801919 73.686667 355.611739 73.686667
+" style="fill: none; stroke: #347c9b; stroke-linecap: round"/>
+    <path d="M 351.811739 71.786667
+L 355.611739 73.686667
+L 351.811739 75.586667
+" style="fill: none; stroke: #347c9b; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="85.0176" y="138.154688" transform="rotate(-0 85.0176 138.154688)">雷达 / 两布局真实记录</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="256.71168" y="138.154688" transform="rotate(-0 256.71168 138.154688)">候选与访问片段分析</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="428.40576" y="138.154688" transform="rotate(-0 428.40576 138.154688)">回访关系 / 计划窗覆盖</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 159.179985 135.1
+Q 172.107839 135.1 183.917659 135.1
+" style="fill: none; stroke: #8797a2; stroke-linecap: round"/>
+    <path d="M 180.117659 133.2
+L 183.917659 135.1
+L 180.117659 137
+" style="fill: none; stroke: #8797a2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 330.874065 135.1
+Q 343.801919 135.1 355.611739 135.1
+" style="fill: none; stroke: #8797a2; stroke-linecap: round"/>
+    <path d="M 351.811739 133.2
+L 355.611739 135.1
+L 351.811739 137
+" style="fill: none; stroke: #8797a2; stroke-linecap: round"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="85.0176" y="199.568021" transform="rotate(-0 85.0176 199.568021)">给定访问坐标 + 指定噪声</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="256.71168" y="199.568021" transform="rotate(-0 256.71168 199.568021)">分组 → 距离谱 → 闭库匹配</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="428.40576" y="199.568021" transform="rotate(-0 428.40576 199.568021)">600身份 · top-1 52.46%</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 159.179985 196.513333
+Q 172.107839 196.513333 183.917659 196.513333
+" style="fill: none; stroke: #26877d; stroke-linecap: round"/>
+    <path d="M 180.117659 194.613333
+L 183.917659 196.513333
+L 180.117659 198.413333
+" style="fill: none; stroke: #26877d; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 330.874065 196.513333
+Q 343.801919 196.513333 355.611739 196.513333
+" style="fill: none; stroke: #26877d; stroke-linecap: round"/>
+    <path d="M 351.811739 194.613333
+L 355.611739 196.513333
+L 351.811739 198.413333
+" style="fill: none; stroke: #26877d; stroke-linecap: round"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.5px; font-family: 'SimSun', 'Times New Roman', 'Arial'; text-anchor: middle; fill: #202b34" x="259.2" y="239.283333" transform="rotate(-0 259.2 239.283333)">三行分别提供模块与条件测量；第三行坐标并非前两行端到端生成</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5f5370c682">
+   <rect x="10.368" y="10.08" width="497.664" height="236.88"/>
+  </clipPath>
+ </defs>
+</svg>

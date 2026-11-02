@@ -1,0 +1,430 @@
+[
+  {
+    "key": "missile",
+    "doi": "10.1109/tifs.2019.2944034",
+    "title": [
+      "MISSILE: A System of Mobile Inertial Sensor-Based Sensitive Indoor Location Eavesdropping"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "walk2map",
+    "doi": "10.1111/cgf.142640",
+    "title": [
+      "<i>Walk2Map</i>: Extracting Floor Plans from Indoor Walk Trajectories"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "ronin",
+    "doi": "10.1109/icra40945.2020.9196860",
+    "title": [
+      "RoNIN: Robust Neural Inertial Navigation in the Wild: Benchmark, Evaluations, &amp; New Methods"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "rf",
+    "doi": "10.1023/a:1010933404324",
+    "title": [
+      "Random Forests"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "hdbscan",
+    "doi": "10.21105/joss.00205",
+    "title": [
+      "hdbscan: Hierarchical density based clustering"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "ionet",
+    "doi": "10.1609/aaai.v32i1.12102",
+    "title": [
+      "IONet: Learning to Cure the Curse of Drift in Inertial Odometry"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "ridi",
+    "doi": "10.1007/978-3-030-01261-8_38",
+    "title": [
+      "RIDI: Robust IMU Double Integration"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "tlio",
+    "doi": "10.1109/lra.2020.3007421",
+    "title": [
+      "TLIO: Tight Learned Inertial Odometry"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "imunet",
+    "doi": "10.1109/tim.2024.3381717",
+    "title": [
+      "IMUNet: Efficient Regression Architecture for Inertial IMU Navigation and Positioning"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "indoorsurvey",
+    "doi": "10.1109/comst.2019.2911558",
+    "title": [
+      "A Survey of Indoor Localization Systems and Technologies"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "pinme",
+    "doi": "10.1109/tmscs.2017.2751462",
+    "title": [
+      "PinMe: Tracking a Smartphone User around the World"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "accomplice",
+    "doi": "10.1109/comsnets.2012.6151305",
+    "title": [
+      "ACComplice: Location inference using accelerometers on smartphones"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "accelprint",
+    "doi": "10.14722/ndss.2014.23059",
+    "title": [
+      "AccelPrint: Imperfections of Accelerometers Make Smartphones Trackable"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "sidechannelsurvey",
+    "doi": "10.1109/comst.2017.2779824",
+    "title": [
+      "Systematic Classification of Side-Channel Attacks: A Case Study for Mobile Devices"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "mobilesensing",
+    "doi": "10.1109/mcom.2010.5560598",
+    "title": [
+      "A survey of mobile phone sensing"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "unique",
+    "doi": "10.1038/srep01376",
+    "title": [
+      "Unique in the Crowd: The privacy bounds of human mobility"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "mobility",
+    "doi": "10.1038/nature06958",
+    "title": [
+      "Understanding individual human mobility patterns"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "predictability",
+    "doi": "10.1126/science.1177170",
+    "title": [
+      "Limits of Predictability in Human Mobility"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "locationprivacy",
+    "doi": "10.1007/s00779-008-0212-5",
+    "title": [
+      "A survey of computational location privacy"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "geoi",
+    "doi": "10.1145/2508859.2516735",
+    "title": [
+      "Geo-indistinguishability"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "quantpriv",
+    "doi": "10.1109/sp.2011.18",
+    "title": [
+      "Quantifying Location Privacy"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "sensitivity",
+    "doi": "10.1007/11681878_14",
+    "title": [
+      "Calibrating Noise to Sensitivity in Private Data Analysis"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "harreview",
+    "doi": "10.1109/surv.2012.110112.00192",
+    "title": [
+      "A Survey on Human Activity Recognition using Wearable Sensors"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "hartutorial",
+    "doi": "10.1145/2499621",
+    "title": [
+      "A tutorial on human activity recognition using body-worn inertial sensors"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "bao",
+    "doi": "10.1007/978-3-540-24646-6_1",
+    "title": [
+      "Activity Recognition from User-Annotated Acceleration Data"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "opportunity",
+    "doi": "10.1109/inss.2010.5573462",
+    "title": [
+      "Collecting complex activity datasets in highly rich networked sensor environments"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "pamap",
+    "doi": "10.1109/iswc.2012.13",
+    "title": [
+      "Introducing a New Benchmarked Dataset for Activity Monitoring"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "ucihar",
+    "doi": "10.1007/978-3-642-35395-6_30",
+    "title": [
+      "Human Activity Recognition on Smartphones Using a Multiclass Hardware-Friendly Support Vector Machine"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "deepconv",
+    "doi": "10.3390/s16010115",
+    "title": [
+      "Deep Convolutional and LSTM Recurrent Neural Networks for Multimodal Wearable Activity Recognition"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "wilson",
+    "doi": "10.1080/01621459.1927.10502953",
+    "title": [
+      "Probable Inference, the Law of Succession, and Statistical Inference"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "mcnemar",
+    "doi": "10.1007/bf02295996",
+    "title": [
+      "Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "bootstrap",
+    "doi": "10.1214/aos/1176344552",
+    "title": [
+      "Bootstrap Methods: Another Look at the Jackknife"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "bootstrapbook",
+    "doi": "10.1017/cbo9780511802843",
+    "title": [
+      "Bootstrap Methods and their Application"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "varma",
+    "doi": "10.1186/1471-2105-7-91",
+    "title": [
+      "Bias in error estimation when using cross-validation for model selection"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "varoq",
+    "doi": "10.1016/j.neuroimage.2017.06.061",
+    "title": [
+      "Cross-validation failure: Small sample sizes lead to large error bars"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "openset",
+    "doi": "10.1109/tpami.2012.256",
+    "title": [
+      "Toward Open Set Recognition"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "opensurvey",
+    "doi": "10.1109/tpami.2020.2981604",
+    "title": [
+      "Recent Advances in Open Set Recognition: A Survey"
+    ],
+    "source": "Crossref",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "oxiod",
+    "doi": "10.1109/jiot.2020.2966773",
+    "title": [
+      "Deep-Learning-Based Pedestrian Inertial Navigation: Methods, Data Set, and On-Device Inference"
+    ],
+    "source": "https://api.crossref.org/works?query.bibliographic=Deep-Learning-Based+Pedestrian+Inertial+Navigation%3A+Methods%2C+Data+Set%2C+and+On-Device+Inference&rows=3",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "mobileanon",
+    "doi": "10.1145/3302505.3310068",
+    "title": [
+      "Mobile sensor data anonymization"
+    ],
+    "source": "https://api.crossref.org/works?query.bibliographic=Mobile+Sensor+Data+Anonymization&rows=3",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "imutube",
+    "doi": "10.1145/3411841",
+    "title": [
+      "IMUTube"
+    ],
+    "source": "https://api.crossref.org/works?query.bibliographic=IMUTube%3A+Automatic+Extraction+of+Virtual+on-body+Accelerometry+from+Video+for+Human+Activity+Recognition&rows=3",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "tapprints",
+    "doi": "10.1145/2307636.2307666",
+    "title": [
+      "Tapprints"
+    ],
+    "source": "https://api.crossref.org/works?query.bibliographic=TapPrints%3A+Your+Finger+Taps+Have+Fingerprints&rows=3",
+    "reading_scope": "metadata and deposited abstract only",
+    "accepted": true
+  },
+  {
+    "key": "holm",
+    "source": "holm-openalex.json",
+    "reading_scope": "OpenAlex bibliographic record; publisher landing page returned access challenge",
+    "accepted": true
+  },
+  {
+    "key": "eqnio",
+    "source": "eqnio-arxiv.txt",
+    "reading_scope": "arXiv API bibliographic record and abstract; Consensus abstract cross-check",
+    "accepted": true
+  },
+  {
+    "key": "imu4d",
+    "source": "previous version-specific arXiv audit retained",
+    "reading_scope": "version-1 metadata and abstract",
+    "accepted": true
+  }
+]

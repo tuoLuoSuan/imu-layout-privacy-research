@@ -12851,6 +12851,17 @@
       "bundle_integrity": true,
       "sixteen_visit_features": true,
       "simulation_scores": false
+    },
+    "revision": {
+      "id": "paper-dialogue-and-evidence-002",
+      "references": 44,
+      "figures": 7,
+      "tables": 4,
+      "score_conditions_with_house_intervals": 27,
+      "interval_reaggregation_from_saved_scores": true,
+      "new_training": false,
+      "new_collection": false,
+      "station_diagnostic_interpretation": "8/16 and 7/16 exceed the 22.5% point reference; no significance or reliable positioning claim"
     }
   }
 }
