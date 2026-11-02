@@ -1,0 +1,13 @@
+{
+  "uniform_closed_catalog_chance": {
+    "numerator": 1,
+    "denominator": 600,
+    "value": 0.0016666666666666668
+  },
+  "full_representation_reference": {
+    "numerator": 492,
+    "denominator": 600,
+    "value": 0.82
+  },
+  "conditions": "Uniform identity prior. Full representation reference additionally assumes identical observation laws within each representation class and no distinguishing side information."
+}

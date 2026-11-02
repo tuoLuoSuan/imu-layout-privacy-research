@@ -3,6 +3,12 @@ import {readFile, lstat, realpath} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 const defaultRoot=path.dirname(fileURLToPath(import.meta.url));
+const paperFigureNames=['fig1-threat-model.svg','fig2-representation.svg','fig3-noise-and-budget.svg',
+  'fig4-grouping-and-rules.svg','fig5-action-and-utility.svg','fig6-real-pilot.svg','fig7-gate-sensitivity.svg'];
+const paperFigures=new Map(paperFigureNames.flatMap(name=>[
+  [`/paper/current/figures/${name}`,`current/figures/${name}`],
+  [`/research/paper-20261102-figures/${name}`,`current/figures/${name}`],
+]));
 // Reviewed browser assets only. Private examples stay local and outside Git.
 const assets=new Set([
   '/research/paper-20261102-figures/fig7-gate-sensitivity.svg',
@@ -127,7 +133,7 @@ const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8'
   '.json':'application/json; charset=utf-8','.png':'image/png',
   '.svg':'image/svg+xml','.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document','.pdf':'application/pdf','.md':'text/plain; charset=utf-8'};
 
-export function createShowcaseServer({root=defaultRoot}={}) {
+export function createShowcaseServer({root=defaultRoot,paperRoot=path.resolve(root,'../paper')}={}) {
   return http.createServer(async(req,res)=>{
     if(!['GET','HEAD'].includes(req.method)) {
       res.writeHead(405,{'Allow':'GET, HEAD'});res.end();return;
@@ -135,10 +141,13 @@ export function createShowcaseServer({root=defaultRoot}={}) {
     try {
       let name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
       if(name==='/')name='/index.html';
-      if(!assets.has(name))throw Error('unreviewed asset');
-      const base=await realpath(root);
+      const figure=paperFigures.get(name);
+      if(!figure&&!assets.has(name))throw Error('unreviewed asset');
+      const sourceRoot=figure?paperRoot:root;
+      if((await lstat(sourceRoot)).isSymbolicLink())throw Error('linked asset root');
+      const base=await realpath(sourceRoot);
       let target=base;
-      for(const part of name.slice(1).split('/')) {
+      for(const part of (figure??name.slice(1)).split('/')) {
         target=path.join(target,part);
         if((await lstat(target)).isSymbolicLink())throw Error('linked asset');
       }

@@ -7,6 +7,9 @@ import {createShowcaseServer} from '../server.mjs';
 
 async function fixture(t) {
   const root=await mkdtemp(path.join(tmpdir(),'imu-showcase-'));
+  const paperRoot=path.join(root,'reviewed-paper');
+  await mkdir(path.join(paperRoot,'current','figures'),{recursive:true});
+  await writeFile(path.join(paperRoot,'current','figures','fig1-threat-model.svg'),'<svg>reviewed figure</svg>');
   for(const name of ['defence.mjs','research/defence-evidence.json','simulation.mjs','simulation.css','research/simulation-index.json','research/simulation-dorm.json','research/simulation-dorm-1.json','research/simulation-dorm-2.json',
     'index.html','style.css','app.mjs','data.mjs','data/first-session.json',
     'data/phone-config-smoke.json','assets/recorder-0.2.2-records.png',
@@ -18,11 +21,33 @@ async function fixture(t) {
     await mkdir(path.dirname(path.join(root,name)),{recursive:true});
     await writeFile(path.join(root,name),name);
   }
-  const server=createShowcaseServer({root});
+  const server=createShowcaseServer({root,paperRoot});
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
   t.after(async()=>{await new Promise(resolve=>server.close(resolve));await rm(root,{recursive:true,force:true});});
-  return {root,url:`http://127.0.0.1:${server.address().port}`};
+  return {root,paperRoot,url:`http://127.0.0.1:${server.address().port}`};
 }
+
+test('paper figures have one file source and preserve the old reviewed URL',async t=>{
+  const {url}=await fixture(t);
+  for(const name of ['/paper/current/figures/fig1-threat-model.svg','/research/paper-20261102-figures/fig1-threat-model.svg']) {
+    const r=await fetch(url+name);assert.equal(r.status,200,name);
+    assert.equal(r.headers.get('content-type'),'image/svg+xml');
+    assert.equal(await r.text(),'<svg>reviewed figure</svg>');
+  }
+  for(const name of ['/paper/current/paper.md','/paper/current/source-data/pilot-display.json','/paper/current/figures/unknown.svg','/paper/current/figures/..%2Fpaper.md']) {
+    assert.equal((await fetch(url+name)).status,404,name);
+  }
+});
+
+test('paper figure aliases reject linked source directories',async t=>{
+  const {paperRoot,url}=await fixture(t);
+  const outside=await mkdtemp(path.join(tmpdir(),'imu-figure-outside-'));
+  t.after(()=>rm(outside,{recursive:true,force:true}));
+  await writeFile(path.join(outside,'fig1-threat-model.svg'),'outside content');
+  await rm(path.join(paperRoot,'current','figures'),{recursive:true});
+  await symlink(outside,path.join(paperRoot,'current','figures'),process.platform==='win32'?'junction':'dir');
+  for(const route of ['/paper/current/figures/fig1-threat-model.svg','/research/paper-20261102-figures/fig1-threat-model.svg'])assert.equal((await fetch(url+route)).status,404);
+});
 
 test('serves required page, private previews and exact Three dependencies with MIME',async t=>{
   const {url}=await fixture(t);

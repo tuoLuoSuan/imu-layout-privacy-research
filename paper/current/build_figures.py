@@ -24,7 +24,7 @@ def require_matplotlib_panel_alignment(fig, **kwargs):
                 assert max(vals)-min(vals)<=1.5,(group,key)
     Path(kwargs['json_out']).write_text(json.dumps({'comparable_groups_checked':True,'tolerance_pt':1.5}),encoding='utf-8')
 
-parser=argparse.ArgumentParser();parser.add_argument('--language',choices=['zh','en'],default='zh');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--language',choices=['zh','en'],default='zh');parser.add_argument('--only',nargs='*',help='Optional figure stems to export');args=parser.parse_args()
 EN=args.language=='en'
 OUT=HERE/('figures-en' if EN else 'figures');OUT.mkdir(exist_ok=True)
 def T(zh,en):return en if EN else zh
@@ -34,7 +34,7 @@ ci={r['condition']:r for r in read('score-intervals.json')['rows']}
 station=read('station-permutation.json')
 INK='#172D3A';TEAL='#087F83';BLUE='#467EAC';AMBER='#D7854F';GRAY='#7A8C9A';PALE='#EDF1F4';GRID='#D9E2E8'
 if Path('C:/Windows/Fonts/simsun.ttc').exists():font_manager.fontManager.addfont('C:/Windows/Fonts/simsun.ttc')
-plt.rcParams.update({'font.family':['Arial','SimSun'] if EN else ['SimSun','Arial'],'font.size':9,
+plt.rcParams.update({'font.family':['Arial','SimSun'],'font.size':9,
  'axes.labelsize':8.5,'xtick.labelsize':8,'ytick.labelsize':8,'legend.fontsize':7.8,
  'axes.spines.top':False,'axes.spines.right':False,'axes.linewidth':.7,'axes.unicode_minus':False,
  'text.color':INK,'axes.labelcolor':INK,'xtick.color':INK,'ytick.color':INK,
@@ -45,11 +45,13 @@ def getci(k):
  r=ci[k];v=r['rate']['value']*100;lo,hi=np.array(r['house_bootstrap95'])*100
  return v,np.array([[v-lo],[hi-v]])
 def finish(fig,name,axes,ids,rows=(),cols=(),why=''):
+ if args.only and name not in args.only:plt.close(fig);return
  fig.canvas.draw()
  require_matplotlib_panel_alignment(fig,axes=axes,panel_ids=ids,row_groups=list(rows),column_groups=list(cols),json_out=str(OUT/(name+'.alignment.json')),overlay_svg=str(OUT/(name+'.alignment.svg')),tolerance_pt=1.5,gutter_tolerance_pt=1.5,strict=True)
- for suffix in ['pdf','svg','png','tiff']:
-  kw={'pil_kwargs':{'compression':'tiff_lzw'}} if suffix=='tiff' else {}
-  fig.savefig(OUT/(name+'.'+suffix),dpi=600,**kw)
+ fig.savefig(OUT/(name+'.pdf'),dpi=600)
+ fig.savefig(OUT/(name+'.svg'),dpi=600)
+ fig.savefig(OUT/(name+'.png'),dpi=600)
+ fig.savefig(OUT/(name+'.tiff'),dpi=600,pil_kwargs={'compression':'tiff_lzw'})
  (OUT/(name+'.design.json')).write_bytes((json.dumps(dict(language=args.language,comparable_rows=rows,comparable_columns=cols,exception_reason=why,scoring_recomputed=False),ensure_ascii=False,indent=2)+'\n').encode())
  plt.close(fig)
 
@@ -70,7 +72,13 @@ for x,y,w,h,col in [(.073,.603,.022,.052,BLUE),(.174,.616,.016,.035,AMBER)]:
 ax.text(.073,.48,'IMU',ha='center',fontsize=7,c=BLUE);ax.text(.174,.565,'IMU',ha='center',fontsize=6.3,c=AMBER)
 ax.text(.073,.367,T('手机','Phone'),ha='center',fontsize=8.3);ax.text(.176,.367,T('手表','Watch'),ha='center',fontsize=8.3)
 ax.text(.025,.255,T('八类活动','Eight-class activity'),fontsize=8.2,c=BLUE);ax.text(.235,.255,'67/71',ha='right',fontsize=10,fontweight='bold',c=BLUE)
-ax.text(.025,.175,T('雷达访问片段','Radar episodes'),fontsize=8.2,c=GRAY);ax.text(.235,.175,'8',ha='right',fontsize=10,fontweight='bold',c=GRAY)
+# Radar is a separate measured module, not a phone/watch input channel.
+ax.add_patch(Rectangle((.037,.147),.043,.032,fc='#BDC9D1',ec=GRAY,lw=.6))
+ax.add_patch(Ellipse((.0585,.178),.043,.014,fc='#334F5C',ec=INK,lw=.55))
+ax.add_patch(Ellipse((.0585,.181),.027,.007,fc='#8FC0BE',ec='none'))
+ax.plot([.0585,.0585],[.147,.126],c=GRAY,lw=.7)
+ax.plot([.045,.072],[.126,.126],c=GRAY,lw=.7)
+ax.text(.098,.152,T('雷达 · 8片段','Radar · 8 episodes'),fontsize=8.0,c=GRAY)
 v=ex['noise_example']['views']['brownian'];pts=np.array(v['observations']);cent=np.array(v['group_representatives']);q=(pts-pts.min(axis=0))/np.ptp(pts,axis=0)
 ax.plot(.33+q[:,0]*.115,.47+q[:,1]*.27,c=BLUE,lw=.4,alpha=.35);ax.scatter(.33+q[:,0]*.115,.47+q[:,1]*.27,s=6,c=BLUE,edgecolor='white',lw=.2)
 ax.text(.39,.82,T('访问坐标','Visit coordinates'),ha='center',fontsize=8.4);ax.text(.39,.375,'32 '+T('次访问','visits'),ha='center',fontsize=7.8)
@@ -83,13 +91,13 @@ for x0,label in [(.457,T('分组','Group')),(.636,T('距离','Distances')),(.797
  ax.annotate('',xy=(x0+.058,.60),xytext=(x0,.60),arrowprops=dict(arrowstyle='->',lw=.95,color=INK));ax.text(x0+.029,.68,label,ha='center',fontsize=7.8)
 for shift in [.014,.007,0]:roundbox(.877+shift,.465+shift,.085,.26,.004,'white','#A2B8C2',.5)
 for yy,txt in zip([.68,.63,.58,.505],['1','2','…','600']):ax.text(.918,yy,txt,ha='center',fontsize=7.7)
-ax.text(.919,.82,T('候选目录','Catalog'),ha='center',fontsize=8.4);ax.text(.92,.395,'52.46%',ha='center',fontsize=11,fontweight='bold',c=TEAL);ax.text(.92,.34,T('正确分组参照','True-grouping reference'),ha='center',fontsize=7)
+ax.text(.919,.82,T('候选目录','Catalog'),ha='center',fontsize=8.4)
 ax.text(.315,.21,T('可见','Visible'),c=TEAL,fontweight='bold',fontsize=8.3);ax.text(.425,.21,T('二维坐标 · 顺序 · 600候选','2D coordinates · order · 600 candidates'),fontsize=8.2)
 ax.text(.315,.105,T('自动臂未知','Auto-arm lacks'),c=GRAY,fontweight='bold',fontsize=8.3);ax.text(.45,.105,T('原点 · 绝对朝向 · 真实分区','Origin · absolute heading · true partition'),fontsize=8.2)
-finish(fig,'fig1-threat-model',[ax],['scope'],why='Single conceptual canvas, with separately scoped measured and coordinate-given lanes. Device silhouettes are original vector schematics; no human icon or invented sensor waveforms. Frozen coordinates generate point, geometry and spectrum glyphs. The 52.46% readout is the privileged grouping reference, fully conditioned in the caption.')
+finish(fig,'fig1-threat-model',[ax],['scope'],why='Single conceptual canvas, with separately scoped measured and coordinate-given lanes. Phone, watch and radar silhouettes are original vector schematics. Frozen coordinates generate point, geometry and spectrum glyphs. Numerical identity outcomes are reported in the quantitative figures rather than a suspended schematic readout.')
 
 # Figure 2: aliases are an instance; the full distribution carries the scale.
-fig=plt.figure(figsize=(7.2,2.9));a=fig.add_axes([.06,.17,.23,.72]);b=fig.add_axes([.35,.17,.23,.72]);c=fig.add_axes([.73,.22,.24,.65])
+fig=plt.figure(figsize=(7.2,2.9));a=fig.add_axes([.065,.17,.23,.72]);b=fig.add_axes([.375,.17,.23,.72]);c=fig.add_axes([.685,.17,.23,.72])
 for aa,h,s in zip([a,b],ex['aliases'],['a','b']):
  for room in h['rooms']:
   x0,y0,x1,y1=room['rect'];aa.add_patch(Rectangle((x0,y0),x1-x0,y1-y0,fill=False,ec=GRAY,lw=.8))
@@ -101,10 +109,11 @@ a.set_ylabel('y (m)')
 hist=read('alias-size-histogram.json')['classes'];freq={r['size']:r['classes'] for r in hist}
 for k in range(1,10):
  n=freq.get(k,0)
- if n:c.bar(k,n,color=GRAY if k==1 else TEAL,width=.62);c.text(k,n*1.22,str(n),ha='center',fontsize=8)
- else:c.text(k,1.12,'0',ha='center',fontsize=7.5,color=GRAY)
-c.set_yscale('log');c.set(xlim=(.4,9.6),ylim=(.8,900),xticks=[1,3,5,7,9],yticks=[1,10,100],yticklabels=['1','10','100'],xlabel=T('类内身份数','Identities per class'),ylabel=T('等价类数（对数）','Classes (log scale)'));letter(c,'c',x=-.35)
-finish(fig,'fig2-representation',[a,b,c],['a','b','c'],rows=[['a','b']],why='a/b share physical scale. c is a log-count distribution; empty classes 7/8 are labelled 0, not plotted on a log scale.')
+ if n:c.scatter(k,n,color=GRAY if k==1 else TEAL,s=24,zorder=3);c.text(k,n*1.30,str(n),ha='center',fontsize=8)
+ else:c.text(k,.44,'0',ha='center',fontsize=7.5,color=GRAY)
+c.set_yscale('log');c.set(xlim=(.4,9.6),ylim=(.35,1100),xticks=[1,3,5,7,9],yticks=[1,10,100],yticklabels=['1','10','100'],xlabel=T('类内身份数','Identities per class'),ylabel=T('等价类数（对数）','Classes (log scale)'));letter(c,'c',x=-.22)
+fig.canvas.draw();box=a.get_position();c.set_position([.685,box.y0,.23,box.height])
+finish(fig,'fig2-representation',[a,b,c],['a','b','c'],rows=[['a','b','c']],why='a/b share physical scale. c uses log-count point positions, not bar lengths; empty sizes 7/8 are annotated 0 below the positive-count region. All three final plot areas have the same width and height.')
 
 # Figure 3: compact example/control/benchmark chain; bands expose uncertainty.
 fig=plt.figure(figsize=(7.2,4.45));mini=[]
@@ -132,21 +141,26 @@ d.set(xlim=(0,75),ylim=(-.6,2.6),xticks=[0,25,50,75],yticks=[0,1,2],yticklabels=
 finish(fig,'fig3-noise-and-budget',mini+[b,c,d],['a1','a2','a3','a4','b','c','d'],rows=[['a1','a2'],['a3','a4'],['c','d']],cols=[['a1','a3'],['a2','a4']],why='a1-a4 are equal-scale illustration insets; b/c/d use different variables. c/d have different spans deliberately: c needs four conditions, d needs three long row labels. Only bottom/top edges and heights are comparable; unequal widths are intentional.')
 
 # Figure 4: paired rule outcomes; qualification and fidelity remain separate.
-fig=plt.figure(figsize=(7.2,3.65));a=fig.add_axes([.16,.16,.41,.74]);b=fig.add_axes([.75,.72,.22,.18]);c=fig.add_axes([.75,.16,.22,.38])
+fig=plt.figure(figsize=(7.2,3.65));a=fig.add_axes([.16,.16,.41,.74]);b=fig.add_axes([.75,.72,.22,.18]);c=fig.add_axes([.75,.16,.095,.38]);d=fig.add_axes([.885,.16,.095,.38])
 names=[T('正确分组','True grouping'),T('完整连接','Complete'),T('固定密度','Fixed density'),T('单连接','Single'),T('谱配置','Spectral'),T('HDBSCAN','HDBSCAN')]
 for i,row in enumerate(sim['methods']):
  y=5-i;key=['oracle','complete','density','single','spectral','hdbscan'][i];h=row['hard']['value']*100;s=row['soft']['value']*100
  a.plot([h,s],[y+.09,y-.09],c='#B9C7CE',lw=1.1)
  for v,rule,col,marker,dy in [(h,'hard',TEAL,'o',.09),(s,'soft',AMBER,'s',-.09)]:a.errorbar(v,y+dy,xerr=getci(f'group/{key}/{rule}')[1],fmt=marker,ms=4.2,c=col,capsize=2,lw=1,label=(T('原规则','Original') if rule=='hard' else T('Ward软规则','Ward-soft')) if i==0 else None)
-a.set(xlim=(-1,65),ylim=(-.6,5.7),xticks=[0,20,40,60],yticks=range(6),yticklabels=names[::-1],xlabel=T('固定分母身份top-1（%）','Fixed-denominator identity top-1 (%)'));lightgrid(a,'x');a.legend(loc='upper center',bbox_to_anchor=(.5,1.11),ncol=2,frameon=False,fontsize=8,handlelength=1);letter(a,'a',x=-.28)
+a.set(xlim=(-1,65),ylim=(-.6,5.7),xticks=[0,20,40,60],yticks=range(6),yticklabels=names[::-1],xlabel=T('固定分母身份top-1（%）','Fixed-denominator identity top-1 (%)'));a.legend(loc='upper center',bbox_to_anchor=(.5,1.11),ncol=2,frameon=False,fontsize=8,handlelength=1);letter(a,'a',x=-.28)
 for yy,v,txt in [(2,100,'2400/2400'),(1,1107/24,'1107/2400'),(0,494/24,'494/2400')]:
  b.barh(yy,v,height=.34,color=GRAY);b.text(v+3,yy,txt,va='center',fontsize=7.3)
 b.set(xlim=(0,170),ylim=(-.6,2.6),xticks=[0,50,100],yticks=[0,1,2],yticklabels=[T('密度','Density'),T('完整','Complete'),T('正确','True')],xlabel=T('真值资格（%）','True-candidate eligibility (%)'));letter(b,'b',x=-.4)
 for i,row in enumerate(sim['methods']):
- x=row['pair_recall']['value']*100;z=row['pair_precision']['value']*100;y=5-i
- c.plot([x,z],[y+.09,y-.09],c='#BAC8D1',lw=.8);c.scatter(x,y+.09,c=BLUE,marker='o',s=17,label=T('召回','Recall') if i==0 else None);c.scatter(z,y-.09,facecolor='white',edgecolor=GRAY,marker='s',s=17,lw=.8,label=T('精度','Precision') if i==0 else None)
-c.set(xlim=(0,105),ylim=(-.6,5.7),xticks=[0,50,100],yticks=range(6),yticklabels=names[::-1],xlabel=T('同地配对（%）','Same-place pairs (%)'));c.tick_params(axis='y',labelsize=7.3);c.legend(loc='upper center',bbox_to_anchor=(.45,1.22),ncol=2,frameon=False,fontsize=7.2,handlelength=.7,columnspacing=.7);letter(c,'c',x=-.4)
-finish(fig,'fig4-grouping-and-rules',[a,b,c],['a','b','c'],cols=[['b','c']],why='a is the paired outcome hero. b and c share column edges but deliberately have unequal heights and both retain their full zero origin. c directly names every row and shows recall/precision with distinct filled/hollow markers.')
+ y=5-i;c.scatter(row['pair_recall']['value']*100,y,c=BLUE,marker='o',s=17);d.scatter(row['pair_precision']['value']*100,y,facecolor='white',edgecolor=GRAY,marker='s',s=17,lw=.8)
+for aa,label,letter_ in [(c,T('召回（%）','Recall (%)'),'c'),(d,T('精度（%）','Precision (%)'),'d')]:
+ aa.set(xlim=(-3,105),ylim=(-.6,5.7),xticks=[0,100],yticks=range(6),yticklabels=names[::-1] if aa is c else ['']*6,xlabel=label);aa.tick_params(axis='both',labelsize=7.2);aa.xaxis.label.set_size(7.5);letter(aa,letter_,x=-.35)
+zoom=fig.add_axes([.205,.76,.15,.10]);zoom.spines[['top','right','left']].set_visible(False)
+for rule,col,marker,y in [('hard',TEAL,'o',.16),('soft',AMBER,'s',-.16)]:
+ val,err=getci(f'group/spectral/{rule}');zoom.errorbar(val,y,xerr=err,fmt=marker,ms=2.5,c=col,capsize=2,lw=1,zorder=3)
+zoom.set(xlim=(0,3),ylim=(-.45,.45),xticks=[0,1,2,3],yticks=[]);zoom.tick_params(axis='x',labelsize=6.5,pad=1,length=2)
+zoom.text(.5,1.18,T('谱配置局部 / %','Spectral detail / %'),ha='center',transform=zoom.transAxes,fontsize=7)
+finish(fig,'fig4-grouping-and-rules',[a,b,c,d],['a','b','c','d'],rows=[['c','d']],why='a is the paired outcome hero, with all twelve house-bootstrap intervals. Its spectral-only inset makes the small intervals visible. b is eligibility; c/d are separate recall/precision axes with equal dimensions and no connecting line between distinct quantities. The inset is a magnified view of existing values, not a new analysis.')
 
 # Figure 5: one confusion hero, segment heterogeneity, and a true delta axis.
 fig=plt.figure(figsize=(7.2,4.0));a=fig.add_axes([.145,.30,.43,.64]);b=fig.add_axes([.75,.61,.21,.30]);c=fig.add_axes([.75,.20,.21,.22])
@@ -162,8 +176,11 @@ a.set_xticks(np.arange(9)-.5,minor=True);a.set_yticks(np.arange(9)-.5,minor=True
 cbax=fig.add_axes([.145,.115,.43,.020]);cb=fig.colorbar(im,cax=cbax,orientation='horizontal',ticks=[0,.5,1]);cb.ax.set_xticklabels(['0','50','100']);cb.set_label(T('行归一化比例（%）；格内为事件数','Row-normalized proportion (%); cell labels are counts'),fontsize=7.8,labelpad=1)
 parts={r['part']:r['accuracy'] for r in act['arms']['joint']['per_part']}
 for i,part in enumerate(['T-G1a','T-G1b','T-G2a','T-G2b','T-Ba','T-Bb']):
- r=parts[part];y=5-i;v=r['value']*100;b.scatter(v,y,s=24,c=AMBER if '-B' in part else BLUE);b.text(3,y,f"{r['numerator']}/{r['denominator']}",va='center',fontsize=7.7)
+ r=parts[part];y=5-i;v=r['value']*100;b.scatter(v,y,s=24,c=AMBER if '-B' in part else BLUE);b.text(109,y,f"{r['numerator']}/{r['denominator']}",va='center',fontsize=7.2,clip_on=False)
+b.set_position([.75,.61,.18,.30])
 b.set(xlim=(0,105),ylim=(-.6,5.6),xticks=[0,50,100],yticks=range(6),yticklabels=['Bb','Ba','G2b','G2a','G1b','G1a'],xlabel=T('分段准确率（%）','Per-session accuracy (%)'));letter(b,'b',x=-.30)
+b.scatter([],[],s=16,c=BLUE,label=T('地面 G','Floor G'));b.scatter([],[],s=16,c=AMBER,label=T('床上 B','Bed B'));b.legend(loc='lower center',bbox_to_anchor=(.62,1.03),frameon=False,ncol=2,fontsize=7.0,columnspacing=.6,handlelength=.5)
+c.set_position([.75,.20,.18,.22])
 for i,(arm,col) in enumerate([('phone',BLUE),('watch',GRAY),('joint',TEAL)]):
  r=act['utility'][arm];v=100*(r['hz20']['value']-r['raw']['value']);y=2-i;c.plot([0,v],[y,y],c=col,lw=1.6);c.scatter(v,y,s=25,c=col);c.text(v+.18,y,f'{v:+.1f}',va='center',fontsize=8)
 c.axvline(0,c=GRAY,lw=.65,ls='--');c.set(xlim=(-.4,4.2),ylim=(-.6,2.6),xticks=[0,1,2,3,4],yticks=[0,1,2],yticklabels=[T('联合','Joint'),T('手表','Watch'),T('手机','Phone')],xlabel=T('20Hz处理变化（百分点）','Change after 20 Hz (pp)'));letter(c,'c',x=-.30)
@@ -205,13 +222,19 @@ for i,row in enumerate(station['rows']):
 e.set(xlim=(-.5,16),ylim=(-.5,2.8),xticks=[0,4,8,12,16],yticks=[0,1,2],yticklabels=[T('联合','Joint'),T('手表','Watch'),T('手机','Phone')],xlabel=T('声明标记命中数 / 16','Declared-marker hits / 16'));letter(e,'e',x=-.23)
 finish(fig,'fig6-real-pilot',[a,b,c,d,e],['a','b','c','d','e'],rows=[['d','e']],why='a has equal metric scale; its six-edge table and d colorbar are subordinate insets. b is probability, c the complete event stream, d/e share row edges, measuring distances and a fixed-count permutation reference respectively. No shared data scale is implied between these modalities.')
 
-# Figure 7: only the threshold changes the rounded coverage readout.
-sens=read('formal-gate-sensitivity.json');fig=plt.figure(figsize=(7.2,2.15));a=fig.add_axes([.12,.25,.79,.65]);thresholds=[.3,.4,.5,.6,.7]
+# Figure 7: coverage stability and event-count variation are different endpoints.
+sens=read('formal-gate-sensitivity.json');fig=plt.figure(figsize=(7.2,2.55));a=fig.add_axes([.11,.24,.35,.66]);b=fig.add_axes([.60,.24,.35,.66]);thresholds=[.3,.4,.5,.6,.7]
 for rid,col,marker in [('R1',TEAL,'o'),('R2',AMBER,'s')]:
- vals=[]
+ vals=[];low=[];high=[];chosen=[]
  for th in thresholds:
   same=[r[rid]['mean_frac'] for r in sens if r['thr']==th];assert len(same)==6 and len(set(same))==1;vals.append(same[0]*100)
- a.plot(thresholds,vals,c=col,marker=marker,lw=1.4,ms=4);a.scatter(.3,vals[0],s=65,facecolor='white',edgecolor=col,lw=1.5,zorder=5,marker=marker);a.text(.73,vals[-1]+(-1.2 if rid=='R1' else .35),rid,va='center',c=col,fontsize=9)
-a.set(xlim=(.285,.775),ylim=(80,100),xticks=thresholds,yticks=[80,85,90,95,100],xlabel=T('行走概率阈值','Walk-probability threshold'),ylabel=T('平均计划窗覆盖（%）','Mean coverage (%)'));lightgrid(a)
-finish(fig,'fig7-gate-sensitivity',[a],['sensitivity'],why='Each line represents six exactly coincident rounded-coverage readouts per threshold; full 30-setting source data retained. Restricted 80-100% y-range is declared in the caption. Hollow points mark the frozen threshold, not the maximum.')
-print(json.dumps(dict(figures=7,language=args.language,new_scoring=False,new_model_fitting=False),ensure_ascii=False))
+  counts=[r[rid]['events_total'] for r in sens if r['thr']==th];low.append(min(counts));high.append(max(counts));chosen.append(next(r[rid]['events_total'] for r in sens if r['thr']==th and r['min_dwell']==4 and r['merge_gap']==0))
+ a.plot(thresholds,vals,c=col,marker=marker,lw=1.4,ms=4);a.scatter(.3,vals[0],s=60,facecolor='white',edgecolor=col,lw=1.3,zorder=5,marker=marker);a.text(.73,vals[-1]+(-1.2 if rid=='R1' else .35),rid,va='center',c=col,fontsize=8)
+ offset=-.006 if rid=='R1' else .006;x=np.array(thresholds)+offset
+ b.errorbar(x,chosen,yerr=[np.array(chosen)-low,np.array(high)-chosen],fmt=marker,c=col,lw=1.2,ms=3.5,capsize=3,label=rid)
+ b.plot(x,chosen,c=col,lw=.7,ls='-' if rid=='R1' else '--',drawstyle='steps-mid')
+a.set(xlim=(.275,.79),ylim=(80,100),xticks=thresholds,yticks=[80,85,90,95,100],xlabel=T('行走概率阈值','Walk-probability threshold'),ylabel=T('平均计划窗覆盖（%）','Mean coverage (%)'));lightgrid(a);letter(a,'a',x=-.20)
+b.set(xlim=(.275,.79),ylim=(0,12),xticks=thresholds,yticks=[0,4,8,10,12],xlabel=T('行走概率阈值','Walk-probability threshold'),ylabel=T('全段自动事件数','Full-record event count'));lightgrid(b);letter(b,'b',x=-.20)
+b.legend(loc='lower right',frameon=False,ncol=2,fontsize=7.8,handlelength=.9)
+finish(fig,'fig7-gate-sensitivity',[a,b],['a','b'],rows=[['a','b']],why='a retains all coincident coverage readouts. b shows the min-max count range of six settings per threshold and the 4-second/zero-gap slice as points; ranges are setting variation, not confidence intervals. Horizontal offsets only prevent overlap. Full 30-setting data retained; a has a declared 80-100% range, b starts at zero.')
+print(json.dumps({'figures':7,'language':args.language,'new_scoring':False,'new_model_fitting':False},ensure_ascii=False))
