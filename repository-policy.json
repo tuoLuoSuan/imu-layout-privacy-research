@@ -762,6 +762,7 @@
     "paper/current/README.md",
     "paper/current/audit_station_inference.py",
     "paper/current/build_figures.py",
+    "paper/current/figure-contract.md",
     "paper/current/figures-en/fig1-threat-model.svg",
     "paper/current/figures-en/fig2-representation.svg",
     "paper/current/figures-en/fig3-noise-and-budget.svg",

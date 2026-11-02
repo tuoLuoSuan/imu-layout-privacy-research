@@ -1,6 +1,6 @@
-# Manuscript v4: figures and reproducible source data
+# Manuscript v5: figures and reproducible source data
 
-Current manuscript: [paper.md](paper.md). This version fixes decimal typography, exposes the spectral intervals, separates pair recall/precision, and adds event-count sensitivity to seven figure plates, an explicit threat model, separate limitations and conclusions, and 44 verified bibliographic records. Chinese and English vector figures carry identical data.
+Current manuscript: [paper.md](paper.md). This version redraws all seven plates at their exact 160 mm manuscript width, using a structure-led spatial overview, a full-view locator and visited-region detail, semantic color roles, and complete statistical source data, an explicit threat model, separate limitations and conclusions, and 44 verified bibliographic records. Chinese and English vector figures carry identical data.
 
 The main action display is the native T3 eight-class task, 67/71 (94.37%). Historical nine-class confirmation and same-T second-look evaluations remain separate. The 52.46% identity result assumes supplied coordinates, true grouping, a specified Brownian process and a closed catalog. It is not a measured real-room ranking.
 
@@ -14,6 +14,6 @@ Install NumPy and Matplotlib in your own Python environment. Run `python build_f
 
 Repository: https://github.com/tuoLuoSuan/imu-layout-privacy-research
 
-Manuscript snapshot: `paper-figures-v4-20261102`. Current PDF/DOCX and vector assets are attached to that prerelease. The repository is public by the author's instruction. Raw video, phone/watch exports, LiDAR bags, model weights and signing material are not distributed.
+Manuscript snapshot: `paper-figures-v5-20261102`. Current PDF/DOCX and vector assets are attached to that prerelease. The repository is public by the author's instruction. Raw video, phone/watch exports, LiDAR bags, model weights and signing material are not distributed.
 
 Saved-score aggregation, original-record replay and figure redraws are different scopes. The supplementary source binds historical results to their original audit records; a portable replot is not an independent rerun of every attack matcher. Human author and institutional details remain to be finalized before submission.
