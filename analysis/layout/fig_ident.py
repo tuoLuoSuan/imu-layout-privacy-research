@@ -50,7 +50,7 @@ ax.set_ylim(0, 0.65)
 ax.set_xticks(xs)
 ax.set_xticklabels([NAME[o] for o in ORDER], fontproperties=cjk)
 ax.set_ylabel('长度 (m)', fontproperties=cjk)
-ax.set_title('残余宽度 = 事件区间 ∩ 先验区间（端点求交）\n柜/床被墙钉到 0.10 m；离墙的椅子还剩 0.54 m，只能靠活动范围收窄', fontsize=11,
+ax.set_title('残余宽度 = 事件区间 ∩ 先验区间（端点求交）\n柜/床的残余 = 贴墙容差 0.10 m；离墙的椅子还剩 0.54 m，只能靠活动范围收窄\n真值覆盖 5/6（床离右墙 0.145 m，超出 0.10 m 容差）', fontsize=10.5,
              loc='left', fontproperties=cjk)
 ax.legend(fontsize=8.5, prop=cjk, loc='upper left'); ax.grid(axis='y', alpha=0.25)
 

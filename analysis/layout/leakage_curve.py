@@ -34,7 +34,11 @@ def rooms(root):
 
 
 def params(root, cats=CATS):
-    """每个 (物件, 轴) 一行：L、房间长、该轴到最近墙的间隙、是否贴墙。"""
+    """每个 (物件, 轴) 一行：L、房间长、该轴两侧的间隙、该轴是否贴墙、贴哪一侧。
+
+    contact 必须逐轴判定：旧写法用「两轴里较小的间隙」当对象级 contact 再传给两轴，
+    于是 x 方向贴墙的柜子连 y 方向也被当成贴墙（复核用 FloorPlan309 的同一个 Cabinet
+    给出了 2 条这样的行）。负间隙超出容差视为几何记录异常，单独标 geom_bad，不计贴墙。"""
     rows = []
     for scene, (x0, z0, x1, z1), objs in rooms(root):
         room = (x0, z0, x1, z1)
@@ -43,39 +47,48 @@ def params(root, cats=CATS):
                 continue
             c, s = o['center'], o['size']
             box = (c['x'] - s['x'] / 2, c['z'] - s['z'] / 2, c['x'] + s['x'] / 2, c['z'] + s['z'] / 2)
-            gaps = {'x': min(box[0] - x0, x1 - box[2]), 'z': min(box[1] - z0, z1 - box[3])}
-            near = min(gaps.values())
+            gap_lo = {0: box[0] - x0, 1: box[1] - z0}
+            gap_hi = {0: x1 - box[2], 1: z1 - box[3]}
             for axis in (0, 1):
                 lo, hi = box[axis], box[axis + 2]
-                key = 'x' if axis == 0 else 'z'
+                g = min(gap_lo[axis], gap_hi[axis])
                 rows.append(dict(scene=scene, cat=o['type'], axis=axis, L=float(hi - lo),
-                                 room=float(room[axis + 2] - room[axis]),
-                                 gap=float(gaps[key]), contact=bool(near <= TOL_WALL),
-                                 near_gap=float(near)))
+                                 room=float(room[axis + 2] - room[axis]), gap=float(g),
+                                 geom_bad=bool(g < -TOL_WALL),
+                                 contact=bool(-TOL_WALL <= g <= TOL_WALL),
+                                 side='lo' if gap_lo[axis] <= gap_hi[axis] else 'hi'))
     return rows
 
 
 def _widths(r, span, regime, n=N_MC, eps=EPS, rng=None):
-    """蒙特卡洛：真值中心在可行区间内均匀，锚点在物体占地上铺开 span，返回每次真值的残余宽度。"""
+    """蒙特卡洛（最小坐标 q 参数化，与 identifiability.prior_interval 同一契约）。
+
+    真值 q 在房间先验 [0, room-L] 内均匀；锚点在物体占地上铺开 span 后取首尾，
+    事件区间 q in [a_hi - L - eps, a_lo + eps]。U 档先验 [0, room-L]；
+    K 档（诊断臂）假设攻击者知道它贴的是哪一面【具体】墙，间隙 0..TOL_WALL。
+
+    返回 (宽度, 是否覆盖真值) 两个数组：K 若把「其实没贴墙」的家具当成贴墙，
+    宽度会很小但真值被排除——只看宽度会得出相反结论，必须同时报覆盖率。"""
     rng = np.random.default_rng(7)   # 每次调用同一颗种子：同样的参数给出同样的数
     L, room = r['L'], r['room']
     free_hi = room - L
     if free_hi <= 0:                      # 物体比房间还长：位置被房间钉死
-        return np.zeros(n)
-    c = rng.uniform(L / 2, room - L / 2, n)
+        return np.zeros(n), np.ones(n, bool)
+    q = rng.uniform(0.0, free_hi, n)
     s = min(span, L)
-    a_lo, a_hi = c - s / 2, c + s / 2      # 交互锚点的两端
-    e_lo = a_hi - L / 2 - eps              # 事件区间（端点求交，不是 min）
-    e_hi = a_lo + L / 2 + eps
+    a_lo, a_hi = q + L / 2 - s / 2, q + L / 2 + s / 2
+    e_lo, e_hi = a_hi - L - eps, a_lo + eps
     if regime == 'U' or not r['contact']:
-        p_lo, p_hi = L / 2, room - L / 2
-    else:                                  # K：贴着具体一面墙，间隙 0..TOL_WALL
-        if r['near_gap'] <= TOL_WALL:
-            p_lo, p_hi = L / 2, L / 2 + TOL_WALL
-        else:
-            p_lo, p_hi = room - L / 2 - TOL_WALL, room - L / 2
-    w = np.minimum(e_hi, p_hi) - np.maximum(e_lo, p_lo)
-    return np.maximum(0.0, w)
+        p_lo, p_hi = 0.0, free_hi
+    elif r['side'] == 'lo':
+        p_lo, p_hi = 0.0, TOL_WALL
+    else:
+        p_lo, p_hi = free_hi - TOL_WALL, free_hi
+    lo = np.maximum(e_lo, p_lo)
+    hi = np.minimum(e_hi, p_hi)
+    w = np.maximum(0.0, hi - lo)
+    covers = (lo - 1e-9 <= q) & (q <= hi + 1e-9)
+    return w, covers
 
 
 def residual(rows, span_m, regime='U', n=N_MC):
@@ -83,9 +96,22 @@ def residual(rows, span_m, regime='U', n=N_MC):
     out = []
     for r in rows:
         s = r['L'] if isinstance(span_m, dict) else span_m
-        w = _widths(r, float(s), regime, n=n)
+        w, _ = _widths(r, float(s), regime, n=n)
         out.append(float(w.mean()))
     return np.asarray(out)
+
+
+def coverage(rows, span_m, regime='U', n=N_MC):
+    """真值落在区间内的比例（对参数、对真值位置同时平均）。
+
+    这是复核里最关键的一条：只报宽度不报覆盖，会奖励「又窄又错」的区间。"""
+    hit = total = 0
+    for r in rows:
+        s = r['L'] if isinstance(span_m, dict) else span_m
+        _, cov = _widths(r, float(s), regime, n=n)
+        hit += int(cov.sum())
+        total += cov.size
+    return hit / max(1, total)
 
 
 def share_exceed(rows, span_m, tol, regime='U', n=N_MC):
@@ -93,7 +119,7 @@ def share_exceed(rows, span_m, tol, regime='U', n=N_MC):
     hit = total = 0
     for r in rows:
         s = r['L'] if isinstance(span_m, dict) else span_m
-        w = _widths(r, float(s), regime, n=n)
+        w, _ = _widths(r, float(s), regime, n=n)
         hit += int((w > tol).sum())
         total += w.size
     return hit / max(1, total)
@@ -111,11 +137,13 @@ if __name__ == '__main__':
     rows = params(root)
     n_sc = len({r['scene'] for r in rows})
     print('场景 %d，物件参数 %d 条（物件 %d 件）' % (n_sc, len(rows), len(rows) // 2))
+    print('几何异常（负间隙超容差）%d 条' % sum(1 for r in rows if r['geom_bad']))
     print('贴墙（该轴间隙 <= %.2f m）比例 %.1f%%' % (TOL_WALL, 100 * np.mean([r['contact'] for r in rows])))
-    for regime, name in (('U', 'U：不知道贴哪面墙'), ('K', 'K：知道贴具体一面墙，间隙 0-0.10')):
+    for regime, name in (('U', 'U：不知道贴哪面墙'), ('K', 'K：额外知道贴的是哪一面墙（诊断臂）')):
         R0 = residual(rows, 0.0, regime)
-        print('%s  零跨度残余：中位 %.2f m，>0.5 m %.1f%%，>1.0 m %.1f%%' % (
-            name, np.median(R0), 100 * np.mean(R0 > 0.5), 100 * np.mean(R0 > 1.0)))
+        print('%s  零跨度残余：中位 %.2f m，>0.5 m %.1f%%，>1.0 m %.1f%%，真值覆盖 %.1f%%' % (
+            name, np.median(R0), 100 * np.mean(R0 > 0.5), 100 * np.mean(R0 > 1.0),
+            100 * coverage(rows, 0.0, regime)))
         for tol in (0.3, 0.5, 1.0):
             sp = need_span(rows, tol, regime)
             print('    tol=%.1f m 需要统一跨度：%s' % (tol, ('%.1f m（超限比例降到 5%%）' % sp) if sp is not None else '>%.1f m 仍达不到' % 2.6))

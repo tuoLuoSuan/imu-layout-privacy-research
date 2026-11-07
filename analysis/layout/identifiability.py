@@ -52,27 +52,42 @@ def consistency(pos, size):
     return kept, rej
 
 
+def world_size(box, axis):
+    """该轴上的世界长度。尺寸必须取自世界框，不能按 sizes 的声明顺序猜（柜的 [0.9, 0.6]
+    在真值框里是 x=0.60 / y=0.90，按顺序取会把逐轴约束套到错误的尺度上）。"""
+    return float(box[axis + 2]) - float(box[axis])
+
+
 def prior_interval(box, room, size_axis, axis, others=None):
-    """返回 (lo, hi, kind, wall_gap)。区间是该轴上物体最小坐标的可取范围。"""
+    """返回 (lo, hi, kind, gap)。参数化统一为【该轴上物体最小坐标 q】：q = c - L/2。
+
+    与 analyze() 里的事件区间 q in [max e - L - d, min e + d] 同一参数化。
+    历史上 free 分支返回 [L/2, room-L/2]（中心），与事件区间的 q 求交会得到很窄、
+    却排除真值的区间——这是 2026-11-07 复核指出的第一号错误。
+    size_axis 保留在签名里只为向后兼容，实际长度一律取世界框。"""
     lo, hi = float(box[axis]), float(box[axis + 2])
+    L = hi - lo
     d0, d1 = lo, float(room[axis] - hi)
+    if d0 < -TOL or d1 < -TOL:
+        # 负间隙超出容差 = 几何记录本身有问题，不能当成「贴墙」参与统计
+        return lo, hi, 'geom_error', min(d0, d1)
     if d0 <= TOL:
         return 0.0, TOL, 'wall_lo', d0
     if d1 <= TOL:
-        return float(room[axis] - size_axis) - TOL, float(room[axis] - size_axis), 'wall_hi', d1
+        return float(room[axis] - L) - TOL, float(room[axis] - L), 'wall_hi', d1
     if others:
         p = 1 - axis                      # 垂直轴
         for ob in others:
-            # 只有垂直轴上确实并排（投影重叠）才算相邻，否则只是坐标巧合
-            if min(hi, float(ob[p + 2])) - max(lo, float(ob[p])) <= 0.0:
+            # 相邻要求：本轴上首尾相接，且【垂直轴的投影确实重叠】
+            # （旧写法拿本物体的当前轴范围去和别人垂直轴比，相距很远的也会被判相邻）
+            if min(float(box[p + 2]), float(ob[p + 2])) - max(float(box[p]), float(ob[p])) <= 0.0:
                 continue
             olo, ohi = float(ob[axis]), float(ob[axis + 2])
-            # 本物体下边贴着别人上边，或上边贴着别人下边
             if abs(lo - ohi) <= TOL:
                 return ohi, ohi + TOL, 'adjacent_lo', abs(lo - ohi)
             if abs(hi - olo) <= TOL:
-                return olo - size_axis - TOL, olo - size_axis, 'adjacent_hi', abs(hi - olo)
-    return float(size_axis) / 2, float(room[axis]) - float(size_axis) / 2, 'free', None
+                return olo - L - TOL, olo - L, 'adjacent_hi', abs(hi - olo)
+    return 0.0, float(room[axis]) - L, 'free', None
 
 
 def analyze(sess, truth=None):
@@ -90,7 +105,8 @@ def analyze(sess, truth=None):
     for lab in CLASSES:
         obj = OBJ[lab]
         box = boxes[obj]
-        size = [float(v) for v in pred['sizes'][obj]]
+        # 逐轴长度取世界框（sizes 的顺序是家具局部坐标，柜/桌的顺序与世界轴不一致）
+        size = [world_size(box, 0), world_size(box, 1)]
         others = [boxes[o] for o in boxes if o != obj]
         ev = evs.get(lab, [])
         for e in ev:
@@ -99,7 +115,7 @@ def analyze(sess, truth=None):
         sub = np.array([ev[i]['room'] for i in kept]) if kept else np.zeros((0, 2))
         row = {'class': lab, 'object': obj, 'n_events': len(ev), 'kept': kept, 'rejected': rej,
                'events': [{'t0': e['t0'], 't1': e['t1'], 'room': e['room']} for e in ev],
-               'size_m': size, 'axes': {}}
+               'size_m': size, 'declared_size': [float(v) for v in pred['sizes'][obj]], 'axes': {}}
         for k, ax in enumerate(AXES):
             reach = REACH[lab]
             if len(sub) == 0:
@@ -118,12 +134,20 @@ def analyze(sess, truth=None):
             if bad:
                 w = None
                 conflict = True
+                lo = hi = None
             else:
                 lo, hi = max(e_lo, p_lo), min(e_hi, p_hi)
                 w = max(0.0, float(hi - lo))
                 conflict = bool(w <= 0.0 and np.isfinite(e_lo))
-            row['axes'][ax] = {'span_m': span, 'reach_m': reach, 'event_interval': [None if not np.isfinite(e_lo) else e_lo,
-                                                                 None if not np.isfinite(e_hi) else e_hi],
+            tin = None
+            if truth and obj in truth and lo is not None:
+                tq = float(truth[obj][k])
+                tin = bool(lo - 1e-9 <= tq <= hi + 1e-9)
+            row['axes'][ax] = {'span_m': span, 'reach_m': reach,
+                               'event_interval': [None if not np.isfinite(e_lo) else e_lo,
+                                                  None if not np.isfinite(e_hi) else e_hi],
+                               'truth_q': None if not (truth and obj in truth) else float(truth[obj][k]),
+                               'truth_in': tin,
                                'prior_interval': [float(p_lo), float(p_hi)], 'prior_kind': kind,
                                'wall_gap_m': gap, 'inconsistent': bool(bad), 'conflict': conflict,
                                'width_m': None if w is None else float(w)}
