@@ -112,7 +112,8 @@ def solve(W, L, S, anchors, sizes, opt=None, traj=None):
                         sc = pen*o['W_PEN'] - sup*o['W_SUPPORT'] + gap*0.06
                         cands.append({'score': float(sc), 'wall': cab_wall, 'desk_wall': desk_wall,
                                       'support': sup, 'gap': gap,
-                                      'dist_cab': dca[cab_wall], 'dist_chair': dch[desk_wall]})
+                                      'dist_cab': dca[cab_wall], 'dist_chair': dch[desk_wall],
+                                      'boxes': {k: [float(x) for x in v] for k, v in b.items()}})
                         if best is None or sc < best[0]:
                             best = (sc, cab_wall, b, sup, {'cabinet': dca, 'chair': dch}, pen, gap, desk_wall)
     if best is None:
