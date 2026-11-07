@@ -142,8 +142,9 @@ def solve(sess, save=True, anchors=None, allow_partial=False):
                         b = boxes[nm]
                         pen += float(np.mean((Q[:,0]>b[0]+0.05)&(Q[:,0]<b[2]-0.05)&(Q[:,1]>b[1]+0.05)&(Q[:,1]<b[3]-0.05)))
                     sc = pen*4.0 - sup[wall]*0.6
+                    _dw = dist['cabinet'][wall] if dist['cabinet'] is not None else dist['chair'][wall]
                     cands.append({'score': float(sc), 'rot': float(deg), 'wall': wall,
-                                  'support': float(sup[wall]), 'dist': float(dist['cabinet'][wall])})
+                                  'support': float(sup[wall]), 'dist': float(_dw)})
                     if best is None or sc < best[0]:
                         best = (sc, deg, wall, bd, tsh, boxes, Q, sup, dist, pen)
     if best is None:
