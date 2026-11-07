@@ -93,3 +93,12 @@ local.properties
 Thumbs.db
 desktop.ini
 .DS_Store
+# Local python toolchain (ai2thor build + wheels, ~670 MB)
+.pythonenv/
+# Raw recordings and large capture originals (never publish)
+data/
+
+# Internal notes kept outside the published tree
+/docs/handoffs/
+/environment/
+/PROJECT_STATE.md
