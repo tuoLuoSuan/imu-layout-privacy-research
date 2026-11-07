@@ -88,8 +88,10 @@ def watch_block(sess):
     except Exception as e:
         return {'status': 'error', 'error': str(e)[:120]}
 
-def solve(sess, save=True):
+def solve(sess, save=True, anchors=None):
     t, P, lab, A = RB.anchors_from(sess)
+    if anchors is not None:
+        A = anchors
     wx = watch_block(sess)
     missing = [k for k in ('seated', 'cabinet', 'lying') if k not in A]
     if missing:

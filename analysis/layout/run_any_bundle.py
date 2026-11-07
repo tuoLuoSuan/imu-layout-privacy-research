@@ -13,11 +13,16 @@ SRC, OUT = sys.argv[1], sys.argv[2]
 ARCH = __import__('paths').RONIN_ARCH
 CKPT = __import__('paths').RONIN_CKPT
 os.makedirs(OUT, exist_ok=True)
-with zipfile.ZipFile(SRC) as f: f.extractall(OUT)
+if os.path.isdir(SRC):
+    # 已经解包过的会话目录：直接复用，不再解压
+    OUT = SRC
+    sub = os.path.join(SRC, "phone")
+else:
+    with zipfile.ZipFile(SRC) as f: f.extractall(OUT)
+    sub = os.path.join(OUT, "phone"); os.makedirs(sub, exist_ok=True)
+    with zipfile.ZipFile(os.path.join(OUT, "phone.zip")) as f: f.extractall(sub)
 _mp = os.path.join(OUT, "bundle-manifest.json")
 man = json.load(open(_mp, encoding="utf-8")) if os.path.exists(_mp) else {"native_sid": os.path.basename(SRC)}
-sub = os.path.join(OUT, "phone"); os.makedirs(sub, exist_ok=True)
-with zipfile.ZipFile(os.path.join(OUT, "phone.zip")) as f: f.extractall(sub)
 
 def load(name):
     rows = []
