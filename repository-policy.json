@@ -62,6 +62,8 @@
     "analysis/layout/reconstruct_blind.py",
     "analysis/layout/run_any_bundle.py",
     "analysis/layout/sim_eval.py",
+    "analysis/layout/span_survey.json",
+    "analysis/layout/span_survey.py",
     "analysis/layout/watch_channel.py",
     "analysis/phone_pdr/README.md",
     "analysis/phone_pdr/__init__.py",

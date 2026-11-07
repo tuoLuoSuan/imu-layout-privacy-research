@@ -1,0 +1,214 @@
+[
+ {
+  "session": "2026-11-05-handheld-001",
+  "classes": {
+   "cabinet": {
+    "n": 2,
+    "kept": 2,
+    "rej": 0,
+    "span_all": 0.003435672866340843,
+    "span_kept": 0.003435672866340843,
+    "L": 0.9,
+    "inconsistent": false,
+    "durations": [
+     1.5,
+     1.0
+    ]
+   },
+   "seated": {
+    "n": 5,
+    "kept": 2,
+    "rej": 3,
+    "span_all": 2.07154147527902,
+    "span_kept": 0.5120524548479638,
+    "L": 0.44,
+    "inconsistent": false,
+    "durations": [
+     2.0,
+     4.5,
+     8.0,
+     2.5,
+     2.5
+    ]
+   },
+   "lying": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 2.085,
+    "inconsistent": false,
+    "durations": [
+     4.5
+    ]
+   }
+  }
+ },
+ {
+  "session": "a-729a24d6",
+  "classes": {
+   "cabinet": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 0.9,
+    "inconsistent": false,
+    "durations": [
+     2.5
+    ]
+   },
+   "seated": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 0.44,
+    "inconsistent": false,
+    "durations": [
+     2.0
+    ]
+   },
+   "lying": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 2.085,
+    "inconsistent": false,
+    "durations": [
+     5.5
+    ]
+   }
+  }
+ },
+ {
+  "session": "a-ee3ee6b6",
+  "classes": {
+   "cabinet": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 0.9,
+    "inconsistent": false,
+    "durations": [
+     3.5
+    ]
+   },
+   "seated": {
+    "n": 2,
+    "kept": 1,
+    "rej": 1,
+    "span_all": 2.3983769659769227,
+    "span_kept": 0.0,
+    "L": 0.44,
+    "inconsistent": false,
+    "durations": [
+     2.5,
+     1.0
+    ]
+   },
+   "lying": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 2.085,
+    "inconsistent": false,
+    "durations": [
+     7.0
+    ]
+   }
+  }
+ },
+ {
+  "session": "s-59d570ee",
+  "classes": {
+   "cabinet": {
+    "n": 2,
+    "kept": 1,
+    "rej": 1,
+    "span_all": 3.652556074754922,
+    "span_kept": 0.0,
+    "L": 0.9,
+    "inconsistent": false,
+    "durations": [
+     2.0,
+     1.0
+    ]
+   },
+   "seated": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 0.44,
+    "inconsistent": false,
+    "durations": [
+     2.0
+    ]
+   },
+   "lying": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 2.085,
+    "inconsistent": false,
+    "durations": [
+     6.0
+    ]
+   }
+  }
+ },
+ {
+  "session": "s-729a24d6",
+  "classes": {
+   "cabinet": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 0.9,
+    "inconsistent": false,
+    "durations": [
+     2.5
+    ]
+   },
+   "seated": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 0.44,
+    "inconsistent": false,
+    "durations": [
+     2.0
+    ]
+   },
+   "lying": {
+    "n": 1,
+    "kept": 1,
+    "rej": 0,
+    "span_all": 0.0,
+    "span_kept": 0.0,
+    "L": 2.085,
+    "inconsistent": false,
+    "durations": [
+     5.5
+    ]
+   }
+  }
+ }
+]

@@ -82,12 +82,15 @@ def analyze(sess, truth=None):
             if len(sub) == 0:
                 span = None
                 ew = None
+                bad = False
             else:
                 span = float(sub[:, k].max() - sub[:, k].min())
-                ew = max(0.0, size[k] - span)
+                # span > L 意味着这些事件不可能落在同一件家具上：这是矛盾，不是「完全确定」。
+                bad = span > size[k] + TOL
+                ew = None if bad else max(0.0, size[k] - span)
             pw, gap = prior_width(box, pred['room'], size[k], k)
             row['axes'][ax] = {'span_m': span, 'anchor_width_m': ew, 'prior_width_m': pw,
-                               'wall_gap_m': gap,
+                               'wall_gap_m': gap, 'inconsistent': bool(bad),
                                'width_m': None if ew is None else float(min(ew, pw))}
         if truth and obj in truth:
             tb = truth[obj]
@@ -108,10 +111,10 @@ def report(res):
         for k, ax in enumerate(AXES):
             A = r['axes'][ax]
             f = lambda v: '   -  ' if v is None else '%.2f' % v
-            print('%-6s %2d %-9s %6s %6s %6.2f %6s %6.2f %6s' % (
+            print('%-6s %2d %-9s %6s %6s %6.2f %6s %6.2f %6s %s' % (
                 r['object'], r['n_events'], '%s/%s' % (r['kept'], r['rejected']), ax,
                 f(A['span_m']), r['size_m'][k], f(A['anchor_width_m']),
-                A['prior_width_m'], f(A['width_m'])))
+                A['prior_width_m'], f(A['width_m']), 'INCONSISTENT' if A['inconsistent'] else ''))
 
 
 if __name__ == '__main__':
