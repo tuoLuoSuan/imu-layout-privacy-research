@@ -76,12 +76,25 @@ def build(deg, P, A, wall, beddir, tsh):
     if out > 0.05: return None
     return Q, boxes
 
+def watch_block(sess):
+    """手表通道（三轴加速度）的旁证摘要；无手表数据时返回 None，不影响求解。"""
+    try:
+        import watch_channel as WC
+        acts = None
+        ap = os.path.join(sess, 'actions.json')
+        if os.path.exists(ap):
+            acts = [tuple(r) for r in json.load(io.open(ap, encoding='utf-8'))['runs']]
+        return WC.summarize(sess, acts)
+    except Exception as e:
+        return {'status': 'error', 'error': str(e)[:120]}
+
 def solve(sess, save=True):
     t, P, lab, A = RB.anchors_from(sess)
+    wx = watch_block(sess)
     missing = [k for k in ('seated', 'cabinet', 'lying') if k not in A]
     if missing:
         _p = {'version': VERSION, 'status': 'missing_action', 'missing': missing, 'anchors': {},
-              'session': os.path.basename(os.path.normpath(sess))}
+              'session': os.path.basename(os.path.normpath(sess)), 'watch': wx}
         if save:
             json.dump(_p, io.open(os.path.join(sess, 'prediction.json'), 'w', encoding='utf-8'), indent=1)
         return _p
@@ -109,7 +122,8 @@ def solve(sess, save=True):
     if best is None:
         _p = {'version': VERSION, 'status': 'no_solution', 'session': os.path.basename(os.path.normpath(sess)),
               'anchors': {k: [float(v[0]), float(v[1])] for k, v in A.items()},
-              'reason': 'no wall satisfies the arm-reach band, or furniture does not fit'}
+              'reason': 'no wall satisfies the arm-reach band, or furniture does not fit',
+              'watch': wx}
         if save:
             json.dump(_p, io.open(os.path.join(sess, 'prediction.json'), 'w', encoding='utf-8'), indent=1)
         return _p
@@ -136,6 +150,7 @@ def solve(sess, save=True):
         'anchors': anc,
         'desk_cab_pass_through': float(pen),
         'premise': {'chair_wall': _wc, 'cabinet_wall': _wk, 'ok': bool(_ok)},
+        'watch': wx,
         'candidates': cands[:20],
     }
     if save:
