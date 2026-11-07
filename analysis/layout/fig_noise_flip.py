@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 H = os.path.dirname(os.path.abspath(__file__))
 cjk = fm.FontProperties(fname=r'C:/Windows/Fonts/msyh.ttc')
-rows = json.load(io.open(os.path.join(H, 'noise_flip.json'), encoding='utf-8'))
+D = json.load(io.open(os.path.join(H, 'noise_flip.json'), encoding='utf-8'))
+rows = D['rows'] if isinstance(D, dict) else D
 SIG = (0.0, 0.05, 0.10, 0.15, 0.20, 0.30)
 OB = [('bed', '床', '#4c72b0'), ('desk', '桌', '#dd8452'), ('cab', '柜', '#55a868'), ('chair', '椅', '#c44e52')]
 
@@ -25,8 +26,8 @@ for s in SIG:
     allf.append(100 * np.mean([r['fail'] or (r['disp'] is not None and r['disp'] > 0.5) for r in sel]))
 ax.plot(SIG, allf, 'k--', lw=1.4, label='全部合并')
 ax.set_xlabel('锚点位置噪声 sigma (m)', fontproperties=cjk)
-ax.set_ylabel('翻转率（家具框位移 > 0.5 m） (%)', fontproperties=cjk)
-ax.set_title('锚点只要偏 5 cm，桌就有 20% 的概率被放到另一处\n要把翻转率压到 10% 以下，锚点误差得 <= 5 cm', fontsize=10.5,
+ax.set_ylabel('大位移率（家具框位移 > 0.5 m） (%)', fontproperties=cjk)
+ax.set_title('锚点偏 5 cm 时全场 9.4%%、桌 20%% 出现大位移\n要把大位移率压到 10%% 以下，锚点误差得 <= 5 cm', fontsize=10.5,
              loc='left', fontproperties=cjk)
 ax.grid(alpha=0.25); ax.legend(prop=cjk, fontsize=9)
 

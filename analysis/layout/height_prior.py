@@ -23,7 +23,10 @@ def load_objects(root):
         if "objects" not in d:
             continue
         scene = os.path.basename(f)[:-5]
-        fx0, fy0, fx1, fy1 = d["floor"]
+        # floor 契约是 [中心 x, 中心 z, 宽, 长]（与 sim_eval.load_scene 一致）
+        fcx, fcz, fw, fl = d["floor"]
+        fx0, fx1 = fcx - fw / 2, fcx + fw / 2
+        fy0, fy1 = fcz - fl / 2, fcz + fl / 2
         for o in d["objects"]:
             s, c = o["size"], o["center"]
             x0, x1 = c["x"] - s["x"] / 2, c["x"] + s["x"] / 2

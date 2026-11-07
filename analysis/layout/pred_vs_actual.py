@@ -1,4 +1,6 @@
-# 残余宽度是不是真的预测了误差？
+# 残余宽度是不是真的预测了误差？—— 这是 ORACLE 诊断，不是运行时界。
+# 预测端用的是场景真值框（评价端特权信息），只有运行时版本（identifiability.py，用预测框 +
+# 真实锚点）才算得上「系统自己能报出来的界」。这里回答的是：上界在原理上成立吗。
 # 在 15 个 iTHOR 场景、真值锚点下，对每件家具取
 #   预测 = 两轴残余宽度的大者（span = 0，锚点是一个点）
 #   实测 = 两轴中心误差的大者
@@ -56,8 +58,8 @@ def run(backend):
             meas, pred = [], []
             for ax in (0, 1):
                 ln = float(g[ax + 2] - g[ax])
-                w, _ = ID.prior_width(g, room, ln, ax)
-                pred.append(min(w, ln))
+                lo, hi, kind, _ = ID.prior_interval(g, room, ln, ax)
+                pred.append(min(hi - lo, ln))
                 meas.append(abs((p[ax] + p[ax + 2]) / 2 - (g[ax] + g[ax + 2]) / 2))
             wp = SE.nearest_wall((p[0] + p[2]) / 2, (p[1] + p[3]) / 2, sc['W'], sc['L'])
             wg = SE.nearest_wall((g[0] + g[2]) / 2, (g[1] + g[3]) / 2, sc['W'], sc['L'])
@@ -74,7 +76,7 @@ for b in ('place', 'joint'):
     allrows += R
     P = np.array([r['pred'] for r in R]); M = np.array([r['meas'] for r in R])
     bad = M > P + 1e-9
-    print('== %s：%d 个样本' % (b, len(R)))
+    print('== %s（oracle 诊断，预测端用真值框）：%d 个样本' % (b, len(R)))
     print('   中心误差中位 %.2f m；预测中位 %.2f m' % (
         np.median([r['center'] for r in R]), np.median(P)))
     print('   上界成立 %d/%d = %.0f%%；Spearman %.2f' % (

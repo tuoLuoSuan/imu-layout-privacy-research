@@ -28,22 +28,29 @@ xs = np.arange(len(ORDER))
 resid, meas, notes = [], [], []
 for obj in ORDER:
     r = [q for q in res['rows'] if q['object'] == obj][0]
-    resid.append(max(r['axes'][a]['width_m'] for a in ('x', 'y')))
+    A = r['axes']
+
+    def ev_w(ax):
+        lo, hi = A[ax]['event_interval']
+        return np.inf if lo is None else hi - lo
+
+    resid.append(max(A[a]['width_m'] for a in ('x', 'y')))
     meas.append(r.get('error_m', 0.0))
-    notes.append('事件 %.2f / 先验 %.2f' % (
-        max(r['axes'][a]['anchor_width_m'] for a in ('x', 'y')),
-        max(r['axes'][a]['prior_width_m'] for a in ('x', 'y'))))
+    notes.append('事件 %.2f / 先验 %.2f (%s)' % (
+        min(ev_w(a) for a in ('x', 'y')),
+        min(A[a]['prior_interval'][1] - A[a]['prior_interval'][0] for a in ('x', 'y')),
+        A['x']['prior_kind']))
 ax.bar(xs - h / 2, resid, h, label='残余可辨识宽度（预测）', color='#55a868')
 ax.bar(xs + h / 2, meas, h, label='实测位置误差', color='#c44e52')
 for j in range(len(ORDER)):
     ax.text(j - h / 2, resid[j] + 0.012, '%.2f' % resid[j], ha='center', fontsize=8.5, fontproperties=cjk)
     ax.text(j + h / 2, meas[j] + 0.012, '%.3f' % meas[j], ha='center', fontsize=8.5, fontproperties=cjk)
     ax.text(j, -0.075, notes[j], ha='center', fontsize=7.5, color='#666', fontproperties=cjk)
-ax.set_ylim(0, 0.55)
+ax.set_ylim(0, 0.65)
 ax.set_xticks(xs)
 ax.set_xticklabels([NAME[o] for o in ORDER], fontproperties=cjk)
 ax.set_ylabel('长度 (m)', fontproperties=cjk)
-ax.set_title('残余宽度 = 事件区间 ∩ 先验区间\n贴墙的三件被墙定死，只有离墙的椅子留下 0.44 m 不确定性', fontsize=11,
+ax.set_title('残余宽度 = 事件区间 ∩ 先验区间（端点求交）\n柜/床被墙钉到 0.10 m；离墙的椅子还剩 0.54 m，只能靠活动范围收窄', fontsize=11,
              loc='left', fontproperties=cjk)
 ax.legend(fontsize=8.5, prop=cjk, loc='upper left'); ax.grid(axis='y', alpha=0.25)
 

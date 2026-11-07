@@ -1,13 +1,19 @@
-# 可辨识性：每件家具参数的残余区间 = 事件区间 ∩ 先验区间。
-# 事件区间：同类动作的每次发生都必须落在同一件家具上，故位置 p 满足 |p - e_i| <= L/2（逐轴），
-#           交集宽度 = max(0, L - span)，span 为该轴上的事件锚点跨度。
-# 先验区间：贴墙（<= TOL）由墙定死为 0；桌柜相邻（<= TOL）互相定死为 0。
-# 两者取交：width = min(事件区间, 先验区间)。动作的次数、时长、走过的路程都不进入公式。
+# 可辨识性：每件家具参数的残余区间 = 事件区间 ∩ 先验区间（端点求交，不是宽度取 min）。
+# 事件区间：同类动作的每次发生都必须落在同一件家具上，故位置 p 满足 |p - e_i| <= L/2 + EPS（逐轴），
+#           交集 = [max e - L/2 - EPS, min e + L/2 + EPS]，宽度 max(0, L + 2EPS - span)。
+# 先验区间：贴墙（间隙 <= TOL）-> [0, TOL] 或 [room-L-TOL, room-L]，宽 TOL；
+#           与另一件家具相邻（间隙 <= TOL）-> [邻居边, 邻居边 + TOL]，宽 TOL；
+#           两者都不满足 -> U 档 [L/2, room - L/2]，宽 room - L（不知道贴哪面墙）。
+# 空交集 = 事件与先验矛盾，标 conflict（不是「完全确定」）。动作次数、时长、路程都不进公式。
 import io, json, os, sys
 import numpy as np
 
 HALF = 0.5
 TOL = 0.10            # 贴墙 / 相邻判定
+EPS = 0.05            # 锚点位置误差容差，与 leakage_curve.EPS 一致
+# 交互锚点是「人所在的位置」，不是家具中心：开柜时人是站在柜门前一臂远，躺是躺在家具边缘。
+# 实测（s-59d570ee 对雷达真值）：坐进椅子 0.00 m、躺到床沿 0.08 m、站在柜门前 0.54 m。
+REACH = {'cabinet': 0.60, 'seated': 0.0, 'lying': 0.05}
 CLASSES = ('cabinet', 'seated', 'lying')
 OBJ = {'cabinet': 'cab', 'seated': 'chair', 'lying': 'bed'}
 AXES = ('x', 'y')
@@ -46,13 +52,27 @@ def consistency(pos, size):
     return kept, rej
 
 
-def prior_width(box, room, size_axis, axis):
-    """贴墙 -> 0；不贴墙 -> 房间长度 - 物体长度。"""
-    lo, hi = box[axis], box[axis + 2]
-    d0, d1 = float(lo), float(room[axis] - hi)
-    if min(d0, d1) <= TOL:
-        return 0.0, min(d0, d1)
-    return max(0.0, float(room[axis] - size_axis)), min(d0, d1)
+def prior_interval(box, room, size_axis, axis, others=None):
+    """返回 (lo, hi, kind, wall_gap)。区间是该轴上物体最小坐标的可取范围。"""
+    lo, hi = float(box[axis]), float(box[axis + 2])
+    d0, d1 = lo, float(room[axis] - hi)
+    if d0 <= TOL:
+        return 0.0, TOL, 'wall_lo', d0
+    if d1 <= TOL:
+        return float(room[axis] - size_axis) - TOL, float(room[axis] - size_axis), 'wall_hi', d1
+    if others:
+        p = 1 - axis                      # 垂直轴
+        for ob in others:
+            # 只有垂直轴上确实并排（投影重叠）才算相邻，否则只是坐标巧合
+            if min(hi, float(ob[p + 2])) - max(lo, float(ob[p])) <= 0.0:
+                continue
+            olo, ohi = float(ob[axis]), float(ob[axis + 2])
+            # 本物体下边贴着别人上边，或上边贴着别人下边
+            if abs(lo - ohi) <= TOL:
+                return ohi, ohi + TOL, 'adjacent_lo', abs(lo - ohi)
+            if abs(hi - olo) <= TOL:
+                return olo - size_axis - TOL, olo - size_axis, 'adjacent_hi', abs(hi - olo)
+    return float(size_axis) / 2, float(room[axis]) - float(size_axis) / 2, 'free', None
 
 
 def analyze(sess, truth=None):
@@ -65,11 +85,13 @@ def analyze(sess, truth=None):
     R = np.array([[c, s], [-s, c]])
     off = (P @ R)[0] - np.array(pred['start_anchored_at'])
 
+    boxes = pred['boxes']
     rows = []
     for lab in CLASSES:
         obj = OBJ[lab]
-        box = pred['boxes'][obj]
+        box = boxes[obj]
         size = [float(v) for v in pred['sizes'][obj]]
+        others = [boxes[o] for o in boxes if o != obj]
         ev = evs.get(lab, [])
         for e in ev:
             e['room'] = list(map(float, e['pos'] @ R - off))
@@ -79,19 +101,32 @@ def analyze(sess, truth=None):
                'events': [{'t0': e['t0'], 't1': e['t1'], 'room': e['room']} for e in ev],
                'size_m': size, 'axes': {}}
         for k, ax in enumerate(AXES):
+            reach = REACH[lab]
             if len(sub) == 0:
                 span = None
-                ew = None
+                e_lo, e_hi = -np.inf, np.inf
                 bad = False
             else:
                 span = float(sub[:, k].max() - sub[:, k].min())
-                # span > L 意味着这些事件不可能落在同一件家具上：这是矛盾，不是「完全确定」。
-                bad = span > size[k] + TOL
-                ew = None if bad else max(0.0, size[k] - span)
-            pw, gap = prior_width(box, pred['room'], size[k], k)
-            row['axes'][ax] = {'span_m': span, 'anchor_width_m': ew, 'prior_width_m': pw,
-                               'wall_gap_m': gap, 'inconsistent': bool(bad),
-                               'width_m': None if ew is None else float(min(ew, pw))}
+                # 约束 |e - (min + L/2)| <= L/2 + d  =>  min in [e - L - d, e + d]
+                d = reach + EPS
+                e_lo = float(sub[:, k].max()) - size[k] - d
+                e_hi = float(sub[:, k].min()) + d
+                # 事件区间为空：这些事件不可能落在同一件家具上 —— 矛盾，不是「完全确定」。
+                bad = span > size[k] + 2 * (reach + EPS) + TOL
+            p_lo, p_hi, kind, gap = prior_interval(box, pred['room'], size[k], k, others)
+            if bad:
+                w = None
+                conflict = True
+            else:
+                lo, hi = max(e_lo, p_lo), min(e_hi, p_hi)
+                w = max(0.0, float(hi - lo))
+                conflict = bool(w <= 0.0 and np.isfinite(e_lo))
+            row['axes'][ax] = {'span_m': span, 'reach_m': reach, 'event_interval': [None if not np.isfinite(e_lo) else e_lo,
+                                                                 None if not np.isfinite(e_hi) else e_hi],
+                               'prior_interval': [float(p_lo), float(p_hi)], 'prior_kind': kind,
+                               'wall_gap_m': gap, 'inconsistent': bool(bad), 'conflict': conflict,
+                               'width_m': None if w is None else float(w)}
         if truth and obj in truth:
             tb = truth[obj]
             row['error_m'] = float(np.hypot((box[0] + box[2] - tb[0] - tb[2]) / 2,
@@ -105,16 +140,18 @@ def analyze(sess, truth=None):
 
 
 def report(res):
-    print('%-6s %2s %-9s %6s %6s %6s %6s %6s %6s' %
-          ('obj', 'n', 'kept/rejj', 'axis', 'span', 'L', 'event', 'prior', 'width'))
+    print('%-6s %2s %-9s %5s %6s %6s %-11s %6s %6s' %
+          ('obj', 'n', 'kept/rej', 'axis', 'span', 'L', 'prior', 'prior_w', 'width'))
     for r in res['rows']:
         for k, ax in enumerate(AXES):
             A = r['axes'][ax]
             f = lambda v: '   -  ' if v is None else '%.2f' % v
-            print('%-6s %2d %-9s %6s %6s %6.2f %6s %6.2f %6s %s' % (
+            print('%-6s %2d %-9s %5s %6s %6.2f %-11s %6.2f %6s %s' % (
                 r['object'], r['n_events'], '%s/%s' % (r['kept'], r['rejected']), ax,
-                f(A['span_m']), r['size_m'][k], f(A['anchor_width_m']),
-                A['prior_width_m'], f(A['width_m']), 'INCONSISTENT' if A['inconsistent'] else ''))
+                f(A['span_m']), r['size_m'][k], A['prior_kind'],
+                A['prior_interval'][1] - A['prior_interval'][0],
+                f(A['width_m']),
+                'INCONSISTENT' if A['inconsistent'] else ('CONFLICT' if A['conflict'] else '')))
 
 
 if __name__ == '__main__':

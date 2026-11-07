@@ -97,41 +97,42 @@ def score(sc, res):
         out[k] = (ce, iou(p, g))
     return out
 
-scenes = []
-for f in sorted(glob.glob(os.path.join(THOR, 'FloorPlan*.json'))):
-    s = load_scene(f)
-    if s: scenes.append(s)
-print('可用场景 %d' % len(scenes))
-rng = np.random.default_rng(3)
+if __name__ == '__main__':
+    scenes = []
+    for f in sorted(glob.glob(os.path.join(THOR, 'FloorPlan*.json'))):
+        s = load_scene(f)
+        if s: scenes.append(s)
+    print('可用场景 %d' % len(scenes))
+    rng = np.random.default_rng(3)
 
-def agg(rows):
-    if not rows: return {}
-    per = {}
-    for k in TYPES:
-        ce = [r[k][0] for r in rows if k in r]; io = [r[k][1] for r in rows if k in r]
-        if ce: per[k] = (len(ce), float(np.median(ce)), float(np.mean(np.array(io) >= 0.5)))
-    return per
+    def agg(rows):
+        if not rows: return {}
+        per = {}
+        for k in TYPES:
+            ce = [r[k][0] for r in rows if k in r]; io = [r[k][1] for r in rows if k in r]
+            if ce: per[k] = (len(ce), float(np.median(ce)), float(np.mean(np.array(io) >= 0.5)))
+        return per
 
-print('%-14s %6s | %s' % ('arm', 'n', 'per-type: n / median centre err (m) / IoU>=0.5 rate'))
-for arm in ('oracle', 'noise0.10', 'noise0.20', 'noise0.30', 'shuffle', 'chair_only'):
-    rows = []; nfail = 0
-    for sc in scenes:
-        a0 = anchors_true(sc)
-        trials = 1 if arm in ('oracle',) else 25
-        for _ in range(trials):
-            a = dict(a0)
-            if arm.startswith('noise'):
-                sg = float(arm.replace('noise', ''))
-                a = {k: (np.array(v)+rng.normal(0, sg, 2)) for k, v in a0.items()}
-            elif arm == 'shuffle':
-                ks = list(a0); vs = [a0[k] for k in ks]
-                rng.shuffle(vs); a = dict(zip(ks, vs))
-            elif arm == 'chair_only':
-                a = {'seated': a0['seated'], 'cabinet': a0['seated'], 'lying': a0['lying']}
-            res = run_arm(sc, a)
-            s = score(sc, res)
-            if s is None: nfail += 1
-            else: rows.append(s)
-    per = agg(rows)
-    txt = ' '.join('%s %.2f/%.0f%%' % (k, v[1], 100*v[2]) for k, v in per.items())
-    print('%-14s %6d | %s  (fail %d)' % (arm, len(rows), txt, nfail))
+    print('%-14s %6s | %s' % ('arm', 'n', 'per-type: n / median centre err (m) / IoU>=0.5 rate'))
+    for arm in ('oracle', 'noise0.10', 'noise0.20', 'noise0.30', 'shuffle', 'chair_only'):
+        rows = []; nfail = 0
+        for sc in scenes:
+            a0 = anchors_true(sc)
+            trials = 1 if arm in ('oracle',) else 25
+            for _ in range(trials):
+                a = dict(a0)
+                if arm.startswith('noise'):
+                    sg = float(arm.replace('noise', ''))
+                    a = {k: (np.array(v)+rng.normal(0, sg, 2)) for k, v in a0.items()}
+                elif arm == 'shuffle':
+                    ks = list(a0); vs = [a0[k] for k in ks]
+                    rng.shuffle(vs); a = dict(zip(ks, vs))
+                elif arm == 'chair_only':
+                    a = {'seated': a0['seated'], 'cabinet': a0['seated'], 'lying': a0['lying']}
+                res = run_arm(sc, a)
+                s = score(sc, res)
+                if s is None: nfail += 1
+                else: rows.append(s)
+        per = agg(rows)
+        txt = ' '.join('%s %.2f/%.0f%%' % (k, v[1], 100*v[2]) for k, v in per.items())
+        print('%-14s %6d | %s  (fail %d)' % (arm, len(rows), txt, nfail))
