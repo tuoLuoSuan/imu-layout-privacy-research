@@ -1,0 +1,928 @@
+{
+ "thor": {
+  "n_axes": 90,
+  "n_scenes": 15,
+  "regime": "U",
+  "subsets": [
+   {
+    "n": 90,
+    "width_median": 3.682921528816223,
+    "width_mean": 3.804007325569789,
+    "cover": 1.0,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 3.94951331615448,
+      "width_mean": 4.194799470901489,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 3.94951331615448,
+        "cover": 1.0
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 3.954286813735962,
+      "width_mean": 4.2143078664938605,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 3.954286813735962,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 3.0081427097320557,
+      "width_mean": 3.0029146393140156,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 3.0081427097320557,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": []
+   },
+   {
+    "n": 90,
+    "width_median": 2.8702625036239624,
+    "width_mean": 2.635243529346254,
+    "cover": 1.0,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 3.94951331615448,
+      "width_mean": 4.194799470901489,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 3.94951331615448,
+        "cover": 1.0
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 0.6986071825027467,
+      "width_mean": 0.7080164778232576,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 0.6986071825027467,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 3.0081427097320557,
+      "width_mean": 3.0029146393140156,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 3.0081427097320557,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": [
+     "seated"
+    ]
+   },
+   {
+    "n": 90,
+    "width_median": 2.91325306892395,
+    "width_mean": 2.933247041834725,
+    "cover": 0.9888888888888889,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 1.5468188881874085,
+      "width_mean": 1.5825186196962988,
+      "cover": 0.9666666666666667,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 1.5468188881874085,
+        "cover": 0.9666666666666667
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 3.954286813735962,
+      "width_mean": 4.2143078664938605,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 3.954286813735962,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 3.0081427097320557,
+      "width_mean": 3.0029146393140156,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 3.0081427097320557,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": [
+     "cabinet"
+    ]
+   },
+   {
+    "n": 90,
+    "width_median": 3.417538642883301,
+    "width_mean": 3.353430514269405,
+    "cover": 1.0,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 3.94951331615448,
+      "width_mean": 4.194799470901489,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 3.94951331615448,
+        "cover": 1.0
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 3.954286813735962,
+      "width_mean": 4.2143078664938605,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 3.954286813735962,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 1.3999820470809938,
+      "width_mean": 1.6511842054128651,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 1.3999820470809938,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": [
+     "lying"
+    ]
+   },
+   {
+    "n": 90,
+    "width_median": 1.5386973023414612,
+    "width_mean": 1.7644832456111907,
+    "cover": 0.9888888888888889,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 1.5468188881874085,
+      "width_mean": 1.5825186196962988,
+      "cover": 0.9666666666666667,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 1.5468188881874085,
+        "cover": 0.9666666666666667
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 0.6986071825027467,
+      "width_mean": 0.7080164778232576,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 0.6986071825027467,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 3.0081427097320557,
+      "width_mean": 3.0029146393140156,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 3.0081427097320557,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": [
+     "seated",
+     "cabinet"
+    ]
+   },
+   {
+    "n": 90,
+    "width_median": 1.3999820470809938,
+    "width_mean": 2.1846667180458703,
+    "cover": 1.0,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 3.94951331615448,
+      "width_mean": 4.194799470901489,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 3.94951331615448,
+        "cover": 1.0
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 0.6986071825027467,
+      "width_mean": 0.7080164778232576,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 0.6986071825027467,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 1.3999820470809938,
+      "width_mean": 1.6511842054128651,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 1.3999820470809938,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": [
+     "seated",
+     "lying"
+    ]
+   },
+   {
+    "n": 90,
+    "width_median": 1.7690512835979462,
+    "width_mean": 2.4826702305343415,
+    "cover": 0.9888888888888889,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 1.5468188881874085,
+      "width_mean": 1.5825186196962988,
+      "cover": 0.9666666666666667,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 1.5468188881874085,
+        "cover": 0.9666666666666667
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 3.954286813735962,
+      "width_mean": 4.2143078664938605,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 3.954286813735962,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 1.3999820470809938,
+      "width_mean": 1.6511842054128651,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 1.3999820470809938,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": [
+     "cabinet",
+     "lying"
+    ]
+   },
+   {
+    "n": 90,
+    "width_median": 1.343642568588257,
+    "width_mean": 1.313906434310807,
+    "cover": 0.9888888888888889,
+    "identified": 0.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "cab": {
+      "n": 30,
+      "width_median": 1.5468188881874085,
+      "width_mean": 1.5825186196962988,
+      "cover": 0.9666666666666667,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "cab": {
+        "width_median": 1.5468188881874085,
+        "cover": 0.9666666666666667
+       }
+      }
+     },
+     "chair": {
+      "n": 30,
+      "width_median": 0.6986071825027467,
+      "width_mean": 0.7080164778232576,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "chair": {
+        "width_median": 0.6986071825027467,
+        "cover": 1.0
+       }
+      }
+     },
+     "bed": {
+      "n": 30,
+      "width_median": 1.3999820470809938,
+      "width_mean": 1.6511842054128651,
+      "cover": 1.0,
+      "identified": 0.0,
+      "narrow_wrong": 0.0,
+      "per_object": {
+       "bed": {
+        "width_median": 1.3999820470809938,
+        "cover": 1.0
+       }
+      }
+     }
+    },
+    "subset": [
+     "seated",
+     "cabinet",
+     "lying"
+    ]
+   }
+  ]
+ },
+ "real": {
+  "session": "s-59d570ee",
+  "n_by_class": {
+   "cabinet": 1,
+   "seated": 1,
+   "lying": 1
+  },
+  "event_times": [
+   [
+    "cabinet",
+    20.5
+   ],
+   [
+    "lying",
+    34.5
+   ],
+   [
+    "seated",
+    12.5
+   ]
+  ],
+  "subsets": [
+   {
+    "n": 6,
+    "width_median": 0.10000000000000009,
+    "width_mean": 1.0675,
+    "cover": 1.0,
+    "identified": 1.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "bed": {
+      "width_median": 0.10000000000000009,
+      "cover": 1.0
+     },
+     "cab": {
+      "width_median": 0.1,
+      "cover": 1.0
+     },
+     "chair": {
+      "width_median": 3.0025,
+      "cover": 1.0
+     }
+    },
+    "selection": {},
+    "classes_active": []
+   },
+   {
+    "n": 6,
+    "width_median": 0.10000000000000009,
+    "width_mean": 1.0675,
+    "cover": 1.0,
+    "identified": 1.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "bed": {
+      "width_median": 0.10000000000000009,
+      "cover": 1.0
+     },
+     "cab": {
+      "width_median": 0.1,
+      "cover": 1.0
+     },
+     "chair": {
+      "width_median": 3.0025,
+      "cover": 1.0
+     }
+    },
+    "selection": {
+     "cabinet": [
+      0
+     ]
+    },
+    "classes_active": [
+     "cabinet"
+    ]
+   },
+   {
+    "n": 6,
+    "width_median": 0.10000000000000009,
+    "width_mean": 0.2466666666666667,
+    "cover": 1.0,
+    "identified": 1.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "bed": {
+      "width_median": 0.10000000000000009,
+      "cover": 1.0
+     },
+     "cab": {
+      "width_median": 0.1,
+      "cover": 1.0
+     },
+     "chair": {
+      "width_median": 0.54,
+      "cover": 1.0
+     }
+    },
+    "selection": {
+     "seated": [
+      0
+     ]
+    },
+    "classes_active": [
+     "seated"
+    ]
+   },
+   {
+    "n": 6,
+    "width_median": 0.10000000000000009,
+    "width_mean": 1.0675,
+    "cover": 0.8333333333333334,
+    "identified": 1.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "bed": {
+      "width_median": 0.10000000000000009,
+      "cover": 0.5
+     },
+     "cab": {
+      "width_median": 0.1,
+      "cover": 1.0
+     },
+     "chair": {
+      "width_median": 3.0025,
+      "cover": 1.0
+     }
+    },
+    "selection": {
+     "lying": [
+      0
+     ]
+    },
+    "classes_active": [
+     "lying"
+    ]
+   },
+   {
+    "n": 6,
+    "width_median": 0.10000000000000009,
+    "width_mean": 0.2466666666666667,
+    "cover": 0.8333333333333334,
+    "identified": 1.0,
+    "narrow_wrong": 0.0,
+    "per_object": {
+     "bed": {
+      "width_median": 0.10000000000000009,
+      "cover": 0.5
+     },
+     "cab": {
+      "width_median": 0.1,
+      "cover": 1.0
+     },
+     "chair": {
+      "width_median": 0.54,
+      "cover": 1.0
+     }
+    },
+    "selection": {
+     "cabinet": [
+      0
+     ],
+     "seated": [
+      0
+     ],
+     "lying": [
+      0
+     ]
+    },
+    "classes_active": [
+     "cabinet",
+     "lying",
+     "seated"
+    ]
+   }
+  ],
+  "leave_one_out": [
+   {
+    "removed": [
+     "cabinet",
+     0
+    ],
+    "box": {
+     "n": 6,
+     "width_median": 0.10000000000000009,
+     "width_mean": 0.2466666666666667,
+     "cover": 0.8333333333333334,
+     "identified": 1.0,
+     "narrow_wrong": 0.0,
+     "per_object": {
+      "bed": {
+       "width_median": 0.10000000000000009,
+       "cover": 0.5
+      },
+      "cab": {
+       "width_median": 0.1,
+       "cover": 1.0
+      },
+      "chair": {
+       "width_median": 0.54,
+       "cover": 1.0
+      }
+     },
+     "selection": {
+      "cabinet": [],
+      "seated": [
+       0
+      ],
+      "lying": [
+       0
+      ]
+     },
+     "classes_active": [
+      "lying",
+      "seated"
+     ]
+    },
+    "u": {
+     "n": 6,
+     "width_median": 1.25,
+     "width_mean": 1.4729280463982821,
+     "cover": 1.0,
+     "identified": 0.0,
+     "narrow_wrong": 0.0,
+     "per_object": {
+      "bed": {
+       "width_median": 1.186284139194847,
+       "cover": 1.0
+      },
+      "cab": {
+       "width_median": 2.6925,
+       "cover": 1.0
+      },
+      "chair": {
+       "width_median": 0.54,
+       "cover": 1.0
+      }
+     },
+     "selection": {
+      "cabinet": [],
+      "seated": [
+       0
+      ],
+      "lying": [
+       0
+      ]
+     },
+     "classes_active": [
+      "lying",
+      "seated"
+     ]
+    },
+    "delta_box": {
+     "bed": 0.0,
+     "cab": 0.0,
+     "chair": 0.0
+    },
+    "delta_u": {
+     "bed": 0.0,
+     "cab": 1.1807416735924283,
+     "chair": 0.0
+    }
+   },
+   {
+    "removed": [
+     "seated",
+     0
+    ],
+    "box": {
+     "n": 6,
+     "width_median": 0.10000000000000009,
+     "width_mean": 1.0675,
+     "cover": 0.8333333333333334,
+     "identified": 1.0,
+     "narrow_wrong": 0.0,
+     "per_object": {
+      "bed": {
+       "width_median": 0.10000000000000009,
+       "cover": 0.5
+      },
+      "cab": {
+       "width_median": 0.1,
+       "cover": 1.0
+      },
+      "chair": {
+       "width_median": 3.0025,
+       "cover": 1.0
+      }
+     },
+     "selection": {
+      "cabinet": [
+       0
+      ],
+      "seated": [],
+      "lying": [
+       0
+      ]
+     },
+     "classes_active": [
+      "cabinet",
+      "lying"
+     ]
+    },
+    "u": {
+     "n": 6,
+     "width_median": 1.9014839920416777,
+     "width_mean": 1.9001808218674732,
+     "cover": 1.0,
+     "identified": 0.0,
+     "narrow_wrong": 0.0,
+     "per_object": {
+      "bed": {
+       "width_median": 1.186284139194847,
+       "cover": 1.0
+      },
+      "cab": {
+       "width_median": 1.5117583264075716,
+       "cover": 1.0
+      },
+      "chair": {
+       "width_median": 3.0025,
+       "cover": 1.0
+      }
+     },
+     "selection": {
+      "cabinet": [
+       0
+      ],
+      "seated": [],
+      "lying": [
+       0
+      ]
+     },
+     "classes_active": [
+      "cabinet",
+      "lying"
+     ]
+    },
+    "delta_box": {
+     "bed": 0.0,
+     "cab": 0.0,
+     "chair": 2.4625
+    },
+    "delta_u": {
+     "bed": 0.0,
+     "cab": 0.0,
+     "chair": 2.4625
+    }
+   },
+   {
+    "removed": [
+     "lying",
+     0
+    ],
+    "box": {
+     "n": 6,
+     "width_median": 0.10000000000000009,
+     "width_mean": 0.2466666666666667,
+     "cover": 1.0,
+     "identified": 1.0,
+     "narrow_wrong": 0.0,
+     "per_object": {
+      "bed": {
+       "width_median": 0.10000000000000009,
+       "cover": 1.0
+      },
+      "cab": {
+       "width_median": 0.1,
+       "cover": 1.0
+      },
+      "chair": {
+       "width_median": 0.54,
+       "cover": 1.0
+      }
+     },
+     "selection": {
+      "cabinet": [
+       0
+      ],
+      "seated": [
+       0
+      ],
+      "lying": []
+     },
+     "classes_active": [
+      "cabinet",
+      "seated"
+     ]
+    },
+    "u": {
+     "n": 6,
+     "width_median": 1.2477743343658938,
+     "width_mean": 1.2297527754691904,
+     "cover": 1.0,
+     "identified": 0.0,
+     "narrow_wrong": 0.0,
+     "per_object": {
+      "bed": {
+       "width_median": 1.6374999999999997,
+       "cover": 1.0
+      },
+      "cab": {
+       "width_median": 1.5117583264075716,
+       "cover": 1.0
+      },
+      "chair": {
+       "width_median": 0.54,
+       "cover": 1.0
+      }
+     },
+     "selection": {
+      "cabinet": [
+       0
+      ],
+      "seated": [
+       0
+      ],
+      "lying": []
+     },
+     "classes_active": [
+      "cabinet",
+      "seated"
+     ]
+    },
+    "delta_box": {
+     "bed": 0.0,
+     "cab": 0.0,
+     "chair": 0.0
+    },
+    "delta_u": {
+     "bed": 0.45121586080515264,
+     "cab": 0.0,
+     "chair": 0.0
+    }
+   }
+  ],
+  "u_prior": {
+   "n": 6,
+   "width_median": 0.8602743343658938,
+   "width_mean": 1.0793474885341394,
+   "cover": 1.0,
+   "identified": 0.0,
+   "narrow_wrong": 0.0,
+   "per_object": {
+    "bed": {
+     "width_median": 1.186284139194847,
+     "cover": 1.0
+    },
+    "cab": {
+     "width_median": 1.5117583264075716,
+     "cover": 1.0
+    },
+    "chair": {
+     "width_median": 0.54,
+     "cover": 1.0
+    }
+   },
+   "selection": {
+    "cabinet": [
+     0
+    ],
+    "seated": [
+     0
+    ],
+    "lying": [
+     0
+    ]
+   },
+   "classes_active": [
+    "cabinet",
+    "lying",
+    "seated"
+   ]
+  },
+  "base_width_median": 0.10000000000000009,
+  "base_cover": 0.8333333333333334
+ }
+}
