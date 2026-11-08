@@ -1,6 +1,6 @@
 
 """Frontier figure: what contact span buys (ideal geometry) next to what walking
-budgets actually deliver (frozen pipeline)."""
+budgets deliver in generated geometric routes, not a frozen IMU frontend."""
 import json
 from pathlib import Path
 
@@ -11,14 +11,14 @@ import numpy as np
 from matplotlib import cm
 from matplotlib.colors import Normalize
 
-from figure_style import CJK, NAMES, COLORS, title, save
+from analysis.layout.figure_style import CJK, NAMES, COLORS, title, save
 from analysis.layout import evidence_space as ES, sim_eval as SE, paths
 
 FRACTIONS = (0.0, 0.25, 0.5, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0)
 TARGETS = (0.30, 0.40, 0.50, 0.60, 0.75, 0.90, 1.20)
 OBJECTS = ("bed", "desk", "cab", "chair")
 BUDGETS = (0.0, 8.0, 20.0, 32.0, 48.0, 64.0, 96.0)
-STAGE2 = "../../analysis/layout/stage2-results.json"
+STAGE2 = Path(__file__).resolve().with_name('stage2-results.json')
 SEED = 18031
 
 
@@ -103,7 +103,7 @@ def panel_b(ax):
     ax.set_zlim(0, 1)
     ax.view_init(elev=24, azim=-60)
     ax.tick_params(axis="z", labelsize=6)
-    title(ax, "实测：走多远才落到可辨识区（14 场景，TA-U）")
+    title(ax, "几何模拟：路程与点命中（14 开发场景，TA-U）")
     ax.text2D(0.00, 0.92, "床 0.07→0.93（32 m 起）、椅 0→1.00（12 m 起）、柜 0→0.50、桌 0.07→0.14。",
               transform=ax.transAxes, fontproperties=CJK, fontsize=6, color="#333333")
 
@@ -115,8 +115,8 @@ def main():
     panel_a(ax1)
     panel_b(ax2)
     fig.tight_layout(rect=(0, 0.02, 1, 0.90))
-    save(fig, "../../output/layout-recon/frontier-3d.png",
-         "活动范围怎么变成布局分辨率：需要的跨度 vs 走得到的跨度")
+    save(fig, Path(paths.REPO)/'output/layout-recon/frontier-3d-audited.png',
+         "几何开发诊断：条件中心半径（左）与点命中率（右），两者判据不同")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 {
- "scope": "Desk direction from the observed trajectory heading, 14 development scenes, 96 m budget",
+ "scope": "Geometric generated-route heading, not raw IMU or measured body facing; development scenes, 96 m",
  "reach_m": 1.0,
  "padding_m": 0.2,
  "lookbacks_m": [
@@ -14,133 +14,141 @@
   90.0
  ],
  "summary": {
-  "lookback0.5_coneNone": {
+  "no_channel": {
    "n": 14,
    "hits": 2,
    "hit_rate": 0.14285714285714285,
    "error_median_m": 2.1701179087058375,
    "support_median_m": 5.061851227611489,
+   "missing": 0,
    "conflict": 0
+  },
+  "distance_only": {
+   "n": 14,
+   "hits": 3,
+   "hit_rate": 0.21428571428571427,
+   "error_median_m": 1.2127155158223888,
+   "support_median_m": 2.4235781885137264,
+   "missing": 1,
+   "conflict": 1
   },
   "lookback0.5_cone30.0": {
    "n": 14,
    "hits": 2,
    "hit_rate": 0.14285714285714285,
-   "error_median_m": 0.5553696248035918,
-   "support_median_m": 0.09452515839999998,
-   "conflict": 10
+   "error_median_m": 0.10429281260774191,
+   "support_median_m": 0.0,
+   "missing": 12,
+   "conflict": 12
   },
   "lookback0.5_cone45.0": {
    "n": 14,
-   "hits": 1,
-   "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.0990363722814047,
-   "support_median_m": 0.9128821027518128,
-   "conflict": 10
+   "hits": 2,
+   "hit_rate": 0.14285714285714285,
+   "error_median_m": 0.10429281260774191,
+   "support_median_m": 0.0,
+   "missing": 12,
+   "conflict": 12
   },
   "lookback0.5_cone60.0": {
    "n": 14,
-   "hits": 1,
-   "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.2127155158223888,
-   "support_median_m": 0.27012267380210364,
-   "conflict": 7
+   "hits": 2,
+   "hit_rate": 0.14285714285714285,
+   "error_median_m": 0.13416579996939274,
+   "support_median_m": 0.0,
+   "missing": 11,
+   "conflict": 11
   },
   "lookback0.5_cone90.0": {
    "n": 14,
-   "hits": 1,
-   "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.447998101732513,
-   "support_median_m": 0.689849710005922,
-   "conflict": 3
-  },
-  "lookback1_coneNone": {
-   "n": 14,
    "hits": 2,
    "hit_rate": 0.14285714285714285,
-   "error_median_m": 2.1701179087058375,
-   "support_median_m": 5.061851227611489,
-   "conflict": 0
+   "error_median_m": 0.7910819508509529,
+   "support_median_m": 0.09363828899999982,
+   "missing": 10,
+   "conflict": 10
   },
   "lookback1_cone30.0": {
    "n": 14,
    "hits": 2,
    "hit_rate": 0.14285714285714285,
-   "error_median_m": 0.5553696248035918,
-   "support_median_m": 0.5911048288441705,
-   "conflict": 10
+   "error_median_m": 0.10429281260774191,
+   "support_median_m": 0.0,
+   "missing": 12,
+   "conflict": 12
   },
   "lookback1_cone45.0": {
    "n": 14,
-   "hits": 1,
-   "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.0990363722814047,
-   "support_median_m": 1.187337042260654,
-   "conflict": 10
+   "hits": 2,
+   "hit_rate": 0.14285714285714285,
+   "error_median_m": 0.10429281260774191,
+   "support_median_m": 0.0,
+   "missing": 12,
+   "conflict": 12
   },
   "lookback1_cone60.0": {
    "n": 14,
-   "hits": 1,
-   "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.4642151745083511,
-   "support_median_m": 0.6874363717966772,
-   "conflict": 7
+   "hits": 2,
+   "hit_rate": 0.14285714285714285,
+   "error_median_m": 0.13416579996939274,
+   "support_median_m": 0.0,
+   "missing": 11,
+   "conflict": 11
   },
   "lookback1_cone90.0": {
    "n": 14,
    "hits": 1,
    "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.5605694279720013,
-   "support_median_m": 0.689849710005922,
-   "conflict": 3
-  },
-  "lookback1.5_coneNone": {
-   "n": 14,
-   "hits": 2,
-   "hit_rate": 0.14285714285714285,
-   "error_median_m": 2.1701179087058375,
-   "support_median_m": 5.061851227611489,
-   "conflict": 0
+   "error_median_m": 1.4106143592566365,
+   "support_median_m": 1.0271489619093632,
+   "missing": 10,
+   "conflict": 10
   },
   "lookback1.5_cone30.0": {
    "n": 14,
    "hits": 2,
    "hit_rate": 0.14285714285714285,
-   "error_median_m": 0.9765734496377907,
-   "support_median_m": 0.385882037,
-   "conflict": 9
+   "error_median_m": 0.10429281260774191,
+   "support_median_m": 0.0,
+   "missing": 12,
+   "conflict": 12
   },
   "lookback1.5_cone45.0": {
    "n": 14,
-   "hits": 1,
-   "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.1345353608413873,
-   "support_median_m": 1.1383278337069485,
-   "conflict": 9
+   "hits": 2,
+   "hit_rate": 0.14285714285714285,
+   "error_median_m": 0.10429281260774191,
+   "support_median_m": 0.0,
+   "missing": 12,
+   "conflict": 12
   },
   "lookback1.5_cone60.0": {
    "n": 14,
-   "hits": 1,
-   "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.5605694279720013,
-   "support_median_m": 0.8573304815809569,
-   "conflict": 7
+   "hits": 2,
+   "hit_rate": 0.14285714285714285,
+   "error_median_m": 0.13416579996939274,
+   "support_median_m": 0.0,
+   "missing": 11,
+   "conflict": 11
   },
   "lookback1.5_cone90.0": {
    "n": 14,
    "hits": 1,
    "hit_rate": 0.07142857142857142,
-   "error_median_m": 1.5817732551598926,
-   "support_median_m": 0.689849710005922,
-   "conflict": 3
+   "error_median_m": 1.5011409728935698,
+   "support_median_m": 1.0271489619093632,
+   "missing": 10,
+   "conflict": 10
   }
  },
  "rows": [
   {
    "scene": "FloorPlan301",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 5.887868153855852,
    "error_m": 2.1604234175266304,
@@ -148,8 +156,27 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "distance_only",
+   "lookback_m": null,
+   "cone_deg": null,
+   "heading_error_deg": [],
+   "observed_heading": false,
+   "status": "supported",
+   "support_m": 2.9830769955330982,
+   "error_m": 1.367164170165259,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -158,8 +185,15 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -168,8 +202,15 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 0.19090564435000035,
@@ -178,8 +219,15 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 2.339902457788039,
@@ -188,18 +236,15 @@
   },
   {
    "scene": "FloorPlan301",
-   "lookback_m": 1.0,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.887868153855852,
-   "error_m": 2.1604234175266304,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    128.99335806840216,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -208,8 +253,15 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    128.99335806840216,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -218,8 +270,15 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    128.99335806840216,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 0.19090564435000035,
@@ -228,8 +287,15 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    128.99335806840216,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 2.339902457788039,
@@ -238,59 +304,79 @@
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 1.5,
-   "cone_deg": null,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    155.55841053116256,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.887868153855852,
-   "error_m": 2.1604234175266304,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 1.5,
-   "cone_deg": 30.0,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    155.55841053116256,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "lookback_m": 1.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    155.55841053116256,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.0,
+   "support_m": 0.19090564435000035,
    "error_m": 1.4642151745083511,
    "hit": false
   },
   {
    "scene": "FloorPlan301",
-   "lookback_m": 1.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.6049617457640394,
-   "error_m": 1.6211557226520947,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan301",
-   "lookback_m": 1.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.8573304815809569,
-   "error_m": 1.6975152109048963,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan301",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    155.55841053116256,
+    128.99335163998828,
+    128.99335163998828,
+    128.99335163998828
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 2.3132546584362057,
-   "error_m": 1.5817732551598926,
+   "support_m": 1.9575969899692969,
+   "error_m": 1.6290513290063797,
    "hit": false
   },
   {
    "scene": "FloorPlan302",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 3.4342674672218676,
    "error_m": 2.1798123998850447,
@@ -298,149 +384,227 @@
   },
   {
    "scene": "FloorPlan302",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.18905031679999995,
-   "error_m": 0.13416579996939274,
-   "hit": true
-  },
-  {
-   "scene": "FloorPlan302",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.18905031679999995,
-   "error_m": 0.13416579996939274,
-   "hit": true
-  },
-  {
-   "scene": "FloorPlan302",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.27012267380210364,
-   "error_m": 0.13416579996939274,
-   "hit": true
-  },
-  {
-   "scene": "FloorPlan302",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.429703349721002,
-   "error_m": 0.16407360162268161,
-   "hit": true
-  },
-  {
-   "scene": "FloorPlan302",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
-   "support_m": 3.4342674672218676,
-   "error_m": 2.1798123998850447,
-   "hit": false
+   "support_m": 0.429703349721002,
+   "error_m": 0.16407360162268161,
+   "hit": true
   },
   {
    "scene": "FloorPlan302",
-   "lookback_m": 1.0,
+   "control": "direction",
+   "lookback_m": 0.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    19.706255204666522,
+    160.29374479533348,
+    160.29374479533348,
+    19.706255204666522
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.18905031679999995,
+   "support_m": 0.0,
    "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan302",
-   "lookback_m": 1.0,
+   "control": "direction",
+   "lookback_m": 0.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    19.706255204666522,
+    160.29374479533348,
+    160.29374479533348,
+    19.706255204666522
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.27012267380210364,
+   "support_m": 0.0,
    "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan302",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    19.706255204666522,
+    160.29374479533348,
+    160.29374479533348,
+    19.706255204666522
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    19.706255204666522,
+    160.29374479533348,
+    160.29374479533348,
+    19.706255204666522
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "lookback_m": 1.0,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    3.997625485340704,
+    160.29374479533348,
+    160.29374479533348,
+    35.414884923992865
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "lookback_m": 1.0,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    3.997625485340704,
+    160.29374479533348,
+    160.29374479533348,
+    35.414884923992865
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    3.997625485340704,
+    160.29374479533348,
+    160.29374479533348,
+    35.414884923992865
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.429703349721002,
-   "error_m": 0.16407360162268161,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan302",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    3.997625485340704,
+    160.29374479533348,
+    160.29374479533348,
+    35.414884923992865
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.429703349721002,
-   "error_m": 0.16407360162268161,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan302",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 3.4342674672218676,
-   "error_m": 2.1798123998850447,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan302",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    22.965922610179398,
+    176.00237451465932,
+    176.00237451465983,
+    62.37843301951321
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.385882037,
-   "error_m": 0.16407360162268161,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan302",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    22.965922610179398,
+    176.00237451465932,
+    176.00237451465983,
+    62.37843301951321
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.429703349721002,
-   "error_m": 0.16407360162268161,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan302",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    22.965922610179398,
+    176.00237451465932,
+    176.00237451465983,
+    62.37843301951321
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.429703349721002,
-   "error_m": 0.16407360162268161,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan302",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    22.965922610179398,
+    176.00237451465932,
+    176.00237451465983,
+    62.37843301951321
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.429703349721002,
-   "error_m": 0.16407360162268161,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
    "hit": true
   },
   {
    "scene": "FloorPlan303",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 5.22897594220537,
    "error_m": 1.9382204800015892,
@@ -448,149 +612,227 @@
   },
   {
    "scene": "FloorPlan303",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.9997665695601179,
-   "error_m": 0.9765734496377907,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan303",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.2363462508143597,
-   "error_m": 1.0635373837214224,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan303",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.6982541550570371,
-   "error_m": 1.1825600624885197,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan303",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.8670213458187266,
-   "error_m": 1.2023504457257443,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan303",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
-   "support_m": 5.22897594220537,
-   "error_m": 1.9382204800015892,
+   "support_m": 2.531436061878887,
+   "error_m": 0.9981627404682182,
    "hit": false
   },
   {
    "scene": "FloorPlan303",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    77.81476872525705,
+    103.61732046233755,
+    103.61732046233755
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    77.81476872525705,
+    103.61732046233755,
+    103.61732046233755
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    77.81476872525705,
+    103.61732046233755,
+    103.61732046233755
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    77.81476872525705,
+    103.61732046233755,
+    103.61732046233755
+   ],
+   "observed_heading": true,
+   "status": "supported",
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    122.77985390532102,
+    105.04940964993216,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.9997665695601179,
-   "error_m": 0.9765734496377907,
-   "hit": false
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
   },
   {
    "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    122.77985390532102,
+    105.04940964993216,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 1.2363462508143597,
-   "error_m": 1.0635373837214224,
-   "hit": false
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
   },
   {
    "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    122.77985390532102,
+    105.04940964993216,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 1.6982541550570371,
-   "error_m": 1.1825600624885197,
-   "hit": false
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
   },
   {
    "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    122.77985390532102,
+    105.04940964993216,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 1.8670213458187266,
-   "error_m": 1.2023504457257443,
+   "error_m": 1.37323061678076,
    "hit": false
   },
   {
    "scene": "FloorPlan303",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.22897594220537,
-   "error_m": 1.9382204800015892,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    125.19675437195316,
+    130.1823716394156,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 0.9997665695601179,
-   "error_m": 0.9765734496377907,
-   "hit": false
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
   },
   {
    "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    125.19675437195316,
+    130.1823716394156,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 1.2363462508143597,
-   "error_m": 1.0635373837214224,
-   "hit": false
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
   },
   {
    "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    125.19675437195316,
+    130.1823716394156,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
-   "support_m": 1.6982541550570371,
-   "error_m": 1.1825600624885197,
-   "hit": false
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
   },
   {
    "scene": "FloorPlan303",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    103.61732046233755,
+    125.19675437195316,
+    130.1823716394156,
+    103.61732046233755
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 1.8670213458187266,
-   "error_m": 1.2023504457257443,
+   "error_m": 1.37323061678076,
    "hit": false
   },
   {
    "scene": "FloorPlan304",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 5.272901020915708,
    "error_m": 3.332720183706816,
@@ -598,29 +840,11 @@
   },
   {
    "scene": "FloorPlan304",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 1.6840376314419179,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan304",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.6874363717966772,
-   "error_m": 1.3326091775607716,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan304",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
+   "control": "distance_only",
+   "lookback_m": null,
+   "cone_deg": null,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 0.7589023145280078,
    "error_m": 1.2127155158223888,
@@ -628,28 +852,83 @@
   },
   {
    "scene": "FloorPlan304",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    89.34006722059056,
+    0.6599327794095131,
+    104.32316601721655,
+    179.3400672205905
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    89.34006722059056,
+    0.6599327794095131,
+    104.32316601721655,
+    179.3400672205905
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    89.34006722059056,
+    0.6599327794095131,
+    104.32316601721655,
+    179.3400672205905
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    89.34006722059056,
+    0.6599327794095131,
+    104.32316601721655,
+    179.3400672205905
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.7589023145280078,
-   "error_m": 1.2127155158223888,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan304",
-   "lookback_m": 1.0,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.272901020915708,
-   "error_m": 3.332720183706816,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    112.78777350137457,
+    0.6599327794095131,
+    96.8451893168198,
+    179.3400672205905
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -658,8 +937,15 @@
   },
   {
    "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    112.78777350137457,
+    0.6599327794095131,
+    96.8451893168198,
+    179.3400672205905
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -668,38 +954,49 @@
   },
   {
    "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    112.78777350137457,
+    0.6599327794095131,
+    96.8451893168198,
+    179.3400672205905
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.6874363717966772,
-   "error_m": 1.6840376314419179,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    112.78777350137457,
+    0.6599327794095131,
+    96.8451893168198,
+    179.3400672205905
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.7589023145280078,
-   "error_m": 1.2127155158223888,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan304",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.272901020915708,
-   "error_m": 3.332720183706816,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    138.3455640109965,
+    16.21760258964338,
+    94.64874545122038,
+    160.7670021567905
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -708,8 +1005,15 @@
   },
   {
    "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    138.3455640109965,
+    16.21760258964338,
+    94.64874545122038,
+    160.7670021567905
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -718,8 +1022,15 @@
   },
   {
    "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    138.3455640109965,
+    16.21760258964338,
+    94.64874545122038,
+    160.7670021567905
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -728,19 +1039,28 @@
   },
   {
    "scene": "FloorPlan304",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    138.3455640109965,
+    16.21760258964338,
+    94.64874545122038,
+    160.7670021567905
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.6874363717966772,
-   "error_m": 1.6840376314419179,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan305",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 4.50921269774905,
    "error_m": 2.0862134130805816,
@@ -748,39 +1068,11 @@
   },
   {
    "scene": "FloorPlan305",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 0.031022386743994206,
-   "hit": true
-  },
-  {
-   "scene": "FloorPlan305",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.1383278337069485,
-   "error_m": 1.1345353608413873,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan305",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.4899081223673076,
-   "error_m": 1.042976940312993,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan305",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
+   "control": "distance_only",
+   "lookback_m": null,
+   "cone_deg": null,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 1.6741127369705577,
    "error_m": 1.175043604209051,
@@ -788,109 +1080,215 @@
   },
   {
    "scene": "FloorPlan305",
-   "lookback_m": 1.0,
-   "cone_deg": null,
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    169.23376388218324,
+    10.766236117816751,
+    10.766236117816751,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 4.50921269774905,
-   "error_m": 2.0862134130805816,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan305",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    169.23376388218324,
+    10.766236117816751,
+    10.766236117816751,
+    79.23376388218323
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    169.23376388218324,
+    10.766236117816751,
+    10.766236117816751,
+    79.23376388218323
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    169.23376388218324,
+    10.766236117816751,
+    10.766236117816751,
+    79.23376388218323
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    169.6327957939317,
+    10.766236117816751,
+    3.738494141191311,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 0.031022386743994206,
-   "hit": true
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
   },
   {
    "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    169.6327957939317,
+    10.766236117816751,
+    3.738494141191311,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.1383278337069485,
-   "error_m": 1.1345353608413873,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    169.6327957939317,
+    10.766236117816751,
+    3.738494141191311,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.4899081223673076,
-   "error_m": 1.042976940312993,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    169.6327957939317,
+    10.766236117816751,
+    3.738494141191311,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.6741127369705577,
-   "error_m": 1.175043604209051,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan305",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 4.50921269774905,
-   "error_m": 2.0862134130805816,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    164.30229069466142,
+    10.766236117816751,
+    30.840714322580737,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 0.031022386743994206,
-   "hit": true
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
   },
   {
    "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    164.30229069466142,
+    10.766236117816751,
+    30.840714322580737,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.1383278337069485,
-   "error_m": 1.1345353608413873,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    164.30229069466142,
+    10.766236117816751,
+    30.840714322580737,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.4899081223673076,
-   "error_m": 1.042976940312993,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan305",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    164.30229069466142,
+    10.766236117816751,
+    30.840714322580737,
+    79.23376388218323
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.6741127369705577,
-   "error_m": 1.175043604209051,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 5.174802266189029,
    "error_m": 2.3042120147866787,
@@ -898,8 +1296,27 @@
   },
   {
    "scene": "FloorPlan306",
+   "control": "distance_only",
+   "lookback_m": null,
+   "cone_deg": null,
+   "heading_error_deg": [],
+   "observed_heading": false,
+   "status": "supported",
+   "support_m": 3.228397083938227,
+   "error_m": 1.4592431932843766,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    61.231821217084324,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -908,8 +1325,15 @@
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    61.231821217084324,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -918,129 +1342,181 @@
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    61.231821217084324,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.18766266105000007,
-   "error_m": 1.3421787162038035,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    61.231821217084324,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 2.5130710152469886,
-   "error_m": 1.3723578930211222,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
-   "lookback_m": 1.0,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.174802266189029,
-   "error_m": 2.3042120147866787,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    95.04653687161952,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.993159340888341,
-   "error_m": 1.4042012885059996,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    95.04653687161952,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.2568481817247532,
-   "error_m": 1.4739105796067693,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    95.04653687161952,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.3768878619134324,
-   "error_m": 1.5645380585179078,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    95.04653687161952,
+    118.76817878291568,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.5744493048617745,
-   "error_m": 1.5605694279720013,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.174802266189029,
-   "error_m": 2.3042120147866787,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    117.62479229890617,
+    109.90011347621177,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.2568481817247532,
-   "error_m": 1.4739105796067693,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    117.62479229890617,
+    109.90011347621177,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.4313040160999428,
-   "error_m": 1.4531989036402544,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    117.62479229890617,
+    109.90011347621177,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.5744493048617745,
-   "error_m": 1.5605694279720013,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan306",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    117.62479229890617,
+    109.90011347621177,
+    61.231821217084324,
+    61.231821217084324
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 2.4090708893835635,
-   "error_m": 1.5605694279720013,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan307",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 5.2233998852009655,
    "error_m": 2.909326389162959,
@@ -1048,58 +1524,95 @@
   },
   {
    "scene": "FloorPlan307",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan307",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan307",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan307",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan307",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
-   "support_m": 5.2233998852009655,
-   "error_m": 2.909326389162959,
+   "support_m": 1.3912967183999998,
+   "error_m": 1.024541058546404,
    "hit": false
   },
   {
    "scene": "FloorPlan307",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    23.900623030177805,
+    23.713385722310374,
+    23.713385722310374
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    23.900623030177805,
+    23.713385722310374,
+    23.713385722310374
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    23.900623030177805,
+    23.713385722310374,
+    23.713385722310374
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    23.900623030177805,
+    23.713385722310374,
+    23.713385722310374
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    68.90001315116619,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1108,8 +1621,15 @@
   },
   {
    "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    68.90001315116619,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1118,8 +1638,15 @@
   },
   {
    "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    68.90001315116619,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1128,8 +1655,15 @@
   },
   {
    "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    156.28661427768964,
+    68.90001315116619,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1138,18 +1672,15 @@
   },
   {
    "scene": "FloorPlan307",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.2233998852009655,
-   "error_m": 2.909326389162959,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    142.0303034414704,
+    64.17995773020634,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1158,8 +1689,15 @@
   },
   {
    "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    142.0303034414704,
+    64.17995773020634,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1168,8 +1706,15 @@
   },
   {
    "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    142.0303034414704,
+    64.17995773020634,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1178,8 +1723,15 @@
   },
   {
    "scene": "FloorPlan307",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    142.0303034414704,
+    64.17995773020634,
+    23.713385722310374,
+    23.713385722310374
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1188,9 +1740,11 @@
   },
   {
    "scene": "FloorPlan308",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 6.559884987852104,
    "error_m": 0.8056735485757581,
@@ -1198,58 +1752,95 @@
   },
   {
    "scene": "FloorPlan308",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan308",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan308",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan308",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.689849710005922,
-   "error_m": 2.158753047590651,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan308",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
-   "support_m": 6.559884987852104,
-   "error_m": 0.8056735485757581,
+   "support_m": 2.900814294562399,
+   "error_m": 1.7219137763189862,
    "hit": false
   },
   {
    "scene": "FloorPlan308",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    127.27073715466993,
+    53.700283834854496,
+    36.299716165145504
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    127.27073715466993,
+    53.700283834854496,
+    36.299716165145504
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    127.27073715466993,
+    53.700283834854496,
+    36.299716165145504
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    127.27073715466993,
+    53.700283834854496,
+    36.299716165145504
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    172.25455650857808,
+    53.700283834854496,
+    50.39109462143846
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1258,8 +1849,15 @@
   },
   {
    "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    172.25455650857808,
+    53.700283834854496,
+    50.39109462143846
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1268,8 +1866,15 @@
   },
   {
    "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    172.25455650857808,
+    53.700283834854496,
+    50.39109462143846
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1278,28 +1883,32 @@
   },
   {
    "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    172.25455650857808,
+    53.700283834854496,
+    50.39109462143846
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.689849710005922,
-   "error_m": 2.158753047590651,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan308",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 6.559884987852104,
-   "error_m": 0.8056735485757581,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    169.6943001815546,
+    53.700283834854496,
+    77.5353833600818
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1308,8 +1917,15 @@
   },
   {
    "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    169.6943001815546,
+    53.700283834854496,
+    77.5353833600818
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1318,8 +1934,15 @@
   },
   {
    "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    169.6943001815546,
+    53.700283834854496,
+    77.5353833600818
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1328,19 +1951,28 @@
   },
   {
    "scene": "FloorPlan308",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    126.29971616514553,
+    169.6943001815546,
+    53.700283834854496,
+    77.5353833600818
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.689849710005922,
-   "error_m": 2.158753047590651,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan310",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 4.948900189033949,
    "error_m": 2.6463003820157156,
@@ -1348,58 +1980,95 @@
   },
   {
    "scene": "FloorPlan310",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan310",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan310",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan310",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan310",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 4.948900189033949,
-   "error_m": 2.6463003820157156,
+   "heading_error_deg": [],
+   "observed_heading": false,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan310",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1408,8 +2077,15 @@
   },
   {
    "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1418,8 +2094,15 @@
   },
   {
    "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1428,8 +2111,15 @@
   },
   {
    "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    71.1730093684424,
+    108.82699063155762,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1438,18 +2128,15 @@
   },
   {
    "scene": "FloorPlan310",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 4.948900189033949,
-   "error_m": 2.6463003820157156,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    66.2384079891219,
+    129.76448048476286,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1458,8 +2145,15 @@
   },
   {
    "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    66.2384079891219,
+    129.76448048476286,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1468,8 +2162,15 @@
   },
   {
    "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    66.2384079891219,
+    129.76448048476286,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1478,8 +2179,15 @@
   },
   {
    "scene": "FloorPlan310",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    66.2384079891219,
+    129.76448048476286,
+    108.82699063155762,
+    108.82699063155762
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1488,9 +2196,11 @@
   },
   {
    "scene": "FloorPlan312",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 4.863545525312839,
    "error_m": 2.4951583342153114,
@@ -1498,58 +2208,95 @@
   },
   {
    "scene": "FloorPlan312",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan312",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan312",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan312",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.38870663870000044,
-   "error_m": 1.9498208957197962,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan312",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
-   "support_m": 4.863545525312839,
-   "error_m": 2.4951583342153114,
+   "support_m": 2.8263188013582283,
+   "error_m": 1.2633438952348988,
    "hit": false
   },
   {
    "scene": "FloorPlan312",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    121.80689428029153,
+    107.85866091497226,
+    72.14133908502775,
+    107.85866091497226
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    121.80689428029153,
+    107.85866091497226,
+    72.14133908502775,
+    107.85866091497226
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    121.80689428029153,
+    107.85866091497226,
+    72.14133908502775,
+    107.85866091497226
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    121.80689428029153,
+    107.85866091497226,
+    72.14133908502775,
+    107.85866091497226
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    114.23129326927729,
+    107.85866091497226,
+    48.90708360498944,
+    107.85866091497226
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1558,8 +2305,15 @@
   },
   {
    "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    114.23129326927729,
+    107.85866091497226,
+    48.90708360498944,
+    107.85866091497226
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1568,8 +2322,15 @@
   },
   {
    "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    114.23129326927729,
+    107.85866091497226,
+    48.90708360498944,
+    107.85866091497226
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1578,28 +2339,32 @@
   },
   {
    "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    114.23129326927729,
+    107.85866091497226,
+    48.90708360498944,
+    107.85866091497226
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.38870663870000044,
-   "error_m": 1.9498208957197962,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan312",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 4.863545525312839,
-   "error_m": 2.4951583342153114,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    141.58282128596244,
+    107.85866091497226,
+    23.29981309344521,
+    107.85866091497226
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1608,8 +2373,15 @@
   },
   {
    "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    141.58282128596244,
+    107.85866091497226,
+    23.29981309344521,
+    107.85866091497226
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1618,29 +2390,45 @@
   },
   {
    "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    141.58282128596244,
+    107.85866091497226,
+    23.29981309344521,
+    107.85866091497226
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.19435331940000022,
-   "error_m": 1.9498208957197962,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan312",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    141.58282128596244,
+    107.85866091497226,
+    23.29981309344521,
+    107.85866091497226
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 1.1661199161,
-   "error_m": 1.9350900165226954,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan313",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 4.156392560757112,
    "error_m": 2.37886654915725,
@@ -1648,8 +2436,27 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "distance_only",
+   "lookback_m": null,
+   "cone_deg": null,
+   "heading_error_deg": [],
+   "observed_heading": false,
+   "status": "supported",
+   "support_m": 2.4235781885137264,
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1658,8 +2465,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1668,8 +2482,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1678,8 +2499,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 0.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 0.18727657799999964,
@@ -1688,18 +2516,15 @@
   },
   {
    "scene": "FloorPlan313",
-   "lookback_m": 1.0,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 4.156392560757112,
-   "error_m": 2.37886654915725,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1708,8 +2533,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1718,8 +2550,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1728,8 +2567,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 0.18727657799999964,
@@ -1738,18 +2584,15 @@
   },
   {
    "scene": "FloorPlan313",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 4.156392560757112,
-   "error_m": 2.37886654915725,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    134.9457239418112,
+    134.94572394181102,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1758,8 +2601,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    134.9457239418112,
+    134.94572394181102,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1768,8 +2618,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    134.9457239418112,
+    134.94572394181102,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1778,8 +2635,15 @@
   },
   {
    "scene": "FloorPlan313",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    134.9457239418112,
+    134.94572394181102,
+    129.99219497153078,
+    129.99219497153078
+   ],
    "observed_heading": true,
    "status": "supported",
    "support_m": 0.18727657799999964,
@@ -1788,9 +2652,11 @@
   },
   {
    "scene": "FloorPlan316",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 0.0,
    "error_m": 0.03427422956541234,
@@ -1798,49 +2664,11 @@
   },
   {
    "scene": "FloorPlan316",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan316",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan316",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan316",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan316",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 0.0,
    "error_m": 0.03427422956541234,
@@ -1848,8 +2676,83 @@
   },
   {
    "scene": "FloorPlan316",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    131.19329531224528,
+    131.19329531224528,
+    145.16887902175955,
+    145.16887902175955
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    131.19329531224528,
+    131.19329531224528,
+    145.16887902175955,
+    145.16887902175955
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    131.19329531224528,
+    131.19329531224528,
+    145.16887902175955,
+    145.16887902175955
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    131.19329531224528,
+    131.19329531224528,
+    145.16887902175955,
+    145.16887902175955
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    138.85384603699532,
+    138.85384603699532,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1858,8 +2761,15 @@
   },
   {
    "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    138.85384603699532,
+    138.85384603699532,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1868,8 +2778,15 @@
   },
   {
    "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    138.85384603699532,
+    138.85384603699532,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1878,8 +2795,15 @@
   },
   {
    "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    138.85384603699532,
+    138.85384603699532,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1888,18 +2812,15 @@
   },
   {
    "scene": "FloorPlan316",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 0.03427422956541234,
-   "hit": true
-  },
-  {
-   "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    141.09897229029866,
+    141.09897229029866,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1908,8 +2829,15 @@
   },
   {
    "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    141.09897229029866,
+    141.09897229029866,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1918,8 +2846,15 @@
   },
   {
    "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    141.09897229029866,
+    141.09897229029866,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1928,8 +2863,15 @@
   },
   {
    "scene": "FloorPlan316",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    141.09897229029866,
+    141.09897229029866,
+    145.16887902175955,
+    145.16887902175955
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -1938,9 +2880,11 @@
   },
   {
    "scene": "FloorPlan318",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 5.598248227138964,
    "error_m": 1.9901632732042307,
@@ -1948,58 +2892,95 @@
   },
   {
    "scene": "FloorPlan318",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan318",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan318",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 2.5695330352725105,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan318",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.5960818926500009,
-   "error_m": 2.3754911172053554,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan318",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
-   "support_m": 5.598248227138964,
+   "support_m": 3.16849698788059,
    "error_m": 1.9901632732042307,
    "hit": false
   },
   {
    "scene": "FloorPlan318",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    141.29089693544387,
+    37.64984192760041
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    141.29089693544387,
+    37.64984192760041
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    141.29089693544387,
+    37.64984192760041
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    141.29089693544387,
+    37.64984192760041
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    96.31012253984275,
+    37.64984192760041
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2008,8 +2989,15 @@
   },
   {
    "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    96.31012253984275,
+    37.64984192760041
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2018,38 +3006,49 @@
   },
   {
    "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    96.31012253984275,
+    37.64984192760041
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 2.5695330352725105,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    96.31012253984275,
+    37.64984192760041
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.5960818926500009,
-   "error_m": 2.3754911172053554,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan318",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 5.598248227138964,
-   "error_m": 1.9901632732042307,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    78.29340154911475,
+    37.64984192760041
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2058,8 +3057,15 @@
   },
   {
    "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    78.29340154911475,
+    37.64984192760041
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2068,29 +3074,45 @@
   },
   {
    "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    78.29340154911475,
+    37.64984192760041
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 2.5695330352725105,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan318",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    127.64984192760043,
+    142.35015807239958,
+    78.29340154911475,
+    37.64984192760041
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.5960818926500009,
-   "error_m": 2.3754911172053554,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan320",
-   "lookback_m": 0.5,
+   "control": "no_channel",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
    "support_m": 3.987137850213339,
    "error_m": 0.08130943275319368,
@@ -2098,58 +3120,95 @@
   },
   {
    "scene": "FloorPlan320",
-   "lookback_m": 0.5,
-   "cone_deg": 30.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan320",
-   "lookback_m": 0.5,
-   "cone_deg": 45.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan320",
-   "lookback_m": 0.5,
-   "cone_deg": 60.0,
-   "observed_heading": true,
-   "status": "conflict",
-   "support_m": null,
-   "error_m": null,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan320",
-   "lookback_m": 0.5,
-   "cone_deg": 90.0,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 1.5696847769667401,
-   "hit": false
-  },
-  {
-   "scene": "FloorPlan320",
-   "lookback_m": 1.0,
+   "control": "distance_only",
+   "lookback_m": null,
    "cone_deg": null,
-   "observed_heading": true,
+   "heading_error_deg": [],
+   "observed_heading": false,
    "status": "supported",
-   "support_m": 3.987137850213339,
-   "error_m": 0.08130943275319368,
-   "hit": true
+   "support_m": 1.504307139727689,
+   "error_m": 1.805102319256682,
+   "hit": false
   },
   {
    "scene": "FloorPlan320",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 30.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 45.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 60.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "lookback_m": 0.5,
+   "cone_deg": 90.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
+   "observed_heading": true,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2158,8 +3217,15 @@
   },
   {
    "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2168,8 +3234,15 @@
   },
   {
    "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2178,28 +3251,32 @@
   },
   {
    "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.0,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 1.5696847769667401,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   },
   {
    "scene": "FloorPlan320",
-   "lookback_m": 1.5,
-   "cone_deg": null,
-   "observed_heading": true,
-   "status": "supported",
-   "support_m": 3.987137850213339,
-   "error_m": 0.08130943275319368,
-   "hit": true
-  },
-  {
-   "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 30.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2208,8 +3285,15 @@
   },
   {
    "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 45.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2218,8 +3302,15 @@
   },
   {
    "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 60.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
    "status": "conflict",
    "support_m": null,
@@ -2228,12 +3319,19 @@
   },
   {
    "scene": "FloorPlan320",
+   "control": "direction",
    "lookback_m": 1.5,
    "cone_deg": 90.0,
+   "heading_error_deg": [
+    100.34430303991165,
+    100.34430303991165,
+    169.6556969600884,
+    100.34430303991165
+   ],
    "observed_heading": true,
-   "status": "supported",
-   "support_m": 0.0,
-   "error_m": 1.5696847769667401,
+   "status": "conflict",
+   "support_m": null,
+   "error_m": null,
    "hit": false
   }
  ]

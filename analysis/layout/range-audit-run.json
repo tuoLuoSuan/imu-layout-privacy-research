@@ -1,0 +1,63 @@
+{
+  "witnesses_independently_checked": 482,
+  "evaluation_rows": 504,
+  "unit_tests": 58,
+  "scene_count": 14,
+  "inputs_unchanged": true,
+  "production_sources_unchanged": true,
+  "production_boxes_unchanged": true,
+  "real_rotation_deg": 170.0,
+  "real_center_errors_m": {
+    "cab": 0.09068121578272707,
+    "chair": 0.23329288772839385,
+    "desk": 0.10793111368021326,
+    "bed": 0.1116851548262065
+  },
+  "reference_scope": "Mixed frozen reference, chair includes anchor/user provenance; not all independent lidar truth",
+  "baseline_head": "02233e491348adfa5a7e44f13d3b3b4e1fd104c1",
+  "date": "2026-11-08",
+  "protocol": "Geometric fixed-contact nested reachable-floor survey; 4 arms,9 coverage grades; not raw IMU",
+  "thresholds": {
+    "A": null,
+    "TA-current": null,
+    "TA-walk-oracle": null,
+    "T-walk-oracle": null
+  },
+  "executed": [
+    "504 coverage evaluations",
+    "482 constructive witness checks",
+    "Causal desk heading and matched distance control",
+    "Matched independent/common oracle bearing errors",
+    "Pure door sensitivity with two provenance scenarios",
+    "Original ZIP replay",
+    "58 layout tests"
+  ],
+  "figure_qa": {
+    "new_figure": "range-audit",
+    "width_mm": 160,
+    "min_text_pt": 7.5,
+    "collision_fail": 0,
+    "collision_warn": 0,
+    "alignment": "passed",
+    "visual_inspected": true,
+    "legacy_3d_export": "not regenerated"
+  },
+  "source_sha256": {
+    "README.md": "60e2f04e2386ce02e568f4b366ae20d053be28633518d3d1faf5134eec40db54",
+    "RESULTS.md": "8b6524010737f02fae68009db59f36baad9cce69ee4f43cdda1c5717ff3ce77b",
+    "repository-policy.json": "9f54eba2d8837eb8f4a2a9a6940aa2a27f8b3b7b379c8285f47baed417ac2a74",
+    "analysis/layout/door.py": "4d90ccb9399b66cb8222e71a17449a0733b1880442b33178e143a56da4108552",
+    "analysis/layout/exp_desk_bearing.py": "d487d19f1724bc21073399098e34cee871d7409bca5edf895442e802ceff48c7",
+    "analysis/layout/exp_desk_dir.py": "26e82ff9ce885470b1c12bd68cbd88d46d342d55d131716c9a44be5882d380fd",
+    "analysis/layout/exp_door_sensitivity.py": "141e66ff93d57cc310985e9eb3a4ab9bc17d4135abd72ffe690d314e71c07421",
+    "analysis/layout/fig_frontier3d.py": "5ffb1ad32f6b2070629b826a928263684959fed88045026bd611e33a14dfc00e",
+    "analysis/layout/exp_walk_range.py": "9678a244e74a7510a094bd6e6ff64471ed27687f7c6228ac491a863df3858d28",
+    "analysis/layout/tests/test_range_audit.py": "26210c7549abe101450c2d98296a6078a2d47617bda133c72d9b70ca09039c08",
+    "analysis/layout/desk_bearing.json": "d68aae850f2fe23c8c092487ee1d9549bb4b293915ca7fd034c0424a0e8402e4",
+    "analysis/layout/desk_direction.json": "58735cc6c2993986249b9aa803fd06881df2ce6f3632aaf4963698ce49c6727b",
+    "analysis/layout/door_sensitivity.json": "a6c9d00f227e768e5b2628c8fa168dbfbfcf645d7f558614412c4e29816fc4ff",
+    "analysis/layout/walk-range-results.json": "0ce8b26b317b68461daca6da6bed7fd683168ac4a7ddcde2366b37b611dae04d",
+    "docs/research/2026-11-08-range-audit-and-identifiability.md": "a5f3046417f0b497c0ae652c0a07599dec9c3e115cbc5ca0816e6ef61662c80a"
+  },
+  "attachment_sha256": "e17a94a4f15d52691771f517b612c2df95dbdd8aea06a538b359fa985c3b6096"
+}

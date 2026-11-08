@@ -3,8 +3,8 @@
 exp_desk.py already showed: a distance-only desk channel (|seated -> desk| <= 1 m)
 takes the desk from 2/14 to 3/14, while an ORACLE bearing to the true desk centre
 takes it to 12/14.  This script replaces the oracle bearing with the heading the
-runtime actually has: the direction the person was walking when they sat down,
-taken from the same trajectory the solver receives.
+generated approach direction, temporally associated with each event. These
+geometric routes are not raw IMU and this proxy is not measured body facing.
 """
 import json
 from pathlib import Path
@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 
 from . import evidence_space as ES
-from . import sim_eval as SE
+from . import sim_eval as SE, paths
 from .activity_experiment import route_episode, prefix_episode
 
 TOL = 0.5
@@ -24,7 +24,7 @@ BUDGET = 96.0
 
 
 def scenes():
-    root = Path("output/thor")
+    root = Path(paths.THOR)
     return [s for f in sorted(root.glob("FloorPlan*.json")) if (s := SE.load_scene(str(f)))]
 
 
@@ -32,16 +32,21 @@ def _dist(box, point):
     outside = np.maximum(np.asarray(box[:2], float) - point, point - np.asarray(box[2:], float)).clip(min=0)
     return float(np.linalg.norm(outside))
 
-def heading_at(path, anchor, lookback):
-    """Unit direction of travel over the last lookback metres before the anchor."""
+def heading_at(path, anchor, lookback, event_distance=None):
+    """Causal approach direction, associated by event arclength, never spatial nearest.
+
+    Without event_distance the caller must already have truncated the path to the event.
+    The anchor is retained for API compatibility; a phone contact need not be on the walk.
+    """
     path = np.asarray(path, float)
-    d = np.linalg.norm(path - np.asarray(anchor, float), axis=1)
-    i = int(np.argmin(d))
-    if i == 0:
+    if len(path)<2:
         return None
-    arc = np.r_[0.0, np.cumsum(np.linalg.norm(np.diff(path[: i + 1], axis=0), axis=1))]
-    j = int(np.searchsorted(arc, max(0.0, arc[-1] - lookback)))
-    v = path[i] - path[j]
+    arc = np.r_[0.0, np.cumsum(np.linalg.norm(np.diff(path, axis=0), axis=1))]
+    end=arc[-1] if event_distance is None else min(float(event_distance),arc[-1])
+    if end<=0:return None
+    def at(distance):
+        return np.array([np.interp(distance,arc,path[:,axis]) for axis in [0,1]])
+    v = at(end)-at(max(0.,end-lookback))
     n = np.linalg.norm(v)
     return None if n < 1e-6 else v / n
 
@@ -66,44 +71,48 @@ def run(out):
         truth = np.asarray(scene["gt"]["desk"], float)
         path, events = prefix_episode(episode, BUDGET)
         seated = [e for e in events if e["object"] == "chair"]
-        for lookback in LOOKBACKS:
-            heads = [heading_at(path, e["pos"], lookback) for e in seated]
-            for cone in (None,) + CONES:
-                selected = dict(banks)
-                if cone is not None:
-                    keep = np.ones(len(banks["desk"]), bool)
-                    for event, h in zip(seated, heads):
-                        keep &= cone_keep(banks["desk"], np.asarray(event["pos"], float), h, cone)
-                    selected["desk"] = banks["desk"][keep]
-                row = {"scene": scene["scene"], "lookback_m": lookback, "cone_deg": cone,
-                       "observed_heading": bool(any(h is not None for h in heads)),
-                       "status": "empty", "support_m": None, "error_m": None, "hit": False}
-                if len(selected["desk"]):
-                    result = ES.infer(room, selected, path, events, True, True, None,
-                                      padding=PAD, reach=.60, path_margin=.08,
-                                      desk_reach=(None if cone is None else REACH))
-                    info = result["objects"]["desk"]
-                    row["status"] = info.get("status")
-                    row["support_m"] = info.get("center_diameter_m")
-                    if result.get("boxes") and "desk" in result["boxes"]:
-                        got = np.asarray(result["boxes"]["desk"], float)
-                        row["error_m"] = float(np.linalg.norm(
-                            (truth[:2] + truth[2:]) / 2 - (got[:2] + got[2:]) / 2))
-                        row["hit"] = bool(row["error_m"] <= TOL)
-                rows.append(row)
+        settings=[('no_channel',None,None),('distance_only',None,None)]+[
+            ('direction',lb,cone) for lb in LOOKBACKS for cone in CONES]
+        for control,lookback,cone in settings:
+            heads = [heading_at(path,e['pos'],lookback,e['available_distance_m']) for e in seated] if lookback else []
+            selected = dict(banks)
+            if cone is not None:
+                keep = np.ones(len(banks["desk"]), bool)
+                for event, h in zip(seated, heads):
+                    keep &= cone_keep(banks["desk"], np.asarray(event["pos"], float), h, cone)
+                selected["desk"] = banks["desk"][keep]
+            row = {"scene": scene["scene"], "control":control,"lookback_m": lookback, "cone_deg": cone,
+                   "heading_error_deg":[float(np.degrees(np.arccos(np.clip(h @ ((truth[:2]+truth[2:])/2-np.asarray(e['pos']))/
+                     max(1e-9,np.linalg.norm((truth[:2]+truth[2:])/2-np.asarray(e['pos']))),-1,1))))
+                     for h,e in zip(heads,seated) if h is not None],
+                   "observed_heading": bool(any(h is not None for h in heads)),
+                   "status": "empty", "support_m": None, "error_m": None, "hit": False}
+            if len(selected["desk"]):
+                result = ES.infer(room, selected, path, events, True, True, None,
+                                  padding=PAD, reach=.60, path_margin=.08,
+                                  desk_reach=(None if control=='no_channel' else REACH))
+                info = result["objects"]["desk"]
+                row["status"] = info.get("status")
+                row["support_m"] = info.get("center_diameter_m")
+                if result.get("boxes") and "desk" in result["boxes"]:
+                    got = np.asarray(result["boxes"]["desk"], float)
+                    row["error_m"] = float(np.linalg.norm(
+                        (truth[:2] + truth[2:]) / 2 - (got[:2] + got[2:]) / 2))
+                    row["hit"] = bool(row["error_m"] <= TOL)
+            rows.append(row)
     summary = {}
-    for lookback in LOOKBACKS:
-        for cone in (None,) + CONES:
-            sel = [r for r in rows if r["lookback_m"] == lookback and r["cone_deg"] == cone]
-            errs = [r["error_m"] for r in sel if r["error_m"] is not None]
-            sups = [r["support_m"] for r in sel if r["support_m"] is not None]
-            summary["lookback%g_cone%s" % (lookback, cone)] = {
-                "n": len(sel), "hits": sum(r["hit"] for r in sel),
-                "hit_rate": float(np.mean([r["hit"] for r in sel])),
-                "error_median_m": float(np.median(errs)) if errs else None,
-                "support_median_m": float(np.median(sups)) if sups else None,
-                "conflict": sum(1 for r in sel if r["status"] == "conflict")}
-    record = {"scope": "Desk direction from the observed trajectory heading, 14 development scenes, 96 m budget",
+    for control,lookback,cone in settings:
+        sel = [r for r in rows if r['control']==control and r["lookback_m"] == lookback and r["cone_deg"] == cone]
+        errs = [r["error_m"] for r in sel if r["error_m"] is not None]
+        sups = [r["support_m"] for r in sel if r["support_m"] is not None]
+        summary[control if lookback is None else "lookback%g_cone%s" % (lookback, cone)] = {
+            "n": len(sel), "hits": sum(r["hit"] for r in sel),
+            "hit_rate": float(np.mean([r["hit"] for r in sel])),
+            "error_median_m": float(np.median(errs)) if errs else None,
+            "support_median_m": float(np.median(sups)) if sups else None,
+            "missing":sum(r['error_m'] is None for r in sel),
+            "conflict": sum(1 for r in sel if r["status"] == "conflict")}
+    record = {"scope": "Geometric generated-route heading, not raw IMU or measured body facing; development scenes, 96 m",
               "reach_m": REACH, "padding_m": PAD, "lookbacks_m": list(LOOKBACKS),
               "cones_deg": list(CONES), "summary": summary, "rows": rows}
     Path(out).write_text(json.dumps(record, ensure_ascii=False, indent=1), encoding="utf-8")

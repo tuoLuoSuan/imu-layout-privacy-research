@@ -1,8 +1,8 @@
 """门位置：用户 2026-11-08 在稠密图上标注（贴 y = L 那面墙，紧挨床的左侧）。
 
-门不是装饰：门洞占掉上墙的一段，家具不能压在上面。这给出一个**外部**约束——
-它不来自「床贴着右墙」这类假设，而来自用户在图上指出的事实。床的 x 区间因此可以被
-夹到 [门右沿, 房间宽 - 床长]，宽度与「床靠右墙」几乎一样，但证据来源不同。
+门洞是可选侧信息。本标注依赖预测稠密图、起点被近似为门心，不能当独立验证。
+仅在床位于门右侧并邻接该墙时，床 x 可写成 [门右沿, 房间宽 - 床宽]。
+早前卷尺的 0.33m 角距与此来源存在差异，由敏感性脚本同时保留，不自动合并。
 """
 import json
 import os
@@ -10,21 +10,22 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# 起点 S=(0.825, 3.845) 就在门口，门宽 77.5 cm（用户早前给过），故门洞 = S 两侧各半宽。
+# 条件性假设：门心取起点 x；起点在门口不自动证明此等式。
 DOOR = {"s-59d570ee": {"wall": "y_hi", "centre_x": 0.825, "width_m": 0.775,
-                       "source": "user annotation on the dense map, 2026-11-08"}}
+                       "source": "start-centred interpretation of dense-map annotation; not independently measured centre"}}
 
 
-def opening(sess):
-    d = DOOR.get(sess)
+def opening(sess,door_spec=None):
+    d = DOOR.get(sess) if door_spec is None else door_spec
     if not d:
         return None
     half = d["width_m"] / 2.0
     return (d["centre_x"] - half, d["centre_x"] + half, d["wall"])
 
 
-def clearance(pred):
-    op = opening(pred.get("session"))
+def clearance(pred,door_spec=None):
+    """Projected consistency near the wall, not a door-swing collision test."""
+    op = opening(pred.get("session"),door_spec)
     if not op:
         return None
     x0, x1, wall = op
@@ -36,17 +37,20 @@ def clearance(pred):
             out[k] = {"gap_m": None, "touches_door_wall": False}
             continue
         gap = max(x0 - b[2], b[0] - x1)
-        out[k] = {"gap_m": round(float(gap), 3), "touches_door_wall": True,
+        out[k] = {"gap_m": float(gap), "touches_door_wall": True,
                   "blocked": bool(gap < 0)}
-    return {"opening_m": [round(x0, 3), round(x1, 3)], "wall": wall, "objects": out}
+    return {"opening_m": [x0, x1], "wall": wall, "objects": out}
 
 
-def bed_x_interval(sess, room_w, bed_len):
-    op = opening(sess)
+def bed_x_interval(sess, room_w, bed_len,door_spec=None):
+    """Conditional on bed to the right of the opening and adjoining that wall."""
+    op = opening(sess,door_spec)
     if not op:
         return None
     lo, hi = op[1], room_w - bed_len
-    return {"lo": round(lo, 3), "hi": round(hi, 3), "width_m": round(max(0.0, hi - lo), 3)}
+    signed=hi-lo
+    return {'status':'conflict' if signed<0 else 'singleton' if signed==0 else 'interval',
+            'lo':lo,'hi':hi,'signed_width_m':signed,'width_m':None if signed<0 else signed}
 
 
 if __name__ == "__main__":

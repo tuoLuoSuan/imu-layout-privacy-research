@@ -1,8 +1,7 @@
 """How accurate would a facing-direction estimate have to be for the desk channel to work?
 
-The observed walking heading is 113 deg (median) away from the true desk bearing, so the
-channel has to be fed a bearing from somewhere else.  This script injects a bearing with a
-known angular error and measures how often the desk still lands within 0.5 m.
+This injects the true desk-centre bearing with artificial error. It does not
+measure phone orientation or body facing. Common and independent errors are separate.
 """
 import json
 from pathlib import Path
@@ -43,42 +42,55 @@ def run(out):
         if not seated:
             continue
         rng = np.random.default_rng(90210 + index)
-        for sigma in SIGMAS:
-            for draw in range(DRAWS):
-                heads = []
-                for event in seated:
-                    v = centre - np.asarray(event["pos"], float)
-                    n = np.linalg.norm(v)
-                    h = v / n if n > 1e-9 else np.array([1.0, 0.0])
-                    heads.append(rotate(h, rng.normal(0.0, sigma)))
-                for cone in CONES:
-                    keep = np.ones(len(banks["desk"]), bool)
-                    for event, h in zip(seated, heads):
-                        keep &= cone_keep(banks["desk"], np.asarray(event["pos"], float), h, cone)
-                    selected = dict(banks)
-                    selected["desk"] = banks["desk"][keep]
-                    row = {"scene": scene["scene"], "sigma_deg": sigma, "draw": draw, "cone_deg": cone,
-                           "status": "empty", "error_m": None, "hit": False}
-                    if len(selected["desk"]):
-                        result = ES.infer(room, selected, path, events, True, True, None,
-                                          padding=PAD, reach=.60, path_margin=.08, desk_reach=REACH)
-                        info = result["objects"]["desk"]
-                        row["status"] = info.get("status")
-                        if result.get("boxes") and "desk" in result["boxes"]:
-                            got = np.asarray(result["boxes"]["desk"], float)
-                            row["error_m"] = float(np.linalg.norm(centre - (got[:2] + got[2:]) / 2))
-                            row["hit"] = bool(row["error_m"] <= TOL)
-                    rows.append(row)
+        # Matched draws across sigma; the common mode must not average down on revisits.
+        normals={'independent':rng.normal(size=(DRAWS,len(seated))),
+                 'common':np.repeat(rng.normal(size=(DRAWS,1)),len(seated),axis=1)}
+        for mode in ('independent','common'):
+            for sigma in SIGMAS:
+                for draw in range(DRAWS):
+                    heads = []
+                    for j,event in enumerate(seated):
+                        v = centre - np.asarray(event["pos"], float)
+                        n = np.linalg.norm(v)
+                        h = v / n if n > 1e-9 else np.array([1.0, 0.0])
+                        heads.append(rotate(h, normals[mode][draw,j]*sigma))
+                    for cone in CONES:
+                        keep = np.ones(len(banks["desk"]), bool)
+                        for event, h in zip(seated, heads):
+                            keep &= cone_keep(banks["desk"], np.asarray(event["pos"], float), h, cone)
+                        selected = dict(banks)
+                        selected["desk"] = banks["desk"][keep]
+                        row = {"scene": scene["scene"], "error_mode":mode,"sigma_deg": sigma, "draw": draw, "cone_deg": cone,
+                               'true_desk_within_reach':all(np.linalg.norm(np.maximum(truth[:2]-np.asarray(e['pos']),
+                                  np.asarray(e['pos'])-truth[2:]).clip(min=0))<=REACH for e in seated),
+                               "status": "empty", "error_m": None, "hit": False}
+                        if len(selected["desk"]):
+                            result = ES.infer(room, selected, path, events, True, True, None,
+                                              padding=PAD, reach=.60, path_margin=.08, desk_reach=REACH)
+                            info = result["objects"]["desk"]
+                            row["status"] = info.get("status")
+                            if result.get("boxes") and "desk" in result["boxes"]:
+                                got = np.asarray(result["boxes"]["desk"], float)
+                                row["error_m"] = float(np.linalg.norm(centre - (got[:2] + got[2:]) / 2))
+                                row["hit"] = bool(row["error_m"] <= TOL)
+                        rows.append(row)
     summary = {}
-    for sigma in SIGMAS:
-        for cone in CONES:
-            sel = [r for r in rows if r["sigma_deg"] == sigma and r["cone_deg"] == cone]
-            errs = [r["error_m"] for r in sel if r["error_m"] is not None]
-            summary["sigma%g_cone%g" % (sigma, cone)] = {
-                "instances": len(sel), "hit_rate": float(np.mean([r["hit"] for r in sel])),
-                "conflict": sum(1 for r in sel if r["status"] == "conflict"),
-                "error_median_m": float(np.median(errs)) if errs else None}
-    record = {"scope": "Synthetic bearing accuracy sweep for the desk channel, 14 development scenes",
+    for mode in ('independent','common'):
+        for sigma in SIGMAS:
+            for cone in CONES:
+                sel = [r for r in rows if r['error_mode']==mode and r["sigma_deg"] == sigma and r["cone_deg"] == cone]
+                errs = [r["error_m"] for r in sel if r["error_m"] is not None]
+                summary["%s_sigma%g_cone%g" % (mode,sigma, cone)] = {
+                    'n_rooms':len(set(r['scene'] for r in sel)),
+                    "instances": len(sel), "hit_rate": float(np.mean([r["hit"] for r in sel])),
+                    'missing':sum(r['error_m'] is None for r in sel),
+                    'reach_excluded_rooms':len(set(r['scene'] for r in sel if not r['true_desk_within_reach'])),
+                    "conflict": sum(1 for r in sel if r["status"] == "conflict"),
+                    "error_median_m": float(np.median(errs)) if errs else None}
+    record = {"scope": "Oracle desk-centre bearing sensitivity, not measured body facing; matched Gaussian draws, development scenes",
+              'independent_unit':'14 scenes; three noise draws are repetitions, not 42 rooms',
+              'baseline':'Compare desk-direction-causal distance_only, which uses the identical 1m distance assumption',
+              'threshold':'No accuracy requirement is declared achieved merely from the best setting',
               "reach_m": REACH, "padding_m": PAD, "sigmas_deg": list(SIGMAS),
               "cones_deg": list(CONES), "draws": DRAWS, "summary": summary, "rows": rows}
     Path(out).write_text(json.dumps(record, ensure_ascii=False, indent=1), encoding="utf-8")
