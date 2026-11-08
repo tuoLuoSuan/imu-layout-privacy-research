@@ -36,7 +36,7 @@ H_BODY = {'stand': 1.60, 'walk': 1.60, 'sit': 0.95, 'reach': 1.60, 'lie': 0.32}
 PITCH = {'stand': -35.0, 'walk': -35.0, 'sit': -12.0, 'reach': -20.0, 'lie': 58.0}
 HAND_FWD = {'stand': 0.34, 'walk': 0.36, 'sit': 0.30, 'reach': 0.44, 'lie': 0.16}
 HAND_UP = {'stand': -0.55, 'walk': -0.55, 'sit': -0.32, 'reach': -0.50, 'lie': -0.18}
-F_STEP = 1.85
+F_STEP = 1.15  # 由真实录音标定：慢走约 0.4 m/s 时步频约 1.1 Hz（analysis/layout/gait_calib.py）
 
 
 def smooth(u):
@@ -153,13 +153,14 @@ def device_pose(t, st):
     # 脚跟着地：每步一个周期光滑的窄脉冲（周期函数，避免跨步边界出现位置跳变）
     frac = (t * F_STEP) % 1.0
     step = 0.5 * (1.0 + math.cos(2.0 * math.pi * (frac - 0.10))) ** 4 if swing > 1e-6 else 0.0
-    hz = h + up + 0.012 * swing * math.sin(2 * ph) - 0.008 * swing * step
+    hz = h + up + 0.018 * swing * math.sin(ph) - 0.008 * swing * step
     pos = np.array([hand_world[0], hand_world[1], hz])
     # 姿态：先按实测量出的「上」方向定俯仰，再绕世界竖轴转到人体朝向，最后叠小摆幅
     u = (1 - blend) * np.array(U_UP[prev_pose]) + blend * np.array(U_UP[pose])
-    yaw = psi + math.radians(2.5) * swing * math.sin(ph + 0.7)
-    psw = math.radians(3.0) * swing * math.sin(2 * ph + 0.3)
-    rsw = math.radians(1.5) * swing * math.sin(ph + 1.1)
+    # 摆幅按真实录音标定：手的姿态起伏比最初估计小得多（真实竖直起伏 std 约 1.7 m/s^2）
+    yaw = psi + math.radians(1.2) * swing * math.sin(ph + 0.7)
+    psw = math.radians(0.9) * swing * math.sin(ph + 0.3)
+    rsw = math.radians(0.6) * swing * math.sin(ph + 1.1)
     R = rot(yaw, 0.0, 0.0) @ basis_from_up(u) @ rot(0.0, psw, rsw)
     return pos, R, yaw
 

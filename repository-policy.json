@@ -76,6 +76,8 @@
     "analysis/layout/fig_robust.py",
     "analysis/layout/fig_watch.py",
     "analysis/layout/figure_style.py",
+    "analysis/layout/gait_calib.json",
+    "analysis/layout/gait_calib.py",
     "analysis/layout/height_prior.py",
     "analysis/layout/ideal_vs_raw.json",
     "analysis/layout/identifiability.py",
