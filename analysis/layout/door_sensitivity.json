@@ -1,0 +1,81 @@
+{
+ "scope": "User-annotated door centre, +/-0.30 m sweep, real room s-59d570ee",
+ "room_width_m": 2.84,
+ "bed_length_m": 1.525,
+ "predicted_bed_x": [
+  1.2649317216103058,
+  2.789931721610306
+ ],
+ "rows": [
+  {
+   "shift_m": -0.3,
+   "door_x0": 0.1374999999999999,
+   "door_x1": 0.9124999999999999,
+   "bed_x_lo": 0.912,
+   "bed_x_hi": 1.315,
+   "width_m": 0.4029999999999999,
+   "bed_clearance_m": 0.352,
+   "bed_blocked": false
+  },
+  {
+   "shift_m": -0.2,
+   "door_x0": 0.2375,
+   "door_x1": 1.0125,
+   "bed_x_lo": 1.012,
+   "bed_x_hi": 1.315,
+   "width_m": 0.30299999999999994,
+   "bed_clearance_m": 0.252,
+   "bed_blocked": false
+  },
+  {
+   "shift_m": -0.1,
+   "door_x0": 0.33749999999999997,
+   "door_x1": 1.1125,
+   "bed_x_lo": 1.113,
+   "bed_x_hi": 1.315,
+   "width_m": 0.20199999999999996,
+   "bed_clearance_m": 0.152,
+   "bed_blocked": false
+  },
+  {
+   "shift_m": 0.0,
+   "door_x0": 0.43749999999999994,
+   "door_x1": 1.2125,
+   "bed_x_lo": 1.212,
+   "bed_x_hi": 1.315,
+   "width_m": 0.10299999999999998,
+   "bed_clearance_m": 0.052,
+   "bed_blocked": false
+  },
+  {
+   "shift_m": 0.1,
+   "door_x0": 0.5374999999999999,
+   "door_x1": 1.3125,
+   "bed_x_lo": 1.312,
+   "bed_x_hi": 1.315,
+   "width_m": 0.0029999999999998916,
+   "bed_clearance_m": -0.048,
+   "bed_blocked": true
+  },
+  {
+   "shift_m": 0.2,
+   "door_x0": 0.6375,
+   "door_x1": 1.4124999999999999,
+   "bed_x_lo": 1.412,
+   "bed_x_hi": 1.315,
+   "width_m": -0.09699999999999998,
+   "bed_clearance_m": -0.148,
+   "bed_blocked": true
+  },
+  {
+   "shift_m": 0.3,
+   "door_x0": 0.7375,
+   "door_x1": 1.5125,
+   "bed_x_lo": 1.512,
+   "bed_x_hi": 1.315,
+   "width_m": -0.19700000000000006,
+   "bed_clearance_m": -0.248,
+   "bed_blocked": true
+  }
+ ]
+}
