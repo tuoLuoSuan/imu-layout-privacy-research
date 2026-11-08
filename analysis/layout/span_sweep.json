@@ -1,0 +1,2726 @@
+{
+ "scope": "Counterfactual anchor placement, not a measured route",
+ "protocol": {
+  "copies_per_axis": 3,
+  "padding_m": 0.2,
+  "tolerance_m": 0.5,
+  "bank_spacing_m": 0.2,
+  "other_classes": "measured events at the full route"
+ },
+ "summary": {
+  "bed:0.00": {
+   "n": 14,
+   "median_support_m": 2.364693367787269,
+   "median_max_envelope_m": 1.9686372275749997,
+   "median_error_m": 0.4215321188735017,
+   "hit_rate": 0.6428571428571429
+  },
+  "bed:0.25": {
+   "n": 14,
+   "median_support_m": 2.2487739270902183,
+   "median_max_envelope_m": 1.8107037574749998,
+   "median_error_m": 0.3629807822033553,
+   "hit_rate": 0.6428571428571429
+  },
+  "bed:0.50": {
+   "n": 14,
+   "median_support_m": 2.201242232277064,
+   "median_max_envelope_m": 1.78849080355,
+   "median_error_m": 0.3629807822033553,
+   "hit_rate": 0.7142857142857143
+  },
+  "bed:0.75": {
+   "n": 14,
+   "median_support_m": 2.01050984708061,
+   "median_max_envelope_m": 1.5520256758000002,
+   "median_error_m": 0.3629807822033553,
+   "hit_rate": 0.7857142857142857
+  },
+  "bed:1.00": {
+   "n": 14,
+   "median_support_m": 1.8731329419765408,
+   "median_max_envelope_m": 1.5185623475,
+   "median_error_m": 0.3406278427088253,
+   "hit_rate": 0.7857142857142857
+  },
+  "bed:1.50": {
+   "n": 14,
+   "median_support_m": 1.4677270141740126,
+   "median_max_envelope_m": 1.2326622817500001,
+   "median_error_m": 0.29589827453629935,
+   "hit_rate": 0.7857142857142857
+  },
+  "cab:0.00": {
+   "n": 13,
+   "median_support_m": 2.6935580417439007,
+   "median_max_envelope_m": 1.9752701759,
+   "median_error_m": 1.2345053769916294,
+   "hit_rate": 0.23076923076923078
+  },
+  "cab:0.25": {
+   "n": 12,
+   "median_support_m": 2.30918005343334,
+   "median_max_envelope_m": 1.899647429625,
+   "median_error_m": 1.245812552296774,
+   "hit_rate": 0.3333333333333333
+  },
+  "cab:0.50": {
+   "n": 11,
+   "median_support_m": 1.65421919257166,
+   "median_max_envelope_m": 1.55631729125,
+   "median_error_m": 0.18813605847739145,
+   "hit_rate": 0.45454545454545453
+  },
+  "cab:0.75": {
+   "n": 11,
+   "median_support_m": 1.4010021561415889,
+   "median_max_envelope_m": 1.33643512725,
+   "median_error_m": 0.11046144619279133,
+   "hit_rate": 0.5454545454545454
+  },
+  "cab:1.00": {
+   "n": 11,
+   "median_support_m": 1.3508468717720847,
+   "median_max_envelope_m": 0.7675618457750001,
+   "median_error_m": 0.09880784573619877,
+   "hit_rate": 0.45454545454545453
+  },
+  "cab:1.50": {
+   "n": 6,
+   "median_support_m": 0.2756156730020802,
+   "median_max_envelope_m": 0.19868856430000026,
+   "median_error_m": 0.11046144619279133,
+   "hit_rate": 0.5
+  }
+ },
+ "rows": [
+  {
+   "scene": "FloorPlan301",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.4667997360229492,
+    2.0747323036193848
+   ],
+   "predicted_max_width_m": 2.4747323036193847,
+   "support_m": 1.803677445524288,
+   "envelope_m": [
+    1.06028306485,
+    1.4591271877000003
+   ],
+   "error_m": 0.17478784068766914,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.4667997360229492,
+    2.0747323036193848
+   ],
+   "predicted_max_width_m": 2.2247323036193847,
+   "support_m": 1.6518101210203084,
+   "envelope_m": [
+    1.06028306485,
+    1.2666003704
+   ],
+   "error_m": 0.06801005840868568,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.4667997360229492,
+    2.0747323036193848
+   ],
+   "predicted_max_width_m": 1.9747323036193847,
+   "support_m": 1.6518101210203084,
+   "envelope_m": [
+    1.06028306485,
+    1.2666003704
+   ],
+   "error_m": 0.06801005840868568,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.4667997360229492,
+    2.0747323036193848
+   ],
+   "predicted_max_width_m": 1.7247323036193847,
+   "support_m": 1.5092495403243165,
+   "envelope_m": [
+    1.06028306485,
+    1.0740735530500003
+   ],
+   "error_m": 0.1778949324441624,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.4667997360229492,
+    2.0747323036193848
+   ],
+   "predicted_max_width_m": 1.4747323036193847,
+   "support_m": 1.5092495403243165,
+   "envelope_m": [
+    1.06028306485,
+    1.0740735530500003
+   ],
+   "error_m": 0.1778949324441624,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.4667997360229492,
+    2.0747323036193848
+   ],
+   "predicted_max_width_m": 0.9747323036193847,
+   "support_m": 1.1697831533228207,
+   "envelope_m": [
+    1.06028306485,
+    0.4941583230000002
+   ],
+   "error_m": 0.21654151170911123,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    0.8568143844604492,
+    0.12569046020507812
+   ],
+   "predicted_max_width_m": 1.2568143844604491,
+   "support_m": 2.721339106060076,
+   "envelope_m": [
+    1.90853834155,
+    1.9398886383000002
+   ],
+   "error_m": 1.018113592563855,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    0.8568143844604492,
+    0.12569046020507812
+   ],
+   "predicted_max_width_m": 1.0068143844604491,
+   "support_m": 2.3634613676037914,
+   "envelope_m": [
+    1.3501043319499995,
+    1.9398886383000002
+   ],
+   "error_m": 0.18644119882814128,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    0.8568143844604492,
+    0.12569046020507812
+   ],
+   "predicted_max_width_m": 0.7568143844604491,
+   "support_m": 1.65421919257166,
+   "envelope_m": [
+    0.5786161422999996,
+    1.5497240067
+   ],
+   "error_m": 0.18644119882814128,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    0.8568143844604492,
+    0.12569046020507812
+   ],
+   "predicted_max_width_m": 0.5068143844604491,
+   "support_m": 1.5970106460678173,
+   "envelope_m": [
+    0.3857440948499997,
+    1.5497240067
+   ],
+   "error_m": 0.0357010965449644,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    0.8568143844604492,
+    0.12569046020507812
+   ],
+   "predicted_max_width_m": 0.25681438446044913,
+   "support_m": 1.5497240067,
+   "envelope_m": [
+    0.0,
+    1.5497240067
+   ],
+   "error_m": 0.0357010965449644,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "object": "cab",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    0.8568143844604492,
+    0.12569046020507812
+   ],
+   "predicted_max_width_m": 0.0,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.2521815299987793,
+    2.0826871395111084
+   ],
+   "predicted_max_width_m": 2.4826871395111083,
+   "support_m": 2.329984303262083,
+   "envelope_m": [
+    1.3239095211,
+    1.9173133373
+   ],
+   "error_m": 0.3404928278898589,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.2521815299987793,
+    2.0826871395111084
+   ],
+   "predicted_max_width_m": 2.2326871395111083,
+   "support_m": 2.329984303262083,
+   "envelope_m": [
+    1.3239095211,
+    1.9173133373
+   ],
+   "error_m": 0.7221026494558568,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.2521815299987793,
+    2.0826871395111084
+   ],
+   "predicted_max_width_m": 1.9826871395111083,
+   "support_m": 2.329984303262083,
+   "envelope_m": [
+    1.3239095211,
+    1.9173133373
+   ],
+   "error_m": 0.7221026494558568,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.2521815299987793,
+    2.0826871395111084
+   ],
+   "predicted_max_width_m": 1.7326871395111083,
+   "support_m": 2.026187132920331,
+   "envelope_m": [
+    1.3239095211,
+    1.5338506699
+   ],
+   "error_m": 0.4124415858784383,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.2521815299987793,
+    2.0826871395111084
+   ],
+   "predicted_max_width_m": 1.4826871395111083,
+   "support_m": 1.7538896704539582,
+   "envelope_m": [
+    1.3239095211,
+    1.1503880024000002
+   ],
+   "error_m": 0.4124415858784383,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.2521815299987793,
+    2.0826871395111084
+   ],
+   "predicted_max_width_m": 0.9826871395111083,
+   "support_m": 1.3757708600156582,
+   "envelope_m": [
+    1.14217817785,
+    0.7669253349000003
+   ],
+   "error_m": 0.734029837600435,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    1.9189062118530273,
+    1.0487895011901855
+   ],
+   "predicted_max_width_m": 2.3189062118530273,
+   "support_m": 2.102297564476055,
+   "envelope_m": [
+    1.3979001641,
+    1.5702006817000003
+   ],
+   "error_m": 0.1074111792877314,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    1.9189062118530273,
+    1.0487895011901855
+   ],
+   "predicted_max_width_m": 2.0689062118530273,
+   "support_m": 2.102297564476055,
+   "envelope_m": [
+    1.3979001641,
+    1.5702006817000003
+   ],
+   "error_m": 0.1074111792877314,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    1.9189062118530273,
+    1.0487895011901855
+   ],
+   "predicted_max_width_m": 1.8189062118530273,
+   "support_m": 1.9794835019689971,
+   "envelope_m": [
+    1.2053318023500001,
+    1.5702006817000003
+   ],
+   "error_m": 0.1074111792877314,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    1.9189062118530273,
+    1.0487895011901855
+   ],
+   "predicted_max_width_m": 1.5689062118530273,
+   "support_m": 1.769204898980592,
+   "envelope_m": [
+    0.8152029156999998,
+    1.5702006817000003
+   ],
+   "error_m": 0.1363022756104324,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    1.9189062118530273,
+    1.0487895011901855
+   ],
+   "predicted_max_width_m": 1.3189062118530273,
+   "support_m": 1.769204898980592,
+   "envelope_m": [
+    0.8152029156999998,
+    1.5702006817000003
+   ],
+   "error_m": 0.1363022756104324,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    1.9189062118530273,
+    1.0487895011901855
+   ],
+   "predicted_max_width_m": 0.8189062118530273,
+   "support_m": 1.196087776699935,
+   "envelope_m": [
+    0.1925683617499998,
+    1.1804843902500002
+   ],
+   "error_m": 0.3750033329179857,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    1.0640923976898193,
+    0.18161439895629883
+   ],
+   "predicted_max_width_m": 1.4640923976898192,
+   "support_m": 3.137428578546554,
+   "envelope_m": [
+    2.5583399415,
+    1.81613733765
+   ],
+   "error_m": 0.15136592977493335,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    1.0640923976898193,
+    0.18161439895629883
+   ],
+   "predicted_max_width_m": 1.2140923976898192,
+   "support_m": 2.599181856606804,
+   "envelope_m": [
+    1.85940622095,
+    1.81613733765
+   ],
+   "error_m": 1.3962992782467385,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    1.0640923976898193,
+    0.18161439895629883
+   ],
+   "predicted_max_width_m": 0.9640923976898192,
+   "support_m": 1.979396265385767,
+   "envelope_m": [
+    0.7871815204999999,
+    1.81613733765
+   ],
+   "error_m": 1.3962992782467385,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    1.0640923976898193,
+    0.18161439895629883
+   ],
+   "predicted_max_width_m": 0.7140923976898192,
+   "support_m": 1.4610320475831777,
+   "envelope_m": [
+    0.5903861403499997,
+    1.33643512725
+   ],
+   "error_m": 1.3962992782467385,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    1.0640923976898193,
+    0.18161439895629883
+   ],
+   "predicted_max_width_m": 0.46409239768981925,
+   "support_m": 1.3508468717720847,
+   "envelope_m": [
+    0.1967953801000002,
+    1.33643512725
+   ],
+   "error_m": 1.3962992782467385,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.1541800498962402,
+    2.5204849243164062
+   ],
+   "predicted_max_width_m": 2.920484924316406,
+   "support_m": 2.745813907607864,
+   "envelope_m": [
+    1.8108621120500001,
+    2.0640427385
+   ],
+   "error_m": 0.6312178293457607,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.1541800498962402,
+    2.5204849243164062
+   ],
+   "predicted_max_width_m": 2.670484924316406,
+   "support_m": 2.6013249141699175,
+   "envelope_m": [
+    1.8108621120500001,
+    1.8675303799999994
+   ],
+   "error_m": 0.6312178293457607,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.1541800498962402,
+    2.5204849243164062
+   ],
+   "predicted_max_width_m": 2.420484924316406,
+   "support_m": 2.3348305849953124,
+   "envelope_m": [
+    1.8108621120500001,
+    1.4738426889499996
+   ],
+   "error_m": 0.4403612122774463,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.1541800498962402,
+    2.5204849243164062
+   ],
+   "predicted_max_width_m": 2.170484924316406,
+   "support_m": 2.2156491437072985,
+   "envelope_m": [
+    1.8108621120500001,
+    1.2766673564999995
+   ],
+   "error_m": 0.4403612122774463,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.1541800498962402,
+    2.5204849243164062
+   ],
+   "predicted_max_width_m": 1.9204849243164062,
+   "support_m": 2.1630611668408863,
+   "envelope_m": [
+    1.8108621120500001,
+    1.1830519949
+   ],
+   "error_m": 0.4403612122774463,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.1541800498962402,
+    2.5204849243164062
+   ],
+   "predicted_max_width_m": 1.4204849243164062,
+   "support_m": 1.3908314846158671,
+   "envelope_m": [
+    1.14558388205,
+    0.7887013299000003
+   ],
+   "error_m": 0.24961784872205683,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    1.534771203994751,
+    0.31372547149658203
+   ],
+   "predicted_max_width_m": 1.9347712039947509,
+   "support_m": 3.025744156236139,
+   "envelope_m": [
+    2.101168553,
+    2.1772042648500003
+   ],
+   "error_m": 1.7245703281368778,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    1.534771203994751,
+    0.31372547149658203
+   ],
+   "predicted_max_width_m": 1.6847712039947509,
+   "support_m": 2.3079727820855567,
+   "envelope_m": [
+    0.76584590615,
+    2.1772042648500003
+   ],
+   "error_m": 0.6862721144373788,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    1.534771203994751,
+    0.31372547149658203
+   ],
+   "predicted_max_width_m": 1.4347712039947509,
+   "support_m": 2.3079727820855567,
+   "envelope_m": [
+    0.76584590615,
+    2.1772042648500003
+   ],
+   "error_m": 0.6862721144373788,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    1.534771203994751,
+    0.31372547149658203
+   ],
+   "predicted_max_width_m": 1.1847712039947509,
+   "support_m": 0.2756156730020802,
+   "envelope_m": [
+    0.1910153229999998,
+    0.19868856430000026
+   ],
+   "error_m": 0.12997136307401377,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    1.534771203994751,
+    0.31372547149658203
+   ],
+   "predicted_max_width_m": 0.9347712039947509,
+   "support_m": 0.2756156730020802,
+   "envelope_m": [
+    0.1910153229999998,
+    0.19868856430000026
+   ],
+   "error_m": 0.12997136307401377,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan304",
+   "object": "cab",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    1.534771203994751,
+    0.31372547149658203
+   ],
+   "predicted_max_width_m": 0.4347712039947509,
+   "support_m": 0.2756156730020802,
+   "envelope_m": [
+    0.1910153229999998,
+    0.19868856430000026
+   ],
+   "error_m": 0.12997136307401377,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.077338695526123,
+    2.340759515762329
+   ],
+   "predicted_max_width_m": 2.740759515762329,
+   "support_m": 2.3150215502767857,
+   "envelope_m": [
+    1.20957563605,
+    1.9738924891999996
+   ],
+   "error_m": 0.4601509932832945,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.077338695526123,
+    2.340759515762329
+   ],
+   "predicted_max_width_m": 2.490759515762329,
+   "support_m": 1.9905771548263111,
+   "envelope_m": [
+    1.20957563605,
+    1.5809251057500002
+   ],
+   "error_m": 0.4601509932832945,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.077338695526123,
+    2.340759515762329
+   ],
+   "predicted_max_width_m": 2.240759515762329,
+   "support_m": 1.840684193066055,
+   "envelope_m": [
+    1.20957563605,
+    1.3874599378999999
+   ],
+   "error_m": 0.4601509932832945,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.077338695526123,
+    2.340759515762329
+   ],
+   "predicted_max_width_m": 1.990759515762329,
+   "support_m": 1.8157871588306445,
+   "envelope_m": [
+    1.20957563605,
+    1.35425617475
+   ],
+   "error_m": 0.4601509932832945,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.077338695526123,
+    2.340759515762329
+   ],
+   "predicted_max_width_m": 1.740759515762329,
+   "support_m": 1.676457270896505,
+   "envelope_m": [
+    1.20957563605,
+    1.16079100695
+   ],
+   "error_m": 0.32904763837525824,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.077338695526123,
+    2.340759515762329
+   ],
+   "predicted_max_width_m": 1.240759515762329,
+   "support_m": 1.1175620404215523,
+   "envelope_m": [
+    0.5596656459,
+    0.9673258391000001
+   ],
+   "error_m": 0.2003920901284805,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    0.2621021270751953,
+    1.2525789737701416
+   ],
+   "predicted_max_width_m": 1.6525789737701415,
+   "support_m": 2.6759458712595516,
+   "envelope_m": [
+    0.3807788425000007,
+    2.6487154960500003
+   ],
+   "error_m": 2.406287224092583,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    0.2621021270751953,
+    1.2525789737701416
+   ],
+   "predicted_max_width_m": 1.4025789737701415,
+   "support_m": 2.488822752530445,
+   "envelope_m": [
+    0.3807788425000007,
+    2.45952153205
+   ],
+   "error_m": 2.406287224092583,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    0.2621021270751953,
+    1.2525789737701416
+   ],
+   "predicted_max_width_m": 1.1525789737701415,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    0.2621021270751953,
+    1.2525789737701416
+   ],
+   "predicted_max_width_m": 0.9025789737701415,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    0.2621021270751953,
+    1.2525789737701416
+   ],
+   "predicted_max_width_m": 0.6525789737701415,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    2.3477954864501953,
+    1.235710620880127
+   ],
+   "predicted_max_width_m": 2.7477954864501952,
+   "support_m": 2.98536109176339,
+   "envelope_m": [
+    2.35637927055,
+    1.8329914297499998
+   ],
+   "error_m": 0.9897843653159131,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    2.3477954864501953,
+    1.235710620880127
+   ],
+   "predicted_max_width_m": 2.4977954864501952,
+   "support_m": 2.98536109176339,
+   "envelope_m": [
+    2.35637927055,
+    1.8329914297499998
+   ],
+   "error_m": 0.9897843653159131,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    2.3477954864501953,
+    1.235710620880127
+   ],
+   "predicted_max_width_m": 2.2477954864501952,
+   "support_m": 2.832934784490165,
+   "envelope_m": [
+    2.16001433135,
+    1.8329914297499998
+   ],
+   "error_m": 0.9897843653159131,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    2.3477954864501953,
+    1.235710620880127
+   ],
+   "predicted_max_width_m": 1.9977954864501952,
+   "support_m": 2.546203432367297,
+   "envelope_m": [
+    1.7672844529000007,
+    1.8329914297499998
+   ],
+   "error_m": 0.9897843653159131,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    2.3477954864501953,
+    1.235710620880127
+   ],
+   "predicted_max_width_m": 1.7477954864501952,
+   "support_m": 2.4140517185968475,
+   "envelope_m": [
+    1.5709195137000003,
+    1.8329914297499998
+   ],
+   "error_m": 0.9897843653159131,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    2.3477954864501953,
+    1.235710620880127
+   ],
+   "predicted_max_width_m": 1.2477954864501952,
+   "support_m": 1.8709993998931682,
+   "envelope_m": [
+    0.9818246960499999,
+    1.5926892417
+   ],
+   "error_m": 0.9897843653159131,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    0.5514590740203857,
+    0.0
+   ],
+   "predicted_max_width_m": 0.9514590740203858,
+   "support_m": 2.6295335979769816,
+   "envelope_m": [
+    1.9752701759,
+    1.7357288599
+   ],
+   "error_m": 1.2345053769916294,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    0.5514590740203857,
+    0.0
+   ],
+   "predicted_max_width_m": 0.7014590740203858,
+   "support_m": 2.2800794522284096,
+   "envelope_m": [
+    1.4785153476999997,
+    1.7357288599
+   ],
+   "error_m": 1.2345053769916294,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    0.5514590740203857,
+    0.0
+   ],
+   "predicted_max_width_m": 0.45145907402038576,
+   "support_m": 1.3554421925617475,
+   "envelope_m": [
+    0.1975270175999997,
+    1.3409722647
+   ],
+   "error_m": 1.2345053769916294,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    0.5514590740203857,
+    0.0
+   ],
+   "predicted_max_width_m": 0.20145907402038576,
+   "support_m": 1.3409722647,
+   "envelope_m": [
+    0.0,
+    1.3409722647
+   ],
+   "error_m": 1.2345053769916294,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    0.5514590740203857,
+    0.0
+   ],
+   "predicted_max_width_m": 0.0,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    2.423595428466797,
+    1.3769505023956299
+   ],
+   "predicted_max_width_m": 2.823595428466797,
+   "support_m": 2.541255393917912,
+   "envelope_m": [
+    1.7138378790500002,
+    1.8763631582000002
+   ],
+   "error_m": 0.6013566159129807,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    2.423595428466797,
+    1.3769505023956299
+   ],
+   "predicted_max_width_m": 2.573595428466797,
+   "support_m": 2.541255393917912,
+   "envelope_m": [
+    1.7138378790500002,
+    1.8763631582000002
+   ],
+   "error_m": 0.6013566159129807,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    2.423595428466797,
+    1.3769505023956299
+   ],
+   "predicted_max_width_m": 2.323595428466797,
+   "support_m": 2.4423107032128923,
+   "envelope_m": [
+    1.563375473,
+    1.8763631582000002
+   ],
+   "error_m": 0.6212292693680332,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    2.423595428466797,
+    1.3769505023956299
+   ],
+   "predicted_max_width_m": 2.073595428466797,
+   "support_m": 2.4423107032128923,
+   "envelope_m": [
+    1.563375473,
+    1.8763631582000002
+   ],
+   "error_m": 0.6013566159129807,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    2.423595428466797,
+    1.3769505023956299
+   ],
+   "predicted_max_width_m": 1.8235954284667968,
+   "support_m": 2.322075706353975,
+   "envelope_m": [
+    1.3679535389,
+    1.8763631582000002
+   ],
+   "error_m": 0.6013566159129807,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    2.423595428466797,
+    1.3769505023956299
+   ],
+   "predicted_max_width_m": 1.3235954284667968,
+   "support_m": 2.2125932896915077,
+   "envelope_m": [
+    1.1725316047499998,
+    1.8763631582000002
+   ],
+   "error_m": 0.498296892491033,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    1.5358675718307495,
+    0.26618528366088867
+   ],
+   "predicted_max_width_m": 1.9358675718307494,
+   "support_m": 1.567696800962728,
+   "envelope_m": [
+    0.18854640995000005,
+    1.55631729125
+   ],
+   "error_m": 0.007110263787210634,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    1.5358675718307495,
+    0.26618528366088867
+   ],
+   "predicted_max_width_m": 1.6858675718307494,
+   "support_m": 1.567696800962728,
+   "envelope_m": [
+    0.18854640995000005,
+    1.55631729125
+   ],
+   "error_m": 0.007110263787210634,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    1.5358675718307495,
+    0.26618528366088867
+   ],
+   "predicted_max_width_m": 1.4358675718307494,
+   "support_m": 1.567696800962728,
+   "envelope_m": [
+    0.18854640995000005,
+    1.55631729125
+   ],
+   "error_m": 0.007110263787210634,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    1.5358675718307495,
+    0.26618528366088867
+   ],
+   "predicted_max_width_m": 1.1858675718307494,
+   "support_m": 1.567696800962728,
+   "envelope_m": [
+    0.18854640995000005,
+    1.55631729125
+   ],
+   "error_m": 0.007110263787210634,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    1.5358675718307495,
+    0.26618528366088867
+   ],
+   "predicted_max_width_m": 0.9358675718307494,
+   "support_m": 1.567696800962728,
+   "envelope_m": [
+    0.18854640995000005,
+    1.55631729125
+   ],
+   "error_m": 0.007110263787210634,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "object": "cab",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    1.5358675718307495,
+    0.26618528366088867
+   ],
+   "predicted_max_width_m": 0.4358675718307494,
+   "support_m": 1.567696800962728,
+   "envelope_m": [
+    0.18854640995000005,
+    1.55631729125
+   ],
+   "error_m": 0.007110263787210634,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan308",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.7882883548736572,
+    2.430429458618164
+   ],
+   "predicted_max_width_m": 2.830429458618164,
+   "support_m": 2.4152752950298173,
+   "envelope_m": [
+    1.28484017325,
+    2.0451749265
+   ],
+   "error_m": 0.5096357971951977,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.7882883548736572,
+    2.430429458618164
+   ],
+   "predicted_max_width_m": 2.580429458618164,
+   "support_m": 2.2553660567386578,
+   "envelope_m": [
+    1.28484017325,
+    1.8536077737999999
+   ],
+   "error_m": 0.5096357971951977,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.7882883548736572,
+    2.430429458618164
+   ],
+   "predicted_max_width_m": 2.330429458618164,
+   "support_m": 2.2553660567386578,
+   "envelope_m": [
+    1.28484017325,
+    1.8536077737999999
+   ],
+   "error_m": 0.5096357971951977,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.7882883548736572,
+    2.430429458618164
+   ],
+   "predicted_max_width_m": 2.080429458618164,
+   "support_m": 1.9500462383218684,
+   "envelope_m": [
+    1.28484017325,
+    1.4669240132999999
+   ],
+   "error_m": 0.5096357971951977,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.7882883548736572,
+    2.430429458618164
+   ],
+   "predicted_max_width_m": 1.830429458618164,
+   "support_m": 1.9500462383218684,
+   "envelope_m": [
+    1.28484017325,
+    1.4669240132999999
+   ],
+   "error_m": 0.5096357971951977,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.7882883548736572,
+    2.430429458618164
+   ],
+   "predicted_max_width_m": 1.330429458618164,
+   "support_m": 1.60258030095838,
+   "envelope_m": [
+    1.28484017325,
+    0.9578357636999999
+   ],
+   "error_m": 0.38888412807239664,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan308",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    0.8472440242767334,
+    0.32991230487823486
+   ],
+   "predicted_max_width_m": 1.2472440242767333,
+   "support_m": 3.1721990435700946,
+   "envelope_m": [
+    2.3320412636,
+    2.1504488640500004
+   ],
+   "error_m": 1.0289349084936334,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    2.4172489643096924,
+    1.524705410003662
+   ],
+   "predicted_max_width_m": 2.8172489643096923,
+   "support_m": 2.270687095751663,
+   "envelope_m": [
+    1.7576089779499995,
+    1.4376475811000002
+   ],
+   "error_m": 0.27865374279269656,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    2.4172489643096924,
+    1.524705410003662
+   ],
+   "predicted_max_width_m": 2.5672489643096923,
+   "support_m": 2.128989063418438,
+   "envelope_m": [
+    1.5702750920499997,
+    1.4376475811000002
+   ],
+   "error_m": 0.09221499178931168,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    2.4172489643096924,
+    1.524705410003662
+   ],
+   "predicted_max_width_m": 2.3172489643096923,
+   "support_m": 1.9948325612408893,
+   "envelope_m": [
+    1.38294120625,
+    1.4376475811000002
+   ],
+   "error_m": 0.18056441753252242,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    2.4172489643096924,
+    1.524705410003662
+   ],
+   "predicted_max_width_m": 2.0672489643096923,
+   "support_m": 1.9948325612408893,
+   "envelope_m": [
+    1.38294120625,
+    1.4376475811000002
+   ],
+   "error_m": 0.18056441753252242,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    2.4172489643096924,
+    1.524705410003662
+   ],
+   "predicted_max_width_m": 1.8172489643096923,
+   "support_m": 1.8698415526873688,
+   "envelope_m": [
+    1.1956073204499997,
+    1.4376475811000002
+   ],
+   "error_m": 0.18056441753252242,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    2.4172489643096924,
+    1.524705410003662
+   ],
+   "predicted_max_width_m": 1.3172489643096923,
+   "support_m": 1.6518032100854463,
+   "envelope_m": [
+    0.8134022851000009,
+    1.4376475811000002
+   ],
+   "error_m": 0.12372886049301228,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    0.3841395378112793,
+    0.43688154220581055
+   ],
+   "predicted_max_width_m": 0.8368815422058106,
+   "support_m": 2.2033460655475223,
+   "envelope_m": [
+    1.8286361726000002,
+    1.2291556584999999
+   ],
+   "error_m": 0.14565608616480727,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan310",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    0.3841395378112793,
+    0.43688154220581055
+   ],
+   "predicted_max_width_m": 0.5868815422058106,
+   "support_m": 2.1026642282168932,
+   "envelope_m": [
+    1.8286361726000002,
+    1.0379241807
+   ],
+   "error_m": 1.342220187130708,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.3790218830108643,
+    2.0883240699768066
+   ],
+   "predicted_max_width_m": 2.4883240699768066,
+   "support_m": 2.2502276478175687,
+   "envelope_m": [
+    0.9137766190999999,
+    2.0563406229
+   ],
+   "error_m": 0.514412612984496,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.3790218830108643,
+    2.0883240699768066
+   ],
+   "predicted_max_width_m": 2.2383240699768066,
+   "support_m": 1.9137870219203161,
+   "envelope_m": [
+    0.9137766190999999,
+    1.6815448420000003
+   ],
+   "error_m": 0.3382073654746488,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.3790218830108643,
+    2.0883240699768066
+   ],
+   "predicted_max_width_m": 1.9883240699768066,
+   "support_m": 1.7671970858505353,
+   "envelope_m": [
+    0.9137766190999999,
+    1.5126129150000003
+   ],
+   "error_m": 0.3382073654746488,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.3790218830108643,
+    2.0883240699768066
+   ],
+   "predicted_max_width_m": 1.7383240699768066,
+   "support_m": 1.6083333139471163,
+   "envelope_m": [
+    0.9137766190999999,
+    1.32353630065
+   ],
+   "error_m": 0.3382073654746488,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.3790218830108643,
+    2.0883240699768066
+   ],
+   "predicted_max_width_m": 1.4883240699768066,
+   "support_m": 1.4567039814093048,
+   "envelope_m": [
+    0.9137766190999999,
+    1.1344596862999998
+   ],
+   "error_m": 0.3382073654746488,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.3790218830108643,
+    2.0883240699768066
+   ],
+   "predicted_max_width_m": 0.9883240699768066,
+   "support_m": 1.1861648988526112,
+   "envelope_m": [
+    0.9137766190999999,
+    0.7563064575
+   ],
+   "error_m": 0.33013714301490027,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    1.282407283782959,
+    0.29866623878479004
+   ],
+   "predicted_max_width_m": 1.682407283782959,
+   "support_m": 2.739805947135886,
+   "envelope_m": [
+    1.5996037397,
+    2.22436609035
+   ],
+   "error_m": 1.4873735928477299,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    1.282407283782959,
+    0.29866623878479004
+   ],
+   "predicted_max_width_m": 1.432407283782959,
+   "support_m": 2.6335420796713014,
+   "envelope_m": [
+    1.4098721153000002,
+    2.22436609035
+   ],
+   "error_m": 0.11046144619279133,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    1.282407283782959,
+    0.29866623878479004
+   ],
+   "predicted_max_width_m": 1.182407283782959,
+   "support_m": 2.232443189242765,
+   "envelope_m": [
+    0.18973162440000024,
+    2.22436609035
+   ],
+   "error_m": 0.11046144619279133,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    1.282407283782959,
+    0.29866623878479004
+   ],
+   "predicted_max_width_m": 0.9324072837829589,
+   "support_m": 0.27114628362756216,
+   "envelope_m": [
+    0.18973162440000024,
+    0.19370652499999996
+   ],
+   "error_m": 0.11046144619279133,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    1.282407283782959,
+    0.29866623878479004
+   ],
+   "predicted_max_width_m": 0.6824072837829589,
+   "support_m": 0.27114628362756216,
+   "envelope_m": [
+    0.18973162440000024,
+    0.19370652499999996
+   ],
+   "error_m": 0.11046144619279133,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "object": "cab",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    1.282407283782959,
+    0.29866623878479004
+   ],
+   "predicted_max_width_m": 0.1824072837829589,
+   "support_m": 0.19370652499999996,
+   "envelope_m": [
+    0.0,
+    0.19370652499999996
+   ],
+   "error_m": 0.11046144619279133,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.3708269596099854,
+    2.133716583251953
+   ],
+   "predicted_max_width_m": 2.533716583251953,
+   "support_m": 2.399402432312455,
+   "envelope_m": [
+    1.3792256117000001,
+    1.9633819659499998
+   ],
+   "error_m": 0.3829132444637089,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.3708269596099854,
+    2.133716583251953
+   ],
+   "predicted_max_width_m": 2.283716583251953,
+   "support_m": 2.242181797441779,
+   "envelope_m": [
+    1.3792256117000001,
+    1.7677997411499997
+   ],
+   "error_m": 0.3829132444637089,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.3708269596099854,
+    2.133716583251953
+   ],
+   "predicted_max_width_m": 2.033716583251953,
+   "support_m": 1.9540366202461203,
+   "envelope_m": [
+    1.3792256117000001,
+    1.38419500985
+   ],
+   "error_m": 0.3829132444637089,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.3708269596099854,
+    2.133716583251953
+   ],
+   "predicted_max_width_m": 1.783716583251953,
+   "support_m": 1.8193223162099925,
+   "envelope_m": [
+    1.3792256117000001,
+    1.1864528656000002
+   ],
+   "error_m": 0.3829132444637089,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.3708269596099854,
+    2.133716583251953
+   ],
+   "predicted_max_width_m": 1.533716583251953,
+   "support_m": 1.8193223162099925,
+   "envelope_m": [
+    1.3792256117000001,
+    1.1864528656000002
+   ],
+   "error_m": 0.3829132444637089,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.3708269596099854,
+    2.133716583251953
+   ],
+   "predicted_max_width_m": 1.033716583251953,
+   "support_m": 1.5392104812817982,
+   "envelope_m": [
+    1.1796694517,
+    0.9887107212999999
+   ],
+   "error_m": 0.5737308280767538,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    0.2545144557952881,
+    0.5622725486755371
+   ],
+   "predicted_max_width_m": 0.9622725486755371,
+   "support_m": 2.7972872780817566,
+   "envelope_m": [
+    1.9846897539999997,
+    1.9712490194
+   ],
+   "error_m": 1.6126547242376341,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    0.2545144557952881,
+    0.5622725486755371
+   ],
+   "predicted_max_width_m": 0.7122725486755371,
+   "support_m": 2.3103873247811233,
+   "envelope_m": [
+    1.9846897539999997,
+    1.1827494117000001
+   ],
+   "error_m": 1.6126547242376341,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    0.2545144557952881,
+    0.5622725486755371
+   ],
+   "predicted_max_width_m": 0.46227254867553713,
+   "support_m": 0.23245763144287043,
+   "envelope_m": [
+    0.23235732144999943,
+    0.006828292950000092
+   ],
+   "error_m": 0.18813605847739145,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    0.2545144557952881,
+    0.5622725486755371
+   ],
+   "predicted_max_width_m": 0.21227254867553713,
+   "support_m": 0.19490178109999956,
+   "envelope_m": [
+    0.19490178109999956,
+    0.0
+   ],
+   "error_m": 0.0830827830558035,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    0.2545144557952881,
+    0.5622725486755371
+   ],
+   "predicted_max_width_m": 0.0,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "object": "cab",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    0.2545144557952881,
+    0.5622725486755371
+   ],
+   "predicted_max_width_m": 0.0,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.5373272895812988,
+    2.3723506927490234
+   ],
+   "predicted_max_width_m": 2.7723506927490233,
+   "support_m": 2.653703628102912,
+   "envelope_m": [
+    2.01069494655,
+    1.7318339347999998
+   ],
+   "error_m": 0.3430483199430017,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.5373272895812988,
+    2.3723506927490234
+   ],
+   "predicted_max_width_m": 2.5223506927490233,
+   "support_m": 2.653703628102912,
+   "envelope_m": [
+    2.01069494655,
+    1.7318339347999998
+   ],
+   "error_m": 0.3430483199430017,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.5373272895812988,
+    2.3723506927490234
+   ],
+   "predicted_max_width_m": 2.2723506927490233,
+   "support_m": 2.530521406881413,
+   "envelope_m": [
+    2.01069494655,
+    1.53643887695
+   ],
+   "error_m": 0.3430483199430017,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.5373272895812988,
+    2.3723506927490234
+   ],
+   "predicted_max_width_m": 2.0223506927490233,
+   "support_m": 2.530521406881413,
+   "envelope_m": [
+    2.01069494655,
+    1.53643887695
+   ],
+   "error_m": 0.3430483199430017,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.5373272895812988,
+    2.3723506927490234
+   ],
+   "predicted_max_width_m": 1.7723506927490233,
+   "support_m": 2.317963977194056,
+   "envelope_m": [
+    2.01069494655,
+    1.15328350005
+   ],
+   "error_m": 0.3430483199430017,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.5373272895812988,
+    2.3723506927490234
+   ],
+   "predicted_max_width_m": 1.2723506927490233,
+   "support_m": 2.219063451784111,
+   "envelope_m": [
+    2.01069494655,
+    0.9388015951000002
+   ],
+   "error_m": 0.18118843587785124,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    0.3697328567504883,
+    0.3979017734527588
+   ],
+   "predicted_max_width_m": 0.7979017734527588,
+   "support_m": 2.128882632598197,
+   "envelope_m": [
+    1.2035406529999997,
+    1.75602709545
+   ],
+   "error_m": 1.6279139043568742,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    0.3697328567504883,
+    0.3979017734527588
+   ],
+   "predicted_max_width_m": 0.5479017734527588,
+   "support_m": 1.9716862139919171,
+   "envelope_m": [
+    1.2035406529999997,
+    1.56174147125
+   ],
+   "error_m": 1.2571197276019184,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    0.3697328567504883,
+    0.3979017734527588
+   ],
+   "predicted_max_width_m": 0.2979017734527588,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    0.3697328567504883,
+    0.3979017734527588
+   ],
+   "predicted_max_width_m": 0.04790177345275881,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    0.3697328567504883,
+    0.3979017734527588
+   ],
+   "predicted_max_width_m": 0.0,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    1.189034104347229,
+    2.4423251152038574
+   ],
+   "predicted_max_width_m": 2.8423251152038573,
+   "support_m": 2.8526062359380018,
+   "envelope_m": [
+    2.00983270405,
+    2.02433565375
+   ],
+   "error_m": 0.4633812746761756,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    1.189034104347229,
+    2.4423251152038574
+   ],
+   "predicted_max_width_m": 2.5923251152038573,
+   "support_m": 2.7188298118147793,
+   "envelope_m": [
+    2.00983270405,
+    1.8310128473999998
+   ],
+   "error_m": 0.319440159508823,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    1.189034104347229,
+    2.4423251152038574
+   ],
+   "predicted_max_width_m": 2.3423251152038573,
+   "support_m": 2.4717628447884876,
+   "envelope_m": [
+    2.00983270405,
+    1.4388134217499995
+   ],
+   "error_m": 0.319440159508823,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    1.189034104347229,
+    2.4423251152038574
+   ],
+   "predicted_max_width_m": 2.0923251152038573,
+   "support_m": 2.3615399154134313,
+   "envelope_m": [
+    2.00983270405,
+    1.2399368023499995
+   ],
+   "error_m": 0.2616594060576984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    1.189034104347229,
+    2.4423251152038574
+   ],
+   "predicted_max_width_m": 1.8423251152038573,
+   "support_m": 2.337369514667575,
+   "envelope_m": [
+    2.00983270405,
+    1.1932597159999996
+   ],
+   "error_m": 0.2616594060576984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    1.189034104347229,
+    2.4423251152038574
+   ],
+   "predicted_max_width_m": 1.3423251152038573,
+   "support_m": 1.979147432011929,
+   "envelope_m": [
+    1.8122345328499998,
+    0.7955064774
+   ],
+   "error_m": 0.2616594060576984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    0.5101733207702637,
+    0.2567317485809326
+   ],
+   "predicted_max_width_m": 0.9101733207702637,
+   "support_m": 2.4520586799281543,
+   "envelope_m": [
+    1.9540667534000002,
+    1.48128825455
+   ],
+   "error_m": 1.6142707033411092,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    0.5101733207702637,
+    0.2567317485809326
+   ],
+   "predicted_max_width_m": 0.6601733207702637,
+   "support_m": 2.0964318372604147,
+   "envelope_m": [
+    1.4835132474,
+    1.48128825455
+   ],
+   "error_m": 1.3539450316339912,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    0.5101733207702637,
+    0.2567317485809326
+   ],
+   "predicted_max_width_m": 0.4101733207702637,
+   "support_m": 0.19540667529999967,
+   "envelope_m": [
+    0.19540667529999967,
+    0.0
+   ],
+   "error_m": 1.049028506305838,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    0.5101733207702637,
+    0.2567317485809326
+   ],
+   "predicted_max_width_m": 0.1601733207702637,
+   "support_m": 0.0,
+   "envelope_m": [
+    0.0,
+    0.0
+   ],
+   "error_m": 1.049028506305838,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    0.5101733207702637,
+    0.2567317485809326
+   ],
+   "predicted_max_width_m": 0.0,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "bed",
+   "span_m": 0.0,
+   "axis": 0,
+   "extent_m": [
+    2.0190019607543945,
+    1.1642534732818604
+   ],
+   "predicted_max_width_m": 2.4190019607543944,
+   "support_m": 2.2658410529633635,
+   "envelope_m": [
+    1.4194567998,
+    1.7661194950499999
+   ],
+   "error_m": 0.07436604122154387,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "bed",
+   "span_m": 0.25,
+   "axis": 0,
+   "extent_m": [
+    2.0190019607543945,
+    1.1642534732818604
+   ],
+   "predicted_max_width_m": 2.1690019607543944,
+   "support_m": 2.1471184078154697,
+   "envelope_m": [
+    1.2210402886,
+    1.7661194950499999
+   ],
+   "error_m": 0.07615686887069632,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "bed",
+   "span_m": 0.5,
+   "axis": 0,
+   "extent_m": [
+    2.0190019607543945,
+    1.1642534732818604
+   ],
+   "predicted_max_width_m": 1.9190019607543944,
+   "support_m": 2.1471184078154697,
+   "envelope_m": [
+    1.2210402886,
+    1.7661194950499999
+   ],
+   "error_m": 0.07615686887069632,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "bed",
+   "span_m": 0.75,
+   "axis": 0,
+   "extent_m": [
+    2.0190019607543945,
+    1.1642534732818604
+   ],
+   "predicted_max_width_m": 1.6690019607543944,
+   "support_m": 2.0408178411851243,
+   "envelope_m": [
+    1.0226237774,
+    1.7661194950499999
+   ],
+   "error_m": 0.1645433961455108,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "bed",
+   "span_m": 1.0,
+   "axis": 0,
+   "extent_m": [
+    2.0190019607543945,
+    1.1642534732818604
+   ],
+   "predicted_max_width_m": 1.4190019607543944,
+   "support_m": 1.8764243312657127,
+   "envelope_m": [
+    0.6338692295499999,
+    1.7661194950499999
+   ],
+   "error_m": 0.1645433961455108,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "bed",
+   "span_m": 1.5,
+   "axis": 0,
+   "extent_m": [
+    2.0190019607543945,
+    1.1642534732818604
+   ],
+   "predicted_max_width_m": 0.9190019607543944,
+   "support_m": 1.396243547066227,
+   "envelope_m": [
+    0.19841651120000003,
+    1.3820734173
+   ],
+   "error_m": 0.20652622564365025,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "cab",
+   "span_m": 0.0,
+   "axis": 1,
+   "extent_m": [
+    0.2543175220489502,
+    1.1403262615203857
+   ],
+   "predicted_max_width_m": 1.5403262615203857,
+   "support_m": 2.6935580417439007,
+   "envelope_m": [
+    1.9713005905999998,
+    1.8355459421499996
+   ],
+   "error_m": 1.0935365871036398,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "cab",
+   "span_m": 0.25,
+   "axis": 1,
+   "extent_m": [
+    0.2543175220489502,
+    1.1403262615203857
+   ],
+   "predicted_max_width_m": 1.2903262615203857,
+   "support_m": 2.5077430278709167,
+   "envelope_m": [
+    1.9713005905999998,
+    1.5500803447999996
+   ],
+   "error_m": 0.08715424527960623,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "cab",
+   "span_m": 0.5,
+   "axis": 1,
+   "extent_m": [
+    0.2543175220489502,
+    1.1403262615203857
+   ],
+   "predicted_max_width_m": 1.0403262615203857,
+   "support_m": 2.1258469015973414,
+   "envelope_m": [
+    1.9713005905999998,
+    0.7957380413999999
+   ],
+   "error_m": 0.08715424527960623,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "cab",
+   "span_m": 0.75,
+   "axis": 1,
+   "extent_m": [
+    0.2543175220489502,
+    1.1403262615203857
+   ],
+   "predicted_max_width_m": 0.7903262615203857,
+   "support_m": 1.6883089463977687,
+   "envelope_m": [
+    1.5793076469999998,
+    0.5968035309999999
+   ],
+   "error_m": 0.08715424527960623,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "cab",
+   "span_m": 1.0,
+   "axis": 1,
+   "extent_m": [
+    0.2543175220489502,
+    1.1403262615203857
+   ],
+   "predicted_max_width_m": 0.5403262615203857,
+   "support_m": 0.0,
+   "envelope_m": [
+    0.0,
+    0.0
+   ],
+   "error_m": 0.08715424527960623,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "object": "cab",
+   "span_m": 1.5,
+   "axis": 1,
+   "extent_m": [
+    0.2543175220489502,
+    1.1403262615203857
+   ],
+   "predicted_max_width_m": 0.04032626152038565,
+   "support_m": null,
+   "envelope_m": null,
+   "error_m": null,
+   "hit": false
+  }
+ ]
+}
