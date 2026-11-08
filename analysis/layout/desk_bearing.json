@@ -1,0 +1,4629 @@
+{
+ "scope": "Synthetic bearing accuracy sweep for the desk channel, 14 development scenes",
+ "reach_m": 1.0,
+ "padding_m": 0.2,
+ "sigmas_deg": [
+  10.0,
+  20.0,
+  30.0,
+  45.0
+ ],
+ "cones_deg": [
+  30.0,
+  45.0,
+  60.0
+ ],
+ "draws": 3,
+ "summary": {
+  "sigma10_cone30": {
+   "instances": 42,
+   "hit_rate": 0.6428571428571429,
+   "conflict": 13,
+   "error_median_m": 0.13416579996939274
+  },
+  "sigma10_cone45": {
+   "instances": 42,
+   "hit_rate": 0.6428571428571429,
+   "conflict": 6,
+   "error_median_m": 0.1466780264964393
+  },
+  "sigma10_cone60": {
+   "instances": 42,
+   "hit_rate": 0.5952380952380952,
+   "conflict": 4,
+   "error_median_m": 0.1955807464176786
+  },
+  "sigma20_cone30": {
+   "instances": 42,
+   "hit_rate": 0.40476190476190477,
+   "conflict": 23,
+   "error_median_m": 0.13363104740708506
+  },
+  "sigma20_cone45": {
+   "instances": 42,
+   "hit_rate": 0.5714285714285714,
+   "conflict": 9,
+   "error_median_m": 0.16407360162268161
+  },
+  "sigma20_cone60": {
+   "instances": 42,
+   "hit_rate": 0.6428571428571429,
+   "conflict": 5,
+   "error_median_m": 0.1466780264964393
+  },
+  "sigma30_cone30": {
+   "instances": 42,
+   "hit_rate": 0.2619047619047619,
+   "conflict": 29,
+   "error_median_m": 0.13416579996939274
+  },
+  "sigma30_cone45": {
+   "instances": 42,
+   "hit_rate": 0.5714285714285714,
+   "conflict": 12,
+   "error_median_m": 0.1338984236882389
+  },
+  "sigma30_cone60": {
+   "instances": 42,
+   "hit_rate": 0.6190476190476191,
+   "conflict": 8,
+   "error_median_m": 0.16606758645175967
+  },
+  "sigma45_cone30": {
+   "instances": 42,
+   "hit_rate": 0.2619047619047619,
+   "conflict": 30,
+   "error_median_m": 0.13033721973217532
+  },
+  "sigma45_cone45": {
+   "instances": 42,
+   "hit_rate": 0.3333333333333333,
+   "conflict": 25,
+   "error_median_m": 0.12650863949495791
+  },
+  "sigma45_cone60": {
+   "instances": 42,
+   "hit_rate": 0.40476190476190477,
+   "conflict": 17,
+   "error_median_m": 0.13416579996939274
+  }
+ },
+ "rows": [
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.14763170775163192,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.14763170775163192,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.09685474771198399,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.09685474771198399,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.09685474771198399,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.09685474771198399,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.09685474771198399,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.09685474771198399,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.35408984544103855,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan301",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.33642890214680055,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.168989664247108,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.168989664247108,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.20217925972711984,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.1345353608413873,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.1345353608413873,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan305",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.031022386743994206,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.06752408585320956,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.06752408585320956,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.06752408585320956,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.05254122749383897,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.7219137763189862,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.7219137763189862,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.7219137763189862,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.7219137763189862,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.201698913076881,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.16806157128083776,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.16806157128083776,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.11183050499081112,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.16806157128083776,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.11183050499081112,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.16806157128083776,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.16806157128083776,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.1466780264964393,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.11183050499081112,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.16806157128083776,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 2.22148996435923,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.9901632732042307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.237009784602928,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 1.5696847769667401,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 10.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.8188320705838272,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.8188320705838272,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.8188320705838272,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.5696847769667401,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 20.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.8188320705838272,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.8188320705838272,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 30.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 0,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.8188320705838272,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 45.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 1,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.5696847769667401,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 30.0,
+   "status": "conflict",
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 45.0,
+   "status": "supported",
+   "error_m": 1.5696847769667401,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "sigma_deg": 45.0,
+   "draw": 2,
+   "cone_deg": 60.0,
+   "status": "supported",
+   "error_m": 1.5696847769667401,
+   "hit": false
+  }
+ ]
+}
