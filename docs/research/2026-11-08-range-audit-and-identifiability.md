@@ -148,3 +148,27 @@ python -m analysis.layout.exp_door_sensitivity <新目录>/door.json <全新重�
 - Colle & Galerne，2018在线/Autonomous Robots43:557–573，*A robust set approach for mobile robot localization in ambient environment*：[检索记录](https://consensus.app/papers/a-robust-set-approach-for-mobile-robot-localization-in-colle-galerne/0600abec4a4754a08b697bc28c2aeeb0/)。本轮记录/摘要明确讨论有界误差定位、离群观测和漂移；不把集合定位框架作为本项目首创。
 
 本轮轨迹覆盖相关的一次文献检索被限流，未据此宣布检索穷尽。创新审查结论是“建议的可检验定位”，不保证首次、接收或顶刊竞争力。真实单房无法支持跨房真实阈值；通过更强的配对设计、模型内见证与严格区分模拟/真实证据，提高现有材料的说服力。
+
+## 9. 本轮增量（承 02233e4）：三项追责与排序效应
+
+代码 `analysis/layout/exp_diagnose.py`、`analysis/layout/exp_tiebreak.py`，数值 `analysis/layout/diagnosis.json`、`analysis/layout/tiebreak.json`。生产求解器未改行为（与原 `prediction.json` 最大框差 0.0，58 条测试通过）。
+
+**（1）三项追责。** 1008 行 = 14 房 × 9 档 × 4 臂 × 2 巡视顺序。逐对象记录：真布局是否满足声明约束、支撑集里是否有中心距真值 ≤0.5 m 的候选、点估计是否 ≤0.5 m。
+
+- `model_excludes_truth` 0 次、`support_empty` 0 次。所有未命中都不是模型排除真值，而是支撑集里多个合格候选里挑了一个。
+- 末档逐件命中（床/桌/柜/椅，房数）：A 10/0/1/14；TA-current 5/1/5/14；TA-walk-oracle 14/8/6/14；T-walk-oracle 12/11/0/6。与审核表逐项一致。
+- 见证只解释一部分：A 臂桌未命中 14 次、13 次带见证（误差下界中位 1.33 m）；柜未命中 13 次、仅 1 次带见证。桌=证据不够，柜=选错，两类不能同一说法。
+- 第二种巡视顺序（同网格、同净距、同覆盖定义，逐行扫描）：同覆盖所需路程 86 m → 113 m；末档逐件命中变化 ≤1 房。结论不是某一种巡视顺序的产物。
+
+**（2）排序效应。** 同一批观测、同一 beam，只换能量相等时的 tie-break：质心偏好（生产）床 5/14、桌 1/14、柜 5/14、椅 14/14；不偏好 2/14、9/14、5/14、14/14；随机 20 次 3.4±1.4、4.8±1.1、5.0±0.0、14/14。
+
+即桌的命中可在 1–9/14 之间移动，随机代表的期望是 4.8/14。**点命中率首先是排序规则的属性，不是信息的属性。** 因此第 2 节的「桌 0–2/14」不能读成桌不可解；可报的量是支撑集与见证。第 12.6 节「精确方向 12/14」也要在同一 tie-break 下重算，才能把方向贡献与排序贡献分开。
+
+限制：几何开发集，无原始 IMU；见证是有界搜索（首个相容基座、候选库有限），无见证不等于可辨识；随机抽样只估计代表分布。
+
+复现（仓库根目录）：
+
+    python -m analysis.layout.exp_diagnose --output analysis/layout/diagnosis.json
+    python -m analysis.layout.exp_tiebreak --output analysis/layout/tiebreak.json
+    python -m unittest discover -s analysis/layout/tests
+

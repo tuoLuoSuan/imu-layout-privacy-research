@@ -154,7 +154,8 @@ def _overlap(first,second):
     return float(np.prod(intersection)/max(1e-9,min(np.prod(first[2:]-first[:2]),np.prod(second[2:]-second[:2]))))
 
 def infer(room,banks,path,events,use_path=True,use_actions=True,prior=None,padding=.20,
-          reach=.60,path_margin=.08,candidate_limit=48,beam_width=48,desk_reach=None):
+          reach=.60,path_margin=.08,candidate_limit=48,beam_width=48,desk_reach=None,
+          tie_break="centroid",rng=None):
     """No truth argument is accepted. All arms use the same bank and target list."""
     path=np.asarray(path,float).reshape(-1,2)
     objects={};pools={}
@@ -191,8 +192,14 @@ def infer(room,banks,path,events,use_path=True,use_actions=True,prior=None,paddi
                       "minimax_box_radius_upper_m":float(np.linalg.norm(width)/2),
                       "support_boxes":selected}
         energy=cost[valid]+_prior_cost(selected,room,None if prior is None else prior.get(obj))
-        # Prefer a feasible bank member near the supported centres when costs tie.
-        energy+=.001*np.linalg.norm(cc-cc.mean(axis=0),axis=1)
+        # Tie-break among equal-cost members. Production uses the centroid preference;
+        # the alternatives exist to show how much of the point error is selection.
+        if tie_break=="centroid":
+            energy+=.001*np.linalg.norm(cc-cc.mean(axis=0),axis=1)
+        elif tie_break=="random":
+            energy+=1e-6*np.random.default_rng(rng).random(len(selected))
+        elif tie_break!="none":
+            raise ValueError("unknown tie_break")
         order=np.argsort(energy,kind="stable")
         best=order[:candidate_limit//2]
         other=order[candidate_limit//2:]
