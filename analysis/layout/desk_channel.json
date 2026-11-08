@@ -1,0 +1,681 @@
+{
+ "tolerance_m": 0.5,
+ "padding_m": 0.2,
+ "reaches_m": [
+  null,
+  1.0,
+  1.5,
+  2.0,
+  3.0
+ ],
+ "truth_survives_2m": 0.8571428571428571,
+ "summary": {
+  "None": {
+   "n": 14,
+   "resolved": 14,
+   "hit_rate": 0.14285714285714285,
+   "support_median_m": 4.987541655462673,
+   "error_median_m": 2.2420122073358617
+  },
+  "1.0": {
+   "n": 14,
+   "resolved": 13,
+   "hit_rate": 0.21428571428571427,
+   "support_median_m": 2.4235781885137264,
+   "error_median_m": 1.2127155158223888
+  },
+  "1.5": {
+   "n": 14,
+   "resolved": 14,
+   "hit_rate": 0.07142857142857142,
+   "support_median_m": 3.0180874643205557,
+   "error_median_m": 1.7466552509342483
+  },
+  "2.0": {
+   "n": 14,
+   "resolved": 14,
+   "hit_rate": 0.07142857142857142,
+   "support_median_m": 3.8507942387236804,
+   "error_median_m": 2.0071227652508443
+  },
+  "3.0": {
+   "n": 14,
+   "resolved": 14,
+   "hit_rate": 0.14285714285714285,
+   "support_median_m": 4.5096450650008215,
+   "error_median_m": 2.133012906482813
+  }
+ },
+ "rows": [
+  {
+   "scene": "FloorPlan301",
+   "desk_reach_m": null,
+   "support_m": 5.887868153855852,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.1604234175266304,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "desk_reach_m": 1.0,
+   "support_m": 2.9830769955330982,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.367164170165259,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "desk_reach_m": 1.5,
+   "support_m": 3.8072403507139323,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.5818628787791658,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "desk_reach_m": 2.0,
+   "support_m": 3.9516151203693015,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.8122583847884615,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "desk_reach_m": 3.0,
+   "support_m": 4.745029218107497,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.9967899347467366,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "desk_reach_m": null,
+   "support_m": 3.4342674672218676,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.1798123998850447,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "desk_reach_m": 1.0,
+   "support_m": 0.429703349721002,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "desk_reach_m": 1.5,
+   "support_m": 3.0548383977030538,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.072505813431826,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "desk_reach_m": 2.0,
+   "support_m": 3.4342674672218676,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.1798123998850447,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "desk_reach_m": 3.0,
+   "support_m": 3.4342674672218676,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.1798123998850447,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "desk_reach_m": null,
+   "support_m": 5.22897594220537,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.9382204800015892,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "desk_reach_m": 1.0,
+   "support_m": 2.531436061878887,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.9981627404682182,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "desk_reach_m": 1.5,
+   "support_m": 2.9813365309380577,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.369555413737833,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "desk_reach_m": 2.0,
+   "support_m": 3.0618645841414325,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.369555413737833,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "desk_reach_m": 3.0,
+   "support_m": 5.001009128398861,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.9382204800015892,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "desk_reach_m": null,
+   "support_m": 5.026183121891397,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 3.332720183706816,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "desk_reach_m": 1.0,
+   "support_m": 0.7589023145280078,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "desk_reach_m": 1.5,
+   "support_m": 2.1378757367428856,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "desk_reach_m": 2.0,
+   "support_m": 2.1378757367428856,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "desk_reach_m": 3.0,
+   "support_m": 3.773323514117852,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "desk_reach_m": null,
+   "support_m": 4.50921269774905,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.0862134130805816,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "desk_reach_m": 1.0,
+   "support_m": 1.6741127369705577,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.175043604209051,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "desk_reach_m": 1.5,
+   "support_m": 2.5559665774439098,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.5634267881529023,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "desk_reach_m": 2.0,
+   "support_m": 3.91755362607676,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.0229042136592588,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "desk_reach_m": 3.0,
+   "support_m": 4.400906564390339,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.0862134130805816,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "desk_reach_m": null,
+   "support_m": 5.174802266189029,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.3042120147866787,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "desk_reach_m": 1.0,
+   "support_m": 3.228397083938227,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.4592431932843766,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "desk_reach_m": 1.5,
+   "support_m": 3.9734585526284176,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.7713967255495104,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "desk_reach_m": 2.0,
+   "support_m": 4.480732182897092,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.9053174621368987,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "desk_reach_m": 3.0,
+   "support_m": 5.174802266189029,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.3042120147866787,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "desk_reach_m": null,
+   "support_m": 5.2233998852009655,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.909326389162959,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "desk_reach_m": 1.0,
+   "support_m": 1.3912967183999998,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.024541058546404,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "desk_reach_m": 1.5,
+   "support_m": 2.879457123477812,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.215943481225974,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "desk_reach_m": 2.0,
+   "support_m": 4.047739827937786,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.5211574873815845,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "desk_reach_m": 3.0,
+   "support_m": 4.424995405816323,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.5211574873815845,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "desk_reach_m": null,
+   "support_m": 6.559884987852104,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 0.8056735485757581,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "desk_reach_m": 1.0,
+   "support_m": 2.900814294562399,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 2.25422366916493,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "desk_reach_m": 1.5,
+   "support_m": 4.162015650214394,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 1.7219137763189862,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "desk_reach_m": 2.0,
+   "support_m": 5.204618637938139,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 2.25422366916493,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "desk_reach_m": 3.0,
+   "support_m": 5.924270469920579,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 1.0113212385531516,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "desk_reach_m": null,
+   "support_m": 4.948900189033949,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.6463003820157156,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "desk_reach_m": 1.0,
+   "support_m": null,
+   "status": "conflict",
+   "truth_within_2m_of_seated": true,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "desk_reach_m": 1.5,
+   "support_m": 4.037686283908897,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.12717738964788,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "desk_reach_m": 2.0,
+   "support_m": 4.104896657471711,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.3225892483951673,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "desk_reach_m": 3.0,
+   "support_m": 4.948900189033949,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.6463003820157156,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "desk_reach_m": null,
+   "support_m": 4.863545525312839,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.4951583342153114,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "desk_reach_m": 1.0,
+   "support_m": 2.8263188013582283,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.2633438952348988,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "desk_reach_m": 1.5,
+   "support_m": 3.511282445148019,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.0065312020785804,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "desk_reach_m": 2.0,
+   "support_m": 3.7840348513706004,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.0666700301297087,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "desk_reach_m": 3.0,
+   "support_m": 4.59429472418532,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.398795174174774,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "desk_reach_m": null,
+   "support_m": 4.156392560757112,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.37886654915725,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "desk_reach_m": 1.0,
+   "support_m": 2.4235781885137264,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "desk_reach_m": 1.5,
+   "support_m": 2.4700512270488106,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.9913413168424299,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "desk_reach_m": 2.0,
+   "support_m": 2.7678398149409134,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 1.9913413168424299,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "desk_reach_m": 3.0,
+   "support_m": 4.156392560757112,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.37886654915725,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "desk_reach_m": null,
+   "support_m": 0.0,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "desk_reach_m": 1.0,
+   "support_m": 0.0,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "desk_reach_m": 1.5,
+   "support_m": 0.0,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "desk_reach_m": 2.0,
+   "support_m": 0.0,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "desk_reach_m": 3.0,
+   "support_m": 0.0,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan318",
+   "desk_reach_m": null,
+   "support_m": 5.598248227138964,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.3754911172053554,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "desk_reach_m": 1.0,
+   "support_m": 3.16849698788059,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.22148996435923,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "desk_reach_m": 1.5,
+   "support_m": 4.66604570320438,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.3754911172053554,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "desk_reach_m": 2.0,
+   "support_m": 5.598248227138964,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.3754911172053554,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "desk_reach_m": 3.0,
+   "support_m": 5.598248227138964,
+   "status": "supported",
+   "truth_within_2m_of_seated": true,
+   "error_m": 2.3754911172053554,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "desk_reach_m": null,
+   "support_m": 3.987137850213339,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 0.08130943275319368,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "desk_reach_m": 1.0,
+   "support_m": 1.504307139727689,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "desk_reach_m": 1.5,
+   "support_m": 2.7544270908351427,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 1.5696847769667401,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "desk_reach_m": 2.0,
+   "support_m": 2.9990114131760235,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 1.5696847769667401,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "desk_reach_m": 3.0,
+   "support_m": 3.797183085349207,
+   "status": "supported",
+   "truth_within_2m_of_seated": false,
+   "error_m": 0.08130943275319368,
+   "hit": true
+  }
+ ]
+}

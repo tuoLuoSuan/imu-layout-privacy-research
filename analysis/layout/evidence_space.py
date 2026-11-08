@@ -93,7 +93,7 @@ def _overlap(first,second):
     return float(np.prod(intersection)/max(1e-9,min(np.prod(first[2:]-first[:2]),np.prod(second[2:]-second[:2]))))
 
 def infer(room,banks,path,events,use_path=True,use_actions=True,prior=None,padding=.20,
-          reach=.60,path_margin=.08,candidate_limit=48,beam_width=48):
+          reach=.60,path_margin=.08,candidate_limit=48,beam_width=48,desk_reach=None):
     """No truth argument is accepted. All arms use the same bank and target list."""
     path=np.asarray(path,float).reshape(-1,2)
     objects={};pools={}
@@ -105,6 +105,16 @@ def infer(room,banks,path,events,use_path=True,use_actions=True,prior=None,paddi
                 if event["object"]==obj:
                     keep,energy=_contact(bank,event,padding,reach)
                     valid&=keep;cost+=np.minimum(energy,100)**2/max(1,repetitions)
+        if use_actions and desk_reach is not None and obj=="desk":
+            # Desk has no interaction class of its own. Sitting at a desk is the only
+            # activity that points at it, so the seated anchors bound how far the box
+            # can be.  This is a modelling assumption, not an observation.
+            for event in events:
+                if event["object"]!="chair":
+                    continue
+                p=np.asarray(event["pos"],float)
+                outside=np.maximum(bank[:,:2]-p,p-bank[:,2:]).clip(min=0)
+                valid&=np.linalg.norm(outside,axis=1)<=desk_reach
         if use_path and obj in ("desk","cab"):
             valid&=~_path_bad(bank,path,path_margin)
         selected=bank[valid]
