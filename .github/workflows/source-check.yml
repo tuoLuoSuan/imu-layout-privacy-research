@@ -44,7 +44,7 @@ jobs:
       - run: python -m unittest discover -s collection/watch-s5-probe/tests -p 'test_*.py' -v
       - run: python -m unittest discover -s collection/phone-imu-recorder/tools -p 'test_*.py' -v
 
-      - run: python -m unittest discover -s environment/lidar/tests -v
+      # Hardware LiDAR tests remain with the private capture workspace.
 
   receiver:
     runs-on: ubuntu-latest
