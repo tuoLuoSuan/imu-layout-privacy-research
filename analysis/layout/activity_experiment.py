@@ -15,6 +15,12 @@ ARMS={"P-U":(False,False,False),"P-K":(False,False,True),"T-U":(True,False,False
       "P-prototype":(False,False,True)}
 TOLERANCES=(.25,.5,1.)
 
+
+def prefix_episode(episode,budget):
+    """A common budget contract for path and available spatialised events."""
+    return (episode['points'][episode['arc']<=budget],
+            [dict(e) for e in episode['events'] if e['available_distance_m']<=budget])
+
 def contact_targets(scene,rng):
     boxes=scene["gt"]
     chair=(np.asarray(boxes["chair"][:2])+boxes["chair"][2:])/2
@@ -142,8 +148,7 @@ def run(out,seed=17031,noise_bound=0.,scene_limit=None,fast=False):
             common=rng.uniform(-noise_bound,noise_bound,2)
             # All arms see the same fixed latent room, route and available events.
             for budget in BUDGETS:
-                visible=episode["points"][episode["arc"]<=budget]
-                truth_events=[e for e in episode["events"] if e["available_distance_m"]<=budget]
+                visible,truth_events=prefix_episode(episode,budget)
                 observations=[dict(e,pos=(np.asarray(e["pos"])+common).tolist()) for e in truth_events]
                 observed_path=visible+common
                 coverage=ES.spatial_coverage(visible,room)

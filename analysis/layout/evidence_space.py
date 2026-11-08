@@ -51,6 +51,45 @@ def make_bank(room,objects,spacing=.20):
 
 def centres(boxes):return (boxes[:,:2]+boxes[:,2:])/2
 
+
+def envelope_certificate(bounds,point,tolerance=.5):
+    """Farthest corner from the actual output, conditional on truth in the envelope.
+
+    This does not certify the observation model or continuous-space coverage of
+    a finite bank. It never uses truth to decide whether to emit a point.
+    """
+    empty={'allow':False,'radius_upper_m':None,'condition':'True centre lies in the reported centre envelope'}
+    if bounds is None or point is None:return dict(empty,status='unavailable')
+    b=np.asarray(bounds,float);p=np.asarray(point,float)
+    if b.shape!=(4,) or p.shape!=(2,) or not np.isfinite(b).all() or not np.isfinite(p).all() or np.any(b[2:]<b[:2]):
+        return dict(empty,status='invalid')
+    radius=float(np.linalg.norm(np.maximum(abs(p-b[:2]),abs(p-b[2:]))))
+    return {'status':'conditional','allow':radius<=tolerance,'radius_upper_m':radius,
+            'point':p.tolist(),'bounds':b.tolist(),'midpoint_radius_m':float(np.linalg.norm(b[2:]-b[:2])/2),
+            'condition':empty['condition'],'not_a_calibrated_probability':True}
+
+
+def bed_position_envelope(room,dimensions,anchors,padding=.2):
+    """Continuous outer envelope of an axis-aligned phone-in-bed model.
+
+    Both orientations remain possible. Coordinate padding is a conservative
+    relaxation of Euclidean padding. No target position or grid is an input.
+    """
+    room=np.asarray(room,float);d=np.asarray(dimensions,float);a=np.asarray(anchors,float).reshape(-1,2)
+    modes=[]
+    for extent in np.unique(np.array([d,d[::-1]]),axis=0):
+        lo=np.zeros(2);hi=room-extent
+        if len(a):
+            lo=np.maximum(lo,a.max(axis=0)-extent-padding)
+            hi=np.minimum(hi,a.min(axis=0)+padding)
+        if np.all(hi>=lo):
+            modes.append({'extent_m':extent.tolist(),'q_lo_m':lo.tolist(),'q_hi_m':hi.tolist(),
+                          'center_bounds_m':np.r_[lo+extent/2,hi+extent/2].tolist()})
+    if not modes:return {'status':'conflict','bounds':None,'modes':[]}
+    bounds=np.array([m['center_bounds_m'] for m in modes])
+    return {'status':'conditional','bounds':np.r_[bounds[:,:2].min(axis=0),bounds[:,2:].max(axis=0)].tolist(),
+            'modes':modes,'condition':'Known room/dimensions, correct bed labels, all phone positions within bed plus padding'}
+
 def _contact(boxes,event,padding,reach):
     p=np.asarray(event["pos"],float)
     obj=event["object"]
@@ -124,6 +163,7 @@ def infer(room,banks,path,events,use_path=True,use_actions=True,prior=None,paddi
             continue
         cc=centres(selected);width=np.ptp(cc,axis=0)
         objects[obj]={"n":len(selected),"status":"supported","center_diameter_m":float(np.linalg.norm(width)),
+                      "center_bounds_m":np.r_[cc.min(axis=0),cc.max(axis=0)].tolist(),
                       "diameter_definition":"axis-aligned centre-envelope diagonal, conservative upper bound",
                       "center_envelope_m":[float(v) for v in width],
                       "minimax_box_radius_upper_m":float(np.linalg.norm(width)/2),
@@ -167,6 +207,7 @@ def evaluate(result,truth,tolerance=.5):
     errors={obj:None for obj in truth}
     supported={obj:False for obj in truth}
     widths={obj:None for obj in truth}
+    radii={obj:None for obj in truth};covered={obj:False for obj in truth}
     for obj,target in truth.items():
         target=np.asarray(target)
         if obj in result.get("boxes",{}):
@@ -175,15 +216,22 @@ def evaluate(result,truth,tolerance=.5):
         row=result["objects"].get(obj,{})
         boxes=row.get("support_boxes",[])
         if len(boxes):
-            dist=np.linalg.norm(centres(np.asarray(boxes))-(target[:2]+target[2:])/2,axis=1)
+            cc=centres(np.asarray(boxes));tc=(target[:2]+target[2:])/2
+            dist=np.linalg.norm(cc-tc,axis=1)
             supported[obj]=bool(dist.min()<=tolerance)
             widths[obj]=row["center_diameter_m"]
+            bounds=np.r_[cc.min(axis=0),cc.max(axis=0)]
+            covered[obj]=bool(np.all(tc>=bounds[:2]-1e-9) and np.all(tc<=bounds[2:]+1e-9))
+            if obj in result.get('boxes',{}):
+                b=np.asarray(result['boxes'][obj]);point=(b[:2]+b[2:])/2
+                radii[obj]=envelope_certificate(bounds,point,tolerance)['radius_upper_m']
     all_hit=all(v is not None and v<=tolerance for v in errors.values())
     same_candidate=any(all(obj in b and np.linalg.norm(
         (np.asarray(b[obj])[:2]+np.asarray(b[obj])[2:])/2-
         (np.asarray(target)[:2]+np.asarray(target)[2:])/2)<=tolerance
         for obj,target in truth.items()) for b in result.get("candidates",[]))
     return {"center_error_m":errors,"support_hit":supported,"center_diameter_upper_m":widths,
+            "conditional_radius_upper_m":radii,"truth_center_in_envelope":covered,
             "full_point_hit":all_hit,"same_candidate_hit":same_candidate,
             "all_support_hit":all(supported.values())}
 

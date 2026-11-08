@@ -2,9 +2,11 @@
 
 本仓库研究：在明确侧信息和采集协议下，手机与手表的惯性观测能将二维家具布局约束到什么程度，以及活动增加后候选范围如何变化。目前已跑通**手机六轴 IMU → 轨迹 → 五类动作 → 家具框**的真实单房案例；手机与手表联合布局增益、跨房活动阈值仍待验证。
 
-当前版本于 2026-11-08 复核。最新完整论证和 DS 交接见 [活动泄露边界](docs/research/2026-11-08-activity-leakage-frontier.md)，数值入口为 [RESULTS.md](RESULTS.md) 与 [activity-results.json](analysis/layout/activity-results.json)，运行摘要见 [activity-run.json](analysis/layout/activity-run.json)。[current-run.json](analysis/layout/current-run.json) 保留上一轮快照，不代表当前全部源码的重算。
+当前版本于 2026-11-08 复核。最新增量见 [第二轮审查与实做](docs/research/2026-11-08-stage2-audit-and-next-results.md)、[stage2-results.json](analysis/layout/stage2-results.json) 与 [stage2-run.json](analysis/layout/stage2-run.json)。以下 activity/current 清单保留各自历史运行范围。上一轮完整论证与 DS 交接保留于 [活动泄露边界](docs/research/2026-11-08-activity-leakage-frontier.md)，数值入口为 [RESULTS.md](RESULTS.md) 与 [activity-results.json](analysis/layout/activity-results.json)，运行摘要见 [activity-run.json](analysis/layout/activity-run.json)。[current-run.json](analysis/layout/current-run.json) 保留上一轮快照，不代表当前全部源码的重算。
 
-最新进展：真实开发记录在 0.25 秒细网格中首次于 **37.0 秒**四件中心误差均 ≤0.5 m，前一档 36.75 秒未过；两档估计覆盖均约 33.47%。这说明该案例由交互窗口成熟触发，不能解释成跨房覆盖阈值。14 房几何活动实验的完整布局仍未达到预设的 80% 门槛；开发床门槛未通过新路线/误差确认。
+本轮新机制结果：在14个开发场景的连续床模型中，三个理想接触在两轴均铺到相应床尺寸90%，条件半径≤0.5m达13/14与14/14，后两档保持。给定外框/床尺寸、类别正确和0.20m容差，输出为床中心；这是几何机制实验，完整布局与真实IMU门槛仍未确认。
+
+真实开发记录在 0.25 秒细网格中首次于 **37.0 秒**四件中心误差均 ≤0.5 m，前一档 36.75 秒未过；两档估计覆盖均约 33.47%。这说明该案例由交互窗口成熟触发，不能解释成跨房覆盖阈值。14 房几何活动实验的完整布局仍未达到预设的 80% 门槛；开发床门槛未通过新路线/误差确认。
 
 ## 当前能做什么
 
@@ -53,7 +55,7 @@ python -m unittest discover -s analysis/layout/tests -v
 # 稠密语义栅格：默认高度来自类别先验，另外输出 PNG/PDF/JSON/NPZ
 python -m analysis.layout.dense_map <new-session-dir> --height-source prior
 
-# 使用明确提供的参考高度；文件为 {"bed":0.5,"desk":0.75,"cab":0.75,"chair":0.45}
+# 使用明确提供的参考高度；文件为 {"bed":0.5,"desk":0.75,"cab":1.80,"chair":0.45}
 python -m analysis.layout.dense_map <new-session-dir> --height-source reference --height-json <heights.json>
 ```
 
