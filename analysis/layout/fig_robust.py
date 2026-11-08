@@ -1,63 +1,46 @@
-# -*- coding: utf-8 -*-
-# 图：稳健性审计 —— 上界到底有没有信息量，换容差哪些结论会翻。
-import io, json, os, sys
+import json
+import os
+import sys
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-
+from matplotlib.font_manager import FontProperties
 HERE = os.path.dirname(os.path.abspath(__file__))
-cjk = fm.FontProperties(fname=r'C:/Windows/Fonts/msyh.ttc')
-D = json.load(io.open(os.path.join(HERE, 'robust.json'), encoding='utf-8'))
+plt.rcParams.update({'font.family': ['Arial', 'SimSun'], 'font.size': 7,
+                     'axes.spines.top': False, 'axes.spines.right': False,
+                     'pdf.fonttype': 42, 'svg.fonttype': 'none'})
+cjk = FontProperties(family=['Arial', 'SimSun'])
 
-fig, axes = plt.subplots(1, 2, figsize=(13.2, 5.0), dpi=150)
-
-ax = axes[0]
-names = ['place', 'joint']
-x = np.arange(2)
-auc = [D['a'][k]['auc'] for k in names]
-lo = [D['a'][k]['auc'] - D['a'][k]['ci'][0] for k in names]
-hi = [D['a'][k]['ci'][1] - D['a'][k]['auc'] for k in names]
-base = [D['a'][k]['auc_size'] for k in names]
-ax.bar(x - 0.18, auc, 0.34, yerr=[lo, hi], capsize=4, color='#4c72b0',
-       label='区间说「会越界」的样本，实测误差确实更大')
-ax.bar(x + 0.18, base, 0.34, color='#bbbbbb', label='基线：只用物体尺寸（没有区间信息）')
-fig.canvas.draw()
-for i, (a, b) in enumerate(zip(auc, base)):
-    ax.text(i - 0.18, a + hi[i] + 0.05, '%.2f' % a, ha='center', fontsize=9, fontproperties=cjk)
-    ax.text(i + 0.18, b + 0.045, '%.2f' % b, ha='center', fontsize=9, fontproperties=cjk)
-ax.axhline(0.5, ls=':', color='#888', lw=1)
-ax.text(1.42, 0.52, '0.5 = 纯猜测', fontsize=8.5, color='#666', fontproperties=cjk, ha='right')
-ax.set_xticks(x); ax.set_xticklabels(['place 后端', 'joint 后端'], fontproperties=cjk)
-ax.set_ylim(0, 1.12); ax.set_ylabel('AUC（越界 vs 合规 的误差可分性）', fontproperties=cjk)
-ax.grid(axis='y', alpha=0.3)
-ax.set_title('区间不紧，但它知道「哪里会错」\n'
-             '越界 9 条吃掉全部误差质量的 48%（place）', fontsize=10.5, loc='left', fontproperties=cjk)
-ax.legend(fontsize=8.5, prop=cjk, loc='lower left')
-
-ax = axes[1]
-B = [r for r in D['b'] if abs(r['reach_cab'] - 0.60) < 1e-9]
-tols = [r['tol'] for r in B]
-cov = [r['cover'] for r in B]
-wide = [r['n_wide'] for r in B]
-ax.plot(tols, cov, 'o-', color='#55a868', lw=2, label='真值落在残余区间内的轴数（共 6）')
-ax.plot(tols, wide, 's--', color='#c44e52', lw=1.6, label='残余宽度 > 容差的轴数（= 不由墙决定）')
-for t, c, w in zip(tols, cov, wide):
-    ax.text(t, c + 0.12, '%d' % c, ha='center', fontsize=8.5, fontproperties=cjk)
-    ax.text(t + 0.006, w + 0.16, '%d' % w, ha='left', fontsize=8.5, color='#c44e52', fontproperties=cjk)
-ax.axvspan(0.15, 0.25, color='#4c72b0', alpha=0.10)
-ax.text(0.20, 6.55, '结论不变区：\n只有椅子两轴由活动跨度决定', ha='center', fontsize=9,
-        fontproperties=cjk, color='#2b4f7a')
-ax.set_xlabel('贴墙 / 相邻 容差 TOL (m)', fontproperties=cjk)
-ax.set_ylabel('轴数（共 6：柜 x,y；椅 x,y；床 x,y）', fontproperties=cjk)
-ax.set_ylim(0, 7.2); ax.grid(alpha=0.3)
-ax.set_title('换容差时什么会翻：床是否算「贴墙」\n'
-             'TOL 0.15–0.25 时覆盖 6/6，且唯一自由轴是椅子', fontsize=10.5, loc='left', fontproperties=cjk)
-ax.legend(fontsize=8.5, prop=cjk, loc='lower right')
-
-fig.suptitle('稳健性审计：区间上界的信息量，以及结论对假设的敏感性', fontsize=12.5, fontproperties=cjk)
-fig.tight_layout(rect=[0, 0, 1, 0.93])
-out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, '..', '..', 'output', 'layout-recon', 'robust.png')
-fig.savefig(out, facecolor='white')
-print('saved', os.path.abspath(out))
+with open(os.path.join(HERE, 'robust.json'), encoding='utf-8') as handle:
+    data = json.load(handle)
+fig, axes = plt.subplots(1, 2, figsize=(6.3, 2.9), layout='constrained')
+for index, backend in enumerate(('place', 'joint')):
+    row = data['a'][backend]
+    for offset, field, limits, color, label in (
+        (-0.17, 'auc', 'ci', '#248a85', '几何宽度'),
+        (0.17, 'auc_size', 'ci_size', '#aaaaaa', '类别尺寸')):
+        value = row[field]
+        error = [[value - row[limits][0]], [row[limits][1] - value]]
+        axes[0].bar(index + offset, value, 0.30, color=color,
+                    yerr=error, capsize=2, label=label if index == 0 else None)
+axes[0].axhline(0.5, color='#777', linestyle=':', linewidth=0.8)
+axes[0].set(xticks=[0, 1], xticklabels=['place', 'joint'], ylim=(0, 1.05), ylabel='AUC')
+axes[0].set_title('a 误差超过 0.5 m 的探索性排序', loc='left', fontproperties=cjk)
+axes[0].legend(prop=cjk, frameon=False, fontsize=7)
+selected = [row for row in data['b'] if row['reach_cab'] == 0.6]
+axes[1].plot([row['tol'] for row in selected], [row['cover'] for row in selected],
+             'o-', color='#248a85', markersize=3, label='覆盖真值')
+axes[1].plot([row['tol'] for row in selected], [row['n_wide'] for row in selected],
+             's--', color='#cc873f', markersize=3, label='宽度超过容差')
+axes[1].set(xlabel='假定容差 (m)', ylabel='轴数', ylim=(0, 6.5))
+axes[1].set_title('b 单房六轴的假设敏感性', loc='left', fontproperties=cjk)
+axes[1].legend(prop=cjk, frameon=False, fontsize=7)
+for axis in axes:
+    axis.grid(False)
+fig.suptitle('a：按房重抽 95% 区间；b：单房描述性计数；均为 oracle 诊断', fontproperties=cjk, fontsize=8)
+out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, '../../output/layout-recon/robust.png')
+fig.savefig(out, dpi=300, facecolor='white')
+fig.savefig(os.path.splitext(out)[0] + '.pdf', facecolor='white')
+fig.savefig(os.path.splitext(out)[0] + '.svg', facecolor='white')
+print(os.path.abspath(out))

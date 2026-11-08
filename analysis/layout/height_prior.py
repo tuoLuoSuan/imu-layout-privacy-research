@@ -74,6 +74,7 @@ def loso_conditioned(rows, cats=CATS, bins=3):
     Both are quantities the IMU pipeline measures, so this is legal; the question
     is only whether the extra conditioning buys accuracy.
     """
+    rows = [r for r in rows if r['cat'] in cats]
     scenes = sorted({r["scene"] for r in rows})
     err = []
     for s in scenes:
@@ -95,7 +96,8 @@ def loso_conditioned(rows, cats=CATS, bins=3):
             v = pool.get(key(r))
             if not v or len(v) < 3:
                 v = [x["h"] for x in train if x["cat"] == r["cat"]]
-            err.append(abs(float(np.median(v)) - r["h"]) if v else 0.0)
+            if v:
+                err.append(abs(float(np.median(v)) - r["h"]))
     e = np.asarray(err)
     return dict(n=int(e.size), med_err=float(np.median(e)), p90_err=float(np.percentile(e, 90)),
                 hit10=float((e <= 0.10).mean()), hit20=float((e <= 0.20).mean()))

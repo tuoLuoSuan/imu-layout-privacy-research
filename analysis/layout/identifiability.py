@@ -131,14 +131,14 @@ def analyze(sess, truth=None):
                 # 事件区间为空：这些事件不可能落在同一件家具上 —— 矛盾，不是「完全确定」。
                 bad = span > size[k] + 2 * (reach + EPS) + TOL
             p_lo, p_hi, kind, gap = prior_interval(box, pred['room'], size[k], k, others)
-            if bad:
+            if bad or kind == 'geom_error':
                 w = None
                 conflict = True
                 lo = hi = None
             else:
                 lo, hi = max(e_lo, p_lo), min(e_hi, p_hi)
                 w = max(0.0, float(hi - lo))
-                conflict = bool(w <= 0.0 and np.isfinite(e_lo))
+                conflict = bool(hi < lo)
             tin = None
             if truth and obj in truth and lo is not None:
                 tq = float(truth[obj][k])

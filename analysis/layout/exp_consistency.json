@@ -4,1040 +4,1040 @@
   "scene": "FloorPlan301",
   "obj": "cab",
   "k": 2,
-  "false_reject": 0.006666666666666667,
-  "err_filtered": 0.18606865146847631
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.006666666666666666,
-  "err_filtered": 0.14023046082434404
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.014666666666666672,
-  "err_filtered": 0.11861716609907108
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.0125,
-  "err_filtered": 0.09095687081652985
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan301",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.9033333333333333,
-  "false_reject": 0.005,
-  "err_all": 0.9039511822087911,
-  "err_filtered": 0.18390321158665923
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan301",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.92,
-  "false_reject": 0.008333333333333333,
-  "err_all": 0.530691835353218,
-  "err_filtered": 0.1413537336404319
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.005,
-  "err_filtered": 0.15867530673714594
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.005555555555555555,
-  "err_filtered": 0.1270225534843104
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.004666666666666666,
-  "err_filtered": 0.09768838642315486
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.0025,
-  "err_filtered": 0.07367589380676487
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan301",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.86,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.8040969721703707,
-  "err_filtered": 0.15943935681192317
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan301",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.9033333333333333,
-  "false_reject": 0.005,
-  "err_all": 0.47261045644525634,
-  "err_filtered": 0.10887532492635799
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.3427719029247371
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.25292701295471776
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.2012974776346615
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan301",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0,
-  "err_filtered": 0.1540118740024175
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan301",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.32666666666666666,
-  "false_reject": 0.0,
-  "err_all": 0.6785528749180569,
-  "err_filtered": 0.5153571104885828
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan301",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.2633333333333333,
-  "false_reject": 0.0,
-  "err_all": 0.4087772679559963,
-  "err_filtered": 0.3084238514224893
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.018333333333333333,
-  "err_filtered": 0.18457579930026957
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.008888888888888889,
-  "err_filtered": 0.13588851496791682
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.016666666666666673,
-  "err_filtered": 0.10987477182749347
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.021666666666666667,
-  "err_filtered": 0.08614515437406417
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan302",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.9133333333333333,
-  "false_reject": 0.005,
-  "err_all": 0.7429747931339306,
-  "err_filtered": 0.17682537263210188
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan302",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.8933333333333333,
   "false_reject": 0.013333333333333334,
-  "err_all": 0.43578159892066565,
-  "err_filtered": 0.12078019112416839
+  "err_filtered": 0.19010028015309494
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.16795003020480873
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.1297123229572387
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.09746551254086473
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.004583333333333333,
-  "err_filtered": 0.07891938397787387
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan302",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.7866666666666666,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.6394581990198909,
-  "err_filtered": 0.1680197591207921
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan302",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.82,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.39186957307354886,
-  "err_filtered": 0.11900722829081344
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.3309541222374873
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.2449475121110511
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.22502321929782648
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan302",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0,
-  "err_filtered": 0.13534606353597284
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan302",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.2,
-  "false_reject": 0.0,
-  "err_all": 0.6280951960718129,
-  "err_filtered": 0.5167797960311864
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan302",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.20333333333333334,
-  "false_reject": 0.0,
-  "err_all": 0.39859509254848,
-  "err_filtered": 0.35476900723547766
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan303",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.21030350766817996
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "cab",
   "k": 3,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.17308061201236097
+  "false_reject": 0.007777777777777778,
+  "err_filtered": 0.14178259754891787
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "cab",
   "k": 5,
-  "false_reject": 0.008666666666666666,
-  "err_filtered": 0.1313600007533149
+  "false_reject": 0.016000000000000004,
+  "err_filtered": 0.11994345951145888
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "cab",
   "k": 8,
-  "false_reject": 0.012916666666666667,
-  "err_filtered": 0.10743387765565604
+  "false_reject": 0.015,
+  "err_filtered": 0.09681464032586015
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "cab",
   "k": 3,
-  "detect": 0.8133333333333334,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.7129749551292306,
-  "err_filtered": 0.23444777650636134
+  "detect": 0.5833333333333334,
+  "false_reject": 0.3233333333333333,
+  "err_all": 0.9401638141624264,
+  "err_filtered": 0.30488432115790187
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "cab",
   "k": 5,
-  "detect": 0.7966666666666666,
-  "false_reject": 0.009166666666666667,
-  "err_all": 0.45149277334701954,
-  "err_filtered": 0.1517629390618402
+  "detect": 0.7366666666666667,
+  "false_reject": 0.1775,
+  "err_all": 0.5399712975853277,
+  "err_filtered": 0.15053603352279152
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "chair",
   "k": 2,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.15918766900228748
+  "false_reject": 0.006666666666666667,
+  "err_filtered": 0.15471767804273606
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "chair",
   "k": 3,
   "false_reject": 0.0044444444444444444,
-  "err_filtered": 0.1357188944404905
+  "err_filtered": 0.1258553456106052
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "chair",
   "k": 5,
-  "false_reject": 0.005333333333333333,
-  "err_filtered": 0.09627179641451675
+  "false_reject": 0.005999999999999999,
+  "err_filtered": 0.0996595955589969
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "chair",
   "k": 8,
-  "false_reject": 0.0075,
-  "err_filtered": 0.07645021278135714
+  "false_reject": 0.00375,
+  "err_filtered": 0.07551567712953507
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "chair",
   "k": 3,
-  "detect": 0.8666666666666667,
-  "false_reject": 0.006666666666666667,
-  "err_all": 0.7234967046940781,
-  "err_filtered": 0.16587101287129857
+  "detect": 0.6266666666666667,
+  "false_reject": 0.255,
+  "err_all": 0.7576108218913971,
+  "err_filtered": 0.21888966460076964
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "chair",
   "k": 5,
-  "detect": 0.8666666666666667,
-  "false_reject": 0.009166666666666667,
-  "err_all": 0.44581068013959907,
-  "err_filtered": 0.1137466994615481
+  "detect": 0.7266666666666667,
+  "false_reject": 0.185,
+  "err_all": 0.5008643907236308,
+  "err_filtered": 0.15091076064297582
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "bed",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.31220531873566554
+  "err_filtered": 0.34130202370516655
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "bed",
   "k": 3,
   "false_reject": 0.0,
-  "err_filtered": 0.26854992897351126
+  "err_filtered": 0.2652918847349042
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
+  "scene": "FloorPlan301",
   "obj": "bed",
   "k": 5,
   "false_reject": 0.0,
-  "err_filtered": 0.18980911256477812
+  "err_filtered": 0.19482004662699592
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan303",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0004166666666666667,
-  "err_filtered": 0.1578042449997241
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan303",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.37666666666666665,
-  "false_reject": 0.0,
-  "err_all": 0.7002392883383719,
-  "err_filtered": 0.44343513785620114
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan303",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.36666666666666664,
-  "false_reject": 0.0008333333333333334,
-  "err_all": 0.40577296759721937,
-  "err_filtered": 0.3010750059849203
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.27976358594185397
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.20059419484528285
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.0013333333333333335,
-  "err_filtered": 0.17514347929785673
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.00125,
-  "err_filtered": 0.1269128837298282
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan304",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.5266666666666666,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.57957036205406,
-  "err_filtered": 0.35602101407357534
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan304",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.5833333333333334,
-  "false_reject": 0.004166666666666667,
-  "err_all": 0.4002186903747298,
-  "err_filtered": 0.2217678185971307
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.17151877481909472
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.0022222222222222222,
-  "err_filtered": 0.1354270439762191
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.0006666666666666668,
-  "err_filtered": 0.10231153856322764
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.0008333333333333334,
-  "err_filtered": 0.08507458839522017
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan304",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.8133333333333334,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.8288119287842348,
-  "err_filtered": 0.18329429694318894
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan304",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.81,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.5035782485243308,
-  "err_filtered": 0.12911953217999989
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.34962987467258644
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.31693271100612197
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0006666666666666668,
-  "err_filtered": 0.23194631954516137
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan304",
+  "scene": "FloorPlan301",
   "obj": "bed",
   "k": 8,
   "false_reject": 0.0,
-  "err_filtered": 0.17415841550518557
+  "err_filtered": 0.15538280335456905
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan304",
+  "scene": "FloorPlan301",
   "obj": "bed",
   "k": 3,
-  "detect": 0.30333333333333334,
-  "false_reject": 0.0,
-  "err_all": 0.7618819040487319,
-  "err_filtered": 0.6096644958408853
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan304",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.3,
-  "false_reject": 0.0,
-  "err_all": 0.492330816406769,
-  "err_filtered": 0.41470734817426685
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.21493128954828453
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.0022222222222222222,
-  "err_filtered": 0.192285459494845
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.007333333333333334,
-  "err_filtered": 0.1548692862972982
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.0075,
-  "err_filtered": 0.1114045676745759
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan305",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.8266666666666667,
-  "false_reject": 0.0,
-  "err_all": 0.7966224404403692,
-  "err_filtered": 0.24835839696561696
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan305",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.7633333333333333,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.4712567714963115,
-  "err_filtered": 0.18387445047981416
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.15754162104192884
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.007777777777777777,
-  "err_filtered": 0.12624072635222666
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.008666666666666668,
-  "err_filtered": 0.10014747028122288
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.007083333333333333,
-  "err_filtered": 0.07806053226880111
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan305",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.86,
-  "false_reject": 0.005,
-  "err_all": 0.7028010861345411,
-  "err_filtered": 0.16010390500030913
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan305",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.89,
-  "false_reject": 0.005833333333333334,
-  "err_all": 0.4029160817272518,
-  "err_filtered": 0.11458309150707582
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.3837222952971927
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.3015612385564864
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.20734839199666844
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan305",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0,
-  "err_filtered": 0.18162276788857223
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan305",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.22,
-  "false_reject": 0.0,
-  "err_all": 0.6615507602523307,
-  "err_filtered": 0.5721258610322775
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan305",
-  "obj": "bed",
-  "k": 5,
   "detect": 0.19666666666666666,
-  "false_reject": 0.0,
-  "err_all": 0.424125521332962,
-  "err_filtered": 0.3804495860187256
+  "false_reject": 0.11166666666666666,
+  "err_all": 0.7183639558552737,
+  "err_filtered": 0.5478308806337233
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan301",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.25333333333333335,
+  "false_reject": 0.07,
+  "err_all": 0.4673350077076709,
+  "err_filtered": 0.33063072016388356
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "cab",
   "k": 2,
-  "false_reject": 0.023333333333333334,
-  "err_filtered": 0.16168389366719324
+  "false_reject": 0.008333333333333333,
+  "err_filtered": 0.16348792847872395
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "cab",
   "k": 3,
-  "false_reject": 0.04111111111111112,
-  "err_filtered": 0.13327490692083435
+  "false_reject": 0.016666666666666666,
+  "err_filtered": 0.1476577493111281
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "cab",
   "k": 5,
-  "false_reject": 0.04399999999999998,
-  "err_filtered": 0.1182640103219735
+  "false_reject": 0.018000000000000006,
+  "err_filtered": 0.10928498976088188
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "cab",
   "k": 8,
-  "false_reject": 0.04541666666666667,
-  "err_filtered": 0.08344064709389035
+  "false_reject": 0.020833333333333332,
+  "err_filtered": 0.08661915872230688
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "cab",
   "k": 3,
-  "detect": 0.9433333333333334,
-  "false_reject": 0.021666666666666667,
-  "err_all": 0.7495481964143733,
-  "err_filtered": 0.16148545742666962
+  "detect": 0.6133333333333333,
+  "false_reject": 0.28833333333333333,
+  "err_all": 0.7648425148563813,
+  "err_filtered": 0.23957589892266806
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "cab",
   "k": 5,
-  "detect": 0.94,
-  "false_reject": 0.04,
-  "err_all": 0.47418834862261305,
-  "err_filtered": 0.11381076407393836
+  "detect": 0.7066666666666667,
+  "false_reject": 0.215,
+  "err_all": 0.4568873552184558,
+  "err_filtered": 0.15232891331751655
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "chair",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.17010018482887598
+  "err_filtered": 0.14808041468664865
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "chair",
   "k": 3,
-  "false_reject": 0.0022222222222222222,
-  "err_filtered": 0.13899546984514388
+  "false_reject": 0.0044444444444444444,
+  "err_filtered": 0.12347256864133248
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "chair",
   "k": 5,
+  "false_reject": 0.0020000000000000005,
+  "err_filtered": 0.08985568421289439
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan302",
+  "obj": "chair",
+  "k": 8,
   "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.10325631677329453
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan306",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.0025,
-  "err_filtered": 0.08242773138945644
+  "err_filtered": 0.0823914453476487
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "chair",
   "k": 3,
-  "detect": 0.81,
-  "false_reject": 0.005,
-  "err_all": 0.6745444734810422,
-  "err_filtered": 0.16889693086432445
+  "detect": 0.49333333333333335,
+  "false_reject": 0.28833333333333333,
+  "err_all": 0.6108135478876529,
+  "err_filtered": 0.23707811439292098
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "chair",
   "k": 5,
-  "detect": 0.8233333333333334,
-  "false_reject": 0.004166666666666667,
-  "err_all": 0.41569078765680406,
-  "err_filtered": 0.1262612056680012
+  "detect": 0.6466666666666666,
+  "false_reject": 0.17583333333333334,
+  "err_all": 0.41033141762361947,
+  "err_filtered": 0.1334057888480335
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "bed",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.403576052538996
+  "err_filtered": 0.30776193958718245
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "bed",
   "k": 3,
   "false_reject": 0.0,
-  "err_filtered": 0.2861546067034715
+  "err_filtered": 0.299758857383151
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "bed",
   "k": 5,
   "false_reject": 0.0006666666666666668,
-  "err_filtered": 0.23794873909392344
+  "err_filtered": 0.19851688511036442
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "bed",
   "k": 8,
   "false_reject": 0.0,
-  "err_filtered": 0.17962760108772424
+  "err_filtered": 0.15719384530745664
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "bed",
   "k": 3,
-  "detect": 0.32666666666666666,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.73757309191201,
-  "err_filtered": 0.5733571525916619
+  "detect": 0.13,
+  "false_reject": 0.058333333333333334,
+  "err_all": 0.6469168677570765,
+  "err_filtered": 0.5706008422211548
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan306",
+  "scene": "FloorPlan302",
   "obj": "bed",
   "k": 5,
-  "detect": 0.22333333333333333,
-  "false_reject": 0.0,
-  "err_all": 0.41627771971317434,
-  "err_filtered": 0.34965396641087687
+  "detect": 0.15,
+  "false_reject": 0.029166666666666667,
+  "err_all": 0.38792785087538717,
+  "err_filtered": 0.3537327395654376
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan303",
   "obj": "cab",
   "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.2529586686957207
+  "false_reject": 0.015,
+  "err_filtered": 0.20758264334704624
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan303",
   "obj": "cab",
   "k": 3,
   "false_reject": 0.005555555555555555,
-  "err_filtered": 0.223385758022571
+  "err_filtered": 0.17628494301858572
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan303",
   "obj": "cab",
   "k": 5,
-  "false_reject": 0.005999999999999999,
-  "err_filtered": 0.17268006419192816
+  "false_reject": 0.01066666666666667,
+  "err_filtered": 0.1354038731716737
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan303",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.005833333333333334,
+  "err_filtered": 0.11121805960471066
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan303",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.57,
+  "false_reject": 0.2683333333333333,
+  "err_all": 0.7463585628445961,
+  "err_filtered": 0.29042138178347215
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan303",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.62,
+  "false_reject": 0.14583333333333334,
+  "err_all": 0.4430383686397904,
+  "err_filtered": 0.1827935475198623
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.005,
+  "err_filtered": 0.16447184300023204
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0033333333333333335,
+  "err_filtered": 0.12070820376522606
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "chair",
+  "k": 5,
+  "false_reject": 0.01266666666666667,
+  "err_filtered": 0.09467521274743318
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "chair",
+  "k": 8,
+  "false_reject": 0.009583333333333333,
+  "err_filtered": 0.07668322433486163
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan303",
+  "obj": "chair",
+  "k": 3,
+  "detect": 0.62,
+  "false_reject": 0.27,
+  "err_all": 0.7756256179254297,
+  "err_filtered": 0.20631233402938715
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan303",
+  "obj": "chair",
+  "k": 5,
+  "detect": 0.7,
+  "false_reject": 0.18666666666666668,
+  "err_all": 0.45023183592053984,
+  "err_filtered": 0.13334925416293397
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "bed",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.36465765165126585
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "bed",
+  "k": 3,
+  "false_reject": 0.0011111111111111111,
+  "err_filtered": 0.27492916617213137
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "bed",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.17221857402841884
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan303",
+  "obj": "bed",
+  "k": 8,
+  "false_reject": 0.0,
+  "err_filtered": 0.14332095759609198
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan303",
+  "obj": "bed",
+  "k": 3,
+  "detect": 0.23333333333333334,
+  "false_reject": 0.10666666666666667,
+  "err_all": 0.6190292937884244,
+  "err_filtered": 0.5327644442158683
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan303",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.31,
+  "false_reject": 0.06416666666666666,
+  "err_all": 0.40254273039420235,
+  "err_filtered": 0.32136328173155115
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "cab",
+  "k": 2,
+  "false_reject": 0.0016666666666666668,
+  "err_filtered": 0.2817589238113356
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "cab",
+  "k": 3,
+  "false_reject": 0.0011111111111111111,
+  "err_filtered": 0.2125869281504824
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "cab",
+  "k": 5,
+  "false_reject": 0.004666666666666666,
+  "err_filtered": 0.16465924905341767
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.002916666666666667,
+  "err_filtered": 0.14145369115457912
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan304",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.36,
+  "false_reject": 0.17,
+  "err_all": 0.600127722789237,
+  "err_filtered": 0.4347959582188141
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan304",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.39666666666666667,
+  "false_reject": 0.12583333333333332,
+  "err_all": 0.3623308773596856,
+  "err_filtered": 0.27954114952421016
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.17809226677159054
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0,
+  "err_filtered": 0.13542756901663672
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "chair",
+  "k": 5,
+  "false_reject": 0.0006666666666666668,
+  "err_filtered": 0.09876197993608968
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "chair",
+  "k": 8,
+  "false_reject": 0.0016666666666666668,
+  "err_filtered": 0.08729915278967716
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan304",
+  "obj": "chair",
+  "k": 3,
+  "detect": 0.5833333333333334,
+  "false_reject": 0.27,
+  "err_all": 0.7562461596744977,
+  "err_filtered": 0.25000399663756667
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan304",
+  "obj": "chair",
+  "k": 5,
+  "detect": 0.6966666666666667,
+  "false_reject": 0.14916666666666667,
+  "err_all": 0.5064819110802986,
+  "err_filtered": 0.1445476060607384
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "bed",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.39545909674053514
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "bed",
+  "k": 3,
+  "false_reject": 0.0,
+  "err_filtered": 0.33211860574967395
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "bed",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.24284958593445163
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan304",
+  "obj": "bed",
+  "k": 8,
+  "false_reject": 0.0,
+  "err_filtered": 0.19578110630055043
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan304",
+  "obj": "bed",
+  "k": 3,
+  "detect": 0.19,
+  "false_reject": 0.09833333333333333,
+  "err_all": 0.7677733249361018,
+  "err_filtered": 0.6894477984396785
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan304",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.24666666666666667,
+  "false_reject": 0.05416666666666667,
+  "err_all": 0.5022744562219199,
+  "err_filtered": 0.41727219156253137
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "cab",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.21894956290980944
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "cab",
+  "k": 3,
+  "false_reject": 0.0033333333333333335,
+  "err_filtered": 0.19158164971314903
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "cab",
+  "k": 5,
+  "false_reject": 0.008,
+  "err_filtered": 0.1404515296890427
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
   "obj": "cab",
   "k": 8,
   "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.12415379717349623
+  "err_filtered": 0.11528899255969477
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan305",
   "obj": "cab",
   "k": 3,
-  "detect": 0.7966666666666666,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.9965313678011023,
-  "err_filtered": 0.3096683400899356
+  "detect": 0.47,
+  "false_reject": 0.2816666666666667,
+  "err_all": 0.7505797047369205,
+  "err_filtered": 0.38279773588434557
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan305",
   "obj": "cab",
   "k": 5,
-  "detect": 0.8033333333333333,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.5739912439754552,
-  "err_filtered": 0.19249926408572987
+  "detect": 0.6466666666666666,
+  "false_reject": 0.14833333333333334,
+  "err_all": 0.47595853572972513,
+  "err_filtered": 0.18875058126540342
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan305",
   "obj": "chair",
   "k": 2,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.15957426884763198
+  "false_reject": 0.005,
+  "err_filtered": 0.15522819893258105
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan307",
+  "scene": "FloorPlan305",
   "obj": "chair",
   "k": 3,
   "false_reject": 0.0022222222222222222,
-  "err_filtered": 0.12313124835465045
+  "err_filtered": 0.13107983609252408
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "chair",
+  "k": 5,
+  "false_reject": 0.004666666666666666,
+  "err_filtered": 0.10007399451580018
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "chair",
+  "k": 8,
+  "false_reject": 0.008333333333333333,
+  "err_filtered": 0.07938157926239103
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan305",
+  "obj": "chair",
+  "k": 3,
+  "detect": 0.5866666666666667,
+  "false_reject": 0.26666666666666666,
+  "err_all": 0.6608717223471234,
+  "err_filtered": 0.2177895408935654
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan305",
+  "obj": "chair",
+  "k": 5,
+  "detect": 0.7266666666666667,
+  "false_reject": 0.15833333333333333,
+  "err_all": 0.41049381837957544,
+  "err_filtered": 0.1309836246770505
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "bed",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.4227298497983152
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "bed",
+  "k": 3,
+  "false_reject": 0.0,
+  "err_filtered": 0.29425577181625606
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "bed",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.20866890165112112
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan305",
+  "obj": "bed",
+  "k": 8,
+  "false_reject": 0.0004166666666666667,
+  "err_filtered": 0.19250883725423384
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan305",
+  "obj": "bed",
+  "k": 3,
+  "detect": 0.1,
+  "false_reject": 0.08166666666666667,
+  "err_all": 0.6557269707068568,
+  "err_filtered": 0.6413395479495603
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan305",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.14666666666666667,
+  "false_reject": 0.04,
+  "err_all": 0.4380050898495814,
+  "err_filtered": 0.42202838891342775
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "cab",
+  "k": 2,
+  "false_reject": 0.016666666666666666,
+  "err_filtered": 0.1617798328655362
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "cab",
+  "k": 3,
+  "false_reject": 0.03333333333333333,
+  "err_filtered": 0.1390262969789713
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "cab",
+  "k": 5,
+  "false_reject": 0.031999999999999994,
+  "err_filtered": 0.1033172294002791
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.0475,
+  "err_filtered": 0.08587014323448011
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan306",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.6133333333333333,
+  "false_reject": 0.33,
+  "err_all": 0.7292232729383863,
+  "err_filtered": 0.24169561726767538
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan306",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.72,
+  "false_reject": 0.24,
+  "err_all": 0.436463410471262,
+  "err_filtered": 0.14755089854642003
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.0016666666666666668,
+  "err_filtered": 0.16736495157732686
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0011111111111111111,
+  "err_filtered": 0.12784713057025188
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "chair",
+  "k": 5,
+  "false_reject": 0.0020000000000000005,
+  "err_filtered": 0.10354224962469727
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "chair",
+  "k": 8,
+  "false_reject": 0.0004166666666666667,
+  "err_filtered": 0.07975826900685579
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan306",
+  "obj": "chair",
+  "k": 3,
+  "detect": 0.54,
+  "false_reject": 0.29333333333333333,
+  "err_all": 0.6529231017041576,
+  "err_filtered": 0.2743327355427557
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan306",
+  "obj": "chair",
+  "k": 5,
+  "detect": 0.6466666666666666,
+  "false_reject": 0.15666666666666668,
+  "err_all": 0.41330434717319564,
+  "err_filtered": 0.15569240314166694
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "bed",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.4031717373150644
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "bed",
+  "k": 3,
+  "false_reject": 0.0,
+  "err_filtered": 0.28559279545244975
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "bed",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.23004045220367328
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan306",
+  "obj": "bed",
+  "k": 8,
+  "false_reject": 0.0,
+  "err_filtered": 0.16787973324054806
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan306",
+  "obj": "bed",
+  "k": 3,
+  "detect": 0.17333333333333334,
+  "false_reject": 0.08666666666666667,
+  "err_all": 0.6742075239300023,
+  "err_filtered": 0.5906890523916334
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan306",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.22,
+  "false_reject": 0.05416666666666667,
+  "err_all": 0.4388861305802758,
+  "err_filtered": 0.39485031559096545
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan307",
+  "obj": "cab",
+  "k": 2,
+  "false_reject": 0.0033333333333333335,
+  "err_filtered": 0.27954122900866973
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan307",
+  "obj": "cab",
+  "k": 3,
+  "false_reject": 0.0011111111111111111,
+  "err_filtered": 0.21781653279939533
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan307",
+  "obj": "cab",
+  "k": 5,
+  "false_reject": 0.004666666666666666,
+  "err_filtered": 0.17693809941193916
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan307",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.0020833333333333333,
+  "err_filtered": 0.13560540050497677
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan307",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.5733333333333334,
+  "false_reject": 0.19833333333333333,
+  "err_all": 0.9434489617393027,
+  "err_filtered": 0.367880503651223
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan307",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.6266666666666667,
+  "false_reject": 0.17416666666666666,
+  "err_all": 0.5799850414950511,
+  "err_filtered": 0.24251792259627447
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan307",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.0033333333333333335,
+  "err_filtered": 0.15576651001459646
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan307",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0044444444444444444,
+  "err_filtered": 0.1265097568651264
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan307",
   "obj": "chair",
   "k": 5,
-  "false_reject": 0.008666666666666666,
-  "err_filtered": 0.09292256608057413
+  "false_reject": 0.004666666666666667,
+  "err_filtered": 0.10883150247946424
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan307",
   "obj": "chair",
   "k": 8,
-  "false_reject": 0.005833333333333334,
-  "err_filtered": 0.0765508227420584
+  "false_reject": 0.00625,
+  "err_filtered": 0.07610313154403062
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan307",
   "obj": "chair",
   "k": 3,
-  "detect": 0.8866666666666667,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.7301526067547104,
-  "err_filtered": 0.16398132833175583
+  "detect": 0.57,
+  "false_reject": 0.29,
+  "err_all": 0.7331381931438514,
+  "err_filtered": 0.21145821603815057
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan307",
   "obj": "chair",
   "k": 5,
-  "detect": 0.9133333333333333,
-  "false_reject": 0.0016666666666666668,
-  "err_all": 0.5008287422030209,
-  "err_filtered": 0.10447239394376917
+  "detect": 0.7433333333333333,
+  "false_reject": 0.14833333333333334,
+  "err_all": 0.47538994454416605,
+  "err_filtered": 0.1345561002358305
  },
  {
   "kind": "genuine",
@@ -1045,7 +1045,7 @@
   "obj": "bed",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.38180360811843767
+  "err_filtered": 0.3199730110936412
  },
  {
   "kind": "genuine",
@@ -1053,7 +1053,7 @@
   "obj": "bed",
   "k": 3,
   "false_reject": 0.0,
-  "err_filtered": 0.3093057248683666
+  "err_filtered": 0.31307795595102494
  },
  {
   "kind": "genuine",
@@ -1061,7 +1061,7 @@
   "obj": "bed",
   "k": 5,
   "false_reject": 0.0,
-  "err_filtered": 0.2281073582009715
+  "err_filtered": 0.2344954451647511
  },
  {
   "kind": "genuine",
@@ -1069,35 +1069,35 @@
   "obj": "bed",
   "k": 8,
   "false_reject": 0.0,
-  "err_filtered": 0.1876869468522187
+  "err_filtered": 0.1801154271947587
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan307",
   "obj": "bed",
   "k": 3,
-  "detect": 0.23,
-  "false_reject": 0.0,
-  "err_all": 0.6817004787532412,
-  "err_filtered": 0.5631053287623834
+  "detect": 0.17666666666666667,
+  "false_reject": 0.11666666666666667,
+  "err_all": 0.7764536916291205,
+  "err_filtered": 0.6740573218584788
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan307",
   "obj": "bed",
   "k": 5,
-  "detect": 0.27666666666666667,
-  "false_reject": 0.0,
-  "err_all": 0.5155081302130526,
-  "err_filtered": 0.36574741736272387
+  "detect": 0.23666666666666666,
+  "false_reject": 0.060833333333333336,
+  "err_all": 0.48046346838884774,
+  "err_filtered": 0.3886451093691692
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan308",
   "obj": "cab",
   "k": 2,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.18657596941629676
+  "false_reject": 0.006666666666666667,
+  "err_filtered": 0.19498686308583751
  },
  {
   "kind": "genuine",
@@ -1105,15 +1105,15 @@
   "obj": "cab",
   "k": 3,
   "false_reject": 0.006666666666666666,
-  "err_filtered": 0.14889517077768777
+  "err_filtered": 0.14053235692601146
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan308",
   "obj": "cab",
   "k": 5,
-  "false_reject": 0.008,
-  "err_filtered": 0.1215467557477474
+  "false_reject": 0.002666666666666667,
+  "err_filtered": 0.1136652614385647
  },
  {
   "kind": "genuine",
@@ -1121,79 +1121,79 @@
   "obj": "cab",
   "k": 8,
   "false_reject": 0.007916666666666667,
-  "err_filtered": 0.09639317522962865
+  "err_filtered": 0.09453722715023452
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan308",
   "obj": "cab",
   "k": 3,
-  "detect": 0.9,
-  "false_reject": 0.005,
-  "err_all": 0.7431726079346475,
-  "err_filtered": 0.2050805836545436
+  "detect": 0.6233333333333333,
+  "false_reject": 0.27166666666666667,
+  "err_all": 0.7600300215934798,
+  "err_filtered": 0.26546291844043457
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan308",
   "obj": "cab",
   "k": 5,
-  "detect": 0.8833333333333333,
-  "false_reject": 0.011666666666666667,
-  "err_all": 0.4630587854722497,
-  "err_filtered": 0.13886522704044857
+  "detect": 0.71,
+  "false_reject": 0.18166666666666667,
+  "err_all": 0.46641785936831814,
+  "err_filtered": 0.1560585205173926
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan308",
   "obj": "chair",
   "k": 2,
-  "false_reject": 0.005,
-  "err_filtered": 0.1510619936313804
+  "false_reject": 0.0016666666666666668,
+  "err_filtered": 0.14410326666030246
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan308",
   "obj": "chair",
   "k": 3,
-  "false_reject": 0.005555555555555555,
-  "err_filtered": 0.14133449238385112
+  "false_reject": 0.0022222222222222222,
+  "err_filtered": 0.12993230911185188
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan308",
   "obj": "chair",
   "k": 5,
-  "false_reject": 0.0020000000000000005,
-  "err_filtered": 0.09751579705511632
+  "false_reject": 0.007333333333333332,
+  "err_filtered": 0.09526498420380972
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan308",
   "obj": "chair",
   "k": 8,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.08202005101290871
+  "false_reject": 0.005,
+  "err_filtered": 0.07923059551813173
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan308",
   "obj": "chair",
   "k": 3,
-  "detect": 0.8966666666666666,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.8953054593174024,
-  "err_filtered": 0.1657843673136681
+  "detect": 0.6133333333333333,
+  "false_reject": 0.31333333333333335,
+  "err_all": 0.8653604096686385,
+  "err_filtered": 0.2223063817588384
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan308",
   "obj": "chair",
   "k": 5,
-  "detect": 0.8866666666666667,
-  "false_reject": 0.004166666666666667,
-  "err_all": 0.5041101553207286,
-  "err_filtered": 0.11372879161274768
+  "detect": 0.7433333333333333,
+  "false_reject": 0.18333333333333332,
+  "err_all": 0.518549783175409,
+  "err_filtered": 0.14133890069208174
  },
  {
   "kind": "genuine",
@@ -1201,7 +1201,7 @@
   "obj": "bed",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.3741099632768472
+  "err_filtered": 0.3916099234618338
  },
  {
   "kind": "genuine",
@@ -1209,7 +1209,7 @@
   "obj": "bed",
   "k": 3,
   "false_reject": 0.0,
-  "err_filtered": 0.2898719681387999
+  "err_filtered": 0.3213907143547707
  },
  {
   "kind": "genuine",
@@ -1217,7 +1217,7 @@
   "obj": "bed",
   "k": 5,
   "false_reject": 0.0,
-  "err_filtered": 0.23335708684328044
+  "err_filtered": 0.22715011399782548
  },
  {
   "kind": "genuine",
@@ -1225,287 +1225,131 @@
   "obj": "bed",
   "k": 8,
   "false_reject": 0.0,
-  "err_filtered": 0.1689166705444622
+  "err_filtered": 0.1676133278374575
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan308",
   "obj": "bed",
   "k": 3,
-  "detect": 0.39,
-  "false_reject": 0.0,
-  "err_all": 0.9481221699123554,
-  "err_filtered": 0.6023127726540611
+  "detect": 0.31666666666666665,
+  "false_reject": 0.14,
+  "err_all": 0.9961780009420054,
+  "err_filtered": 0.7181495790579849
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan308",
   "obj": "bed",
   "k": 5,
-  "detect": 0.49333333333333335,
-  "false_reject": 0.0,
-  "err_all": 0.6031213783088116,
-  "err_filtered": 0.3684205262739283
+  "detect": 0.38666666666666666,
+  "false_reject": 0.060833333333333336,
+  "err_all": 0.5852738750604676,
+  "err_filtered": 0.35753620046296297
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan309",
+  "scene": "FloorPlan310",
   "obj": "cab",
   "k": 2,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.3440002793347191
+  "false_reject": 0.006666666666666667,
+  "err_filtered": 0.1418810725868626
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan309",
+  "scene": "FloorPlan310",
   "obj": "cab",
   "k": 3,
-  "false_reject": 0.0011111111111111111,
-  "err_filtered": 0.2641098658357821
+  "false_reject": 0.016666666666666666,
+  "err_filtered": 0.12140618355110469
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan309",
+  "scene": "FloorPlan310",
   "obj": "cab",
+  "k": 5,
+  "false_reject": 0.020666666666666677,
+  "err_filtered": 0.09052439176699184
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan310",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.020833333333333332,
+  "err_filtered": 0.07659035344913667
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan310",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.6466666666666666,
+  "false_reject": 0.30666666666666664,
+  "err_all": 0.7945136278314988,
+  "err_filtered": 0.21318071327136476
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan310",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.7533333333333333,
+  "false_reject": 0.19833333333333333,
+  "err_all": 0.5056183746417946,
+  "err_filtered": 0.1181278040423196
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan310",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.0016666666666666668,
+  "err_filtered": 0.1617951330704542
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan310",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0022222222222222222,
+  "err_filtered": 0.12517763667313114
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan310",
+  "obj": "chair",
   "k": 5,
   "false_reject": 0.0013333333333333335,
-  "err_filtered": 0.20957785655193448
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.0004166666666666667,
-  "err_filtered": 0.16161570292195204
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan309",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.85,
-  "false_reject": 0.0,
-  "err_all": 1.5637405569123888,
-  "err_filtered": 0.3379085366890756
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan309",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.85,
-  "false_reject": 0.0,
-  "err_all": 0.9147117343069837,
-  "err_filtered": 0.22464819400591102
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.15385012776449303
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.1282165276720929
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.004666666666666666,
-  "err_filtered": 0.09745726385812192
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.0075,
-  "err_filtered": 0.07829661216880549
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan309",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.94,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 1.2662990825372948,
-  "err_filtered": 0.15723617347012298
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan309",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.8966666666666666,
-  "false_reject": 0.0008333333333333334,
-  "err_all": 0.6955095455648899,
-  "err_filtered": 0.1117963031791682
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.39849533424552214
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.3100495008548311
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.22435133554036157
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan309",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0,
-  "err_filtered": 0.18313368857801143
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan309",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.48,
-  "false_reject": 0.0,
-  "err_all": 1.0294154065587928,
-  "err_filtered": 0.5949383360320534
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan309",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.51,
-  "false_reject": 0.0,
-  "err_all": 0.6461442279248228,
-  "err_filtered": 0.3800473218038771
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan310",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.008333333333333333,
-  "err_filtered": 0.1513732205399736
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan310",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.013333333333333334,
-  "err_filtered": 0.11947459970715213
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan310",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.015333333333333336,
-  "err_filtered": 0.08959797556623213
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan310",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.01375,
-  "err_filtered": 0.07425871119983057
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan310",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.9266666666666666,
-  "false_reject": 0.02,
-  "err_all": 0.8761493235118804,
-  "err_filtered": 0.13915870152106893
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan310",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.9,
-  "false_reject": 0.02,
-  "err_all": 0.48778457082976256,
-  "err_filtered": 0.10726258006833012
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan310",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.17460220138398477
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan310",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.13345597475848808
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan310",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.002666666666666667,
-  "err_filtered": 0.10384445367786596
+  "err_filtered": 0.10489775176471965
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan310",
   "obj": "chair",
   "k": 8,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.0826173673844881
+  "false_reject": 0.0020833333333333333,
+  "err_filtered": 0.08903447168748169
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan310",
   "obj": "chair",
   "k": 3,
-  "detect": 0.8433333333333334,
-  "false_reject": 0.0,
-  "err_all": 0.7049714251582916,
-  "err_filtered": 0.17634348711377223
+  "detect": 0.5433333333333333,
+  "false_reject": 0.26666666666666666,
+  "err_all": 0.721837130311755,
+  "err_filtered": 0.24394186820374505
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan310",
   "obj": "chair",
   "k": 5,
-  "detect": 0.8366666666666667,
-  "false_reject": 0.0008333333333333334,
-  "err_all": 0.40468832697481405,
-  "err_filtered": 0.11945652952110122
+  "detect": 0.6666666666666666,
+  "false_reject": 0.15583333333333332,
+  "err_all": 0.40253994179446717,
+  "err_filtered": 0.14494503146245918
  },
  {
   "kind": "genuine",
@@ -1513,15 +1357,15 @@
   "obj": "bed",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.3869883901881606
+  "err_filtered": 0.3436201639130246
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan310",
   "obj": "bed",
   "k": 3,
-  "false_reject": 0.0011111111111111111,
-  "err_filtered": 0.3328263974858588
+  "false_reject": 0.0,
+  "err_filtered": 0.3236510073032448
  },
  {
   "kind": "genuine",
@@ -1529,7 +1373,7 @@
   "obj": "bed",
   "k": 5,
   "false_reject": 0.0,
-  "err_filtered": 0.2273560170203322
+  "err_filtered": 0.2596517618725209
  },
  {
   "kind": "genuine",
@@ -1537,35 +1381,35 @@
   "obj": "bed",
   "k": 8,
   "false_reject": 0.0,
-  "err_filtered": 0.17354036941477308
+  "err_filtered": 0.17417284231405405
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan310",
   "obj": "bed",
   "k": 3,
-  "detect": 0.15666666666666668,
-  "false_reject": 0.0,
-  "err_all": 0.7157479759499293,
-  "err_filtered": 0.6150586723653736
+  "detect": 0.12333333333333334,
+  "false_reject": 0.04666666666666667,
+  "err_all": 0.6626885667359594,
+  "err_filtered": 0.6075424870887844
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan310",
   "obj": "bed",
   "k": 5,
-  "detect": 0.21,
-  "false_reject": 0.0,
-  "err_all": 0.45514338299083257,
-  "err_filtered": 0.3748153548169309
+  "detect": 0.2,
+  "false_reject": 0.03916666666666667,
+  "err_all": 0.4422681807999943,
+  "err_filtered": 0.40498894405191865
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan312",
   "obj": "cab",
   "k": 2,
-  "false_reject": 0.006666666666666667,
-  "err_filtered": 0.23110852318701297
+  "false_reject": 0.0,
+  "err_filtered": 0.2323261851982399
  },
  {
   "kind": "genuine",
@@ -1573,43 +1417,43 @@
   "obj": "cab",
   "k": 3,
   "false_reject": 0.0044444444444444444,
-  "err_filtered": 0.17825162995992042
+  "err_filtered": 0.19532140113785373
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan312",
   "obj": "cab",
   "k": 5,
-  "false_reject": 0.009333333333333334,
-  "err_filtered": 0.13684549079680292
+  "false_reject": 0.0033333333333333335,
+  "err_filtered": 0.13735689762648778
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan312",
   "obj": "cab",
   "k": 8,
-  "false_reject": 0.00375,
-  "err_filtered": 0.10790728784197803
+  "false_reject": 0.0025,
+  "err_filtered": 0.1182386332454626
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan312",
   "obj": "cab",
   "k": 3,
-  "detect": 0.8033333333333333,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.7995679826467637,
-  "err_filtered": 0.26725489464300206
+  "detect": 0.49333333333333335,
+  "false_reject": 0.2916666666666667,
+  "err_all": 0.8163452173143296,
+  "err_filtered": 0.3381598040506688
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan312",
   "obj": "cab",
   "k": 5,
-  "detect": 0.8066666666666666,
-  "false_reject": 0.006666666666666667,
-  "err_all": 0.5226925655509136,
-  "err_filtered": 0.18216658740499408
+  "detect": 0.6966666666666667,
+  "false_reject": 0.12416666666666666,
+  "err_all": 0.5374842138185772,
+  "err_filtered": 0.2010019294606125
  },
  {
   "kind": "genuine",
@@ -1617,675 +1461,675 @@
   "obj": "chair",
   "k": 2,
   "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.17498911053850114
+  "err_filtered": 0.16350065127931263
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan312",
   "obj": "chair",
   "k": 3,
-  "false_reject": 0.0011111111111111111,
-  "err_filtered": 0.1344051144872553
+  "false_reject": 0.0,
+  "err_filtered": 0.1322571466785965
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan312",
   "obj": "chair",
   "k": 5,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.10853212313116954
+  "false_reject": 0.0020000000000000005,
+  "err_filtered": 0.11104442193169682
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan312",
+  "obj": "chair",
+  "k": 8,
+  "false_reject": 0.0016666666666666668,
+  "err_filtered": 0.09311451508728066
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan312",
+  "obj": "chair",
+  "k": 3,
+  "detect": 0.56,
+  "false_reject": 0.31,
+  "err_all": 0.8335509855393473,
+  "err_filtered": 0.2444891055407629
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan312",
+  "obj": "chair",
+  "k": 5,
+  "detect": 0.68,
+  "false_reject": 0.1575,
+  "err_all": 0.4344507112572503,
+  "err_filtered": 0.1397571835620362
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan312",
+  "obj": "bed",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.33586142479086833
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan312",
+  "obj": "bed",
+  "k": 3,
+  "false_reject": 0.0,
+  "err_filtered": 0.2570448272637451
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan312",
+  "obj": "bed",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.20563517349939192
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan312",
+  "obj": "bed",
+  "k": 8,
+  "false_reject": 0.0,
+  "err_filtered": 0.17884330517343439
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan312",
+  "obj": "bed",
+  "k": 3,
+  "detect": 0.23,
+  "false_reject": 0.09833333333333333,
+  "err_all": 0.7187790543825355,
+  "err_filtered": 0.5702300604279582
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan312",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.2966666666666667,
+  "false_reject": 0.08333333333333333,
+  "err_all": 0.48031400691890097,
+  "err_filtered": 0.36154259362137275
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "cab",
+  "k": 2,
+  "false_reject": 0.01,
+  "err_filtered": 0.16039639174160789
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "cab",
+  "k": 3,
+  "false_reject": 0.03333333333333333,
+  "err_filtered": 0.14567843496525992
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "cab",
+  "k": 5,
+  "false_reject": 0.01933333333333334,
+  "err_filtered": 0.1048776775271997
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.02125,
+  "err_filtered": 0.08086768443608236
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan313",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.6033333333333334,
+  "false_reject": 0.305,
+  "err_all": 0.6810520180491575,
+  "err_filtered": 0.23611202148032356
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan313",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.8033333333333333,
+  "false_reject": 0.15083333333333335,
+  "err_all": 0.4677753953571778,
+  "err_filtered": 0.1368603187981272
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.16269565554009735
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0011111111111111111,
+  "err_filtered": 0.13925254772823098
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "chair",
+  "k": 5,
+  "false_reject": 0.0020000000000000005,
+  "err_filtered": 0.1125872356674508
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "chair",
+  "k": 8,
+  "false_reject": 0.0004166666666666667,
+  "err_filtered": 0.08522968649197077
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan313",
+  "obj": "chair",
+  "k": 3,
+  "detect": 0.49,
+  "false_reject": 0.28833333333333333,
+  "err_all": 0.7303258353930663,
+  "err_filtered": 0.2537760810982125
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan313",
+  "obj": "chair",
+  "k": 5,
+  "detect": 0.6466666666666666,
+  "false_reject": 0.18333333333333332,
+  "err_all": 0.43199961743264426,
+  "err_filtered": 0.14978479263984223
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "bed",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.3419423829019046
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "bed",
+  "k": 3,
+  "false_reject": 0.0,
+  "err_filtered": 0.2766303250016853
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "bed",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.22619731415999245
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan313",
+  "obj": "bed",
+  "k": 8,
+  "false_reject": 0.0,
+  "err_filtered": 0.15617863189315295
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan313",
+  "obj": "bed",
+  "k": 3,
+  "detect": 0.25333333333333335,
+  "false_reject": 0.07,
+  "err_all": 0.7277862693590194,
+  "err_filtered": 0.5400412498790309
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan313",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.21,
+  "false_reject": 0.05416666666666667,
+  "err_all": 0.44707458643985526,
+  "err_filtered": 0.3184826454810361
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "cab",
+  "k": 2,
+  "false_reject": 0.005,
+  "err_filtered": 0.1429571169183782
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "cab",
+  "k": 3,
+  "false_reject": 0.015555555555555553,
+  "err_filtered": 0.11159140070588475
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "cab",
+  "k": 5,
+  "false_reject": 0.02400000000000001,
+  "err_filtered": 0.08750807493007697
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.02875,
+  "err_filtered": 0.07489186094070531
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan316",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.59,
+  "false_reject": 0.325,
+  "err_all": 0.7393318759492764,
+  "err_filtered": 0.2077110981010661
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan316",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.7733333333333333,
+  "false_reject": 0.1575,
+  "err_all": 0.4361789992235601,
+  "err_filtered": 0.1222728814539194
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.167789650598143
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0011111111111111111,
+  "err_filtered": 0.14794277380010573
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "chair",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.11307773741717664
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "chair",
+  "k": 8,
+  "false_reject": 0.0,
+  "err_filtered": 0.08591704515854218
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan316",
+  "obj": "chair",
+  "k": 3,
+  "detect": 0.44333333333333336,
+  "false_reject": 0.29,
+  "err_all": 0.6781426261219802,
+  "err_filtered": 0.31135889258943217
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan316",
+  "obj": "chair",
+  "k": 5,
+  "detect": 0.6166666666666667,
+  "false_reject": 0.1325,
+  "err_all": 0.4319375605907004,
+  "err_filtered": 0.15977304330790426
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "bed",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.36972487648178537
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "bed",
+  "k": 3,
+  "false_reject": 0.0,
+  "err_filtered": 0.28261230387838454
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "bed",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.23415962141200064
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan316",
+  "obj": "bed",
+  "k": 8,
+  "false_reject": 0.0,
+  "err_filtered": 0.16178777356842905
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan316",
+  "obj": "bed",
+  "k": 3,
+  "detect": 0.15,
+  "false_reject": 0.07666666666666666,
+  "err_all": 0.7217276898909857,
+  "err_filtered": 0.5855919671950126
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan316",
+  "obj": "bed",
+  "k": 5,
+  "detect": 0.15666666666666668,
+  "false_reject": 0.03916666666666667,
+  "err_all": 0.43336656733407763,
+  "err_filtered": 0.36837433583702645
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
+  "obj": "cab",
+  "k": 2,
+  "false_reject": 0.015,
+  "err_filtered": 0.14600088066237432
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
+  "obj": "cab",
+  "k": 3,
+  "false_reject": 0.017777777777777778,
+  "err_filtered": 0.131159431563687
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
+  "obj": "cab",
+  "k": 5,
+  "false_reject": 0.030666666666666675,
+  "err_filtered": 0.10229770125631668
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
+  "obj": "cab",
+  "k": 8,
+  "false_reject": 0.034166666666666665,
+  "err_filtered": 0.08672270297451393
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan318",
+  "obj": "cab",
+  "k": 3,
+  "detect": 0.6133333333333333,
+  "false_reject": 0.34,
+  "err_all": 0.8168908751386561,
+  "err_filtered": 0.223301159447089
+ },
+ {
+  "kind": "outlier",
+  "scene": "FloorPlan318",
+  "obj": "cab",
+  "k": 5,
+  "detect": 0.7166666666666667,
+  "false_reject": 0.23,
+  "err_all": 0.4752289640860896,
+  "err_filtered": 0.13483647185825792
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
+  "obj": "chair",
+  "k": 2,
+  "false_reject": 0.0,
+  "err_filtered": 0.153810950449568
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
+  "obj": "chair",
+  "k": 3,
+  "false_reject": 0.0022222222222222222,
+  "err_filtered": 0.14338090506636925
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
+  "obj": "chair",
+  "k": 5,
+  "false_reject": 0.0,
+  "err_filtered": 0.09939014715535524
+ },
+ {
+  "kind": "genuine",
+  "scene": "FloorPlan318",
   "obj": "chair",
   "k": 8,
   "false_reject": 0.002916666666666667,
-  "err_filtered": 0.0776731286629696
+  "err_filtered": 0.08014611420278206
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "chair",
   "k": 3,
-  "detect": 0.8333333333333334,
-  "false_reject": 0.0,
-  "err_all": 0.7166734024613773,
-  "err_filtered": 0.17887112133124144
+  "detect": 0.5366666666666666,
+  "false_reject": 0.25833333333333336,
+  "err_all": 0.5879065386855324,
+  "err_filtered": 0.2618799448795096
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "chair",
   "k": 5,
-  "detect": 0.79,
-  "false_reject": 0.0008333333333333334,
-  "err_all": 0.4339224021995153,
-  "err_filtered": 0.12567997141448953
+  "detect": 0.6733333333333333,
+  "false_reject": 0.17416666666666666,
+  "err_all": 0.4085023944335042,
+  "err_filtered": 0.14186501198670043
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "bed",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.35651119070795434
+  "err_filtered": 0.3623030685978711
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "bed",
   "k": 3,
   "false_reject": 0.0,
-  "err_filtered": 0.2849319190896049
+  "err_filtered": 0.31169790166870487
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "bed",
   "k": 5,
   "false_reject": 0.0,
-  "err_filtered": 0.19421788397154402
+  "err_filtered": 0.23878201055591203
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "bed",
   "k": 8,
   "false_reject": 0.0,
-  "err_filtered": 0.15447677048515507
+  "err_filtered": 0.16524982482524506
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "bed",
   "k": 3,
-  "detect": 0.3566666666666667,
-  "false_reject": 0.0,
-  "err_all": 0.7343113027588325,
-  "err_filtered": 0.44573036628667273
+  "detect": 0.25666666666666665,
+  "false_reject": 0.095,
+  "err_all": 0.8117152035850619,
+  "err_filtered": 0.6629024540358982
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan312",
+  "scene": "FloorPlan318",
   "obj": "bed",
   "k": 5,
-  "detect": 0.32,
-  "false_reject": 0.0,
-  "err_all": 0.47453595685500727,
-  "err_filtered": 0.3203888006164592
+  "detect": 0.3333333333333333,
+  "false_reject": 0.08166666666666667,
+  "err_all": 0.4928121417928655,
+  "err_filtered": 0.3741872180463436
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan313",
+  "scene": "FloorPlan320",
   "obj": "cab",
   "k": 2,
-  "false_reject": 0.013333333333333334,
-  "err_filtered": 0.15867533501330117
+  "false_reject": 0.0033333333333333335,
+  "err_filtered": 0.2163811165976034
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan313",
+  "scene": "FloorPlan320",
   "obj": "cab",
   "k": 3,
-  "false_reject": 0.012222222222222223,
-  "err_filtered": 0.13631796867738138
+  "false_reject": 0.0022222222222222222,
+  "err_filtered": 0.1643108539485731
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan313",
+  "scene": "FloorPlan320",
   "obj": "cab",
   "k": 5,
-  "false_reject": 0.02600000000000001,
-  "err_filtered": 0.09413656732960626
+  "false_reject": 0.005333333333333334,
+  "err_filtered": 0.1397735483216519
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan313",
+  "scene": "FloorPlan320",
   "obj": "cab",
   "k": 8,
-  "false_reject": 0.030833333333333334,
-  "err_filtered": 0.08663113394351893
+  "false_reject": 0.009166666666666667,
+  "err_filtered": 0.10339276724824445
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan313",
+  "scene": "FloorPlan320",
   "obj": "cab",
   "k": 3,
-  "detect": 0.8866666666666667,
-  "false_reject": 0.03166666666666667,
-  "err_all": 0.6754485558729816,
-  "err_filtered": 0.17268764019680105
+  "detect": 0.5666666666666667,
+  "false_reject": 0.28833333333333333,
+  "err_all": 0.8357705030374947,
+  "err_filtered": 0.3827195330652866
  },
  {
   "kind": "outlier",
-  "scene": "FloorPlan313",
+  "scene": "FloorPlan320",
   "obj": "cab",
   "k": 5,
-  "detect": 0.89,
-  "false_reject": 0.02,
-  "err_all": 0.4753159325118257,
-  "err_filtered": 0.12193109508568556
+  "detect": 0.67,
+  "false_reject": 0.18333333333333332,
+  "err_all": 0.5656437796976521,
+  "err_filtered": 0.21558167364254788
  },
  {
   "kind": "genuine",
-  "scene": "FloorPlan313",
+  "scene": "FloorPlan320",
   "obj": "chair",
   "k": 2,
   "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.16978541348746656
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan313",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.0011111111111111111,
-  "err_filtered": 0.14000478427915225
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan313",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.0006666666666666668,
-  "err_filtered": 0.11132348804843131
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan313",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.0008333333333333334,
-  "err_filtered": 0.0894077812349458
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan313",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.7966666666666666,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.7053488089156712,
-  "err_filtered": 0.18867170562989571
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan313",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.8,
-  "false_reject": 0.0008333333333333334,
-  "err_all": 0.42899354348247776,
-  "err_filtered": 0.14386767736295794
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan313",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.30996176720590407
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan313",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.26739091764914047
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan313",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.19912297634329615
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan313",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0,
-  "err_filtered": 0.13975297121753447
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan313",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.3,
-  "false_reject": 0.0,
-  "err_all": 0.7008086809484715,
-  "err_filtered": 0.4878496857727639
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan313",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.31,
-  "false_reject": 0.0,
-  "err_all": 0.4539416789253079,
-  "err_filtered": 0.30916867868702613
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.015,
-  "err_filtered": 0.14322585329249132
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.023333333333333324,
-  "err_filtered": 0.11806563139682028
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.029333333333333336,
-  "err_filtered": 0.09496704059635666
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.025416666666666667,
-  "err_filtered": 0.07572576596708827
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan316",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.92,
-  "false_reject": 0.01,
-  "err_all": 0.6712108134938892,
-  "err_filtered": 0.1405535796377726
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan316",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.9266666666666666,
-  "false_reject": 0.025833333333333333,
-  "err_all": 0.461673456445886,
-  "err_filtered": 0.109006802367604
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.18759773505207658
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.0011111111111111111,
-  "err_filtered": 0.13524856310196676
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.1139772976568828
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.0004166666666666667,
-  "err_filtered": 0.08775640922765657
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan316",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.7533333333333333,
-  "false_reject": 0.0,
-  "err_all": 0.6691346241286403,
-  "err_filtered": 0.21107745857865617
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan316",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.6866666666666666,
-  "false_reject": 0.0008333333333333334,
-  "err_all": 0.3961578264617065,
-  "err_filtered": 0.15750043935232416
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.37511800390176725
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.3038731848161419
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.21582589131940705
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan316",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0,
-  "err_filtered": 0.17412639130046986
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan316",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.24,
-  "false_reject": 0.0,
-  "err_all": 0.6755363306052918,
-  "err_filtered": 0.5026462980117726
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan316",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.18333333333333332,
-  "false_reject": 0.0,
-  "err_all": 0.42020390946999925,
-  "err_filtered": 0.3415466191541868
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.01,
-  "err_filtered": 0.1624880568095427
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.02444444444444444,
-  "err_filtered": 0.13028779156016232
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.02200000000000001,
-  "err_filtered": 0.09871295691666741
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.041666666666666664,
-  "err_filtered": 0.0824035608465718
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan318",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.9266666666666666,
-  "false_reject": 0.02,
-  "err_all": 0.7737650922867458,
-  "err_filtered": 0.16258422628849462
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan318",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.9266666666666666,
-  "false_reject": 0.02666666666666667,
-  "err_all": 0.4472928683163684,
-  "err_filtered": 0.11343604764257456
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0016666666666666668,
-  "err_filtered": 0.17777359334036194
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "chair",
-  "k": 3,
-  "false_reject": 0.0011111111111111111,
-  "err_filtered": 0.14052480829951736
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "chair",
-  "k": 5,
-  "false_reject": 0.0013333333333333335,
-  "err_filtered": 0.09982511866153629
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "chair",
-  "k": 8,
-  "false_reject": 0.0,
-  "err_filtered": 0.08204060704183123
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan318",
-  "obj": "chair",
-  "k": 3,
-  "detect": 0.8666666666666667,
-  "false_reject": 0.0,
-  "err_all": 0.6256561516501495,
-  "err_filtered": 0.18696076221575336
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan318",
-  "obj": "chair",
-  "k": 5,
-  "detect": 0.8133333333333334,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.3629194637868002,
-  "err_filtered": 0.1247594512448803
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "bed",
-  "k": 2,
-  "false_reject": 0.0,
-  "err_filtered": 0.347836874116988
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "bed",
-  "k": 3,
-  "false_reject": 0.0,
-  "err_filtered": 0.2970218496758532
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "bed",
-  "k": 5,
-  "false_reject": 0.0,
-  "err_filtered": 0.24149724019407137
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan318",
-  "obj": "bed",
-  "k": 8,
-  "false_reject": 0.0004166666666666667,
-  "err_filtered": 0.17777120167516058
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan318",
-  "obj": "bed",
-  "k": 3,
-  "detect": 0.36666666666666664,
-  "false_reject": 0.0,
-  "err_all": 0.7981551511238808,
-  "err_filtered": 0.5206836782267648
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan318",
-  "obj": "bed",
-  "k": 5,
-  "detect": 0.4166666666666667,
-  "false_reject": 0.0,
-  "err_all": 0.528902947434296,
-  "err_filtered": 0.3429583174541997
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan320",
-  "obj": "cab",
-  "k": 2,
-  "false_reject": 0.006666666666666667,
-  "err_filtered": 0.21374518117065605
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan320",
-  "obj": "cab",
-  "k": 3,
-  "false_reject": 0.0011111111111111111,
-  "err_filtered": 0.18320189275676219
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan320",
-  "obj": "cab",
-  "k": 5,
-  "false_reject": 0.004666666666666666,
-  "err_filtered": 0.13962559707869604
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan320",
-  "obj": "cab",
-  "k": 8,
-  "false_reject": 0.0075,
-  "err_filtered": 0.1068941118449013
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan320",
-  "obj": "cab",
-  "k": 3,
-  "detect": 0.8366666666666667,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.8775944505947794,
-  "err_filtered": 0.23436710487642426
- },
- {
-  "kind": "outlier",
-  "scene": "FloorPlan320",
-  "obj": "cab",
-  "k": 5,
-  "detect": 0.8633333333333333,
-  "false_reject": 0.004166666666666667,
-  "err_all": 0.5559449907655796,
-  "err_filtered": 0.17846333473123394
- },
- {
-  "kind": "genuine",
-  "scene": "FloorPlan320",
-  "obj": "chair",
-  "k": 2,
-  "false_reject": 0.0033333333333333335,
-  "err_filtered": 0.16106136998926665
+  "err_filtered": 0.15665414464160587
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan320",
   "obj": "chair",
   "k": 3,
-  "false_reject": 0.011111111111111112,
-  "err_filtered": 0.11746667983922537
+  "false_reject": 0.0044444444444444444,
+  "err_filtered": 0.1213266997232403
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan320",
   "obj": "chair",
   "k": 5,
-  "false_reject": 0.012666666666666672,
-  "err_filtered": 0.09843627083783996
+  "false_reject": 0.002666666666666667,
+  "err_filtered": 0.09159584145448062
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan320",
   "obj": "chair",
   "k": 8,
-  "false_reject": 0.015,
-  "err_filtered": 0.07404194164948019
+  "false_reject": 0.00625,
+  "err_filtered": 0.0754382720759772
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan320",
   "obj": "chair",
   "k": 3,
-  "detect": 0.89,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.7257017316770296,
-  "err_filtered": 0.15261522663159482
+  "detect": 0.5733333333333334,
+  "false_reject": 0.325,
+  "err_all": 0.6792989599410231,
+  "err_filtered": 0.2267102263655283
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan320",
   "obj": "chair",
   "k": 5,
-  "detect": 0.88,
-  "false_reject": 0.0033333333333333335,
-  "err_all": 0.4344317305571802,
-  "err_filtered": 0.1079922180270966
+  "detect": 0.74,
+  "false_reject": 0.17166666666666666,
+  "err_all": 0.4570719492928088,
+  "err_filtered": 0.13002808336109803
  },
  {
   "kind": "genuine",
@@ -2293,7 +2137,7 @@
   "obj": "bed",
   "k": 2,
   "false_reject": 0.0,
-  "err_filtered": 0.33686470898889365
+  "err_filtered": 0.32047792846942963
  },
  {
   "kind": "genuine",
@@ -2301,7 +2145,7 @@
   "obj": "bed",
   "k": 3,
   "false_reject": 0.0,
-  "err_filtered": 0.2802125995434182
+  "err_filtered": 0.2623972303736819
  },
  {
   "kind": "genuine",
@@ -2309,34 +2153,34 @@
   "obj": "bed",
   "k": 5,
   "false_reject": 0.0,
-  "err_filtered": 0.19751903516404046
+  "err_filtered": 0.20120361957993554
  },
  {
   "kind": "genuine",
   "scene": "FloorPlan320",
   "obj": "bed",
   "k": 8,
-  "false_reject": 0.0004166666666666667,
-  "err_filtered": 0.14667051757404326
+  "false_reject": 0.0,
+  "err_filtered": 0.15427575871471966
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan320",
   "obj": "bed",
   "k": 3,
-  "detect": 0.24,
-  "false_reject": 0.0,
-  "err_all": 0.5758430849147923,
-  "err_filtered": 0.4797984318228462
+  "detect": 0.15666666666666668,
+  "false_reject": 0.08166666666666667,
+  "err_all": 0.6353261492581918,
+  "err_filtered": 0.573424794225631
  },
  {
   "kind": "outlier",
   "scene": "FloorPlan320",
   "obj": "bed",
   "k": 5,
-  "detect": 0.24333333333333335,
-  "false_reject": 0.0,
-  "err_all": 0.3754877936432507,
-  "err_filtered": 0.301993118471789
+  "detect": 0.21333333333333335,
+  "false_reject": 0.06916666666666667,
+  "err_all": 0.39839655425485393,
+  "err_filtered": 0.3601602872357671
  }
 ]

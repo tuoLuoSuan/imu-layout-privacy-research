@@ -7,8 +7,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, ROOT)
 import analysis.layout.layout_solver as LS
+import paths
 
-SESS = os.path.join(ROOT, 'output', 'layout-recon', 's-59d570ee')
+SESS = paths.SESSION
 REF = {'bed': (1.17, 1.96, 2.695, 4.045), 'desk': (0.05, 1.05, 0.65, 2.10),
        'cab': (0.05, 0.0, 0.65, 1.05), 'chair': (1.11, 0.92, 1.55, 1.36)}
 C = {k: np.array([(v[0] + v[2]) / 2, (v[1] + v[3]) / 2]) for k, v in REF.items()}
@@ -33,9 +34,13 @@ def errs(pred):
     return out
 
 rows = []
-for name, A in (('ideal', IDEAL), ('real', {k: np.array(v) for k, v in REAL.items()})):
-    pred = LS.solve(SESS, save=False, anchors=dict(A))[0]
+for name, A, fixed_angle in (('ideal', IDEAL, None), ('real', REAL, None),
+                             ('ideal_fixed_alignment', IDEAL, _pj['rot_deg']),
+                             ('real_fixed_alignment', REAL, _pj['rot_deg'])):
+    pred = LS.solve(SESS, save=False, anchors=dict(A), rotation_deg=fixed_angle)[0]
     rows.append({'arm': name, 'status': pred['status'], 'err': errs(pred),
+                 'rot_deg': pred['rot_deg'],
+                 'alignment': 'reoptimized' if fixed_angle is None else 'fixed to real reference fit',
                  'anchors': {k: [float(x) for x in v] for k, v in A.items()}})
     print('%-6s %-8s %s' % (name, pred['status'], ' '.join('%s %.3f' % kv for kv in rows[-1]['err'].items())))
 
@@ -43,5 +48,7 @@ for name, A in (('ideal', IDEAL), ('real', {k: np.array(v) for k, v in REAL.item
 dev = {k: float(np.linalg.norm(np.array(REAL[k]) - IDEAL[k])) for k in IDEAL}
 print('anchor deviation:', ' '.join('%s %.3f' % kv for kv in dev.items()))
 out = os.path.join(HERE, 'ideal_vs_raw.json')
-json.dump({'rows': rows, 'anchor_dev_m': dev}, open(out, 'w', encoding='utf-8'), indent=1)
+json.dump({'rows': rows, 'anchor_dev_m': dev,
+           'scope': 'Single-room oracle anchor substitution; residuals include model and alignment choices'},
+          open(out, 'w', encoding='utf-8'), indent=1)
 print('written', out)

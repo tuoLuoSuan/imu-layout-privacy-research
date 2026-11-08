@@ -1,10 +1,10 @@
 # 通用布局求解核心：房间尺寸、起点、三个锚点、家具尺寸全部作为参数传入。
-# 真实录音与合成场景共用这一份实现（layout_solver.py 只是读录音的薄包装）。
+# 模拟用参数化后端；真实单房仍由 layout_solver 独立求解，二者参数不可混称。
 import numpy as np
 
 DEFAULTS = dict(SIGMA=0.30, CH_W=0.55, REACH=0.575, W_PEN=4.0, W_SUPPORT=0.6)
 
-def solve(W, L, S, anchors, sizes, opt=None, traj=None, avail=None):
+def solve(W, L, S, anchors, sizes, opt=None, traj=None, avail=None, candidate_limit=20):
     """avail 缺省 = anchors 的全部键。给子集时只放「有锚点」的家具（部分解），
     定墙至少需要 seated / cabinet 之一，否则返回 status=insufficient。"""
     o = dict(DEFAULTS); o.update(opt or {})
@@ -124,6 +124,7 @@ def solve(W, L, S, anchors, sizes, opt=None, traj=None, avail=None):
                         sup = float(np.sqrt(l_cab[cab_wall] * l_desk[desk_wall]))
                         sc = pen*o['W_PEN'] - sup*o['W_SUPPORT'] + gap*0.06
                         cands.append({'score': float(sc), 'wall': cab_wall, 'desk_wall': desk_wall,
+                                      'bed_direction': [float(x) for x in u] if 'lying' in avail else None,
                                       'support': sup, 'gap': gap,
                                       'dist_cab': None if dca is None else dca[cab_wall],
                                       'dist_chair': None if dch is None else dch[desk_wall],
@@ -144,5 +145,6 @@ def solve(W, L, S, anchors, sizes, opt=None, traj=None, avail=None):
             'available': sorted(avail),
             'wall_distance_m': None if dca is None else float(dca[wall]),
             'chair_wall_distance_m': None if dch is None else float(dch[dwall]),
-            'candidate_walls_top20': top, 'candidates': cands[:20],
+            'candidate_walls_top20': top,
+            'candidates': cands if candidate_limit is None else cands[:candidate_limit],
             'l_cab': l_cab, 'l_desk': l_desk, 'wall_gap': gap}

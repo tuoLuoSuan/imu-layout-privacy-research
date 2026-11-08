@@ -3,9 +3,10 @@
 import io, json, os, sys
 import numpy as np
 import identifiability as ID
+import paths
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SESS = os.path.join(HERE, '..', '..', 'output', 'layout-recon', 's-59d570ee')
+SESS = paths.SESSION
 REF = {'bed': (1.17, 1.96, 2.695, 4.045), 'desk': (0.05, 1.05, 0.65, 2.10),
        'cab': (0.05, 0.0, 0.65, 1.05), 'chair': (1.11, 0.92, 1.55, 1.36)}
 RNG = np.random.default_rng(11)
@@ -22,30 +23,44 @@ def auc(x, y):
     return s / (len(x) * len(y))
 
 
+def predictive_summary(rows, repeats=2000, error_threshold=0.5):
+    """Exploratory oracle-width ranking of a fixed true-error endpoint."""
+    prediction = np.array([r['pred'] for r in rows])
+    measured = np.array([r['meas'] for r in rows])
+    failed = measured > error_threshold
+    point = auc(prediction[failed], prediction[~failed])
+    scenes = sorted({r['scene'] for r in rows})
+    blocks = [np.array([i for i, r in enumerate(rows) if r['scene'] == scene]) for scene in scenes]
+    rng = np.random.default_rng(11)
+    boots, size_boots = [], []
+    size = np.array([obj_extent(r) for r in rows])
+    for _ in range(repeats):
+        selected = np.concatenate([blocks[i] for i in rng.integers(0, len(blocks), len(blocks))])
+        labels = failed[selected]
+        if labels.any() and (~labels).any():
+            score = prediction[selected]
+            boots.append(auc(score[labels], score[~labels]))
+            size_score = size[selected]
+            size_boots.append(auc(size_score[labels], size_score[~labels]))
+    limits = np.percentile(boots, [2.5, 97.5]).tolist() if boots else [None, None]
+    size_limits = np.percentile(size_boots, [2.5, 97.5]).tolist() if size_boots else [None, None]
+    violations = measured > prediction + 1e-9
+    return dict(n=len(rows), n_rooms=len(scenes), n_bad=int(violations.sum()),
+                n_failed=int(failed.sum()), auc=float(point), ci=limits,
+                auc_size=auc(size[failed], size[~failed]), error_threshold_m=error_threshold,
+                ci_size=size_limits,
+                endpoint='maximum axis centre error above threshold',
+                score_source='oracle geometry width; exploratory, not a runtime risk model',
+                bootstrap_unit='room',
+                share_err_bad=float(measured[violations].sum() / measured.sum()) if measured.sum() else 0.0,
+                med_bad=float(np.median(measured[violations])) if violations.any() else None,
+                med_ok=float(np.median(measured[~violations])) if (~violations).any() else None)
+
+
 def part_a():
     rows = json.load(io.open(os.path.join(HERE, 'pred_vs_actual.json'), encoding='utf-8'))
-    out = {}
-    for be in ('place', 'joint'):
-        R = [r for r in rows if r['backend'] == be]
-        P = np.array([r['pred'] for r in R]); M = np.array([r['meas'] for r in R])
-        bad = M > P + 1e-9
-        a = auc(M[bad], M[~bad])
-        boots = []
-        for _ in range(2000):
-            idx = RNG.integers(0, len(R), len(R))
-            b2 = bad[idx]; m2 = M[idx]
-            if b2.sum() and (~b2).sum():
-                boots.append(auc(m2[b2], m2[~b2]))
-        lo, hi = np.percentile(boots, [2.5, 97.5])
-        # 基线：不做区间分析，只用「物体越大误差越大」
-        area = np.array([obj_extent(r) for r in R])
-        a_size = auc(area[bad], area[~bad])
-        out[be] = dict(n=len(R), n_bad=int(bad.sum()), auc=float(a),
-                       ci=[float(lo), float(hi)], auc_size=float(a_size),
-                       share_err_bad=float(M[bad].sum() / M.sum()) if bad.any() else 0.0,
-                       med_bad=float(np.median(M[bad])) if bad.any() else 0.0,
-                       med_ok=float(np.median(M[~bad])) if (~bad).any() else 0.0)
-    return out
+    return {backend: predictive_summary([r for r in rows if r['backend'] == backend])
+            for backend in ('place', 'joint')}
 
 
 SIZES = {'bed': (1.53, 2.08), 'desk': (0.60, 1.20), 'cab': (0.90, 0.60), 'chair': (0.44, 0.44)}
@@ -110,7 +125,7 @@ def part_c():
 
 if __name__ == '__main__':
     A = part_a(); B = part_b(); C = part_c()
-    print('== A 区间上界的信息量（越界 = 实测超过预测）')
+    print('== A 探索性 oracle 宽度诊断（端点为轴向中心误差 >0.5 m，按房重抽）')
     for k, v in A.items():
         print('  %-5s n=%d 越界 %d  AUC %.2f [%.2f, %.2f]  只用尺寸做基线 AUC %.2f'
               % (k, v['n'], v['n_bad'], v['auc'], v['ci'][0], v['ci'][1], v['auc_size']))

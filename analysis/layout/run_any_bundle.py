@@ -1,10 +1,11 @@
-import os, sys, csv, zipfile, hashlib, json
+import os, sys, zipfile, hashlib, json
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import matplotlib.font_manager as fm
+import action_model as AM
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from analysis.phone_ronin.adapter import prepare_features, make_windows, predict, integrate_centers
 
@@ -24,14 +25,9 @@ else:
 _mp = os.path.join(OUT, "bundle-manifest.json")
 man = json.load(open(_mp, encoding="utf-8")) if os.path.exists(_mp) else {"native_sid": os.path.basename(SRC)}
 
-def load(name):
-    rows = []
-    with open(os.path.join(sub, name), encoding="utf-8") as fh:
-        for r in csv.DictReader(fh):
-            rows.append((int(r["sensor_timestamp_ns"]), float(r["x"]), float(r["y"]), float(r["z"])))
-    t0 = rows[0][0]
-    return [((t-t0)/1e9, x, y, z) for t, x, y, z in rows]
-A = load("accelerometer.csv"); G = load("gyroscope.csv")
+channels = AM.load_phone(OUT)
+A = [(float(t), *map(float, x)) for t, x in zip(*channels['accelerometer'][:2])]
+G = [(float(t), *map(float, x)) for t, x in zip(*channels['gyroscope'][:2])]
 times, feats, info = prepare_features(A, G)
 windows, wt = make_windows(times, feats)
 sha = hashlib.sha256(open(CKPT, "rb").read()).hexdigest()
@@ -67,6 +63,8 @@ ax2.set_title("速度：均值 %.2f、最大 %.2f m/s" % (sp.mean(), sp.max()), 
 ax2.legend(fontsize=8); ax2.grid(alpha=0.25)
 fig.tight_layout(); fig.savefig(os.path.join(OUT, "ronin-trajectory.png"))
 json.dump({"sid": man["native_sid"], "path_m": seg, "end_gap_m": gap,
+           "time_basis": "shared first acceleration sensor timestamp",
+           "trajectory_time_column": "RoNIN target interval end; consumers subtract 0.5 s for centre time",
            "extent": [float(np.ptp(xy[:,0])), float(np.ptp(xy[:,1]))],
            "mean_speed": float(sp.mean()), "max_speed": float(sp.max())},
           open(os.path.join(OUT, "ronin-run.json"), "w"), indent=1)

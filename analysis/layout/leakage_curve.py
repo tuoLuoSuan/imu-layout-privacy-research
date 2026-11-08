@@ -69,21 +69,23 @@ def _widths(r, span, regime, n=N_MC, eps=EPS, rng=None):
 
     返回 (宽度, 是否覆盖真值) 两个数组：K 若把「其实没贴墙」的家具当成贴墙，
     宽度会很小但真值被排除——只看宽度会得出相反结论，必须同时报覆盖率。"""
-    rng = np.random.default_rng(7)   # 每次调用同一颗种子：同样的参数给出同样的数
+    rng = np.random.default_rng(7) if rng is None else rng
     L, room = r['L'], r['room']
     free_hi = room - L
-    if free_hi <= 0:                      # 物体比房间还长：位置被房间钉死
+    if free_hi < 0:
+        raise ValueError('Object extent exceeds the room extent')
+    if free_hi == 0:
         return np.zeros(n), np.ones(n, bool)
-    q = rng.uniform(0.0, free_hi, n)
     s = min(span, L)
-    a_lo, a_hi = q + L / 2 - s / 2, q + L / 2 + s / 2
-    e_lo, e_hi = a_hi - L - eps, a_lo + eps
     if regime == 'U' or not r['contact']:
         p_lo, p_hi = 0.0, free_hi
     elif r['side'] == 'lo':
-        p_lo, p_hi = 0.0, TOL_WALL
+        p_lo, p_hi = 0.0, min(TOL_WALL, free_hi)
     else:
-        p_lo, p_hi = free_hi - TOL_WALL, free_hi
+        p_lo, p_hi = max(0.0, free_hi - TOL_WALL), free_hi
+    q = rng.uniform(p_lo, p_hi, n)
+    a_lo, a_hi = q + L / 2 - s / 2, q + L / 2 + s / 2
+    e_lo, e_hi = a_hi - L - eps, a_lo + eps
     lo = np.maximum(e_lo, p_lo)
     hi = np.minimum(e_hi, p_hi)
     w = np.maximum(0.0, hi - lo)
@@ -95,7 +97,7 @@ def residual(rows, span_m, regime='U', n=N_MC):
     """每个参数返回其期望残余宽度（对真值位置取平均）。"""
     out = []
     for r in rows:
-        s = r['L'] if isinstance(span_m, dict) else span_m
+        s = span_m[r['cat']] if isinstance(span_m, dict) else span_m
         w, _ = _widths(r, float(s), regime, n=n)
         out.append(float(w.mean()))
     return np.asarray(out)
@@ -107,7 +109,7 @@ def coverage(rows, span_m, regime='U', n=N_MC):
     这是复核里最关键的一条：只报宽度不报覆盖，会奖励「又窄又错」的区间。"""
     hit = total = 0
     for r in rows:
-        s = r['L'] if isinstance(span_m, dict) else span_m
+        s = span_m[r['cat']] if isinstance(span_m, dict) else span_m
         _, cov = _widths(r, float(s), regime, n=n)
         hit += int(cov.sum())
         total += cov.size
@@ -118,7 +120,7 @@ def share_exceed(rows, span_m, tol, regime='U', n=N_MC):
     """残余宽度超过 tol 的概率（对参数、对真值位置同时平均）。"""
     hit = total = 0
     for r in rows:
-        s = r['L'] if isinstance(span_m, dict) else span_m
+        s = span_m[r['cat']] if isinstance(span_m, dict) else span_m
         w, _ = _widths(r, float(s), regime, n=n)
         hit += int((w > tol).sum())
         total += w.size

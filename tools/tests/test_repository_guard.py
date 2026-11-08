@@ -1,4 +1,5 @@
 """Integration checks use isolated temporary repositories; no research data."""
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -39,6 +40,20 @@ class RepositoryGuardTest(unittest.TestCase):
         code, report = self.scan()
         self.assertEqual(code, 0, report)
         self.assertEqual(len(report["files"]), 2)
+
+    def test_public_layout_model_requires_exact_hash_and_exact_path(self):
+        name = 'analysis/layout/models/phone-five-class.joblib'
+        target = self.root / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        content = b'\x00reviewed model fixture'
+        target.write_bytes(content)
+        files = [name, 'repository-policy.json']
+        self.policy(files)
+        self.assertIn('public_model_requires_pinned_binary_hash', str(self.scan()[1]))
+        self.policy(files, binary_sha256={name: hashlib.sha256(content).hexdigest()})
+        self.assertEqual(self.scan()[0], 0)
+        target.write_bytes(content + b'changed')
+        self.assertIn('binary_hash_mismatch', str(self.scan()[1]))
 
     def test_staged_secret_is_caught_even_when_worktree_is_clean(self):
         (self.root / "hello.md").write_text("-----BEGIN " + "PRIVATE KEY-----\n", encoding="utf-8")

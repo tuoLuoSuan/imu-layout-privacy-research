@@ -17,27 +17,91 @@
    "T": 8,
    "windows": 140,
    "traj_end": [
-    -0.788456050958348,
-    1.598215564968996
+    -0.82342554175807,
+    1.5224722878137982
    ],
-   "traj_dev_vs_full": 1.1920928688624599e-08,
+   "traj_dev_vs_full": 1.4901160971803051e-08,
    "status": "insufficient",
    "events": [
     [
      "other",
      2.5,
      5.5
+    ],
+    [
+     "walk",
+     6.0,
+     6.0
     ]
    ],
    "err": {},
-   "boxes": {}
+   "boxes": {},
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 7.507624104
   },
   {
    "T": 12,
    "windows": 220,
    "traj_end": [
-    -1.0047677822991776,
-    2.5528968529542904
+    -1.0610235230396488,
+    2.4679430643158424
    ],
    "traj_dev_vs_full": 0.0,
    "status": "insufficient",
@@ -50,20 +114,135 @@
     [
      "walk",
      6.0,
-     12.0
+     10.0
     ]
    ],
    "err": {},
-   "boxes": {}
+   "boxes": {},
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 11.502950613
   },
   {
    "T": 16,
    "windows": 300,
    "traj_end": [
-    -0.5948814520293592,
-    2.854061206066403
+    -0.639876491089081,
+    2.768160318957605
    ],
-   "traj_dev_vs_full": 1.4901161082825354e-08,
+   "traj_dev_vs_full": 1.7508864469384378e-08,
    "status": "partial",
    "events": [
     [
@@ -79,27 +258,198 @@
     [
      "seated",
      12.5,
-     14.5
+     14.0
     ]
    ],
    "err": {
-    "chair": 0.22767662858059723
+    "chair": 0.43630460202851923
    },
    "boxes": {
     "chair": [
-     0.9141713108113851,
-     1.0361368662074886,
-     1.354171310811385,
-     1.4761368662074885
+     1.479387621757774,
+     1.1521949410374834,
+     1.9193876217577739,
+     1.5921949410374834
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    }
+   ],
+   "last_action_available_s": 15.507271028
   },
   {
    "T": 20,
    "windows": 380,
    "traj_end": [
-    -0.8928552305816551,
-    3.20420333185612
+    -0.9174646429262351,
+    3.1239680965914944
    ],
    "traj_dev_vs_full": 0.0,
    "status": "partial",
@@ -122,27 +472,254 @@
     [
      "walk",
      15.0,
-     20.0
+     18.0
     ]
    ],
    "err": {
-    "chair": 0.22767662858059723
+    "chair": 0.25757497635043786
    },
    "boxes": {
     "chair": [
-     0.9141713108113851,
-     1.0361368662074886,
-     1.354171310811385,
-     1.4761368662074885
+     0.9273139143698159,
+     1.1015782546425912,
+     1.3673139143698159,
+     1.5415782546425911
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 19.500975037
   },
   {
    "T": 25,
    "windows": 480,
    "traj_end": [
-    -1.0397348628137038,
-    3.2570813031499752
+    -1.082821496302906,
+    3.1875321696661616
    ],
    "traj_dev_vs_full": 0.0,
    "status": "partial",
@@ -171,42 +748,344 @@
      "cabinet",
      20.5,
      22.5
+    ],
+    [
+     "walk",
+     23.0,
+     23.0
     ]
    ],
    "err": {
-    "cab": 0.05030693515505713,
-    "chair": 0.1938422745159282,
-    "desk": 0.05614921614739272
+    "cab": 0.09068121578272707,
+    "chair": 0.23329288772839377,
+    "desk": 0.10793111368021326
    },
    "boxes": {
     "cab": [
      0.0,
-     0.08054866873178773,
+     0.15065106011044066,
      0.6,
-     0.9805486687317877
+     1.0506510601104406
     ],
     "chair": [
-     0.9593061141446897,
-     1.0419269459772333,
-     1.3993061141446896,
-     1.4819269459772333
+     0.9713046063121522,
+     1.107587737430851,
+     1.4113046063121522,
+     1.5475877374308509
     ],
     "desk": [
      0.0,
-     1.000548668731788,
+     1.0706510601104409,
      0.6,
-     2.2005486687317877
+     2.2706510601104406
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.0,
+     "end_s": 20.0,
+     "center_s": 18.5,
+     "available_s": 20.000997276,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.5,
+     "end_s": 20.5,
+     "center_s": 19.0,
+     "available_s": 20.507083682,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.0,
+     "end_s": 21.0,
+     "center_s": 19.5,
+     "available_s": 21.00468738,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.5,
+     "end_s": 21.5,
+     "center_s": 20.0,
+     "available_s": 21.503295765,
+     "label": "walk"
+    },
+    {
+     "start_s": 19.0,
+     "end_s": 22.0,
+     "center_s": 20.5,
+     "available_s": 22.001792119,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 19.5,
+     "end_s": 22.5,
+     "center_s": 21.0,
+     "available_s": 22.500094879,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.0,
+     "end_s": 23.0,
+     "center_s": 21.5,
+     "available_s": 23.006797431,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.5,
+     "end_s": 23.5,
+     "center_s": 22.0,
+     "available_s": 23.504698316,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.0,
+     "end_s": 24.0,
+     "center_s": 22.5,
+     "available_s": 24.003250087,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.5,
+     "end_s": 24.5,
+     "center_s": 23.0,
+     "available_s": 24.501656753,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 24.501656753
   },
   {
    "T": 30,
    "windows": 580,
    "traj_end": [
-    -1.9623822965416844,
-    1.8576254067924358
+    -1.9911703151713043,
+    1.7816757936412675
    ],
-   "traj_dev_vs_full": 5.9604645663569045e-09,
+   "traj_dev_vs_full": 3.3527616238870905e-09,
    "status": "partial",
    "events": [
     [
@@ -233,42 +1112,414 @@
      "cabinet",
      20.5,
      22.5
+    ],
+    [
+     "walk",
+     23.0,
+     28.0
     ]
    ],
    "err": {
-    "cab": 0.05030693515505713,
-    "chair": 0.1938422745159282,
-    "desk": 0.05614921614739272
+    "cab": 0.09068121578272707,
+    "chair": 0.23329288772839377,
+    "desk": 0.10793111368021326
    },
    "boxes": {
     "cab": [
      0.0,
-     0.08054866873178773,
+     0.15065106011044066,
      0.6,
-     0.9805486687317877
+     1.0506510601104406
     ],
     "chair": [
-     0.9593061141446897,
-     1.0419269459772333,
-     1.3993061141446896,
-     1.4819269459772333
+     0.9713046063121522,
+     1.107587737430851,
+     1.4113046063121522,
+     1.5475877374308509
     ],
     "desk": [
      0.0,
-     1.000548668731788,
+     1.0706510601104409,
      0.6,
-     2.2005486687317877
+     2.2706510601104406
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.0,
+     "end_s": 20.0,
+     "center_s": 18.5,
+     "available_s": 20.000997276,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.5,
+     "end_s": 20.5,
+     "center_s": 19.0,
+     "available_s": 20.507083682,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.0,
+     "end_s": 21.0,
+     "center_s": 19.5,
+     "available_s": 21.00468738,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.5,
+     "end_s": 21.5,
+     "center_s": 20.0,
+     "available_s": 21.503295765,
+     "label": "walk"
+    },
+    {
+     "start_s": 19.0,
+     "end_s": 22.0,
+     "center_s": 20.5,
+     "available_s": 22.001792119,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 19.5,
+     "end_s": 22.5,
+     "center_s": 21.0,
+     "available_s": 22.500094879,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.0,
+     "end_s": 23.0,
+     "center_s": 21.5,
+     "available_s": 23.006797431,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.5,
+     "end_s": 23.5,
+     "center_s": 22.0,
+     "available_s": 23.504698316,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.0,
+     "end_s": 24.0,
+     "center_s": 22.5,
+     "available_s": 24.003250087,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.5,
+     "end_s": 24.5,
+     "center_s": 23.0,
+     "available_s": 24.501656753,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.0,
+     "end_s": 25.0,
+     "center_s": 23.5,
+     "available_s": 25.000344097,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.5,
+     "end_s": 25.5,
+     "center_s": 24.0,
+     "available_s": 25.507297638,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.0,
+     "end_s": 26.0,
+     "center_s": 24.5,
+     "available_s": 26.005555763,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.5,
+     "end_s": 26.5,
+     "center_s": 25.0,
+     "available_s": 26.504454357,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.0,
+     "end_s": 27.0,
+     "center_s": 25.5,
+     "available_s": 27.001773263,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.5,
+     "end_s": 27.5,
+     "center_s": 26.0,
+     "available_s": 27.500543836,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.0,
+     "end_s": 28.0,
+     "center_s": 26.5,
+     "available_s": 28.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.5,
+     "end_s": 28.5,
+     "center_s": 27.0,
+     "available_s": 28.505397221,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.0,
+     "end_s": 29.0,
+     "center_s": 27.5,
+     "available_s": 29.004485918,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.5,
+     "end_s": 29.5,
+     "center_s": 28.0,
+     "available_s": 29.503363106,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 29.503363106
   },
   {
    "T": 35,
    "windows": 680,
    "traj_end": [
-    -2.0499081523971223,
-    1.567808517066083
+    -2.0770762592855614,
+    1.500899388454496
    ],
-   "traj_dev_vs_full": 1.2368994717348869e-11,
+   "traj_dev_vs_full": 1.4552137272971777e-11,
    "status": "partial",
    "events": [
     [
@@ -299,44 +1550,481 @@
     [
      "walk",
      23.0,
-     34.0
+     33.0
     ]
    ],
    "err": {
-    "cab": 0.05030693515505713,
-    "chair": 0.1938422745159282,
-    "desk": 0.05614921614739272
+    "cab": 0.09068121578272707,
+    "chair": 0.23329288772839377,
+    "desk": 0.10793111368021326
    },
    "boxes": {
     "cab": [
      0.0,
-     0.08054866873178773,
+     0.15065106011044066,
      0.6,
-     0.9805486687317877
+     1.0506510601104406
     ],
     "chair": [
-     0.9593061141446897,
-     1.0419269459772333,
-     1.3993061141446896,
-     1.4819269459772333
+     0.9713046063121522,
+     1.107587737430851,
+     1.4113046063121522,
+     1.5475877374308509
     ],
     "desk": [
      0.0,
-     1.000548668731788,
+     1.0706510601104409,
      0.6,
-     2.2005486687317877
+     2.2706510601104406
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.0,
+     "end_s": 20.0,
+     "center_s": 18.5,
+     "available_s": 20.000997276,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.5,
+     "end_s": 20.5,
+     "center_s": 19.0,
+     "available_s": 20.507083682,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.0,
+     "end_s": 21.0,
+     "center_s": 19.5,
+     "available_s": 21.00468738,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.5,
+     "end_s": 21.5,
+     "center_s": 20.0,
+     "available_s": 21.503295765,
+     "label": "walk"
+    },
+    {
+     "start_s": 19.0,
+     "end_s": 22.0,
+     "center_s": 20.5,
+     "available_s": 22.001792119,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 19.5,
+     "end_s": 22.5,
+     "center_s": 21.0,
+     "available_s": 22.500094879,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.0,
+     "end_s": 23.0,
+     "center_s": 21.5,
+     "available_s": 23.006797431,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.5,
+     "end_s": 23.5,
+     "center_s": 22.0,
+     "available_s": 23.504698316,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.0,
+     "end_s": 24.0,
+     "center_s": 22.5,
+     "available_s": 24.003250087,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.5,
+     "end_s": 24.5,
+     "center_s": 23.0,
+     "available_s": 24.501656753,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.0,
+     "end_s": 25.0,
+     "center_s": 23.5,
+     "available_s": 25.000344097,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.5,
+     "end_s": 25.5,
+     "center_s": 24.0,
+     "available_s": 25.507297638,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.0,
+     "end_s": 26.0,
+     "center_s": 24.5,
+     "available_s": 26.005555763,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.5,
+     "end_s": 26.5,
+     "center_s": 25.0,
+     "available_s": 26.504454357,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.0,
+     "end_s": 27.0,
+     "center_s": 25.5,
+     "available_s": 27.001773263,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.5,
+     "end_s": 27.5,
+     "center_s": 26.0,
+     "available_s": 27.500543836,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.0,
+     "end_s": 28.0,
+     "center_s": 26.5,
+     "available_s": 28.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.5,
+     "end_s": 28.5,
+     "center_s": 27.0,
+     "available_s": 28.505397221,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.0,
+     "end_s": 29.0,
+     "center_s": 27.5,
+     "available_s": 29.004485918,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.5,
+     "end_s": 29.5,
+     "center_s": 28.0,
+     "available_s": 29.503363106,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.0,
+     "end_s": 30.0,
+     "center_s": 28.5,
+     "available_s": 30.000653835,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.5,
+     "end_s": 30.5,
+     "center_s": 29.0,
+     "available_s": 30.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.0,
+     "end_s": 31.0,
+     "center_s": 29.5,
+     "available_s": 31.006433938,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.5,
+     "end_s": 31.5,
+     "center_s": 30.0,
+     "available_s": 31.50420024,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.0,
+     "end_s": 32.0,
+     "center_s": 30.5,
+     "available_s": 32.002929771,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.5,
+     "end_s": 32.5,
+     "center_s": 31.0,
+     "available_s": 32.501201386,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.0,
+     "end_s": 33.0,
+     "center_s": 31.5,
+     "available_s": 33.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.5,
+     "end_s": 33.5,
+     "center_s": 32.0,
+     "available_s": 33.506879771,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.0,
+     "end_s": 34.0,
+     "center_s": 32.5,
+     "available_s": 34.004214614,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.5,
+     "end_s": 34.5,
+     "center_s": 33.0,
+     "available_s": 34.50315675,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 34.50315675
   },
   {
    "T": 40,
    "windows": 780,
    "traj_end": [
-    -2.0398619283285844,
-    1.6522307973293235
+    -2.0666290109303658,
+    1.5812553302836054
    ],
-   "traj_dev_vs_full": 9.196803318900493e-10,
-   "status": "partial",
+   "traj_dev_vs_full": 4.656617313969491e-10,
+   "status": "ok",
    "events": [
     [
      "other",
@@ -367,40 +2055,559 @@
      "walk",
      23.0,
      34.0
+    ],
+    [
+     "lying",
+     34.5,
+     38.0
     ]
    ],
    "err": {
-    "cab": 0.05030693515505713,
-    "chair": 0.1938422745159282,
-    "desk": 0.05614921614739272
+    "cab": 0.08609528967357968,
+    "chair": 0.25757497635043786,
+    "desk": 0.1030336799779509,
+    "bed": 0.14902444995709818
    },
    "boxes": {
     "cab": [
      0.0,
-     0.08054866873178773,
+     0.14508850764553055,
      0.6,
-     0.9805486687317877
+     1.0450885076455305
     ],
     "chair": [
-     0.9593061141446897,
-     1.0419269459772333,
-     1.3993061141446896,
-     1.4819269459772333
+     0.9273139143698159,
+     1.1015782546425912,
+     1.3673139143698159,
+     1.5415782546425911
     ],
     "desk": [
      0.0,
-     1.000548668731788,
+     1.0650885076455308,
      0.6,
-     2.2005486687317877
+     2.2650885076455305
+    ],
+    "bed": [
+     1.3182714345980708,
+     1.9749622313591804,
+     2.843271434598071,
+     4.05996223135918
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.0,
+     "end_s": 20.0,
+     "center_s": 18.5,
+     "available_s": 20.000997276,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.5,
+     "end_s": 20.5,
+     "center_s": 19.0,
+     "available_s": 20.507083682,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.0,
+     "end_s": 21.0,
+     "center_s": 19.5,
+     "available_s": 21.00468738,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.5,
+     "end_s": 21.5,
+     "center_s": 20.0,
+     "available_s": 21.503295765,
+     "label": "walk"
+    },
+    {
+     "start_s": 19.0,
+     "end_s": 22.0,
+     "center_s": 20.5,
+     "available_s": 22.001792119,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 19.5,
+     "end_s": 22.5,
+     "center_s": 21.0,
+     "available_s": 22.500094879,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.0,
+     "end_s": 23.0,
+     "center_s": 21.5,
+     "available_s": 23.006797431,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.5,
+     "end_s": 23.5,
+     "center_s": 22.0,
+     "available_s": 23.504698316,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.0,
+     "end_s": 24.0,
+     "center_s": 22.5,
+     "available_s": 24.003250087,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.5,
+     "end_s": 24.5,
+     "center_s": 23.0,
+     "available_s": 24.501656753,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.0,
+     "end_s": 25.0,
+     "center_s": 23.5,
+     "available_s": 25.000344097,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.5,
+     "end_s": 25.5,
+     "center_s": 24.0,
+     "available_s": 25.507297638,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.0,
+     "end_s": 26.0,
+     "center_s": 24.5,
+     "available_s": 26.005555763,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.5,
+     "end_s": 26.5,
+     "center_s": 25.0,
+     "available_s": 26.504454357,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.0,
+     "end_s": 27.0,
+     "center_s": 25.5,
+     "available_s": 27.001773263,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.5,
+     "end_s": 27.5,
+     "center_s": 26.0,
+     "available_s": 27.500543836,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.0,
+     "end_s": 28.0,
+     "center_s": 26.5,
+     "available_s": 28.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.5,
+     "end_s": 28.5,
+     "center_s": 27.0,
+     "available_s": 28.505397221,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.0,
+     "end_s": 29.0,
+     "center_s": 27.5,
+     "available_s": 29.004485918,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.5,
+     "end_s": 29.5,
+     "center_s": 28.0,
+     "available_s": 29.503363106,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.0,
+     "end_s": 30.0,
+     "center_s": 28.5,
+     "available_s": 30.000653835,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.5,
+     "end_s": 30.5,
+     "center_s": 29.0,
+     "available_s": 30.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.0,
+     "end_s": 31.0,
+     "center_s": 29.5,
+     "available_s": 31.006433938,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.5,
+     "end_s": 31.5,
+     "center_s": 30.0,
+     "available_s": 31.50420024,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.0,
+     "end_s": 32.0,
+     "center_s": 30.5,
+     "available_s": 32.002929771,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.5,
+     "end_s": 32.5,
+     "center_s": 31.0,
+     "available_s": 32.501201386,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.0,
+     "end_s": 33.0,
+     "center_s": 31.5,
+     "available_s": 33.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.5,
+     "end_s": 33.5,
+     "center_s": 32.0,
+     "available_s": 33.506879771,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.0,
+     "end_s": 34.0,
+     "center_s": 32.5,
+     "available_s": 34.004214614,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.5,
+     "end_s": 34.5,
+     "center_s": 33.0,
+     "available_s": 34.50315675,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.0,
+     "end_s": 35.0,
+     "center_s": 33.5,
+     "available_s": 35.001106124,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.5,
+     "end_s": 35.5,
+     "center_s": 34.0,
+     "available_s": 35.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 33.0,
+     "end_s": 36.0,
+     "center_s": 34.5,
+     "available_s": 36.007025551,
+     "label": "lying"
+    },
+    {
+     "start_s": 33.5,
+     "end_s": 36.5,
+     "center_s": 35.0,
+     "available_s": 36.504436228,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.0,
+     "end_s": 37.0,
+     "center_s": 35.5,
+     "available_s": 37.002150655,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.5,
+     "end_s": 37.5,
+     "center_s": 36.0,
+     "available_s": 37.501500603,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.0,
+     "end_s": 38.0,
+     "center_s": 36.5,
+     "available_s": 38.0,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.5,
+     "end_s": 38.5,
+     "center_s": 37.0,
+     "available_s": 38.506409456,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.0,
+     "end_s": 39.0,
+     "center_s": 37.5,
+     "available_s": 39.005639248,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.5,
+     "end_s": 39.5,
+     "center_s": 38.0,
+     "available_s": 39.503294144,
+     "label": "lying"
+    }
+   ],
+   "last_action_available_s": 39.503294144
   },
   {
    "T": 45,
    "windows": 880,
    "traj_end": [
-    -0.5792543986292489,
-    1.734855607238932
+    -0.6415774506076117,
+    1.6477241068365405
    ],
    "traj_dev_vs_full": 0.0,
    "status": "ok",
@@ -439,49 +2646,631 @@
      "lying",
      34.5,
      40.5
+    ],
+    [
+     "walk",
+     41.0,
+     43.0
     ]
    ],
    "err": {
-    "cab": 0.05030693515505713,
-    "chair": 0.1938422745159282,
-    "desk": 0.05614921614739272,
-    "bed": 0.12209586036216949
+    "cab": 0.09068121578272707,
+    "chair": 0.23329288772839377,
+    "desk": 0.10793111368021326,
+    "bed": 0.1116851548262065
    },
    "boxes": {
     "cab": [
      0.0,
-     0.08054866873178773,
+     0.15065106011044066,
      0.6,
-     0.9805486687317877
+     1.0506510601104406
     ],
     "chair": [
-     0.9593061141446897,
-     1.0419269459772333,
-     1.3993061141446896,
-     1.4819269459772333
+     0.9713046063121522,
+     1.107587737430851,
+     1.4113046063121522,
+     1.5475877374308509
     ],
     "desk": [
      0.0,
-     1.000548668731788,
+     1.0706510601104409,
      0.6,
-     2.2005486687317877
+     2.2706510601104406
     ],
     "bed": [
-     1.2649317216103058,
-     1.8832187044282152,
-     2.789931721610306,
-     3.968218704428215
+     1.274152307930626,
+     1.919677914720618,
+     2.799152307930626,
+     4.004677914720618
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.0,
+     "end_s": 20.0,
+     "center_s": 18.5,
+     "available_s": 20.000997276,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.5,
+     "end_s": 20.5,
+     "center_s": 19.0,
+     "available_s": 20.507083682,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.0,
+     "end_s": 21.0,
+     "center_s": 19.5,
+     "available_s": 21.00468738,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.5,
+     "end_s": 21.5,
+     "center_s": 20.0,
+     "available_s": 21.503295765,
+     "label": "walk"
+    },
+    {
+     "start_s": 19.0,
+     "end_s": 22.0,
+     "center_s": 20.5,
+     "available_s": 22.001792119,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 19.5,
+     "end_s": 22.5,
+     "center_s": 21.0,
+     "available_s": 22.500094879,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.0,
+     "end_s": 23.0,
+     "center_s": 21.5,
+     "available_s": 23.006797431,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.5,
+     "end_s": 23.5,
+     "center_s": 22.0,
+     "available_s": 23.504698316,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.0,
+     "end_s": 24.0,
+     "center_s": 22.5,
+     "available_s": 24.003250087,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.5,
+     "end_s": 24.5,
+     "center_s": 23.0,
+     "available_s": 24.501656753,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.0,
+     "end_s": 25.0,
+     "center_s": 23.5,
+     "available_s": 25.000344097,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.5,
+     "end_s": 25.5,
+     "center_s": 24.0,
+     "available_s": 25.507297638,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.0,
+     "end_s": 26.0,
+     "center_s": 24.5,
+     "available_s": 26.005555763,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.5,
+     "end_s": 26.5,
+     "center_s": 25.0,
+     "available_s": 26.504454357,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.0,
+     "end_s": 27.0,
+     "center_s": 25.5,
+     "available_s": 27.001773263,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.5,
+     "end_s": 27.5,
+     "center_s": 26.0,
+     "available_s": 27.500543836,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.0,
+     "end_s": 28.0,
+     "center_s": 26.5,
+     "available_s": 28.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.5,
+     "end_s": 28.5,
+     "center_s": 27.0,
+     "available_s": 28.505397221,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.0,
+     "end_s": 29.0,
+     "center_s": 27.5,
+     "available_s": 29.004485918,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.5,
+     "end_s": 29.5,
+     "center_s": 28.0,
+     "available_s": 29.503363106,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.0,
+     "end_s": 30.0,
+     "center_s": 28.5,
+     "available_s": 30.000653835,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.5,
+     "end_s": 30.5,
+     "center_s": 29.0,
+     "available_s": 30.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.0,
+     "end_s": 31.0,
+     "center_s": 29.5,
+     "available_s": 31.006433938,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.5,
+     "end_s": 31.5,
+     "center_s": 30.0,
+     "available_s": 31.50420024,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.0,
+     "end_s": 32.0,
+     "center_s": 30.5,
+     "available_s": 32.002929771,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.5,
+     "end_s": 32.5,
+     "center_s": 31.0,
+     "available_s": 32.501201386,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.0,
+     "end_s": 33.0,
+     "center_s": 31.5,
+     "available_s": 33.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.5,
+     "end_s": 33.5,
+     "center_s": 32.0,
+     "available_s": 33.506879771,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.0,
+     "end_s": 34.0,
+     "center_s": 32.5,
+     "available_s": 34.004214614,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.5,
+     "end_s": 34.5,
+     "center_s": 33.0,
+     "available_s": 34.50315675,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.0,
+     "end_s": 35.0,
+     "center_s": 33.5,
+     "available_s": 35.001106124,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.5,
+     "end_s": 35.5,
+     "center_s": 34.0,
+     "available_s": 35.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 33.0,
+     "end_s": 36.0,
+     "center_s": 34.5,
+     "available_s": 36.007025551,
+     "label": "lying"
+    },
+    {
+     "start_s": 33.5,
+     "end_s": 36.5,
+     "center_s": 35.0,
+     "available_s": 36.504436228,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.0,
+     "end_s": 37.0,
+     "center_s": 35.5,
+     "available_s": 37.002150655,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.5,
+     "end_s": 37.5,
+     "center_s": 36.0,
+     "available_s": 37.501500603,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.0,
+     "end_s": 38.0,
+     "center_s": 36.5,
+     "available_s": 38.0,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.5,
+     "end_s": 38.5,
+     "center_s": 37.0,
+     "available_s": 38.506409456,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.0,
+     "end_s": 39.0,
+     "center_s": 37.5,
+     "available_s": 39.005639248,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.5,
+     "end_s": 39.5,
+     "center_s": 38.0,
+     "available_s": 39.503294144,
+     "label": "lying"
+    },
+    {
+     "start_s": 37.0,
+     "end_s": 40.0,
+     "center_s": 38.5,
+     "available_s": 40.001730445,
+     "label": "lying"
+    },
+    {
+     "start_s": 37.5,
+     "end_s": 40.5,
+     "center_s": 39.0,
+     "available_s": 40.500390445,
+     "label": "lying"
+    },
+    {
+     "start_s": 38.0,
+     "end_s": 41.0,
+     "center_s": 39.5,
+     "available_s": 41.006703622,
+     "label": "lying"
+    },
+    {
+     "start_s": 38.5,
+     "end_s": 41.5,
+     "center_s": 40.0,
+     "available_s": 41.505518622,
+     "label": "lying"
+    },
+    {
+     "start_s": 39.0,
+     "end_s": 42.0,
+     "center_s": 40.5,
+     "available_s": 42.003553466,
+     "label": "lying"
+    },
+    {
+     "start_s": 39.5,
+     "end_s": 42.5,
+     "center_s": 41.0,
+     "available_s": 42.501647892,
+     "label": "walk"
+    },
+    {
+     "start_s": 40.0,
+     "end_s": 43.0,
+     "center_s": 41.5,
+     "available_s": 43.000686486,
+     "label": "walk"
+    },
+    {
+     "start_s": 40.5,
+     "end_s": 43.5,
+     "center_s": 42.0,
+     "available_s": 43.506093048,
+     "label": "walk"
+    },
+    {
+     "start_s": 41.0,
+     "end_s": 44.0,
+     "center_s": 42.5,
+     "available_s": 44.005882163,
+     "label": "walk"
+    },
+    {
+     "start_s": 41.5,
+     "end_s": 44.5,
+     "center_s": 43.0,
+     "available_s": 44.50316961,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 44.50316961
   },
   {
    "T": 50,
    "windows": 980,
    "traj_end": [
-    -0.08872925014571044,
-    -0.33498780496265623
+    -0.17100758611736805,
+    -0.3945812323494456
    ],
-   "traj_dev_vs_full": 1.8408172208772555e-10,
+   "traj_dev_vs_full": 2.808519805608256e-10,
    "status": "ok",
    "events": [
     [
@@ -518,47 +3307,699 @@
      "lying",
      34.5,
      40.5
+    ],
+    [
+     "walk",
+     41.0,
+     48.0
     ]
    ],
    "err": {
-    "cab": 0.05030693515505713,
-    "chair": 0.1938422745159282,
-    "desk": 0.05614921614739272,
-    "bed": 0.12209586036216949
+    "cab": 0.09068121578272707,
+    "chair": 0.23329288772839377,
+    "desk": 0.10793111368021326,
+    "bed": 0.1116851548262065
    },
    "boxes": {
     "cab": [
      0.0,
-     0.08054866873178773,
+     0.15065106011044066,
      0.6,
-     0.9805486687317877
+     1.0506510601104406
     ],
     "chair": [
-     0.9593061141446897,
-     1.0419269459772333,
-     1.3993061141446896,
-     1.4819269459772333
+     0.9713046063121522,
+     1.107587737430851,
+     1.4113046063121522,
+     1.5475877374308509
     ],
     "desk": [
      0.0,
-     1.000548668731788,
+     1.0706510601104409,
      0.6,
-     2.2005486687317877
+     2.2706510601104406
     ],
     "bed": [
-     1.2649317216103058,
-     1.8832187044282152,
-     2.789931721610306,
-     3.968218704428215
+     1.274152307930626,
+     1.919677914720618,
+     2.799152307930626,
+     4.004677914720618
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.0,
+     "end_s": 20.0,
+     "center_s": 18.5,
+     "available_s": 20.000997276,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.5,
+     "end_s": 20.5,
+     "center_s": 19.0,
+     "available_s": 20.507083682,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.0,
+     "end_s": 21.0,
+     "center_s": 19.5,
+     "available_s": 21.00468738,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.5,
+     "end_s": 21.5,
+     "center_s": 20.0,
+     "available_s": 21.503295765,
+     "label": "walk"
+    },
+    {
+     "start_s": 19.0,
+     "end_s": 22.0,
+     "center_s": 20.5,
+     "available_s": 22.001792119,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 19.5,
+     "end_s": 22.5,
+     "center_s": 21.0,
+     "available_s": 22.500094879,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.0,
+     "end_s": 23.0,
+     "center_s": 21.5,
+     "available_s": 23.006797431,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.5,
+     "end_s": 23.5,
+     "center_s": 22.0,
+     "available_s": 23.504698316,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.0,
+     "end_s": 24.0,
+     "center_s": 22.5,
+     "available_s": 24.003250087,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.5,
+     "end_s": 24.5,
+     "center_s": 23.0,
+     "available_s": 24.501656753,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.0,
+     "end_s": 25.0,
+     "center_s": 23.5,
+     "available_s": 25.000344097,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.5,
+     "end_s": 25.5,
+     "center_s": 24.0,
+     "available_s": 25.507297638,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.0,
+     "end_s": 26.0,
+     "center_s": 24.5,
+     "available_s": 26.005555763,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.5,
+     "end_s": 26.5,
+     "center_s": 25.0,
+     "available_s": 26.504454357,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.0,
+     "end_s": 27.0,
+     "center_s": 25.5,
+     "available_s": 27.001773263,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.5,
+     "end_s": 27.5,
+     "center_s": 26.0,
+     "available_s": 27.500543836,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.0,
+     "end_s": 28.0,
+     "center_s": 26.5,
+     "available_s": 28.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.5,
+     "end_s": 28.5,
+     "center_s": 27.0,
+     "available_s": 28.505397221,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.0,
+     "end_s": 29.0,
+     "center_s": 27.5,
+     "available_s": 29.004485918,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.5,
+     "end_s": 29.5,
+     "center_s": 28.0,
+     "available_s": 29.503363106,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.0,
+     "end_s": 30.0,
+     "center_s": 28.5,
+     "available_s": 30.000653835,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.5,
+     "end_s": 30.5,
+     "center_s": 29.0,
+     "available_s": 30.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.0,
+     "end_s": 31.0,
+     "center_s": 29.5,
+     "available_s": 31.006433938,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.5,
+     "end_s": 31.5,
+     "center_s": 30.0,
+     "available_s": 31.50420024,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.0,
+     "end_s": 32.0,
+     "center_s": 30.5,
+     "available_s": 32.002929771,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.5,
+     "end_s": 32.5,
+     "center_s": 31.0,
+     "available_s": 32.501201386,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.0,
+     "end_s": 33.0,
+     "center_s": 31.5,
+     "available_s": 33.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.5,
+     "end_s": 33.5,
+     "center_s": 32.0,
+     "available_s": 33.506879771,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.0,
+     "end_s": 34.0,
+     "center_s": 32.5,
+     "available_s": 34.004214614,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.5,
+     "end_s": 34.5,
+     "center_s": 33.0,
+     "available_s": 34.50315675,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.0,
+     "end_s": 35.0,
+     "center_s": 33.5,
+     "available_s": 35.001106124,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.5,
+     "end_s": 35.5,
+     "center_s": 34.0,
+     "available_s": 35.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 33.0,
+     "end_s": 36.0,
+     "center_s": 34.5,
+     "available_s": 36.007025551,
+     "label": "lying"
+    },
+    {
+     "start_s": 33.5,
+     "end_s": 36.5,
+     "center_s": 35.0,
+     "available_s": 36.504436228,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.0,
+     "end_s": 37.0,
+     "center_s": 35.5,
+     "available_s": 37.002150655,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.5,
+     "end_s": 37.5,
+     "center_s": 36.0,
+     "available_s": 37.501500603,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.0,
+     "end_s": 38.0,
+     "center_s": 36.5,
+     "available_s": 38.0,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.5,
+     "end_s": 38.5,
+     "center_s": 37.0,
+     "available_s": 38.506409456,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.0,
+     "end_s": 39.0,
+     "center_s": 37.5,
+     "available_s": 39.005639248,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.5,
+     "end_s": 39.5,
+     "center_s": 38.0,
+     "available_s": 39.503294144,
+     "label": "lying"
+    },
+    {
+     "start_s": 37.0,
+     "end_s": 40.0,
+     "center_s": 38.5,
+     "available_s": 40.001730445,
+     "label": "lying"
+    },
+    {
+     "start_s": 37.5,
+     "end_s": 40.5,
+     "center_s": 39.0,
+     "available_s": 40.500390445,
+     "label": "lying"
+    },
+    {
+     "start_s": 38.0,
+     "end_s": 41.0,
+     "center_s": 39.5,
+     "available_s": 41.006703622,
+     "label": "lying"
+    },
+    {
+     "start_s": 38.5,
+     "end_s": 41.5,
+     "center_s": 40.0,
+     "available_s": 41.505518622,
+     "label": "lying"
+    },
+    {
+     "start_s": 39.0,
+     "end_s": 42.0,
+     "center_s": 40.5,
+     "available_s": 42.003553466,
+     "label": "lying"
+    },
+    {
+     "start_s": 39.5,
+     "end_s": 42.5,
+     "center_s": 41.0,
+     "available_s": 42.501647892,
+     "label": "walk"
+    },
+    {
+     "start_s": 40.0,
+     "end_s": 43.0,
+     "center_s": 41.5,
+     "available_s": 43.000686486,
+     "label": "walk"
+    },
+    {
+     "start_s": 40.5,
+     "end_s": 43.5,
+     "center_s": 42.0,
+     "available_s": 43.506093048,
+     "label": "walk"
+    },
+    {
+     "start_s": 41.0,
+     "end_s": 44.0,
+     "center_s": 42.5,
+     "available_s": 44.005882163,
+     "label": "walk"
+    },
+    {
+     "start_s": 41.5,
+     "end_s": 44.5,
+     "center_s": 43.0,
+     "available_s": 44.50316961,
+     "label": "walk"
+    },
+    {
+     "start_s": 42.0,
+     "end_s": 45.0,
+     "center_s": 43.5,
+     "available_s": 45.002035548,
+     "label": "walk"
+    },
+    {
+     "start_s": 42.5,
+     "end_s": 45.5,
+     "center_s": 44.0,
+     "available_s": 45.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 43.0,
+     "end_s": 46.0,
+     "center_s": 44.5,
+     "available_s": 46.006274818,
+     "label": "walk"
+    },
+    {
+     "start_s": 43.5,
+     "end_s": 46.5,
+     "center_s": 45.0,
+     "available_s": 46.505254714,
+     "label": "walk"
+    },
+    {
+     "start_s": 44.0,
+     "end_s": 47.0,
+     "center_s": 45.5,
+     "available_s": 47.003669662,
+     "label": "walk"
+    },
+    {
+     "start_s": 44.5,
+     "end_s": 47.5,
+     "center_s": 46.0,
+     "available_s": 47.501291588,
+     "label": "walk"
+    },
+    {
+     "start_s": 45.0,
+     "end_s": 48.0,
+     "center_s": 46.5,
+     "available_s": 48.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 45.5,
+     "end_s": 48.5,
+     "center_s": 47.0,
+     "available_s": 48.506540911,
+     "label": "walk"
+    },
+    {
+     "start_s": 46.0,
+     "end_s": 49.0,
+     "center_s": 47.5,
+     "available_s": 49.005540234,
+     "label": "walk"
+    },
+    {
+     "start_s": 46.5,
+     "end_s": 49.5,
+     "center_s": 48.0,
+     "available_s": 49.503346796,
+     "label": "walk"
+    }
+   ],
+   "last_action_available_s": 49.503346796
   },
   {
    "T": 56.5,
    "windows": 1110,
    "traj_end": [
-    -0.08673805204698877,
-    -0.348818688142272
+    -0.16887313359157086,
+    -0.4104721347815922
    ],
    "traj_dev_vs_full": 0.0,
    "status": "ok",
@@ -611,41 +4052,782 @@
     [
      "seated",
      54.5,
-     55.0
+     54.5
     ]
    ],
    "err": {
-    "cab": 0.05030693515505713,
-    "chair": 0.1938422745159282,
-    "desk": 0.05614921614739272,
-    "bed": 0.12209586036216949
+    "cab": 0.09068121578272707,
+    "chair": 0.23329288772839377,
+    "desk": 0.10793111368021326,
+    "bed": 0.1116851548262065
    },
    "boxes": {
     "cab": [
      0.0,
-     0.08054866873178773,
+     0.15065106011044066,
      0.6,
-     0.9805486687317877
+     1.0506510601104406
     ],
     "chair": [
-     0.9593061141446897,
-     1.0419269459772333,
-     1.3993061141446896,
-     1.4819269459772333
+     0.9713046063121522,
+     1.107587737430851,
+     1.4113046063121522,
+     1.5475877374308509
     ],
     "desk": [
      0.0,
-     1.000548668731788,
+     1.0706510601104409,
      0.6,
-     2.2005486687317877
+     2.2706510601104406
     ],
     "bed": [
-     1.2649317216103058,
-     1.8832187044282152,
-     2.789931721610306,
-     3.968218704428215
+     1.274152307930626,
+     1.919677914720618,
+     2.799152307930626,
+     4.004677914720618
     ]
-   }
+   },
+   "action_windows": [
+    {
+     "start_s": 1.0,
+     "end_s": 4.0,
+     "center_s": 2.5,
+     "available_s": 4.000994053,
+     "label": "other"
+    },
+    {
+     "start_s": 1.5,
+     "end_s": 4.5,
+     "center_s": 3.0,
+     "available_s": 4.5,
+     "label": "other"
+    },
+    {
+     "start_s": 2.0,
+     "end_s": 5.0,
+     "center_s": 3.5,
+     "available_s": 5.006885146,
+     "label": "other"
+    },
+    {
+     "start_s": 2.5,
+     "end_s": 5.5,
+     "center_s": 4.0,
+     "available_s": 5.504939209,
+     "label": "other"
+    },
+    {
+     "start_s": 3.0,
+     "end_s": 6.0,
+     "center_s": 4.5,
+     "available_s": 6.003307125,
+     "label": "other"
+    },
+    {
+     "start_s": 3.5,
+     "end_s": 6.5,
+     "center_s": 5.0,
+     "available_s": 6.502171344,
+     "label": "other"
+    },
+    {
+     "start_s": 4.0,
+     "end_s": 7.0,
+     "center_s": 5.5,
+     "available_s": 7.000501864,
+     "label": "other"
+    },
+    {
+     "start_s": 4.5,
+     "end_s": 7.5,
+     "center_s": 6.0,
+     "available_s": 7.507624104,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.0,
+     "end_s": 8.0,
+     "center_s": 6.5,
+     "available_s": 8.00509176,
+     "label": "walk"
+    },
+    {
+     "start_s": 5.5,
+     "end_s": 8.5,
+     "center_s": 7.0,
+     "available_s": 8.503946239,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.0,
+     "end_s": 9.0,
+     "center_s": 7.5,
+     "available_s": 9.002403791,
+     "label": "walk"
+    },
+    {
+     "start_s": 6.5,
+     "end_s": 9.5,
+     "center_s": 8.0,
+     "available_s": 9.500272645,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.0,
+     "end_s": 10.0,
+     "center_s": 8.5,
+     "available_s": 10.006960301,
+     "label": "walk"
+    },
+    {
+     "start_s": 7.5,
+     "end_s": 10.5,
+     "center_s": 9.0,
+     "available_s": 10.505400144,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.0,
+     "end_s": 11.0,
+     "center_s": 9.5,
+     "available_s": 11.004080352,
+     "label": "walk"
+    },
+    {
+     "start_s": 8.5,
+     "end_s": 11.5,
+     "center_s": 10.0,
+     "available_s": 11.502950613,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.0,
+     "end_s": 12.0,
+     "center_s": 10.5,
+     "available_s": 12.000574258,
+     "label": "walk"
+    },
+    {
+     "start_s": 9.5,
+     "end_s": 12.5,
+     "center_s": 11.0,
+     "available_s": 12.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.0,
+     "end_s": 13.0,
+     "center_s": 11.5,
+     "available_s": 13.006827747,
+     "label": "walk"
+    },
+    {
+     "start_s": 10.5,
+     "end_s": 13.5,
+     "center_s": 12.0,
+     "available_s": 13.503948685,
+     "label": "walk"
+    },
+    {
+     "start_s": 11.0,
+     "end_s": 14.0,
+     "center_s": 12.5,
+     "available_s": 14.002789101,
+     "label": "seated"
+    },
+    {
+     "start_s": 11.5,
+     "end_s": 14.5,
+     "center_s": 13.0,
+     "available_s": 14.500963216,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.0,
+     "end_s": 15.0,
+     "center_s": 13.5,
+     "available_s": 15.0,
+     "label": "seated"
+    },
+    {
+     "start_s": 12.5,
+     "end_s": 15.5,
+     "center_s": 14.0,
+     "available_s": 15.507271028,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.0,
+     "end_s": 16.0,
+     "center_s": 14.5,
+     "available_s": 16.004538111,
+     "label": "seated"
+    },
+    {
+     "start_s": 13.5,
+     "end_s": 16.5,
+     "center_s": 15.0,
+     "available_s": 16.502702746,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.0,
+     "end_s": 17.0,
+     "center_s": 15.5,
+     "available_s": 17.000912954,
+     "label": "walk"
+    },
+    {
+     "start_s": 14.5,
+     "end_s": 17.5,
+     "center_s": 16.0,
+     "available_s": 17.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.0,
+     "end_s": 18.0,
+     "center_s": 16.5,
+     "available_s": 18.007131964,
+     "label": "walk"
+    },
+    {
+     "start_s": 15.5,
+     "end_s": 18.5,
+     "center_s": 17.0,
+     "available_s": 18.504461547,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.0,
+     "end_s": 19.0,
+     "center_s": 17.5,
+     "available_s": 19.003683787,
+     "label": "walk"
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 19.5,
+     "center_s": 18.0,
+     "available_s": 19.500975037,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.0,
+     "end_s": 20.0,
+     "center_s": 18.5,
+     "available_s": 20.000997276,
+     "label": "walk"
+    },
+    {
+     "start_s": 17.5,
+     "end_s": 20.5,
+     "center_s": 19.0,
+     "available_s": 20.507083682,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.0,
+     "end_s": 21.0,
+     "center_s": 19.5,
+     "available_s": 21.00468738,
+     "label": "walk"
+    },
+    {
+     "start_s": 18.5,
+     "end_s": 21.5,
+     "center_s": 20.0,
+     "available_s": 21.503295765,
+     "label": "walk"
+    },
+    {
+     "start_s": 19.0,
+     "end_s": 22.0,
+     "center_s": 20.5,
+     "available_s": 22.001792119,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 19.5,
+     "end_s": 22.5,
+     "center_s": 21.0,
+     "available_s": 22.500094879,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.0,
+     "end_s": 23.0,
+     "center_s": 21.5,
+     "available_s": 23.006797431,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 20.5,
+     "end_s": 23.5,
+     "center_s": 22.0,
+     "available_s": 23.504698316,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.0,
+     "end_s": 24.0,
+     "center_s": 22.5,
+     "available_s": 24.003250087,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 21.5,
+     "end_s": 24.5,
+     "center_s": 23.0,
+     "available_s": 24.501656753,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.0,
+     "end_s": 25.0,
+     "center_s": 23.5,
+     "available_s": 25.000344097,
+     "label": "walk"
+    },
+    {
+     "start_s": 22.5,
+     "end_s": 25.5,
+     "center_s": 24.0,
+     "available_s": 25.507297638,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.0,
+     "end_s": 26.0,
+     "center_s": 24.5,
+     "available_s": 26.005555763,
+     "label": "walk"
+    },
+    {
+     "start_s": 23.5,
+     "end_s": 26.5,
+     "center_s": 25.0,
+     "available_s": 26.504454357,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.0,
+     "end_s": 27.0,
+     "center_s": 25.5,
+     "available_s": 27.001773263,
+     "label": "walk"
+    },
+    {
+     "start_s": 24.5,
+     "end_s": 27.5,
+     "center_s": 26.0,
+     "available_s": 27.500543836,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.0,
+     "end_s": 28.0,
+     "center_s": 26.5,
+     "available_s": 28.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 25.5,
+     "end_s": 28.5,
+     "center_s": 27.0,
+     "available_s": 28.505397221,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.0,
+     "end_s": 29.0,
+     "center_s": 27.5,
+     "available_s": 29.004485918,
+     "label": "walk"
+    },
+    {
+     "start_s": 26.5,
+     "end_s": 29.5,
+     "center_s": 28.0,
+     "available_s": 29.503363106,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.0,
+     "end_s": 30.0,
+     "center_s": 28.5,
+     "available_s": 30.000653835,
+     "label": "walk"
+    },
+    {
+     "start_s": 27.5,
+     "end_s": 30.5,
+     "center_s": 29.0,
+     "available_s": 30.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.0,
+     "end_s": 31.0,
+     "center_s": 29.5,
+     "available_s": 31.006433938,
+     "label": "walk"
+    },
+    {
+     "start_s": 28.5,
+     "end_s": 31.5,
+     "center_s": 30.0,
+     "available_s": 31.50420024,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.0,
+     "end_s": 32.0,
+     "center_s": 30.5,
+     "available_s": 32.002929771,
+     "label": "walk"
+    },
+    {
+     "start_s": 29.5,
+     "end_s": 32.5,
+     "center_s": 31.0,
+     "available_s": 32.501201386,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.0,
+     "end_s": 33.0,
+     "center_s": 31.5,
+     "available_s": 33.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 30.5,
+     "end_s": 33.5,
+     "center_s": 32.0,
+     "available_s": 33.506879771,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.0,
+     "end_s": 34.0,
+     "center_s": 32.5,
+     "available_s": 34.004214614,
+     "label": "walk"
+    },
+    {
+     "start_s": 31.5,
+     "end_s": 34.5,
+     "center_s": 33.0,
+     "available_s": 34.50315675,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.0,
+     "end_s": 35.0,
+     "center_s": 33.5,
+     "available_s": 35.001106124,
+     "label": "walk"
+    },
+    {
+     "start_s": 32.5,
+     "end_s": 35.5,
+     "center_s": 34.0,
+     "available_s": 35.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 33.0,
+     "end_s": 36.0,
+     "center_s": 34.5,
+     "available_s": 36.007025551,
+     "label": "lying"
+    },
+    {
+     "start_s": 33.5,
+     "end_s": 36.5,
+     "center_s": 35.0,
+     "available_s": 36.504436228,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.0,
+     "end_s": 37.0,
+     "center_s": 35.5,
+     "available_s": 37.002150655,
+     "label": "lying"
+    },
+    {
+     "start_s": 34.5,
+     "end_s": 37.5,
+     "center_s": 36.0,
+     "available_s": 37.501500603,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.0,
+     "end_s": 38.0,
+     "center_s": 36.5,
+     "available_s": 38.0,
+     "label": "lying"
+    },
+    {
+     "start_s": 35.5,
+     "end_s": 38.5,
+     "center_s": 37.0,
+     "available_s": 38.506409456,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.0,
+     "end_s": 39.0,
+     "center_s": 37.5,
+     "available_s": 39.005639248,
+     "label": "lying"
+    },
+    {
+     "start_s": 36.5,
+     "end_s": 39.5,
+     "center_s": 38.0,
+     "available_s": 39.503294144,
+     "label": "lying"
+    },
+    {
+     "start_s": 37.0,
+     "end_s": 40.0,
+     "center_s": 38.5,
+     "available_s": 40.001730445,
+     "label": "lying"
+    },
+    {
+     "start_s": 37.5,
+     "end_s": 40.5,
+     "center_s": 39.0,
+     "available_s": 40.500390445,
+     "label": "lying"
+    },
+    {
+     "start_s": 38.0,
+     "end_s": 41.0,
+     "center_s": 39.5,
+     "available_s": 41.006703622,
+     "label": "lying"
+    },
+    {
+     "start_s": 38.5,
+     "end_s": 41.5,
+     "center_s": 40.0,
+     "available_s": 41.505518622,
+     "label": "lying"
+    },
+    {
+     "start_s": 39.0,
+     "end_s": 42.0,
+     "center_s": 40.5,
+     "available_s": 42.003553466,
+     "label": "lying"
+    },
+    {
+     "start_s": 39.5,
+     "end_s": 42.5,
+     "center_s": 41.0,
+     "available_s": 42.501647892,
+     "label": "walk"
+    },
+    {
+     "start_s": 40.0,
+     "end_s": 43.0,
+     "center_s": 41.5,
+     "available_s": 43.000686486,
+     "label": "walk"
+    },
+    {
+     "start_s": 40.5,
+     "end_s": 43.5,
+     "center_s": 42.0,
+     "available_s": 43.506093048,
+     "label": "walk"
+    },
+    {
+     "start_s": 41.0,
+     "end_s": 44.0,
+     "center_s": 42.5,
+     "available_s": 44.005882163,
+     "label": "walk"
+    },
+    {
+     "start_s": 41.5,
+     "end_s": 44.5,
+     "center_s": 43.0,
+     "available_s": 44.50316961,
+     "label": "walk"
+    },
+    {
+     "start_s": 42.0,
+     "end_s": 45.0,
+     "center_s": 43.5,
+     "available_s": 45.002035548,
+     "label": "walk"
+    },
+    {
+     "start_s": 42.5,
+     "end_s": 45.5,
+     "center_s": 44.0,
+     "available_s": 45.5,
+     "label": "walk"
+    },
+    {
+     "start_s": 43.0,
+     "end_s": 46.0,
+     "center_s": 44.5,
+     "available_s": 46.006274818,
+     "label": "walk"
+    },
+    {
+     "start_s": 43.5,
+     "end_s": 46.5,
+     "center_s": 45.0,
+     "available_s": 46.505254714,
+     "label": "walk"
+    },
+    {
+     "start_s": 44.0,
+     "end_s": 47.0,
+     "center_s": 45.5,
+     "available_s": 47.003669662,
+     "label": "walk"
+    },
+    {
+     "start_s": 44.5,
+     "end_s": 47.5,
+     "center_s": 46.0,
+     "available_s": 47.501291588,
+     "label": "walk"
+    },
+    {
+     "start_s": 45.0,
+     "end_s": 48.0,
+     "center_s": 46.5,
+     "available_s": 48.0,
+     "label": "walk"
+    },
+    {
+     "start_s": 45.5,
+     "end_s": 48.5,
+     "center_s": 47.0,
+     "available_s": 48.506540911,
+     "label": "walk"
+    },
+    {
+     "start_s": 46.0,
+     "end_s": 49.0,
+     "center_s": 47.5,
+     "available_s": 49.005540234,
+     "label": "walk"
+    },
+    {
+     "start_s": 46.5,
+     "end_s": 49.5,
+     "center_s": 48.0,
+     "available_s": 49.503346796,
+     "label": "walk"
+    },
+    {
+     "start_s": 47.0,
+     "end_s": 50.0,
+     "center_s": 48.5,
+     "available_s": 50.0023894,
+     "label": "walk"
+    },
+    {
+     "start_s": 47.5,
+     "end_s": 50.5,
+     "center_s": 49.0,
+     "available_s": 50.501370546,
+     "label": "walk"
+    },
+    {
+     "start_s": 48.0,
+     "end_s": 51.0,
+     "center_s": 49.5,
+     "available_s": 51.00672466,
+     "label": "walk"
+    },
+    {
+     "start_s": 48.5,
+     "end_s": 51.5,
+     "center_s": 50.0,
+     "available_s": 51.505420285,
+     "label": "walk"
+    },
+    {
+     "start_s": 49.0,
+     "end_s": 52.0,
+     "center_s": 50.5,
+     "available_s": 52.003255805,
+     "label": "walk"
+    },
+    {
+     "start_s": 49.5,
+     "end_s": 52.5,
+     "center_s": 51.0,
+     "available_s": 52.502039816,
+     "label": "walk"
+    },
+    {
+     "start_s": 50.0,
+     "end_s": 53.0,
+     "center_s": 51.5,
+     "available_s": 53.000671222,
+     "label": "walk"
+    },
+    {
+     "start_s": 50.5,
+     "end_s": 53.5,
+     "center_s": 52.0,
+     "available_s": 53.507329555,
+     "label": "walk"
+    },
+    {
+     "start_s": 51.0,
+     "end_s": 54.0,
+     "center_s": 52.5,
+     "available_s": 54.005546169,
+     "label": "walk"
+    },
+    {
+     "start_s": 51.5,
+     "end_s": 54.5,
+     "center_s": 53.0,
+     "available_s": 54.504084554,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 52.0,
+     "end_s": 55.0,
+     "center_s": 53.5,
+     "available_s": 55.00201169,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 52.5,
+     "end_s": 55.5,
+     "center_s": 54.0,
+     "available_s": 55.500201637,
+     "label": "cabinet"
+    },
+    {
+     "start_s": 53.0,
+     "end_s": 56.0,
+     "center_s": 54.5,
+     "available_s": 56.0,
+     "label": "seated"
+    }
+   ],
+   "last_action_available_s": 56.0
   }
- ]
+ ],
+ "causal_action_recomputed": true,
+ "frozen_action_model": "D:\\Project\\imu\u73af\u5883\u91cd\u5efa\\analysis\\layout\\models\\phone-five-class.joblib",
+ "budget_basis": "sensor time and callback receipt from first phone acceleration event"
 }

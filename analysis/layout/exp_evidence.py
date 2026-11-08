@@ -36,13 +36,15 @@ def axis_row(obj, cls, box, room, anchors, k, truth_q, prior='U', others=None):
     else:
         p_lo, p_hi = 0.0, float(room[k]) - L
     if cls not in anchors:
-        return p_hi - p_lo, True, p_hi - p_lo, None, False
+        cover = bool(p_lo - 1e-9 <= truth_q <= p_hi + 1e-9)
+        return p_hi - p_lo, cover, p_hi - p_lo, None, False
     a = np.asarray(anchors[cls], float)
+    a = np.atleast_2d(a)
     d = ID.REACH[cls] + ID.EPS
-    e_lo, e_hi = float(a[k]) - L - d, float(a[k]) + d
+    e_lo, e_hi = float(a[:, k].max()) - L - d, float(a[:, k].min()) + d
     lo, hi = max(e_lo, p_lo), min(e_hi, p_hi)
     w = max(0.0, hi - lo)
-    conflict = bool(w <= 0.0)
+    conflict = bool(hi < lo)
     cover = bool(lo - 1e-9 <= truth_q <= hi + 1e-9)
     return w, cover, p_hi - p_lo, e_hi - e_lo, conflict
 
@@ -69,15 +71,18 @@ def thor_rows(root):
 
 def summarize(rows, anchors_of, prior='U'):
     """anchors_of(row) -> {class: 2D 点}；返回宽度与覆盖率统计。"""
-    W, C, I10, NW, N = [], [], [], [], 0
+    W, C, I10, NW, conflicts, N = [], [], [], [], [], 0
     for r in rows:
-        others = [x['box'] for x in rows if x['obj'] != r['obj']]
+        others = [x['box'] for x in rows if x['obj'] != r['obj']
+                  and x.get('scene') == r.get('scene')]
         w, cov, pw, ew, cf = axis_row(r['obj'], r['cls'], r['box'], r['room'],
                                       anchors_of(r), r['axis'], r['truth_q'],
                                       prior=prior, others=others)
         W.append(w); C.append(cov); N += 1
-        if w <= 0.10:
-            I10.append(1)
+        conflicts.append(cf)
+        identified = bool(w <= 0.10 + 1e-9 and not cf)
+        I10.append(identified)
+        if identified:
             if not cov:
                 NW.append(1)
     W = np.asarray(W); C = np.asarray(C, bool)
@@ -87,7 +92,9 @@ def summarize(rows, anchors_of, prior='U'):
         per[obj] = dict(width_median=float(np.median(W[idx])), cover=float(np.mean(C[idx])))
     return dict(n=int(N), width_median=float(np.median(W)), width_mean=float(W.mean()),
                 cover=float(C.mean()), identified=float(np.mean(np.asarray(I10))) if I10 else 0.0,
-                narrow_wrong=(len(NW) / max(1, len(I10))), per_object=per)
+                narrow_wrong=(len(NW) / max(1, sum(I10))), per_object=per,
+                conflict_fraction=float(np.mean(conflicts)),
+                analysis_scope='Conditional intervals given supplied object frames and prior modes')
 
 
 def thor_experiment(root):
@@ -145,7 +152,7 @@ def real_experiment(sess, truth):
         anc = {}
         for i in sorted(keep):
             anc.setdefault(rows[i]['cls'], []).append(rows[i]['anchor'])
-        anc = {k: np.mean(np.array(v), axis=0) for k, v in anc.items()}
+        anc = {k: np.unique(np.array(v), axis=0) for k, v in anc.items()}
         s = summarize(rows, lambda r, anc=anc: {r['cls']: anc[r['cls']]} if r['cls'] in anc else {},
                       prior=prior)
         s['selection'] = {k: sorted(v) for k, v in sel.items()}

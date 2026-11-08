@@ -1,29 +1,49 @@
 {
  "a": {
   "place": {
-   "n": 59,
-   "n_bad": 9,
-   "auc": 0.9044444444444445,
+   "n": 54,
+   "n_rooms": 14,
+   "n_bad": 8,
+   "n_failed": 19,
+   "auc": 0.6165413533834586,
    "ci": [
-    0.7966190476190476,
-    0.9814852607709751
+    0.49064171122994654,
+    0.7446265778401122
    ],
-   "auc_size": 0.4888888888888889,
-   "share_err_bad": 0.47892671485423677,
-   "med_bad": 1.877758264541626,
+   "auc_size": 0.649624060150376,
+   "error_threshold_m": 0.5,
+   "ci_size": [
+    0.5450746005639098,
+    0.7559757477371112
+   ],
+   "endpoint": "maximum axis centre error above threshold",
+   "score_source": "oracle geometry width; exploratory, not a runtime risk model",
+   "bootstrap_unit": "room",
+   "share_err_bad": 0.4993407051375298,
+   "med_bad": 1.958501935005188,
    "med_ok": 0.0
   },
   "joint": {
-   "n": 60,
+   "n": 56,
+   "n_rooms": 14,
    "n_bad": 10,
-   "auc": 0.89,
+   "n_failed": 30,
+   "auc": 0.7512820512820513,
    "ci": [
-    0.7643690166975882,
-    0.9847494553376906
+    0.6345602766798418,
+    0.8684020182853199
    ],
-   "auc_size": 0.5,
-   "share_err_bad": 0.41454093144459275,
-   "med_bad": 1.8960418701171875,
+   "auc_size": 0.7871794871794872,
+   "error_threshold_m": 0.5,
+   "ci_size": [
+    0.6964285714285714,
+    0.8888888888888888
+   ],
+   "endpoint": "maximum axis centre error above threshold",
+   "score_source": "oracle geometry width; exploratory, not a runtime risk model",
+   "bootstrap_unit": "room",
+   "share_err_bad": 0.45591468926070644,
+   "med_bad": 2.5108636021614075,
    "med_ok": 0.5
   }
  },
@@ -31,101 +51,93 @@
   {
    "tol": 0.05,
    "reach_cab": 0.3,
-   "cover": 4,
+   "cover": 3,
    "n": 6,
-   "med_w": 0.4762841391948471,
-   "n_wide": 4,
+   "med_w": 0.050000000000000044,
+   "n_wide": 2,
    "kinds": [
     "wall_lo",
     "adjacent_hi",
     "free",
     "free",
-    "free",
-    "free"
+    "wall_hi",
+    "wall_hi"
    ],
    "wide": [
     "chair:x",
-    "chair:y",
-    "bed:x",
-    "bed:y"
+    "chair:y"
    ]
   },
   {
    "tol": 0.05,
    "reach_cab": 0.45,
-   "cover": 4,
+   "cover": 3,
    "n": 6,
-   "med_w": 0.4762841391948471,
-   "n_wide": 4,
+   "med_w": 0.050000000000000044,
+   "n_wide": 2,
    "kinds": [
     "wall_lo",
     "adjacent_hi",
     "free",
     "free",
-    "free",
-    "free"
+    "wall_hi",
+    "wall_hi"
    ],
    "wide": [
     "chair:x",
-    "chair:y",
-    "bed:x",
-    "bed:y"
+    "chair:y"
    ]
   },
   {
    "tol": 0.05,
    "reach_cab": 0.6,
-   "cover": 5,
+   "cover": 4,
    "n": 6,
-   "med_w": 0.4762841391948471,
-   "n_wide": 4,
+   "med_w": 0.050000000000000044,
+   "n_wide": 2,
    "kinds": [
     "wall_lo",
     "adjacent_hi",
     "free",
     "free",
-    "free",
-    "free"
+    "wall_hi",
+    "wall_hi"
    ],
    "wide": [
     "chair:x",
-    "chair:y",
-    "bed:x",
-    "bed:y"
+    "chair:y"
    ]
   },
   {
    "tol": 0.05,
    "reach_cab": 0.75,
-   "cover": 5,
+   "cover": 4,
    "n": 6,
-   "med_w": 0.4762841391948471,
-   "n_wide": 4,
+   "med_w": 0.050000000000000044,
+   "n_wide": 2,
    "kinds": [
     "wall_lo",
     "adjacent_hi",
     "free",
     "free",
-    "free",
-    "free"
+    "wall_hi",
+    "wall_hi"
    ],
    "wide": [
     "chair:x",
-    "chair:y",
-    "bed:x",
-    "bed:y"
+    "chair:y"
    ]
   },
   {
    "tol": 0.1,
    "reach_cab": 0.3,
-   "cover": 4,
+   "cover": 3,
    "n": 6,
    "med_w": 0.10000000000000009,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -139,13 +151,13 @@
   {
    "tol": 0.1,
    "reach_cab": 0.45,
-   "cover": 4,
+   "cover": 3,
    "n": 6,
    "med_w": 0.10000000000000009,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -159,13 +171,13 @@
   {
    "tol": 0.1,
    "reach_cab": 0.6,
-   "cover": 5,
+   "cover": 4,
    "n": 6,
    "med_w": 0.10000000000000009,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -179,13 +191,13 @@
   {
    "tol": 0.1,
    "reach_cab": 0.75,
-   "cover": 5,
+   "cover": 4,
    "n": 6,
    "med_w": 0.10000000000000009,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -199,13 +211,13 @@
   {
    "tol": 0.15,
    "reach_cab": 0.3,
-   "cover": 5,
+   "cover": 4,
    "n": 6,
    "med_w": 0.14999999999999997,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -219,13 +231,13 @@
   {
    "tol": 0.15,
    "reach_cab": 0.45,
-   "cover": 5,
+   "cover": 4,
    "n": 6,
    "med_w": 0.14999999999999997,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -239,13 +251,13 @@
   {
    "tol": 0.15,
    "reach_cab": 0.6,
-   "cover": 6,
+   "cover": 5,
    "n": 6,
    "med_w": 0.15,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -259,13 +271,13 @@
   {
    "tol": 0.15,
    "reach_cab": 0.75,
-   "cover": 6,
+   "cover": 5,
    "n": 6,
    "med_w": 0.15,
    "n_wide": 2,
    "kinds": [
     "wall_lo",
-    "wall_lo",
+    "adjacent_hi",
     "free",
     "free",
     "wall_hi",
@@ -525,8 +537,8 @@
     false
    ],
    "y": [
-    0.07321870442821532,
-    false
+    0.10000000000000009,
+    true
    ]
   },
   {

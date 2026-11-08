@@ -1,4 +1,4 @@
-# 唯一求解器：所有入口（analyze / compare / 评价）都调这里，输出一致的 prediction.json。
+# 真实单房生产入口；模拟研究另有 layout_core/layout_free，不能混用其结果。
 # 规则：房间外框与家具尺寸为已知先验；柜墙由「手臂够得着」的支持度决定；桌柜同墙；椅子正对桌子；
 #       床尾线过躺点、床朝背离走道方向伸出；床与椅子允许轨迹进入占地（不算错误）。
 import numpy as np, json, io, os, sys
@@ -11,7 +11,7 @@ BED_W, BED_L = RB.BED_W, RB.BED_L
 DEPTH, DESK_LEN, CAB_LEN = 0.60, 1.20, 0.90
 CHAIR_S, CH_W = 0.44, 0.55
 ARM_MID, ARM_TOL = 0.575, 0.175
-SIGMA = 0.30                       # 似然带宽：两路锚点联合，AI2-THOR 24 场景噪声扫描标定
+SIGMA = 0.30                       # 固定开发带宽；两路来自同一轨迹，分数不是校准概率
 D_CHAIR = CH_W + DEPTH             # 椅心到桌墙 = 1.15
 D_CAB = ARM_MID + DEPTH            # 站位到柜墙 = 1.175
 WALLS = ('left', 'right', 'down', 'up')
@@ -100,7 +100,7 @@ def watch_block(sess):
     except Exception as e:
         return {'status': 'error', 'error': str(e)[:120]}
 
-def solve(sess, save=True, anchors=None, allow_partial=False):
+def solve(sess, save=True, anchors=None, allow_partial=False, rotation_deg=None):
     """allow_partial=True 时只放「有锚点」的家具，并允许单锚点定墙（部分解）。
     默认 False，保持生产行为：三锚点不齐就 missing_action。"""
     t, P, lab, A = RB.anchors_from(sess)
@@ -123,7 +123,8 @@ def solve(sess, save=True, anchors=None, allow_partial=False):
             json.dump(_p, io.open(os.path.join(sess, 'prediction.json'), 'w', encoding='utf-8'), indent=1)
         return _p
     best = None; cands = []
-    for deg in np.arange(0, 360, 1.0):
+    angles = np.arange(0, 360, 1.0) if rotation_deg is None else [float(rotation_deg)]
+    for deg in angles:
         a = np.radians(deg); c, s = np.cos(a), np.sin(a); R = np.array([[c, s], [-s, c]])
         off = (P @ R)[0] - S_PT
         _ch = A['seated'] @ R - off if 'seated' in avail else None

@@ -1,14 +1,13 @@
 # 一条命令：zip -> 轨迹 + 动作时间线 + 由动作反推的平面图。
 # 时间基准：轨迹用 RoNIN 窗口中心（原始 IMU 秒），动作窗同样用原始 IMU 秒，两者同源，不再减起点。
-# 朝向：六轴无磁力计，绝对朝向不可知；用「轨迹装进房间 + 床长接近实测 2.085 m + 走路点不穿床」联合选角。
-import sys, os, csv, json, io, subprocess, importlib.util
+# 朝向：已知房间、起点及家具尺寸下选角；床椅允许接触，只对桌柜占地作通行惩罚。
+import sys, os, csv, json, io, subprocess
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Polygon
 import matplotlib.font_manager as fm
-from sklearn.ensemble import RandomForestClassifier
 
 cjk = fm.FontProperties(fname=r'C:/Windows/Fonts/msyh.ttc')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -24,76 +23,35 @@ DESK_D, CAB_T = 0.60, 0.95
 REF = {'bed': (1.17, 1.96, 2.695, 4.045), 'desk': (0.05, 1.05, 0.65, 2.10), 'cab': (0.05, 0.0, 0.65, 1.05)}
 CHAIR = np.array([1.33, 1.14])
 
-EXT = os.path.join(ROOT, 'output/action-recognition/2026-11-02-accuracy-rebuild-001/dataset_ext.py')
-spec = importlib.util.spec_from_file_location('dataset_ext', EXT)
-ext = importlib.util.module_from_spec(spec); spec.loader.exec_module(ext)
-A_SEG = [(0,6,'other'),(6,12,'walk'),(12,20,'cabinet'),(20,26,'walk'),(26,39,'lying'),(39,43,'walk'),(43,48,'walk'),(48,56,'seated'),(56,60,'walk'),(60,66,'walk')]
-B_SEG = [(0,6,'other'),(6,12,'walk'),(12,24,'seated'),(24,28,'walk'),(28,34,'walk'),(34,47,'lying'),(47,51,'walk'),(51,57,'walk'),(57,63,'cabinet'),(63,69,'walk')]
-
-def load(sess, name):
-    rows = []
-    with open(os.path.join(sess, 'phone', name), encoding='utf-8') as f:
-        for r in csv.DictReader(f):
-            rows.append((int(r['sensor_timestamp_ns']), float(r['x']), float(r['y']), float(r['z'])))
-    t0 = rows[0][0]
-    return np.array([(a-t0)/1e9 for a, *_ in rows]), np.array([[b, c, d] for _, b, c, d in rows])
-
-def feats_at(ta, A, tg, G, s0):
-    f, sgs = {}, {}
-    for nm, (t, x), pre, norm in (('acc', (ta, A), 'acc', True), ('gyro', (tg, G), 'gyro', False)):
-        if not ext.assess(t, s0, s0+3)['valid']: return None
-        f.update({pre+'_'+k: v for k, v in ext.pipe.event_features(t, x, s0, s0+3, normalize=norm).items()})
-        sgs['phone_'+pre] = ext.select(t, x, s0, s0+3)
-    f.update(ext.temporal(sgs, 'phone'))
-    return f
-
-X, y, keys = [], [], None
-for tag, seg in (('r1', A_SEG), ('r2', A_SEG), ('r3', B_SEG), ('r4', B_SEG)):
-    s = os.path.join(ROOT, 'output/layout-recon', '2026-11-06-round-'+tag)
-    ta, A = load(s, 'accelerometer.csv'); tg, G = load(s, 'gyroscope.csv')
-    off = json.load(open(os.path.join(s, 'cue-sync.json')))['t0']
-    for a, b, lab in seg:
-        for s0 in np.arange(a+off, b+off-3.0+1e-6, 0.5):
-            f = feats_at(ta, A, tg, G, s0)
-            if f is None: continue
-            if keys is None: keys = sorted(f.keys())
-            X.append([f[k] for k in keys]); y.append(lab)
-clf = RandomForestClassifier(n_estimators=400, random_state=0, max_features='sqrt', n_jobs=1).fit(np.array(X, float), np.array(y))
-print('模型就绪（%d 窗）' % len(X))
+import action_model as AM
 
 if len(sys.argv) < 2:
     print('usage: python analyze.py <zip> [outdir]'); sys.exit(1)
 zip_path = sys.argv[1]
 sid = os.path.splitext(os.path.basename(zip_path))[0].replace('IMU_', '')[:8]
 outdir = sys.argv[2] if len(sys.argv) > 2 else os.path.join(ROOT, 'output/layout-recon', 'a-'+sid)
-if not os.path.exists(os.path.join(outdir, 'ronin-xy.npy')):
-    r = subprocess.run([sys.executable, os.path.join(HERE, 'run_any_bundle.py'), zip_path, outdir], capture_output=True, text=True)
-    _lines = (r.stdout or '').strip().splitlines()
-    print(_lines[-1] if _lines else '(run_any_bundle 无输出)')
-    if r.returncode != 0:
-        print((r.stderr or '')[-800:]); sys.exit(2)
-
+r = subprocess.run([sys.executable, os.path.join(HERE, 'run_any_bundle.py'), zip_path, outdir], capture_output=True, text=True, encoding='utf-8')
+_lines = (r.stdout or '').strip().splitlines()
+print(_lines[-1] if _lines else '(run_any_bundle 无输出)')
+if r.returncode != 0:
+    print((r.stderr or '')[-800:]); sys.exit(2)
 d = np.load(os.path.join(outdir, 'ronin-xy.npy'))
 t = d[:, 0] - HALF
 P = np.column_stack([d[:, 1], d[:, 2]])
 sp = d[:, 3]
 i0 = int(np.argmax(sp > 0.12))
 
-ta, A = load(outdir, 'accelerometer.csv'); tg, G = load(outdir, 'gyroscope.csv')
-rows = []
-for s0 in np.arange(1.0, max(2.0, t[-1]-3.0), 0.5):
-    f = feats_at(ta, A, tg, G, s0)
-    if f is None: continue
-    rows.append((float(s0+1.5), str(clf.predict(np.array([[f[k] for k in keys]], float))[0])))
-runs = []
-for tt, lab in rows:
-    if runs and runs[-1][0] == lab and tt - runs[-1][2] < 1.2: runs[-1][2] = tt
-    else: runs.append([lab, tt, tt])
+channels = AM.load_phone(outdir)
+ta, A, aa = channels['accelerometer']
+tg, G, ga = channels['gyroscope']
+action_output = AM.predict_timeline(AM.load_model(), ta, A, tg, G,
+                                    accel_arrivals=aa, gyro_arrivals=ga)
+runs = action_output['runs']
 labarr = np.array(['']*len(t), dtype=object)
 for lab, a1, b1 in runs: labarr[(t >= a1) & (t <= b1)] = lab
 walkmask = labarr == 'walk'
 
-json.dump({'runs': runs}, io.open(os.path.join(outdir, 'actions.json'), 'w', encoding='utf-8'), indent=1)
+json.dump(action_output, io.open(os.path.join(outdir, 'actions.json'), 'w', encoding='utf-8'), indent=1)
 
 sys.path.insert(0, HERE)
 import layout_solver as LS

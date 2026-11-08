@@ -30,7 +30,8 @@ def genuine(box, k):
 
 def filter_(pos, size):
     """与 identifiability.consistency 同一判据。"""
-    ev = [{'pos': p, 'n': 1} for p in pos]
+    counts = rng.integers(20, 101, len(pos))
+    ev = [{'pos': p, 'n': int(n)} for p, n in zip(pos, counts)]
     kept, rej = ID.consistency(ev, size)
     return kept, rej
 
@@ -53,7 +54,6 @@ for sc in scenes:
                 pos = genuine(box, k)
                 kept, rej = filter_(pos, size)
                 fr += len(rej) / k
-                ea.append(abs(pos.mean(0) - pos.mean(0)).max())  # 占位，下面重算
                 allm = pos.mean(0); keepm = pos[kept].mean(0)
                 truth = np.array([(box[0] + box[2]) / 2, (box[1] + box[3]) / 2])
                 ek.append(np.linalg.norm(keepm - truth))
@@ -66,9 +66,12 @@ for sc in scenes:
                 pos = genuine(box, k - 1)
                 out = rng.uniform([0.3, 0.3], [sc['W'] - 0.3, sc['L'] - 0.3])
                 pos = np.vstack([pos, out[None, :]])
+                permutation = rng.permutation(k)
+                pos = pos[permutation]
+                outlier_index = int(np.flatnonzero(permutation == k - 1)[0])
                 kept, rej = filter_(pos, size)
-                hit += (k - 1) in rej
-                fr += sum(1 for i in rej if i != k - 1) / (k - 1)
+                hit += outlier_index in rej
+                fr += sum(1 for i in rej if i != outlier_index) / (k - 1)
                 truth = np.array([(box[0] + box[2]) / 2, (box[1] + box[3]) / 2])
                 ea.append(np.linalg.norm(pos.mean(0) - truth))
                 ek.append(np.linalg.norm(pos[kept].mean(0) - truth))

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "training_windows": 340,
+  "rounds": [
+    {
+      "round": "r1",
+      "sensor_sha256": {
+        "accelerometer": "752c3cddb72d5eb7cb425ce2fddb38707543ec49f35c416dd0ac1636e8044ecb",
+        "gyroscope": "37eb5a82361056fb0a3d5d027f094da76f9bb51ebd8c3ed53d77681f69495da4"
+      },
+      "cue_offset_s": 12.66
+    },
+    {
+      "round": "r2",
+      "sensor_sha256": {
+        "accelerometer": "0882be4f6642c546b48002c1c00bb3cd1313a06f8e346d23f0fcbe68b37ee317",
+        "gyroscope": "3334978061487c8c6160d022b335b9a4f5e52430712ef0b6b45ac975916f767c"
+      },
+      "cue_offset_s": 13.38
+    },
+    {
+      "round": "r3",
+      "sensor_sha256": {
+        "accelerometer": "e3e7dfed191f5887b8429bdfd16bd2483d175da6841c2b3822909a1fb45a558b",
+        "gyroscope": "70f56e3d3e8fae6095b77fd9e1b37562b95bc76040105e5d44b1c5a2235bbb3d"
+      },
+      "cue_offset_s": 12.06
+    },
+    {
+      "round": "r4",
+      "sensor_sha256": {
+        "accelerometer": "67c884529b4c1da7ff16590e462669fcaccc4e8a59160655cde8583dd22da837",
+        "gyroscope": "416cd4ecb09f79c8b494836afdc4a52edc6e242ca448230019470254d88125bc"
+      },
+      "cue_offset_s": 10.66
+    }
+  ],
+  "labels": [
+    "cabinet",
+    "lying",
+    "other",
+    "seated",
+    "walk"
+  ],
+  "feature_count": 70,
+  "model_sha256": "0ee65930c5e5a5eeab8139bb4477c222dc2e51bccd5eadb4aeadb36e1504d6d4",
+  "label_source": "Cue-aligned protocol segments; four same-person development rounds",
+  "generalization_accuracy_validated": false,
+  "package_versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "torch": "2.13.0+cpu",
+    "matplotlib": "3.11.1",
+    "joblib": "1.6.0"
+  },
+  "feature_code_sha256": "885436814148803ca75cd21912ef81fe8e556f52ef3f784b8df371fca7a57d3c"
+}

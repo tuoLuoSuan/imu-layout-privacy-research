@@ -35,49 +35,50 @@ def longest_axis_hit(box, gt, axis):
     return abs(c - g) <= HIT
 
 
+def evaluate_candidate_set(candidates, truth):
+    rec = {}
+    for obj, target in truth.items():
+        boxes = [candidate['boxes'][obj] for candidate in candidates if obj in candidate.get('boxes', {})]
+        if not boxes:
+            rec[obj] = {'hit': False, 'area': None, 'diag': None, 'n': 0,
+                        'best_err': None, 'center_diameter': None, 'center_envelope_area': None}
+            continue
+        centers = np.array([centre(box) for box in boxes])
+        errors = np.linalg.norm(centers - centre(target), axis=1)
+        area, diag = union_area(boxes)
+        diameter = float(np.linalg.norm(centers[:, None] - centers[None, :], axis=2).max())
+        rec[obj] = {'hit': bool(errors.min() <= HIT), 'area': area, 'diag': diag,
+                    'n': len(boxes), 'best_err': float(errors.min()), 'center_diameter': diameter,
+                    'center_envelope_area': float(np.prod(np.ptp(centers, axis=0)))}
+    rec['full_layout_hit'] = any(
+        all(obj in candidate.get('boxes', {}) and
+            np.linalg.norm(centre(candidate['boxes'][obj]) - centre(target)) <= HIT
+            for obj, target in truth.items()) for candidate in candidates)
+    return rec
+
+
 def run_scene(sc):
     sz = {'bed': sc['sizes']['bed'], 'desk': sc['sizes']['desk'],
           'cab': sc['sizes']['cab'], 'chair': sc['sizes']['chair'][0]}
     A = SE.anchors_true(sc)
     tr = SE.traj_of(sc, A)
-    res = LC.solve(sc['W'], sc['L'], sc['S'], A, sz, traj=tr)
+    res = LC.solve(sc['W'], sc['L'], sc['S'], A, sz, traj=tr, candidate_limit=None)
     if res.get('status') != 'ok':
         return None, res
     cands = res['candidates']
     out = []
     for K in KS:
         sub = cands[:K]
-        rec = {'K': K}
-        for k in TYPES:
-            if k not in sc['gt'] or k not in res['boxes']:
-                continue
-            boxes = [c['boxes'][k] for c in sub if k in c.get('boxes', {})]
-            if not boxes:
-                continue
-            g = sc['gt'][k]
-            hit = min(float(np.linalg.norm(centre(b) - centre(g))) for b in boxes) <= HIT
-            area, diag = union_area(boxes)
-            rec[k] = {'hit': bool(hit), 'area': area, 'diag': diag, 'n': len(boxes),
-                      'best_err': min(float(np.linalg.norm(centre(b) - centre(g))) for b in boxes)}
+        rec = dict(K=K, **evaluate_candidate_set(sub, sc['gt']))
         out.append(rec)
     # 模式数与「每模式留一个代表」臂：不需要保留 20 个近重复候选
     seen = set(); reps = []
     for c in cands:
-        key = (c['wall'], c['desk_wall'])
+        key = (c['wall'], c['desk_wall'], tuple(c.get('bed_direction') or ()))
         if key in seen:
             continue
         seen.add(key); reps.append(c)
-    rec = {'K': 'modes'}
-    for k in TYPES:
-        if k not in sc['gt'] or k not in res['boxes']:
-            continue
-        boxes = [c['boxes'][k] for c in reps if k in c.get('boxes', {})]
-        if not boxes:
-            continue
-        g = sc['gt'][k]
-        rec[k] = {'hit': bool(min(float(np.linalg.norm(centre(b) - centre(g))) for b in boxes) <= HIT),
-                  'area': union_area(boxes)[0], 'diag': union_area(boxes)[1], 'n': len(boxes),
-                  'best_err': min(float(np.linalg.norm(centre(b) - centre(g))) for b in boxes)}
+    rec = dict(K='modes', **evaluate_candidate_set(reps, sc['gt']))
     out.append(rec)
     return {'rows': out, 'n_modes': len(seen), 'n_cands': len(cands)}, res
 
@@ -94,6 +95,10 @@ if __name__ == '__main__':
         r, res = run_scene(sc)
         if r is None:
             fails += 1
+            for K in list(KS) + ['modes']:
+                row = dict(K=K, **evaluate_candidate_set([], sc['gt']))
+                row['failed'] = True
+                per_K[str(K)].append(row)
             continue
         modes.append(r['n_modes'])
         for row in r['rows']:
@@ -106,13 +111,13 @@ if __name__ == '__main__':
         for k in ('bed', 'desk', 'cab', 'chair'):
             v = [r[k]['hit'] for r in rows if k in r]
             line.append('%7.0f%%' % (100 * np.mean(v)) if v else '    -  ')
-        a = [r['desk']['area'] for r in rows if 'desk' in r]
+        a = [r['desk']['area'] for r in rows if 'desk' in r and r['desk']['area'] is not None]
         line.append('%8.2f' % np.median(a) if a else '    -  ')
         print(' '.join(line))
-    print('模式数（柜墙×桌墙）中位 %d，最大 %d' % (int(np.median(modes)), max(modes)))
+    print('模式数（柜墙×桌墙×床方向）中位 %d，最大 %d' % (int(np.median(modes)), max(modes)))
     for k in ('bed', 'desk', 'cab'):
-        e = [r[k]['best_err'] for r in per_K['20'] if k in r]
-        e1 = [r[k]['best_err'] for r in per_K['1'] if k in r]
+        e = [r[k]['best_err'] for r in per_K['20'] if k in r and r[k]['best_err'] is not None]
+        e1 = [r[k]['best_err'] for r in per_K['1'] if k in r and r[k]['best_err'] is not None]
         print('%-5s 最优候选误差中位：K=1 %.2f m / K=20 %.2f m' % (k, np.median(e1), np.median(e)))
     json.dump({'scenes': len(scenes), 'fails': fails, 'hit_m': HIT,
                'per_K': {str(K): per_K[str(K)] for K in list(KS) + ['modes']}, 'n_modes': modes},

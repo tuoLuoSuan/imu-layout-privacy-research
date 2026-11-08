@@ -19,7 +19,7 @@ def nearest_wall(cx, cz, W, L):
     d = {'left': cx, 'right': W-cx, 'down': cz, 'up': L-cz}
     return min(d, key=d.get)
 
-def load_scene(f):
+def load_scene(f, allow_invalid=False):
     d = json.load(io.open(f, encoding='utf-8'))
     fl = d.get('floor')
     if not fl: return None
@@ -45,9 +45,13 @@ def load_scene(f):
         if k == 'bed': return (min(sx_, sz_), max(sx_, sz_))
         if k == 'chair': return (max(sx_, sz_),)
         return (min(sx_, sz_), max(sx_, sz_))
+    geometry_issues = [key for key, box in gt.items()
+                       if box[0] < -0.05 or box[1] < -0.05 or box[2] > W + 0.05 or box[3] > L + 0.05]
+    if geometry_issues and not allow_invalid:
+        return None
     S = (d['agent']['x']-x0, d['agent']['z']-z0)
     return dict(W=W, L=L, gt=gt, S=S, sizes={k: dims(k) for k in gt},
-                scene=os.path.basename(f)[:-5])
+                scene=os.path.basename(f)[:-5], geometry_issues=geometry_issues)
 
 def anchors_true(sc):
     W, L = sc['W'], sc['L']; gt = sc['gt']
@@ -68,23 +72,15 @@ def anchors_true(sc):
     return {'seated': a_ch, 'cabinet': a_cab, 'lying': a_li}
 
 def traj_of(sc, a):
-    """合成一条走一遍的路径：S -> 椅 -> 柜 -> 床尾 -> S，全部按 walk 标注。"""
-    pts = [np.asarray(sc['S'], float), np.asarray(a['seated'], float),
-           np.asarray(a['cabinet'], float), np.asarray(a['lying'], float),
-           np.asarray(sc['S'], float)]
-    P = []
-    for i in range(len(pts)-1):
-        for t in np.linspace(0, 1, 20, endpoint=False):
-            P.append(pts[i]*(1-t) + pts[i+1]*t)
-    P.append(pts[-1])
-    P = np.array(P)
-    return P, np.ones(len(P), bool)
+    """Plan walk samples around desk/cab boxes; mark contact transitions separately."""
+    from trajectory import walk_route
+    return walk_route(sc, a)
 
 def run_arm(sc, anchors, sizes_override=None):
     sz = dict(sizes_override) if sizes_override else {
         'bed': sc['sizes']['bed'], 'desk': sc['sizes']['desk'],
         'cab': sc['sizes']['cab'], 'chair': sc['sizes']['chair'][0]}
-    tr = traj_of(sc, anchors)
+    tr = traj_of(sc, anchors_true(sc))
     return LC.solve(sc['W'], sc['L'], sc['S'], anchors, sz, traj=tr)
 
 def score(sc, res):
@@ -114,7 +110,7 @@ if __name__ == '__main__':
         return per
 
     print('%-14s %6s | %s' % ('arm', 'n', 'per-type: n / median centre err (m) / IoU>=0.5 rate'))
-    for arm in ('oracle', 'noise0.10', 'noise0.20', 'noise0.30', 'shuffle', 'chair_only'):
+    for arm in ('oracle', 'noise0.10', 'noise0.20', 'noise0.30', 'shuffle', 'no_cab'):
         rows = []; nfail = 0
         for sc in scenes:
             a0 = anchors_true(sc)
@@ -126,13 +122,14 @@ if __name__ == '__main__':
                     a = {k: (np.array(v)+rng.normal(0, sg, 2)) for k, v in a0.items()}
                 elif arm == 'shuffle':
                     ks = list(a0); vs = [a0[k] for k in ks]
-                    rng.shuffle(vs); a = dict(zip(ks, vs))
-                elif arm == 'chair_only':
-                    a = {'seated': a0['seated'], 'cabinet': a0['seated'], 'lying': a0['lying']}
+                    shift = int(rng.integers(1, 3))
+                    a = dict(zip(ks, vs[shift:] + vs[:shift]))
+                elif arm == 'no_cab':
+                    a = {k: v for k, v in a0.items() if k != 'cabinet'}
                 res = run_arm(sc, a)
                 s = score(sc, res)
                 if s is None: nfail += 1
                 else: rows.append(s)
         per = agg(rows)
-        txt = ' '.join('%s %.2f/%.0f%%' % (k, v[1], 100*v[2]) for k, v in per.items())
-        print('%-14s %6d | %s  (fail %d)' % (arm, len(rows), txt, nfail))
+        txt = ' '.join('%s n=%d %.2f/%.0f%%' % (k, v[0], v[1], 100*v[2]) for k, v in per.items() if k != 'chair')
+        print('%-14s %d/%d | %s  (fail %d; chair is anchor backfill)' % (arm, len(rows), len(rows)+nfail, txt, nfail))

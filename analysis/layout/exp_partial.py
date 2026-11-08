@@ -5,6 +5,7 @@ import glob, io, json, os, sys
 import numpy as np
 import sim_eval as SE
 import layout_core as LC
+import paths
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SUBSETS = [('scl', ('seated', 'cabinet', 'lying')), ('sc', ('seated', 'cabinet')),
@@ -20,7 +21,10 @@ def err(box, gt):
 
 def main():
     rows = []
-    for f in sorted(glob.glob(os.path.join('..', '..', 'output', 'thor', 'FloorPlan*.json'))):
+    files = sorted(glob.glob(os.path.join(paths.THOR, 'FloorPlan*.json')))
+    if not files:
+        raise ValueError('No scene files found in IMU_LAYOUT_THOR')
+    for f in files:
         sc = SE.load_scene(f)
         if not sc:
             continue

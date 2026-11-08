@@ -26,6 +26,9 @@ PRIVATE_SUFFIXES = {
     ".jpeg", ".pdf", ".pem", ".key", ".jks", ".keystore", ".p12", ".pfx",
     ".pt", ".pth", ".onnx", ".pkl", ".joblib", ".log", ".csv", ".jsonl",
 }
+# This reviewed development RF is public code output, not a raw recording.
+# Its exact bytes must also match binary_sha256 in the allowlist policy.
+PUBLIC_MODEL_FILES = frozenset({"analysis/layout/models/phone-five-class.joblib"})
 PATTERNS = {
     "private_key": re.compile(r"-----BEGIN (?:[A-Z0-9 ]+ )?PRIVATE KEY-----"),
     "github_token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})\b"),
@@ -49,7 +52,7 @@ def private_path(name):
     return (lower.startswith(PRIVATE_ROOTS) or any(
         p in {".git", ".cache", ".gradle", "node_modules", "__pycache__", "build",
               "dist", "secrets", "sign", "output"} or p.startswith(".tmp") for p in parts)
-        or PurePosixPath(lower).suffix in PRIVATE_SUFFIXES
+        or (PurePosixPath(lower).suffix in PRIVATE_SUFFIXES and lower not in PUBLIC_MODEL_FILES)
         or any(p == ".env" or (p.startswith(".env.") and p != ".env.example") for p in parts)
         or lower.endswith(("/local.properties", ".tar.gz")))
 
@@ -147,6 +150,9 @@ def scan(root, mode, revision=None):
         digest = hashlib.sha256(content).hexdigest()
         report["files"].append({"path": name, "bytes": len(content), "sha256": digest})
         binary_digest = policy.get("binary_sha256", {}).get(name)
+        if name.lower() in PUBLIC_MODEL_FILES and not binary_digest:
+            finding(name, "public_model_requires_pinned_binary_hash")
+            continue
         if binary_digest:
             if digest != binary_digest:
                 finding(name, "binary_hash_mismatch")

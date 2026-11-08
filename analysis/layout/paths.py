@@ -9,3 +9,4 @@ RONIN_ARCH = os.environ.get('IMU_LAYOUT_RONIN_ARCH', os.path.join(REPO, 'docs', 
 RONIN_CKPT = os.environ.get('IMU_LAYOUT_RONIN_CKPT', os.path.join(REPO, 'docs', 'reviews', 'evidence', '2026-10-17-ds056-baseline-625a270a', 'checkpoint_gsn_latest.pt'))
 # AI2-THOR 场景导出
 THOR = os.environ.get('IMU_LAYOUT_THOR', os.path.join(REPO, 'output', 'thor'))
+SESSION = os.environ.get('IMU_LAYOUT_SESSION', os.path.join(REPO, 'output', 'layout-recon', 's-59d570ee'))

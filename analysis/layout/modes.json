@@ -1,5 +1,5 @@
 {
- "scenes": 15,
+ "scenes": 14,
  "fails": 0,
  "hit_m": 0.5,
  "per_K": {
@@ -11,29 +11,38 @@
      "area": 3.043216795267199,
      "diag": 2.540869063387327,
      "n": 1,
-     "best_err": 1.6533118706843382
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.6424183459328106,
-     "diag": 1.576089657391904,
-     "n": 1,
-     "best_err": 0.9989044570830441
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.1076933942931646,
-     "diag": 0.8659844000932712,
-     "n": 1,
-     "best_err": 0.35305261611938477
+     "best_err": 1.6533118706843382,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.36147854672350377,
      "diag": 0.8502688359848357,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.1076933942931646,
+     "diag": 0.8659844000932712,
+     "n": 1,
+     "best_err": 0.35305261611938477,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.6424183459328106,
+     "diag": 1.576089657391904,
+     "n": 1,
+     "best_err": 0.9989044570830441,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -42,60 +51,78 @@
      "area": 2.607902368861801,
      "diag": 2.4301325694609845,
      "n": 1,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 2.0756438923949645,
-     "diag": 2.105924731648246,
-     "n": 1,
-     "best_err": 0.9835194624109644
+     "best_err": 0.5,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
-     "area": 0.15361017919076403,
+     "area": 0.15361017919076406,
      "diag": 0.7473285188283657,
      "n": 1,
-     "best_err": 0.30590927600860596
+     "best_err": 0.005909276008605913,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.3365072274764316,
      "diag": 0.8203745820982408,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 2.0756438923949645,
+     "diag": 2.105924731648246,
+     "n": 1,
+     "best_err": 0.9326277835976208,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
+    "cab": {
+     "hit": false,
+     "area": 0.19325450124040344,
+     "diag": 1.079479699081704,
+     "n": 1,
+     "best_err": 0.8038291931152344,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 2.012528688760085,
      "diag": 2.186815142552039,
      "n": 1,
-     "best_err": 1.982977823851829
+     "best_err": 1.982977823851829,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": true,
      "area": 0.6028118518397605,
      "diag": 1.2487384741359029,
      "n": 1,
-     "best_err": 0.3289244824079046
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.19325450124040344,
-     "diag": 1.079479699081704,
-     "n": 1,
-     "best_err": 0.8038291931152344
+     "best_err": 0.3289244824079046,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2862993330572863,
      "diag": 0.756702495115863,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -104,29 +131,38 @@
      "area": 2.909093415710231,
      "diag": 2.772178897777841,
      "n": 1,
-     "best_err": 2.1648705709606157
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.0733288014675963,
-     "diag": 1.7559383915467723,
-     "n": 1,
-     "best_err": 0.8398862891399368
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.48149681961263013,
-     "diag": 1.5665076827380229,
-     "n": 1,
-     "best_err": 2.455974181379493
+     "best_err": 2.1648705709606157,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.5313472817581442,
      "diag": 1.0308707792523213,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.0733288014675963,
+     "diag": 1.7559383915467723,
+     "n": 1,
+     "best_err": 0.8398862891399368,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.48149681961263013,
+     "diag": 1.5665076827380229,
+     "n": 1,
+     "best_err": 2.455974181379493,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -135,60 +171,78 @@
      "area": 2.521790803251747,
      "diag": 2.5767836105326776,
      "n": 1,
-     "best_err": 1.4889216488369577
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.7376243942031806,
-     "diag": 1.4399825966984001,
-     "n": 1,
-     "best_err": 1.3236723413619431
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.3283036133548194,
-     "diag": 1.2797076269790701,
-     "n": 1,
-     "best_err": 0.23554253578186035
+     "best_err": 1.4889216488369577,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.32764132067336504,
      "diag": 0.8094953003858207,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.3283036133548194,
+     "diag": 1.2797076269790701,
+     "n": 1,
+     "best_err": 0.23554253578186035,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.7376243942031806,
+     "diag": 1.4399825966984001,
+     "n": 1,
+     "best_err": 1.3236723413619431,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
-    "bed": {
-     "hit": true,
-     "area": 2.9011958182609305,
-     "diag": 2.6531348221965385,
-     "n": 1,
-     "best_err": 0.5
-    },
     "desk": {
      "hit": false,
      "area": 1.0370470667031952,
      "diag": 1.5811234110851162,
      "n": 1,
-     "best_err": 0.5961675214880281
+     "best_err": 0.9176658126373232,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.0,
      "diag": 0.5514590740203857,
      "n": 1,
-     "best_err": 0.4900001287460327
+     "best_err": 0.4900001287460327,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": true,
+     "area": 2.9011958182609305,
+     "diag": 2.6531348221965385,
+     "n": 1,
+     "best_err": 0.5,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4550711742215299,
      "diag": 0.9540138093565835,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -197,29 +251,38 @@
      "area": 3.337170942831108,
      "diag": 2.787437440900286,
      "n": 1,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.903802813099901,
-     "diag": 1.7124801688266984,
-     "n": 1,
-     "best_err": 1.6008978318205274
+     "best_err": 0.5,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.40882534527332837,
      "diag": 1.5587635495606478,
      "n": 1,
-     "best_err": 0.1876218318939209
+     "best_err": 0.1876218318939209,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.903802813099901,
+     "diag": 1.7124801688266984,
+     "n": 1,
+     "best_err": 1.6008978318205274,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2893863966574486,
      "diag": 0.7607711832837106,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -228,60 +291,38 @@
      "area": 4.34630869818875,
      "diag": 3.017443055551457,
      "n": 1,
-     "best_err": 1.4100634550793836
+     "best_err": 1.4100634550793836,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 0.9622678749582292,
      "diag": 1.5523200083229733,
      "n": 1,
-     "best_err": 4.399170611975175
+     "best_err": 4.399170611975175,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.2795162288434483,
      "diag": 0.9092109576895251,
      "n": 1,
-     "best_err": 1.319700539112091
+     "best_err": 1.319700539112091,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.33494647364165075,
      "diag": 0.8184698817203364,
      "n": 1,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": 1,
-    "bed": {
-     "hit": true,
-     "area": 4.99478222694961,
-     "diag": 3.1788960284220447,
-     "n": 1,
-     "best_err": 0.5
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "desk": {
-     "hit": false,
-     "area": 1.7162808362454598,
-     "diag": 2.6007407798736044,
-     "n": 1,
-     "best_err": 1.0052246583081266
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.3983811371144839,
-     "diag": 2.1240496257045853,
-     "n": 1,
-     "best_err": 0.2828981876373291
-    },
-    "chair": {
-     "hit": true,
-     "area": 0.35519633852891275,
-     "diag": 0.8428479560738257,
-     "n": 1,
-     "best_err": 0.0
-    }
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -290,60 +331,78 @@
      "area": 3.685592573208737,
      "diag": 2.857939667444139,
      "n": 1,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.6262084330062976,
-     "diag": 2.0487430941387803,
-     "n": 1,
-     "best_err": 0.9247279961324129
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.16782347370121897,
-     "diag": 0.5817462216722947,
-     "n": 1,
-     "best_err": 0.5066509246826172
+     "best_err": 0.5,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.45507310424000025,
      "diag": 0.9540158324053121,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.16782347370121897,
+     "diag": 0.5817462216722947,
+     "n": 1,
+     "best_err": 0.5066509246826172,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.6262084330062976,
+     "diag": 2.0487430941387803,
+     "n": 1,
+     "best_err": 0.9247279961324129,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
+    "chair": {
+     "hit": true,
+     "area": 0.45506409752215404,
+     "diag": 0.9540063915112457,
+     "n": 1,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 2.8798445913163278,
      "diag": 2.502558445884396,
      "n": 1,
-     "best_err": 1.1774492242274586
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.8222079915562972,
-     "diag": 1.4697988595001539,
-     "n": 1,
-     "best_err": 1.7023640396923096
+     "best_err": 1.1774492242274586,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.38301176003767523,
      "diag": 1.31672698904877,
      "n": 1,
-     "best_err": 0.8814179400242627
+     "best_err": 0.8814179400242627,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "chair": {
-     "hit": true,
-     "area": 0.45506409752215404,
-     "diag": 0.9540063915112457,
+    "desk": {
+     "hit": false,
+     "area": 0.8222079915562972,
+     "diag": 1.4697988595001539,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 1.7023640396923096,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -352,29 +411,38 @@
      "area": 2.924956216488681,
      "diag": 2.5361216474841948,
      "n": 1,
-     "best_err": 1.6947868227701037
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.3412832901728393,
-     "diag": 2.143874942006087,
-     "n": 1,
-     "best_err": 2.9538390975457567
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.14310649173478396,
-     "diag": 0.6171936707410859,
-     "n": 1,
-     "best_err": 0.5316160917282104
+     "best_err": 1.6947868227701037,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4868665025753671,
      "diag": 0.9867791065637407,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.14310649173478396,
+     "diag": 0.6171936707410859,
+     "n": 1,
+     "best_err": 0.5316160917282104,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.3412832901728393,
+     "diag": 2.143874942006087,
+     "n": 1,
+     "best_err": 2.9538390975457567,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -383,60 +451,78 @@
      "area": 3.647079460420173,
      "diag": 2.8269105052474077,
      "n": 1,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.851498278932695,
-     "diag": 3.1741105469301423,
-     "n": 1,
-     "best_err": 1.5752001649655036
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.1471173594047741,
-     "diag": 0.543164990290913,
-     "n": 1,
-     "best_err": 1.741080816693238
+     "best_err": 0.5,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.6848692789463371,
      "diag": 1.1703583032100358,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.1471173594047741,
+     "diag": 0.543164990290913,
+     "n": 1,
+     "best_err": 4.342220067977905,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 4.851498278932695,
+     "diag": 3.1741105469301423,
+     "n": 1,
+     "best_err": 1.5752001649655036,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
-    "bed": {
+    "cab": {
      "hit": false,
-     "area": 2.9040078558811615,
-     "diag": 2.716386215113078,
+     "area": 0.13097768872069082,
+     "diag": 0.5711287139999017,
      "n": 1,
-     "best_err": 2.1103645518676855
+     "best_err": 0.6017913818359375,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 1.3414674928097838,
      "diag": 2.1439339399761788,
      "n": 1,
-     "best_err": 3.7402722932800003
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.13097768872069082,
-     "diag": 0.5711287139999017,
-     "n": 1,
-     "best_err": 0.6017913818359375
+     "best_err": 3.7402722932800003,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4536892074094254,
      "diag": 0.9525641263552028,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": false,
+     "area": 2.9040078558811615,
+     "diag": 2.716386215113078,
+     "n": 1,
+     "best_err": 2.1103645518676855,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 1,
@@ -445,29 +531,38 @@
      "area": 2.35063004537119,
      "diag": 2.330634048403774,
      "n": 1,
-     "best_err": 2.0799925282390053
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.152724246545631,
-     "diag": 1.7196712814995108,
-     "n": 1,
-     "best_err": 3.3878346130295487
+     "best_err": 2.0799925282390053,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.29000494915720765,
      "diag": 1.1683412963403192,
      "n": 1,
-     "best_err": 0.23343253135681152
+     "best_err": 0.23343253135681152,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.152724246545631,
+     "diag": 1.7196712814995108,
+     "n": 1,
+     "best_err": 3.3878346130295487,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.24745424319741005,
      "diag": 0.7034973250800746,
      "n": 1,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    }
   ],
   "2": [
@@ -478,29 +573,38 @@
      "area": 3.561899871172045,
      "diag": 2.692938073051489,
      "n": 2,
-     "best_err": 1.467057281036054
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.6424183459328106,
-     "diag": 1.576089657391904,
-     "n": 2,
-     "best_err": 0.9989044570830441
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.1076933942931646,
-     "diag": 0.8659844000932712,
-     "n": 2,
-     "best_err": 0.35305261611938477
+     "best_err": 1.467057281036054,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.36147854672350377,
      "diag": 0.8502688359848357,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.1076933942931646,
+     "diag": 0.8659844000932712,
+     "n": 2,
+     "best_err": 0.35305261611938477,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.6424183459328106,
+     "diag": 1.576089657391904,
+     "n": 2,
+     "best_err": 0.9989044570830441,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -509,60 +613,78 @@
      "area": 3.128574153739578,
      "diag": 2.567904801614428,
      "n": 2,
-     "best_err": 0.25
-    },
-    "desk": {
-     "hit": false,
-     "area": 2.0756438923949645,
-     "diag": 2.105924731648246,
-     "n": 2,
-     "best_err": 0.9835194624109644
+     "best_err": 0.25,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
-     "area": 0.15361017919076403,
+     "area": 0.15361017919076406,
      "diag": 0.7473285188283657,
      "n": 2,
-     "best_err": 0.30590927600860596
+     "best_err": 0.005909276008605913,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.3365072274764316,
      "diag": 0.8203745820982408,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 2.0756438923949645,
+     "diag": 2.105924731648246,
+     "n": 2,
+     "best_err": 0.9326277835976208,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
+    "cab": {
+     "hit": false,
+     "area": 0.19325450124040344,
+     "diag": 1.079479699081704,
+     "n": 2,
+     "best_err": 0.8038291931152344,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 2.492255241723342,
      "diag": 2.3171221845837104,
      "n": 2,
-     "best_err": 1.9351230063973028
+     "best_err": 1.9351230063973028,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": true,
      "area": 0.6028118518397605,
      "diag": 1.2487384741359029,
      "n": 2,
-     "best_err": 0.3289244824079046
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.19325450124040344,
-     "diag": 1.079479699081704,
-     "n": 2,
-     "best_err": 0.8038291931152344
+     "best_err": 0.3289244824079046,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2862993330572863,
      "diag": 0.756702495115863,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -571,29 +693,38 @@
      "area": 3.5392146467893326,
      "diag": 2.885232376470375,
      "n": 2,
-     "best_err": 1.9669883980166842
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.0733288014675963,
-     "diag": 1.7559383915467723,
-     "n": 2,
-     "best_err": 0.8398862891399368
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.48149681961263013,
-     "diag": 1.5665076827380229,
-     "n": 2,
-     "best_err": 2.455974181379493
+     "best_err": 1.9669883980166842,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.5313472817581442,
      "diag": 1.0308707792523213,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.0733288014675963,
+     "diag": 1.7559383915467723,
+     "n": 2,
+     "best_err": 0.8398862891399368,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.48149681961263013,
+     "diag": 1.5665076827380229,
+     "n": 2,
+     "best_err": 2.455974181379493,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -602,60 +733,78 @@
      "area": 3.1069806821923294,
      "diag": 2.690907490656801,
      "n": 2,
-     "best_err": 1.3487764075022894
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.7376243942031806,
-     "diag": 1.4399825966984001,
-     "n": 2,
-     "best_err": 1.3236723413619431
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.3283036133548194,
-     "diag": 1.2797076269790701,
-     "n": 2,
-     "best_err": 0.23554253578186035
+     "best_err": 1.3487764075022894,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.32764132067336504,
      "diag": 0.8094953003858207,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.3283036133548194,
+     "diag": 1.2797076269790701,
+     "n": 2,
+     "best_err": 0.23554253578186035,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.7376243942031806,
+     "diag": 1.4399825966984001,
+     "n": 2,
+     "best_err": 1.3236723413619431,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
-    "bed": {
-     "hit": true,
-     "area": 3.4881446898734794,
-     "diag": 2.778395165413286,
-     "n": 2,
-     "best_err": 0.25
-    },
     "desk": {
      "hit": false,
      "area": 1.0370470667031952,
      "diag": 1.5811234110851162,
      "n": 2,
-     "best_err": 0.5961675214880281
+     "best_err": 0.9176658126373232,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.0,
      "diag": 0.5514590740203857,
      "n": 2,
-     "best_err": 0.4900001287460327
+     "best_err": 0.4900001287460327,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": true,
+     "area": 3.4881446898734794,
+     "diag": 2.778395165413286,
+     "n": 2,
+     "best_err": 0.25,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4550711742215299,
      "diag": 0.9540138093565835,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -664,29 +813,38 @@
      "area": 3.943069799947807,
      "diag": 2.919037981618353,
      "n": 2,
-     "best_err": 0.25
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.903802813099901,
-     "diag": 1.7124801688266984,
-     "n": 2,
-     "best_err": 1.6008978318205274
+     "best_err": 0.25,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.40882534527332837,
      "diag": 1.5587635495606478,
      "n": 2,
-     "best_err": 0.1876218318939209
+     "best_err": 0.1876218318939209,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.903802813099901,
+     "diag": 1.7124801688266984,
+     "n": 2,
+     "best_err": 1.6008978318205274,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2893863966574486,
      "diag": 0.7607711832837106,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -695,60 +853,38 @@
      "area": 4.953916062843291,
      "diag": 3.1720035893631238,
      "n": 2,
-     "best_err": 1.4100634550793836
+     "best_err": 1.4100634550793836,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 0.9622678749582292,
      "diag": 1.5523200083229733,
      "n": 2,
-     "best_err": 4.399170611975175
+     "best_err": 4.399170611975175,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.2795162288434483,
      "diag": 0.9092109576895251,
      "n": 2,
-     "best_err": 1.319700539112091
+     "best_err": 1.319700539112091,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.33494647364165075,
      "diag": 0.8184698817203364,
      "n": 2,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": 2,
-    "bed": {
-     "hit": true,
-     "area": 5.597664135366358,
-     "diag": 3.3471607953787457,
-     "n": 2,
-     "best_err": 0.25
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "desk": {
-     "hit": false,
-     "area": 1.7162808362454598,
-     "diag": 2.6007407798736044,
-     "n": 2,
-     "best_err": 1.0052246583081266
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.3983811371144839,
-     "diag": 2.1240496257045853,
-     "n": 2,
-     "best_err": 0.2828981876373291
-    },
-    "chair": {
-     "hit": true,
-     "area": 0.35519633852891275,
-     "diag": 0.8428479560738257,
-     "n": 2,
-     "best_err": 0.0
-    }
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -757,60 +893,78 @@
      "area": 4.28990481428616,
      "diag": 2.9987783925713063,
      "n": 2,
-     "best_err": 0.25
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.6262084330062976,
-     "diag": 2.0487430941387803,
-     "n": 2,
-     "best_err": 0.9247279961324129
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.16782347370121897,
-     "diag": 0.5817462216722947,
-     "n": 2,
-     "best_err": 0.5066509246826172
+     "best_err": 0.25,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.45507310424000025,
      "diag": 0.9540158324053121,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.16782347370121897,
+     "diag": 0.5817462216722947,
+     "n": 2,
+     "best_err": 0.5066509246826172,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.6262084330062976,
+     "diag": 2.0487430941387803,
+     "n": 2,
+     "best_err": 0.9247279961324129,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
+    "chair": {
+     "hit": true,
+     "area": 0.45506409752215404,
+     "diag": 0.9540063915112457,
+     "n": 2,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 3.4019256088105294,
      "diag": 2.648548605665517,
      "n": 2,
-     "best_err": 1.1774492242274586
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.8222079915562972,
-     "diag": 1.4697988595001539,
-     "n": 2,
-     "best_err": 1.7023640396923096
+     "best_err": 1.1774492242274586,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.38301176003767523,
      "diag": 1.31672698904877,
      "n": 2,
-     "best_err": 0.8814179400242627
+     "best_err": 0.8814179400242627,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "chair": {
-     "hit": true,
-     "area": 0.45506409752215404,
-     "diag": 0.9540063915112457,
+    "desk": {
+     "hit": false,
+     "area": 0.8222079915562972,
+     "diag": 1.4697988595001539,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 1.7023640396923096,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -819,29 +973,38 @@
      "area": 3.4583853623016694,
      "diag": 2.6795198246407765,
      "n": 2,
-     "best_err": 1.5087654651476465
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.3412832901728393,
-     "diag": 2.143874942006087,
-     "n": 2,
-     "best_err": 2.9538390975457567
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.14310649173478396,
-     "diag": 0.6171936707410859,
-     "n": 2,
-     "best_err": 0.5316160917282104
+     "best_err": 1.5087654651476465,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4868665025753671,
      "diag": 0.9867791065637407,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.14310649173478396,
+     "diag": 0.6171936707410859,
+     "n": 2,
+     "best_err": 0.5316160917282104,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.3412832901728393,
+     "diag": 2.143874942006087,
+     "n": 2,
+     "best_err": 2.9538390975457567,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -850,60 +1013,78 @@
      "area": 4.240167133607429,
      "diag": 2.9702839341498657,
      "n": 2,
-     "best_err": 0.25
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.851498278932695,
-     "diag": 3.1741105469301423,
-     "n": 2,
-     "best_err": 1.5752001649655036
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.1471173594047741,
-     "diag": 0.543164990290913,
-     "n": 2,
-     "best_err": 1.741080816693238
+     "best_err": 0.25,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.6848692789463371,
      "diag": 1.1703583032100358,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.1471173594047741,
+     "diag": 0.543164990290913,
+     "n": 2,
+     "best_err": 4.342220067977905,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 4.851498278932695,
+     "diag": 3.1741105469301423,
+     "n": 2,
+     "best_err": 1.5752001649655036,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
-    "bed": {
+    "cab": {
      "hit": false,
-     "area": 7.069778724028797,
-     "diag": 3.768561721407465,
+     "area": 0.13097768872069082,
+     "diag": 0.5711287139999017,
      "n": 2,
-     "best_err": 2.1103645518676855
+     "best_err": 0.6017913818359375,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 1.3414674928097838,
      "diag": 2.1439339399761788,
      "n": 2,
-     "best_err": 3.7402722932800003
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.13097768872069082,
-     "diag": 0.5711287139999017,
-     "n": 2,
-     "best_err": 0.6017913818359375
+     "best_err": 3.7402722932800003,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4536892074094254,
      "diag": 0.9525641263552028,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": false,
+     "area": 7.069778724028797,
+     "diag": 3.768561721407465,
+     "n": 2,
+     "best_err": 2.1103645518676855,
+     "center_diameter": 1.209641330219365,
+     "center_envelope_area": 0.7003660738874373
+    },
+    "full_layout_hit": false
    },
    {
     "K": 2,
@@ -912,29 +1093,38 @@
      "area": 2.8553805355597888,
      "diag": 2.465052089555086,
      "n": 2,
-     "best_err": 2.034421027597309
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.152724246545631,
-     "diag": 1.7196712814995108,
-     "n": 2,
-     "best_err": 3.3878346130295487
+     "best_err": 2.034421027597309,
+     "center_diameter": 0.25,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.29000494915720765,
      "diag": 1.1683412963403192,
      "n": 2,
-     "best_err": 0.23343253135681152
+     "best_err": 0.23343253135681152,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.152724246545631,
+     "diag": 1.7196712814995108,
+     "n": 2,
+     "best_err": 3.3878346130295487,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.24745424319741005,
      "diag": 0.7034973250800746,
      "n": 2,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    }
   ],
   "3": [
@@ -945,29 +1135,38 @@
      "area": 4.080582947076891,
      "diag": 2.858813623393757,
      "n": 3,
-     "best_err": 1.302334054663416
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.6424183459328106,
-     "diag": 1.576089657391904,
-     "n": 3,
-     "best_err": 0.9989044570830441
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.1076933942931646,
-     "diag": 0.8659844000932712,
-     "n": 3,
-     "best_err": 0.35305261611938477
+     "best_err": 1.302334054663416,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.36147854672350377,
      "diag": 0.8502688359848357,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.1076933942931646,
+     "diag": 0.8659844000932712,
+     "n": 3,
+     "best_err": 0.35305261611938477,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.6424183459328106,
+     "diag": 1.576089657391904,
+     "n": 3,
+     "best_err": 0.9989044570830441,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -976,60 +1175,78 @@
      "area": 3.649245938617355,
      "diag": 2.7217137680428163,
      "n": 3,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 2.0756438923949645,
-     "diag": 2.105924731648246,
-     "n": 3,
-     "best_err": 0.9835194624109644
+     "best_err": 0.0,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
-     "area": 0.15361017919076403,
+     "area": 0.15361017919076406,
      "diag": 0.7473285188283657,
      "n": 3,
-     "best_err": 0.30590927600860596
+     "best_err": 0.005909276008605913,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.3365072274764316,
      "diag": 0.8203745820982408,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 2.0756438923949645,
+     "diag": 2.105924731648246,
+     "n": 3,
+     "best_err": 0.9326277835976208,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
+    "cab": {
+     "hit": false,
+     "area": 0.19325450124040344,
+     "diag": 1.079479699081704,
+     "n": 3,
+     "best_err": 0.8038291931152344,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 2.9719817946865987,
      "diag": 2.465958225291961,
      "n": 3,
-     "best_err": 1.9189062118530273
+     "best_err": 1.9189062118530273,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": true,
      "area": 0.6028118518397605,
      "diag": 1.2487384741359029,
      "n": 3,
-     "best_err": 0.3289244824079046
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.19325450124040344,
-     "diag": 1.079479699081704,
-     "n": 3,
-     "best_err": 0.8038291931152344
+     "best_err": 0.3289244824079046,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2862993330572863,
      "diag": 0.756702495115863,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1038,29 +1255,38 @@
      "area": 4.169335877868434,
      "diag": 3.014822696475036,
      "n": 3,
-     "best_err": 1.7822519818625928
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.0733288014675963,
-     "diag": 1.7559383915467723,
-     "n": 3,
-     "best_err": 0.8398862891399368
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.48149681961263013,
-     "diag": 1.5665076827380229,
-     "n": 3,
-     "best_err": 2.455974181379493
+     "best_err": 1.7822519818625928,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.5313472817581442,
      "diag": 1.0308707792523213,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.0733288014675963,
+     "diag": 1.7559383915467723,
+     "n": 3,
+     "best_err": 0.8398862891399368,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.48149681961263013,
+     "diag": 1.5665076827380229,
+     "n": 3,
+     "best_err": 2.455974181379493,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1069,60 +1295,78 @@
      "area": 6.25653893245908,
      "diag": 3.546206122734289,
      "n": 3,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.7376243942031806,
-     "diag": 1.4399825966984001,
-     "n": 3,
-     "best_err": 1.3236723413619431
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.3283036133548194,
-     "diag": 1.2797076269790701,
-     "n": 3,
-     "best_err": 0.23554253578186035
+     "best_err": 0.5,
+     "center_diameter": 1.1386430162672583,
+     "center_envelope_area": 0.6170039592470999
     },
     "chair": {
      "hit": true,
      "area": 0.32764132067336504,
      "diag": 0.8094953003858207,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.3283036133548194,
+     "diag": 1.2797076269790701,
+     "n": 3,
+     "best_err": 0.23554253578186035,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.7376243942031806,
+     "diag": 1.4399825966984001,
+     "n": 3,
+     "best_err": 1.3236723413619431,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
-    "bed": {
-     "hit": true,
-     "area": 4.075093561486028,
-     "diag": 2.919732009214542,
-     "n": 3,
-     "best_err": 0.0
-    },
     "desk": {
      "hit": false,
      "area": 1.0370470667031952,
      "diag": 1.5811234110851162,
      "n": 3,
-     "best_err": 0.5961675214880281
+     "best_err": 0.9176658126373232,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.0,
      "diag": 0.5514590740203857,
      "n": 3,
-     "best_err": 0.4900001287460327
+     "best_err": 0.4900001287460327,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": true,
+     "area": 4.075093561486028,
+     "diag": 2.919732009214542,
+     "n": 3,
+     "best_err": 0.0,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4550711742215299,
      "diag": 0.9540138093565835,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1131,29 +1375,38 @@
      "area": 4.548968657064506,
      "diag": 3.065413184112113,
      "n": 3,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.903802813099901,
-     "diag": 1.7124801688266984,
-     "n": 3,
-     "best_err": 1.6008978318205274
+     "best_err": 0.0,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.40882534527332837,
      "diag": 1.5587635495606478,
      "n": 3,
-     "best_err": 0.1876218318939209
+     "best_err": 0.1876218318939209,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.903802813099901,
+     "diag": 1.7124801688266984,
+     "n": 3,
+     "best_err": 1.6008978318205274,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2893863966574486,
      "diag": 0.7607711832837106,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1162,60 +1415,38 @@
      "area": 5.561523427497832,
      "diag": 3.338150827684299,
      "n": 3,
-     "best_err": 1.4100634550793836
+     "best_err": 1.4100634550793836,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 0.9622678749582292,
      "diag": 1.5523200083229733,
      "n": 3,
-     "best_err": 4.399170611975175
+     "best_err": 4.399170611975175,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.2795162288434483,
      "diag": 0.9092109576895251,
      "n": 3,
-     "best_err": 1.319700539112091
+     "best_err": 1.319700539112091,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.33494647364165075,
      "diag": 0.8184698817203364,
      "n": 3,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": 3,
-    "bed": {
-     "hit": true,
-     "area": 6.200546043783106,
-     "diag": 3.525136993185301,
-     "n": 3,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "desk": {
-     "hit": false,
-     "area": 1.7162808362454598,
-     "diag": 2.6007407798736044,
-     "n": 3,
-     "best_err": 1.0052246583081266
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.3983811371144839,
-     "diag": 2.1240496257045853,
-     "n": 3,
-     "best_err": 0.2828981876373291
-    },
-    "chair": {
-     "hit": true,
-     "area": 0.35519633852891275,
-     "diag": 0.8428479560738257,
-     "n": 3,
-     "best_err": 0.0
-    }
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1224,60 +1455,78 @@
      "area": 4.894217055363583,
      "diag": 3.1531768984239337,
      "n": 3,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.6262084330062976,
-     "diag": 2.0487430941387803,
-     "n": 3,
-     "best_err": 0.9247279961324129
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.16782347370121897,
-     "diag": 0.5817462216722947,
-     "n": 3,
-     "best_err": 0.5066509246826172
+     "best_err": 0.0,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.45507310424000025,
      "diag": 0.9540158324053121,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.16782347370121897,
+     "diag": 0.5817462216722947,
+     "n": 3,
+     "best_err": 0.5066509246826172,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.6262084330062976,
+     "diag": 2.0487430941387803,
+     "n": 3,
+     "best_err": 0.9247279961324129,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
+    "chair": {
+     "hit": true,
+     "area": 0.45506409752215404,
+     "diag": 0.9540063915112457,
+     "n": 3,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 3.924006626304731,
      "diag": 2.809238448063494,
      "n": 3,
-     "best_err": 1.1774492242274586
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.8222079915562972,
-     "diag": 1.4697988595001539,
-     "n": 3,
-     "best_err": 1.7023640396923096
+     "best_err": 1.1774492242274586,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.38301176003767523,
      "diag": 1.31672698904877,
      "n": 3,
-     "best_err": 0.8814179400242627
+     "best_err": 0.8814179400242627,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "chair": {
-     "hit": true,
-     "area": 0.45506409752215404,
-     "diag": 0.9540063915112457,
+    "desk": {
+     "hit": false,
+     "area": 0.8222079915562972,
+     "diag": 1.4697988595001539,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 1.7023640396923096,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1286,29 +1535,38 @@
      "area": 3.9918145081146577,
      "diag": 2.8377350070871543,
      "n": 3,
-     "best_err": 1.3436681446730834
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.3412832901728393,
-     "diag": 2.143874942006087,
-     "n": 3,
-     "best_err": 2.9538390975457567
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.14310649173478396,
-     "diag": 0.6171936707410859,
-     "n": 3,
-     "best_err": 0.5316160917282104
+     "best_err": 1.3436681446730834,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4868665025753671,
      "diag": 0.9867791065637407,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.14310649173478396,
+     "diag": 0.6171936707410859,
+     "n": 3,
+     "best_err": 0.5316160917282104,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.3412832901728393,
+     "diag": 2.143874942006087,
+     "n": 3,
+     "best_err": 2.9538390975457567,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1317,60 +1575,78 @@
      "area": 4.8332548067946846,
      "diag": 3.1270993419236706,
      "n": 3,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.851498278932695,
-     "diag": 3.1741105469301423,
-     "n": 3,
-     "best_err": 1.5752001649655036
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.1471173594047741,
-     "diag": 0.543164990290913,
-     "n": 3,
-     "best_err": 1.741080816693238
+     "best_err": 0.0,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.6848692789463371,
      "diag": 1.1703583032100358,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.1471173594047741,
+     "diag": 0.543164990290913,
+     "n": 3,
+     "best_err": 4.342220067977905,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 4.851498278932695,
+     "diag": 3.1741105469301423,
+     "n": 3,
+     "best_err": 1.5752001649655036,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
-    "bed": {
+    "cab": {
      "hit": false,
-     "area": 7.069778724028797,
-     "diag": 3.768561721407465,
+     "area": 0.13097768872069082,
+     "diag": 0.5711287139999017,
      "n": 3,
-     "best_err": 2.1103645518676855
+     "best_err": 0.6017913818359375,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 1.3414674928097838,
      "diag": 2.1439339399761788,
      "n": 3,
-     "best_err": 3.7402722932800003
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.13097768872069082,
-     "diag": 0.5711287139999017,
-     "n": 3,
-     "best_err": 0.6017913818359375
+     "best_err": 3.7402722932800003,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4536892074094254,
      "diag": 0.9525641263552028,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": false,
+     "area": 7.069778724028797,
+     "diag": 3.768561721407465,
+     "n": 3,
+     "best_err": 2.1103645518676855,
+     "center_diameter": 1.209641330219365,
+     "center_envelope_area": 0.7003660738874373
+    },
+    "full_layout_hit": false
    },
    {
     "K": 3,
@@ -1379,29 +1655,38 @@
      "area": 3.3601310257483874,
      "diag": 2.6165069349919228,
      "n": 3,
-     "best_err": 2.0190019607543945
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.152724246545631,
-     "diag": 1.7196712814995108,
-     "n": 3,
-     "best_err": 3.3878346130295487
+     "best_err": 2.0190019607543945,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.29000494915720765,
      "diag": 1.1683412963403192,
      "n": 3,
-     "best_err": 0.23343253135681152
+     "best_err": 0.23343253135681152,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.152724246545631,
+     "diag": 1.7196712814995108,
+     "n": 3,
+     "best_err": 3.3878346130295487,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.24745424319741005,
      "diag": 0.7034973250800746,
      "n": 3,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    }
   ],
   "5": [
@@ -1412,29 +1697,38 @@
      "area": 7.058573250440531,
      "diag": 3.831402680596372,
      "n": 5,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.6424183459328106,
-     "diag": 1.576089657391904,
-     "n": 5,
-     "best_err": 0.9989044570830441
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.1076933942931646,
-     "diag": 0.8659844000932712,
-     "n": 5,
-     "best_err": 0.35305261611938477
+     "best_err": 0.5,
+     "center_diameter": 1.3950175590063565,
+     "center_envelope_area": 0.6917869949680266
     },
     "chair": {
      "hit": true,
      "area": 0.36147854672350377,
      "diag": 0.8502688359848357,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.1076933942931646,
+     "diag": 0.8659844000932712,
+     "n": 5,
+     "best_err": 0.35305261611938477,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.6424183459328106,
+     "diag": 1.576089657391904,
+     "n": 5,
+     "best_err": 0.9989044570830441,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1443,60 +1737,78 @@
      "area": 4.169917723495132,
      "diag": 2.888999238517244,
      "n": 5,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 2.335353393661444,
-     "diag": 2.1947817361353668,
-     "n": 5,
-     "best_err": 0.9466005270649714
+     "best_err": 0.0,
+     "center_diameter": 0.75,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
-     "area": 0.26098909116280994,
+     "area": 0.2609890911628099,
      "diag": 0.8033519539548624,
      "n": 5,
-     "best_err": 0.15590927600860593
+     "best_err": 0.005909276008605913,
+     "center_diameter": 0.1499999999999999,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.3365072274764316,
      "diag": 0.8203745820982408,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 2.335353393661444,
+     "diag": 2.1947817361353668,
+     "n": 5,
+     "best_err": 0.9326277835976208,
+     "center_diameter": 0.1499999999999999,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
+    "cab": {
+     "hit": false,
+     "area": 0.19325450124040344,
+     "diag": 1.079479699081704,
+     "n": 5,
+     "best_err": 0.8038291931152344,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 3.9314349006131124,
      "diag": 2.807087364168644,
      "n": 5,
-     "best_err": 1.9189062118530273
+     "best_err": 1.9189062118530273,
+     "center_diameter": 1.0,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": true,
      "area": 0.6028118518397605,
      "diag": 1.2487384741359029,
      "n": 5,
-     "best_err": 0.3289244824079046
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.19325450124040344,
-     "diag": 1.079479699081704,
-     "n": 5,
-     "best_err": 0.8038291931152344
+     "best_err": 0.3289244824079046,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2862993330572863,
      "diag": 0.756702495115863,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1505,29 +1817,38 @@
      "area": 5.429578340026637,
      "diag": 3.31561999346687,
      "n": 5,
-     "best_err": 1.4717947087467522
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.0733288014675963,
-     "diag": 1.7559383915467723,
-     "n": 5,
-     "best_err": 0.8398862891399368
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.48149681961263013,
-     "diag": 1.5665076827380229,
-     "n": 5,
-     "best_err": 2.455974181379493
+     "best_err": 1.4717947087467522,
+     "center_diameter": 1.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.5313472817581442,
      "diag": 1.0308707792523213,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.0733288014675963,
+     "diag": 1.7559383915467723,
+     "n": 5,
+     "best_err": 0.8398862891399368,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.48149681961263013,
+     "diag": 1.5665076827380229,
+     "n": 5,
+     "best_err": 2.455974181379493,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1536,60 +1857,78 @@
      "area": 6.25653893245908,
      "diag": 3.546206122734289,
      "n": 5,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 8.498548555506458,
-     "diag": 4.34931101975707,
-     "n": 5,
-     "best_err": 1.3236723413619431
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.3283036133548194,
-     "diag": 1.2797076269790701,
-     "n": 5,
-     "best_err": 0.23554253578186035
+     "best_err": 0.5,
+     "center_diameter": 1.1386430162672583,
+     "center_envelope_area": 0.6170039592470999
     },
     "chair": {
      "hit": true,
      "area": 0.32764132067336504,
      "diag": 0.8094953003858207,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.3283036133548194,
+     "diag": 1.2797076269790701,
+     "n": 5,
+     "best_err": 0.23554253578186035,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 8.498548555506458,
+     "diag": 4.34931101975707,
+     "n": 5,
+     "best_err": 1.3236723413619431,
+     "center_diameter": 3.282118405712031,
+     "center_envelope_area": 3.0556683529387465
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
-    "bed": {
-     "hit": true,
-     "area": 5.248991304711126,
-     "diag": 3.2419971663331406,
-     "n": 5,
-     "best_err": 0.0
-    },
     "desk": {
      "hit": false,
      "area": 1.0370470667031952,
      "diag": 1.5811234110851162,
      "n": 5,
-     "best_err": 0.5961675214880281
+     "best_err": 0.9176658126373232,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.0,
      "diag": 0.5514590740203857,
      "n": 5,
-     "best_err": 0.4900001287460327
+     "best_err": 0.4900001287460327,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": true,
+     "area": 5.248991304711126,
+     "diag": 3.2419971663331406,
+     "n": 5,
+     "best_err": 0.0,
+     "center_diameter": 1.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4550711742215299,
      "diag": 0.9540138093565835,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1598,29 +1937,38 @@
      "area": 11.303519255060465,
      "diag": 4.754685952838623,
      "n": 5,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.903802813099901,
-     "diag": 1.7124801688266984,
-     "n": 5,
-     "best_err": 1.6008978318205274
+     "best_err": 0.0,
+     "center_diameter": 2.067294152914862,
+     "center_envelope_area": 2.1368525573379884
     },
     "cab": {
      "hit": true,
      "area": 0.40882534527332837,
      "diag": 1.5587635495606478,
      "n": 5,
-     "best_err": 0.1876218318939209
+     "best_err": 0.1876218318939209,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.903802813099901,
+     "diag": 1.7124801688266984,
+     "n": 5,
+     "best_err": 1.6008978318205274,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2893863966574486,
      "diag": 0.7607711832837106,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1629,60 +1977,38 @@
      "area": 6.776738156806914,
      "diag": 3.698856485894394,
      "n": 5,
-     "best_err": 1.4100634550793836
+     "best_err": 1.4100634550793836,
+     "center_diameter": 1.0,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 0.9622678749582292,
      "diag": 1.5523200083229733,
      "n": 5,
-     "best_err": 4.399170611975175
+     "best_err": 4.399170611975175,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.2795162288434483,
      "diag": 0.9092109576895251,
      "n": 5,
-     "best_err": 1.319700539112091
+     "best_err": 1.319700539112091,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.33494647364165075,
      "diag": 0.8184698817203364,
      "n": 5,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": 5,
-    "bed": {
-     "hit": true,
-     "area": 7.406309860616602,
-     "diag": 3.904843362022292,
-     "n": 5,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "desk": {
-     "hit": false,
-     "area": 1.7162808362454598,
-     "diag": 2.6007407798736044,
-     "n": 5,
-     "best_err": 1.0052246583081266
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.3983811371144839,
-     "diag": 2.1240496257045853,
-     "n": 5,
-     "best_err": 0.2828981876373291
-    },
-    "chair": {
-     "hit": true,
-     "area": 0.35519633852891275,
-     "diag": 0.8428479560738257,
-     "n": 5,
-     "best_err": 0.0
-    }
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1691,60 +2017,78 @@
      "area": 6.1028415375184295,
      "diag": 3.495315431081727,
      "n": 5,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.6262084330062976,
-     "diag": 2.0487430941387803,
-     "n": 5,
-     "best_err": 0.9247279961324129
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.16782347370121897,
-     "diag": 0.5817462216722947,
-     "n": 5,
-     "best_err": 0.5066509246826172
+     "best_err": 0.0,
+     "center_diameter": 1.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.45507310424000025,
      "diag": 0.9540158324053121,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.16782347370121897,
+     "diag": 0.5817462216722947,
+     "n": 5,
+     "best_err": 0.5066509246826172,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.6262084330062976,
+     "diag": 2.0487430941387803,
+     "n": 5,
+     "best_err": 0.9247279961324129,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
+    "chair": {
+     "hit": true,
+     "area": 0.45506409752215404,
+     "diag": 0.9540063915112457,
+     "n": 5,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": false,
      "area": 4.968168661293134,
      "diag": 3.165571439896603,
      "n": 5,
-     "best_err": 1.1774492242274586
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.8222079915562972,
-     "diag": 1.4697988595001539,
-     "n": 5,
-     "best_err": 1.7023640396923096
+     "best_err": 1.1774492242274586,
+     "center_diameter": 1.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 0.38301176003767523,
      "diag": 1.31672698904877,
      "n": 5,
-     "best_err": 0.8814179400242627
+     "best_err": 0.8814179400242627,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "chair": {
-     "hit": true,
-     "area": 0.45506409752215404,
-     "diag": 0.9540063915112457,
+    "desk": {
+     "hit": false,
+     "area": 0.8222079915562972,
+     "diag": 1.4697988595001539,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 1.7023640396923096,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1753,91 +2097,118 @@
      "area": 7.117711796667223,
      "diag": 3.8468069347621863,
      "n": 5,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.3412832901728393,
-     "diag": 2.143874942006087,
-     "n": 5,
-     "best_err": 2.9538390975457567
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.14310649173478396,
-     "diag": 0.6171936707410859,
-     "n": 5,
-     "best_err": 0.5316160917282104
+     "best_err": 0.5,
+     "center_diameter": 1.4336820020524796,
+     "center_envelope_area": 0.7464720415046031
     },
     "chair": {
      "hit": true,
      "area": 0.4868665025753671,
      "diag": 0.9867791065637407,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.14310649173478396,
+     "diag": 0.6171936707410859,
+     "n": 5,
+     "best_err": 0.5316160917282104,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.3412832901728393,
+     "diag": 2.143874942006087,
+     "n": 5,
+     "best_err": 2.9538390975457567,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
     "bed": {
      "hit": true,
-     "area": 5.42634247998194,
-     "diag": 3.2954383530950935,
+     "area": 4.8332548067946846,
+     "diag": 3.1270993419236706,
      "n": 5,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.851498278932695,
-     "diag": 3.1741105469301423,
-     "n": 5,
-     "best_err": 1.5752001649655036
-    },
-    "cab": {
-     "hit": false,
-     "area": 9.256724173850111,
-     "diag": 4.887301314718032,
-     "n": 5,
-     "best_err": 1.741080816693238
+     "best_err": 0.0,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.6848692789463371,
      "diag": 1.1703583032100358,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.20680262542268793,
+     "diag": 0.654559442451848,
+     "n": 5,
+     "best_err": 4.192220067977905,
+     "center_diameter": 0.15000000000000002,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 5.230784234361772,
+     "diag": 3.266967843260269,
+     "n": 5,
+     "best_err": 1.4290844971705188,
+     "center_diameter": 0.1499999999999999,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
-    "bed": {
-     "hit": false,
-     "area": 7.069778724028797,
-     "diag": 3.768561721407465,
+    "cab": {
+     "hit": true,
+     "area": 0.20750368683623055,
+     "diag": 0.6524626675369722,
      "n": 5,
-     "best_err": 2.1103645518676855
+     "best_err": 0.45179138183593714,
+     "center_diameter": 0.15000000000000036,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 1.6475675156026,
      "diag": 2.1945757922250677,
      "n": 5,
-     "best_err": 3.6043517028903733
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.20750368683623055,
-     "diag": 0.6524626675369722,
-     "n": 5,
-     "best_err": 0.45179138183593714
+     "best_err": 3.6043517028903733,
+     "center_diameter": 0.15000000000000002,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.4536892074094254,
      "diag": 0.9525641263552028,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": false,
+     "area": 7.069778724028797,
+     "diag": 3.768561721407465,
+     "n": 5,
+     "best_err": 2.1103645518676855,
+     "center_diameter": 1.209641330219365,
+     "center_envelope_area": 0.7003660738874373
+    },
+    "full_layout_hit": false
    },
    {
     "K": 5,
@@ -1846,29 +2217,38 @@
      "area": 4.369632006125585,
      "diag": 2.959790873379855,
      "n": 5,
-     "best_err": 2.0190019607543945
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.152724246545631,
-     "diag": 1.7196712814995108,
-     "n": 5,
-     "best_err": 3.3878346130295487
+     "best_err": 2.0190019607543945,
+     "center_diameter": 1.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
      "area": 0.29000494915720765,
      "diag": 1.1683412963403192,
      "n": 5,
-     "best_err": 0.23343253135681152
+     "best_err": 0.23343253135681152,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.152724246545631,
+     "diag": 1.7196712814995108,
+     "n": 5,
+     "best_err": 3.3878346130295487,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.24745424319741005,
      "diag": 0.7034973250800746,
      "n": 5,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    }
   ],
   "10": [
@@ -1879,91 +2259,118 @@
      "area": 9.352172379163676,
      "diag": 4.3248519926498465,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 0.8701524109886578,
-     "diag": 1.622806138922656,
-     "n": 10,
-     "best_err": 0.9599570809130791
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.236215551962232,
-     "diag": 0.9000756186379155,
-     "n": 10,
-     "best_err": 0.20305261611938474
+     "best_err": 0.0,
+     "center_diameter": 1.8206106716293278,
+     "center_envelope_area": 1.657311608825296
     },
     "chair": {
      "hit": true,
      "area": 0.36147854672350377,
      "diag": 0.8502688359848357,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.236215551962232,
+     "diag": 0.9000756186379155,
+     "n": 10,
+     "best_err": 0.20305261611938474,
+     "center_diameter": 0.15000000000000002,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 0.8701524109886578,
+     "diag": 1.622806138922656,
+     "n": 10,
+     "best_err": 0.9599570809130791,
+     "center_diameter": 0.15000000000000002,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
     "bed": {
      "hit": true,
-     "area": 4.169917723495132,
-     "diag": 2.888999238517244,
+     "area": 9.494061164347158,
+     "diag": 4.364701860229896,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 2.5950628949279237,
-     "diag": 2.290025057325578,
-     "n": 10,
-     "best_err": 0.9326277835976208
+     "best_err": 0.0,
+     "center_diameter": 2.0107979051052873,
+     "center_envelope_area": 1.9904041075879064
     },
     "cab": {
      "hit": true,
-     "area": 0.36836800313485585,
-     "diag": 0.8816171554546747,
+     "area": 0.4757469151069017,
+     "diag": 0.9767923298536328,
      "n": 10,
-     "best_err": 0.005909276008605913
+     "best_err": 0.005909276008605913,
+     "center_diameter": 0.44999999999999996,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.3365072274764316,
      "diag": 0.8203745820982408,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 10.646099611615805,
+     "diag": 4.6588977520682535,
+     "n": 10,
+     "best_err": 0.9326277835976208,
+     "center_diameter": 2.6959882752368185,
+     "center_envelope_area": 2.9434860615609515
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
+    "cab": {
+     "hit": false,
+     "area": 0.19325450124040344,
+     "diag": 1.079479699081704,
+     "n": 10,
+     "best_err": 0.8038291931152344,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": true,
      "area": 11.295837000389383,
      "diag": 4.836509563218145,
      "n": 10,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 2.1638394233140628,
+     "center_envelope_area": 2.8005536308705814
     },
     "desk": {
      "hit": true,
      "area": 0.6028118518397605,
      "diag": 1.2487384741359029,
      "n": 10,
-     "best_err": 0.3289244824079046
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.19325450124040344,
-     "diag": 1.079479699081704,
-     "n": 10,
-     "best_err": 0.8038291931152344
+     "best_err": 0.3289244824079046,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2862993330572863,
      "diag": 0.756702495115863,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
@@ -1972,29 +2379,38 @@
      "area": 12.043151778259528,
      "diag": 4.914143216932027,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 5.375954840475063,
-     "diag": 3.682561338476142,
-     "n": 10,
-     "best_err": 0.8398862891399368
-    },
-    "cab": {
-     "hit": false,
-     "area": 8.105033995900726,
-     "diag": 5.499440470244761,
-     "n": 10,
-     "best_err": 2.455974181379493
+     "best_err": 0.0,
+     "center_diameter": 2.3193287434278145,
+     "center_envelope_area": 2.6583929100452224
     },
     "chair": {
      "hit": true,
      "area": 0.5313472817581442,
      "diag": 1.0308707792523213,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 5.375954840475063,
+     "diag": 3.682561338476142,
+     "n": 10,
+     "best_err": 0.8398862891399368,
+     "center_diameter": 2.2038968619753367,
+     "center_envelope_area": 0.9452031297497713
+    },
+    "cab": {
+     "hit": false,
+     "area": 8.105033995900726,
+     "diag": 5.499440470244761,
+     "n": 10,
+     "best_err": 2.455974181379493,
+     "center_diameter": 4.967214107513428,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
@@ -2003,60 +2419,78 @@
      "area": 7.571253364221775,
      "diag": 3.8993597844317405,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 8.498548555506458,
-     "diag": 4.34931101975707,
-     "n": 10,
-     "best_err": 1.3236723413619431
-    },
-    "cab": {
-     "hit": true,
-     "area": 2.2046919332382915,
-     "diag": 2.1002970387934896,
-     "n": 10,
-     "best_err": 0.23554253578186035
+     "best_err": 0.0,
+     "center_diameter": 1.4889216488369577,
+     "center_envelope_area": 1.0771938381876822
     },
     "chair": {
      "hit": true,
      "area": 0.32764132067336504,
      "diag": 0.8094953003858207,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 2.2046919332382915,
+     "diag": 2.1002970387934896,
+     "n": 10,
+     "best_err": 0.23554253578186035,
+     "center_diameter": 1.0294866016375706,
+     "center_envelope_area": 0.5289894391315785
+    },
+    "desk": {
+     "hit": false,
+     "area": 8.498548555506458,
+     "diag": 4.34931101975707,
+     "n": 10,
+     "best_err": 1.3236723413619431,
+     "center_diameter": 3.282118405712031,
+     "center_envelope_area": 3.0556683529387465
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
+    "desk": {
+     "hit": false,
+     "area": 1.2463929975179384,
+     "diag": 1.6569157849484837,
+     "n": 10,
+     "best_err": 0.7816439073200111,
+     "center_diameter": 0.15000000000000002,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.08271886110305786,
+     "diag": 0.5714955033238855,
+     "n": 10,
+     "best_err": 0.3400001287460327,
+     "center_diameter": 0.15,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": true,
      "area": 11.144322746763521,
      "diag": 4.727699810005606,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.198570452360869,
-     "diag": 2.900328893806343,
-     "n": 10,
-     "best_err": 0.5961675214880281
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.0,
-     "diag": 0.5514590740203857,
-     "n": 10,
-     "best_err": 0.4900001287460327
+     "best_err": 0.0,
+     "center_diameter": 2.1975937836496535,
+     "center_envelope_area": 2.3834592189678006
     },
     "chair": {
      "hit": true,
      "area": 0.4550711742215299,
      "diag": 0.9540138093565835,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
@@ -2065,29 +2499,38 @@
      "area": 11.303519255060465,
      "diag": 4.754685952838623,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 14.688710420218849,
-     "diag": 5.874783697411544,
-     "n": 10,
-     "best_err": 1.6008978318205274
+     "best_err": 0.0,
+     "center_diameter": 2.067294152914862,
+     "center_envelope_area": 2.1368525573379884
     },
     "cab": {
      "hit": true,
      "area": 0.40882534527332837,
      "diag": 1.5587635495606478,
      "n": 10,
-     "best_err": 0.1876218318939209
+     "best_err": 0.1876218318939209,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 14.688710420218849,
+     "diag": 5.874783697411544,
+     "n": 10,
+     "best_err": 1.6008978318205274,
+     "center_diameter": 4.73778833171018,
+     "center_envelope_area": 5.689346809732597
     },
     "chair": {
      "hit": true,
      "area": 0.2893863966574486,
      "diag": 0.7607711832837106,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
@@ -2096,60 +2539,38 @@
      "area": 13.67122008859316,
      "diag": 5.234972796222185,
      "n": 10,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 2.2558403690472235,
+     "center_envelope_area": 2.513157885311557
     },
     "desk": {
      "hit": false,
      "area": 0.9622678749582292,
      "diag": 1.5523200083229733,
      "n": 10,
-     "best_err": 4.399170611975175
+     "best_err": 4.399170611975175,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 3.9886721132592013,
      "diag": 3.283118926904746,
      "n": 10,
-     "best_err": 1.319700539112091
+     "best_err": 1.319700539112091,
+     "center_diameter": 2.5246063815549165,
+     "center_envelope_area": 1.7860558600530207
     },
     "chair": {
      "hit": true,
      "area": 0.33494647364165075,
      "diag": 0.8184698817203364,
      "n": 10,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": 10,
-    "bed": {
-     "hit": true,
-     "area": 14.812619721233204,
-     "diag": 5.717884072429952,
-     "n": 10,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "desk": {
-     "hit": false,
-     "area": 1.7162808362454598,
-     "diag": 2.6007407798736044,
-     "n": 10,
-     "best_err": 1.0052246583081266
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.3983811371144839,
-     "diag": 2.1240496257045853,
-     "n": 10,
-     "best_err": 0.2828981876373291
-    },
-    "chair": {
-     "hit": true,
-     "area": 0.35519633852891275,
-     "diag": 0.8428479560738257,
-     "n": 10,
-     "best_err": 0.0
-    }
+    "full_layout_hit": false
    },
    {
     "K": 10,
@@ -2158,60 +2579,78 @@
      "area": 12.205683075036859,
      "diag": 5.454035902808752,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.6262084330062976,
-     "diag": 2.0487430941387803,
-     "n": 10,
-     "best_err": 0.9247279961324129
-    },
-    "cab": {
-     "hit": false,
-     "area": 0.16782347370121897,
-     "diag": 0.5817462216722947,
-     "n": 10,
-     "best_err": 0.5066509246826172
+     "best_err": 0.0,
+     "center_diameter": 2.6159305333774214,
+     "center_envelope_area": 2.4172489643096924
     },
     "chair": {
      "hit": true,
      "area": 0.45507310424000025,
      "diag": 0.9540158324053121,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 0.16782347370121897,
+     "diag": 0.5817462216722947,
+     "n": 10,
+     "best_err": 0.5066509246826172,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.6262084330062976,
+     "diag": 2.0487430941387803,
+     "n": 10,
+     "best_err": 0.9247279961324129,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
+    "chair": {
+     "hit": true,
+     "area": 0.45506409752215404,
+     "diag": 0.9540063915112457,
+     "n": 10,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": true,
      "area": 9.924743609628209,
      "diag": 4.462284977369377,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.0223700208226552,
-     "diag": 1.5387188607191105,
-     "n": 10,
-     "best_err": 1.6524558095250665
+     "best_err": 0.0,
+     "center_diameter": 2.014768414261265,
+     "center_envelope_area": 1.998395881552426
     },
     "cab": {
      "hit": false,
      "area": 0.5753728526051195,
      "diag": 1.3586279237984464,
      "n": 10,
-     "best_err": 0.7512393626860563
+     "best_err": 0.7512393626860563,
+     "center_diameter": 0.15000000000000036,
+     "center_envelope_area": 0.0
     },
-    "chair": {
-     "hit": true,
-     "area": 0.45506409752215404,
-     "diag": 0.9540063915112457,
+    "desk": {
+     "hit": false,
+     "area": 1.0223700208226552,
+     "diag": 1.5387188607191105,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 1.6524558095250665,
+     "center_diameter": 0.15000000000000036,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
@@ -2220,91 +2659,118 @@
      "area": 10.186841859724169,
      "diag": 4.520639746700497,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.3412832901728393,
-     "diag": 2.143874942006087,
-     "n": 10,
-     "best_err": 2.9538390975457567
-    },
-    "cab": {
-     "hit": false,
-     "area": 2.2280267123981847,
-     "diag": 2.2929898939326736,
-     "n": 10,
-     "best_err": 0.5316160917282104
+     "best_err": 0.0,
+     "center_diameter": 2.046743918095559,
+     "center_envelope_area": 2.0633303331305797
     },
     "chair": {
      "hit": true,
      "area": 0.4868665025753671,
      "diag": 0.9867791065637407,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 2.2280267123981847,
+     "diag": 2.2929898939326736,
+     "n": 10,
+     "best_err": 0.5316160917282104,
+     "center_diameter": 1.7451900266823481,
+     "center_envelope_area": 1.1219695001752656
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.3412832901728393,
+     "diag": 2.143874942006087,
+     "n": 10,
+     "best_err": 2.9538390975457567,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
     "bed": {
      "hit": true,
-     "area": 5.42634247998194,
-     "diag": 3.2954383530950935,
+     "area": 4.8332548067946846,
+     "diag": 3.1270993419236706,
      "n": 10,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 5.230784234361772,
-     "diag": 3.266967843260269,
-     "n": 10,
-     "best_err": 1.4290844971705188
-    },
-    "cab": {
-     "hit": false,
-     "area": 9.256724173850111,
-     "diag": 4.887301314718032,
-     "n": 10,
-     "best_err": 1.5937252732988956
+     "best_err": 0.0,
+     "center_diameter": 0.5,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.6848692789463371,
      "diag": 1.1703583032100358,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 9.256724173850111,
+     "diag": 4.887301314718032,
+     "n": 10,
+     "best_err": 1.741080816693238,
+     "center_diameter": 4.3797169313741335,
+     "center_envelope_area": 6.904827302910439
+    },
+    "desk": {
+     "hit": false,
+     "area": 5.610070189790849,
+     "diag": 3.3639530338071224,
+     "n": 10,
+     "best_err": 1.283865039791519,
+     "center_diameter": 0.2999999999999998,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
-    "bed": {
-     "hit": false,
-     "area": 8.972410349561901,
-     "diag": 4.352564841461159,
+    "cab": {
+     "hit": true,
+     "area": 0.28402968495176983,
+     "diag": 0.7551338007954226,
      "n": 10,
-     "best_err": 2.1103645518676855
+     "best_err": 0.3017913818359377,
+     "center_diameter": 0.2999999999999998,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 9.046978161590058,
      "diag": 4.291033145543562,
      "n": 10,
-     "best_err": 3.469591556419781
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.28402968495176983,
-     "diag": 0.7551338007954226,
-     "n": 10,
-     "best_err": 0.3017913818359377
+     "best_err": 3.469591556419781,
+     "center_diameter": 2.398099059846769,
+     "center_envelope_area": 2.7159349839323
     },
     "chair": {
      "hit": true,
      "area": 0.4536892074094254,
      "diag": 0.9525641263552028,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": false,
+     "area": 8.972410349561901,
+     "diag": 4.352564841461159,
+     "n": 10,
+     "best_err": 2.1103645518676855,
+     "center_diameter": 1.866139326035912,
+     "center_envelope_area": 1.2412379920888839
+    },
+    "full_layout_hit": false
    },
    {
     "K": 10,
@@ -2313,29 +2779,38 @@
      "area": 9.616999197808823,
      "diag": 4.385658262520878,
      "n": 10,
-     "best_err": 1.1307888743650814
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.152724246545631,
-     "diag": 1.7196712814995108,
-     "n": 10,
-     "best_err": 3.3878346130295487
+     "best_err": 1.1307888743650814,
+     "center_diameter": 2.1347567588649157,
+     "center_envelope_area": 2.2785932097597197
     },
     "cab": {
      "hit": true,
      "area": 0.29000494915720765,
      "diag": 1.1683412963403192,
      "n": 10,
-     "best_err": 0.23343253135681152
+     "best_err": 0.23343253135681152,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.152724246545631,
+     "diag": 1.7196712814995108,
+     "n": 10,
+     "best_err": 3.3878346130295487,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.24745424319741005,
      "diag": 0.7034973250800746,
      "n": 10,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    }
   ],
   "20": [
@@ -2346,29 +2821,38 @@
      "area": 10.11670542207139,
      "diag": 4.5050983168120515,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": true,
-     "area": 1.5345924645599627,
-     "diag": 2.7381850446487275,
-     "n": 20,
-     "best_err": 0.3939599534121514
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.4138406099016265,
-     "diag": 1.6860699969341069,
-     "n": 20,
-     "best_err": 0.20305261611938474
+     "best_err": 0.0,
+     "center_diameter": 2.0051948268324047,
+     "center_envelope_area": 1.979153146777719
     },
     "chair": {
      "hit": true,
      "area": 0.36147854672350377,
      "diag": 0.8502688359848357,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 1.4138406099016265,
+     "diag": 1.6860699969341069,
+     "n": 20,
+     "best_err": 0.20305261611938474,
+     "center_diameter": 0.9929083045609816,
+     "center_envelope_area": 0.4853580432540184
+    },
+    "desk": {
+     "hit": true,
+     "area": 1.5345924645599627,
+     "diag": 2.7381850446487275,
+     "n": 20,
+     "best_err": 0.3939599534121514,
+     "center_diameter": 1.168967506939334,
+     "center_envelope_area": 0.1738955526351929
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2377,60 +2861,78 @@
      "area": 9.494061164347158,
      "diag": 4.364701860229896,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 15.568501885083947,
-     "diag": 5.580811186398224,
-     "n": 20,
-     "best_err": 0.9326277835976208
+     "best_err": 0.0,
+     "center_diameter": 2.0107979051052873,
+     "center_envelope_area": 1.9904041075879064
     },
     "cab": {
      "hit": true,
      "area": 1.3929985523020036,
      "diag": 1.6704516141498218,
      "n": 20,
-     "best_err": 0.005909276008605913
+     "best_err": 0.005909276008605913,
+     "center_diameter": 1.0129595361241426,
+     "center_envelope_area": 0.5108377656065499
     },
     "chair": {
      "hit": true,
      "area": 0.3365072274764316,
      "diag": 0.8203745820982408,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 14.964534356107826,
+     "diag": 5.476150525674599,
+     "n": 20,
+     "best_err": 0.9326277835976208,
+     "center_diameter": 3.4058137433125317,
+     "center_envelope_area": 6.0673146848449395
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
+    "cab": {
+     "hit": false,
+     "area": 2.1147309487160357,
+     "diag": 2.086534502138006,
+     "n": 20,
+     "best_err": 0.8038291931152344,
+     "center_diameter": 1.2165456057309145,
+     "center_envelope_area": 0.6779094398214851
+    },
     "bed": {
      "hit": true,
      "area": 11.295837000389383,
      "diag": 4.836509563218145,
      "n": 20,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 2.1638394233140628,
+     "center_envelope_area": 2.8005536308705814
     },
     "desk": {
      "hit": true,
      "area": 0.6028118518397605,
      "diag": 1.2487384741359029,
      "n": 20,
-     "best_err": 0.3289244824079046
-    },
-    "cab": {
-     "hit": false,
-     "area": 2.1147309487160357,
-     "diag": 2.086534502138006,
-     "n": 20,
-     "best_err": 0.8038291931152344
+     "best_err": 0.3289244824079046,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.2862993330572863,
      "diag": 0.756702495115863,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2439,29 +2941,38 @@
      "area": 12.043151778259528,
      "diag": 4.914143216932027,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 7.160401907062578,
-     "diag": 4.691302781145984,
-     "n": 20,
-     "best_err": 0.8398862891399368
-    },
-    "cab": {
-     "hit": false,
-     "area": 8.745822515250996,
-     "diag": 5.534530397866085,
-     "n": 20,
-     "best_err": 2.03924560546875
+     "best_err": 0.0,
+     "center_diameter": 2.3193287434278145,
+     "center_envelope_area": 2.6583929100452224
     },
     "chair": {
      "hit": true,
      "area": 0.5313472817581442,
      "diag": 1.0308707792523213,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 7.160401907062578,
+     "diag": 4.691302781145984,
+     "n": 20,
+     "best_err": 0.8398862891399368,
+     "center_diameter": 3.740450382232666,
+     "center_envelope_area": 1.6367854776191848
+    },
+    "cab": {
+     "hit": false,
+     "area": 8.745822515250996,
+     "diag": 5.534530397866085,
+     "n": 20,
+     "best_err": 2.03924560546875,
+     "center_diameter": 4.967214107513428,
+     "center_envelope_area": 3.6353189057722837
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2470,60 +2981,78 @@
      "area": 7.571253364221775,
      "diag": 3.8993597844317405,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 8.498548555506458,
-     "diag": 4.34931101975707,
-     "n": 20,
-     "best_err": 1.3236723413619431
-    },
-    "cab": {
-     "hit": true,
-     "area": 16.486184115220567,
-     "diag": 5.794859889880265,
-     "n": 20,
-     "best_err": 0.23554253578186035
+     "best_err": 0.0,
+     "center_diameter": 1.4889216488369577,
+     "center_envelope_area": 1.0771938381876822
     },
     "chair": {
      "hit": true,
      "area": 0.32764132067336504,
      "diag": 0.8094953003858207,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 16.486184115220567,
+     "diag": 5.794859889880265,
+     "n": 20,
+     "best_err": 0.23554253578186035,
+     "center_diameter": 4.399804350041981,
+     "center_envelope_area": 14.416655614058982
+    },
+    "desk": {
+     "hit": false,
+     "area": 8.498548555506458,
+     "diag": 4.34931101975707,
+     "n": 20,
+     "best_err": 1.3236723413619431,
+     "center_diameter": 3.282118405712031,
+     "center_envelope_area": 3.0556683529387465
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
+    "desk": {
+     "hit": false,
+     "area": 1.4557389283326814,
+     "diag": 1.7423514558611497,
+     "n": 20,
+     "best_err": 0.6517851271835445,
+     "center_diameter": 0.30000000000000004,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 0.16543772220611572,
+     "diag": 0.6277795077249824,
+     "n": 20,
+     "best_err": 0.19000012874603273,
+     "center_diameter": 0.3,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": true,
      "area": 11.144322746763521,
      "diag": 4.727699810005606,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.198570452360869,
-     "diag": 2.900328893806343,
-     "n": 20,
-     "best_err": 0.5961675214880281
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.08271886110305786,
-     "diag": 0.5714955033238855,
-     "n": 20,
-     "best_err": 0.3400001287460327
+     "best_err": 0.0,
+     "center_diameter": 2.1975937836496535,
+     "center_envelope_area": 2.3834592189678006
     },
     "chair": {
      "hit": true,
      "area": 0.4550711742215299,
      "diag": 0.9540138093565835,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2532,29 +3061,38 @@
      "area": 11.303519255060465,
      "diag": 4.754685952838623,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 14.688710420218849,
-     "diag": 5.874783697411544,
-     "n": 20,
-     "best_err": 1.6008978318205274
+     "best_err": 0.0,
+     "center_diameter": 2.067294152914862,
+     "center_envelope_area": 2.1368525573379884
     },
     "cab": {
      "hit": true,
      "area": 2.7774312226240885,
      "diag": 2.3597747611127264,
      "n": 20,
-     "best_err": 0.1876218318939209
+     "best_err": 0.1876218318939209,
+     "center_diameter": 1.0872307128805232,
+     "center_envelope_area": 0.5841980725471216
+    },
+    "desk": {
+     "hit": false,
+     "area": 14.688710420218849,
+     "diag": 5.874783697411544,
+     "n": 20,
+     "best_err": 1.6008978318205274,
+     "center_diameter": 4.73778833171018,
+     "center_envelope_area": 5.689346809732597
     },
     "chair": {
      "hit": true,
      "area": 0.2893863966574486,
      "diag": 0.7607711832837106,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2563,60 +3101,38 @@
      "area": 13.67122008859316,
      "diag": 5.234972796222185,
      "n": 20,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 2.2558403690472235,
+     "center_envelope_area": 2.513157885311557
     },
     "desk": {
      "hit": false,
      "area": 8.196332014962081,
      "diag": 6.061344916572788,
      "n": 20,
-     "best_err": 2.564971392989758
+     "best_err": 2.564971392989758,
+     "center_diameter": 5.207326769828796,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
      "area": 3.9886721132592013,
      "diag": 3.283118926904746,
      "n": 20,
-     "best_err": 1.319700539112091
+     "best_err": 1.319700539112091,
+     "center_diameter": 2.5246063815549165,
+     "center_envelope_area": 1.7860558600530207
     },
     "chair": {
      "hit": true,
      "area": 0.33494647364165075,
      "diag": 0.8184698817203364,
      "n": 20,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": 20,
-    "bed": {
-     "hit": true,
-     "area": 23.26186211175809,
-     "diag": 6.820830171138715,
-     "n": 20,
-     "best_err": 0.0
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
-    "desk": {
-     "hit": false,
-     "area": 1.7162808362454598,
-     "diag": 2.6007407798736044,
-     "n": 20,
-     "best_err": 1.0052246583081266
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.3983811371144839,
-     "diag": 2.1240496257045853,
-     "n": 20,
-     "best_err": 0.2828981876373291
-    },
-    "chair": {
-     "hit": true,
-     "area": 0.35519633852891275,
-     "diag": 0.8428479560738257,
-     "n": 20,
-     "best_err": 0.0
-    }
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2625,60 +3141,78 @@
      "area": 12.205683075036859,
      "diag": 5.454035902808752,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": true,
-     "area": 2.4620064586899217,
-     "diag": 2.936496759741015,
-     "n": 20,
-     "best_err": 0.4373192331207771
-    },
-    "cab": {
-     "hit": false,
-     "area": 1.7724541873249677,
-     "diag": 1.9110784785270016,
-     "n": 20,
-     "best_err": 0.5066509246826172
+     "best_err": 0.0,
+     "center_diameter": 2.6159305333774214,
+     "center_envelope_area": 2.4172489643096924
     },
     "chair": {
      "hit": true,
      "area": 0.45507310424000025,
      "diag": 0.9540158324053121,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 1.7724541873249677,
+     "diag": 1.9110784785270016,
+     "n": 20,
+     "best_err": 0.5066509246826172,
+     "center_diameter": 1.3366627271507598,
+     "center_envelope_area": 0.8396773348574811
+    },
+    "desk": {
+     "hit": true,
+     "area": 2.4620064586899217,
+     "diag": 2.936496759741015,
+     "n": 20,
+     "best_err": 0.4373192331207771,
+     "center_diameter": 0.9512027096748352,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
+    "chair": {
+     "hit": true,
+     "area": 0.45506409752215404,
+     "diag": 0.9540063915112457,
+     "n": 20,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
     "bed": {
      "hit": true,
      "area": 9.924743609628209,
      "diag": 4.462284977369377,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": true,
-     "area": 4.200405806874878,
-     "diag": 3.2211571798698597,
-     "n": 20,
-     "best_err": 0.3454067767847157
+     "best_err": 0.0,
+     "center_diameter": 2.014768414261265,
+     "center_envelope_area": 1.998395881552426
     },
     "cab": {
      "hit": false,
      "area": 5.897167307740937,
      "diag": 4.063825028557956,
      "n": 20,
-     "best_err": 0.7512393626860563
+     "best_err": 0.7512393626860563,
+     "center_diameter": 3.058149362104323,
+     "center_envelope_area": 2.3159691368434405
     },
-    "chair": {
+    "desk": {
      "hit": true,
-     "area": 0.45506409752215404,
-     "diag": 0.9540063915112457,
+     "area": 4.200405806874878,
+     "diag": 3.2211571798698597,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.3454067767847157,
+     "center_diameter": 1.9560150374972654,
+     "center_envelope_area": 0.925476431619018
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2687,29 +3221,38 @@
      "area": 10.186841859724169,
      "diag": 4.520639746700497,
      "n": 20,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.895086472405039,
-     "diag": 2.957160063635177,
-     "n": 20,
-     "best_err": 2.9538390975457567
-    },
-    "cab": {
-     "hit": false,
-     "area": 4.346415993257415,
-     "diag": 4.067949406136025,
-     "n": 20,
-     "best_err": 0.5316160917282104
+     "best_err": 0.0,
+     "center_diameter": 2.046743918095559,
+     "center_envelope_area": 2.0633303331305797
     },
     "chair": {
      "hit": true,
      "area": 0.4868665025753671,
      "diag": 0.9867791065637407,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 4.346415993257415,
+     "diag": 4.067949406136025,
+     "n": 20,
+     "best_err": 0.5316160917282104,
+     "center_diameter": 3.658881425857544,
+     "center_envelope_area": 2.5694759273288987
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.895086472405039,
+     "diag": 2.957160063635177,
+     "n": 20,
+     "best_err": 2.9538390975457567,
+     "center_diameter": 0.8425568652153017,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
@@ -2718,124 +3261,160 @@
      "area": 5.42634247998194,
      "diag": 3.2954383530950935,
      "n": 15,
-     "best_err": 0.0
-    },
-    "desk": {
-     "hit": false,
-     "area": 5.610070189790849,
-     "diag": 3.3639530338071224,
-     "n": 15,
-     "best_err": 1.283865039791519
-    },
-    "cab": {
-     "hit": false,
-     "area": 9.256724173850111,
-     "diag": 4.887301314718032,
-     "n": 15,
-     "best_err": 1.5937252732988956
+     "best_err": 0.0,
+     "center_diameter": 0.75,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.6848692789463371,
      "diag": 1.1703583032100358,
      "n": 15,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 9.256724173850111,
+     "diag": 4.887301314718032,
+     "n": 15,
+     "best_err": 1.5937252732988956,
+     "center_diameter": 4.3797169313741335,
+     "center_envelope_area": 6.904827302910439
+    },
+    "desk": {
+     "hit": false,
+     "area": 5.610070189790849,
+     "diag": 3.3639530338071224,
+     "n": 15,
+     "best_err": 1.283865039791519,
+     "center_diameter": 0.2999999999999998,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
-    "bed": {
+    "cab": {
      "hit": true,
-     "area": 17.27623690779609,
-     "diag": 6.030676611323269,
+     "area": 0.28402968495176983,
+     "diag": 0.7551338007954226,
      "n": 20,
-     "best_err": 0.25
+     "best_err": 0.3017913818359377,
+     "center_diameter": 0.2999999999999998,
+     "center_envelope_area": 0.0
     },
     "desk": {
      "hit": false,
      "area": 14.595666172112203,
      "diag": 5.51672301280795,
      "n": 20,
-     "best_err": 2.097510836588258
-    },
-    "cab": {
-     "hit": true,
-     "area": 0.28402968495176983,
-     "diag": 0.7551338007954226,
-     "n": 20,
-     "best_err": 0.3017913818359377
+     "best_err": 2.097510836588258,
+     "center_diameter": 3.79585659795395,
+     "center_envelope_area": 7.350513294108168
     },
     "chair": {
      "hit": true,
      "area": 0.4536892074094254,
      "diag": 0.9525641263552028,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": true,
+     "area": 17.27623690779609,
+     "diag": 6.030676611323269,
+     "n": 20,
+     "best_err": 0.25,
+     "center_diameter": 2.639119544157774,
+     "center_envelope_area": 4.203638541779696
+    },
+    "full_layout_hit": false
    },
    {
     "K": 20,
     "bed": {
-     "hit": false,
-     "area": 9.616999197808823,
-     "diag": 4.385658262520878,
+     "hit": true,
+     "area": 12.522369841185764,
+     "diag": 5.091411873727089,
      "n": 20,
-     "best_err": 1.1307888743650814
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.3853304191072766,
-     "diag": 1.7896299611917783,
-     "n": 20,
-     "best_err": 3.2396649696257733
+     "best_err": 0.0,
+     "center_diameter": 2.2530798737572733,
+     "center_envelope_area": 3.047685439142242
     },
     "cab": {
      "hit": true,
-     "area": 0.4610538883852655,
-     "diag": 1.2098829039823906,
+     "area": 0.29000494915720765,
+     "diag": 1.1683412963403192,
      "n": 20,
-     "best_err": 0.0834325313568115
+     "best_err": 0.23343253135681152,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 4.410904900495825,
+     "diag": 3.23968651402583,
+     "n": 20,
+     "best_err": 3.3878346130295487,
+     "center_diameter": 1.7371300018851183,
+     "center_envelope_area": 0.6268990444522661
     },
     "chair": {
      "hit": true,
      "area": 0.24745424319741005,
      "diag": 0.7034973250800746,
      "n": 20,
-     "best_err": 0.0
-    }
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    }
   ],
   "modes": [
    {
     "K": "modes",
     "bed": {
-     "hit": false,
-     "area": 3.561899871172045,
-     "diag": 2.692938073051489,
-     "n": 2,
-     "best_err": 1.6533118706843382
-    },
-    "desk": {
      "hit": true,
-     "area": 1.1329628468689226,
-     "diag": 2.71075933685575,
-     "n": 2,
-     "best_err": 0.3939599534121514
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.4138406099016265,
-     "diag": 1.6860699969341069,
-     "n": 2,
-     "best_err": 0.35305261611938477
+     "area": 8.462639336255961,
+     "diag": 4.181839149526429,
+     "n": 30,
+     "best_err": 0.25,
+     "center_diameter": 1.7272637730658702,
+     "center_envelope_area": 1.2104700708728728
     },
     "chair": {
      "hit": true,
      "area": 0.36147854672350377,
      "diag": 0.8502688359848357,
-     "n": 2,
-     "best_err": 0.0
-    }
+     "n": 30,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": true,
+     "area": 20.400000143050875,
+     "diag": 6.481512013273678,
+     "n": 30,
+     "best_err": 0.35305261611938477,
+     "center_diameter": 5.312930827383575,
+     "center_envelope_area": 19.272015058958004
+    },
+    "desk": {
+     "hit": true,
+     "area": 20.400000143050875,
+     "diag": 6.481512013273678,
+     "n": 30,
+     "best_err": 0.3939599534121514,
+     "center_diameter": 5.001485962903557,
+     "center_envelope_area": 16.728496852821536
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
@@ -2843,340 +3422,399 @@
      "hit": true,
      "area": 7.087477735964285,
      "diag": 3.895504520845608,
-     "n": 4,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 15.568501885083947,
-     "diag": 5.580811186398224,
-     "n": 4,
-     "best_err": 0.9835194624109644
+     "n": 12,
+     "best_err": 0.5,
+     "center_diameter": 1.6336440434018915,
+     "center_envelope_area": 0.8343964302712408
     },
     "cab": {
      "hit": true,
-     "area": 1.3929985523020036,
-     "diag": 1.6704516141498218,
-     "n": 4,
-     "best_err": 0.30590927600860596
+     "area": 15.60000414848355,
+     "diag": 5.5865918302569435,
+     "n": 12,
+     "best_err": 0.005909276008605913,
+     "center_diameter": 4.270876082812025,
+     "center_envelope_area": 13.950855371494072
     },
     "chair": {
      "hit": true,
      "area": 0.3365072274764316,
      "diag": 0.8203745820982408,
-     "n": 4,
-     "best_err": 0.0
-    }
+     "n": 12,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 14.964534356107826,
+     "diag": 5.476150525674599,
+     "n": 12,
+     "best_err": 0.9326277835976208,
+     "center_diameter": 3.4058137433125317,
+     "center_envelope_area": 6.0673146848449395
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
-    "bed": {
+    "cab": {
      "hit": false,
-     "area": 2.012528688760085,
-     "diag": 2.186815142552039,
-     "n": 2,
-     "best_err": 1.982977823851829
+     "area": 20.00000238418579,
+     "diag": 6.4031245353106705,
+     "n": 48,
+     "best_err": 0.8038291931152344,
+     "center_diameter": 4.937645244576329,
+     "center_envelope_area": 18.398456496886865
+    },
+    "bed": {
+     "hit": true,
+     "area": 11.295837000389383,
+     "diag": 4.836509563218145,
+     "n": 48,
+     "best_err": 0.25,
+     "center_diameter": 2.1638394233140628,
+     "center_envelope_area": 2.8005536308705814
     },
     "desk": {
      "hit": true,
-     "area": 0.6028118518397605,
-     "diag": 1.2487384741359029,
-     "n": 2,
-     "best_err": 0.3289244824079046
-    },
-    "cab": {
-     "hit": false,
-     "area": 2.1147309487160357,
-     "diag": 2.086534502138006,
-     "n": 2,
-     "best_err": 0.8038291931152344
+     "area": 20.00000238418579,
+     "diag": 6.4031245353106705,
+     "n": 48,
+     "best_err": 0.3289244824079046,
+     "center_diameter": 4.68730401613951,
+     "center_envelope_area": 15.478867531331161
     },
     "chair": {
      "hit": true,
      "area": 0.2862993330572863,
      "diag": 0.756702495115863,
-     "n": 2,
-     "best_err": 0.0
-    }
+     "n": 48,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
     "bed": {
-     "hit": false,
-     "area": 2.909093415710231,
-     "diag": 2.772178897777841,
-     "n": 3,
-     "best_err": 2.1648705709606157
-    },
-    "desk": {
-     "hit": false,
-     "area": 7.160401907062578,
-     "diag": 4.691302781145984,
-     "n": 3,
-     "best_err": 0.8398862891399368
-    },
-    "cab": {
-     "hit": false,
-     "area": 8.745822515250996,
-     "diag": 5.534530397866085,
-     "n": 3,
-     "best_err": 2.03924560546875
+     "hit": true,
+     "area": 9.344970566311133,
+     "diag": 4.437334913280973,
+     "n": 19,
+     "best_err": 0.5,
+     "center_diameter": 1.9173998348944177,
+     "center_envelope_area": 1.33821106342657
     },
     "chair": {
      "hit": true,
      "area": 0.5313472817581442,
      "diag": 1.0308707792523213,
-     "n": 3,
-     "best_err": 0.0
-    }
+     "n": 19,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "desk": {
+     "hit": false,
+     "area": 23.43993025777928,
+     "diag": 6.909389374623944,
+     "n": 19,
+     "best_err": 0.8398862891399368,
+     "center_diameter": 5.009391495590925,
+     "center_envelope_area": 17.286075923087765
+    },
+    "cab": {
+     "hit": false,
+     "area": 23.23613968757013,
+     "diag": 6.873742217214936,
+     "n": 19,
+     "best_err": 2.03924560546875,
+     "center_diameter": 4.967214107513428,
+     "center_envelope_area": 20.29740569596993
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
     "bed": {
-     "hit": false,
-     "area": 2.521790803251747,
-     "diag": 2.5767836105326776,
-     "n": 5,
-     "best_err": 1.4889216488369577
-    },
-    "desk": {
-     "hit": false,
-     "area": 8.498548555506458,
-     "diag": 4.34931101975707,
-     "n": 5,
-     "best_err": 1.3236723413619431
-    },
-    "cab": {
      "hit": true,
-     "area": 16.486184115220567,
-     "diag": 5.794859889880265,
-     "n": 5,
-     "best_err": 0.23554253578186035
+     "area": 6.25653893245908,
+     "diag": 3.546206122734289,
+     "n": 10,
+     "best_err": 0.5,
+     "center_diameter": 1.1386430162672583,
+     "center_envelope_area": 0.6170039592470999
     },
     "chair": {
      "hit": true,
      "area": 0.32764132067336504,
      "diag": 0.8094953003858207,
-     "n": 5,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": "modes",
-    "bed": {
-     "hit": true,
-     "area": 2.9011958182609305,
-     "diag": 2.6531348221965385,
-     "n": 2,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.198570452360869,
-     "diag": 2.900328893806343,
-     "n": 2,
-     "best_err": 0.5961675214880281
+     "n": 10,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": true,
-     "area": 0.0,
-     "diag": 0.5514590740203857,
-     "n": 2,
-     "best_err": 0.4900001287460327
+     "area": 16.486184115220567,
+     "diag": 5.794859889880265,
+     "n": 10,
+     "best_err": 0.23554253578186035,
+     "center_diameter": 4.399804350041981,
+     "center_envelope_area": 14.416655614058982
+    },
+    "desk": {
+     "hit": false,
+     "area": 8.498548555506458,
+     "diag": 4.34931101975707,
+     "n": 10,
+     "best_err": 1.3236723413619431,
+     "center_diameter": 3.282118405712031,
+     "center_envelope_area": 3.0556683529387465
+    },
+    "full_layout_hit": false
+   },
+   {
+    "K": "modes",
+    "desk": {
+     "hit": false,
+     "area": 22.08434287773889,
+     "diag": 6.805875889680393,
+     "n": 28,
+     "best_err": 0.5961675214880281,
+     "center_diameter": 4.754658820180748,
+     "center_envelope_area": 15.568066544851092
+    },
+    "cab": {
+     "hit": true,
+     "area": 22.08434287773889,
+     "diag": 6.805875889680393,
+     "n": 28,
+     "best_err": 0.4900001287460327,
+     "center_diameter": 5.4896345138549805,
+     "center_envelope_area": 22.08434287773889
+    },
+    "bed": {
+     "hit": true,
+     "area": 8.545084649095827,
+     "diag": 4.253253965870326,
+     "n": 28,
+     "best_err": 0.5,
+     "center_diameter": 1.804458872653504,
+     "center_envelope_area": 1.1280359115489773
     },
     "chair": {
      "hit": true,
      "area": 0.4550711742215299,
      "diag": 0.9540138093565835,
-     "n": 2,
-     "best_err": 0.0
-    }
+     "n": 28,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
     "bed": {
      "hit": true,
-     "area": 3.337170942831108,
-     "diag": 2.787437440900286,
-     "n": 3,
-     "best_err": 0.5
+     "area": 8.781966245312006,
+     "diag": 4.257514825649349,
+     "n": 10,
+     "best_err": 0.5,
+     "center_diameter": 1.6258870020164007,
+     "center_envelope_area": 1.0405042716629396
+    },
+    "cab": {
+     "hit": true,
+     "area": 20.45187221078959,
+     "diag": 6.496885502696278,
+     "n": 10,
+     "best_err": 0.1876218318939209,
+     "center_diameter": 5.064853135814654,
+     "center_envelope_area": 18.09600935655294
     },
     "desk": {
      "hit": false,
      "area": 14.688710420218849,
      "diag": 5.874783697411544,
-     "n": 3,
-     "best_err": 1.6008978318205274
-    },
-    "cab": {
-     "hit": true,
-     "area": 2.7774312226240885,
-     "diag": 2.3597747611127264,
-     "n": 3,
-     "best_err": 0.1876218318939209
+     "n": 10,
+     "best_err": 1.6008978318205274,
+     "center_diameter": 4.73778833171018,
+     "center_envelope_area": 5.689346809732597
     },
     "chair": {
      "hit": true,
      "area": 0.2893863966574486,
      "diag": 0.7607711832837106,
-     "n": 3,
-     "best_err": 0.0
-    }
+     "n": 10,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
     "bed": {
-     "hit": false,
-     "area": 4.34630869818875,
-     "diag": 3.017443055551457,
-     "n": 3,
-     "best_err": 1.4100634550793836
+     "hit": true,
+     "area": 17.375498134135796,
+     "diag": 6.0336992047048,
+     "n": 28,
+     "best_err": 0.0,
+     "center_diameter": 2.4432534361623195,
+     "center_envelope_area": 3.561101041314032
     },
     "desk": {
      "hit": false,
-     "area": 8.196332014962081,
-     "diag": 6.061344916572788,
-     "n": 3,
-     "best_err": 2.564971392989758
+     "area": 31.14142077238148,
+     "diag": 7.9164050184107175,
+     "n": 28,
+     "best_err": 2.564971392989758,
+     "center_diameter": 5.207326769828796,
+     "center_envelope_area": 22.06482745243668
     },
     "cab": {
      "hit": false,
-     "area": 3.9886721132592013,
-     "diag": 3.283118926904746,
-     "n": 3,
-     "best_err": 1.319700539112091
+     "area": 32.42347354846038,
+     "diag": 8.062912889707873,
+     "n": 28,
+     "best_err": 1.319700539112091,
+     "center_diameter": 5.570087790489197,
+     "center_envelope_area": 28.77279868820621
     },
     "chair": {
      "hit": true,
      "area": 0.33494647364165075,
      "diag": 0.8184698817203364,
-     "n": 3,
-     "best_err": 0.0
-    }
+     "n": 28,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
     "bed": {
      "hit": true,
-     "area": 4.99478222694961,
-     "diag": 3.1788960284220447,
-     "n": 1,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.7162808362454598,
-     "diag": 2.6007407798736044,
-     "n": 1,
-     "best_err": 1.0052246583081266
-    },
-    "cab": {
-     "hit": true,
-     "area": 1.3983811371144839,
-     "diag": 2.1240496257045853,
-     "n": 1,
-     "best_err": 0.2828981876373291
-    },
-    "chair": {
-     "hit": true,
-     "area": 0.35519633852891275,
-     "diag": 0.8428479560738257,
-     "n": 1,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": "modes",
-    "bed": {
-     "hit": true,
-     "area": 3.685592573208737,
-     "diag": 2.857939667444139,
-     "n": 2,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": true,
-     "area": 2.4620064586899217,
-     "diag": 2.936496759741015,
-     "n": 2,
-     "best_err": 0.4373192331207771
-    },
-    "cab": {
-     "hit": false,
-     "area": 1.7724541873249677,
-     "diag": 1.9110784785270016,
-     "n": 2,
-     "best_err": 0.5066509246826172
+     "area": 17.78902664843099,
+     "diag": 6.075511391366596,
+     "n": 42,
+     "best_err": 0.0,
+     "center_diameter": 2.6159305333774214,
+     "center_envelope_area": 4.130170759882986
     },
     "chair": {
      "hit": true,
      "area": 0.45507310424000025,
      "diag": 0.9540158324053121,
-     "n": 2,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": "modes",
-    "bed": {
-     "hit": false,
-     "area": 2.8798445913163278,
-     "diag": 2.502558445884396,
-     "n": 2,
-     "best_err": 1.1774492242274586
-    },
-    "desk": {
-     "hit": true,
-     "area": 4.200405806874878,
-     "diag": 3.2211571798698597,
-     "n": 2,
-     "best_err": 0.3454067767847157
+     "n": 42,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
-     "area": 5.897167307740937,
-     "diag": 4.063825028557956,
-     "n": 2,
-     "best_err": 0.8814179400242627
+     "area": 22.9999348987144,
+     "diag": 6.8325854119259954,
+     "n": 42,
+     "best_err": 0.5066509246826172,
+     "center_diameter": 4.960404395345935,
+     "center_envelope_area": 19.449287712344358
     },
+    "desk": {
+     "hit": true,
+     "area": 22.9999348987144,
+     "diag": 6.8325854119259954,
+     "n": 42,
+     "best_err": 0.4373192331207771,
+     "center_diameter": 4.4394506380833425,
+     "center_envelope_area": 15.312774011974852
+    },
+    "full_layout_hit": false
+   },
+   {
+    "K": "modes",
     "chair": {
      "hit": true,
      "area": 0.45506409752215404,
      "diag": 0.9540063915112457,
-     "n": 2,
-     "best_err": 0.0
-    }
+     "n": 20,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": true,
+     "area": 6.89690859814597,
+     "diag": 3.7889731057757507,
+     "n": 20,
+     "best_err": 0.25,
+     "center_diameter": 1.4039115688418717,
+     "center_envelope_area": 0.7042338465640228
+    },
+    "cab": {
+     "hit": true,
+     "area": 18.69208077044368,
+     "diag": 6.156328785662915,
+     "n": 20,
+     "best_err": 0.32048511505126953,
+     "center_diameter": 4.670115404001717,
+     "center_envelope_area": 16.189854873223283
+    },
+    "desk": {
+     "hit": true,
+     "area": 18.69208077044368,
+     "diag": 6.156328785662915,
+     "n": 20,
+     "best_err": 0.3454067767847157,
+     "center_diameter": 4.435333592372474,
+     "center_envelope_area": 13.72554263883643
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
     "bed": {
-     "hit": false,
-     "area": 2.924956216488681,
-     "diag": 2.5361216474841948,
-     "n": 3,
-     "best_err": 1.6947868227701037
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.895086472405039,
-     "diag": 2.957160063635177,
-     "n": 3,
-     "best_err": 2.9538390975457567
-    },
-    "cab": {
-     "hit": false,
-     "area": 4.346415993257415,
-     "diag": 4.067949406136025,
-     "n": 3,
-     "best_err": 0.5316160917282104
+     "hit": true,
+     "area": 7.117711796667223,
+     "diag": 3.8468069347621863,
+     "n": 8,
+     "best_err": 0.5,
+     "center_diameter": 1.4336820020524796,
+     "center_envelope_area": 0.7464720415046031
     },
     "chair": {
      "hit": true,
      "area": 0.4868665025753671,
      "diag": 0.9867791065637407,
-     "n": 3,
-     "best_err": 0.0
-    }
+     "n": 8,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "cab": {
+     "hit": false,
+     "area": 20.06421150847291,
+     "diag": 6.449914816503487,
+     "n": 8,
+     "best_err": 0.5316160917282104,
+     "center_diameter": 4.872544527053833,
+     "center_envelope_area": 17.8280626667011
+    },
+    "desk": {
+     "hit": false,
+     "area": 1.895086472405039,
+     "diag": 2.957160063635177,
+     "n": 8,
+     "best_err": 2.9538390975457567,
+     "center_diameter": 0.8425568652153017,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
@@ -3185,109 +3823,135 @@
      "area": 3.647079460420173,
      "diag": 2.8269105052474077,
      "n": 2,
-     "best_err": 0.5
-    },
-    "desk": {
-     "hit": false,
-     "area": 4.851498278932695,
-     "diag": 3.1741105469301423,
-     "n": 2,
-     "best_err": 1.5752001649655036
-    },
-    "cab": {
-     "hit": false,
-     "area": 9.256724173850111,
-     "diag": 4.887301314718032,
-     "n": 2,
-     "best_err": 1.741080816693238
+     "best_err": 0.5,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "chair": {
      "hit": true,
      "area": 0.6848692789463371,
      "diag": 1.1703583032100358,
      "n": 2,
-     "best_err": 0.0
-    }
-   },
-   {
-    "K": "modes",
-    "bed": {
-     "hit": false,
-     "area": 2.9040078558811615,
-     "diag": 2.716386215113078,
-     "n": 3,
-     "best_err": 2.1103645518676855
-    },
-    "desk": {
-     "hit": false,
-     "area": 14.595666172112203,
-     "diag": 5.51672301280795,
-     "n": 3,
-     "best_err": 2.097510836588258
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
     },
     "cab": {
      "hit": false,
-     "area": 0.13097768872069082,
-     "diag": 0.5711287139999017,
-     "n": 3,
-     "best_err": 0.6017913818359375
+     "area": 9.256724173850111,
+     "diag": 4.887301314718032,
+     "n": 2,
+     "best_err": 1.741080816693238,
+     "center_diameter": 4.3797169313741335,
+     "center_envelope_area": 6.904827302910439
+    },
+    "desk": {
+     "hit": false,
+     "area": 4.851498278932695,
+     "diag": 3.1741105469301423,
+     "n": 2,
+     "best_err": 1.5752001649655036,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
+   },
+   {
+    "K": "modes",
+    "cab": {
+     "hit": false,
+     "area": 26.607504382752268,
+     "diag": 7.469081267495787,
+     "n": 38,
+     "best_err": 0.6017913818359375,
+     "center_diameter": 5.7653725147247314,
+     "center_envelope_area": 23.993030578223795
+    },
+    "desk": {
+     "hit": false,
+     "area": 26.607504382752268,
+     "diag": 7.469081267495787,
+     "n": 38,
+     "best_err": 1.5938055656569037,
+     "center_diameter": 5.364737033843994,
+     "center_envelope_area": 20.17645194388888
     },
     "chair": {
      "hit": true,
      "area": 0.4536892074094254,
      "diag": 0.9525641263552028,
-     "n": 3,
-     "best_err": 0.0
-    }
+     "n": 38,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "bed": {
+     "hit": true,
+     "area": 17.27623690779609,
+     "diag": 6.030676611323269,
+     "n": 38,
+     "best_err": 0.25,
+     "center_diameter": 2.492980539104855,
+     "center_envelope_area": 4.203638541779696
+    },
+    "full_layout_hit": false
    },
    {
     "K": "modes",
     "bed": {
-     "hit": false,
-     "area": 2.35063004537119,
-     "diag": 2.330634048403774,
-     "n": 1,
-     "best_err": 2.0799925282390053
-    },
-    "desk": {
-     "hit": false,
-     "area": 1.152724246545631,
-     "diag": 1.7196712814995108,
-     "n": 1,
-     "best_err": 3.3878346130295487
+     "hit": true,
+     "area": 12.522369841185764,
+     "diag": 5.091411873727089,
+     "n": 28,
+     "best_err": 0.5,
+     "center_diameter": 2.2530798737572733,
+     "center_envelope_area": 3.047685439142242
     },
     "cab": {
      "hit": true,
-     "area": 0.29000494915720765,
-     "diag": 1.1683412963403192,
-     "n": 1,
-     "best_err": 0.23343253135681152
+     "area": 19.022425491645663,
+     "diag": 6.168527960354024,
+     "n": 28,
+     "best_err": 0.23343253135681152,
+     "center_diameter": 4.774629333624099,
+     "center_envelope_area": 16.868620315683927
+    },
+    "desk": {
+     "hit": false,
+     "area": 19.170936452562955,
+     "diag": 6.193077598959989,
+     "n": 28,
+     "best_err": 0.6010694074589389,
+     "center_diameter": 4.2904830762935555,
+     "center_envelope_area": 13.090519534642397
     },
     "chair": {
      "hit": true,
      "area": 0.24745424319741005,
      "diag": 0.7034973250800746,
-     "n": 1,
-     "best_err": 0.0
-    }
+     "n": 28,
+     "best_err": 0.0,
+     "center_diameter": 0.0,
+     "center_envelope_area": 0.0
+    },
+    "full_layout_hit": false
    }
   ]
  },
  "n_modes": [
+  30,
+  12,
+  48,
+  19,
+  10,
+  28,
+  10,
+  28,
+  42,
+  20,
+  8,
   2,
-  4,
-  2,
-  3,
-  5,
-  2,
-  3,
-  3,
-  1,
-  2,
-  2,
-  3,
-  2,
-  3,
-  1
+  38,
+  28
  ]
 }
