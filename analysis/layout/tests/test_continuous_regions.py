@@ -74,9 +74,9 @@ class ContinuousRegionTests(unittest.TestCase):
         self.assertEqual(first,later[:3])
         for e in later:self.assertTrue(_contact(np.array([scene['gt'][e['object']]]),e,.2,.6)[0][0])
 
-    def test_surface_threshold_requires_confirmation_in_both_axes(self):
+    def test_surface_reports_sampled_boundary_without_followup_requirement(self):
         from analysis.layout.activity_surface import threshold_frontier
-        self.assertEqual(threshold_frontier(np.ones((2,2)),[0.,1.],[0,1]),[])
+        self.assertEqual(threshold_frontier(np.ones((2,2)),[0.,1.],[0,1]),[{'coverage_target':0.,'visits':0}])
         self.assertEqual(threshold_frontier(np.ones((3,3)),[0.,.5,1.],[0,3,6]),[{'coverage_target':0.,'visits':0}])
 
     def test_face_inverse_uses_endpoints_normal_and_sizes(self):

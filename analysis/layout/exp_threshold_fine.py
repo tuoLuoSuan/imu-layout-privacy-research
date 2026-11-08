@@ -7,9 +7,8 @@ four or five.  This module re-runs the same benchmark on a grid that resolves
 that gap and reports, per room, which visit count first resolves all four
 furniture centres.
 
-It reuses analysis.layout.activity_surface rather than re-implementing the
-protocol; the constants are patched on the module before the call, so the
-protocol, contact rules and decoder stay identical.
+It reuses analysis.layout.activity_surface with an explicit grid argument.
+The protocol, contact rules and decoder stay identical; no global mutation.
 """
 import argparse
 import json
@@ -34,8 +33,10 @@ TOL = 0.5
 def _hit(row):
     if not row.get("executable"):
         return False
-    return all(o["joint_error_m"] is not None and o["joint_error_m"] <= TOL
-               for o in row["objects"].values())
+    objects=row.get('objects',{})
+    return set(objects)=={'bed','desk','cab','chair'} and all(
+        o.get('joint_error_m') is not None and np.isfinite(o['joint_error_m'])
+        and o['joint_error_m'] <= TOL for o in objects.values())
 
 
 def summarise(rows, rooms):
@@ -46,9 +47,13 @@ def summarise(rows, rooms):
             for cov in COVERAGES:
                 part = [r for r in rows if r["policy"] == policy and r["visits"] == vis
                         and r["coverage_target"] == cov and r["scene"] in rooms]
+                if len({r['scene'] for r in part})!=len(part):
+                    raise ValueError('Duplicate room in activity cell')
                 grid["%s|%.2f|%d" % (policy, cov, vis)] = {
                     "hits": sum(1 for r in part if _hit(r)),
-                    "rooms": len(part),
+                    "rooms": len(rooms),
+                    "missing": len(rooms)-len(part),
+                    "censored": sum(not r.get('executable',False) for r in part),
                     "executable": sum(1 for r in part if r.get("executable")),
                 }
     return grid
@@ -87,11 +92,18 @@ def cabinet_mechanism(rows, rooms):
             rec[str(vis)] = {
                 "cab_error_m": row["objects"]["cab"]["joint_error_m"],
                 "cab_contact_span_m": span,
-                "n_cab_contacts": sum(1 for c in row["contact_classes"] if c == "cab"),
+                "n_cab_contacts": event_count(row, 'cab'),
+                "count_source": 'recorded' if 'event_counts' in row else 'reconstructed from archived fixed class cycle',
                 "executable": bool(row.get("executable")),
             }
         out.append(rec)
     return out
+
+
+def event_count(row, obj):
+    if 'event_counts' in row:return row['event_counts'].get(obj,0)
+    available=[o for o in ['chair','cab','bed'] if o in row['contact_classes']]
+    return sum(available[i%len(available)]==obj for i in range(row['visits'])) if available else 0
 
 
 def frontier(grid, rooms_count, target=0.8):
@@ -101,7 +113,8 @@ def frontier(grid, rooms_count, target=0.8):
     for vis in VISITS:
         for cov in COVERAGES:
             cell = grid["dispersed|%.2f|%d" % (cov, vis)]
-            if cell["rooms"] and cell["hits"] / cell["rooms"] >= target:
+            if cell['rooms']!=rooms_count:raise ValueError('Cohort denominator changed')
+            if cell["rooms"] and not cell.get('missing',0) and cell["hits"] / cell["rooms"] >= target:
                 first[str(vis)] = cov
                 passing.append({"coverage": cov, "visits": vis,
                                 "hits": cell["hits"], "rooms": cell["rooms"]})
@@ -109,16 +122,20 @@ def frontier(grid, rooms_count, target=0.8):
     pareto = [p for p in passing
               if not any(q["coverage"] <= p["coverage"] and q["visits"] <= p["visits"] and q != p
                          for q in passing)]
-    return {"first_pass_per_visit_count": first, "passing_cells": passing, "pareto": pareto}
+    for p in pareto:
+        p['status']='tested_grid_only'
+        p['higher_coverage_samples']=sum(c>p['coverage'] for c in COVERAGES)
+        p['higher_visit_samples']=sum(n>p['visits'] for n in VISITS)
+        p['upper_grid_edge']=p['coverage']==max(COVERAGES) or p['visits']==max(VISITS)
+    return {"first_pass_per_visit_count": first, "passing_cells": passing, "pareto": pareto,
+            'interpretation':'Empirical minima on sampled grid only; no between-sample or larger-budget guarantee'}
 
 
 def run(output, workdir=None):
     workdir = workdir or os.path.join(paths.DATA, "layout-recon", "threshold-fine-raw")
     os.makedirs(workdir, exist_ok=True)
     raw = os.path.join(workdir, "activity-surface-fine-raw.json")
-    AS.COVERAGES = COVERAGES
-    AS.VISITS = VISITS
-    AS.run(raw)
+    AS.run(raw,coverages=COVERAGES,visits=VISITS)
     with open(raw, encoding="utf-8") as fh:
         data = json.load(fh)
     rows = [r for r in data["rows"] if r.get("status") != "invalid_geometry"]
