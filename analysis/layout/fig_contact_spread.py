@@ -34,11 +34,12 @@ def run(data="analysis/layout/contact_spread.json", out="output/layout-recon/con
         ax.grid(alpha=.25)
         ax.set_xticks(list(FRACTIONS))
         ax.set_xticklabels(["0（重复）", "25%", "50%", "75%", "100%"], fontproperties=CJK, fontsize=8.5)
-        ax.legend(prop=CJK, fontsize=9, loc="best")
+        ax.legend(prop=CJK, fontsize=9, loc="center right")
     axes[0].set_ylabel("点命中率（中心≤0.5 m）", fontproperties=CJK, fontsize=10)
     axes[0].set_ylim(-0.05, 1.05)
+    axes[0].set_xlim(-0.04, 1.16)
     axes[0].set_title("命中率：床随摊开变好，椅随摊开变坏", fontproperties=CJK, fontsize=11)
-    axes[0].annotate("椅 75% 起整批冲突（无输出）", xy=(0.75, 0.0), xytext=(0.52, 0.16),
+    axes[0].annotate("椅 75% 起整批冲突（无输出）", xy=(0.75, 0.0), xytext=(0.36, 0.12),
                      fontproperties=CJK, fontsize=8.5, color=COLORS["chair"],
                      arrowprops=dict(arrowstyle="->", color=COLORS["chair"], lw=0.8))
     axes[0].annotate("13/14 只是选对了，包络仍 1.38 m", xy=(1.0, 0.93), xytext=(0.55, 1.0),
