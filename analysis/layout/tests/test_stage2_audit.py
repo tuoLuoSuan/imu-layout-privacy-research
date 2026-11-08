@@ -5,6 +5,10 @@ from analysis.layout import evidence_space as ES, exp_span, exp_budget
 
 
 class StageTwoTests(unittest.TestCase):
+    def test_zero_width_is_a_valid_summary_observation(self):
+        self.assertEqual(exp_span.median_available([0.,None,2.]),1.)
+        self.assertIsNone(exp_span.median_available([None]))
+
     def test_two_small_axis_widths_do_not_bound_euclidean_error(self):
         c=ES.envelope_certificate([0.,0.,.8,.8],[.4,.4],.5)
         self.assertGreater(c['radius_upper_m'],.5)

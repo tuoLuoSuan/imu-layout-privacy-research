@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "base_commit": "1e305efa83f4cb8337efd676e7c18ef10e1e2174",
-  "completed_utc": "2026-11-08T06:47:21.416419+00:00",
+  "completed_utc": "2026-11-08T06:52:55.450913+00:00",
   "scope": "Incremental audit and conditional bed-centre diagnostics; not a rerun or confirmation of all historical results",
   "source_and_result_sha256": {
     "analysis/layout/__init__.py": "89a02aa96a7157e91efb67af3caf4f2682e37c5efd59423d0a0889168ce52b7f",
@@ -32,7 +32,7 @@
     "analysis/layout/exp_robust.py": "5ffeb8dea0be6e5032aac52faa5b4f8258e8eb210d598023d9023d101bd9c90a",
     "analysis/layout/exp_semantics.py": "df1a4ef634fec90f1e566bebad0d8f6553b1d4b7b89904dd0fd1b998ab84050a",
     "analysis/layout/exp_sim_check.py": "40abaa3e563df188659050ef1cb5d2bc0e5fc9181a5db4f7da736b4a212304d1",
-    "analysis/layout/exp_span.py": "1b911819fe2637dbd6b48eabb7a8904470094784685bdce48f7608280415b2fc",
+    "analysis/layout/exp_span.py": "42541cc2240a951ccebb81f8712ae9c5c4e805209f528c18d27dffd8abdc3fec",
     "analysis/layout/fig_activity.py": "900fd162445b8be00b9ae0858e809f6f08a76475f62f0f0eb8b258d5ceb74d3f",
     "analysis/layout/fig_attr.py": "5817580ecd89e5fb7d3d1103a8839a484062d384d910ed9330d973b65a51abd0",
     "analysis/layout/fig_bound.py": "309cdd561ae486013736b71754314da0f71de0ca363ce238bcbc02470ef4af3e",
@@ -73,8 +73,8 @@
     "analysis/layout/watch_channel.py": "57badf9e9f79737e22207013929f6ebd34f53b0c3a984a3f7f3a9d560ca266ef",
     "analysis/layout/tests/test_activity_frontier.py": "32615269c189ec28dc7cfa42eda054ed82a40b71b6e8ecebaed6af2105fd6e84",
     "analysis/layout/tests/test_review_fixes.py": "75a01051bdea180f2337c3bf1a451d759dbc7564e63dcfaf5b472dcc6b0d3991",
-    "analysis/layout/tests/test_stage2_audit.py": "333bf169734e81eed68bc22262c2a166bfdd2bc4376ee2e97bc08ce4ca17bb91",
-    "analysis/layout/stage2-results.json": "48bd3d855b371da9332658412ab2c93e55d1298e5cbf359b4de166c80f08ed06",
+    "analysis/layout/tests/test_stage2_audit.py": "c9dfded20073d950bbd8f2a5d30cb3b2a821da79056bb0a723f88e184db9f802",
+    "analysis/layout/stage2-results.json": "e023023d4a239e42379ac7d47862c0b947a289b20be5c66222383f4f39f7c275",
     "docs/research/2026-11-08-stage2-audit-and-next-results.md": "98d859bda36ba6d4511773d6f86e36560b25482c840fd97e9f8241f27a773011",
     "README.md": "d348eac93955e1777cd7355a06d0f100981d407484ab7d0303d162aed97ad248",
     "RESULTS.md": "1e51b038aa6a1d95d50dc34aed5b98b7c910d082cb7c7bd306fe909d9f96d0cc"
@@ -115,7 +115,7 @@
     "FloorPlan324.json": "7926ca9b719a46bbca8bd30001fde927a80fd42b67b1fa0e361eb6ba4c5e0145",
     "FloorPlan325.json": "bdd0ecd966d6a0b1633168f75fd8f8fd166607fb0526bcbeff5ac1dc19bea29c"
   },
-  "unit_tests": 43,
+  "unit_tests": 44,
   "independent_geometric_rooms": 14,
   "real_rooms": 1,
   "fresh_runs": [
@@ -127,7 +127,8 @@
     "Two same-position semantic cycles",
     "96m desk distance and oracle-bearing diagnostics",
     "Two continuous two-axis bed resolution scans",
-    "Three final-size figures and rendered QA"
+    "Three final-size figures and rendered QA",
+    "Corrected zero-width summary reducer from preserved scene rows"
   ],
   "figure_qa": [
     {

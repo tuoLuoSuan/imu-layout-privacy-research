@@ -28,6 +28,11 @@ OBJECTS = ("bed", "desk", "cab", "chair")
 ARMS = ("full", "drop", "collapse", "repeat_first", "single")
 
 
+def median_available(values):
+    present=[v for v in values if v is not None]
+    return float(np.median(present)) if present else None
+
+
 def _scenes():
     return [s for f in sorted(Path(paths.THOR).glob("FloorPlan*.json")) if (s := SE.load_scene(str(f)))]
 
@@ -279,9 +284,9 @@ def span_sweep(out, seed=SEED, spans=(0.0, 0.25, 0.5, 0.75, 1.0, 1.5), copies=3,
             envelope = [max(r["envelope_m"]) for r in sel if r["envelope_m"]]
             summary["%s:%.2f" % (obj, span)] = {
                 "n": len(sel),"total_rooms":len(scenes),"ineligible":len(all_rows)-len(sel),
-                "median_support_m": float(np.median([r["support_m"] for r in sel if r["support_m"]])),
+                "median_support_m": median_available([r['support_m'] for r in sel]),
                 "median_max_envelope_m": float(np.median(envelope)) if envelope else None,
-                "median_error_m": float(np.median([r["error_m"] for r in sel if r["error_m"] is not None])),
+                "median_error_m": median_available([r['error_m'] for r in sel]),
                 "hit_rate": float(np.mean([r["hit"] for r in sel])),
                 "certificate_allowed":sum(bool(r.get('allow',False)) for r in sel),
                 "certificate_allowed_share_all_rooms":sum(bool(r.get('allow',False)) for r in sel)/len(scenes),
