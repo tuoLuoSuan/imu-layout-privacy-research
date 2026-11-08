@@ -1,8 +1,8 @@
-"""门位置：用户 2026-11-08 在稠密图上标注（贴 y = L 那面墙，紧挨床的左侧）。
+"""门位置：用户 2026-11-08 给出的参考布局（上墙 y = L，紧贴床左侧，左沿离左角 0.390 m，宽 0.775 m）。
 
-门洞是可选侧信息。本标注依赖预测稠密图、起点被近似为门心，不能当独立验证。
+门洞是可选侧信息。它画在我们自己的稠密图上，与输出同坐标系：是外部事实，不是独立验证。
 仅在床位于门右侧并邻接该墙时，床 x 可写成 [门右沿, 房间宽 - 床宽]。
-早前卷尺的 0.33m 角距与此来源存在差异，由敏感性脚本同时保留，不自动合并。
+早前两种推算（门心取起点 x、卷尺 0.33 m 角距）由敏感性脚本同时保留，不自动合并。
 """
 import json
 import os
@@ -10,9 +10,12 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# 条件性假设：门心取起点 x；起点在门口不自动证明此等式。
-DOOR = {"s-59d570ee": {"wall": "y_hi", "centre_x": 0.825, "width_m": 0.775,
-                       "source": "start-centred interpretation of dense-map annotation; not independently measured centre"}}
+# 用户 2026-11-08 给出的参考布局：门洞左沿距左墙角 0.39 m、门宽 0.775 m，
+# 于是门心 = 0.39 + 0.775/2 = 0.7775，门洞 x = [0.390, 1.165]。
+# 这取代了此前「门心取起点 x」的推算（0.4375–1.2125）与更早的卷尺角距情景（0.33–1.105）。
+DOOR = {"s-59d570ee": {"wall": "y_hi", "centre_x": 0.7775, "width_m": 0.775,
+                       "left_offset_m": 0.39,
+                       "source": "user reference layout 2026-11-08: left edge 0.390 m from the left wall, width 0.775 m"}}
 
 
 def opening(sess,door_spec=None):

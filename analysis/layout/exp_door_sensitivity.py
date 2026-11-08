@@ -35,10 +35,12 @@ def run(out,session=SESS):
                      "bed_x_lo": lo, "bed_x_hi": hi,"status":iv['status'],
                      "width_m":iv['width_m'],'signed_width_m':iv['signed_width_m'],
                      "bed_clearance_m": clr["gap_m"], "bed_blocked": clr["blocked"]})
-    # User previously reported corner offset 0.33m. Its equivalence to this frame is
-    # unresolved, so retain a provenance alternative rather than choose a favourable door.
+    # Three explicit provenance variants: the user's reference layout (adopted),
+    # the older start-centred inference, and the even older 0.33 m tape corner offset.
     variants=[]
-    for source,centre in [('start_inferred',base['centre_x']),('earlier_tape_same_frame_if_valid',.33+.775/2)]:
+    for source,centre in [('user_reference_left_edge_0.390',0.39+.775/2),
+                          ('start_inferred',0.825),
+                          ('earlier_tape_left_edge_0.330',.33+.775/2)]:
         spec=dict(base,centre_x=centre)
         x0,x1,_=DOOR.opening(NAME,spec)
         variants.append({'source':source,'opening_m':[x0,x1],
