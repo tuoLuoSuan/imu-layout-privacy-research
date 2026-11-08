@@ -183,3 +183,14 @@ python -m analysis.layout.exp_door_sensitivity <新目录>/door.json <全新重�
 
 实现：`analysis/layout/exp_desk_control.py`（切线代理，写 `desk_control.json`）与 `analysis/layout/exp_bearing_control.py`（方位臂，写 `bearing_control.json`），两者都不修改被检验的实验代码。
 
+## 10. 配对实验：同覆盖、同交互次数，只改接触点摊开多少
+
+承接第 9 节：既然点命中率一半是排序规则的属性，那么「证据的形状」就必须在配对条件下单独测。路线、覆盖、事件条数全部固定，每类 3 个接触点，只把它们的沿轴摊开比例从 0 改到 100%（基准点是该类真实锚点均值，接触约定不变）。
+
+- 床（区间型）：9/14 → 13/14，包络 2.47 → 1.38 m，随摊开单调改善。
+- 柜（环带型）：3/13 → 6/13，包络 2.72 → 0.21 m，窄但常选错。
+- 椅（点约束）：14/14 → 0/14，50% 起开始冲突、75% 起 14 房全部无解 —— 把点约束摊开等于注入位置误差。
+- 桌：本批场景没有任何接触事件，这条干预不可施加（命中 2/14，包络 5.06 m）。
+
+结论：**同一个干预在不同接触类型上符号相反**，所以「走得多」「交互多」都不能单独当自变量；能当自变量的是接触点在物体自身轴上的分布，以及约束类型本身。实现见 analysis/layout/exp_contact_spread.py（写 contact_spread.json）与 analysis/layout/fig_contact_spread.py（图 contact-spread.png）。
+
