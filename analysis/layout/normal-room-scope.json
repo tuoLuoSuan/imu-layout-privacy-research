@@ -1,0 +1,32 @@
+{
+  "name": "restricted-normal-room-development",
+  "included_rooms": [
+    "FloorPlan301",
+    "FloorPlan302",
+    "FloorPlan304",
+    "FloorPlan305",
+    "FloorPlan307",
+    "FloorPlan308",
+    "FloorPlan310",
+    "FloorPlan312",
+    "FloorPlan313",
+    "FloorPlan318",
+    "FloorPlan320"
+  ],
+  "excluded": {
+    "FloorPlan306": "zero-area storage footprint: invalid geometry input",
+    "FloorPlan316": "disconnected body-clear free floor; not all furniture approaches reachable",
+    "FloorPlan303": "operation-face ambiguity outside the selected reconstruction model scope"
+  },
+  "count": 11,
+  "authorization": "User explicitly requested excluding these exceptional cases and restricting to normal rooms in this chat",
+  "selection_after_development_diagnosis": true,
+  "purpose": "Restricted development benchmark, not independent validation or an automatic normal-room classifier",
+  "frozen_rule": "Do not silently add further exclusions after new failures; keep extended valid-room comparison",
+  "assumptions": [
+    "fixed furniture",
+    "rectangular room with positive furniture footprints",
+    "walkable layout suitable for the stated activity protocol",
+    "storage operation geometry within the chosen model domain"
+  ]
+}

@@ -42,12 +42,36 @@ def long_axis(box):
     return np.array([0.0, 1.0]), float(h)
 
 
-def spread_events(events, obj, box, fraction, count=COUNT):
+def spread_events(events, obj, box, fraction, count=COUNT, protocol='valid'):
     mine = [e for e in events if e["object"] == obj]
     if not mine:
         return None, None
     mean = np.mean([np.asarray(e["pos"], float) for e in mine], axis=0)
+    box=np.asarray(box,float)
     axis, length = long_axis(box)
+    if protocol not in ['valid','invalid_long_axis_stress']:raise ValueError('Unknown protocol')
+    if protocol=='valid':
+        if obj=='chair':
+            # Repeated exact-centre observations. Moving these anchors is error
+            # injection, not legitimate spatial exploration of a fixed chair.
+            made=[dict(mine[0],pos=mean.tolist()) for _ in range(count)]
+            return [e for e in events if e['object']!=obj]+made,0.
+        if obj=='cab':
+            # Spread along the operation face, never along its normal.
+            gaps=np.array([box[0]-mean[0],mean[0]-box[2],box[1]-mean[1],mean[1]-box[3]])
+            face=int(gaps.argmax());index=1 if face<2 else 0
+            axis=np.eye(2)[index];length=box[index+2]-box[index]
+        else:index=int(np.argmax(axis))
+        # A nested interval centred as near the original point as physically
+        # possible; full spread ends at actual endpoints, never outside the item.
+        span=fraction*length
+        lower=box[index]+np.clip(mean[index]-box[index]-span/2,0.,length-span)
+        positions=np.linspace(lower,lower+span,count)
+        made=[]
+        for position in positions:
+            point=mean.copy();point[index]=position
+            made.append(dict(mine[0],pos=point.tolist()))
+        return [e for e in events if e['object']!=obj]+made,float(span)
     offsets = np.linspace(-0.5, 0.5, count) * fraction * length
     made = [dict(mine[0], pos=(mean + o * axis).tolist()) for o in offsets]
     return [e for e in events if e["object"] != obj] + made, float(offsets[-1] - offsets[0])
@@ -90,13 +114,16 @@ def run(out, budget=BUDGET):
                 edited, span = spread_events(events, obj, scene["gt"][obj], fraction)
                 if edited is None:
                     continue
+                valid_events=all(ES._contact(np.asarray([scene['gt'][obj]]),v,PAD,.60)[0][0]
+                                 for v in edited if v['object']==obj)
+                if not valid_events:raise AssertionError('Contact generator violated declared truth: '+scene['scene']+obj)
                 got = measure(scene, banks, path, edited)[obj]
                 rows.append({"scene": scene["scene"], "object": obj,
                              "arm": "repeat" if fraction == 0 else "spread",
                              "fraction": fraction, "span_m": span, "n_events": COUNT,
                              "status": got["status"],
                              "support_m": got["support_m"], "error_m": got["error_m"],
-                             "hit": got["hit"]})
+                             "hit": got["hit"],'truth_contact_compatible':bool(valid_events)})
     summary = {}
     for obj in OBJECTS:
         for key in ["actual"] + ["f%g" % f for f in FRACTIONS]:
@@ -114,9 +141,10 @@ def run(out, budget=BUDGET):
                 "span_median_m": float(np.median([r["span_m"] for r in sel])) if sel[0]["span_m"] else None,
                 "conflict": int(sum(1 for r in sel if r["status"] == "conflict")),
                 "no_box": int(sum(1 for r in sel if r["error_m"] is None))}
-    record = {"scope": "Same route, same count (3 per class), only the spread along the object axis varies; "
+    record = {"scope": "Valid contact-set geometry at fixed negative-space evidence and count; bed interior/cabinet face spread, fixed chair centre; "
                        "geometric oracle, development scenes, 96 m",
               "budget_m": budget, "count_per_class": COUNT, "fractions": list(FRACTIONS),
+              'limitation':'Counterfactual contact coordinates are not connected by an updated physical route; this is a constraint-factor experiment, not equal-coverage executable human behaviour',
               "summary": summary, "rows": rows}
     Path(out).write_text(json.dumps(record, ensure_ascii=False, indent=1), encoding="utf-8")
     print("%-6s %-8s %-12s %-12s" % ("object", "arm", "hit", "support_med"))
