@@ -55,6 +55,17 @@ def _walls(ax, W, L, h=2.2):
                                          linewidths=0.6, alpha=0.10))
 
 
+def _door_opening(sess):
+    try:
+        from analysis.layout.door import opening
+    except Exception:
+        try:
+            from door import opening
+        except Exception:
+            return None
+    return opening(sess)
+
+
 def render(sess, out_png, actual=None, prior_root=None, use_reference=True):
     with open(os.path.join(sess, "prediction.json"), encoding="utf-8") as fh:
         pred = json.load(fh)
@@ -108,6 +119,13 @@ def render(sess, out_png, actual=None, prior_root=None, use_reference=True):
         ax3.bar3d(b[0], b[1], 0, dx, dy, heights[k], color=COLOR[k],
                   alpha=0.88, edgecolor="#333", linewidth=0.6, shade=True)
     ax3.plot(tx, ty, np.full_like(tx, 0.012), color="#111", lw=1.1, alpha=0.75)
+    op3 = _door_opening(pred.get("session"))
+    if op3:
+        x0, x1, _w3 = op3
+        door_h = 2.00
+        for xx in (x0, x1):
+            ax3.plot([xx, xx], [L - 0.006, L - 0.006], [0, door_h], color="#ff7f0e", lw=3, zorder=9)
+        ax3.plot([x0, x1], [L - 0.006, L - 0.006], [door_h, door_h], color="#ff7f0e", lw=3, zorder=9)
     ax3.set_xlim(0, W); ax3.set_ylim(0, L); ax3.set_zlim(0, wall_display_height)
     ax3.set_box_aspect((W, L, 0.95))
     ax3.view_init(elev=28, azim=-62)
@@ -129,6 +147,13 @@ def render(sess, out_png, actual=None, prior_root=None, use_reference=True):
                  "%s %.2fm" % (LABEL[k][0], heights[k]), ha="center", va="center",
                  fontproperties=CJK, fontsize=10, color="white",
                  bbox=dict(fc="#000", alpha=0.35, lw=0, pad=1.6))
+    op = _door_opening(pred.get("session"))
+    if op:
+        x0, x1, _wall = op
+        ax2.plot([x0, x1], [L - 0.035, L - 0.035], lw=7, color="#ff7f0e",
+                 solid_capstyle="butt", zorder=7)
+        ax2.text((x0 + x1) / 2, L - 0.46, "门 %.1f cm" % round((x1 - x0) * 100, 1), ha="center", va="top",
+                 fontproperties=CJK, fontsize=9, color="#b35900", weight="bold", zorder=8)
     ax2.set_xlim(0, W); ax2.set_ylim(0, L); ax2.set_aspect("equal")
     ax2.set_xlabel("x (m)", fontproperties=CJK); ax2.set_ylabel("y (m)", fontproperties=CJK)
     ax2.set_title("俯视：类别占地与高度来源，S 为起点", fontproperties=CJK, fontsize=11)

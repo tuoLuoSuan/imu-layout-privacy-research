@@ -47,6 +47,7 @@
     "analysis/layout/attribution.py",
     "analysis/layout/current-run.json",
     "analysis/layout/dense_map.py",
+    "analysis/layout/door.py",
     "analysis/layout/drift_flip.json",
     "analysis/layout/evidence_accum.json",
     "analysis/layout/exp_average.json",
