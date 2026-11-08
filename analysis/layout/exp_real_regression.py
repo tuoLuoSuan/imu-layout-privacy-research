@@ -11,7 +11,13 @@ from . import multi_instance as M
 from .selection_diagnostics import rerank_pools
 
 
-def run(replay,baseline,out,bundle=None):
+def baseline_comparison(current,baseline,baseline_id,baseline_source=None):
+    return {'baseline_id':baseline_id,'baseline_prediction_sha256':hashlib.sha256(Path(baseline_source).read_bytes()).hexdigest() if baseline_source else None,
+        'baseline_rotation_deg':baseline['rot_deg'],'current_rotation_deg':current['rot_deg'],
+        'max_coordinate_delta_m':{k:float(np.max(np.abs(np.asarray(v)-np.asarray(baseline['boxes'][k])))) for k,v in current['boxes'].items()}}
+
+
+def run(replay,baseline,out,bundle=None,historical=None):
     replay,baseline,out=map(Path,(replay,baseline,out));p=json.loads((replay/'prediction.json').read_text(encoding='utf-8'));b=json.loads((baseline/'prediction.json').read_text(encoding='utf-8'))
     d=np.load(replay/'ronin-xy.npy');t=d[:,0]-.5;raw=d[:,1:3];angle=np.radians(p['rot_deg']);R=np.array([[np.cos(angle),np.sin(angle)],[-np.sin(angle),np.cos(angle)]])
     Q=raw@R;Q-=Q[0]-np.array(p['start_anchored_at']);walk=np.zeros(len(t),bool)
@@ -34,9 +40,12 @@ def run(replay,baseline,out,bundle=None):
         finally:M._constraint_search=original
         checks[label+'|'+policy]={'status':r['status'],'bounds':options,'score':M.score_instances(r['boxes'],truth),'boxes':{k:np.asarray(v).tolist() for k,v in r['boxes'].items()}}
     prod=M.score_instances({k+'#0':v for k,v in p['boxes'].items()},truth)
-    result={'production_status':p['status'],'production_score':prod,
-        'previous_verified_rotation_deg':b['rot_deg'],'current_rotation_deg':p['rot_deg'],
-        'max_coordinate_delta_m':{k:float(np.max(np.abs(np.asarray(v)-np.asarray(b['boxes'][k])))) for k,v in p['boxes'].items()},
+    comparisons={'production_regression':baseline_comparison(p,b,'005_verified_raw_replay',baseline/'prediction.json')}
+    if historical:
+        h=Path(historical);snapshot=json.loads(h.read_text(encoding='utf-8'))
+        comparisons['historical_snapshot']=baseline_comparison(p,snapshot,'older_original_session_snapshot',h)
+    result={'schema_version':2,'production_status':p['status'],'production_score':prod,
+        'baseline_comparisons':comparisons,
         'geometric_estimator_diagnostic':checks,
         'diagnostic_scope':'Ideal-coordinate multi-instance solver, conditioned on production registration; not a new raw-IMU pipeline. Never substitutes its real-room diagnostic for production.',
         'raw_bundle_sha256':hashlib.sha256(Path(bundle).read_bytes()).hexdigest() if bundle else None}
@@ -44,4 +53,4 @@ def run(replay,baseline,out,bundle=None):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--replay',required=True);p.add_argument('--baseline',required=True);p.add_argument('--out',required=True);p.add_argument('--bundle');a=p.parse_args();run(a.replay,a.baseline,a.out,a.bundle)
+    p=argparse.ArgumentParser();p.add_argument('--replay',required=True);p.add_argument('--baseline',required=True);p.add_argument('--out',required=True);p.add_argument('--bundle');p.add_argument('--historical');a=p.parse_args();run(a.replay,a.baseline,a.out,a.bundle,a.historical)

@@ -100,7 +100,9 @@ def desk_witness(layout,pools,tolerance=.5):
 
 Only an unobserved desk is moved; all observed contacts and other furniture
 remain fixed. Projected desk/chair overlap uses the existing benchmark rule.
-No witness found is NOT an identifiability certificate.
+    Distances must ignore same-class label switches. Up to eight farthest
+    named-slot proposals per desk are checked; this is a bounded search.
+    No witness found is NOT an identifiability certificate.
 """
     best=None
     for name,box in layout.items():
@@ -114,9 +116,14 @@ No witness found is NOT an identifiability certificate.
         ids=np.flatnonzero(valid)
         if not len(ids):continue
         c=(np.asarray(box)[:2]+np.asarray(box)[2:])/2;distance=np.linalg.norm((bank[ids,:2]+bank[ids,2:])/2-c,axis=1)
-        j=int(np.argmax(distance));gap=float(distance[j])
-        if gap>2*tolerance+1e-8 and (best is None or gap>best['separation_m']):
+        from .permutation_witness import witness
+        for j in np.argsort(-distance)[:8]:
+            gap=float(distance[j])
+            if gap<=2*tolerance+1e-8:break
             alternative={k:np.asarray(v).tolist() for k,v in layout.items()};alternative[name]=bank[ids[j]].tolist()
-            best={'object':name,'separation_m':gap,'conditional_minimax_error_lower_m':gap/2,
-                'layout_a':{k:np.asarray(v).tolist() for k,v in layout.items()},'layout_b':alternative}
+            check=witness(layout,alternative,tolerance);separation=check['matching_invariant_separation_m']
+            if check['certified'] and (best is None or separation>best['separation_m']):
+                best={'object':name,'separation_m':separation,'named_slot_displacement_m':gap,
+                    'same_class_permutation_invariant':True,'conditional_minimax_error_lower_m':separation/2,
+                    'layout_a':{k:np.asarray(v).tolist() for k,v in layout.items()},'layout_b':alternative}
     return best or {'found':False,'meaning':'Bounded search found no witness; does not certify identifiability'}

@@ -139,20 +139,21 @@ def draw_multi_geometry(seed,counts,pools=None):
         'counts':counts,'chair_to_desk_truth_only':association}
 
 
-def prepare_multi(asset_database,house_template,out,n=1000,seed=61109000):
+def prepare_multi(asset_database,house_template,out,n=1000,seed=61109000,start_index=0,split_override=None):
     out=Path(out);out.mkdir(parents=True,exist_ok=True);template=json.loads(Path(house_template).read_text());db=json.loads(Path(asset_database).read_text())
     pools={t:[a for a in db[t] if lo<=min(a['boundingBox']['x'],a['boundingBox']['z'])<=hi and ln<=max(a['boundingBox']['x'],a['boundingBox']['z'])<=hn] for t,(lo,hi,ln,hn) in LIMITS.items()}
     rows=[];patterns={};hashes=set()
     with gzip.open(out/'houses.jsonl.gz','wt',encoding='utf-8') as f:
         for i in range(n):
-            counts={'bed':1,'desk':1+i%2,'cab':1+(i//2)%2,'chair':1+(i//4)%2};sc=draw_multi_geometry(seed+i,counts,pools)
-            W,L=sc['W'],sc['L'];key='multi-'+str(i).zfill(5);poly=[[0,0],[0,L],[W,L],[W,0]]
+            index=start_index+i
+            counts={'bed':1,'desk':1+index%2,'cab':1+(index//2)%2,'chair':1+(index//4)%2};sc=draw_multi_geometry(seed+i,counts,pools)
+            W,L=sc['W'],sc['L'];key='multi-'+str(index).zfill(5);poly=[[0,0],[0,L],[W,L],[W,0]]
             for name,b in sc['gt'].items():
                 assert min(b[:2])>=0 and b[2]<=W and b[3]<=L
                 for other,c in sc['gt'].items():
                     if name!=other:assert overlap(b,c)<1e-8
             digest=hashlib.sha256(json.dumps(sc['gt'],sort_keys=True).encode()).hexdigest();assert digest not in hashes;hashes.add(digest)
-            split='train' if i<700 else 'val' if i<850 else 'test'
+            split=split_override or ('train' if index<700 else 'val' if index<850 else 'test')
             ids={name:ROLES[name.split('#')[0]]+'|2|'+str(j) for j,name in enumerate(sc['gt'])}
             sel={'house_id':key,'source_split':split,'seed':seed+i,'rectangular':True,'room_id':'room|2','room_type':'Bedroom',
                  'floor_polygon_xz':poly,'selected_object_ids':ids,'counts':counts,'chair_to_desk_truth_only':sc['chair_to_desk_truth_only']}
@@ -168,7 +169,8 @@ def prepare_multi(asset_database,house_template,out,n=1000,seed=61109000):
                     'position':{'x':(b[0]+b[2])/2,'y':asset['boundingBox']['y']/2,'z':(b[1]+b[3])/2},'rotation':{'x':0,'y':sc['rotations'][name],'z':0}})
             f.write(json.dumps({'selection':sel,'house':house},separators=(',',':'))+'\n');rows.append(sel)
             pattern='/'.join(str(counts[k]) for k in ['bed','desk','cab','chair']);patterns[pattern]=patterns.get(pattern,0)+1
-    rec={'dataset':'Controlled regular room family v2; variable inventory','n_selected':n,'rows':rows,'seed_start':seed,
+    rec={'dataset':'Controlled regular room family v2; variable inventory','n_selected':n,'rows':rows,'seed_start':seed,'start_index':start_index,
+         'split_override':split_override,'asset_database_sha256':hashlib.sha256(Path(asset_database).read_bytes()).hexdigest(),
          'inventory_patterns_bed_desk_storage_chair':patterns,'unique_geometry_hashes':len(hashes),
          'frozen_before_reconstruction':True,'outcome_filtering':False,'warning':'One bed; each other class 1-2. Generated controls, not external or real houses. No class is reduced to largest object.',
          'houses_gz_sha256':hashlib.sha256((out/'houses.jsonl.gz').read_bytes()).hexdigest()}
@@ -176,4 +178,6 @@ def prepare_multi(asset_database,house_template,out,n=1000,seed=61109000):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--assets',required=True);p.add_argument('--template',required=True);p.add_argument('--out',required=True);p.add_argument('--n',type=int,default=1000);p.add_argument('--multi',action='store_true');a=p.parse_args();r=(prepare_multi if a.multi else prepare)(a.assets,a.template,a.out,a.n);print(json.dumps({k:v for k,v in r.items() if k!='rows'},indent=1))
+    p=argparse.ArgumentParser();p.add_argument('--assets',required=True);p.add_argument('--template',required=True);p.add_argument('--out',required=True);p.add_argument('--n',type=int,default=1000);p.add_argument('--multi',action='store_true');p.add_argument('--seed',type=int);p.add_argument('--start-index',type=int,default=0);p.add_argument('--split');a=p.parse_args()
+    r=prepare_multi(a.assets,a.template,a.out,a.n,a.seed or 61109000,a.start_index,a.split) if a.multi else prepare(a.assets,a.template,a.out,a.n,a.seed or 61108000)
+    print(json.dumps({k:v for k,v in r.items() if k!='rows'},indent=1))

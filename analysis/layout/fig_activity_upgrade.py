@@ -61,7 +61,7 @@ def run(package,audit_tools):
     for ax in axes:ax.spines[['top','right']].set_visible(False)
     fig.text(.09,.94,'原006均值88.34%不表示每间房都错11.66%',fontsize=11)
     fig.text(.09,.865,'固定条件：100%覆盖／14次交互；1000间房，未按成败筛选。',fontsize=8)
-    fig.text(.09,.15,'全中57.4% [54.3,60.4]；F1≥0.9同为57.4%（4–7件且输出数量固定）。',fontsize=7.5)
+    fig.text(.09,.15,'全中57.4% [54.3,60.4]；F1≥0.9同为57.4%（本批无只漏1件输出）。',fontsize=7.5)
     fig.text(.09,.08,'F1均值房间bootstrap95%区间约87.09–89.54%；0分含未出解，全部保留。',fontsize=7.5)
     save(fig,list(axes),'room-distribution')
     candidate=json.loads((package/'candidate-joint/summary.json').read_text(encoding='utf-8'))

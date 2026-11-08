@@ -4,7 +4,7 @@ True positions only measure support after the truth-free decoder returns.
 Marginal matching bounds ignore cross-object compatibility and are therefore
 optimistic proposal ceilings, not guaranteed achievable joint layouts.
 """
-import argparse,concurrent.futures,json,time
+import argparse,concurrent.futures,itertools,json,time
 from pathlib import Path
 import numpy as np
 from scipy.optimize import linear_sum_assignment
@@ -31,11 +31,45 @@ def proposal_bound(pools,truth,tolerance=.5):
     return out
 
 
+def matched_oracle_search(inventory,pools,targets,counts,truth,tolerance=.5,node_budget=20000,solver=None):
+    """Evaluation-only existence witness with same-class injective matching.
+
+    Inventory slot IDs have no privileged correspondence to truth IDs. At
+    most two instances per class means at most eight matching permutations.
+    A witness is a lower bound on recoverable cases; an exhausted finite
+    candidate search is never a continuous-scene impossibility certificate.
+    """
+    solver=solver or M._constraint_search;choices=[]
+    for cls in sorted({M.category(e['id']) for e in inventory}|{M.category(k) for k in truth}):
+        names=[e['id'] for e in inventory if M.category(e['id'])==cls]
+        actual=[k for k in truth if M.category(k)==cls]
+        if len(names)!=len(actual):return {'all_hit':False,'status':'inventory_truth_count_mismatch','finite_search_complete':True,'search_nodes':0}
+        choices.append([dict(zip(names,perm)) for perm in itertools.permutations(actual)])
+    nodes=0;attempts=0;nonempty=0;exhausted=False
+    for groups in itertools.product(*choices):
+        matching={k:v for group in groups for k,v in group.items()};restricted={};attempts+=1
+        for name,(boxes,masks,energy) in pools.items():
+            target=np.asarray(truth[matching[name]]);centre=(target[:2]+target[2:])/2
+            keep=np.linalg.norm((boxes[:,:2]+boxes[:,2:])/2-centre,axis=1)<=tolerance
+            restricted[name]=(boxes[keep],masks[keep],energy[keep])
+        if not all(len(v[0]) for v in restricted.values()):continue
+        nonempty+=1
+        if nodes>=node_budget:exhausted=True;break
+        result=solver(inventory,restricted,targets,counts,node_limit=node_budget-nodes);nodes+=result.get('search_nodes',0)
+        if result['status']=='ok' and M.score_instances(result['boxes'],truth,tolerance)['all_instances_hit']:
+            return {'all_hit':True,'status':'witness_found','matching':matching,'permutations_tried':attempts,
+                'search_nodes':nodes,'finite_search_complete':False,'interpretation':'Evaluation-only lower-bound witness; not a deployable accuracy'}
+        if result['status']=='search_budget_exhausted':exhausted=True;break
+    return {'all_hit':False,'status':'search_budget_exhausted' if exhausted else ('finite_joint_conflict' if nonempty else 'no_nearby_injective_assignment'),
+        'permutations_tried':attempts,'search_nodes':nodes,'finite_search_complete':not exhausted,
+        'interpretation':'Finite retained proposals only; unresolved or absent witness does not prove information-theoretic impossibility'}
+
+
 def one(task):
     native,out,observations=map(Path,task);sc=M.load_native(native)
     old=json.loads(observations.read_text(encoding='utf-8'));row=next(r for r in old['rows'] if r['method']=='generic' and r['coverage']==1 and r['visits']==14)
     ep=coverage_route(sc);ratio=len(ep['reachable_ids'])/len(ep['free_ids']);path=survey_prefixes(ep,[1/ratio])[0]['path']
-    cache={};captured={};oracle_joint={};original=M._constraint_search
+    cache={};captured={};oracle_joint={};oracle_legacy={};original=M._constraint_search
     def observe(inventory,pools,targets,counts):
         captured.update({k:v[0].copy() for k,v in pools.items()})
         # Evaluation-only existence check: constrain each known-size inventory
@@ -48,8 +82,9 @@ def one(task):
             restricted[name]=(boxes[keep],masks[keep],energy[keep])
         if all(len(v[0]) for v in restricted.values()):
             check=original(inventory,restricted,targets,counts)
-            oracle_joint.update(status=check['status'],all_hit=M.score_instances(check['boxes'],sc['gt'])['all_instances_hit'])
-        else:oracle_joint.update(status='no_oracle_nearby_proposal',all_hit=False)
+            oracle_legacy.update(status=check['status'],all_hit=M.score_instances(check['boxes'],sc['gt'])['all_instances_hit'])
+        else:oracle_legacy.update(status='no_oracle_nearby_proposal',all_hit=False)
+        oracle_joint.update(matched_oracle_search(inventory,pools,targets,counts,sc['gt'],solver=original))
         return original(inventory,pools,targets,counts)
     M._constraint_search=observe
     try:result=M.decode_instances([sc['W'],sc['L']],sc['inventory'],row['events'],path,proposal_cache=cache)
@@ -60,6 +95,7 @@ def one(task):
         'same_output':result['status']==row['status'] and all(np.array_equal(np.asarray(v),np.asarray(row['boxes'].get(k))) for k,v in result['boxes'].items()),
         'full_proposals':proposal_bound(full,sc['gt']),'retained_proposals':proposal_bound(captured,sc['gt']),
         'oracle_joint':oracle_joint,
+        'oracle_legacy_identity_bound':oracle_legacy,
         'counts_full':{k:len(v) for k,v in full.items()},'counts_retained':{k:len(v) for k,v in captured.items()}}
     out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(record),encoding='utf-8');return record
 
