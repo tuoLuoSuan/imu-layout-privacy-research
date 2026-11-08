@@ -1,0 +1,2700 @@
+{
+ "hit_m": 0.5,
+ "tol": 0.1,
+ "ks": [
+  1,
+  5,
+  10,
+  20
+ ],
+ "rows": [
+  {
+   "scene": "FloorPlan301",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.6533118706843382,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 0.9989044570830441,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.35305261611938477,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.6533118706843382,
+     "hit": false,
+     "width": 2.540869063387327
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8502688359848357
+    },
+    "cab": {
+     "err": 0.35305261611938477,
+     "hit": true,
+     "width": 0.8659844000932712
+    },
+    "desk": {
+     "err": 0.9989044570830441,
+     "hit": false,
+     "width": 1.576089657391904
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan301",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.3950175590063565,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9989044570830441,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.35305261611938477,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.302334054663416,
+     "hit": false,
+     "width": 2.540869063387327
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8502688359848357
+    },
+    "cab": {
+     "err": 0.35305261611938477,
+     "hit": true,
+     "width": 0.8659844000932712
+    },
+    "desk": {
+     "err": 0.9989044570830441,
+     "hit": false,
+     "width": 1.576089657391904
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan301",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 10,
+   "spread": 1.8206106716293278,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9599570809130791,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.20305261611938474,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.1682854591371097,
+     "hit": false,
+     "width": 2.540869063387327
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8502688359848357
+    },
+    "cab": {
+     "err": 0.35305261611938477,
+     "hit": true,
+     "width": 0.8659844000932712
+    },
+    "desk": {
+     "err": 0.9989044570830441,
+     "hit": false,
+     "width": 1.576089657391904
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan301",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 20,
+   "spread": 1.8329274992892086,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.3939599534121514,
+     "hit": true
+    },
+    "cab": {
+     "best_err": 0.20305261611938474,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.1682854591371097,
+     "hit": false,
+     "width": 2.540869063387327
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8502688359848357
+    },
+    "cab": {
+     "err": 0.20305261611938474,
+     "hit": true,
+     "width": 0.8659844000932712
+    },
+    "desk": {
+     "err": 0.9599570809130791,
+     "hit": false,
+     "width": 1.576089657391904
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan302",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9326277835976208,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.005909276008605913,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.4301325694609845
+    },
+    "cab": {
+     "err": 0.005909276008605913,
+     "hit": true,
+     "width": 0.7473285188283657
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8203745820982408
+    },
+    "desk": {
+     "err": 0.9326277835976208,
+     "hit": false,
+     "width": 2.105924731648246
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan302",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 0.75,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9326277835976208,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.005909276008605913,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.25,
+     "hit": true,
+     "width": 2.4301325694609845
+    },
+    "cab": {
+     "err": 0.005909276008605913,
+     "hit": true,
+     "width": 0.7473285188283657
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8203745820982408
+    },
+    "desk": {
+     "err": 0.9326277835976208,
+     "hit": false,
+     "width": 2.105924731648246
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan302",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 8,
+   "spread": 0.7794228634059948,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9326277835976208,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.005909276008605913,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.25,
+     "hit": true,
+     "width": 2.4301325694609845
+    },
+    "cab": {
+     "err": 0.005909276008605913,
+     "hit": true,
+     "width": 0.7473285188283657
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8203745820982408
+    },
+    "desk": {
+     "err": 0.9326277835976208,
+     "hit": false,
+     "width": 2.105924731648246
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan302",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 16,
+   "spread": 1.8254614124680126,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9326277835976208,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.005909276008605913,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.25,
+     "hit": true,
+     "width": 2.4301325694609845
+    },
+    "cab": {
+     "err": 0.005909276008605913,
+     "hit": true,
+     "width": 0.7473285188283657
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8203745820982408
+    },
+    "desk": {
+     "err": 0.9326277835976208,
+     "hit": false,
+     "width": 2.105924731648246
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan303",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.982977823851829,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 0.3289244824079046,
+     "hit": true
+    },
+    "cab": {
+     "best_err": 0.8038291931152344,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.8038291931152344,
+     "hit": false,
+     "width": 1.079479699081704
+    },
+    "bed": {
+     "err": 1.982977823851829,
+     "hit": false,
+     "width": 2.186815142552039
+    },
+    "desk": {
+     "err": 0.3289244824079046,
+     "hit": true,
+     "width": 1.2487384741359029
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.756702495115863
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan303",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.9189062118530273,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 0.3289244824079046,
+     "hit": true
+    },
+    "cab": {
+     "best_err": 0.8038291931152344,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.8038291931152344,
+     "hit": false,
+     "width": 1.079479699081704
+    },
+    "bed": {
+     "err": 1.9189062118530273,
+     "hit": false,
+     "width": 2.186815142552039
+    },
+    "desk": {
+     "err": 0.3289244824079046,
+     "hit": true,
+     "width": 1.2487384741359029
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.756702495115863
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan303",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 10,
+   "spread": 2.0602672277857876,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.3289244824079046,
+     "hit": true
+    },
+    "cab": {
+     "best_err": 0.8038291931152344,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.8038291931152344,
+     "hit": false,
+     "width": 1.079479699081704
+    },
+    "bed": {
+     "err": 1.9189062118530273,
+     "hit": false,
+     "width": 2.186815142552039
+    },
+    "desk": {
+     "err": 0.3289244824079046,
+     "hit": true,
+     "width": 1.2487384741359029
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.756702495115863
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan303",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 14,
+   "spread": 2.063978376048813,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.3289244824079046,
+     "hit": true
+    },
+    "cab": {
+     "best_err": 0.8038291931152344,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.8038291931152344,
+     "hit": false,
+     "width": 1.079479699081704
+    },
+    "bed": {
+     "err": 1.3568715948622654,
+     "hit": false,
+     "width": 2.186815142552039
+    },
+    "desk": {
+     "err": 0.3289244824079046,
+     "hit": true,
+     "width": 1.2487384741359029
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.756702495115863
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan304",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 2.1648705709606157,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 0.8398862891399368,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 2.455974181379493,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 2.1648705709606157,
+     "hit": false,
+     "width": 2.772178897777841
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.0308707792523213
+    },
+    "desk": {
+     "err": 0.8398862891399368,
+     "hit": false,
+     "width": 1.7559383915467723
+    },
+    "cab": {
+     "err": 2.455974181379493,
+     "hit": false,
+     "width": 1.5665076827380229
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan304",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.4717947087467522,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 0.8398862891399368,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 2.455974181379493,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.7822519818625928,
+     "hit": false,
+     "width": 2.772178897777841
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.0308707792523213
+    },
+    "desk": {
+     "err": 0.8398862891399368,
+     "hit": false,
+     "width": 1.7559383915467723
+    },
+    "cab": {
+     "err": 2.455974181379493,
+     "hit": false,
+     "width": 1.5665076827380229
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan304",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 9,
+   "spread": 2.3193287434278145,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.8398862891399368,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 2.455974181379493,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.4717947087467522,
+     "hit": false,
+     "width": 2.772178897777841
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.0308707792523213
+    },
+    "desk": {
+     "err": 0.8398862891399368,
+     "hit": false,
+     "width": 1.7559383915467723
+    },
+    "cab": {
+     "err": 2.455974181379493,
+     "hit": false,
+     "width": 1.5665076827380229
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan304",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 9,
+   "spread": 2.3193287434278145,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.8398862891399368,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 2.03924560546875,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.4717947087467522,
+     "hit": false,
+     "width": 2.772178897777841
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.0308707792523213
+    },
+    "desk": {
+     "err": 0.8398862891399368,
+     "hit": false,
+     "width": 1.7559383915467723
+    },
+    "cab": {
+     "err": 2.455974181379493,
+     "hit": false,
+     "width": 1.5665076827380229
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan305",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.4889216488369577,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 1.3236723413619431,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23554253578186035,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.4889216488369577,
+     "hit": false,
+     "width": 2.5767836105326776
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8094953003858207
+    },
+    "cab": {
+     "err": 0.23554253578186035,
+     "hit": true,
+     "width": 1.2797076269790701
+    },
+    "desk": {
+     "err": 1.3236723413619431,
+     "hit": false,
+     "width": 1.4399825966984001
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan305",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 3,
+   "spread": 1.1386430162672583,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.3236723413619431,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23554253578186035,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.3487764075022894,
+     "hit": false,
+     "width": 2.5767836105326776
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8094953003858207
+    },
+    "cab": {
+     "err": 0.23554253578186035,
+     "hit": true,
+     "width": 1.2797076269790701
+    },
+    "desk": {
+     "err": 1.3236723413619431,
+     "hit": false,
+     "width": 1.4399825966984001
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan305",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 7,
+   "spread": 1.4889216488369577,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.3236723413619431,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23554253578186035,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.3487764075022894,
+     "hit": false,
+     "width": 2.5767836105326776
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8094953003858207
+    },
+    "cab": {
+     "err": 0.23554253578186035,
+     "hit": true,
+     "width": 1.2797076269790701
+    },
+    "desk": {
+     "err": 2.9374328104273952,
+     "hit": false,
+     "width": 1.4399825966984001
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan305",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 10,
+   "spread": 1.8101741185108793,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.3236723413619431,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23554253578186035,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.5767836105326776
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8094953003858207
+    },
+    "cab": {
+     "err": 0.23554253578186035,
+     "hit": true,
+     "width": 1.2797076269790701
+    },
+    "desk": {
+     "err": 2.9374328104273952,
+     "hit": false,
+     "width": 1.4399825966984001
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan306",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9176658126373232,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.4900001287460327,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "desk": {
+     "err": 0.9176658126373232,
+     "hit": false,
+     "width": 1.5811234110851162
+    },
+    "cab": {
+     "err": 0.4900001287460327,
+     "hit": true,
+     "width": 0.5514590740203857
+    },
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.6531348221965385
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540138093565835
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan306",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.0,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9176658126373232,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.4900001287460327,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "desk": {
+     "err": 0.9176658126373232,
+     "hit": false,
+     "width": 1.5811234110851162
+    },
+    "cab": {
+     "err": 0.4900001287460327,
+     "hit": true,
+     "width": 0.5514590740203857
+    },
+    "bed": {
+     "err": 0.0,
+     "hit": true,
+     "width": 2.6531348221965385
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540138093565835
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan306",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 10,
+   "spread": 2.1975937836496535,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.7816439073200111,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.3400001287460327,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "desk": {
+     "err": 0.9176658126373232,
+     "hit": false,
+     "width": 1.5811234110851162
+    },
+    "cab": {
+     "err": 0.4900001287460327,
+     "hit": true,
+     "width": 0.5514590740203857
+    },
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.6531348221965385
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540138093565835
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan306",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 20,
+   "spread": 2.2078085147801203,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.6517851271835445,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.19000012874603273,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "desk": {
+     "err": 0.7816439073200111,
+     "hit": false,
+     "width": 1.5811234110851162
+    },
+    "cab": {
+     "err": 0.3400001287460327,
+     "hit": true,
+     "width": 0.5514590740203857
+    },
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.6531348221965385
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540138093565835
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan307",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.6008978318205274,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.1876218318939209,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.787437440900286
+    },
+    "cab": {
+     "err": 0.1876218318939209,
+     "hit": true,
+     "width": 1.5587635495606478
+    },
+    "desk": {
+     "err": 1.6008978318205274,
+     "hit": false,
+     "width": 1.7124801688266984
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7607711832837106
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan307",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.6258870020164007,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.6008978318205274,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.1876218318939209,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.25,
+     "hit": true,
+     "width": 2.787437440900286
+    },
+    "cab": {
+     "err": 0.1876218318939209,
+     "hit": true,
+     "width": 1.5587635495606478
+    },
+    "desk": {
+     "err": 1.6008978318205274,
+     "hit": false,
+     "width": 1.7124801688266984
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7607711832837106
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan307",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 8,
+   "spread": 1.6258870020164007,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.6008978318205274,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.1876218318939209,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.787437440900286
+    },
+    "cab": {
+     "err": 0.1876218318939209,
+     "hit": true,
+     "width": 1.5587635495606478
+    },
+    "desk": {
+     "err": 1.6008978318205274,
+     "hit": false,
+     "width": 1.7124801688266984
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7607711832837106
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan307",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 12,
+   "spread": 1.9559087827290336,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.6008978318205274,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.1876218318939209,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.4053859563156237,
+     "hit": false,
+     "width": 2.787437440900286
+    },
+    "cab": {
+     "err": 0.1876218318939209,
+     "hit": true,
+     "width": 1.5587635495606478
+    },
+    "desk": {
+     "err": 4.416177762932149,
+     "hit": false,
+     "width": 1.7124801688266984
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7607711832837106
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan308",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.4100634550793836,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 4.399170611975175,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 1.319700539112091,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.4100634550793836,
+     "hit": false,
+     "width": 3.017443055551457
+    },
+    "desk": {
+     "err": 4.399170611975175,
+     "hit": false,
+     "width": 1.5523200083229733
+    },
+    "cab": {
+     "err": 1.319700539112091,
+     "hit": false,
+     "width": 0.9092109576895251
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8184698817203364
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan308",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.4100634550793836,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 4.399170611975175,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 1.319700539112091,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.7185731513844533,
+     "hit": false,
+     "width": 3.017443055551457
+    },
+    "desk": {
+     "err": 4.399170611975175,
+     "hit": false,
+     "width": 1.5523200083229733
+    },
+    "cab": {
+     "err": 1.319700539112091,
+     "hit": false,
+     "width": 0.9092109576895251
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8184698817203364
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan308",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 9,
+   "spread": 1.6304558601829582,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 4.399170611975175,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 1.319700539112091,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.4100634550793836,
+     "hit": false,
+     "width": 3.017443055551457
+    },
+    "desk": {
+     "err": 4.399170611975175,
+     "hit": false,
+     "width": 1.5523200083229733
+    },
+    "cab": {
+     "err": 1.319700539112091,
+     "hit": false,
+     "width": 0.9092109576895251
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8184698817203364
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan308",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 9,
+   "spread": 1.6304558601829582,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 2.564971392989758,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 1.319700539112091,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.4100634550793836,
+     "hit": false,
+     "width": 3.017443055551457
+    },
+    "desk": {
+     "err": 4.399170611975175,
+     "hit": false,
+     "width": 1.5523200083229733
+    },
+    "cab": {
+     "err": 1.319700539112091,
+     "hit": false,
+     "width": 0.9092109576895251
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.8184698817203364
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan310",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9247279961324129,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.5066509246826172,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.857939667444139
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540158324053121
+    },
+    "cab": {
+     "err": 0.5066509246826172,
+     "hit": false,
+     "width": 0.5817462216722947
+    },
+    "desk": {
+     "err": 0.9247279961324129,
+     "hit": false,
+     "width": 2.0487430941387803
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan310",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.0,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9247279961324129,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.5066509246826172,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.0,
+     "hit": true,
+     "width": 2.857939667444139
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540158324053121
+    },
+    "cab": {
+     "err": 0.5066509246826172,
+     "hit": false,
+     "width": 0.5817462216722947
+    },
+    "desk": {
+     "err": 0.9247279961324129,
+     "hit": false,
+     "width": 2.0487430941387803
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan310",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 10,
+   "spread": 2.6159305333774214,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.9247279961324129,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.5066509246826172,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.0,
+     "hit": true,
+     "width": 2.857939667444139
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540158324053121
+    },
+    "cab": {
+     "err": 0.5066509246826172,
+     "hit": false,
+     "width": 0.5817462216722947
+    },
+    "desk": {
+     "err": 0.9247279961324129,
+     "hit": false,
+     "width": 2.0487430941387803
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan310",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 10,
+   "spread": 2.6159305333774214,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.4373192331207771,
+     "hit": true
+    },
+    "cab": {
+     "best_err": 0.5066509246826172,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.0,
+     "hit": true,
+     "width": 2.857939667444139
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540158324053121
+    },
+    "cab": {
+     "err": 0.5066509246826172,
+     "hit": false,
+     "width": 0.5817462216722947
+    },
+    "desk": {
+     "err": 0.9247279961324129,
+     "hit": false,
+     "width": 2.0487430941387803
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan312",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.1774492242274586,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 1.7023640396923096,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.8814179400242627,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540063915112457
+    },
+    "bed": {
+     "err": 1.1774492242274586,
+     "hit": false,
+     "width": 2.502558445884396
+    },
+    "cab": {
+     "err": 0.8814179400242627,
+     "hit": false,
+     "width": 1.31672698904877
+    },
+    "desk": {
+     "err": 1.7023640396923096,
+     "hit": false,
+     "width": 1.4697988595001539
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan312",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.1774492242274586,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 1.7023640396923096,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.8814179400242627,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540063915112457
+    },
+    "bed": {
+     "err": 1.47666811119569,
+     "hit": false,
+     "width": 2.502558445884396
+    },
+    "cab": {
+     "err": 0.8814179400242627,
+     "hit": false,
+     "width": 1.31672698904877
+    },
+    "desk": {
+     "err": 1.7023640396923096,
+     "hit": false,
+     "width": 1.4697988595001539
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan312",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 10,
+   "spread": 1.4039115688418717,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.6524558095250665,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.7512393626860563,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540063915112457
+    },
+    "bed": {
+     "err": 1.1774492242274586,
+     "hit": false,
+     "width": 2.502558445884396
+    },
+    "cab": {
+     "err": 0.8814179400242627,
+     "hit": false,
+     "width": 1.31672698904877
+    },
+    "desk": {
+     "err": 1.7023640396923096,
+     "hit": false,
+     "width": 1.4697988595001539
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan312",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 18,
+   "spread": 1.4198477711107083,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 0.3454067767847157,
+     "hit": true
+    },
+    "cab": {
+     "best_err": 0.7512393626860563,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9540063915112457
+    },
+    "bed": {
+     "err": 1.1774492242274586,
+     "hit": false,
+     "width": 2.502558445884396
+    },
+    "cab": {
+     "err": 0.8814179400242627,
+     "hit": false,
+     "width": 1.31672698904877
+    },
+    "desk": {
+     "err": 1.7023640396923096,
+     "hit": false,
+     "width": 1.4697988595001539
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan313",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 1.6947868227701037,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 2.9538390975457567,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.5316160917282104,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.6947868227701037,
+     "hit": false,
+     "width": 2.5361216474841948
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9867791065637407
+    },
+    "cab": {
+     "err": 0.5316160917282104,
+     "hit": false,
+     "width": 0.6171936707410859
+    },
+    "desk": {
+     "err": 2.9538390975457567,
+     "hit": false,
+     "width": 2.143874942006087
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan313",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.4336820020524796,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 2.9538390975457567,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.5316160917282104,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 1.3436681446730834,
+     "hit": false,
+     "width": 2.5361216474841948
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9867791065637407
+    },
+    "cab": {
+     "err": 0.5316160917282104,
+     "hit": false,
+     "width": 0.6171936707410859
+    },
+    "desk": {
+     "err": 2.9538390975457567,
+     "hit": false,
+     "width": 2.143874942006087
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan313",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 9,
+   "spread": 2.046743918095559,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 2.9538390975457567,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.5316160917282104,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.5361216474841948
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9867791065637407
+    },
+    "cab": {
+     "err": 0.5316160917282104,
+     "hit": false,
+     "width": 0.6171936707410859
+    },
+    "desk": {
+     "err": 2.9538390975457567,
+     "hit": false,
+     "width": 2.143874942006087
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan313",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 9,
+   "spread": 2.046743918095559,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 2.9538390975457567,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.5316160917282104,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.5361216474841948
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9867791065637407
+    },
+    "cab": {
+     "err": 0.5316160917282104,
+     "hit": false,
+     "width": 0.6171936707410859
+    },
+    "desk": {
+     "err": 2.9538390975457567,
+     "hit": false,
+     "width": 2.143874942006087
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan316",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 0.5,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.5752001649655036,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 4.342220067977905,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.5,
+     "hit": true,
+     "width": 2.8269105052474077
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.1703583032100358
+    },
+    "cab": {
+     "err": 4.342220067977905,
+     "hit": false,
+     "width": 0.543164990290913
+    },
+    "desk": {
+     "err": 1.5752001649655036,
+     "hit": false,
+     "width": 3.1741105469301423
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan316",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 0.5,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.4290844971705188,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 4.192220067977905,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.25,
+     "hit": true,
+     "width": 2.8269105052474077
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.1703583032100358
+    },
+    "cab": {
+     "err": 4.342220067977905,
+     "hit": false,
+     "width": 0.543164990290913
+    },
+    "desk": {
+     "err": 1.5752001649655036,
+     "hit": false,
+     "width": 3.1741105469301423
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan316",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 7,
+   "spread": 0.5,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.283865039791519,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 1.741080816693238,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.25,
+     "hit": true,
+     "width": 2.8269105052474077
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.1703583032100358
+    },
+    "cab": {
+     "err": 4.192220067977905,
+     "hit": false,
+     "width": 0.543164990290913
+    },
+    "desk": {
+     "err": 1.4290844971705188,
+     "hit": false,
+     "width": 3.1741105469301423
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan316",
+   "K": 20,
+   "n_cands": 15,
+   "cluster": 8,
+   "spread": 0.7794228634059948,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 1.283865039791519,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 1.5937252732988956,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 0.25,
+     "hit": true,
+     "width": 2.8269105052474077
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 1.1703583032100358
+    },
+    "cab": {
+     "err": 1.741080816693238,
+     "hit": false,
+     "width": 0.543164990290913
+    },
+    "desk": {
+     "err": 1.5752001649655036,
+     "hit": false,
+     "width": 3.1741105469301423
+    }
+   },
+   "rep_wall": "down"
+  },
+  {
+   "scene": "FloorPlan318",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 2.1103645518676855,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 3.7402722932800003,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.6017913818359375,
+     "hit": false
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.6017913818359375,
+     "hit": false,
+     "width": 0.5711287139999017
+    },
+    "desk": {
+     "err": 3.7402722932800003,
+     "hit": false,
+     "width": 2.1439339399761788
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9525641263552028
+    },
+    "bed": {
+     "err": 2.1103645518676855,
+     "hit": false,
+     "width": 2.716386215113078
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan318",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.209641330219365,
+   "naive": {
+    "bed": {
+     "best_err": 2.1103645518676855,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 3.6043517028903733,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.45179138183593714,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.6017913818359375,
+     "hit": false,
+     "width": 0.5711287139999017
+    },
+    "desk": {
+     "err": 3.7402722932800003,
+     "hit": false,
+     "width": 2.1439339399761788
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9525641263552028
+    },
+    "bed": {
+     "err": 2.492980539104855,
+     "hit": false,
+     "width": 2.716386215113078
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan318",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 10,
+   "spread": 3.0386436258659426,
+   "naive": {
+    "bed": {
+     "best_err": 2.1103645518676855,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 3.469591556419781,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.3017913818359377,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.3017913818359377,
+     "hit": true,
+     "width": 0.5711287139999017
+    },
+    "desk": {
+     "err": 3.469591556419781,
+     "hit": false,
+     "width": 2.1439339399761788
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9525641263552028
+    },
+    "bed": {
+     "err": 2.492980539104855,
+     "hit": false,
+     "width": 2.716386215113078
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan318",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 13,
+   "spread": 3.0386436258659426,
+   "naive": {
+    "bed": {
+     "best_err": 0.25,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 2.097510836588258,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.3017913818359377,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "cab": {
+     "err": 0.3017913818359377,
+     "hit": true,
+     "width": 0.5711287139999017
+    },
+    "desk": {
+     "err": 3.469591556419781,
+     "hit": false,
+     "width": 2.1439339399761788
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.9525641263552028
+    },
+    "bed": {
+     "err": 2.492980539104855,
+     "hit": false,
+     "width": 2.716386215113078
+    }
+   },
+   "rep_wall": "right"
+  },
+  {
+   "scene": "FloorPlan320",
+   "K": 1,
+   "n_cands": 1,
+   "cluster": 1,
+   "spread": 0.0,
+   "naive": {
+    "bed": {
+     "best_err": 2.0799925282390053,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 3.3878346130295487,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23343253135681152,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 2.0799925282390053,
+     "hit": false,
+     "width": 2.330634048403774
+    },
+    "cab": {
+     "err": 0.23343253135681152,
+     "hit": true,
+     "width": 1.1683412963403192
+    },
+    "desk": {
+     "err": 3.3878346130295487,
+     "hit": false,
+     "width": 1.7196712814995108
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7034973250800746
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan320",
+   "K": 5,
+   "n_cands": 5,
+   "cluster": 5,
+   "spread": 1.0,
+   "naive": {
+    "bed": {
+     "best_err": 2.0190019607543945,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 3.3878346130295487,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23343253135681152,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 2.0190019607543945,
+     "hit": false,
+     "width": 2.330634048403774
+    },
+    "cab": {
+     "err": 0.23343253135681152,
+     "hit": true,
+     "width": 1.1683412963403192
+    },
+    "desk": {
+     "err": 3.3878346130295487,
+     "hit": false,
+     "width": 1.7196712814995108
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7034973250800746
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan320",
+   "K": 10,
+   "n_cands": 10,
+   "cluster": 10,
+   "spread": 2.1347567588649157,
+   "naive": {
+    "bed": {
+     "best_err": 1.1307888743650814,
+     "hit": false
+    },
+    "desk": {
+     "best_err": 3.3878346130295487,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23343253135681152,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 2.0799925282390053,
+     "hit": false,
+     "width": 2.330634048403774
+    },
+    "cab": {
+     "err": 0.23343253135681152,
+     "hit": true,
+     "width": 1.1683412963403192
+    },
+    "desk": {
+     "err": 3.3878346130295487,
+     "hit": false,
+     "width": 1.7196712814995108
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7034973250800746
+    }
+   },
+   "rep_wall": "left"
+  },
+  {
+   "scene": "FloorPlan320",
+   "K": 20,
+   "n_cands": 20,
+   "cluster": 20,
+   "spread": 2.8449937716943214,
+   "naive": {
+    "bed": {
+     "best_err": 0.0,
+     "hit": true
+    },
+    "desk": {
+     "best_err": 3.3878346130295487,
+     "hit": false
+    },
+    "cab": {
+     "best_err": 0.23343253135681152,
+     "hit": true
+    },
+    "chair": {
+     "best_err": 0.0,
+     "hit": true
+    }
+   },
+   "filtered": {
+    "bed": {
+     "err": 2.0799925282390053,
+     "hit": false,
+     "width": 2.330634048403774
+    },
+    "cab": {
+     "err": 0.23343253135681152,
+     "hit": true,
+     "width": 1.1683412963403192
+    },
+    "desk": {
+     "err": 3.3878346130295487,
+     "hit": false,
+     "width": 1.7196712814995108
+    },
+    "chair": {
+     "err": 0.0,
+     "hit": true,
+     "width": 0.7034973250800746
+    }
+   },
+   "rep_wall": "left"
+  }
+ ]
+}
