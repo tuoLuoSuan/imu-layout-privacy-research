@@ -87,7 +87,7 @@ def main(out):
 
     ax = axes[2]
     req = EX.requirement_report(str(HERE.parents[1] /
-        "output/research-sync/2026-11-08-activity-frontier-001/frontier-development.json"))
+        "output/research-sync/2026-11-08-activity-frontier-001/frontier-development.json"))  # padding=0.20
     classes = [o for o in OBJECTS if o in req["classes"]]
     values, notes = [], []
     for obj in classes:

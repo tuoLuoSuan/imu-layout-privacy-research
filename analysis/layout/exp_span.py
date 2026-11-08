@@ -248,14 +248,14 @@ def span_sweep(out, seed=SEED, spans=(0.0, 0.25, 0.5, 0.75, 1.0, 1.5), copies=3)
     return record
 
 
-def requirement_report(frontier_path, delta=TOL):
+def requirement_report(frontier_path, delta=TOL, padding=PAD):
     """Achieved anchor span versus the span that the closed form says is needed."""
     scenes = {s["scene"]: s for s in _scenes()}
     data = json.loads(Path(frontier_path).read_text(encoding="utf-8"))
     rows = [r for r in data["rows"] if r["arm"] == "TA-U"]
     top = max(r["budget_m"] for r in rows)
     rows = [r for r in rows if r["budget_m"] == top]
-    out = {"budget_m": top, "tolerance_m": delta, "padding_m": PAD, "classes": {}}
+    out = {"budget_m": top, "tolerance_m": delta, "padding_m": padding, "classes": {}}
     for obj in OBJECTS:
         achieved, required, met, n_axis = [], [], 0, 0
         met_positive, n_positive = 0, 0
@@ -268,7 +268,7 @@ def requirement_report(frontier_path, delta=TOL):
                 continue
             box = np.asarray(scene["gt"][obj], float)
             extent = box[2:] - box[:2]
-            need_axis = np.maximum(0.0, extent + 2 * PAD - 2 * delta)
+            need_axis = np.maximum(0.0, extent + 2 * padding - 2 * delta)
             got = np.asarray(spans, float)
             for axis in (0, 1):
                 achieved.append(float(got[axis]))
