@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspa
 
 import numpy as np
 
-from analysis.layout import activity_surface as AS
+from analysis.layout import activity_surface as AS, paths
 
 COVERAGES = (0.85, 0.88, 0.90, 0.92, 0.94, 0.95, 0.96, 0.98, 1.00)
 VISITS = (2, 3, 4, 5, 6)
@@ -113,7 +113,7 @@ def frontier(grid, rooms_count, target=0.8):
 
 
 def run(output, workdir=None):
-    workdir = workdir or os.path.join(os.path.dirname(output), "_fine_work")
+    workdir = workdir or os.path.join(paths.DATA, "layout-recon", "threshold-fine-raw")
     os.makedirs(workdir, exist_ok=True)
     raw = os.path.join(workdir, "activity-surface-fine-raw.json")
     AS.COVERAGES = COVERAGES
