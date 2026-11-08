@@ -87,6 +87,7 @@
     "analysis/layout/fig_desk.py",
     "analysis/layout/fig_evidence.py",
     "analysis/layout/fig_filter.py",
+    "analysis/layout/fig_frontier3d.py",
     "analysis/layout/fig_ident.py",
     "analysis/layout/fig_leak.py",
     "analysis/layout/fig_modes.py",
