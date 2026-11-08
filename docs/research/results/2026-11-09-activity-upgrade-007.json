@@ -1,0 +1,1428 @@
+{
+ "date_local": "2026-11-09",
+ "n_rooms": 1000,
+ "cells": [
+  {
+   "coverage": 0.0,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.046330952380952375,
+   "f1_bootstrap_ci": [
+    0.04124029761904765,
+    0.05140976190476195
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 1000,
+   "executable": 1000,
+   "walk_m_median": 0.0,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 0.2,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.10645238095238095,
+   "f1_bootstrap_ci": [
+    0.09808559523809562,
+    0.11506904761904797
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 1000,
+   "executable": 1000,
+   "walk_m_median": 4.977334655076259,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 0.2,
+   "visits": 2,
+   "n_rooms": 1000,
+   "f1": 0.17530714285714286,
+   "f1_bootstrap_ci": [
+    0.16514041666666662,
+    0.1852098809523806
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 999,
+   "executable": 716,
+   "walk_m_median": 4.977334655076259,
+   "distinct_contact_mean": 1.27
+  },
+  {
+   "coverage": 0.2,
+   "visits": 5,
+   "n_rooms": 1000,
+   "f1": 0.18814761904761906,
+   "f1_bootstrap_ci": [
+    0.17736607142857116,
+    0.19857386904761884
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 1000,
+   "executable": 716,
+   "walk_m_median": 4.977334655076259,
+   "distinct_contact_mean": 2.329
+  },
+  {
+   "coverage": 0.2,
+   "visits": 8,
+   "n_rooms": 1000,
+   "f1": 0.18993095238095237,
+   "f1_bootstrap_ci": [
+    0.1791117261904759,
+    0.2006003571428566
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 1000,
+   "executable": 716,
+   "walk_m_median": 4.977334655076259,
+   "distinct_contact_mean": 2.696
+  },
+  {
+   "coverage": 0.2,
+   "visits": 11,
+   "n_rooms": 1000,
+   "f1": 0.1899642857142857,
+   "f1_bootstrap_ci": [
+    0.17917374999999983,
+    0.20064327380952354
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 999,
+   "executable": 716,
+   "walk_m_median": 4.977334655076259,
+   "distinct_contact_mean": 2.79
+  },
+  {
+   "coverage": 0.2,
+   "visits": 14,
+   "n_rooms": 1000,
+   "f1": 0.19044047619047622,
+   "f1_bootstrap_ci": [
+    0.17962583333333298,
+    0.20118142857142804
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 999,
+   "executable": 716,
+   "walk_m_median": 4.977334655076259,
+   "distinct_contact_mean": 2.83
+  },
+  {
+   "coverage": 0.4,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.2628642857142858,
+   "f1_bootstrap_ci": [
+    0.24885458333333219,
+    0.2766743452380945
+   ],
+   "whole_hits": 2,
+   "whole_rate": 0.002,
+   "whole_wilson_ci": [
+    0.000548632102457155,
+    0.007262958889587807
+   ],
+   "output_ok": 1000,
+   "executable": 1000,
+   "walk_m_median": 16.487313392483927,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 0.4,
+   "visits": 2,
+   "n_rooms": 1000,
+   "f1": 0.3559833333333334,
+   "f1_bootstrap_ci": [
+    0.3433164880952376,
+    0.368476785714285
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 990,
+   "executable": 999,
+   "walk_m_median": 16.487313392483927,
+   "distinct_contact_mean": 1.96
+  },
+  {
+   "coverage": 0.4,
+   "visits": 5,
+   "n_rooms": 1000,
+   "f1": 0.3872642857142857,
+   "f1_bootstrap_ci": [
+    0.37490184523809506,
+    0.3991599404761905
+   ],
+   "whole_hits": 1,
+   "whole_rate": 0.001,
+   "whole_wilson_ci": [
+    0.0001765418290572713,
+    0.0056427029601604705
+   ],
+   "output_ok": 991,
+   "executable": 999,
+   "walk_m_median": 16.487313392483927,
+   "distinct_contact_mean": 3.79
+  },
+  {
+   "coverage": 0.4,
+   "visits": 8,
+   "n_rooms": 1000,
+   "f1": 0.4206404761904762,
+   "f1_bootstrap_ci": [
+    0.40812136904761864,
+    0.4327025595238094
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 997,
+   "executable": 999,
+   "walk_m_median": 16.487313392483927,
+   "distinct_contact_mean": 4.929
+  },
+  {
+   "coverage": 0.4,
+   "visits": 11,
+   "n_rooms": 1000,
+   "f1": 0.4230785714285714,
+   "f1_bootstrap_ci": [
+    0.4104642857142856,
+    0.43508815476190443
+   ],
+   "whole_hits": 0,
+   "whole_rate": 0.0,
+   "whole_wilson_ci": [
+    0.0,
+    0.003826898586390522
+   ],
+   "output_ok": 996,
+   "executable": 999,
+   "walk_m_median": 16.487313392483927,
+   "distinct_contact_mean": 5.493
+  },
+  {
+   "coverage": 0.4,
+   "visits": 14,
+   "n_rooms": 1000,
+   "f1": 0.42578809523809524,
+   "f1_bootstrap_ci": [
+    0.41301654761904755,
+    0.43802148809523794
+   ],
+   "whole_hits": 1,
+   "whole_rate": 0.001,
+   "whole_wilson_ci": [
+    0.0001765418290572713,
+    0.0056427029601604705
+   ],
+   "output_ok": 996,
+   "executable": 999,
+   "walk_m_median": 16.487313392483927,
+   "distinct_contact_mean": 5.815
+  },
+  {
+   "coverage": 0.6,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.38205714285714293,
+   "f1_bootstrap_ci": [
+    0.3670785714285709,
+    0.39711964285714235
+   ],
+   "whole_hits": 39,
+   "whole_rate": 0.039,
+   "whole_wilson_ci": [
+    0.028658799196088068,
+    0.052869601300564
+   ],
+   "output_ok": 1000,
+   "executable": 1000,
+   "walk_m_median": 29.86525767236175,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 0.6,
+   "visits": 2,
+   "n_rooms": 1000,
+   "f1": 0.4286238095238095,
+   "f1_bootstrap_ci": [
+    0.414111428571428,
+    0.442167321428571
+   ],
+   "whole_hits": 17,
+   "whole_rate": 0.017,
+   "whole_wilson_ci": [
+    0.010640599663218203,
+    0.027056184371235047
+   ],
+   "output_ok": 981,
+   "executable": 1000,
+   "walk_m_median": 29.86525767236175,
+   "distinct_contact_mean": 2.0
+  },
+  {
+   "coverage": 0.6,
+   "visits": 5,
+   "n_rooms": 1000,
+   "f1": 0.47440476190476194,
+   "f1_bootstrap_ci": [
+    0.4598592857142855,
+    0.4883764285714293
+   ],
+   "whole_hits": 22,
+   "whole_rate": 0.022,
+   "whole_wilson_ci": [
+    0.014572598673771597,
+    0.03308591637481774
+   ],
+   "output_ok": 986,
+   "executable": 1000,
+   "walk_m_median": 29.86525767236175,
+   "distinct_contact_mean": 4.052
+  },
+  {
+   "coverage": 0.6,
+   "visits": 8,
+   "n_rooms": 1000,
+   "f1": 0.5134285714285715,
+   "f1_bootstrap_ci": [
+    0.49852750000000023,
+    0.5282001190476189
+   ],
+   "whole_hits": 50,
+   "whole_rate": 0.05,
+   "whole_wilson_ci": [
+    0.03813007264328189,
+    0.0653141360844696
+   ],
+   "output_ok": 993,
+   "executable": 1000,
+   "walk_m_median": 29.86525767236175,
+   "distinct_contact_mean": 5.598
+  },
+  {
+   "coverage": 0.6,
+   "visits": 11,
+   "n_rooms": 1000,
+   "f1": 0.528402380952381,
+   "f1_bootstrap_ci": [
+    0.5136737499999998,
+    0.5429957738095245
+   ],
+   "whole_hits": 61,
+   "whole_rate": 0.061,
+   "whole_wilson_ci": [
+    0.04777956041163888,
+    0.07758045654721199
+   ],
+   "output_ok": 997,
+   "executable": 1000,
+   "walk_m_median": 29.86525767236175,
+   "distinct_contact_mean": 6.612
+  },
+  {
+   "coverage": 0.6,
+   "visits": 14,
+   "n_rooms": 1000,
+   "f1": 0.5321071428571429,
+   "f1_bootstrap_ci": [
+    0.5171900000000003,
+    0.5469503571428578
+   ],
+   "whole_hits": 62,
+   "whole_rate": 0.062,
+   "whole_wilson_ci": [
+    0.04866396326101466,
+    0.07868839990066345
+   ],
+   "output_ok": 996,
+   "executable": 1000,
+   "walk_m_median": 29.86525767236175,
+   "distinct_contact_mean": 7.268
+  },
+  {
+   "coverage": 0.75,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.45470952380952384,
+   "f1_bootstrap_ci": [
+    0.43948321428571396,
+    0.46978357142857113
+   ],
+   "whole_hits": 53,
+   "whole_rate": 0.053,
+   "whole_wilson_ci": [
+    0.040746308422339304,
+    0.06867493891389383
+   ],
+   "output_ok": 1000,
+   "executable": 1000,
+   "walk_m_median": 40.086276833381945,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 0.75,
+   "visits": 2,
+   "n_rooms": 1000,
+   "f1": 0.5554595238095238,
+   "f1_bootstrap_ci": [
+    0.5414237499999995,
+    0.5692649404761908
+   ],
+   "whole_hits": 69,
+   "whole_rate": 0.069,
+   "whole_wilson_ci": [
+    0.05488371422135517,
+    0.08641507236011349
+   ],
+   "output_ok": 982,
+   "executable": 1000,
+   "walk_m_median": 40.086276833381945,
+   "distinct_contact_mean": 2.0
+  },
+  {
+   "coverage": 0.75,
+   "visits": 5,
+   "n_rooms": 1000,
+   "f1": 0.5969261904761904,
+   "f1_bootstrap_ci": [
+    0.5816117857142868,
+    0.6119458928571427
+   ],
+   "whole_hits": 98,
+   "whole_rate": 0.098,
+   "whole_wilson_ci": [
+    0.08108172764860938,
+    0.11799509881484863
+   ],
+   "output_ok": 964,
+   "executable": 1000,
+   "walk_m_median": 40.086276833381945,
+   "distinct_contact_mean": 4.245
+  },
+  {
+   "coverage": 0.75,
+   "visits": 8,
+   "n_rooms": 1000,
+   "f1": 0.64825,
+   "f1_bootstrap_ci": [
+    0.6328023809523814,
+    0.6630047619047612
+   ],
+   "whole_hits": 153,
+   "whole_rate": 0.153,
+   "whole_wilson_ci": [
+    0.13201885442660544,
+    0.1766370131923496
+   ],
+   "output_ok": 976,
+   "executable": 1000,
+   "walk_m_median": 40.086276833381945,
+   "distinct_contact_mean": 6.148
+  },
+  {
+   "coverage": 0.75,
+   "visits": 11,
+   "n_rooms": 1000,
+   "f1": 0.6788047619047619,
+   "f1_bootstrap_ci": [
+    0.6638523809523825,
+    0.6929836309523812
+   ],
+   "whole_hits": 179,
+   "whole_rate": 0.179,
+   "whole_wilson_ci": [
+    0.15648172434680807,
+    0.20397514454565469
+   ],
+   "output_ok": 981,
+   "executable": 1000,
+   "walk_m_median": 40.086276833381945,
+   "distinct_contact_mean": 7.824
+  },
+  {
+   "coverage": 0.75,
+   "visits": 14,
+   "n_rooms": 1000,
+   "f1": 0.685252380952381,
+   "f1_bootstrap_ci": [
+    0.6707831547619049,
+    0.699155952380953
+   ],
+   "whole_hits": 181,
+   "whole_rate": 0.181,
+   "whole_wilson_ci": [
+    0.15837154743410886,
+    0.2060700138640083
+   ],
+   "output_ok": 983,
+   "executable": 1000,
+   "walk_m_median": 40.086276833381945,
+   "distinct_contact_mean": 9.143
+  },
+  {
+   "coverage": 0.85,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.5041285714285715,
+   "f1_bootstrap_ci": [
+    0.4899113690476184,
+    0.5183883928571427
+   ],
+   "whole_hits": 60,
+   "whole_rate": 0.06,
+   "whole_wilson_ci": [
+    0.046896260125365796,
+    0.07647141063065788
+   ],
+   "output_ok": 1000,
+   "executable": 1000,
+   "walk_m_median": 47.249205523923564,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 0.85,
+   "visits": 2,
+   "n_rooms": 1000,
+   "f1": 0.6228357142857143,
+   "f1_bootstrap_ci": [
+    0.6095307738095255,
+    0.6354191666666676
+   ],
+   "whole_hits": 87,
+   "whole_rate": 0.087,
+   "whole_wilson_ci": [
+    0.07107415624980785,
+    0.10608686198255073
+   ],
+   "output_ok": 971,
+   "executable": 1000,
+   "walk_m_median": 47.249205523923564,
+   "distinct_contact_mean": 2.0
+  },
+  {
+   "coverage": 0.85,
+   "visits": 5,
+   "n_rooms": 1000,
+   "f1": 0.6366619047619047,
+   "f1_bootstrap_ci": [
+    0.6225666071428577,
+    0.650152678571429
+   ],
+   "whole_hits": 93,
+   "whole_rate": 0.093,
+   "whole_wilson_ci": [
+    0.07652345008781691,
+    0.11259164536150498
+   ],
+   "output_ok": 955,
+   "executable": 1000,
+   "walk_m_median": 47.249205523923564,
+   "distinct_contact_mean": 4.393
+  },
+  {
+   "coverage": 0.85,
+   "visits": 8,
+   "n_rooms": 1000,
+   "f1": 0.6995119047619047,
+   "f1_bootstrap_ci": [
+    0.6861042857142863,
+    0.7127001190476187
+   ],
+   "whole_hits": 167,
+   "whole_rate": 0.167,
+   "whole_wilson_ci": [
+    0.1451661838787161,
+    0.19138253057982002
+   ],
+   "output_ok": 975,
+   "executable": 1000,
+   "walk_m_median": 47.249205523923564,
+   "distinct_contact_mean": 6.371
+  },
+  {
+   "coverage": 0.85,
+   "visits": 11,
+   "n_rooms": 1000,
+   "f1": 0.7257595238095239,
+   "f1_bootstrap_ci": [
+    0.7121237499999998,
+    0.7382335119047624
+   ],
+   "whole_hits": 189,
+   "whole_rate": 0.189,
+   "whole_wilson_ci": [
+    0.1659414607063728,
+    0.21443887021436217
+   ],
+   "output_ok": 978,
+   "executable": 1000,
+   "walk_m_median": 47.249205523923564,
+   "distinct_contact_mean": 8.193
+  },
+  {
+   "coverage": 0.85,
+   "visits": 14,
+   "n_rooms": 1000,
+   "f1": 0.7500190476190476,
+   "f1_bootstrap_ci": [
+    0.7375233333333324,
+    0.7620313690476184
+   ],
+   "whole_hits": 198,
+   "whole_rate": 0.198,
+   "whole_wilson_ci": [
+    0.17447715201169275,
+    0.2238342947344872
+   ],
+   "output_ok": 982,
+   "executable": 1000,
+   "walk_m_median": 47.249205523923564,
+   "distinct_contact_mean": 9.84
+  },
+  {
+   "coverage": 0.95,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.6226142857142857,
+   "f1_bootstrap_ci": [
+    0.6070115476190474,
+    0.637816904761905
+   ],
+   "whole_hits": 187,
+   "whole_rate": 0.187,
+   "whole_wilson_ci": [
+    0.16404741574204446,
+    0.21234822277303605
+   ],
+   "output_ok": 999,
+   "executable": 1000,
+   "walk_m_median": 54.47664084748412,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 0.95,
+   "visits": 2,
+   "n_rooms": 1000,
+   "f1": 0.6853095238095238,
+   "f1_bootstrap_ci": [
+    0.6658585714285713,
+    0.7049408333333335
+   ],
+   "whole_hits": 283,
+   "whole_rate": 0.283,
+   "whole_wilson_ci": [
+    0.25595196062414005,
+    0.3117089133623534
+   ],
+   "output_ok": 872,
+   "executable": 1000,
+   "walk_m_median": 54.47664084748412,
+   "distinct_contact_mean": 2.0
+  },
+  {
+   "coverage": 0.95,
+   "visits": 5,
+   "n_rooms": 1000,
+   "f1": 0.6696809523809524,
+   "f1_bootstrap_ci": [
+    0.6482726785714281,
+    0.6910435119047607
+   ],
+   "whole_hits": 316,
+   "whole_rate": 0.316,
+   "whole_wilson_ci": [
+    0.287935120952589,
+    0.34547317772720276
+   ],
+   "output_ok": 837,
+   "executable": 1000,
+   "walk_m_median": 54.47664084748412,
+   "distinct_contact_mean": 4.495
+  },
+  {
+   "coverage": 0.95,
+   "visits": 8,
+   "n_rooms": 1000,
+   "f1": 0.7900095238095239,
+   "f1_bootstrap_ci": [
+    0.772444404761904,
+    0.807319999999999
+   ],
+   "whole_hits": 458,
+   "whole_rate": 0.458,
+   "whole_wilson_ci": [
+    0.42733866245855345,
+    0.48898279702270353
+   ],
+   "output_ok": 918,
+   "executable": 1000,
+   "walk_m_median": 54.47664084748412,
+   "distinct_contact_mean": 6.493
+  },
+  {
+   "coverage": 0.95,
+   "visits": 11,
+   "n_rooms": 1000,
+   "f1": 0.8261119047619049,
+   "f1_bootstrap_ci": [
+    0.8104019642857122,
+    0.8413191666666652
+   ],
+   "whole_hits": 489,
+   "whole_rate": 0.489,
+   "whole_wilson_ci": [
+    0.4581185876110968,
+    0.5199656041578039
+   ],
+   "output_ok": 945,
+   "executable": 1000,
+   "walk_m_median": 54.47664084748412,
+   "distinct_contact_mean": 8.48
+  },
+  {
+   "coverage": 0.95,
+   "visits": 14,
+   "n_rooms": 1000,
+   "f1": 0.8614333333333334,
+   "f1_bootstrap_ci": [
+    0.8479483333333319,
+    0.8745074404761898
+   ],
+   "whole_hits": 521,
+   "whole_rate": 0.521,
+   "whole_wilson_ci": [
+    0.4900158579684162,
+    0.5518234122909556
+   ],
+   "output_ok": 961,
+   "executable": 1000,
+   "walk_m_median": 54.47664084748412,
+   "distinct_contact_mean": 10.402
+  },
+  {
+   "coverage": 1.0,
+   "visits": 0,
+   "n_rooms": 1000,
+   "f1": 0.658854761904762,
+   "f1_bootstrap_ci": [
+    0.6419235119047609,
+    0.675083511904761
+   ],
+   "whole_hits": 285,
+   "whole_rate": 0.285,
+   "whole_wilson_ci": [
+    0.25788529526982207,
+    0.31376027112232585
+   ],
+   "output_ok": 995,
+   "executable": 1000,
+   "walk_m_median": 58.18166270462629,
+   "distinct_contact_mean": 0.0
+  },
+  {
+   "coverage": 1.0,
+   "visits": 2,
+   "n_rooms": 1000,
+   "f1": 0.7231690476190477,
+   "f1_bootstrap_ci": [
+    0.7023545833333323,
+    0.7435191071428571
+   ],
+   "whole_hits": 395,
+   "whole_rate": 0.395,
+   "whole_wilson_ci": [
+    0.36515790674005466,
+    0.42564574196308747
+   ],
+   "output_ok": 863,
+   "executable": 1000,
+   "walk_m_median": 58.18166270462629,
+   "distinct_contact_mean": 2.0
+  },
+  {
+   "coverage": 1.0,
+   "visits": 5,
+   "n_rooms": 1000,
+   "f1": 0.7161000000000001,
+   "f1_bootstrap_ci": [
+    0.69372619047619,
+    0.7384836309523807
+   ],
+   "whole_hits": 448,
+   "whole_rate": 0.448,
+   "whole_wilson_ci": [
+    0.4174351187157854,
+    0.47896287873719934
+   ],
+   "output_ok": 825,
+   "executable": 1000,
+   "walk_m_median": 58.18166270462629,
+   "distinct_contact_mean": 4.5
+  },
+  {
+   "coverage": 1.0,
+   "visits": 8,
+   "n_rooms": 1000,
+   "f1": 0.8109952380952382,
+   "f1_bootstrap_ci": [
+    0.7911974404761892,
+    0.8302367261904751
+   ],
+   "whole_hits": 570,
+   "whole_rate": 0.57,
+   "whole_wilson_ci": [
+    0.53910460324665,
+    0.6003596309512553
+   ],
+   "output_ok": 887,
+   "executable": 1000,
+   "walk_m_median": 58.18166270462629,
+   "distinct_contact_mean": 6.5
+  },
+  {
+   "coverage": 1.0,
+   "visits": 11,
+   "n_rooms": 1000,
+   "f1": 0.869947619047619,
+   "f1_bootstrap_ci": [
+    0.8547,
+    0.8845357738095231
+   ],
+   "whole_hits": 604,
+   "whole_rate": 0.604,
+   "whole_wilson_ci": [
+    0.573344915551407,
+    0.6338590895426237
+   ],
+   "output_ok": 944,
+   "executable": 1000,
+   "walk_m_median": 58.18166270462629,
+   "distinct_contact_mean": 8.5
+  },
+  {
+   "coverage": 1.0,
+   "visits": 14,
+   "n_rooms": 1000,
+   "f1": 0.9069119047619048,
+   "f1_bootstrap_ci": [
+    0.8947922023809525,
+    0.9186407738095228
+   ],
+   "whole_hits": 651,
+   "whole_rate": 0.651,
+   "whole_wilson_ci": [
+    0.6209297417330122,
+    0.679914534893898
+   ],
+   "output_ok": 968,
+   "executable": 1000,
+   "walk_m_median": 58.18166270462629,
+   "distinct_contact_mean": 10.5
+  }
+ ],
+ "best_condition_comparison": {
+  "all": {
+   "legacy": {
+    "n_rooms": 1000,
+    "f1": 0.8834166666666667,
+    "f1_bootstrap_ci": [
+     0.8709213690476191,
+     0.8953739285714286
+    ],
+    "whole_hits": 574,
+    "whole_rate": 0.574,
+    "whole_wilson_ci": [
+     0.5431251644557503,
+     0.6043084545534637
+    ],
+    "f1_median": 1.0,
+    "f1_one": 574,
+    "f1_ge_0_9": 574,
+    "f1_zero": 32,
+    "output_ok": 968,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.968,
+     "desk": 0.702,
+     "cab": 0.9113333333333333,
+     "chair": 0.9673333333333334
+    }
+   },
+   "outline": {
+    "n_rooms": 1000,
+    "f1": 0.9069119047619048,
+    "f1_bootstrap_ci": [
+     0.8947922023809524,
+     0.9186407738095239
+    ],
+    "whole_hits": 651,
+    "whole_rate": 0.651,
+    "whole_wilson_ci": [
+     0.6209297417330122,
+     0.679914534893898
+    ],
+    "f1_median": 1.0,
+    "f1_one": 651,
+    "f1_ge_0_9": 651,
+    "f1_zero": 32,
+    "output_ok": 968,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.968,
+     "desk": 0.7586666666666667,
+     "cab": 0.944,
+     "chair": 0.9673333333333334
+    }
+   },
+   "paired": {
+    "n_rooms": 1000,
+    "both": 522,
+    "a_only": 52,
+    "b_only": 129,
+    "neither": 297,
+    "b_minus_a": 0.07700000000000007,
+    "mcnemar_exact_two_sided_p": 9.747370207325014e-09,
+    "difference_bootstrap_ci": [
+     0.051,
+     0.103
+    ]
+   }
+  },
+  "train": {
+   "legacy": {
+    "n_rooms": 700,
+    "f1": 0.8765306122448979,
+    "f1_bootstrap_ci": [
+     0.8611564625850341,
+     0.8912721938775509
+    ],
+    "whole_hits": 389,
+    "whole_rate": 0.5557142857142857,
+    "whole_wilson_ci": [
+     0.518699680937693,
+     0.5921207081953165
+    ],
+    "f1_median": 1.0,
+    "f1_one": 389,
+    "f1_ge_0_9": 389,
+    "f1_zero": 25,
+    "output_ok": 675,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.9642857142857143,
+     "desk": 0.6885714285714286,
+     "cab": 0.9095238095238095,
+     "chair": 0.9637404580152672
+    }
+   },
+   "outline": {
+    "n_rooms": 700,
+    "f1": 0.9035884353741498,
+    "f1_bootstrap_ci": [
+     0.8885980442176872,
+     0.9177553571428572
+    ],
+    "whole_hits": 454,
+    "whole_rate": 0.6485714285714286,
+    "whole_wilson_ci": [
+     0.6124803385936648,
+     0.6830406990943605
+    ],
+    "f1_median": 1.0,
+    "f1_one": 454,
+    "f1_ge_0_9": 454,
+    "f1_zero": 25,
+    "output_ok": 675,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.9642857142857143,
+     "desk": 0.7571428571428571,
+     "cab": 0.940952380952381,
+     "chair": 0.9637404580152672
+    }
+   },
+   "paired": {
+    "n_rooms": 700,
+    "both": 358,
+    "a_only": 31,
+    "b_only": 96,
+    "neither": 215,
+    "b_minus_a": 0.09285714285714286,
+    "mcnemar_exact_two_sided_p": 6.327437536723091e-09,
+    "difference_bootstrap_ci": [
+     0.06285714285714286,
+     0.12428571428571429
+    ]
+   }
+  },
+  "val": {
+   "legacy": {
+    "n_rooms": 150,
+    "f1": 0.901126984126984,
+    "f1_bootstrap_ci": [
+     0.8717452380952381,
+     0.9272547619047619
+    ],
+    "whole_hits": 91,
+    "whole_rate": 0.6066666666666667,
+    "whole_wilson_ci": [
+     0.5267647239233271,
+     0.6812414330589196
+    ],
+    "f1_median": 1.0,
+    "f1_one": 91,
+    "f1_ge_0_9": 91,
+    "f1_zero": 3,
+    "output_ok": 147,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.98,
+     "desk": 0.7155555555555555,
+     "cab": 0.9285714285714286,
+     "chair": 0.9823008849557522
+    }
+   },
+   "outline": {
+    "n_rooms": 150,
+    "f1": 0.9175396825396825,
+    "f1_bootstrap_ci": [
+     0.8893158730158729,
+     0.9414130952380952
+    ],
+    "whole_hits": 97,
+    "whole_rate": 0.6466666666666666,
+    "whole_wilson_ci": [
+     0.5673798898960487,
+     0.7186285759545403
+    ],
+    "f1_median": 1.0,
+    "f1_one": 97,
+    "f1_ge_0_9": 97,
+    "f1_zero": 3,
+    "output_ok": 147,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.98,
+     "desk": 0.7511111111111111,
+     "cab": 0.9642857142857143,
+     "chair": 0.9823008849557522
+    }
+   },
+   "paired": {
+    "n_rooms": 150,
+    "both": 80,
+    "a_only": 11,
+    "b_only": 17,
+    "neither": 42,
+    "b_minus_a": 0.039999999999999925,
+    "mcnemar_exact_two_sided_p": 0.34492845088243484,
+    "difference_bootstrap_ci": [
+     -0.02666666666666667,
+     0.10666666666666667
+    ]
+   }
+  },
+  "test": {
+   "legacy": {
+    "n_rooms": 150,
+    "f1": 0.8978412698412698,
+    "f1_bootstrap_ci": [
+     0.8663488095238093,
+     0.9259051587301588
+    ],
+    "whole_hits": 94,
+    "whole_rate": 0.6266666666666667,
+    "whole_wilson_ci": [
+     0.5470043657114055,
+     0.7000029457050124
+    ],
+    "f1_median": 1.0,
+    "f1_one": 94,
+    "f1_ge_0_9": 94,
+    "f1_zero": 4,
+    "output_ok": 146,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.9733333333333334,
+     "desk": 0.7511111111111111,
+     "cab": 0.9026548672566371,
+     "chair": 0.9690265486725663
+    }
+   },
+   "outline": {
+    "n_rooms": 150,
+    "f1": 0.9117936507936508,
+    "f1_bootstrap_ci": [
+     0.880904365079365,
+     0.9382865079365078
+    ],
+    "whole_hits": 100,
+    "whole_rate": 0.6666666666666666,
+    "whole_wilson_ci": [
+     0.5878960768592673,
+     0.7371135434254931
+    ],
+    "f1_median": 1.0,
+    "f1_one": 100,
+    "f1_ge_0_9": 100,
+    "f1_zero": 4,
+    "output_ok": 146,
+    "distinct_contact_mean": null,
+    "recall": {
+     "bed": 0.9733333333333334,
+     "desk": 0.7733333333333333,
+     "cab": 0.9380530973451328,
+     "chair": 0.9690265486725663
+    }
+   },
+   "paired": {
+    "n_rooms": 150,
+    "both": 84,
+    "a_only": 10,
+    "b_only": 16,
+    "neither": 40,
+    "b_minus_a": 0.039999999999999925,
+    "mcnemar_exact_two_sided_p": 0.32693958282470703,
+    "difference_bootstrap_ci": [
+     -0.02666666666666667,
+     0.10666666666666667
+    ]
+   }
+  }
+ },
+ "spread_mechanism": {
+  "legacy|0.95|11": {
+   "repeat": {
+    "n_rooms": 1000,
+    "f1": 0.6065642857142857,
+    "f1_bootstrap_ci": [
+     0.5848546428571428,
+     0.6278101190476191
+    ],
+    "whole_hits": 217,
+    "whole_rate": 0.217,
+    "whole_wilson_ci": [
+     0.19256037369509343,
+     0.24360565090480363
+    ],
+    "f1_median": 0.6666666666666666,
+    "f1_one": 217,
+    "f1_ge_0_9": 217,
+    "f1_zero": 193,
+    "output_ok": 807,
+    "distinct_contact_mean": 3.994,
+    "recall": {
+     "bed": 0.807,
+     "desk": 0.5,
+     "cab": 0.41,
+     "chair": 0.7866666666666666
+    }
+   },
+   "dispersed": {
+    "n_rooms": 1000,
+    "f1": 0.8085880952380953,
+    "f1_bootstrap_ci": [
+     0.7927189880952381,
+     0.8238930357142856
+    ],
+    "whole_hits": 437,
+    "whole_rate": 0.437,
+    "whole_wilson_ci": [
+     0.4065556939663417,
+     0.46792649525554353
+    ],
+    "f1_median": 0.8333333333333334,
+    "f1_one": 437,
+    "f1_ge_0_9": 437,
+    "f1_zero": 55,
+    "output_ok": 945,
+    "distinct_contact_mean": 8.48,
+    "recall": {
+     "bed": 0.945,
+     "desk": 0.606,
+     "cab": 0.766,
+     "chair": 0.9433333333333334
+    }
+   },
+   "paired": {
+    "n_rooms": 1000,
+    "both": 187,
+    "a_only": 30,
+    "b_only": 250,
+    "neither": 533,
+    "b_minus_a": 0.22,
+    "mcnemar_exact_two_sided_p": 2.285412057177589e-44,
+    "difference_bootstrap_ci": [
+     0.191,
+     0.249
+    ]
+   }
+  },
+  "outline|0.95|11": {
+   "repeat": {
+    "n_rooms": 1000,
+    "f1": 0.6413809523809523,
+    "f1_bootstrap_ci": [
+     0.6190133333333333,
+     0.6638952976190475
+    ],
+    "whole_hits": 305,
+    "whole_rate": 0.305,
+    "whole_wilson_ci": [
+     0.2772547779089377,
+     0.33423771253975465
+    ],
+    "f1_median": 0.7142857142857143,
+    "f1_one": 305,
+    "f1_ge_0_9": 305,
+    "f1_zero": 193,
+    "output_ok": 807,
+    "distinct_contact_mean": 3.994,
+    "recall": {
+     "bed": 0.807,
+     "desk": 0.5446666666666666,
+     "cab": 0.47933333333333333,
+     "chair": 0.7866666666666666
+    }
+   },
+   "dispersed": {
+    "n_rooms": 1000,
+    "f1": 0.8261119047619049,
+    "f1_bootstrap_ci": [
+     0.8104019642857144,
+     0.8413191666666667
+    ],
+    "whole_hits": 489,
+    "whole_rate": 0.489,
+    "whole_wilson_ci": [
+     0.4581185876110968,
+     0.5199656041578039
+    ],
+    "f1_median": 0.8571428571428571,
+    "f1_one": 489,
+    "f1_ge_0_9": 489,
+    "f1_zero": 55,
+    "output_ok": 945,
+    "distinct_contact_mean": 8.48,
+    "recall": {
+     "bed": 0.945,
+     "desk": 0.656,
+     "cab": 0.7793333333333333,
+     "chair": 0.9426666666666667
+    }
+   },
+   "paired": {
+    "n_rooms": 1000,
+    "both": 281,
+    "a_only": 24,
+    "b_only": 208,
+    "neither": 487,
+    "b_minus_a": 0.184,
+    "mcnemar_exact_two_sided_p": 9.092274804087172e-38,
+    "difference_bootstrap_ci": [
+     0.157,
+     0.211
+    ]
+   }
+  },
+  "legacy|1.0|14": {
+   "repeat": {
+    "n_rooms": 1000,
+    "f1": 0.6340261904761905,
+    "f1_bootstrap_ci": [
+     0.6109092857142857,
+     0.6569718452380952
+    ],
+    "whole_hits": 294,
+    "whole_rate": 0.294,
+    "whole_wilson_ci": [
+     0.26659352137379233,
+     0.32298316084380063
+    ],
+    "f1_median": 0.75,
+    "f1_one": 294,
+    "f1_ge_0_9": 294,
+    "f1_zero": 211,
+    "output_ok": 789,
+    "distinct_contact_mean": 4.0,
+    "recall": {
+     "bed": 0.789,
+     "desk": 0.5706666666666667,
+     "cab": 0.4646666666666667,
+     "chair": 0.7693333333333333
+    }
+   },
+   "dispersed": {
+    "n_rooms": 1000,
+    "f1": 0.8834166666666667,
+    "f1_bootstrap_ci": [
+     0.8709213690476191,
+     0.8953739285714286
+    ],
+    "whole_hits": 574,
+    "whole_rate": 0.574,
+    "whole_wilson_ci": [
+     0.5431251644557503,
+     0.6043084545534637
+    ],
+    "f1_median": 1.0,
+    "f1_one": 574,
+    "f1_ge_0_9": 574,
+    "f1_zero": 32,
+    "output_ok": 968,
+    "distinct_contact_mean": 10.5,
+    "recall": {
+     "bed": 0.968,
+     "desk": 0.702,
+     "cab": 0.9113333333333333,
+     "chair": 0.9673333333333334
+    }
+   },
+   "paired": {
+    "n_rooms": 1000,
+    "both": 268,
+    "a_only": 26,
+    "b_only": 306,
+    "neither": 400,
+    "b_minus_a": 0.27999999999999997,
+    "mcnemar_exact_two_sided_p": 8.032691208927087e-62,
+    "difference_bootstrap_ci": [
+     0.249,
+     0.311
+    ]
+   }
+  },
+  "outline|1.0|14": {
+   "repeat": {
+    "n_rooms": 1000,
+    "f1": 0.6777166666666667,
+    "f1_bootstrap_ci": [
+     0.653877619047619,
+     0.7014171428571427
+    ],
+    "whole_hits": 420,
+    "whole_rate": 0.42,
+    "whole_wilson_ci": [
+     0.3897721343880201,
+     0.45084016938580246
+    ],
+    "f1_median": 0.8333333333333334,
+    "f1_one": 420,
+    "f1_ge_0_9": 420,
+    "f1_zero": 211,
+    "output_ok": 789,
+    "distinct_contact_mean": 4.0,
+    "recall": {
+     "bed": 0.789,
+     "desk": 0.6213333333333333,
+     "cab": 0.5646666666666667,
+     "chair": 0.7693333333333333
+    }
+   },
+   "dispersed": {
+    "n_rooms": 1000,
+    "f1": 0.9069119047619048,
+    "f1_bootstrap_ci": [
+     0.8947922023809524,
+     0.9186407738095239
+    ],
+    "whole_hits": 651,
+    "whole_rate": 0.651,
+    "whole_wilson_ci": [
+     0.6209297417330122,
+     0.679914534893898
+    ],
+    "f1_median": 1.0,
+    "f1_one": 651,
+    "f1_ge_0_9": 651,
+    "f1_zero": 32,
+    "output_ok": 968,
+    "distinct_contact_mean": 10.5,
+    "recall": {
+     "bed": 0.968,
+     "desk": 0.7586666666666667,
+     "cab": 0.944,
+     "chair": 0.9673333333333334
+    }
+   },
+   "paired": {
+    "n_rooms": 1000,
+    "both": 403,
+    "a_only": 17,
+    "b_only": 248,
+    "neither": 332,
+    "b_minus_a": 0.23100000000000004,
+    "mcnemar_exact_two_sided_p": 9.442801273376223e-54,
+    "difference_bootstrap_ci": [
+     0.203,
+     0.26
+    ]
+   }
+  }
+ },
+ "contact_class_count_mismatches": 0,
+ "f1_reference80_frontier": [
+  {
+   "coverage": 100.0,
+   "visits": 8,
+   "value": 81.09952380952382
+  },
+  {
+   "coverage": 95.0,
+   "visits": 11,
+   "value": 82.61119047619049
+  }
+ ],
+ "f1_reference80_lowerCI_frontier": [
+  {
+   "coverage": 95.0,
+   "visits": 11,
+   "value": 81.04019642857122
+  }
+ ],
+ "primary_whole80_reached": false,
+ "scope": "Controlled geometry; known room/inventory; ideal class positions; unchanged tolerance0.5m. Exploratory post-review estimator ablation."
+}

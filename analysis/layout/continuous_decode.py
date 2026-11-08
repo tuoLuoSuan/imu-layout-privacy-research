@@ -9,7 +9,9 @@ from . import evidence_space as ES
 
 
 def decode(room,regions,events,path,walk_clearance=.15,walk_tolerance=0.,
-           contact_padding=.20,walk_excluded_objects=('bed','desk','cab','chair')):
+           contact_padding=.20,walk_excluded_objects=('bed','desk','cab','chair'),
+           solid_storage=False,desk_seat_max_distance=None):
+    if desk_seat_max_distance is not None and desk_seat_max_distance<0:raise ValueError('Negative desk/seat relation bound')
     pools={}
     path=np.asarray(path,float).reshape(-1,2)
     for obj,region in regions.items():
@@ -30,11 +32,19 @@ def decode(room,regions,events,path,walk_clearance=.15,walk_tolerance=0.,
         for e in mine:
             keep,energy=ES._contact(boxes,e,contact_padding+1e-9,.60);valid&=keep
             cost+=np.minimum(energy,100)**2/max(1,len(mine))
+        if obj=='desk' and desk_seat_max_distance is not None:
+            for e in events:
+                if e['object']!='chair':continue
+                point=np.asarray(e['pos'])
+                outside=np.maximum(boxes[:,:2]-point,point-boxes[:,2:]).clip(min=0)
+                valid&=np.linalg.norm(outside,axis=1)<=desk_seat_max_distance+1e-8
         boxes=boxes[valid];cost=cost[valid]
         if not len(boxes):return {'status':'sampling_missed_feasible_set','boxes':{}}
         cc=ES.centres(boxes);point=region['point_m']
         cost+=.001*np.linalg.norm(cc-point,axis=1)
         pools[obj]=(boxes,cost)
+    if solid_storage:
+        return _solid_joint(pools)
     # The declared graph is a star: bed--desk and bed--storage. Solve that
     # discrete graph exactly rather than discard future-compatible beds in a beam.
     root_boxes,root_cost=pools['bed'];costs=root_cost.copy();choices={}
@@ -62,3 +72,40 @@ def decode(room,regions,events,path,walk_clearance=.15,walk_tolerance=0.,
     return {'status':'ok','boxes':layout,'candidates':[layout],
             'candidate_counts':{o:len(v[0]) for o,v in pools.items()},
             'scope':'Exact star-graph minimization over sampled continuous-region proposals; not an exhaustive continuous optimum'}
+
+
+def _overlap_matrix(first,second):
+    inter=np.maximum(0,np.minimum(first[:,None,2:],second[None,:,2:])-
+                       np.maximum(first[:,None,:2],second[None,:,:2]))
+    area1=np.prod(first[:,2:]-first[:,:2],axis=1)
+    area2=np.prod(second[:,2:]-second[:,:2],axis=1)
+    return np.prod(inter,axis=2)/np.maximum(np.minimum(area1[:,None],area2[None,:]),1e-12)
+
+
+def _solid_joint(pools):
+    """Exact triangle search over the SAME proposals for floor-standing storage.
+
+    The added desk/storage edge is requested using physical object metadata,
+    never selected from target-position errors. Chair projection may overlap.
+    """
+    bed,be=pools['bed'];cab,ce=pools['cab'];desk,de=pools['desk']
+    bc=_overlap_matrix(bed,cab)<=.01
+    bd=_overlap_matrix(bed,desk)<=1e-9
+    cd=_overlap_matrix(cab,desk)<=1e-9
+    pair_cost=ce[:,None]+de[None,:]
+    best=np.inf;choice=None
+    for b in np.argsort(be,kind='stable'):
+        cs=np.flatnonzero(bc[b]);ds=np.flatnonzero(bd[b])
+        if not len(cs) or not len(ds):continue
+        if be[b]+ce[cs].min()+de[ds].min()>=best:continue
+        cost=np.where(cd[np.ix_(cs,ds)],pair_cost[np.ix_(cs,ds)],np.inf)
+        flat=int(cost.argmin());value=be[b]+cost.flat[flat]
+        if value<best:
+            ci,di=np.unravel_index(flat,cost.shape);best=value;choice=(b,cs[ci],ds[di])
+    if choice is None:return {'status':'joint_search_conflict','boxes':{}}
+    b,c,d=choice;layout={'bed':bed[b],'cab':cab[c],'desk':desk[d]}
+    for obj,(boxes,energy) in pools.items():
+        if obj not in layout:layout[obj]=boxes[int(energy.argmin())]
+    return {'status':'ok','boxes':layout,'candidates':[layout],
+            'candidate_counts':{o:len(v[0]) for o,v in pools.items()},
+            'scope':'Exact triangle minimization over sampled proposals; floor-standing storage and desk cannot overlap'}

@@ -90,7 +90,7 @@ def prepare(external, out):
     return manifest
 
 
-def export_native(houses, out, executable, limit=None, offset=0):
+def export_native(houses, out, executable, limit=None, offset=0,place_agent=False):
     """Create independent official houses in Unity; retain failures and resume."""
     from ai2thor.controller import Controller
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
@@ -114,10 +114,17 @@ def export_native(houses, out, executable, limit=None, offset=0):
                             'axisAlignedBoundingBox':obj['axisAlignedBoundingBox'],
                             'box_xz':engine_box(obj),'rotation':obj['rotation'],
                             'openable':obj.get('openable'), 'parent_receptacles':obj.get('parentReceptacles')})
+                    if place_agent:
+                        pose=json.loads(json.dumps(item['house']['metadata']['agent']))
+                        for axis in ['x','z']:pose['position'][axis]=round(pose['position'][axis]/.20)*.20
+                        c.step(action='TeleportFull',**pose,raise_for_failure=True)
+                        rec['agent_placement']=pose
                     e=c.step(action='GetReachablePositions',raise_for_failure=False)
                     rec.update(stage='exported',objects=objects,
                         reachable_positions=e.metadata.get('actionReturn') if e.metadata.get('lastActionSuccess') else None,
                         reachability_error=e.metadata.get('errorMessage'))
+                    if place_agent and not rec['reachable_positions']:
+                        rec.update(stage='failed',error='No reachable positions after explicit agent placement')
                 except Exception as exc:
                     rec.update(stage='failed',error=repr(exc))
                 rec['elapsed_s']=time.time()-t
@@ -176,10 +183,11 @@ if __name__=='__main__':
     p=sub.add_parser('prepare');p.add_argument('--external',required=True);p.add_argument('--out',required=True)
     p=sub.add_parser('export');p.add_argument('--houses',required=True);p.add_argument('--out',required=True)
     p.add_argument('--executable',required=True);p.add_argument('--limit',type=int);p.add_argument('--offset',type=int,default=0)
+    p.add_argument('--place-agent',action='store_true')
     p=sub.add_parser('audit');p.add_argument('--manifest',required=True);p.add_argument('--native',required=True);p.add_argument('--out',required=True)
     a=ap.parse_args()
     if a.command=='prepare':
         m=prepare(a.external,a.out);print(json.dumps({k:v for k,v in m.items() if k!='rows'},indent=1))
-    elif a.command=='export':print(json.dumps(export_native(a.houses,a.out,a.executable,a.limit,a.offset)))
+    elif a.command=='export':print(json.dumps(export_native(a.houses,a.out,a.executable,a.limit,a.offset,a.place_agent)))
     else:
         m=audit_native(a.manifest,a.native,a.out);print(json.dumps({k:v for k,v in m.items() if k not in ['native_file_sha256','issues']},indent=1))

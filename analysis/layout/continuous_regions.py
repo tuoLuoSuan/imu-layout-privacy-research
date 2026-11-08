@@ -56,7 +56,8 @@ def _event_options(obj,point,size,padding,reach):
 
 
 def object_region(room,dimensions,obj,events,path,padding=.20,reach=.60,
-                  path_margin=.08,use_path=True,max_regions=20000,walk_clearance_m=0.):
+                  path_margin=.08,use_path=True,max_regions=20000,walk_clearance_m=0.,
+                  desk_seat_max_distance=None):
     """Return an outer envelope of all feasible centres under the declared model.
 
     Resource limits only skip constraints and widen the result; never prune
@@ -66,6 +67,7 @@ def object_region(room,dimensions,obj,events,path,padding=.20,reach=.60,
     if room.shape!=(2,) or dimensions.shape!=(2,) or np.any(room<=0) or np.any(dimensions<=0):
         raise ValueError('Positive two-dimensional room and object size required')
     if padding<0 or reach<0 or path_margin<0 or walk_clearance_m<0 or max_regions<1:raise ValueError('Invalid bound or region budget')
+    if desk_seat_max_distance is not None and desk_seat_max_distance<0:raise ValueError('Negative desk/seat relation bound')
     effective_margin=path_margin-walk_clearance_m
     path=np.asarray(path,float).reshape(-1,2)
     if not np.isfinite(path).all():raise ValueError('Non-finite walk point')
@@ -74,10 +76,15 @@ def object_region(room,dimensions,obj,events,path,padding=.20,reach=.60,
         if np.any(size>room):continue
         regions=np.array([[0.,0.,*(room-size)]])
         for event in events:
-            if event['object']!=obj:continue
+            related=obj=='desk' and event['object']=='chair' and desk_seat_max_distance is not None
+            if event['object']!=obj and not related:continue
             point=np.asarray(event['pos'],float)
             if point.shape!=(2,) or not np.isfinite(point).all():raise ValueError('Non-finite contact')
-            proposed=intersect_regions(regions,_event_options(obj,point,size,padding,reach))
+            # A declared "seated at this desk" protocol is side information.
+            # The square-distance relaxation is conservative for the Euclidean
+            # desk/seat distance enforced by the point decoder. Never implicit.
+            options=_event_options('bed',point,size,desk_seat_max_distance,reach) if related else _event_options(obj,point,size,padding,reach)
+            proposed=intersect_regions(regions,options)
             if len(proposed)>max_regions:relaxed=True;continue
             regions=proposed
             if not len(regions):break
@@ -103,7 +110,8 @@ def object_region(room,dimensions,obj,events,path,padding=.20,reach=.60,
             'radius_upper_m':float(np.linalg.norm(hi-lo)/2),'modes':modes,
             'region_count':sum(len(m['q_regions']) for m in modes),'relaxed_by_budget':relaxed,
             'bounds_sound_if_model_conditions_hold':True,
-            'model':'Known room/sizes; two axis orientations; all operation-face modes; conservative padding; no overlap or desk-chair relation required'}
+            'desk_seat_max_distance_m':desk_seat_max_distance,
+            'model':'Known room/sizes; two axis orientations; all operation-face modes; conservative padding; desk/seat relation only if explicitly declared'}
 
 
 def contains_box(result,box):
