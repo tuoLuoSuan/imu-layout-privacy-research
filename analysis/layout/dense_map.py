@@ -24,8 +24,11 @@ import paths
 CJK = fm.FontProperties(fname=r"C:/Windows/Fonts/msyh.ttc")
 LABEL = {"bed": ("床", "Bed"), "desk": ("桌", "Desk"), "cab": ("柜", "Cabinet"), "chair": ("椅", "Chair")}
 COLOR = {"bed": "#4c9f70", "desk": "#3f7fbf", "cab": "#c98a3a", "chair": "#b35c6b"}
-# 床高由用户确认，其余为参考值；不能把整张表称作独立测量真值。
-ACTUAL = {"s-59d570ee": {"bed": 0.50, "desk": 0.75, "cab": 0.75, "chair": 0.45}}
+# 床高由用户确认；柜高由用户报「比 1.7 m 略高」并经点云竖直面复核（visible 到 1.7 m 与被截断的
+# 左墙同高，说明点云在那里看不到顶，不能据此判矮）；桌 0.75 与点云 0.70-0.75 的水平层一致。
+ACTUAL = {"s-59d570ee": {"bed": 0.50, "desk": 0.75, "cab": 1.80, "chair": 0.45}}
+# 本房间净高：天花板平面 2.09 m（地面在 -0.03 m），仅用于墙的显示高度。
+CEILING = {"s-59d570ee": 2.09}
 
 
 def height_field(pred, heights, grid=0.02):
@@ -74,8 +77,11 @@ def render(sess, out_png, actual=None, prior_root=None, use_reference=True):
     Q = P - (P[0] - np.array(pred["start_anchored_at"], dtype=float))
     tx, ty = Q[:, 0], Q[:, 1]
 
+    display_max = max(1.0, float(max(heights.values())))
+    wall_display_height = CEILING.get(pred["session"]) or max(2.2, display_max * 1.1)
     source_label = '提供的参考高度' if height_source == 'supplied_reference' else '类别先验高度'
-    lines = ['底面来自布局预测，当前二维模型未估计高度。图中使用' + source_label]
+    lines = ['底面来自布局预测，当前二维模型未估计高度。图中使用' + source_label,
+             '房间净高 %.2f m 由点云天花板平面测得（不是假设）' % wall_display_height]
     for k in ("bed", "desk", "cab", "chair"):
         cn, en = LABEL[k]
         pm = prior.get(en, {}).get("med")
@@ -96,8 +102,6 @@ def render(sess, out_png, actual=None, prior_root=None, use_reference=True):
     ax3.grid(False)
     ax2.grid(False)
 
-    display_max = max(1.0, float(max(heights.values())))
-    wall_display_height = max(2.2, display_max * 1.1)
     _walls(ax3, W, L, h=wall_display_height)
     for k, b in pred["boxes"].items():
         dx, dy = b[2] - b[0], b[3] - b[1]

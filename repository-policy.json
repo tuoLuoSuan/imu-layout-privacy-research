@@ -82,6 +82,7 @@
     "analysis/layout/layout_free.py",
     "analysis/layout/layout_solver.py",
     "analysis/layout/leakage_curve.py",
+    "analysis/layout/measure_heights.py",
     "analysis/layout/models/phone-five-class.joblib",
     "analysis/layout/models/phone-five-class.json",
     "analysis/layout/modes.json",
