@@ -172,3 +172,14 @@ python -m analysis.layout.exp_door_sensitivity <新目录>/door.json <全新重�
     python -m analysis.layout.exp_tiebreak --output analysis/layout/tiebreak.json
     python -m unittest discover -s analysis/layout/tests
 
+
+### 9.3 把 tie-break 交叉用到桌的两个通道
+
+上节的三项追责给出一个副作用：点命中率有一半是排序规则的属性。于是「某通道有效」也必须能通过换排序规则的检验。做法是复跑同一批实验，只把 tie-break 换成质心偏好、不偏好、随机 4 次，输入逐项相同。
+
+- 生成路线切线代理：无通道 2/14（不偏好 1/14、随机 2.0±0.7）、只加 1 m 距离 3/14（3/14、3.2±0.4）、锥 30/45/60° 都是 2/14（2/14、2.0±0.0）、锥 90° 1/14（2/14、1.0±0.0）。⇒ 切线代理的负结果不受排序影响。
+- 真方位加角度误差：σ10 锥45 = 0.64、σ20 锥60 = 0.64、σ30 锥60 = 0.57、σ45 锥60 = 0.36，在质心/不偏好/随机三次下**逐位相同**；只有共同模式 σ30 锥60 从 0.50 变到 0.50–0.55。⇒ 锥形把支撑集收窄后，tie-break 已无候选可挑，±20–30° 的需求不是排序假象。
+- 因此「桌 1/14」（宽支撑、生产排序）与「桌 9/14」（宽支撑、不偏好）可以同时成立而不矛盾：它们报的是同一条观测约束下的不同候选选择。要主张通道有效，须附上多种 tie-break 下不变的证据。
+
+实现：`analysis/layout/exp_desk_control.py`（切线代理，写 `desk_control.json`）与 `analysis/layout/exp_bearing_control.py`（方位臂，写 `bearing_control.json`），两者都不修改被检验的实验代码。
+

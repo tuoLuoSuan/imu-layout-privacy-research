@@ -1,0 +1,5154 @@
+{
+ "scope": "Geometric generated-route heading; development scenes; 96 m; only the tie-break among equally supported candidates varies",
+ "lookback_m": 1.0,
+ "padding_m": 0.2,
+ "reach_m": 1.0,
+ "draws": 4,
+ "seconds": 5.6,
+ "summary": {
+  "no_channel": {
+   "centroid": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "none": {
+    "hits": 1,
+    "n": 14,
+    "hit_rate": 0.07142857142857142
+   },
+   "random": {
+    "hits_mean": 2.0,
+    "hits_std": 0.7071067811865476,
+    "hit_rate_mean": 0.14285714285714285
+   }
+  },
+  "distance_only": {
+   "centroid": {
+    "hits": 3,
+    "n": 14,
+    "hit_rate": 0.21428571428571427
+   },
+   "none": {
+    "hits": 3,
+    "n": 14,
+    "hit_rate": 0.21428571428571427
+   },
+   "random": {
+    "hits_mean": 3.25,
+    "hits_std": 0.4330127018922193,
+    "hit_rate_mean": 0.23214285714285715
+   }
+  },
+  "cone30": {
+   "centroid": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "none": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "random": {
+    "hits_mean": 2.0,
+    "hits_std": 0.0,
+    "hit_rate_mean": 0.14285714285714285
+   }
+  },
+  "cone45": {
+   "centroid": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "none": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "random": {
+    "hits_mean": 2.0,
+    "hits_std": 0.0,
+    "hit_rate_mean": 0.14285714285714285
+   }
+  },
+  "cone60": {
+   "centroid": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "none": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "random": {
+    "hits_mean": 2.0,
+    "hits_std": 0.0,
+    "hit_rate_mean": 0.14285714285714285
+   }
+  },
+  "cone90": {
+   "centroid": {
+    "hits": 1,
+    "n": 14,
+    "hit_rate": 0.07142857142857142
+   },
+   "none": {
+    "hits": 2,
+    "n": 14,
+    "hit_rate": 0.14285714285714285
+   },
+   "random": {
+    "hits_mean": 1.0,
+    "hits_std": 0.0,
+    "hit_rate_mean": 0.07142857142857142
+   }
+  }
+ },
+ "rows": [
+  {
+   "scene": "FloorPlan301",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 5.887868153855852,
+   "error_m": 2.1604234175266304,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 5.887868153855852,
+   "error_m": 4.1766717956654436,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 5.887868153855852,
+   "error_m": 2.810804416602166,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 5.887868153855852,
+   "error_m": 3.0843723446289175,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 5.887868153855852,
+   "error_m": 2.1295343078178295,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 5.887868153855852,
+   "error_m": 1.6291963642866267,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 2.9830769955330982,
+   "error_m": 1.367164170165259,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 2.9830769955330982,
+   "error_m": 1.254149497295591,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 2.9830769955330982,
+   "error_m": 1.9583614113234113,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 2.9830769955330982,
+   "error_m": 1.873915033048408,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 2.9830769955330982,
+   "error_m": 1.6290513290063797,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 2.9830769955330982,
+   "error_m": 1.7847284406889825,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.19090564435000035,
+   "error_m": 1.4642151745083511,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.19090564435000035,
+   "error_m": 1.4642151745083511,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.19090564435000035,
+   "error_m": 1.6211557226520947,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.19090564435000035,
+   "error_m": 1.6211557226520947,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.19090564435000035,
+   "error_m": 1.4642151745083511,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.19090564435000035,
+   "error_m": 1.4642151745083511,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 2.339902457788039,
+   "error_m": 1.447998101732513,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 2.339902457788039,
+   "error_m": 1.39459560476241,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 2.339902457788039,
+   "error_m": 1.6211557226520947,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 2.339902457788039,
+   "error_m": 1.873915033048408,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 2.339902457788039,
+   "error_m": 1.7847284406889825,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan301",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 2.339902457788039,
+   "error_m": 1.9966716010998318,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 3.4342674672218676,
+   "error_m": 2.1798123998850447,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 3.4342674672218676,
+   "error_m": 1.7821835473733874,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 3.4342674672218676,
+   "error_m": 2.2243006173192015,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 3.4342674672218676,
+   "error_m": 1.9851592757617103,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 3.4342674672218676,
+   "error_m": 2.1772201152316897,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 3.4342674672218676,
+   "error_m": 2.9487272176073414,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.429703349721002,
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.429703349721002,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.429703349721002,
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.429703349721002,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.429703349721002,
+   "error_m": 0.16407360162268161,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.429703349721002,
+   "error_m": 0.3321028528288856,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan302",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.13416579996939274,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 5.22897594220537,
+   "error_m": 1.9382204800015892,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 5.22897594220537,
+   "error_m": 0.9226110863157307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 5.22897594220537,
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 5.22897594220537,
+   "error_m": 1.8592689324949645,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 5.22897594220537,
+   "error_m": 3.409119399124307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 5.22897594220537,
+   "error_m": 3.5315509016817814,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 2.531436061878887,
+   "error_m": 0.9981627404682182,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 2.531436061878887,
+   "error_m": 0.9226110863157307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 2.531436061878887,
+   "error_m": 0.13363104740708506,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 2.531436061878887,
+   "error_m": 1.8592689324949645,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 2.531436061878887,
+   "error_m": 1.5092387075053553,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 2.531436061878887,
+   "error_m": 1.369555413737833,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 1.8670213458187266,
+   "error_m": 1.37323061678076,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 1.8670213458187266,
+   "error_m": 0.07441982524609109,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 1.8670213458187266,
+   "error_m": 1.1825600624885197,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 1.8670213458187266,
+   "error_m": 1.6093762157295832,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 1.8670213458187266,
+   "error_m": 1.7726155133770392,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan303",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 1.8670213458187266,
+   "error_m": 1.4535987848180187,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 5.272901020915708,
+   "error_m": 3.332720183706816,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 5.272901020915708,
+   "error_m": 3.397553195672519,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 5.272901020915708,
+   "error_m": 3.1451102631267593,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 5.272901020915708,
+   "error_m": 3.2563962796311943,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 5.272901020915708,
+   "error_m": 3.1215631532335637,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 5.272901020915708,
+   "error_m": 3.833038370667076,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.7589023145280078,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.7589023145280078,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.7589023145280078,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.7589023145280078,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.7589023145280078,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.7589023145280078,
+   "error_m": 1.2127155158223888,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan304",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 4.50921269774905,
+   "error_m": 2.0862134130805816,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 4.50921269774905,
+   "error_m": 4.010957014799565,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 4.50921269774905,
+   "error_m": 3.889777715491049,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 4.50921269774905,
+   "error_m": 1.6632668878197503,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 4.50921269774905,
+   "error_m": 1.4130133478882612,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 4.50921269774905,
+   "error_m": 1.4818826904600906,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 1.6741127369705577,
+   "error_m": 1.175043604209051,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 1.6741127369705577,
+   "error_m": 1.5485816886328247,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 1.6741127369705577,
+   "error_m": 1.5634267881529023,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 1.6741127369705577,
+   "error_m": 1.1552183327178411,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 1.6741127369705577,
+   "error_m": 1.1345353608413873,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 1.6741127369705577,
+   "error_m": 0.9585504635911405,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan305",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 5.174802266189029,
+   "error_m": 2.3042120147866787,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 5.174802266189029,
+   "error_m": 1.4042012885059996,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 5.174802266189029,
+   "error_m": 2.9844720566722165,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 5.174802266189029,
+   "error_m": 2.6063387006823455,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 5.174802266189029,
+   "error_m": 1.6461009283571812,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 5.174802266189029,
+   "error_m": 3.922570215225246,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 3.228397083938227,
+   "error_m": 1.4592431932843766,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 3.228397083938227,
+   "error_m": 1.4042012885059996,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 3.228397083938227,
+   "error_m": 2.064786449043438,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 3.228397083938227,
+   "error_m": 1.9692184440388005,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 3.228397083938227,
+   "error_m": 1.2726223622205897,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 3.228397083938227,
+   "error_m": 0.1889822331082374,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan306",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 5.2233998852009655,
+   "error_m": 2.909326389162959,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 5.2233998852009655,
+   "error_m": 1.024541058546404,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 5.2233998852009655,
+   "error_m": 2.5051312879964938,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 5.2233998852009655,
+   "error_m": 3.1258050583460104,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 5.2233998852009655,
+   "error_m": 3.131202610929703,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 5.2233998852009655,
+   "error_m": 2.589510485956056,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 1.3912967183999998,
+   "error_m": 1.024541058546404,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 1.3912967183999998,
+   "error_m": 1.024541058546404,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 1.3912967183999998,
+   "error_m": 1.4217991832120223,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 1.3912967183999998,
+   "error_m": 1.4217991832120223,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 1.3912967183999998,
+   "error_m": 1.4217991832120223,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 1.3912967183999998,
+   "error_m": 1.4217991832120223,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan307",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 6.559884987852104,
+   "error_m": 0.8056735485757581,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 6.559884987852104,
+   "error_m": 2.738033487662477,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 6.559884987852104,
+   "error_m": 0.497885283042281,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 6.559884987852104,
+   "error_m": 0.9219401982768353,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 6.559884987852104,
+   "error_m": 0.15969626441504833,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 6.559884987852104,
+   "error_m": 0.3369866058868847,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 2.900814294562399,
+   "error_m": 1.7219137763189862,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 2.900814294562399,
+   "error_m": 2.53782241000778,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 2.900814294562399,
+   "error_m": 2.53782241000778,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 2.900814294562399,
+   "error_m": 2.158753047590651,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 2.900814294562399,
+   "error_m": 2.2480693223036043,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 2.900814294562399,
+   "error_m": 2.5416662163034482,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan308",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 4.948900189033949,
+   "error_m": 2.6463003820157156,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 4.948900189033949,
+   "error_m": 2.7973587116673153,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 4.948900189033949,
+   "error_m": 2.183093547480108,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 4.948900189033949,
+   "error_m": 2.5340791875653896,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 4.948900189033949,
+   "error_m": 2.7135069298748804,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 4.948900189033949,
+   "error_m": 2.90900012556613,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan310",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 4.863545525312839,
+   "error_m": 2.4951583342153114,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 4.863545525312839,
+   "error_m": 3.991834944510758,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 4.863545525312839,
+   "error_m": 3.131942666850579,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 4.863545525312839,
+   "error_m": 2.137367639408293,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 4.863545525312839,
+   "error_m": 2.0065312020785804,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 4.863545525312839,
+   "error_m": 2.6047751134578347,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 2.8263188013582283,
+   "error_m": 1.2633438952348988,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 2.8263188013582283,
+   "error_m": 1.5087404959161028,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 2.8263188013582283,
+   "error_m": 1.9350900165226954,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 2.8263188013582283,
+   "error_m": 2.0065312020785804,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 2.8263188013582283,
+   "error_m": 1.9498208957197962,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 2.8263188013582283,
+   "error_m": 1.9350900165226954,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan312",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 4.156392560757112,
+   "error_m": 2.37886654915725,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 4.156392560757112,
+   "error_m": 3.4737997282429536,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 4.156392560757112,
+   "error_m": 2.569595648302495,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 4.156392560757112,
+   "error_m": 2.951367283505374,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 4.156392560757112,
+   "error_m": 2.751322105000599,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 4.156392560757112,
+   "error_m": 2.1767696511660435,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 2.4235781885137264,
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 2.4235781885137264,
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 2.4235781885137264,
+   "error_m": 0.0773694171943993,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 2.4235781885137264,
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 2.4235781885137264,
+   "error_m": 0.12650863949495791,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 2.4235781885137264,
+   "error_m": 2.1141890753013053,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.18727657799999964,
+   "error_m": 2.1141890753013053,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.18727657799999964,
+   "error_m": 2.1141890753013053,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.18727657799999964,
+   "error_m": 2.2973538255759345,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.18727657799999964,
+   "error_m": 2.1141890753013053,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.18727657799999964,
+   "error_m": 2.1141890753013053,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan313",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.18727657799999964,
+   "error_m": 2.1141890753013053,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 0.0,
+   "error_m": 0.03427422956541234,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan316",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 5.598248227138964,
+   "error_m": 1.9901632732042307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 5.598248227138964,
+   "error_m": 3.53724229888854,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 5.598248227138964,
+   "error_m": 3.5638191011800604,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 5.598248227138964,
+   "error_m": 1.9901632732042307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 5.598248227138964,
+   "error_m": 0.7148419027098969,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 5.598248227138964,
+   "error_m": 3.6837112863304813,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 3.16849698788059,
+   "error_m": 1.9901632732042307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 3.16849698788059,
+   "error_m": 1.9901632732042307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 3.16849698788059,
+   "error_m": 1.9901632732042307,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 3.16849698788059,
+   "error_m": 2.5695330352725105,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 3.16849698788059,
+   "error_m": 2.1822865667819045,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 3.16849698788059,
+   "error_m": 2.5695330352725105,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan318",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 3.987137850213339,
+   "error_m": 0.08130943275319368,
+   "hit": true
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 3.987137850213339,
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 3.987137850213339,
+   "error_m": 1.6408874978152979,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 3.987137850213339,
+   "error_m": 1.6417019573471112,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 3.987137850213339,
+   "error_m": 1.3438504708106025,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "no_channel",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 3.987137850213339,
+   "error_m": 1.6996517662574988,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": 1.504307139727689,
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": 1.504307139727689,
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": 1.504307139727689,
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": 1.504307139727689,
+   "error_m": 1.5696847769667401,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": 1.504307139727689,
+   "error_m": 1.853919112744216,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "distance_only",
+   "cone_deg": null,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": 1.504307139727689,
+   "error_m": 1.805102319256682,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 30.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 45.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 60.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "centroid",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "none",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 0,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 1,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 2,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  },
+  {
+   "scene": "FloorPlan320",
+   "control": "direction",
+   "cone_deg": 90.0,
+   "tie_break": "random",
+   "draw": 3,
+   "support_m": null,
+   "error_m": null,
+   "hit": false
+  }
+ ]
+}

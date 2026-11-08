@@ -1,0 +1,76 @@
+{
+ "scope": "Oracle desk-centre bearing with the tie-break varied; development scenes, 96 m",
+ "cells": [
+  "independent_sigma10_cone45",
+  "independent_sigma20_cone60",
+  "independent_sigma30_cone60",
+  "independent_sigma45_cone60",
+  "common_sigma30_cone60"
+ ],
+ "settings": [
+  "centroid",
+  "none",
+  "random5001",
+  "random5002",
+  "random5003"
+ ],
+ "hit_rate": {
+  "centroid": {
+   "independent_sigma10_cone45": 0.6428571428571429,
+   "independent_sigma20_cone60": 0.6428571428571429,
+   "independent_sigma30_cone60": 0.5714285714285714,
+   "independent_sigma45_cone60": 0.35714285714285715,
+   "common_sigma30_cone60": 0.5
+  },
+  "none": {
+   "independent_sigma10_cone45": 0.6428571428571429,
+   "independent_sigma20_cone60": 0.6428571428571429,
+   "independent_sigma30_cone60": 0.5714285714285714,
+   "independent_sigma45_cone60": 0.35714285714285715,
+   "common_sigma30_cone60": 0.5
+  },
+  "random5001": {
+   "independent_sigma10_cone45": 0.6428571428571429,
+   "independent_sigma20_cone60": 0.6428571428571429,
+   "independent_sigma30_cone60": 0.5714285714285714,
+   "independent_sigma45_cone60": 0.35714285714285715,
+   "common_sigma30_cone60": 0.5
+  },
+  "random5002": {
+   "independent_sigma10_cone45": 0.6428571428571429,
+   "independent_sigma20_cone60": 0.6428571428571429,
+   "independent_sigma30_cone60": 0.5714285714285714,
+   "independent_sigma45_cone60": 0.35714285714285715,
+   "common_sigma30_cone60": 0.5238095238095238
+  },
+  "random5003": {
+   "independent_sigma10_cone45": 0.6428571428571429,
+   "independent_sigma20_cone60": 0.6428571428571429,
+   "independent_sigma30_cone60": 0.5714285714285714,
+   "independent_sigma45_cone60": 0.35714285714285715,
+   "common_sigma30_cone60": 0.5476190476190477
+  }
+ },
+ "range_per_cell": {
+  "independent_sigma10_cone45": [
+   0.6428571428571429,
+   0.6428571428571429
+  ],
+  "independent_sigma20_cone60": [
+   0.6428571428571429,
+   0.6428571428571429
+  ],
+  "independent_sigma30_cone60": [
+   0.5714285714285714,
+   0.5714285714285714
+  ],
+  "independent_sigma45_cone60": [
+   0.35714285714285715,
+   0.35714285714285715
+  ],
+  "common_sigma30_cone60": [
+   0.5,
+   0.5476190476190477
+  ]
+ }
+}
