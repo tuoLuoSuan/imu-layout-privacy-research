@@ -1,0 +1,147 @@
+{
+ "scope": "Frozen activity threshold replayed on ProcTHOR rectangular houses (external generator)",
+ "houses": 803,
+ "cells": {
+  "0.94|5": {
+   "hits": 308,
+   "rooms": 803,
+   "executable": 803,
+   "per_object": {
+    "bed": {
+     "hits": 783,
+     "n": 803
+    },
+    "desk": {
+     "hits": 353,
+     "n": 803
+    },
+    "cab": {
+     "hits": 736,
+     "n": 803
+    },
+    "chair": {
+     "hits": 793,
+     "n": 803
+    }
+   }
+  },
+  "0.95|4": {
+   "hits": 338,
+   "rooms": 803,
+   "executable": 802,
+   "per_object": {
+    "bed": {
+     "hits": 788,
+     "n": 802
+    },
+    "desk": {
+     "hits": 391,
+     "n": 802
+    },
+    "cab": {
+     "hits": 712,
+     "n": 802
+    },
+    "chair": {
+     "hits": 796,
+     "n": 802
+    }
+   }
+  },
+  "0.95|5": {
+   "hits": 350,
+   "rooms": 803,
+   "executable": 802,
+   "per_object": {
+    "bed": {
+     "hits": 788,
+     "n": 802
+    },
+    "desk": {
+     "hits": 391,
+     "n": 802
+    },
+    "cab": {
+     "hits": 745,
+     "n": 802
+    },
+    "chair": {
+     "hits": 796,
+     "n": 802
+    }
+   }
+  },
+  "0.95|6": {
+   "hits": 349,
+   "rooms": 803,
+   "executable": 802,
+   "per_object": {
+    "bed": {
+     "hits": 797,
+     "n": 802
+    },
+    "desk": {
+     "hits": 389,
+     "n": 802
+    },
+    "cab": {
+     "hits": 745,
+     "n": 802
+    },
+    "chair": {
+     "hits": 796,
+     "n": 802
+    }
+   }
+  },
+  "0.98|2": {
+   "hits": 479,
+   "rooms": 803,
+   "executable": 802,
+   "per_object": {
+    "bed": {
+     "hits": 797,
+     "n": 802
+    },
+    "desk": {
+     "hits": 516,
+     "n": 802
+    },
+    "cab": {
+     "hits": 753,
+     "n": 802
+    },
+    "chair": {
+     "hits": 801,
+     "n": 802
+    }
+   }
+  }
+ },
+ "conversion": {
+  "roles": {
+   "bed": "Bed",
+   "desk": "Desk",
+   "chair": "Chair",
+   "cab": "Cabinet"
+  },
+  "storage": "Dresser emitted as Cabinet role",
+  "start": "reachable position nearest the room centroid",
+  "frame": "room polygon axis-aligned bounds, min corner at origin"
+ },
+ "splits": {
+  "train": {
+   "hits": 267,
+   "rooms": 591
+  },
+  "val": {
+   "hits": 46,
+   "rooms": 129
+  },
+  "test": {
+   "hits": 37,
+   "rooms": 83
+  }
+ },
+ "note": "Dresser is emitted as the Cabinet role; contacts are ideal storage-face contacts, not recorded cabinet openings."
+}
