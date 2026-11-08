@@ -72,6 +72,37 @@ def ablation(rows, budget=96.0, policy="dispersed"):
     return table
 
 
+def abstain_yield(rows, arm="TA-U", policy="dispersed", limit=1.0):
+    """At each budget: how many (scene, object) pairs would be allowed to speak,
+    and how often that permission is actually right."""
+    budgets = sorted({r["budget_m"] for r in rows})
+    out = []
+    for b in budgets:
+        picked = [r for r in rows
+                  if r["arm"] == arm and r["policy"] == policy and r["budget_m"] == b]
+        allowed = 0
+        allowed_hit = 0
+        total = 0
+        for r in picked:
+            sc = r.get("scores", {}).get(TOL)
+            if not sc:
+                continue
+            for obj in OBJECTS:
+                e = sc["center_error_m"].get(obj)
+                d = sc["center_diameter_upper_m"].get(obj)
+                if e is None or d is None:
+                    continue
+                total += 1
+                if d <= limit:
+                    allowed += 1
+                    if e <= HIT_M:
+                        allowed_hit += 1
+        out.append({"budget_m": b, "n": total, "allowed": allowed,
+                    "allowed_share": allowed / total if total else None,
+                    "hit_given_allowed": allowed_hit / allowed if allowed else None})
+    return out
+
+
 def policy_gap(rows, arm="TA-U", budget=96.0):
     return {p: cell(rows, arm, p, budget) for p in POLICIES}
 
@@ -87,6 +118,7 @@ def summarize(rows):
             "budget96_dispersed": cell(rows, arm, "dispersed", 96.0),
             "budget32_dispersed": cell(rows, arm, "dispersed", 32.0),
         }
+    out["abstain_yield_TA-U_dispersed"] = abstain_yield(rows, "TA-U", "dispersed")
     out["ablation_at_96_dispersed"] = ablation(rows, 96.0, "dispersed")
     out["policy_gap_TA-U_96"] = policy_gap(rows, "TA-U", 96.0)
     return out
@@ -110,6 +142,11 @@ def report(res):
     for row in res["curves"]["TA-U/dispersed"]:
         d = row
         print("%5.1f m  coverage %.3f  hit %s" % (d["budget_m"], d["coverage"], fmt(d)))
+    print("== abstention yield, TA-U dispersed (envelope <= 1.0 m) ==")
+    for row in res["abstain_yield_TA-U_dispersed"]:
+        print("%5.1f m  allowed %3d/%3d = %.2f  hit|allowed %s" % (
+            row["budget_m"], row["allowed"], row["n"], row["allowed_share"],
+            "%.2f" % row["hit_given_allowed"] if row["hit_given_allowed"] is not None else "-"))
     print("== TA-U vs TA-K, 96 m ==")
     for policy in POLICIES:
         a = res["arms"]["TA-U"][("budget96_%s" % policy)]

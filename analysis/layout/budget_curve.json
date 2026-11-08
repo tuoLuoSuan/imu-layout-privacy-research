@@ -3435,6 +3435,78 @@
    }
   ]
  },
+ "abstain_yield_TA-U_dispersed": [
+  {
+   "budget_m": 0.0,
+   "n": 56,
+   "allowed": 0,
+   "allowed_share": 0.0,
+   "hit_given_allowed": null
+  },
+  {
+   "budget_m": 2.0,
+   "n": 56,
+   "allowed": 0,
+   "allowed_share": 0.0,
+   "hit_given_allowed": null
+  },
+  {
+   "budget_m": 4.0,
+   "n": 56,
+   "allowed": 0,
+   "allowed_share": 0.0,
+   "hit_given_allowed": null
+  },
+  {
+   "budget_m": 8.0,
+   "n": 56,
+   "allowed": 2,
+   "allowed_share": 0.03571428571428571,
+   "hit_given_allowed": 1.0
+  },
+  {
+   "budget_m": 12.0,
+   "n": 56,
+   "allowed": 12,
+   "allowed_share": 0.21428571428571427,
+   "hit_given_allowed": 1.0
+  },
+  {
+   "budget_m": 20.0,
+   "n": 56,
+   "allowed": 14,
+   "allowed_share": 0.25,
+   "hit_given_allowed": 1.0
+  },
+  {
+   "budget_m": 32.0,
+   "n": 56,
+   "allowed": 15,
+   "allowed_share": 0.26785714285714285,
+   "hit_given_allowed": 1.0
+  },
+  {
+   "budget_m": 48.0,
+   "n": 56,
+   "allowed": 15,
+   "allowed_share": 0.26785714285714285,
+   "hit_given_allowed": 1.0
+  },
+  {
+   "budget_m": 64.0,
+   "n": 56,
+   "allowed": 15,
+   "allowed_share": 0.26785714285714285,
+   "hit_given_allowed": 1.0
+  },
+  {
+   "budget_m": 96.0,
+   "n": 56,
+   "allowed": 17,
+   "allowed_share": 0.30357142857142855,
+   "hit_given_allowed": 1.0
+  }
+ ],
  "ablation_at_96_dispersed": {
   "P-U": {
    "n": 14,
