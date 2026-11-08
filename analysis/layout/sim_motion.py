@@ -5,7 +5,9 @@
 设备系经 R(t) 映射到世界：a_meas = R^T (p'' - g)，omega_meas = vee(R^T R')。
 """
 import json, math, os
+from functools import lru_cache
 import numpy as np
+from scipy.spatial.transform import Rotation
 
 G = 9.81
 # 房间与家具真值（s-59d570ee 的雷达参考框），仅用于生成器与评价
@@ -32,7 +34,7 @@ SCRIPT = [
     (30.2, 33.4, 'walk',   START,               'walk'),
     (33.4, 36.0, 'other',  START,               'stand'),
 ]
-H_BODY = {'stand': 1.60, 'walk': 1.60, 'sit': 0.95, 'reach': 1.60, 'lie': 0.32}
+H_BODY = {'stand': 1.60, 'walk': 1.60, 'sit': 0.95, 'reach': 1.60, 'lie': 0.80}
 PITCH = {'stand': -35.0, 'walk': -35.0, 'sit': -12.0, 'reach': -20.0, 'lie': 58.0}
 HAND_FWD = {'stand': 0.34, 'walk': 0.36, 'sit': 0.30, 'reach': 0.44, 'lie': 0.16}
 HAND_UP = {'stand': -0.55, 'walk': -0.55, 'sit': -0.32, 'reach': -0.50, 'lie': -0.18}
@@ -41,17 +43,17 @@ F_STEP = 1.15  # 由真实录音标定：慢走约 0.4 m/s 时步频约 1.1 Hz�
 
 def smooth(u):
     u = min(max(u, 0.0), 1.0)
-    return u * u * (3 - 2 * u)
+    return u**3 * (10 - 15*u + 6*u*u)
 
 
 def smooth_d(u, d):
     u = min(max(u, 0.0), 1.0)
-    return 6 * u * (1 - u) / d
+    return 30 * u*u * (1 - u)**2 / d
 
 
 def smooth_dd(u, d):
     u = min(max(u, 0.0), 1.0)
-    return (6 - 12 * u) / (d * d)
+    return 60 * u * (1 - u) * (1 - 2*u) / (d*d)
 
 
 class Motion(object):
@@ -62,12 +64,15 @@ class Motion(object):
         self.t_end = script[-1][1]
         self.targets = [np.array(s[3], float) for s in script]
         self.psi = []
-        carry = 0.0
+        first_movement=next((self.targets[i]-(self.targets[i-1] if i else START)
+                             for i in range(len(script))
+                             if np.linalg.norm(self.targets[i]-(self.targets[i-1] if i else START))>1e-6),np.array([0.,1.]))
+        carry = math.atan2(first_movement[1],first_movement[0])-math.pi/2
         for i in range(len(script)):
             prev = self.targets[i - 1] if i else START.astype(float)
             d = self.targets[i] - prev
             if np.linalg.norm(d) > 1e-6:
-                want = math.atan2(d[1], d[0])
+                want = math.atan2(d[1], d[0])-math.pi/2
                 while want - carry > math.pi:
                     want -= 2 * math.pi
                 while want - carry < -math.pi:
@@ -114,7 +119,7 @@ class Motion(object):
             psi = psi_prev + (psi_cur - psi_prev) * smooth(min(1.0, (t - s[0]) / 0.8))
         # 步态权重在走/停之间平滑过渡，否则位置的硬阶跃会在二阶差分里炸掉
         if s[2] == 'walk':
-            moving = min(smooth((t - s[0]) / 0.5), smooth((s[1] - t) / 0.5))
+            moving = smooth((t - s[0]) / 0.5) * smooth((s[1] - t) / 0.5)
         else:
             moving = 0.0
         return p, dp, ddp, h, dh, psi, cur_pose, moving, blend, prev_pose
@@ -136,13 +141,20 @@ def basis_from_up(u):
     return np.vstack([r1, r2, u])
 
 
+@lru_cache(None)
+def posture_transition(previous, current):
+    first=basis_from_up(U_UP[previous])
+    last=basis_from_up(U_UP[current])
+    return first,Rotation.from_matrix(first.T@last).as_rotvec()
+
+
 def device_pose(t, st):
     """人体状态 -> 设备位置与姿态（含步态摆动）。"""
     p, dp, ddp, h, dh, psi, pose, moving, blend, prev_pose = st
     ph = 2 * math.pi * F_STEP * t
     # 步态摆幅必须跟真实步速成比例：位移小、摆动大，网络就以为在快走（这一步曾让路程高估 4.3 倍）
     speed = float(np.linalg.norm(dp))
-    swing = moving * min(speed / 0.8, 1.5)
+    swing = moving * 1.5 * math.tanh(speed / 1.2)
     # 手在身体右前方；换姿势时手的前伸/高度也要连续过渡
     fwd = HAND_FWD[prev_pose] + (HAND_FWD[pose] - HAND_FWD[prev_pose]) * blend
     up = HAND_UP[prev_pose] + (HAND_UP[pose] - HAND_UP[prev_pose]) * blend
@@ -150,18 +162,24 @@ def device_pose(t, st):
     off = np.array([0.18 + 0.010 * swing * math.sin(ph), fwd, 0.0])
     c, s = math.cos(psi), math.sin(psi)
     hand_world = p + np.array([c * off[0] - s * off[1], s * off[0] + c * off[1]])
+    # Smooth arm flexion near walls, rather than allowing the handset outside the room.
+    margin,beta=.03,40.
+    hand_world=np.array([margin+np.logaddexp(0,beta*(v-margin))/beta-
+                         np.logaddexp(0,beta*(v-(limit-margin)))/beta
+                         for v,limit in zip(hand_world,ROOM)])
     # 脚跟着地：每步一个周期光滑的窄脉冲（周期函数，避免跨步边界出现位置跳变）
     frac = (t * F_STEP) % 1.0
-    step = 0.5 * (1.0 + math.cos(2.0 * math.pi * (frac - 0.10))) ** 4 if swing > 1e-6 else 0.0
+    step = 0.5 * (1.0 + math.cos(2.0 * math.pi * (frac - 0.10))) ** 4
     hz = h + up + 0.018 * swing * math.sin(ph) - 0.008 * swing * step
     pos = np.array([hand_world[0], hand_world[1], hz])
     # 姿态：先按实测量出的「上」方向定俯仰，再绕世界竖轴转到人体朝向，最后叠小摆幅
-    u = (1 - blend) * np.array(U_UP[prev_pose]) + blend * np.array(U_UP[pose])
+    first,rotation_vector=posture_transition(prev_pose,pose)
+    base=first@Rotation.from_rotvec(blend*rotation_vector).as_matrix()
     # 摆幅按真实录音标定：手的姿态起伏比最初估计小得多（真实竖直起伏 std 约 1.7 m/s^2）
     yaw = psi + math.radians(1.2) * swing * math.sin(ph + 0.7)
     psw = math.radians(0.9) * swing * math.sin(ph + 0.3)
     rsw = math.radians(0.6) * swing * math.sin(ph + 1.1)
-    R = rot(yaw, 0.0, 0.0) @ basis_from_up(u) @ rot(0.0, psw, rsw)
+    R = rot(yaw, 0.0, 0.0) @ base @ rot(0.0, psw, rsw)
     return pos, R, yaw
 
 
@@ -179,7 +197,7 @@ def vee(M):
     return np.array([M[2, 1] - M[1, 2], M[0, 2] - M[2, 0], M[1, 0] - M[0, 1]]) / 2.0
 
 
-def generate(fs=120.0, seed=7, seconds=None):
+def generate(fs=120.0, seed=7, seconds=None, add_noise=True):
     """生成原生六轴：返回 dict(t, acc, gyro, truth)。"""
     m = Motion()
     T = m.t_end if seconds is None else min(seconds, m.t_end)
@@ -189,35 +207,36 @@ def generate(fs=120.0, seed=7, seconds=None):
     acc = np.zeros((n, 3))
     gyro = np.zeros((n, 3))
     truth = {'pos': [], 'yaw': [], 'pitch': [], 'h': [], 'label': [], 'R': []}
-    eps = 1e-4
+    try:
+        from .simulation_validation import pose_derivatives
+    except ImportError:
+        from simulation_validation import pose_derivatives
+    def pose_at(time):
+        value=device_pose(time,m.state(time))
+        return value[0],value[1]
     for k, tk in enumerate(t):
         st = m.state(tk)
         pos, R, yaw = device_pose(tk, st)
         # 设备位置二阶导：用解析步态做中心差分（步态项无解析式）
-        lo = max(tk - eps, 0.0)
-        hi = min(tk + eps, T - 1e-9)
-        h = hi - lo
-        p_f = device_pose(hi, m.state(hi))[0]
-        p_c = device_pose(tk, m.state(tk))[0]
-        p_b = device_pose(lo, m.state(lo))[0]
-        if h >= 2 * eps - 1e-12:  # 内部点：标准三点二阶差分
-            a_world = (p_f - 2 * p_c + p_b) / (eps * eps)
-        else:                     # 端点：一阶前向二阶差分
-            p2 = device_pose(min(tk + 2 * eps, T - 1e-9), m.state(min(tk + 2 * eps, T - 1e-9)))[0]
-            a_world = (p_f - 2 * p_c + p2) / (eps * eps)
+        _,a_world,omega=pose_derivatives(pose_at,tk,T)
         acc[k] = R.T @ (a_world - np.array([0.0, 0.0, -G]))
-        R2 = device_pose(tk + eps, m.state(tk + eps))[1]
-        gyro[k] = vee(R.T @ R2) / eps
+        gyro[k] = omega
         s = m._seg(tk)
         truth['pos'].append(pos); truth['yaw'].append(yaw); truth['pitch'].append(0.0)
         truth['R'].append(R)
         truth['h'].append(st[3]); truth['label'].append(s[2])
-    acc += rng.normal(0, 0.055, acc.shape) + np.array([0.04, -0.03, 0.05])
-    gyro += rng.normal(0, 0.008, gyro.shape) + np.array([0.004, -0.003, 0.002])
+    clean_acc,clean_gyro=acc.copy(),gyro.copy()
+    if add_noise:
+        acc += rng.normal(0, 0.055, acc.shape) + np.array([0.04, -0.03, 0.05])
+        gyro += rng.normal(0, 0.008, gyro.shape) + np.array([0.004, -0.003, 0.002])
     ts = np.round((t + 1e-6 * rng.normal(0, 1, n)) * 1e9).astype(np.int64) + 1700000000000000000
     for name, A in (('pos', np.array(truth['pos'])), ('yaw', np.array(truth['yaw'])),
                     ('pitch', np.array(truth['pitch'])), ('h', np.array(truth['h'])),
                     ('R', np.array(truth['R']))):
         truth[name] = A
     truth['segments'] = [[s[0], s[1], s[2]] for s in m.script]
-    return {'t': t, 'ts_ns': ts, 'acc': acc, 'gyro': gyro, 'truth': truth, 'fs': fs}
+    return {'t': t, 'ts_ns': ts, 'acc': acc, 'gyro': gyro, 'truth': truth, 'fs': fs,
+            'clean_acc':clean_acc,'clean_gyro':clean_gyro,'room_m':ROOM,
+            'assumptions':{'lying_phone_height_m':H_BODY['lie']+HAND_UP['lie'],
+                           'lying_height_source':'0.50 m supplied bed plus assumed 0.12 m leg/phone clearance',
+                           'wall_hand_margin_m':.03,'generator_is_calibrated_to_one_development_protocol':True}}

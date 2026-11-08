@@ -64,7 +64,10 @@ def predict_timeline(model, ta, acceleration, tg, gyro, budget_s=None,
     (ta, acceleration, aa), (tg, gyro, ga) = selected
     if len(ta) < 4 or len(tg) < 4:
         return {'runs': [], 'windows': [], 'budget_s': budget}
-    last_start = min(budget, float(ta[-1]), float(tg[-1])) - WINDOW_S
+    # Features use the half-open [start,end) interval. Maturity is determined
+    # by the budget; coverage/gap validation below checks the available samples.
+    # Requiring a sample at end would add an unnecessary sample/receipt delay.
+    last_start = budget - WINDOW_S
     windows = []
     matrix = []
     for start in np.arange(1.0, last_start + 1e-9, STEP_S):

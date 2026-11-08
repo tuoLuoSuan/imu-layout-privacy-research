@@ -37,8 +37,10 @@ def err(box, ref):
     return float(np.hypot(cx - rx, cy - ry))
 
 
-def main():
-    channels = AM.load_phone(SESS, require_receipts=True)
+def main(session=None, grid=None, output=None, workdir=None):
+    session=SESS if session is None else session
+    grid=GRID if grid is None else grid
+    channels = AM.load_phone(session, require_receipts=True)
     ta, acceleration, aa = channels['accelerometer']
     tg, gyro, ga = channels['gyroscope']
     model = AM.load_model()
@@ -47,9 +49,9 @@ def main():
     full_g = [(float(t), *map(float, x)) for t, x in zip(tg, gyro)]
     full = run_frontend(full_a, full_g, sha)
 
-    output_root = os.path.join(paths.REPO, 'output', 'layout-recon', 'causal-prefix-20261108')
+    output_root = workdir or os.path.join(paths.REPO, 'output', 'layout-recon', 'causal-prefix-20261108')
     rows = []
-    for T in GRID:
+    for T in grid:
         ma, mg = (ta <= T) & (aa <= T), (tg <= T) & (ga <= T)
         A = [(float(t), *map(float, x)) for t, x in zip(ta[ma], acceleration[ma])]
         G = [(float(t), *map(float, x)) for t, x in zip(tg[mg], gyro[mg])]
@@ -70,11 +72,16 @@ def main():
         json.dump(timeline, io.open(os.path.join(tmp, 'actions.json'), 'w', encoding='utf-8'))
         res = LS.solve(tmp, save=False, allow_partial=True)
         pred = res[0] if isinstance(res, tuple) else res
+        Q = res[1] if isinstance(res,tuple) else None
+        from analysis.layout.evidence_space import spatial_coverage
         row = {'T': T, 'windows': int(len(d)), 'traj_end': [float(d[-1, 1]), float(d[-1, 2])],
                'traj_dev_vs_full': dev, 'status': pred['status'],
                'events': [list(r) for r in avail], 'err': {}, 'boxes': {},
                'action_windows': timeline['windows'],
-               'last_action_available_s': max((w['available_s'] for w in timeline['windows']), default=None)}
+               'last_action_available_s': max((w['available_s'] for w in timeline['windows']), default=None),
+               'rot_deg':pred.get('rot_deg'),
+               'estimated_prefix_coverage':None if Q is None else spatial_coverage(Q,(LS.W,LS.L)),
+               'coverage_source':'This prefix estimated trajectory and selected room alignment; not independent tracking'}
         for k, b in (pred.get('boxes') or {}).items():
             row['boxes'][k] = [float(v) for v in b]
             row['err'][k] = err(b, REF[k])
@@ -82,8 +89,8 @@ def main():
         print('T=%5.1f s  win %4d  dev %.2e m  %-13s %s' % (
             T, len(d), dev, pred['status'],
             ' '.join('%s %.3f' % (k, row['err'][k]) for k in ('bed', 'desk', 'cab', 'chair') if k in row['err'])))
-    out = os.path.join(HERE, 'prefix.json')
-    json.dump({'grid': GRID, 'rows': rows, 'causal_action_recomputed': True,
+    out = output or os.path.join(HERE, 'prefix.json')
+    json.dump({'grid': grid, 'rows': rows, 'causal_action_recomputed': True,
                'frozen_action_model': str(AM.MODEL_PATH),
                'budget_basis': 'sensor time and callback receipt from first phone acceleration event'},
               io.open(out, 'w', encoding='utf-8'), indent=1)
@@ -91,4 +98,11 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--session')
+    parser.add_argument('--grid',help='Comma-separated raw-data budgets in seconds')
+    parser.add_argument('--output')
+    parser.add_argument('--workdir')
+    args=parser.parse_args()
+    main(args.session,None if args.grid is None else [float(t) for t in args.grid.split(',')],args.output,args.workdir)

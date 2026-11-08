@@ -17,6 +17,7 @@ import sim_motion as SM
 import action_model as AM
 import paths
 from analysis.phone_ronin.adapter import prepare_features, make_windows, predict, integrate_centers
+from analysis.layout.simulation_validation import physical_report,required_actions_available
 
 FIELDS = ['sequence', 'sensor_timestamp_ns', 'received_elapsed_realtime_ns',
           'writer_dequeued_elapsed_realtime_ns', 'x', 'y', 'z', 'accuracy']
@@ -68,6 +69,7 @@ def run(outdir):
            'signals': {'accelerometer': list(map(list, np.round(gen['acc'][:2], 4))),
                        'gyroscope': list(map(list, np.round(gen['gyro'][:2], 4)))},
            'segments': truth['segments']}
+    res['physics']=physical_report(gen)
 
     # 1) 静止重力：0-4 s 站着不动（other 档）
     still = (gen['t'] >= 1.0) & (gen['t'] < 4.0)
@@ -75,7 +77,7 @@ def run(outdir):
     gy = np.linalg.norm(gen['gyro'][still], axis=1)
     res['static'] = {'n': int(still.sum()), 'acc_norm_mean': float(an.mean()),
                      'acc_norm_std': float(an.std()), 'gyro_norm_rms': float(np.sqrt((gy ** 2).mean())),
-                     'acc_bias_xyz': [float(v) for v in gen['acc'][still].mean(axis=0)]}
+                     'acc_mean_xyz_including_gravity': [float(v) for v in gen['acc'][still].mean(axis=0)]}
 
     # 2) 已知旋转：只用 t=0 的真值姿态做初值，靠陀螺积分整段，算与真值的夹角（与 yaw 规范无关）
     def expm(w, dt):
@@ -106,7 +108,8 @@ def run(outdir):
     windows, wt = make_windows(times, feats)
     pred, _ = predict(windows, paths.RONIN_ARCH, paths.RONIN_CKPT,
                       __import__('hashlib').sha256(open(paths.RONIN_CKPT, 'rb').read()).hexdigest())
-    t_est = np.asarray(wt, float)[:, 1]
+    # The network interval is [start,end]; location integration is indexed by its centre.
+    t_est = np.asarray(wt, float)[:, 2]
     xy = integrate_centers(t_est, pred)
     tb = gen['t']
     truth_at = np.column_stack([np.interp(t_est, tb, body[:, 0]), np.interp(t_est, tb, body[:, 1])])
@@ -121,7 +124,9 @@ def run(outdir):
                        'path_ratio': seg_est / seg_true if seg_true else None,
                        'end_err_m': float(err[-1]), 'median_err_m': float(np.median(err)),
                        'p90_err_m': float(np.quantile(err, 0.9)),
-                       'max_err_m': float(err.max())}
+                       'max_err_m': float(err.max()),
+                       'evaluation_time':'RoNIN target-interval centre',
+                       'scope':'Compatibility with this frozen estimator, not generator physical validity'}
 
     # 4) 事件：冻结五类模型 vs 真值分段
     model = AM.load_model()
@@ -161,9 +166,11 @@ def run(outdir):
           and res['static']['gyro_norm_rms'] <= 0.05,
           'rotation': res['rotation']['drift_deg_final'] <= 10.0,
           'shape': 0.8 <= res['frontend']['path_ratio'] <= 1.25,
-          'events': sum(1 for c, v in per.items() if v['recall'] and v['recall'] >= 0.5) >= 3}
+          'events': required_actions_available(per)}
     res['checks'] = ok
-    res['verdict'] = 'pass' if all(ok.values()) else 'synthetic-domain-mismatch'
+    res['generator_verdict']='kinematically-consistent' if res['physics']['passed'] else 'kinematic-check-failed'
+    res['frontend_compatibility']='passes-current-diagnostics' if all(ok.values()) else 'synthetic-domain-mismatch'
+    res['verdict']=res['generator_verdict']+' / '+res['frontend_compatibility']
     json.dump(res, open(os.path.join(outdir, 'sim-check.json'), 'w'), indent=1)
     return res, est, truth_at, t_est, plt_dump(wins, tlab, plab)
 

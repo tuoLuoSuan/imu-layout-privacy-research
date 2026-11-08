@@ -127,5 +127,4 @@
   "model_sha256": "0ee65930c5e5a5eeab8139bb4477c222dc2e51bccd5eadb4aeadb36e1504d6d4",
   "noise_recomputed": true,
   "scope": "Development replay; synthetic inputs are geometric trajectories and anchors",
-  "final_inventory_note": "Refreshed after presentation, metadata and line-ending fixes; numerical result values unchanged"
-}
+  "final_inventory_note": "Refreshed after presentation, metadata and line-ending fixes; numerical result values unchanged","snapshot_status":"Historical baseline before activity-frontier changes; hashes are historical","latest_incremental_run":"analysis/layout/activity-run.json"}

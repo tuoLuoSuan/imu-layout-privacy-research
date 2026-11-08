@@ -37,13 +37,16 @@ def segment_stats(t, a, t0, t1, fs_nominal=120.0, trim=0.6):
     n = len(u)
     win = np.hanning(n)
     spec = np.abs(np.fft.rfft(u * win))
-    fr = np.fft.rfftfreq(n, d=1.0 / fs_nominal)
+    measured_rate=(len(tt)-1)/(tt[-1]-tt[0])
+    fr = np.fft.rfftfreq(n, d=1.0 / measured_rate)
     band = (fr > 0.8) & (fr < 4.5)
     if not band.any():
         return None
     idx = np.argmax(spec * band)
     f = float(fr[idx])
     return dict(f=round(f, 3), amp=round(float(u.std()), 4),
+                frequency_semantics='Dominant vertical IMU oscillation; not independently measured foot-step frequency',
+                measured_sample_rate_hz=float(measured_rate),
                 span_s=round(float(tt[-1] - tt[0]), 2),
                 n=int(n), up=[round(float(v), 3) for v in up])
 
