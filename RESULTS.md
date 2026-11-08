@@ -2,6 +2,15 @@
 
 此前活动扫描对应 [activity-run.json](analysis/layout/activity-run.json) 与 [activity-results.json](analysis/layout/activity-results.json)。下方编号旧章节保留 [current-run.json](analysis/layout/current-run.json) 的历史重算快照；本轮没有冒称全部旧诊断再次重算。原始录音、雷达参考和场景导出不在公开仓库。
 
+## 最新继续：固定门槛压力与事件冗余
+
+[完整记录与解释](docs/research/2026-11-08-threshold-stress-and-event-redundancy.md)，数值见 `analysis/layout/threshold-stress-results.json`，运行清单 `threshold-stress-run.json`。仍是14个独立开发几何场景。
+
+- 固定90%双轴接触跨度，0.10m共同偏移通过435/448，向内收缩通过15/28。这里是条件半径≤0.5m的产出，不是实际准确率：这两组点估计均命中。
+- 同样5条事件、同样跨度：最多一条错误事件的并集模型，重复中点允许181/448，重复两个端点允许432/448。
+- 端点重复、收缩0.10m并加一条假阳性的联合对照：全可信模型允许82/448，其中4错；容错模型允许240/448，其中0错。不能将这些开发压力条件当成现实误检概率。
+- 容错不是无成本：仅三次接触且允许任意一次出错，90%和100%构造均未达到条件半径目标；原始生产布局保持不变。
+
 ## 最新增量审查：双轴接触与条件分辨率
 
 完整说明见 [第二轮审查与实做](docs/research/2026-11-08-stage2-audit-and-next-results.md)，数值与运行清单分别为 [stage2-results.json](analysis/layout/stage2-results.json)、[stage2-run.json](analysis/layout/stage2-run.json)。下方 activity/current 清单及第10节早期仿真保留为历史，不代表此次全部复跑。

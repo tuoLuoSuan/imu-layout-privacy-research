@@ -4,6 +4,7 @@ The bank is fixed before evidence. Unknown furniture remains a latent variable.
 Search scores and retained hypotheses are not calibrated posterior probabilities.
 """
 import math
+from itertools import combinations
 import numpy as np
 
 def intersect_interval(prior,event):
@@ -89,6 +90,27 @@ def bed_position_envelope(room,dimensions,anchors,padding=.2):
     bounds=np.array([m['center_bounds_m'] for m in modes])
     return {'status':'conditional','bounds':np.r_[bounds[:,:2].min(axis=0),bounds[:,2:].max(axis=0)].tolist(),
             'modes':modes,'condition':'Known room/dimensions, correct bed labels, all phone positions within bed plus padding'}
+
+
+def bed_outlier_envelope(room,dimensions,anchors,padding=.2,max_bad_events=1):
+    """Union over all possible erroneous-event choices, never a truth-selected subset.
+
+    The conditional model permits at most k incompatible contact observations.
+    Events are interaction visits, not overlapping classifier windows.
+    """
+    if not isinstance(max_bad_events,int) or max_bad_events<0:raise ValueError('Nonnegative integer event fault budget required')
+    a=np.asarray(anchors,float).reshape(-1,2);n=len(a);keep=max(0,n-max_bad_events)
+    modes=[]
+    for ids in combinations(range(n),keep):
+        candidate=bed_position_envelope(room,dimensions,a[list(ids)],padding)
+        for mode in candidate['modes']:
+            modes.append(dict(mode,omitted_events=[i for i in range(n) if i not in ids]))
+    if not modes:return {'status':'conflict','bounds':None,'modes':[],'max_bad_events':max_bad_events}
+    bounds=np.array([m['center_bounds_m'] for m in modes])
+    return {'status':'conditional','bounds':np.r_[bounds[:,:2].min(axis=0),bounds[:,2:].max(axis=0)].tolist(),
+         'modes':modes,'max_bad_events':max_bad_events,'event_count':n,
+         'condition':'Known room/dimensions; at most k observations violate the padded phone-in-bed constraint',
+         'not_a_calibrated_probability':True}
 
 def _contact(boxes,event,padding,reach):
     p=np.asarray(event["pos"],float)

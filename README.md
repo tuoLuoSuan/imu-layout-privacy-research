@@ -1,5 +1,7 @@
 # IMU 室内家具布局重建
 
+本轮继续结果：[固定门槛压力测试与事件冗余](docs/research/2026-11-08-threshold-stress-and-event-redundancy.md)。程序没有运行阻塞；90%床中心条件门槛对误差结构和事件可信度敏感。新增最多一条错误事件的集合并集模型；关键端点重复可提高容错产出，整屋与原始IMU门槛仍未确认。
+
 本仓库研究：在明确侧信息和采集协议下，手机与手表的惯性观测能将二维家具布局约束到什么程度，以及活动增加后候选范围如何变化。目前已跑通**手机六轴 IMU → 轨迹 → 五类动作 → 家具框**的真实单房案例；手机与手表联合布局增益、跨房活动阈值仍待验证。
 
 当前版本于 2026-11-08 复核。最新增量见 [第二轮审查与实做](docs/research/2026-11-08-stage2-audit-and-next-results.md)、[stage2-results.json](analysis/layout/stage2-results.json) 与 [stage2-run.json](analysis/layout/stage2-run.json)。以下 activity/current 清单保留各自历史运行范围。上一轮完整论证与 DS 交接保留于 [活动泄露边界](docs/research/2026-11-08-activity-leakage-frontier.md)，数值入口为 [RESULTS.md](RESULTS.md) 与 [activity-results.json](analysis/layout/activity-results.json)，运行摘要见 [activity-run.json](analysis/layout/activity-run.json)。[current-run.json](analysis/layout/current-run.json) 保留上一轮快照，不代表当前全部源码的重算。
