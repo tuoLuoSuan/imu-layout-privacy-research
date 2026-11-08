@@ -55,6 +55,8 @@
     "analysis/layout/desk_channel.json",
     "analysis/layout/door.py",
     "analysis/layout/drift_flip.json",
+    "analysis/layout/envelope_bound.json",
+    "analysis/layout/envelope_bound.py",
     "analysis/layout/evidence_accum.json",
     "analysis/layout/evidence_space.py",
     "analysis/layout/exp_average.json",
