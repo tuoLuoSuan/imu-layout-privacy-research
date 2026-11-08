@@ -1,0 +1,1289 @@
+{
+ "scope": "Fine re-test of the activity threshold around the reported 95%/6 cell",
+ "protocol": {
+  "coverages": [
+   0.85,
+   0.88,
+   0.9,
+   0.92,
+   0.94,
+   0.95,
+   0.96,
+   0.98,
+   1.0
+  ],
+  "visits": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "policies": [
+   "repeat",
+   "dispersed"
+  ],
+  "tolerance_m": 0.5,
+  "note": "Same protocol as activity_surface; only the sampled grid changed."
+ },
+ "grid_normal": {
+  "repeat|0.85|2": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.88|2": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.90|2": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.92|2": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.94|2": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.95|2": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.96|2": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.98|2": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|1.00|2": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.85|3": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.88|3": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.90|3": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.92|3": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.94|3": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.95|3": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.96|3": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.98|3": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|1.00|3": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.85|4": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.88|4": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.90|4": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.92|4": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.94|4": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.95|4": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.96|4": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.98|4": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|1.00|4": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.85|5": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.88|5": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.90|5": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.92|5": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.94|5": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.95|5": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.96|5": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.98|5": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|1.00|5": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.85|6": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.88|6": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.90|6": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.92|6": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.94|6": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.95|6": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.96|6": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|0.98|6": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "repeat|1.00|6": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.85|2": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.88|2": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.90|2": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.92|2": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.94|2": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.95|2": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.96|2": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.98|2": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|1.00|2": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.85|3": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.88|3": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.90|3": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.92|3": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.94|3": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.95|3": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.96|3": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.98|3": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|1.00|3": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.85|4": {
+   "hits": 2,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.88|4": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.90|4": {
+   "hits": 5,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.92|4": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.94|4": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.95|4": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.96|4": {
+   "hits": 8,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.98|4": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|1.00|4": {
+   "hits": 10,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.85|5": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.88|5": {
+   "hits": 4,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.90|5": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.92|5": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.94|5": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.95|5": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.96|5": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.98|5": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|1.00|5": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.85|6": {
+   "hits": 3,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.88|6": {
+   "hits": 4,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.90|6": {
+   "hits": 6,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.92|6": {
+   "hits": 7,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.94|6": {
+   "hits": 9,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.95|6": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.96|6": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|0.98|6": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  },
+  "dispersed|1.00|6": {
+   "hits": 11,
+   "rooms": 11,
+   "executable": 11
+  }
+ },
+ "grid_extended": {
+  "repeat|0.85|2": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.88|2": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.90|2": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.92|2": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.94|2": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.95|2": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.96|2": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.98|2": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|1.00|2": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.85|3": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.88|3": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.90|3": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.92|3": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.94|3": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.95|3": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.96|3": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.98|3": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|1.00|3": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.85|4": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.88|4": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.90|4": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.92|4": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.94|4": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.95|4": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.96|4": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.98|4": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|1.00|4": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.85|5": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.88|5": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.90|5": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.92|5": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.94|5": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.95|5": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.96|5": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.98|5": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|1.00|5": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.85|6": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.88|6": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.90|6": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.92|6": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.94|6": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.95|6": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.96|6": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|0.98|6": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "repeat|1.00|6": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.85|2": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.88|2": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.90|2": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.92|2": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.94|2": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.95|2": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.96|2": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.98|2": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|1.00|2": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.85|3": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.88|3": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.90|3": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.92|3": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.94|3": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.95|3": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.96|3": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.98|3": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|1.00|3": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.85|4": {
+   "hits": 2,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.88|4": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.90|4": {
+   "hits": 5,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.92|4": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.94|4": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.95|4": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.96|4": {
+   "hits": 8,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.98|4": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|1.00|4": {
+   "hits": 10,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.85|5": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.88|5": {
+   "hits": 4,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.90|5": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.92|5": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.94|5": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.95|5": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.96|5": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.98|5": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|1.00|5": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.85|6": {
+   "hits": 3,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.88|6": {
+   "hits": 4,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.90|6": {
+   "hits": 6,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.92|6": {
+   "hits": 7,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.94|6": {
+   "hits": 9,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.95|6": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.96|6": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|0.98|6": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  },
+  "dispersed|1.00|6": {
+   "hits": 11,
+   "rooms": 13,
+   "executable": 12
+  }
+ },
+ "frontier_normal_at_80pct": {
+  "first_pass_per_visit_count": {
+   "2": 0.98,
+   "3": 0.98,
+   "4": 0.98,
+   "5": 0.94,
+   "6": 0.94
+  },
+  "passing_cells": [
+   {
+    "coverage": 0.98,
+    "visits": 2,
+    "hits": 9,
+    "rooms": 11
+   },
+   {
+    "coverage": 0.98,
+    "visits": 3,
+    "hits": 9,
+    "rooms": 11
+   },
+   {
+    "coverage": 0.98,
+    "visits": 4,
+    "hits": 9,
+    "rooms": 11
+   },
+   {
+    "coverage": 0.94,
+    "visits": 5,
+    "hits": 9,
+    "rooms": 11
+   },
+   {
+    "coverage": 0.94,
+    "visits": 6,
+    "hits": 9,
+    "rooms": 11
+   }
+  ],
+  "pareto": [
+   {
+    "coverage": 0.98,
+    "visits": 2,
+    "hits": 9,
+    "rooms": 11
+   },
+   {
+    "coverage": 0.94,
+    "visits": 5,
+    "hits": 9,
+    "rooms": 11
+   }
+  ]
+ },
+ "per_room_first_pass_at_95pct": [
+  {
+   "scene": "FloorPlan301",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan302",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan304",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan305",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan307",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan308",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan310",
+   "repeat": null,
+   "dispersed": 5
+  },
+  {
+   "scene": "FloorPlan312",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan313",
+   "repeat": null,
+   "dispersed": 5
+  },
+  {
+   "scene": "FloorPlan318",
+   "repeat": null,
+   "dispersed": 5
+  },
+  {
+   "scene": "FloorPlan320",
+   "repeat": 2,
+   "dispersed": 2
+  },
+  {
+   "scene": "FloorPlan303",
+   "repeat": null,
+   "dispersed": null
+  },
+  {
+   "scene": "FloorPlan316",
+   "repeat": null,
+   "dispersed": null
+  }
+ ],
+ "cabinet_at_4_vs_5_visits": [
+  {
+   "scene": "FloorPlan301",
+   "4": {
+    "cab_error_m": 0.11651763921027403,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.19278323650527351,
+    "cab_contact_span_m": [
+     0.38556647300720215,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan302",
+   "4": {
+    "cab_error_m": 0.47316531382031374,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.43297042328293533,
+    "cab_contact_span_m": [
+     0.09656167030334473,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan304",
+   "4": {
+    "cab_error_m": 0.021732699500260577,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.021732699500260577,
+    "cab_contact_span_m": [
+     0.0,
+     0.14117646217346191
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan305",
+   "4": {
+    "cab_error_m": 0.28615263705148664,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.28615263705148664,
+    "cab_contact_span_m": [
+     0.0,
+     0.5636605381965638
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan307",
+   "4": {
+    "cab_error_m": 0.21454329692334145,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.013619739500553943,
+    "cab_contact_span_m": [
+     0.6911404073238373,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan308",
+   "4": {
+    "cab_error_m": 0.27310798762500577,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.0385902713748901,
+    "cab_contact_span_m": [
+     0.0,
+     0.1484605371952057
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan310",
+   "4": {
+    "cab_error_m": 0.8775431222583606,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.2248455889546095,
+    "cab_contact_span_m": [
+     0.0,
+     0.1965966939926147
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan312",
+   "4": {
+    "cab_error_m": 0.046639142679393654,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.0591009794363046,
+    "cab_contact_span_m": [
+     0.0,
+     0.1343998074531555
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan313",
+   "4": {
+    "cab_error_m": 0.8951592789741746,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.36615782459469437,
+    "cab_contact_span_m": [
+     0.0,
+     0.2530226469039918
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan318",
+   "4": {
+    "cab_error_m": 1.3128058339434665,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.17369909817868853,
+    "cab_contact_span_m": [
+     0.0,
+     0.1155292868614195
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  },
+  {
+   "scene": "FloorPlan320",
+   "4": {
+    "cab_error_m": 0.07208907998846989,
+    "cab_contact_span_m": [
+     0.0,
+     0.0
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   },
+   "5": {
+    "cab_error_m": 0.07208907998846989,
+    "cab_contact_span_m": [
+     0.0,
+     0.5131468176841736
+    ],
+    "n_cab_contacts": 1,
+    "executable": true
+   }
+  }
+ ],
+ "raw_path": "analysis/layout\\_fine_work\\activity-surface-fine-raw.json"
+}
