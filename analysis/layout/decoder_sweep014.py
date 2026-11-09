@@ -25,6 +25,8 @@ from .priorcost014 import decode_arm as prior_decode
 from .ensemble014 import decode_arm as ensemble_decode
 from .softcover014 import decode_arm as soft_decode
 from .stability014 import decode_arm as stability_decode
+from .relax015 import decode_arm as relax_decode
+from .rank015 import decode_arm as rank_decode
 
 ARMS = {
     'base': lambda *a: prior_decode(*a, arm='base'),
@@ -43,6 +45,24 @@ ARMS = {
     'ens10c64': lambda *a: ensemble_decode(*a, arm='ens10c64'),
     'stab': lambda *a: stability_decode(*a, arm='stab'),
     'stab128': lambda *a: stability_decode(*a, arm='stab128'),
+    'ovl05': lambda *a: relax_decode(*a, arm='ovl05'),
+    'ovl10': lambda *a: relax_decode(*a, arm='ovl10'),
+    'drop': lambda *a: relax_decode(*a, arm='drop'),
+    'both05': lambda *a: relax_decode(*a, arm='both05'),
+    'both10': lambda *a: relax_decode(*a, arm='both10'),
+    'sw1': lambda *a: rank_decode(*a, arm='sw1'),
+    'sw3': lambda *a: rank_decode(*a, arm='sw3'),
+    'eps5p': lambda *a: rank_decode(*a, arm='eps5p'),
+    'eps10p': lambda *a: rank_decode(*a, arm='eps10p'),
+    'eps5s': lambda *a: rank_decode(*a, arm='eps5s'),
+    'eps10s': lambda *a: rank_decode(*a, arm='eps10s'),
+    'eps20s': lambda *a: rank_decode(*a, arm='eps20s'),
+    'eps20p': lambda *a: rank_decode(*a, arm='eps20p'),
+    'minc': lambda *a: rank_decode(*a, arm='minc'),
+    'minc64': lambda *a: rank_decode(*a, arm='minc64'),
+    'eps10s64': lambda *a: rank_decode(*a, arm='eps10s64'),
+    'eps20s64': lambda *a: rank_decode(*a, arm='eps20s64'),
+    'eps20p64': lambda *a: rank_decode(*a, arm='eps20p64'),
 }
 
 DECODERS = {}
