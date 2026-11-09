@@ -77,7 +77,7 @@ def example(p,out,native,audit):
     header(fig,'七件房示例：原始 IMU 推断，不读取真值布局',name+' · 虚线仅作评价参考；实色为预测占地；两栏使用同一个方向/残差解码器')
     fig.legend([Rectangle((0,0),1,1,facecolor=COLORS[c]) for c in NAMES],[NAMES[c] for c in NAMES],ncol=4,loc='upper right',bbox_to_anchor=(.95,.875),fontsize=6.8)
     fig.text(.10,.14,'展示规则：新链全中、旧链未全中的七件房，按场景ID取首个；非随机代表性抽样。',fontsize=7)
-    fig.text(.10,.085,'轨迹仅显示每约1/1500样点；推断与误差计算使用全时段。中心全中不代表轮廓全中。',fontsize=6.8)
+    fig.text(.10,.085,'每条轨迹仅显示约1500个采样点；推断与误差计算使用全时段。中心全中不代表轮廓全中。',fontsize=6.8)
     fig.text(.10,.04,'32条总体：新链17全中、9可行但错、6冲突/无提案；不排除失败房间。',fontsize=6.8)
     save(fig,out,'raw-seven-object-example',list(axes));(out/'example-provenance.json').write_text(json.dumps({'scene':name,'selection_rule':'First scene ID with7 objects, new all hit and old not all hit','display_decimation_only':True},indent=1))
 
