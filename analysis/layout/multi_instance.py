@@ -97,10 +97,10 @@ def event_sequence(scene,path,count,mode='dispersed'):
     return out
 
 
-def _proposals(room,entry,events,path,padding,walk_excluded=True,walk_clearance=.15,walk_tolerance=0.):
+def _proposals(room,entry,events,path,padding,walk_excluded=True,walk_clearance=.15,walk_tolerance=0.,region_prior=None):
     cls=entry['category'];mine=[e for e in events if e['object']==cls]
     hard=mine if cls=='bed' else []
-    base=object_region(room,entry['dimensions'],cls,hard,path,path_margin=walk_tolerance,
+    base=object_region(room,entry['dimensions'],cls,hard,path,padding=padding,path_margin=walk_tolerance,
         walk_clearance_m=walk_clearance,use_path=walk_excluded)
     boxes=[];points=[]
     combinations=[()]
@@ -111,6 +111,9 @@ def _proposals(room,entry,events,path,padding,walk_excluded=True,walk_clearance=
         for mode in base['modes']:
             regions=mode['q_regions'];size=np.asarray(mode['dimensions'])
             for e in subset:regions=intersect_regions(regions,_event_options(cls,e['pos'],size,padding,.6))
+            if region_prior is not None:
+                prior=region_prior(entry,size,room)
+                if prior is not None:regions=intersect_regions(regions,np.asarray(prior,float).reshape(-1,4))
             if not len(regions):continue
             for x in [0.,.5,1.]:
                 for y in [0.,.5,1.]:
@@ -123,7 +126,7 @@ def _proposals(room,entry,events,path,padding,walk_excluded=True,walk_clearance=
 
 def decode_instances(room,inventory,events,path,known_desk_protocol=False,beam_width=48,candidate_limit=64,proposal_cache=None,
                      contact_padding=.20,walk_clearance=.15,walk_tolerance=0.,
-                     walk_excluded_objects=('bed','desk','cab','chair')):
+                     walk_excluded_objects=('bed','desk','cab','chair'),proposal_filter=None,region_prior=None):
     if contact_padding<0 or walk_clearance<0 or walk_tolerance<0:raise ValueError('Nonnegative observation bounds required')
     for e in events:
         if set(e)!={'object','pos'} or e['object'] not in ['bed','chair','cab']:raise ValueError('Only class/position observations allowed; no instance identity')
@@ -131,15 +134,26 @@ def decode_instances(room,inventory,events,path,known_desk_protocol=False,beam_w
     targets=list(events)
     if known_desk_protocol:targets+= [{'object':'desk_relation','pos':e['pos']} for e in events if e['object']=='chair']
     if len(targets)>60:raise ValueError('Diagnostic event budget exceeded')
-    full=(1<<len(targets))-1;pools={};counts={}
+    full=(1<<len(targets))-1;pools={};counts={};before_filter={}
     for entry in inventory:
         cls=entry['category']
         excluded=cls in walk_excluded_objects
-        if proposal_cache is None:boxes,base=_proposals(room,entry,events,path,contact_padding,excluded,walk_clearance,walk_tolerance)
+        args=(room,entry,events,path,contact_padding,excluded,walk_clearance,walk_tolerance)
+        if region_prior is not None:args=args+(region_prior,)
+        if proposal_cache is None:boxes,base=_proposals(*args)
         else:
             key=(entry['id'],tuple(entry['dimensions']),tuple((e['object'],*e['pos']) for e in events),np.asarray(path,float).tobytes(),contact_padding,excluded,walk_clearance,walk_tolerance)
-            if key not in proposal_cache:proposal_cache[key]=_proposals(room,entry,events,path,contact_padding,excluded,walk_clearance,walk_tolerance)
+            if region_prior is not None:key=key+(region_prior,)
+            if key not in proposal_cache:proposal_cache[key]=_proposals(*args)
             boxes,base=proposal_cache[key]
+        if proposal_filter is not None:
+            before_filter[entry['id']]=len(boxes)
+            keep=np.asarray(proposal_filter(entry,boxes,room))
+            if keep.dtype!=np.bool_ or keep.shape!=(len(boxes),):raise ValueError('Proposal prior must return one Boolean per untruncated box')
+            boxes=boxes[keep]
+            if not len(boxes):
+                counts[entry['id']]=0
+                return {'status':'no_proposals','boxes':{},'candidate_counts':counts,'proposal_counts_before_filter':before_filter}
         if not len(boxes):return {'status':'no_proposals','boxes':{},'candidate_counts':counts}
         masks=np.zeros(len(boxes),dtype=np.uint64);energy=np.zeros(len(boxes))
         for j,e in enumerate(targets):
@@ -161,7 +175,9 @@ def decode_instances(room,inventory,events,path,known_desk_protocol=False,beam_w
                 if len(set(selected))>=candidate_limit:break
             if len(set(selected))>=candidate_limit:break
         ids=np.array(sorted(set(selected)));pools[entry['id']]=(boxes[ids],masks[ids],energy[ids]);counts[entry['id']]=len(boxes)
-    return _constraint_search(inventory,pools,targets,counts)
+    result=_constraint_search(inventory,pools,targets,counts)
+    if proposal_filter is not None:result['proposal_counts_before_filter']=before_filter
+    return result
 
 
 def _constraint_search(inventory,pools,targets,counts,node_limit=20000):

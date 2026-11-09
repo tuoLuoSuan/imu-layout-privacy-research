@@ -81,8 +81,8 @@ def script(scene,peak_speed=.65):
     return result
 
 
-def generate(scene,seed=7,peak_speed=.65,fs=120.,wrist='medium',calibration=False):
-    segs=script(scene,peak_speed) if not calibration else [
+def generate(scene,seed=7,peak_speed=.65,fs=120.,wrist='medium',calibration=False,script_override=None):
+    segs=script_override if script_override is not None else script(scene,peak_speed) if not calibration else [
       {'start':0.,'end':5.,'label':'other','a':np.array([1.,1.]),'b':np.array([1.,1.]),'heading':np.array([1.,0.])},
       {'start':5.,'end':5.+1.875*10/peak_speed,'label':'walk','a':np.array([1.,1.]),'b':np.array([11.,1.]),'heading':np.array([1.,0.])},
       {'start':5.+1.875*10/peak_speed,'end':10.+1.875*10/peak_speed,'label':'other','a':np.array([11.,1.]),'b':np.array([11.,1.]),'heading':np.array([1.,0.])}]

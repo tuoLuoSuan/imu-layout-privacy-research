@@ -68,7 +68,7 @@ def predict(t,A,model_dir,budget_s=None):
         if groups and w['center_s']-groups[-1][-1]['center_s']<=.51:groups[-1].append(w)
         else:groups.append([w])
     runs=[['cabinet',g[0]['start_s'],g[-1]['end_s']] for g in groups if len(g)>=2]
-    return {'runs':runs,'windows':windows,'model_sha256':meta['model_sha256'],'scope':'New wrist-only cabinet RF; learned on existing real r1/r2; no phone cabinet label'}
+    return {'runs':runs,'windows':windows,'model_sha256':meta['model_sha256'],'scope':meta.get('scope','New wrist-only cabinet RF; learned on existing real r1/r2; no phone cabinet label')}
 
 
 if __name__=='__main__':
