@@ -24,6 +24,7 @@ from .multi_raw010 import infer as raw_infer
 from .priorcost014 import decode_arm as prior_decode
 from .ensemble014 import decode_arm as ensemble_decode
 from .softcover014 import decode_arm as soft_decode
+from .stability014 import decode_arm as stability_decode
 
 ARMS = {
     'base': lambda *a: prior_decode(*a, arm='base'),
@@ -40,6 +41,8 @@ ARMS = {
     'soft1000': lambda *a: soft_decode(*a, arm='soft1000', node_limit=60000),
     'ens10': lambda *a: ensemble_decode(*a, arm='ens10'),
     'ens10c64': lambda *a: ensemble_decode(*a, arm='ens10c64'),
+    'stab': lambda *a: stability_decode(*a, arm='stab'),
+    'stab128': lambda *a: stability_decode(*a, arm='stab128'),
 }
 
 DECODERS = {}

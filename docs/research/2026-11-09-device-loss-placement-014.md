@@ -86,13 +86,33 @@ s=0 的 8 间失败可分成两半：11509/11511/11515/11527 是纯选择失败�
 
 | 集合 | 只做接触回访 | 加储物墙距修复 | Δ |
 | --- | --- | --- | --- |
-| 开发 8 间 11000–11007 | 4/8 | 8/8 | +4 |
+| 开发 8 间 11000–11007 | 4/8 | 6/8 | +2 |
 | 新 32 间 11200–11231 | 21/32 | 23/32 | +2 |
 | 确认 32 间 11300–11331 | 20/32 | 22/32 | +2 |
 | 014 确认 32 间 11500–11531（s=0） | 未跑 | 24/32 | – |
 
+更正：本表初稿把开发 8 间写成 4/8 → 8/8。8/8 是 013 的**真值位姿**诊断（`truth_wall013`），
+不是同一条链上的普通位姿臂；普通位姿臂在开发 8 间上是 6/8（`wall012` 与本文 `base` 同为 6/8，已用
+`decoder_sweep014` 重跑复核）。三批的增量因此是同向的 +2、+2、+2，而不是 +4、+2、+2。
+
 011 提交时的设备层数字是 17/32（11100–11131，53.13%）；014 的 24/32（11500–11531，75%）来自不同批次，只能作同协议的横向参考，
 不能与 17/32 相减。
+
+## 6b 另一次失败的真无关选择器：跨截断一致性
+
+`analysis/layout/stability014.py` 的规则是：同一份证据解两遍（候选保留上限 64 与 128），若两解的每个实例中心差 ≤0.15 m（与墙隙窗口同尺度），认为结果对截断不敏感、取紧的那一解；否则取宽的一解。
+`stab128` 是相反方向的对照（一致时取宽）。
+
+| 批次 | base(128) | c64 | stab | stab128 |
+| --- | --- | --- | --- | --- |
+| 11500–11531（s=0） | 24 | 25 | 24 | 25 |
+| 11200–11231（s=0） | 23 | 23 | 23 | 23 |
+| 11000–11007（开发 8 间） | 6 | 6 | 6 | 6 |
+| 11600–11631（s=0.5，tracker b） | 17 | 18 | 17 | 18 |
+
+⇒ 跨截断一致性在两个方向上都不超过“固定一个臂”的成绩：它只是把批次级的臂选择挪到了房间级，而没有提供新的判据。
+四个真无关的选择器（代价选择器、集成共识、软覆盖、跨截断一致性）没有一个在跨批上超过最好的固定臂，这本身就是本文 §4.8 的结论：
+**在当前证据下，选择准则的收益上限由固定的那一臂决定**。
 
 ## 7 边界
 
@@ -118,3 +138,72 @@ python -m analysis.layout.exp_bias014 --out output/research-sync/2026-11-09-bias
   结论是“本批 +3、跨批不复现”。
 - `docs/research/2026-11-09-wall-prior-and-sensor-axis.md`：§5 的传感器阶梯不变；本文 §5 补的是 11600 批的复现。
 - 论文 v8 的 §4.8 与本文件 §1–§4 对应，§4.7 的复现句对应 §5。
+
+## 10 同一均方根、不同时间结构：白噪、常偏置与慢变游走
+
+### 10.1 设计
+
+- 房间 11500–11511（s=0，与 014 确认批同一批记录），加速度与陀螺的目标 RMS 固定为 0.02 m/s² 与 0.003 rad/s。
+- 三种扰动逐轴标定到同一 RMS：white = N(0,σ)（实测每轴标准差 0.002996/0.002997/0.002997）；const = 常数 ±σ（均值 ±σ、标准差 0）；walk = 累积和去均值后按每轴标准差重标定（均值≈0、标准差 0.003）。三者每轴 RMS 相同，只有谱形不同。
+- 三通道 gyro / acc / both × 三谱形 = 9 个扰动条件，加 clean 基线。每个条件重跑整条链：displacement011.replay → contact_loops011 → wall_refine012 → priorcost014.decode_arm(arm='base')。
+- 指标：整屋全中、实例位置 F1、路径长度比与末端位移比（旋转不变，是轨迹形状指标而不是精度指标）、前端错误单列。
+
+### 10.2 结果（冻结前端，12 间）
+
+| 条件 | 整屋 | F1 | 路径比中位 | 可算轨迹的间数 | 前端错误 |
+| --- | --- | --- | --- | --- | --- |
+| clean | 10/12 | 0.9742 | 1.020 | 12 | 0 |
+| white-gyro | 11/12 | 0.9722 | 1.025 | 12 | 0 |
+| white-acc | 7/12 | 0.8484 | 1.025 | 12 | 0 |
+| white-both | 7/12 | 0.8179 | 1.030 | 12 | 0 |
+| const-gyro | 8/12 | 0.9298 | 1.022 | 12 | 0 |
+| const-acc | 8/12 | 0.8810 | 1.026 | 12 | 0 |
+| const-both | 9/12 | 0.9365 | 1.029 | 12 | 0 |
+| walk-gyro | 0/12 | 0 | 1.911 | 6 | 6 |
+| walk-acc | 8/12 | 0.9107 | 1.044 | 12 | 0 |
+| walk-both | 0/12 | 0 | 1.892 | 7 | 5 |
+
+读法：白噪最轻（gyro 11/12，acc 与 both 7/12）；常偏置居中（8–9/12）；慢变游走按通道分裂——加在陀螺上 0/12 且一半记录前端直接报错，加在加速度上 8/12、与 clean 同档。同样的均方根下，陀螺通道的慢变成分是唯一让记录在进入布局之前就消失的条件。
+
+### 10.3 机理：一次启动标定 + 一个绝对门限
+
+- 冻结前端用 analysis/layout/inertial010.py:21-35 的 rest_mask：0.4 s 滑窗，陀螺判据 gyr<.009，其中 gyr=np.sqrt(uniform_filter1d((G*G).sum(axis=1),w)) 是滑动均方再开根——白噪不会被平均掉，慢变信号几乎原样保留；加速度判据 0.085 m/s²、重力 9.81±0.15，每个静止段还要 ≥0.8 s。
+- inertial010.py:56：首个静止块必须落在 4 s 内，否则抛 ValueError('Initial stable handset period required')；:57 的 bias=G[stationary].mean(axis=0) 是整条记录唯一的陀螺偏置。
+- analysis/layout/gateaudit015.py 用同一 0.4 s 窗、同一门限复算：clean 下四间（11500/11501/11503/11507）首个 ≥0.8 s 静止段都在 0.0 s、开场 6 s 通过比例 0.777–0.779、窗口陀螺中位 0.0052–0.0053 rad/s；walk-gyro 下 11501/11503/11507 的首个 ≥0.8 s 静止段推到 210.96 / 66.46 / 344.5 s，开场 6 s 通过比例 0.0，中位 0.0106–0.0136 rad/s ⇒ 三条记录在布局阶段之前就被拒绝。
+- 同一批里 11500 是反例：walk-gyro 下首个静止段仍在 0.0 s（中位 0.0067 < 0.009），门限照过，但轨迹已经坏掉（未精修 1.644 倍、精修后 1.791 倍，整屋不中）⇒ 门限是两条损伤路径中的一条，不是全部。
+
+### 10.4 两个朴素修法都不成立
+
+- 相对门限（restgate015.adaptive_mask，分位 0.10、1.5 倍）：walk-gyro 的分位值只有 0.0057 rad/s，低于 0.009 的绝对下限，阈值仍取 0.009；11503 的首个 ≥0.8 s 静止段由 66.46 s 只挪到 54.77 s，仍远超 4 s。
+- 用最初 2 s 均值当偏置（restgate015.correct_protocol）：11500 路径比由 1.644 变成 14.738；11501/11503 由抛错变成路径比 0.222 / 0.100 的退化轨迹——把慢变信号的初值扣到整段，等于同时引入一个不随时间变化的错误。
+
+### 10.5 门控陀螺跟踪：clean 恒等，walk 回一半
+
+| 条件 | 冻结 | 门控只修陀螺（gg） | 非门控全修正（b） |
+| --- | --- | --- | --- |
+| clean | 10/12（0.9742，1.020） | 10/12（0.9742，1.0199） | 8/12（0.8631，1.019） |
+| white-both | 7/12（0.8179） | — | 9/12（0.8532，1.031） |
+| walk-gyro | 0/12（6 间前端报错） | 5/12（0.6770，1.029） | 5/12（0.6798，1.027） |
+| walk-both | 0/12（5 间前端报错） | 4/12（0.6663，1.054） | 6/12（0.7520，1.030） |
+
+- 门控条件（bias_tracker014b.gated_gyro：漂移 >1.5 倍标准误，或初偏置 >0.006 rad/s）在 clean 上不触发，整屋、F1、路径比与冻结臂逐项相同——这是一个恒等对照。
+- 在 walk 条件上触发（漂移估计 0.0045–0.0051 rad/s，标准误 0.00086–0.00087）：walk-gyro 由 0/12 到 5/12（配对 5:0，精确 McNemar p=0.0625），walk-both 由 0/12 到 4/12（4:0，p=0.125）。12 间全部给出轨迹，路径比回到 1.029 / 1.054。
+- 非门控对照（bias_tracker014b.replay，同时重估加速度与陀螺）把 walk-both 提到 6/12，代价是 clean 由 10/12 掉到 8/12 ⇒ 门控与只动陀螺都不是装饰。
+
+### 10.6 结论与边界
+
+- 结论：在相同均方根下，误差的时间结构比幅度更能决定整屋结果；当前链路把能否开始解算押在一次启动标定与一个绝对陀螺门限上，慢变陀螺误差因此从精度损失升级为记录丢失。
+- 剩余损耗换了形态：从 frontend_error（没有轨迹）变成 no_proposals / proposal_conflict / 有轨迹但整屋不中，这一部分交给 §1–§4 的覆盖与选择。
+- 边界：12 间、一批、s=0；扰动加在合成生成器上，不外推真实 MEMS 的谱形；RMS 相同只控制幅度，不表示物理等价；path_ratio/disp_ratio 是轨迹形状指标；门控阈值在开发 8 间上选定（与 014 同）。
+- 作废说明：本实验第一次跑跟踪器臂时 exp_shape014.make_front 收下 tracker 参数却没有使用，得到与冻结臂逐字节相同的结果，那条"跟踪器救不了 walk"的结论作废；第二次接线调用 gated_replay(..., heading_regularization=True) 用了不存在的关键字，48 行全部 frontend_error。两次的原始 JSON 与日志留档，本文只报修正后的结果。
+- 口径更正：早前用 tmp_gate_probe*.py 得到的门限数字算的是 gyro RMS 0.01 rad/s（模块默认值），不是本实验的 0.003；本节所有数字一律由 gateaudit015.py 在 0.02/0.003 下重算。
+
+### 10.7 复现命令
+
+    python -m analysis.layout.exp_shape014 --case confirm32 --rooms 11500-11511 --pattern 'multi-{i:05d}-s0' --acc-rms 0.02 --gyro-rms 0.003 --only clean,white-gyro,white-acc,white-both,const-gyro,const-acc,const-both --jobs 6 --out output/layout-recon/shape-wb-11500.json
+    python -m analysis.layout.exp_shape014 --case confirm32 --rooms 11500-11511 --pattern 'multi-{i:05d}-s0' --acc-rms 0.02 --gyro-rms 0.003 --only walk-gyro,walk-acc,walk-both --jobs 6 --out output/layout-recon/shape-walk-11500.json
+    python -m analysis.layout.exp_shape014 --case confirm32 --rooms 11500-11511 --pattern 'multi-{i:05d}-s0' --acc-rms 0.02 --gyro-rms 0.003 --tracker b --only clean,white-both,walk-gyro,walk-both --jobs 6 --out output/layout-recon/shape-tracker-b-11500.json
+    python -m analysis.layout.exp_shape014 --case confirm32 --rooms 11500-11511 --pattern 'multi-{i:05d}-s0' --acc-rms 0.02 --gyro-rms 0.003 --tracker gg --only clean,walk-gyro,walk-both --jobs 6 --out output/layout-recon/shape-tracker-gg-11500.json
+    python -m analysis.layout.gateaudit015 --room multi-11503-s0 --conditions clean,walk-gyro --out output/layout-recon/gateaudit015-11503.json
+    python -m analysis.layout.gateaudit015 --room multi-11500-s0 --probe replay --conditions clean,walk-gyro
+
