@@ -1,0 +1,180 @@
+{
+ "scope": "Desk wall-adjacency prior and the room-recovery threshold on the controlled rectangular room family",
+ "wall_property": {
+  "measured_on": "1000 historical rooms (native)",
+  "desk_within_0.15m": 1.0,
+  "bed": 1.0,
+  "cabinet": 0.995,
+  "chair": 0.0,
+  "median_gap_desk_m": 0.104,
+  "note": "Declared property of this generator, like the rectangular room and the known inventory; not a measured interaction and never truth."
+ },
+ "dev1000_100_14": {
+  "none": {
+   "n_rooms": 1000,
+   "whole_hits": 651,
+   "f1": 0.9069119047619048,
+   "desk_recall": 0.7586666666666667
+  },
+  "wall_0.15": {
+   "n_rooms": 1000,
+   "whole_hits": 826,
+   "f1": 0.9213952380952382,
+   "desk_recall": 0.8726666666666667
+  },
+  "wall_0.30": {
+   "n_rooms": 1000,
+   "whole_hits": 771,
+   "f1": 0.9243166666666666,
+   "desk_recall": 0.8406666666666667
+  }
+ },
+ "sweep_wall": {
+  "cells": [
+   {
+    "coverage": 1.0,
+    "visits": 8,
+    "n_rooms": 1000,
+    "whole_hits": 700,
+    "whole_rate": 0.7,
+    "wilson95": [
+     0.6708755915748548,
+     0.727593648990589
+    ],
+    "f1": 0.8214952380952381,
+    "desk_recall": 0.8013333333333333
+   },
+   {
+    "coverage": 1.0,
+    "visits": 11,
+    "n_rooms": 1000,
+    "whole_hits": 766,
+    "whole_rate": 0.766,
+    "wilson95": [
+     0.7387716492779421,
+     0.7911924406740982
+    ],
+    "f1": 0.8848285714285714,
+    "desk_recall": 0.8486666666666667
+   },
+   {
+    "coverage": 1.0,
+    "visits": 14,
+    "n_rooms": 1000,
+    "whole_hits": 826,
+    "whole_rate": 0.826,
+    "wilson95": [
+     0.8012668269449458,
+     0.8482380351767277
+    ],
+    "f1": 0.9213952380952382,
+    "desk_recall": 0.8726666666666667
+   },
+   {
+    "coverage": 0.95,
+    "visits": 14,
+    "n_rooms": 1000,
+    "whole_hits": 647,
+    "whole_rate": 0.647,
+    "wilson95": [
+     0.6168681093891878,
+     0.6760067824264134
+    ],
+    "f1": 0.8676595238095237,
+    "desk_recall": 0.7686666666666667
+   }
+  ]
+ },
+ "fine_counts_wall": {
+  "cells": [
+   {
+    "visits": 12,
+    "whole": 766,
+    "n": 1000,
+    "rate": 0.766,
+    "wilson95": [
+     0.7387716492779421,
+     0.7911924406740982
+    ],
+    "f1": 0.8848285714285714,
+    "desk": 0.8486666666666667
+   },
+   {
+    "visits": 13,
+    "whole": 766,
+    "n": 1000,
+    "rate": 0.766,
+    "wilson95": [
+     0.7387716492779421,
+     0.7911924406740982
+    ],
+    "f1": 0.8848285714285714,
+    "desk": 0.8486666666666667
+   },
+   {
+    "visits": 15,
+    "whole": 826,
+    "n": 1000,
+    "rate": 0.826,
+    "wilson95": [
+     0.8012668269449458,
+     0.8482380351767277
+    ],
+    "f1": 0.9213952380952382,
+    "desk": 0.8726666666666667
+   },
+   {
+    "visits": 20,
+    "whole": 851,
+    "n": 1000,
+    "rate": 0.851,
+    "wilson95": [
+     0.8275875218326485,
+     0.8717259953597054
+    ],
+    "f1": 0.9423428571428571,
+    "desk": 0.9
+   }
+  ]
+ },
+ "new5000_confirm_300": {
+  "none": {
+   "n": 300,
+   "whole": 198,
+   "rate": 0.66,
+   "f1": 0.8971111111111111,
+   "desk": 0.7533333333333333
+  },
+  "wall_0.15": {
+   "n": 300,
+   "whole": 252,
+   "rate": 0.84,
+   "f1": 0.914857142857143,
+   "desk": 0.8711111111111111
+  }
+ },
+ "threshold": {
+  "criterion": "whole-room all-instance centre <=0.5 m, rate >=80%",
+  "point": "100% coverage / 14 dispersed visits",
+  "dev_rate": 0.826,
+  "dev_wilson95": [
+   0.801,
+   0.848
+  ],
+  "new_rate": 0.84,
+  "below": [
+   {
+    "cell": "100%/11",
+    "rate": 0.766
+   },
+   {
+    "cell": "100%/8",
+    "rate": 0.7
+   },
+   {
+    "cell": "95%/14",
+    "rate": 0.647
+   }
+  ]
+ }
+}
