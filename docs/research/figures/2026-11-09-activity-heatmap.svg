@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.740157pt" height="348.661417pt" viewBox="0 0 518.740157 348.661417" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-09T10:28:42.171420</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 348.661417
+L 518.740157 348.661417
+L 518.740157 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 46.686614 258.009449
+L 235.956672 258.009449
+L 235.956672 80.192126
+L 46.686614 80.192126
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#p9c7ae44146)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAAl0lEQVR4nC3MOw6CQAAA0dkPIYsSwgZRoqWtpWfwIF7IU3gtY2llAsof1gDW8zLiEl8daUJ+SigOijp1dOGIn5WEQY28P250acg3UzQW2l2H2X/YRgXWlEgApyW9gcE4tOlRaqQZFFqO6AkgYPAnMBKHJTaoONsnka7+ByFm5LTDeD0r3c7x6L8WsKDlNG3XXkPmvdnonB946zHkBX6POgAAAABJRU5ErkJggg==" id="imageaa3f08fb0f" width="8" height="6" transform="matrix(23.658757 0 0 -29.63622 46.686614 258.009449)" style="image-rendering:crisp-edges;image-rendering:pixelated"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="58.515993" y="267.333668" transform="rotate(-0 58.515993 267.333668)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="82.17475" y="267.333668" transform="rotate(-0 82.17475 267.333668)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="105.833507" y="267.333668" transform="rotate(-0 105.833507 267.333668)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="129.492264" y="267.333668" transform="rotate(-0 129.492264 267.333668)">60</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="153.151021" y="267.333668" transform="rotate(-0 153.151021 267.333668)">75</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="176.809779" y="267.333668" transform="rotate(-0 176.809779 267.333668)">85</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="200.468536" y="267.333668" transform="rotate(-0 200.468536 267.333668)">95</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="224.127293" y="267.333668" transform="rotate(-0 224.127293 267.333668)">100</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="141.321643" y="279.716011" transform="rotate(-0 141.321643 279.716011)">覆盖目标 (%)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_10">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="43.186614" y="246.103448" transform="rotate(-0 43.186614 246.103448)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_11">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="43.186614" y="216.467227" transform="rotate(-0 43.186614 216.467227)">2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_11"/>
+     <g id="text_12">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="43.186614" y="186.831007" transform="rotate(-0 43.186614 186.831007)">5</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12"/>
+     <g id="text_13">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="43.186614" y="157.194787" transform="rotate(-0 43.186614 157.194787)">8</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13"/>
+     <g id="text_14">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="43.186614" y="127.558566" transform="rotate(-0 43.186614 127.558566)">11</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_14"/>
+     <g id="text_15">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="43.186614" y="97.922346" transform="rotate(-0 43.186614 97.922346)">14</text>
+     </g>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="28.60552" y="169.100787" transform="rotate(-90 28.60552 169.100787)">交互预算（次）</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 46.686614 258.009449
+L 46.686614 80.192126
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 46.686614 258.009449
+L 235.956672 258.009449
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="58.515993" y="244.82171" transform="rotate(-0 58.515993 244.82171)">4.6</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="82.17475" y="244.82171" transform="rotate(-0 82.17475 244.82171)">11.0</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="105.833507" y="244.82171" transform="rotate(-0 105.833507 244.82171)">25.9</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="129.492264" y="244.82171" transform="rotate(-0 129.492264 244.82171)">36.8</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="153.151021" y="244.82171" transform="rotate(-0 153.151021 244.82171)">45.9</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="176.809779" y="244.82171" transform="rotate(-0 176.809779 244.82171)">51.2</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="200.468536" y="244.82171" transform="rotate(-0 200.468536 244.82171)">62.0</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="224.127293" y="244.82171" transform="rotate(-0 224.127293 244.82171)">66.0</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="58.515993" y="215.185489" transform="rotate(-0 58.515993 215.185489)">—</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="82.17475" y="215.185489" transform="rotate(-0 82.17475 215.185489)">18.3</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="105.833507" y="215.185489" transform="rotate(-0 105.833507 215.185489)">35.7</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="129.492264" y="215.185489" transform="rotate(-0 129.492264 215.185489)">44.2</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="153.151021" y="215.185489" transform="rotate(-0 153.151021 215.185489)">56.2</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="176.809779" y="215.185489" transform="rotate(-0 176.809779 215.185489)">62.7</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="200.468536" y="215.185489" transform="rotate(-0 200.468536 215.185489)">68.4</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="224.127293" y="215.185489" transform="rotate(-0 224.127293 215.185489)">70.6</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="58.515993" y="185.549269" transform="rotate(-0 58.515993 185.549269)">—</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="82.17475" y="185.549269" transform="rotate(-0 82.17475 185.549269)">19.5</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="105.833507" y="185.549269" transform="rotate(-0 105.833507 185.549269)">39.3</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="129.492264" y="185.549269" transform="rotate(-0 129.492264 185.549269)">48.1</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="153.151021" y="185.549269" transform="rotate(-0 153.151021 185.549269)">60.0</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="176.809779" y="185.549269" transform="rotate(-0 176.809779 185.549269)">64.0</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="200.468536" y="185.549269" transform="rotate(-0 200.468536 185.549269)">67.2</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="224.127293" y="185.549269" transform="rotate(-0 224.127293 185.549269)">71.4</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="58.515993" y="155.913048" transform="rotate(-0 58.515993 155.913048)">—</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="82.17475" y="155.913048" transform="rotate(-0 82.17475 155.913048)">19.9</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="105.833507" y="155.913048" transform="rotate(-0 105.833507 155.913048)">42.4</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="129.492264" y="155.913048" transform="rotate(-0 129.492264 155.913048)">51.9</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="153.151021" y="155.913048" transform="rotate(-0 153.151021 155.913048)">65.4</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="176.809779" y="155.913048" transform="rotate(-0 176.809779 155.913048)">69.8</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="200.468536" y="155.913048" transform="rotate(-0 200.468536 155.913048)">79.4</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="224.127293" y="155.913048" transform="rotate(-0 224.127293 155.913048)">82.0</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="58.515993" y="126.276828" transform="rotate(-0 58.515993 126.276828)">—</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="82.17475" y="126.276828" transform="rotate(-0 82.17475 126.276828)">20.0</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="105.833507" y="126.276828" transform="rotate(-0 105.833507 126.276828)">42.9</text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="129.492264" y="126.276828" transform="rotate(-0 129.492264 126.276828)">53.2</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="153.151021" y="126.276828" transform="rotate(-0 153.151021 126.276828)">67.8</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="176.809779" y="126.276828" transform="rotate(-0 176.809779 126.276828)">72.1</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="200.468536" y="126.276828" transform="rotate(-0 200.468536 126.276828)">81.9</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="224.127293" y="126.276828" transform="rotate(-0 224.127293 126.276828)">87.1</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="58.515993" y="96.640607" transform="rotate(-0 58.515993 96.640607)">—</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="82.17475" y="96.640607" transform="rotate(-0 82.17475 96.640607)">20.0</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="105.833507" y="96.640607" transform="rotate(-0 105.833507 96.640607)">43.1</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="129.492264" y="96.640607" transform="rotate(-0 129.492264 96.640607)">53.6</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="153.151021" y="96.640607" transform="rotate(-0 153.151021 96.640607)">68.5</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="176.809779" y="96.640607" transform="rotate(-0 176.809779 96.640607)">74.5</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="200.468536" y="96.640607" transform="rotate(-0 200.468536 96.640607)">85.6</text>
+   </g>
+   <g id="text_64">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="224.127293" y="96.640607" transform="rotate(-0 224.127293 96.640607)">90.4</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="46.686614" y="68.192126" transform="rotate(-0 46.686614 68.192126)">a  平均实例位置 F1 (%)</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 277.596084 258.009449
+L 466.866142 258.009449
+L 466.866142 80.192126
+L 277.596084 80.192126
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#p5f73fd8727)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAAeklEQVR4nF3KPQoCMRRF4fNeouZHrOwigpUbcQnuz9rVCTIWJpNEGEZhvNWF88lFrp15GiMSwvTLOfE6OPT+uH07PRfEKBI9w9ExJMX+KkwR7+jWMDqhbPkDMVD3O5pVnifIKS8BItSNoVulrWHlC7oAM+pGqKERw5sP/DccVRdBYzoAAAAASUVORK5CYII=" id="image7f5e590dc5" width="8" height="6" transform="matrix(23.658757 0 0 -29.63622 277.596084 258.009449)" style="image-rendering:crisp-edges;image-rendering:pixelated"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_9">
+     <g id="line2d_15"/>
+     <g id="text_66">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="289.425463" y="267.333668" transform="rotate(-0 289.425463 267.333668)">0</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_16"/>
+     <g id="text_67">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="313.08422" y="267.333668" transform="rotate(-0 313.08422 267.333668)">20</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_17"/>
+     <g id="text_68">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="336.742977" y="267.333668" transform="rotate(-0 336.742977 267.333668)">40</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_18"/>
+     <g id="text_69">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="360.401734" y="267.333668" transform="rotate(-0 360.401734 267.333668)">60</text>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_19"/>
+     <g id="text_70">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="384.060492" y="267.333668" transform="rotate(-0 384.060492 267.333668)">75</text>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_20"/>
+     <g id="text_71">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="407.719249" y="267.333668" transform="rotate(-0 407.719249 267.333668)">85</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_21"/>
+     <g id="text_72">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="431.378006" y="267.333668" transform="rotate(-0 431.378006 267.333668)">95</text>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_22"/>
+     <g id="text_73">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="455.036763" y="267.333668" transform="rotate(-0 455.036763 267.333668)">100</text>
+     </g>
+    </g>
+    <g id="text_74">
+     <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle" x="372.231113" y="279.716011" transform="rotate(-0 372.231113 279.716011)">覆盖目标 (%)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_7">
+     <g id="line2d_23"/>
+     <g id="text_75">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="274.096084" y="246.103448" transform="rotate(-0 274.096084 246.103448)">0</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_24"/>
+     <g id="text_76">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="274.096084" y="216.467227" transform="rotate(-0 274.096084 216.467227)">2</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_25"/>
+     <g id="text_77">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="274.096084" y="186.831007" transform="rotate(-0 274.096084 186.831007)">5</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_26"/>
+     <g id="text_78">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="274.096084" y="157.194787" transform="rotate(-0 274.096084 157.194787)">8</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_27"/>
+     <g id="text_79">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="274.096084" y="127.558566" transform="rotate(-0 274.096084 127.558566)">11</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_28"/>
+     <g id="text_80">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: end" x="274.096084" y="97.922346" transform="rotate(-0 274.096084 97.922346)">14</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_6">
+    <path d="M 277.596084 258.009449
+L 277.596084 80.192126
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 277.596084 258.009449
+L 466.866142 258.009449
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_81">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="289.425463" y="244.82171" transform="rotate(-0 289.425463 244.82171)">0</text>
+   </g>
+   <g id="text_82">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="313.08422" y="244.82171" transform="rotate(-0 313.08422 244.82171)">0</text>
+   </g>
+   <g id="text_83">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="336.742977" y="244.82171" transform="rotate(-0 336.742977 244.82171)">36</text>
+   </g>
+   <g id="text_84">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="360.401734" y="244.82171" transform="rotate(-0 360.401734 244.82171)">339</text>
+   </g>
+   <g id="text_85">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="384.060492" y="244.82171" transform="rotate(-0 384.060492 244.82171)">597</text>
+   </g>
+   <g id="text_86">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="407.719249" y="244.82171" transform="rotate(-0 407.719249 244.82171)">590</text>
+   </g>
+   <g id="text_87">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="431.378006" y="244.82171" transform="rotate(-0 431.378006 244.82171)">1824</text>
+   </g>
+   <g id="text_88">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="455.036763" y="244.82171" transform="rotate(-0 455.036763 244.82171)">2799</text>
+   </g>
+   <g id="text_89">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="289.425463" y="215.185489" transform="rotate(-0 289.425463 215.185489)">—</text>
+   </g>
+   <g id="text_90">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="313.08422" y="215.185489" transform="rotate(-0 313.08422 215.185489)">0</text>
+   </g>
+   <g id="text_91">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="336.742977" y="215.185489" transform="rotate(-0 336.742977 215.185489)">5</text>
+   </g>
+   <g id="text_92">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="360.401734" y="215.185489" transform="rotate(-0 360.401734 215.185489)">189</text>
+   </g>
+   <g id="text_93">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="384.060492" y="215.185489" transform="rotate(-0 384.060492 215.185489)">697</text>
+   </g>
+   <g id="text_94">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="407.719249" y="215.185489" transform="rotate(-0 407.719249 215.185489)">931</text>
+   </g>
+   <g id="text_95">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="431.378006" y="215.185489" transform="rotate(-0 431.378006 215.185489)">2867</text>
+   </g>
+   <g id="text_96">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="455.036763" y="215.185489" transform="rotate(-0 455.036763 215.185489)">3839</text>
+   </g>
+   <g id="text_97">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="289.425463" y="185.549269" transform="rotate(-0 289.425463 185.549269)">—</text>
+   </g>
+   <g id="text_98">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="313.08422" y="185.549269" transform="rotate(-0 313.08422 185.549269)">0</text>
+   </g>
+   <g id="text_99">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="336.742977" y="185.549269" transform="rotate(-0 336.742977 185.549269)">6</text>
+   </g>
+   <g id="text_100">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="360.401734" y="185.549269" transform="rotate(-0 360.401734 185.549269)">258</text>
+   </g>
+   <g id="text_101">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="384.060492" y="185.549269" transform="rotate(-0 384.060492 185.549269)">963</text>
+   </g>
+   <g id="text_102">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="407.719249" y="185.549269" transform="rotate(-0 407.719249 185.549269)">1080</text>
+   </g>
+   <g id="text_103">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="431.378006" y="185.549269" transform="rotate(-0 431.378006 185.549269)">3171</text>
+   </g>
+   <g id="text_104">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="455.036763" y="185.549269" transform="rotate(-0 455.036763 185.549269)">4351</text>
+   </g>
+   <g id="text_105">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="289.425463" y="155.913048" transform="rotate(-0 289.425463 155.913048)">—</text>
+   </g>
+   <g id="text_106">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="313.08422" y="155.913048" transform="rotate(-0 313.08422 155.913048)">1</text>
+   </g>
+   <g id="text_107">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="336.742977" y="155.913048" transform="rotate(-0 336.742977 155.913048)">12</text>
+   </g>
+   <g id="text_108">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="360.401734" y="155.913048" transform="rotate(-0 360.401734 155.913048)">508</text>
+   </g>
+   <g id="text_109">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="384.060492" y="155.913048" transform="rotate(-0 384.060492 155.913048)">1585</text>
+   </g>
+   <g id="text_110">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="407.719249" y="155.913048" transform="rotate(-0 407.719249 155.913048)">1710</text>
+   </g>
+   <g id="text_111">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="431.378006" y="155.913048" transform="rotate(-0 431.378006 155.913048)">4513</text>
+   </g>
+   <g id="text_112">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="455.036763" y="155.913048" transform="rotate(-0 455.036763 155.913048)">5637</text>
+   </g>
+   <g id="text_113">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="289.425463" y="126.276828" transform="rotate(-0 289.425463 126.276828)">—</text>
+   </g>
+   <g id="text_114">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="313.08422" y="126.276828" transform="rotate(-0 313.08422 126.276828)">1</text>
+   </g>
+   <g id="text_115">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="336.742977" y="126.276828" transform="rotate(-0 336.742977 126.276828)">11</text>
+   </g>
+   <g id="text_116">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="360.401734" y="126.276828" transform="rotate(-0 360.401734 126.276828)">570</text>
+   </g>
+   <g id="text_117">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="384.060492" y="126.276828" transform="rotate(-0 384.060492 126.276828)">1819</text>
+   </g>
+   <g id="text_118">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="407.719249" y="126.276828" transform="rotate(-0 407.719249 126.276828)">1940</text>
+   </g>
+   <g id="text_119">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="431.378006" y="126.276828" transform="rotate(-0 431.378006 126.276828)">4784</text>
+   </g>
+   <g id="text_120">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="455.036763" y="126.276828" transform="rotate(-0 455.036763 126.276828)">6024</text>
+   </g>
+   <g id="text_121">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #182a38" x="289.425463" y="96.640607" transform="rotate(-0 289.425463 96.640607)">—</text>
+   </g>
+   <g id="text_122">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="313.08422" y="96.640607" transform="rotate(-0 313.08422 96.640607)">1</text>
+   </g>
+   <g id="text_123">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="336.742977" y="96.640607" transform="rotate(-0 336.742977 96.640607)">17</text>
+   </g>
+   <g id="text_124">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="360.401734" y="96.640607" transform="rotate(-0 360.401734 96.640607)">582</text>
+   </g>
+   <g id="text_125">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="384.060492" y="96.640607" transform="rotate(-0 384.060492 96.640607)">1841</text>
+   </g>
+   <g id="text_126">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="407.719249" y="96.640607" transform="rotate(-0 407.719249 96.640607)">2034</text>
+   </g>
+   <g id="text_127">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="431.378006" y="96.640607" transform="rotate(-0 431.378006 96.640607)">5160</text>
+   </g>
+   <g id="text_128">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: middle; fill: #ffffff" x="455.036763" y="96.640607" transform="rotate(-0 455.036763 96.640607)">6470</text>
+   </g>
+   <g id="text_129">
+    <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="277.596084" y="68.192126" transform="rotate(-0 277.596084 68.192126)">b  全部中心达标（间）</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_8">
+    <path d="M 482.428346 258.009449
+L 489.690709 258.009449
+L 489.690709 80.192126
+L 482.428346 80.192126
+z
+" style="fill: #ffffff"/>
+   </g>
+   <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAoAAAD3CAYAAAAkPsV6AAABQklEQVR4nOWa223EQAwDh1pfZynh+u8kq7TAADTkx30TQ1LatWHg9KNvY/wOVI6OQyWuTsQnyhOqKkzEJi53jhobD/nWGsyouHXNWSstrDSxfWvC1uiNZXrNtRZp64oTlSbiEjt+evqEjMwNnPBDquPWfYPx9FzGXrY1rxw4TyIqTiRM5FkDJ0xksAzE34WYRI0ReaV1P6hMeTKe1fo4o0xPWbf/UcHVW5cn45xdd9iauYFzg/HoDpsh37pvQMQU1k4TNTYeESfKFuIJ6wTrdoVMZSxukFFjxGLOWmnhoX35jBXfTPnW+zkZ1wkZtytsT7gGrWWPZ6etyZfZJpE08aPf9MElfhUYW+Ga20z5GTs+xx0mrvh1XfnTQ3qFi8HWPXZnMImfE8qQJuISZVsrbi2XqHhGmUQ/o/knm39Y20RP+AeUW4jeSjNQtwAAAABJRU5ErkJggg==" id="image044af4f418" transform="scale(1 -1) translate(0 -177.84)" x="482.4" y="-79.92" width="7.2" height="177.84"/>
+   <g id="matplotlib.axis_5"/>
+   <g id="matplotlib.axis_6">
+    <g id="ytick_13">
+     <g id="line2d_29">
+      <defs>
+       <path id="mc4468e477a" d="M 0 0
+L 3.5 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mc4468e477a" x="489.690709" y="258.009449" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_130">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="496.690709" y="260.921558" transform="rotate(-0 496.690709 260.921558)">0</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_30">
+      <g>
+       <use xlink:href="#mc4468e477a" x="489.690709" y="186.88252" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_131">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="496.690709" y="189.794629" transform="rotate(-0 496.690709 189.794629)">40</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_31">
+      <g>
+       <use xlink:href="#mc4468e477a" x="489.690709" y="115.755591" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_132">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="496.690709" y="118.6677" transform="rotate(-0 496.690709 118.6677)">80</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_32">
+      <g>
+       <use xlink:href="#mc4468e477a" x="489.690709" y="80.192126" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_133">
+      <text style="font-size: 8px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="496.690709" y="83.104235" transform="rotate(-0 496.690709 83.104235)">100</text>
+     </g>
+    </g>
+   </g>
+   <g id="LineCollection_1"/>
+   <g id="patch_9">
+    <path d="M 482.428346 258.009449
+L 486.059528 258.009449
+L 489.690709 258.009449
+L 489.690709 80.192126
+L 486.059528 80.192126
+L 482.428346 80.192126
+L 482.428346 258.009449
+z
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+  </g>
+  <g id="text_134">
+   <text style="font-weight: 700; font-size: 11px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="46.686614" y="17.433071" transform="rotate(-0 46.686614 17.433071)">恢复程度与整屋成功必须分开看</text>
+  </g>
+  <g id="text_135">
+   <text style="font-size: 7.5px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start; fill: #4e5d68" x="46.686614" y="36.609449" transform="rotate(-0 46.686614 36.609449)">每格固定分母10,000间；未达到覆盖／交互预算的房间按失败计入。</text>
+  </g>
+  <g id="text_136">
+   <text style="font-size: 7.2px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="46.686614" y="299.848819" transform="rotate(-0 46.686614 299.848819)">横轴是明确标注的离散测点；灰格为未测组合。右图颜色为比例，格内为成功房间数。</text>
+  </g>
+  <g id="text_137">
+   <text style="font-size: 7.2px; font-family: 'Arial', 'Microsoft YaHei', 'SimSun'; text-anchor: start" x="46.686614" y="320.768504" transform="rotate(-0 46.686614 320.768504)">已知外框／数量／尺寸；位置端点不等于占地IoU。无平滑、无单调化、无成功房筛选。</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9c7ae44146">
+   <rect x="46.686614" y="80.192126" width="189.270057" height="177.817323"/>
+  </clipPath>
+  <clipPath id="p5f73fd8727">
+   <rect x="277.596084" y="80.192126" width="189.270057" height="177.817323"/>
+  </clipPath>
+ </defs>
+</svg>
