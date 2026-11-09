@@ -96,7 +96,7 @@ def qualified_runs(t,acceleration,runs):
     return out
 
 
-def decode_observations(priors,path,events,walk,yaw_angles,method='finite'):
+def decode_observations(priors,path,events,walk,yaw_angles,method='finite',candidate_limit=64):
     path=np.asarray(path);origin=path[0];candidates=[]
     for degrees in yaw_angles:
         a=np.radians(degrees);R=np.array([[np.cos(a),-np.sin(a)],[np.sin(a),np.cos(a)]]);q=(path-origin)@R.T+priors['start'];ev=[{'object':e['object'],'pos':((np.asarray(e['pos'])-origin)@R.T+priors['start']).tolist()} for e in events]
@@ -106,7 +106,7 @@ def decode_observations(priors,path,events,walk,yaw_angles,method='finite'):
         if method=='continuous':
             from .continuous_solver010 import solve as continuous
             result=continuous(priors['room'],priors['inventory'],ev,observed,padding=.5,seconds=15.)
-        elif method=='finite':result=solve(priors['room'],priors['inventory'],ev,observed,'depth_portfolio',decoder_options=OPTIONS)
+        elif method=='finite':result=solve(priors['room'],priors['inventory'],ev,observed,'depth_portfolio',decoder_options={**OPTIONS,'candidate_limit':candidate_limit})
         else:raise ValueError('Unknown separately declared raw decoder')
         outside=np.maximum(-q,q-np.array(priors['room'])).clip(min=0);cost=100*float(outside.mean())+10*float(outside.max())
         cost+=1000 if result['status']!='ok' else float(np.mean(outline_cost(np.array(list(result['boxes'].values())),priors['room'],observed)))
@@ -114,20 +114,22 @@ def decode_observations(priors,path,events,walk,yaw_angles,method='finite'):
     best=min(candidates,key=lambda r:r['registration_cost']);return {**best,'boxes':{k:np.asarray(b).tolist() for k,b in best['boxes'].items()},'frame_hypotheses':[{k:r[k] for k in ['yaw_deg','registration_cost','status']} for r in candidates],'contract':CONTRACT}
 
 
-def infer(session,priors,wrist_model,watch_shift=0.,without_watch=False,closed_loop=False,method='finite'):
-    ch=AM.load_phone(session);t,A,_=ch['accelerometer'];tg,G,_=ch['gyroscope'];G=np.c_[*[np.interp(t,tg,G[:,i]) for i in range(3)]];path,R,info=replay(t,A,G);info.pop('stationary_mask');phone=AM.predict_timeline(AM.load_model(),t,A,t,G)
+def infer(session,priors,wrist_model,watch_shift=0.,without_watch=False,closed_loop=False,method='finite',trajectory_frontend=None,candidate_limit=64,trajectory_refiner=None,layout_decoder=None):
+    ch=AM.load_phone(session);t,A,_=ch['accelerometer'];tg,G,_=ch['gyroscope'];G=np.c_[*[np.interp(t,tg,G[:,i]) for i in range(3)]];path,R,info=(replay if trajectory_frontend is None else trajectory_frontend)(t,A,G);info.pop('stationary_mask');phone=AM.predict_timeline(AM.load_model(),t,A,t,G)
     if closed_loop:
         if not priors.get('end_returns_to_start'):raise ValueError('Loop closure requires explicit return-to-start protocol')
         from .inertial010 import close_loop
         info['declared_loop_endpoint_correction_m']=float(np.linalg.norm(path[-1]-path[0]));path=close_loop(t,path);info['known_return_to_start']=True
-    wt,wa=load_watch(session,int(1700000000000000000));watch={'runs':[]} if without_watch else predict(wt+watch_shift,wa,wrist_model);runs=qualified_runs(t,A,fuse(phone,watch)['runs']);events=interaction_events(t,path,runs);mask=np.zeros(len(t),bool)
+    wt,wa=load_watch(session,int(1700000000000000000));watch={'runs':[]} if without_watch else predict(wt+watch_shift,wa,wrist_model);runs=qualified_runs(t,A,fuse(phone,watch)['runs'])
+    if trajectory_refiner is not None:path,info['contact_refinement']=trajectory_refiner(t,path,R,runs,priors)
+    events=interaction_events(t,path,runs);mask=np.zeros(len(t),bool)
     for label,a,b in runs:
         if label=='walk':mask|=(t>=a)&(t<=b)
     cabinet=next((r for r in runs if r[0]=='cabinet' and r[2]-r[1]>=2.),None)
     if cabinet is not None:
         ids=(t>=cabinet[1]+.5)&(t<=cabinet[2]);h=body_axis(R[ids],'cabinet').mean(axis=0);offset=np.degrees(np.arctan2(h[1],h[0]));angles=[a-offset for a in [0,90,180,270]]
     else:angles=[0.,90.,180.,270.]
-    result=decode_observations(priors,path,events,mask,angles,method)
+    result=decode_observations(priors,path,events,mask,angles,method,candidate_limit) if layout_decoder is None else layout_decoder(priors,t,path,R,runs,mask,candidate_limit)
     return {**result,'runs':runs,'cabinet_source':'watch_only','phone_cabinet_used':False,'watch_runs':watch['runs'],'trajectory':'full-record signal-rest bias calibration + stationary tilt updates + endpoint ZUPT','zero_velocity':info}
 
 

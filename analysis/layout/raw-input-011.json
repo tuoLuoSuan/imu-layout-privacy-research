@@ -1,0 +1,796 @@
+{
+ "schema": "raw-input-repair-011",
+ "parent_revision": "0c71b94",
+ "input": "Phone6axis120Hz + watch3axis16.7Hz, no watch gyro; known room/start/inventory",
+ "inference": "Full-record offline; supervised same-generator-domain displacement + signal phone activities + watch-only cabinet + unknown contact-point/plane loops + directional finite decoder",
+ "n_frozen_recordings": 32,
+ "duration_s_range": [
+  596.9583333333334,
+  888.15
+ ],
+ "summary": {
+  "new_raw": {
+   "n": 32,
+   "whole": 17,
+   "rate": 0.53125,
+   "wilson95": [
+    0.3644951711897464,
+    0.6913061289193116
+   ],
+   "ok": 26,
+   "mean_f1": 0.7275297619047619,
+   "f1_bootstrap95": [
+    0.5921130952380952,
+    0.8540178571428572
+   ],
+   "whole_iou0_5": 5,
+   "status_counts": {
+    "ok": 26,
+    "proposal_conflict": 5,
+    "no_proposals": 1
+   },
+   "per_class": {
+    "bed": {
+     "tp": 25,
+     "n_truth": 32
+    },
+    "desk": {
+     "tp": 31,
+     "n_truth": 48
+    },
+    "cab": {
+     "tp": 31,
+     "n_truth": 48
+    },
+    "chair": {
+     "tp": 38,
+     "n_truth": 48
+    }
+   },
+   "speed_strata": {
+    "0.55": {
+     "n": 8,
+     "whole": 3,
+     "f1": 0.7250000000000001
+    },
+    "0.65": {
+     "n": 16,
+     "whole": 9,
+     "f1": 0.6988095238095238
+    },
+    "0.75": {
+     "n": 8,
+     "whole": 5,
+     "f1": 0.7875
+    }
+   },
+   "median_relative_frame_ade_m": 0.1781412288457786,
+   "median_relative_frame_p90_m": 0.2661887847521255,
+   "median_room_frame_ade_m": 0.16995536013460755,
+   "median_room_frame_p90_m": 0.26144122684123006,
+   "median_path_ratio": 1.015655351137419
+  },
+  "old_raw_matched": {
+   "n": 32,
+   "whole": 11,
+   "rate": 0.34375,
+   "wilson95": [
+    0.20410437924433172,
+    0.5168891202103778
+   ],
+   "ok": 18,
+   "mean_f1": 0.4375,
+   "f1_bootstrap95": [
+    0.2833333333333333,
+    0.596875
+   ],
+   "whole_iou0_5": 0,
+   "status_counts": {
+    "proposal_conflict": 8,
+    "ok": 18,
+    "no_proposals": 6
+   },
+   "per_class": {
+    "bed": {
+     "tp": 16,
+     "n_truth": 32
+    },
+    "desk": {
+     "tp": 20,
+     "n_truth": 48
+    },
+    "cab": {
+     "tp": 15,
+     "n_truth": 48
+    },
+    "chair": {
+     "tp": 21,
+     "n_truth": 48
+    }
+   },
+   "speed_strata": {
+    "0.55": {
+     "n": 8,
+     "whole": 1,
+     "f1": 0.175
+    },
+    "0.65": {
+     "n": 16,
+     "whole": 4,
+     "f1": 0.38125
+    },
+    "0.75": {
+     "n": 8,
+     "whole": 6,
+     "f1": 0.8125
+    }
+   },
+   "median_relative_frame_ade_m": 0.4030935176216768,
+   "median_relative_frame_p90_m": 0.62429138276345,
+   "median_room_frame_ade_m": 0.40865359018175496,
+   "median_room_frame_p90_m": 0.6276590818746681,
+   "median_path_ratio": 0.9896968987834868
+  },
+  "watch_absent": {
+   "n": 32,
+   "whole": 9,
+   "rate": 0.28125,
+   "wilson95": [
+    0.15564580497742764,
+    0.45374509425916565
+   ],
+   "ok": 30,
+   "mean_f1": 0.6606398809523809,
+   "f1_bootstrap95": [
+    0.5578087797619047,
+    0.7600465029761904
+   ],
+   "whole_iou0_5": 1,
+   "status_counts": {
+    "ok": 30,
+    "no_proposals": 1,
+    "proposal_conflict": 1
+   },
+   "per_class": {
+    "bed": {
+     "tp": 26,
+     "n_truth": 32
+    },
+    "desk": {
+     "tp": 30,
+     "n_truth": 48
+    },
+    "cab": {
+     "tp": 18,
+     "n_truth": 48
+    },
+    "chair": {
+     "tp": 40,
+     "n_truth": 48
+    }
+   },
+   "speed_strata": {
+    "0.55": {
+     "n": 8,
+     "whole": 2,
+     "f1": 0.6375000000000001
+    },
+    "0.65": {
+     "n": 16,
+     "whole": 5,
+     "f1": 0.6671130952380953
+    },
+    "0.75": {
+     "n": 8,
+     "whole": 2,
+     "f1": 0.6708333333333334
+    }
+   },
+   "median_relative_frame_ade_m": 0.17835183434231533,
+   "median_relative_frame_p90_m": 0.2672707275049626,
+   "median_room_frame_ade_m": 0.16877435871107532,
+   "median_room_frame_p90_m": 0.2656142895918676,
+   "median_path_ratio": 1.0157537416953875
+  },
+  "watch_clock10s": {
+   "n": 32,
+   "whole": 0,
+   "rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.1071791982550706
+   ],
+   "ok": 0,
+   "mean_f1": 0.0,
+   "f1_bootstrap95": [
+    0.0,
+    0.0
+   ],
+   "whole_iou0_5": 0,
+   "status_counts": {
+    "proposal_conflict": 30,
+    "no_proposals": 2
+   },
+   "per_class": {
+    "bed": {
+     "tp": 0,
+     "n_truth": 32
+    },
+    "desk": {
+     "tp": 0,
+     "n_truth": 48
+    },
+    "cab": {
+     "tp": 0,
+     "n_truth": 48
+    },
+    "chair": {
+     "tp": 0,
+     "n_truth": 48
+    }
+   },
+   "speed_strata": {
+    "0.55": {
+     "n": 8,
+     "whole": 0,
+     "f1": 0.0
+    },
+    "0.65": {
+     "n": 16,
+     "whole": 0,
+     "f1": 0.0
+    },
+    "0.75": {
+     "n": 8,
+     "whole": 0,
+     "f1": 0.0
+    }
+   },
+   "median_relative_frame_ade_m": 0.1961940224133159,
+   "median_relative_frame_p90_m": 0.327094666902642,
+   "median_room_frame_ade_m": 0.7081628851307145,
+   "median_room_frame_p90_m": 1.2272669059211252,
+   "median_path_ratio": 1.0238121068708543
+  },
+  "truth_pose_same_predicted_actions": {
+   "n": 32,
+   "whole": 26,
+   "rate": 0.8125,
+   "wilson95": [
+    0.6469084479862404,
+    0.9111045531043405
+   ],
+   "ok": 32,
+   "mean_f1": 0.9535714285714285,
+   "f1_bootstrap95": [
+    0.9154761904761906,
+    0.9848214285714286
+   ],
+   "whole_iou0_5": 13,
+   "status_counts": {
+    "ok": 32
+   },
+   "per_class": {
+    "bed": {
+     "tp": 32,
+     "n_truth": 32
+    },
+    "desk": {
+     "tp": 42,
+     "n_truth": 48
+    },
+    "cab": {
+     "tp": 45,
+     "n_truth": 48
+    },
+    "chair": {
+     "tp": 48,
+     "n_truth": 48
+    }
+   },
+   "speed_strata": {
+    "0.55": {
+     "n": 8,
+     "whole": 6,
+     "f1": 0.9583333333333334
+    },
+    "0.65": {
+     "n": 16,
+     "whole": 13,
+     "f1": 0.9488095238095238
+    },
+    "0.75": {
+     "n": 8,
+     "whole": 7,
+     "f1": 0.9583333333333333
+    }
+   }
+  }
+ },
+ "paired": {
+  "old_raw_matched": {
+   "both_hit": 9,
+   "new_only": 8,
+   "other_only": 2,
+   "both_miss": 13,
+   "gain_pp": 18.75,
+   "paired_bootstrap95_pp": [
+    0.0,
+    37.5
+   ],
+   "exact_mcnemar_p": 0.109375,
+   "f1_gain": 0.29002976190476193,
+   "f1_gain_paired_bootstrap95": [
+    0.11919642857142859,
+    0.46235119047619044
+   ]
+  },
+  "watch_absent": {
+   "both_hit": 9,
+   "new_only": 8,
+   "other_only": 0,
+   "both_miss": 15,
+   "gain_pp": 25.0,
+   "paired_bootstrap95_pp": [
+    12.5,
+    40.625
+   ],
+   "exact_mcnemar_p": 0.0078125,
+   "f1_gain": 0.06688988095238095,
+   "f1_gain_paired_bootstrap95": [
+    -0.015104166666666662,
+    0.14345238095238097
+   ]
+  },
+  "watch_clock10s": {
+   "both_hit": 0,
+   "new_only": 17,
+   "other_only": 0,
+   "both_miss": 15,
+   "gain_pp": 53.125,
+   "paired_bootstrap95_pp": [
+    37.5,
+    71.875
+   ],
+   "exact_mcnemar_p": 1.52587890625e-05,
+   "f1_gain": 0.7275297619047619,
+   "f1_gain_paired_bootstrap95": [
+    0.5921130952380952,
+    0.8540178571428572
+   ]
+  },
+  "truth_pose_same_predicted_actions": {
+   "both_hit": 17,
+   "new_only": 0,
+   "other_only": 9,
+   "both_miss": 6,
+   "gain_pp": -28.125,
+   "paired_bootstrap95_pp": [
+    -43.75,
+    -12.5
+   ],
+   "exact_mcnemar_p": 0.00390625,
+   "f1_gain": -0.22604166666666667,
+   "f1_gain_paired_bootstrap95": [
+    -0.353125,
+    -0.11101190476190476
+   ]
+  }
+ },
+ "contract_audit": {
+  "n": 448,
+  "invalid": [],
+  "by_channel": {
+   "bed": {
+    "n": 128,
+    "valid": 128
+   },
+   "desk": {
+    "n": 160,
+    "valid": 160
+   },
+   "cab": {
+    "n": 160,
+    "valid": 160
+   }
+  },
+  "scope": "Ideal generated interactions, all32 frozen records retained; does not validate natural carry protocol"
+ },
+ "independent_evaluation": {
+  "n_scores": 160,
+  "frozen_source_matches": {
+   "joint_input011": true,
+   "displacement011": true,
+   "contact_loops011": true,
+   "oriented_raw011": true,
+   "multi_instance": true,
+   "multi_raw010": true,
+   "recovery010": true,
+   "inertial010": true
+  },
+  "all_input_hashes_match": true
+ },
+ "input_firewall": {
+  "public_cli_boxes_exactly_equal": true,
+  "public_cli_all_fields_equal_abs1e_9": true,
+  "all_fields_max_numeric_delta": 6.821210263296962e-13,
+  "reference_read_blocked_by_python_audit_hook": true,
+  "canaries_not_read": true,
+  "extra_truth_prior_rejected": true,
+  "inertial_default_vs_0c71b94_exact": true,
+  "default_decoder_checks": [
+   {
+    "scene": "multi-00000",
+    "events": 14,
+    "identical": true,
+    "status": "ok",
+    "portfolio_identical": true,
+    "portfolio_status": "ok"
+   },
+   {
+    "scene": "multi-00001",
+    "events": 14,
+    "identical": true,
+    "status": "ok",
+    "portfolio_identical": true,
+    "portfolio_status": "ok"
+   },
+   {
+    "scene": "multi-00002",
+    "events": 14,
+    "identical": true,
+    "status": "ok",
+    "portfolio_identical": true,
+    "portfolio_status": "ok"
+   }
+  ],
+  "isolated_files": [
+   "cue-script.json",
+   "evaluation-truth.npz",
+   "known-priors.json",
+   "native-scene.json",
+   "phone\\accelerometer.csv",
+   "phone\\gyroscope.csv",
+   "watch\\accelerometer.csv"
+  ],
+  "phone_input_sha256": "5b496987b10d1b82d6aaf077a542286302dab6611cd299bb56bbb679e59c5210",
+  "scope": "One representative seven-object recording. Blocks known evaluation paths, not a formal proof of arbitrary code noninterference."
+ },
+ "corrected_old16_gauge": {
+  "raw": {
+   "whole": 1,
+   "ok": 2,
+   "f1": 0.078125,
+   "median_ade_m": 0.49446889748339873
+  },
+  "aligned_position_only": {
+   "whole": 9,
+   "ok": 16,
+   "f1": 0.8836309523809524,
+   "median_ade_m": 0.0
+  },
+  "aligned_rotation_only": {
+   "whole": 1,
+   "ok": 2,
+   "f1": 0.078125,
+   "median_ade_m": 0.49446889748339873
+  },
+  "aligned_half": {
+   "whole": 1,
+   "ok": 8,
+   "f1": 0.2989583333333333,
+   "median_ade_m": 0.24723444874169936
+  },
+  "aligned_full": {
+   "whole": 9,
+   "ok": 16,
+   "f1": 0.8732142857142857,
+   "median_ade_m": 0.0
+  }
+ },
+ "real_regression": {
+  "legacy_phone_baseline_max_box_delta_m": {
+   "cab": 0.0,
+   "chair": 0.0,
+   "desk": 0.0,
+   "bed": 0.0
+  },
+  "legacy_phone_errors_m": {
+   "cab": 0.09068121578272707,
+   "chair": 0.23329288772839377,
+   "desk": 0.10793111368021326,
+   "bed": 0.1116851548262065
+  },
+  "joint_zero_shift_errors_m": {
+   "bed": 0.1116851548262065,
+   "cab": 0.0929492233436244,
+   "chair": 0.23329288772839377,
+   "desk": 0.11033481507382233
+  },
+  "joint_all_hit_each_shift": {
+   "-2.0": true,
+   "-0.5": true,
+   "-0.0279235": true,
+   "0.0": true,
+   "0.0279235": true,
+   "0.5": true,
+   "2.0": true
+  },
+  "phone_trajectory_exact": true,
+  "physical_clock_accepted": false,
+  "same_synthetic_frontend_used": false,
+  "scope": "One reused real development room; production protocol/solver differ; no new synthetic-to-real success claim"
+ },
+ "weight_sha256": {
+  "phone": "0ee65930c5e5a5eeab8139bb4477c222dc2e51bccd5eadb4aeadb36e1504d6d4",
+  "ronin": "5ae5c9e508f2dc9609c25b59d0e3dfd770ecbcde6920cbc5be3c6d9fed8a6346",
+  "wrist": "12bc70f63f2731270aa875f7ebbacafb9dc7849382f9bad56f56b21415531ad4",
+  "displacement": "2b540d7075ac782c119f25ed69cfbcd561e4612524076afceb4713c8fef8f3d3"
+ },
+ "training": {
+  "model_sha256": "2b540d7075ac782c119f25ed69cfbcd561e4612524076afceb4713c8fef8f3d3",
+  "n_training_segments": 7723,
+  "n_features": 148,
+  "train_ids": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19
+  ],
+  "scope": "Supervised same-generator distance regression; no natural-walk or zero-shot claim"
+ },
+ "selection_freeze": {
+  "selected_model": "spectral-training/trees-distance.joblib",
+  "model_sha256": "2b540d7075ac782c119f25ed69cfbcd561e4612524076afceb4713c8fef8f3d3",
+  "selection_set": [
+   11000,
+   11001,
+   11002,
+   11003,
+   11004,
+   11005,
+   11006,
+   11007
+  ],
+  "training_rooms": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19
+  ],
+  "training_segments": 7723,
+  "training_speeds": [
+   0.45,
+   0.65,
+   0.85
+  ],
+  "new_long_ids": [
+   11100,
+   11101,
+   11102,
+   11103,
+   11104,
+   11105,
+   11106,
+   11107,
+   11108,
+   11109,
+   11110,
+   11111,
+   11112,
+   11113,
+   11114,
+   11115,
+   11116,
+   11117,
+   11118,
+   11119,
+   11120,
+   11121,
+   11122,
+   11123,
+   11124,
+   11125,
+   11126,
+   11127,
+   11128,
+   11129,
+   11130,
+   11131
+  ],
+  "new_speeds": [
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.65,
+   0.55,
+   0.55,
+   0.55,
+   0.55,
+   0.55,
+   0.55,
+   0.55,
+   0.55,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75
+  ],
+  "selected_options": {
+   "headings": true,
+   "straight": false,
+   "point_plane_loops": true,
+   "storage_depth_normal": true,
+   "soft_contact_weight": 0.3,
+   "candidate_limit": 128,
+   "contact_padding": 0.3,
+   "walk_tolerance": 0.2
+  },
+  "notes": "All tuning used old8 development recordings. DS16 and old short/geometry cases are not a new blind corpus. New32 long records frozen here before generation/results.",
+  "development_trials": {
+   "dev8-layout": {
+    "hgb": {
+     "whole": 0,
+     "ok": 6,
+     "f1": 0.5467261904761904
+    },
+    "trees": {
+     "whole": 2,
+     "ok": 6,
+     "f1": 0.5035714285714286
+    }
+   },
+   "dev8-regularization": {
+    "trees-straight": {
+     "whole": 1,
+     "ok": 6,
+     "f1": 0.4577380952380953
+    },
+    "trees-heading": {
+     "whole": 2,
+     "ok": 6,
+     "f1": 0.5214285714285715
+    },
+    "trees-both": {
+     "whole": 2,
+     "ok": 6,
+     "f1": 0.5214285714285715
+    }
+   },
+   "dev8-loops": {
+    "point-plane-02": {
+     "whole": 3,
+     "ok": 7,
+     "f1": 0.6535714285714286
+    },
+    "point-plane-035": {
+     "whole": 0,
+     "ok": 7,
+     "f1": 0.39821428571428574
+    }
+   },
+   "dev8-oriented": {
+    "oriented": {
+     "whole": 3,
+     "ok": 7,
+     "f1": 0.7005952380952382
+    },
+    "oriented-loops": {
+     "whole": 3,
+     "ok": 7,
+     "f1": 0.7005952380952382
+    }
+   },
+   "dev8-spectral": {
+    "trees-distance": {
+     "whole": 4,
+     "ok": 7,
+     "f1": 0.7333333333333334
+    },
+    "trees-distance-loops": {
+     "whole": 4,
+     "ok": 8,
+     "f1": 0.8017857142857143
+    },
+    "hgb-distance": {
+     "whole": 4,
+     "ok": 5,
+     "f1": 0.5892857142857143
+    }
+   },
+   "dev8-soft": {
+    "soft": {
+     "whole": 4,
+     "ok": 7,
+     "f1": 0.7541666666666667
+    },
+    "soft-loops": {
+     "whole": 4,
+     "ok": 8,
+     "f1": 0.8017857142857143
+    }
+   },
+   "dev8-front-normal": {
+    "soft": {
+     "whole": 4,
+     "ok": 7,
+     "f1": 0.7541666666666667
+    },
+    "soft-loops": {
+     "whole": 4,
+     "ok": 8,
+     "f1": 0.8017857142857143
+    }
+   }
+  },
+  "package_versions": {
+   "numpy": "2.2.6",
+   "scipy": "1.18.1",
+   "scikit-learn": "1.9.0",
+   "joblib": "1.6.0"
+  }
+ },
+ "versions": {
+  "python": "3.13.13",
+  "numpy": "2.2.6",
+  "scipy": "1.18.1",
+  "scikit_learn": "1.9.0"
+ },
+ "limits": [
+  "Not a raw-IMU80percent activity threshold: only100percent/14visit dose confirmed",
+  "New whole-hit gain exact paired p=.109, not established at.05; sample small",
+  "32 new long signals from same generator; geometry may have prior short/geometric use",
+  "Same-generator supervised calibration; no claim of zero-shot transfer or repaired pretrained RoNIN",
+  "Known room/start/inventory, near-wall/Manhattan/interaction-facing priors",
+  "Whole centre success differs from footprint success",
+  "Gait-template inverse prototype excluded from frozen inference; matched-template unit test is not independent validation"
+ ]
+}

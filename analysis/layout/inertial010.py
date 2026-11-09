@@ -48,9 +48,11 @@ def close_loop(time,path):
     return q-(t-t[0])[:,None]/(t[-1]-t[0])*(q[-1]-q[0])
 
 
-def replay(time,acceleration,gyro):
+def replay(time,acceleration,gyro,stationary_override=None):
     t=np.asarray(time,float);A=np.asarray(acceleration,float);G=np.asarray(gyro,float)
-    stationary=rest_mask(t,A,G);blocks=intervals(stationary)
+    stationary=rest_mask(t,A,G) if stationary_override is None else np.asarray(stationary_override,bool).copy()
+    if stationary.shape!=(len(t),):raise ValueError('Stationary mask must match signal length')
+    blocks=intervals(stationary)
     if not blocks or blocks[0][0]>int(4/np.median(np.diff(t))):raise ValueError('Initial stable handset period required')
     bias=G[stationary].mean(axis=0)
     means=np.array([A[a:b].mean(axis=0) for a,b in blocks])

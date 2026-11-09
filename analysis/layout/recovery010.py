@@ -37,7 +37,7 @@ def wall_regions(size,room,tol=.15,depth_only=False):
 def solve(room,inventory,events,path,policy='pre64_wall',tol=.15,cache=None,decoder_options=None):
     if policy not in POLICIES:raise ValueError('Unknown declared policy')
     options={} if decoder_options is None else dict(decoder_options)
-    if set(options)-{'contact_padding','walk_clearance','walk_tolerance','walk_excluded_objects'}:raise ValueError('Only declared observation bounds accepted')
+    if set(options)-{'contact_padding','walk_clearance','walk_tolerance','walk_excluded_objects','candidate_limit','proposal_filter','event_support','known_desk_protocol','support_cost_weight'}:raise ValueError('Only declared observation bounds/candidate cap/evidence callbacks accepted')
     if policy=='depth_portfolio':
         first=solve(room,inventory,events,path,'pre64_depth_joint',tol,cache,options)
         attempts=[{'policy':'pre64_depth_joint','status':first['status'],'search_nodes':first.get('search_nodes',0)}]
@@ -45,17 +45,18 @@ def solve(room,inventory,events,path,policy='pre64_wall',tol=.15,cache=None,deco
         second=solve(room,inventory,events,path,'post64_wall',tol,cache,options)
         attempts.append({'policy':'post64_wall','status':second['status'],'search_nodes':second.get('search_nodes',0)})
         return {**second,'fallback_used':True,'attempts':attempts,'search_nodes':sum(r['search_nodes'] for r in attempts),'max_total_node_budget':40000}
-    original=M._constraint_search
+    supplied_filter=options.pop('proposal_filter',None);original=M._constraint_search
     def select(inv,pools,targets,counts):
         ranked=rerank_pools(pools,room,path,'outline')
         if policy in ['post64_wall','post64_wall40k']:ranked=_filter_pool(ranked,room,tol)
         return minimum_cost_search(inv,ranked,targets,counts) if policy.endswith('_joint') else original(inv,ranked,targets,counts,node_limit=40000 if policy=='post64_wall40k' else 20000)
     def keep(entry,boxes,room):
-        return wall_mask(boxes,room,tol,'depth' in policy) if entry['category']=='desk' else np.ones(len(boxes),bool)
+        result=wall_mask(boxes,room,tol,'depth' in policy) if entry['category']=='desk' and policy not in ['post64_wall','post64_wall40k'] else np.ones(len(boxes),bool)
+        return result if supplied_filter is None else result&supplied_filter(entry,boxes,room)
     def prior(entry,size,room):return wall_regions(size,room,tol,'depth' in policy) if entry['category']=='desk' else None
     M._constraint_search=select
     try:return M.decode_instances(room,inventory,events,path,proposal_cache=cache,
-              proposal_filter=None if policy in ['post64_wall','post64_wall40k'] or policy.startswith('region_') else keep,
+              proposal_filter=None if (policy in ['post64_wall','post64_wall40k'] or policy.startswith('region_')) and supplied_filter is None else keep,
               region_prior=prior if policy.startswith('region_') else None,**options)
     finally:M._constraint_search=original
 

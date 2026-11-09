@@ -126,7 +126,7 @@ def _proposals(room,entry,events,path,padding,walk_excluded=True,walk_clearance=
 
 def decode_instances(room,inventory,events,path,known_desk_protocol=False,beam_width=48,candidate_limit=64,proposal_cache=None,
                      contact_padding=.20,walk_clearance=.15,walk_tolerance=0.,
-                     walk_excluded_objects=('bed','desk','cab','chair'),proposal_filter=None,region_prior=None):
+                     walk_excluded_objects=('bed','desk','cab','chair'),proposal_filter=None,region_prior=None,event_support=None,support_cost_weight=0.):
     if contact_padding<0 or walk_clearance<0 or walk_tolerance<0:raise ValueError('Nonnegative observation bounds required')
     for e in events:
         if set(e)!={'object','pos'} or e['object'] not in ['bed','chair','cab']:raise ValueError('Only class/position observations allowed; no instance identity')
@@ -155,14 +155,19 @@ def decode_instances(room,inventory,events,path,known_desk_protocol=False,beam_w
                 counts[entry['id']]=0
                 return {'status':'no_proposals','boxes':{},'candidate_counts':counts,'proposal_counts_before_filter':before_filter}
         if not len(boxes):return {'status':'no_proposals','boxes':{},'candidate_counts':counts}
-        masks=np.zeros(len(boxes),dtype=np.uint64);energy=np.zeros(len(boxes))
+        masks=np.zeros(len(boxes),dtype=np.uint64);energy=np.zeros(len(boxes));support_cost=np.zeros(len(boxes));support_count=np.zeros(len(boxes))
         for j,e in enumerate(targets):
             if e['object']==cls:
-                keep,residual=ES._contact(boxes,e,contact_padding+1e-8,.6);masks|=keep.astype(np.uint64)*np.uint64(1<<j)
+                keep,residual=ES._contact(boxes,e,contact_padding+1e-8,.6) if event_support is None else event_support(entry,boxes,e);masks|=keep.astype(np.uint64)*np.uint64(1<<j)
+                if support_cost_weight:
+                    support_cost+=np.where(keep,np.minimum(np.asarray(residual),100.)**2,0.);support_count+=keep
             elif cls=='desk' and e['object']=='desk_relation':
-                point=np.asarray(e['pos']);outside=np.maximum(boxes[:,:2]-point,point-boxes[:,2:]).clip(min=0)
-                keep=np.linalg.norm(outside,axis=1)<=.90+1e-8;masks|=keep.astype(np.uint64)*np.uint64(1<<j)
+                if event_support is None:
+                    point=np.asarray(e['pos']);outside=np.maximum(boxes[:,:2]-point,point-boxes[:,2:]).clip(min=0);keep=np.linalg.norm(outside,axis=1)<=.90+1e-8
+                else:keep,_=event_support(entry,boxes,e)
+                masks|=keep.astype(np.uint64)*np.uint64(1<<j)
         centre=ES.centres(boxes);energy=.001*np.linalg.norm(centre-base['point_m'],axis=1)
+        if support_cost_weight:energy+=support_cost_weight*np.divide(support_cost,support_count,out=np.zeros(len(boxes)),where=support_count>0)
         bits=np.array([int(v).bit_count() for v in masks]);order=np.lexsort((energy,-bits));half=candidate_limit//2
         groups={}
         for j in order:groups.setdefault(int(masks[j]),[]).append(j)
