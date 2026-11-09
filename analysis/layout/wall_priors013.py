@@ -44,7 +44,8 @@ def pool_mask(entry, boxes, room, gaps=GAP):
     return keep if keep.any() else np.ones(len(boxes), np.bool_)
 
 
-def decode(priors, t, path, R, runs, walk, candidate_limit=128, support_cost_weight=0., wall=True):
+def decode(priors, t, path, R, runs, walk, candidate_limit=128, support_cost_weight=0., wall=True, gaps=None):
+    gaps = GAP if gaps is None else gaps
     t = np.asarray(t); path = np.asarray(path); R = np.asarray(R)
     events = interaction_events(t, path, runs); directions = []
     for label, a, b in runs:
@@ -71,7 +72,7 @@ def decode(priors, t, path, R, runs, walk, candidate_limit=128, support_cost_wei
             keep = bed_orientation_mask(boxes, np.mean(lying, axis=0)) if entry['category'] == 'bed' and lying else np.ones(len(boxes), bool)
             if not wall:
                 return keep
-            composed = keep & pool_mask(entry, boxes, room)
+            composed = keep & pool_mask(entry, boxes, room, gaps)
             return composed if composed.any() else keep
         def support(entry, boxes, e):
             c = 'chair' if e['object'] == 'desk_relation' else e['object']; h = lookup[c, *e['pos']]
@@ -89,5 +90,5 @@ def decode(priors, t, path, R, runs, walk, candidate_limit=128, support_cost_wei
     return {**best, 'boxes': {k: np.asarray(v).tolist() for k, v in best['boxes'].items()},
             'orientation_source': 'Signal-estimated phone attitude under fixed pose-to-body protocol; absolute yaw unknown',
             'table_relation': 'A seated person faces some table within0.9m, unknown partner and along-edge offset',
-            'wall_prior': {'applied': bool(wall), 'gaps_m': GAP if wall else None, 'source': SOURCE if wall else None},
+            'wall_prior': {'applied': bool(wall), 'gaps_m': gaps if wall else None, 'source': SOURCE if wall else None},
             'frame_hypotheses': [{k: r[k] for k in ['yaw_deg', 'registration_cost', 'status']} for r in candidates]}
