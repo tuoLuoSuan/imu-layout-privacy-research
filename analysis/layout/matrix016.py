@@ -30,8 +30,12 @@ from .priorcost014 import decode_arm as prior_decode
 from . import sensor013 as S
 
 
+OFFSET = 0
+
+
 def cell(task):
     rid, visits, severity, out, streams = (list(task) + ['legacy'])[:5]
+    offset = int(task[5]) if len(task) > 5 else 0
     out = Path(out)
     native = E.OLD / 'raw-native800' / 'native' / f'multi-{rid:05d}.json'
     meta = json.loads((E.WRIST / 'metadata.json').read_text())
@@ -39,9 +43,9 @@ def cell(task):
     start = json.loads(native.read_text())['agent_placement']['position']
     scene['S'] = np.array([start['x'], start['z']])
     script, prefix = plan(scene, visits=visits)
-    phone = generate(scene, 1900000 + rid, script_override=script,
+    phone = generate(scene, 1900000 + rid + offset, script_override=script,
                      noise_streams='independent-v1' if streams == 'prefix' else 'legacy')
-    noisy = S.degrade(phone, severity, seed=1910000 + rid,
+    noisy = S.degrade(phone, severity, seed=1910000 + rid + offset,
                       noise_streams='prefix-v1' if streams == 'prefix' else 'legacy')
     watch = mount(generate_watch(noisy, 1900300 + rid), meta['neutral_up_from_development'])
     session = out / 'input'
@@ -116,7 +120,9 @@ def summarise(rows):
     return cells
 
 
-def run(ids, visits, severities, out, workers=6, streams='legacy'):
+def run(ids, visits, severities, out, workers=6, streams='legacy', offset=0):
+    global OFFSET
+    OFFSET = offset
     out = Path(out)
     tasks = []
     for v in visits:
@@ -124,7 +130,7 @@ def run(ids, visits, severities, out, workers=6, streams='legacy'):
             for i in ids:
                 d = out / f'v{v}-s{s}' / f'multi-{i:05d}'
                 d.mkdir(parents=True, exist_ok=True)
-                tasks.append((i, v, s, str(d), streams))
+                tasks.append((i, v, s, str(d), streams, offset))
     rows = []
     with concurrent.futures.ProcessPoolExecutor(max_workers=workers) as pool:
         for r in pool.map(worker, tasks):
@@ -133,7 +139,7 @@ def run(ids, visits, severities, out, workers=6, streams='legacy'):
     cells = summarise(rows)
     payload = {'cells': cells, 'rows': rows,
                'protocol': {'streams': streams, 'ids': [min(ids), max(ids)], 'visits': visits,
-                            'severities': severities}}
+                            'severities': severities, 'offset': offset}}
     out.mkdir(parents=True, exist_ok=True)
     (out / 'matrix.json').write_text(json.dumps(payload, indent=1, default=float))
     print(json.dumps({k: {m: v[m] for m in ('whole', 'ok', 'f1', 'errors')} for k, v in cells.items()}, indent=1))
@@ -148,7 +154,8 @@ if __name__ == '__main__':
     p.add_argument('--workers', type=int, default=6)
     p.add_argument('--streams', default='legacy', choices=['legacy', 'prefix'])
     p.add_argument('--out', required=True)
+    p.add_argument('--offset', type=int, default=0)
     a = p.parse_args()
     lo, hi = a.ids.split('-')
     run(list(range(int(lo), int(hi) + 1)), [int(x) for x in a.visits.split(',')],
-        [float(x) for x in a.severities.split(',')], a.out, a.workers, a.streams)
+        [float(x) for x in a.severities.split(',')], a.out, a.workers, a.streams, a.offset)
