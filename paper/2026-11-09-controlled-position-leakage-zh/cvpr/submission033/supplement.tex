@@ -1,0 +1,385 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[pagenumbers]{cvpr}
+\usepackage{amsmath,amssymb,booktabs,graphicx}
+\usepackage{hyperref}
+\def\confName{CVPR}
+\def\confYear{2027}
+\title{What Inertial Recordings Reveal About Furniture Layout}
+\author{Supplementary measurements}
+\begin{document}
+\maketitle
+\section*{Supplementary measurements and protocol details}
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S1}
+Whole-room recovery on 1,000 development rooms at four operating points
+of the layer-1 decoder. Every row uses a 0.5 m Euclidean centre
+tolerance. Contacts are total interactions per room. The declared
+desk-wall prior is active.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}@{}}\toprule
+\textbf{Operating point} & \textbf{Centre tolerance (m)} & \textbf{Contacts} & \textbf{Whole-room (\%)} & \textbf{Wilson 95\%} \\ \midrule
+95\%/14 & 0.50 & 14 & 64.7 & 61.7-67.6 \\
+100\%/8 & 0.50 & 8 & 70.0 & 67.1-72.8 \\
+100\%/14 & 0.50 & 14 & 82.6 & 80.1-84.8 \\
+100\%/20 & 0.50 & 20 & 85.1 & 82.8-87.2 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S2}
+Prior-only control on the same 32 confirmation records used for the
+device chain. The prior-only arm receives the room outline, start and
+inventory only, with no signal, pose, walk point, contact, heading or
+event association. Both rows use the same directional decoder, candidate
+cap of 128 and support weight of 0.3, so the comparison measures the
+removal of observations from this finite estimator. Its
+side-information-only ordering and search remain part of the control.
+The paired difference is 17 rooms, with a paired room-bootstrap 95\%
+interval of {[}34.4, 68.8{]} percentage points and exact McNemar p =
+1.5e-5.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}@{}}\toprule
+\textbf{Arm} & \textbf{Input} & \textbf{Whole-room} & \textbf{Mean instance F1} \\ \midrule
+Declared priors only & outline, start, inventory & 0/32 & 0.0915 \\
+Raw joint input & phone and wrist streams & 17/32 & 0.7275 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S3}
+The prior-only control repeated on a second independent 32-room set
+(11200-11231). Its comparator is that set's own stored raw arm, frozen
+before this control was run; the two sets are reported separately and
+are not pooled. Configuration is identical to Table S2.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}@{}}\toprule
+\textbf{Arm} & \textbf{Input} & \textbf{Whole-room} & \textbf{Mean instance F1} \\ \midrule
+Declared priors only & outline, start, inventory & 0/32 & 0.0793 \\
+Stored raw arm & phone and wrist streams & 21/32 & 0.8013 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S4}
+Inventory editing on twelve rooms containing four to seven instances.
+Each edit removes the first declared instance of one category, and the
+remaining chain is unchanged. Mean true positives count matched centres,
+mean outputs count all returned boxes, and whole-room success is zero by
+definition after an instance is omitted.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/7-2\tabcolsep\relax}p{\dimexpr\linewidth/7-2\tabcolsep\relax}p{\dimexpr\linewidth/7-2\tabcolsep\relax}p{\dimexpr\linewidth/7-2\tabcolsep\relax}p{\dimexpr\linewidth/7-2\tabcolsep\relax}p{\dimexpr\linewidth/7-2\tabcolsep\relax}p{\dimexpr\linewidth/7-2\tabcolsep\relax}@{}}\toprule
+\textbf{Inventory} & \textbf{Mean declared} & \textbf{Whole-room} & \textbf{Mean F1} & \textbf{Mean TP} & \textbf{Mean outputs} & \textbf{Conflicts} \\ \midrule
+Correct & 5.67 & 7/12 & 0.8135 & 4.58 & 5.25 & 1/12 \\
+Remove one storage & 4.67 & 0/12 & 0.1965 & 1.08 & 1.25 & 9/12 \\
+Remove one chair & 4.67 & 0/12 & 0.4349 & 2.33 & 2.92 & 5/12 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S5}
+Contact confidence as event duration, at one fixed fourteen-visit
+recording and severity zero. Every arm keeps the same front end,
+refiners and decoder; only which qualified contacts reach them changes.
+Deterministic arms contain twelve rooms, while random arms contain three
+subsets of those same twelve rooms. The room remains the inferential
+unit. Cabinet events last longest, so duration ranking keeps cabinets
+and drops lying contacts.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}@{}}\toprule
+\textbf{Arm} & \textbf{Contacts kept} & \textbf{Whole-room hits} & \textbf{Mean F1} & \textbf{Mean contact duration (s)} \\ \midrule
+All contacts & 14 & 7/12 & 0.8135 & 10.41 \\
+Longest 11 & 11 & 4/12 & 0.7786 & 10.97 \\
+Random 11 (three seeds) & 11 & 19/36 & 0.8026 & 10.3-10.4 \\
+Longest 9 & 9 & 0/12 & 0.6431 & 11.35 \\
+Random 9 (three seeds) & 9 & 17/36 & 0.7630 & 10.3-10.5 \\
+Longest 6 & 6 & 0/12 & 0.5486 & 11.74 \\
+Random 6 (three seeds) & 6 & 14/36 & 0.7422 & 10.2-10.6 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+\begin{minipage}{\linewidth}\subsection*{Table S6 Equal nominal RMS, temporal structure and sensor channel}
+
+
+Every condition uses twelve synthetic records. Nominal added RMS is
+0.020 m/s² per acceleration axis and 0.003 rad/s per gyro axis, with
+clean as the unperturbed reference. Counts are descriptive and unrun
+conditions remain marked.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}@{}}\toprule
+\textbf{Condition} & \textbf{Frozen} & \textbf{Gated} & \textbf{Always corrected} \\ \midrule
+clean & 10/12 & 10/12 & 8/12 \\
+white-gyro & 11/12 & Unrun & Unrun \\
+const-gyro & 8/12 & Unrun & Unrun \\
+walk-gyro & 0/12 & 5/12 & 5/12 \\
+white-acc & 7/12 & Unrun & Unrun \\
+const-acc & 8/12 & Unrun & Unrun \\
+walk-acc & 8/12 & Unrun & Unrun \\
+white-both & 7/12 & Unrun & 9/12 \\
+const-both & 9/12 & Unrun & Unrun \\
+walk-both & 0/12 & 4/12 & 6/12 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S7 Joint severity ladder and single-term controls}
+
+
+The same twelve rooms are retained. Joint severity changes four error
+components together, while attribution arms apply one component at
+severity 0.5. Individual attribution-arm acceleration RMS values remain
+unreported.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/3-2\tabcolsep\relax}p{\dimexpr\linewidth/3-2\tabcolsep\relax}p{\dimexpr\linewidth/3-2\tabcolsep\relax}@{}}\toprule
+\textbf{Condition} & \textbf{Acceleration RMS difference (m/s²)} & \textbf{Whole-room} \\ \midrule
+severity 0 & 0 & 7/12 \\
+severity 0.5 & 0.0132 & 3/12 \\
+severity 1 & 0.0315 & 1/12 \\
+severity 2 & 0.0872 & 0/12 \\
+bias walk, s=0.5 & Unreported & 3/12 \\
+scale/misalignment, s=0.5 & Unreported & 5/12 \\
+white noise, s=0.5 & Unreported & 7/12 \\
+timestamp jitter, s=0.5 & Unreported & 7/12 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S8 Contact subsets within fixed recordings}
+
+
+Each record length is evaluated within its own shared input stream.
+Contacts are selected before contact-loop and storage-wall trajectory
+refinement, so the refined trajectory can change. Random rows contain
+three subsets per room, and truth-assisted rows are greedy diagnostic
+heuristics that access reference geometry.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}@{}}\toprule
+\textbf{Record visits} & \textbf{Subset} & \textbf{Contacts} & \textbf{Whole-room} & \textbf{Mean F1} \\ \midrule
+14 & base & 14 & 7/12 & 0.8135 \\
+14 & prefix & 6 & 4/12 & 0.7274 \\
+14 & disperse & 6 & 5/12 & 0.7028 \\
+14 & random & 6 & 8/36 & 0.6435 \\
+14 & oracle & 6 & 4/12 & 0.7960 \\
+20 & base20 & 20 & 8/12 & 0.7817 \\
+20 & prefix14 & 14 & 8/12 & 0.7917 \\
+20 & disperse14 & 14 & 8/12 & 0.8393 \\
+20 & random14 & 14 & 20/36 & 0.8095 \\
+20 & oracle14 & 14 & 8/12 & 0.8671 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+The fourteen-visit truth-assisted arm uses the corrected saved run. The
+earlier implementation returned 0/12 and F1 0.4867, and is superseded.
+The twenty-visit records last 1.18--1.26 times as long as their
+fourteen-visit counterparts, so a cross-length difference also changes
+acquired motion and refinement inputs.
+
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S9 Replicated matrix and exploratory inference}
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}@{}}\toprule
+\textbf{Visits} & \textbf{Severity} & \textbf{Hits / observations} & \textbf{Mean position F1} \\ \midrule
+6 & 0.0 & 18/36 & 0.830556 \\
+6 & 0.5 & 16/36 & 0.716204 \\
+6 & 1.0 & 14/36 & 0.632606 \\
+10 & 0.0 & 21/36 & 0.860185 \\
+10 & 0.5 & 20/36 & 0.789484 \\
+10 & 1.0 & 12/36 & 0.580820 \\
+14 & 0.0 & 23/36 & 0.895503 \\
+14 & 0.5 & 21/36 & 0.785714 \\
+14 & 1.0 & 11/36 & 0.401852 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+There are twelve independent rooms, nine conditions and three
+handset-noise realisations per condition. Wrist streams remain fixed
+across repetitions of each room-condition pair. Prefix-consistent
+handset streams are shared across visit budgets, while visits and
+recording duration remain coupled.
+
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}@{}}\toprule
+\textbf{Exploratory contrast} & \textbf{Fixed condition} & \textbf{Two-sided Wilcoxon p} & \textbf{Holm p} \\ \midrule
+severity 0 to 1 & 6 visits & 0.437500 & 0.875000 \\
+severity 0 to 1 & 10 visits & 0.062500 & 0.312500 \\
+severity 0 to 1 & 14 visits & 0.015625 & 0.093750 \\
+visits 6 to 14 & severity 0 & 0.250000 & 0.750000 \\
+visits 6 to 14 & severity 0.5 & 0.187500 & 0.750000 \\
+visits 6 to 14 & severity 1 & 0.500000 & 0.875000 \\
+\bottomrule\end{tabular}\end{center}
+
+
+Each test uses per-room success counts from zero to three. The Wilcoxon
+implementation is two-sided with zero\_method=wilcox, discarding zero
+paired differences. Holm adjustment treats the six reported simple
+effects as one exploratory family.
+
+
+
+For room r, the direct contrast is
+\(d_r=[h(r,14,1)-h(r,6,1)]-[h(r,14,0)-h(r,6,0)]\). Four rooms have
+negative contrasts and eight have zero contrasts, with mean change
+\$-\(22.22 percentage points after dividing by three repetitions. Exact two-sided room sign flips give p = 0.125 under independent-room and symmetric-null assumptions. The percentile room-bootstrap interval [\)-\$44.44,
+\$-\$5.56{]} percentage points uses a different small-sample
+construction and is retained as an exploratory sensitivity result. The
+current data leave the interaction unconfirmed.
+
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S10 Feasibility accounting over the replicated matrix}
+
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/3-2\tabcolsep\relax}p{\dimexpr\linewidth/3-2\tabcolsep\relax}p{\dimexpr\linewidth/3-2\tabcolsep\relax}@{}}\toprule
+\textbf{Outcome} & \textbf{Room-repetition observations} & \textbf{Interpretation} \\ \midrule
+Whole-room centre success & 156 & Correct and solved \\
+Solved, at least one centre missed & 110 & Feasible but incorrect \\
+Proposal conflict & 45 & No retained compatible layout \\
+Search budget exhausted & 11 & Finite search stops \\
+Empty proposal pool & 2 & No proposal survives \\
+Total & 324 & Twelve rooms, repeated conditions \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+
+
+At severity zero, 105/108 observations solve and 62 recover the room,
+leaving 43 feasible but incorrect outputs. Counts over room-repetition
+observations describe this fixed matrix and do not create 324
+independent rooms.
+
+
+
+\begin{minipage}{\linewidth}\subsection*{Table S11 Contact placement end-to-end}
+Two placement protocols on the same rooms, route, fourteen contacts,
+sensor seeds, trajectory refiners and decoder. The development block was
+used during earlier protocol work; the fresh block was not reported by
+any earlier arm. Pairing is by room, and intervals are room-bootstrap.
+The final row pools the two blocks and is not an independent replication.
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}p{\dimexpr\linewidth/5-2\tabcolsep\relax}@{}}\toprule
+\textbf{Rooms} & \textbf{Dispersed} & \textbf{Repeated} & \textbf{Paired difference} & \textbf{Exact McNemar p} \\ \midrule
+Development, 12 & 7/12, F1 0.8135 & 8/12, F1 0.8379 & -8.33 pp [-33.33, 16.67] & 1.0 \\
+Fresh, 64 & 48/64, F1 0.9304 & 30/64, F1 0.8354 & +28.12 pp [15.62, 40.62] & 1.2e-4 \\
+Pooled, 76 & 55/76 & 38/76 & +22.37 pp [10.53, 34.21] & 9.1e-4 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+\begin{minipage}{\linewidth}\subsection*{Table S12 Declared-prior sampling ceiling}
+An independent sampler draws 2,000 layouts per room from the declared
+inventory, nominal dimensions, non-overlap, wall clearance and support
+rules. Every draw passes the same layout validator. The truth-selected
+row and the inventory-size panel are ceilings of this sampling family,
+not estimators, and they use reference layouts that no method receives.
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}@{}}\toprule
+\textbf{Arm} & \textbf{Rooms} & \textbf{Mean F1} & \textbf{Exact whole rooms} \\ \midrule
+Declared priors, this decoder & 32 & 0.0793 & 0/32 \\
+Declared priors, 2,000 draws & 32 & 0.0878 & 4/64,000 \\
+Best draw, chosen with truth & 32 & 0.7371 & 4/32 \\
+Four declared items & 5 & 0.950 & 4/5 \\
+Five declared items & 13 & 0.725 & 0/13 \\
+Six declared items & 14 & 0.716 & 0/14 \\
+Seven declared items & 12 & 0.595 & 0/12 \\
+Raw inertial chain, same rooms & 32 & 0.8013 & 21/32 \\
+\bottomrule\end{tabular}\end{center}
+\end{minipage}\par\medskip
+\begin{minipage}{\linewidth}\subsection*{Table S13 Selection with the class quota pinned}
+Every room contributes six contacts allocated across seated, lying and
+cabinet events in proportion to the available counts, with at least one
+per present class; all twenty-four rooms admit the quota 2/2/2. Dispersed
+picks start farthest from the room centre and continue farthest from the
+chosen set among classes with quota left. Random arms average three seeds
+and report row counts out of 36. Non-contact walking runs are retained in
+every arm, and the recording, front end, refiners and decoder are fixed.
+
+\begin{center}\small\begin{tabular}{@{}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}p{\dimexpr\linewidth/4-2\tabcolsep\relax}@{}}\toprule
+\textbf{Arm} & \textbf{Rooms} & \textbf{Whole rooms} & \textbf{Mean F1} \\ \midrule
+Development 11500--11511, all 14 contacts & 12 & 7/12 & 0.8135 \\
+\quad quota random, 6 contacts & 12 & 14/36 & 0.7136 \\
+\quad quota dispersed, 6 contacts & 12 & 7/12 & 0.7639 \\
+\quad quota truth-assisted, 6 contacts & 12 & 3/12 & 0.6806 \\
+\quad unrestricted random, 6 contacts & 12 & 8/36 & 0.6435 \\
+Confirmation 11700--11711, all 14 contacts & 12 & 10/12 & 0.9603 \\
+\quad quota random, 6 contacts & 12 & 16/36 & 0.7929 \\
+\quad quota dispersed, 6 contacts & 12 & 7/12 & 0.8829 \\
+\quad quota truth-assisted, 6 contacts & 12 & 2/12 & 0.7252 \\
+\quad unrestricted random, 6 contacts & 12 & 11/36 & 0.8052 \\
+\bottomrule\end{tabular}\end{center}
+
+Paired over rooms, quota dispersed minus quota random averages $+0.0503$
+on development (five better, three worse, four equal) and $+0.0899$ on
+the confirmation block (nine better, one worse, two equal). The quota
+itself does not transfer: quota random minus unrestricted random is
+$+0.1204$ on development and $-0.0389$ on confirmation. Both blocks hold
+one severity and twelve rooms, so these sign counts stay descriptive.
+\end{minipage}\par\medskip
+
+\subsection*{Supplementary Figure S1 Temporal error structure}
+
+
+\begin{center}\includegraphics[width=88mm]{../../figures/cvpr/fig_error_structure031.pdf}\end{center}
+Temporal structure changes recovery at equal nominal added RMS. Markers
+farther right indicate more whole-room centre hits, and absent markers
+indicate unrun conditions. Each condition retains twelve synthetic
+records and Table S6 supplies the exact counts.
+
+
+\subsection*{Supplementary Figure S2 Finite selection criteria}
+
+
+\begin{center}\includegraphics[width=88mm]{../../figures/cvpr/fig5_selection_criteria021_single.pdf}\end{center}
+Selection criteria have batch-dependent results. More whole-room centre
+hits indicate better recovery within each batch, and absent markers
+indicate unrun conditions. Three separately frozen batches each contain
+32 records, with baselines of 24/32, 23/32 and 17/32.
+
+
+\subsection*{Implementation and historical provenance}
+
+
+The handset front end estimates pose from acceleration and angular
+velocity, then regresses segment displacement using 148 signal-derived
+features. The frozen phone activity model is a 400-tree random forest,
+and the watch supplies cabinet events through its three-axis
+acceleration channel. Furniture sensors and reference object identities
+are excluded from deployable inference. The carrying-to-body mapping,
+furniture inventory and category-specific contact semantics remain
+declared protocol assumptions.
+
+
+
+The 33/108 changed outcomes refer to two earlier single-realisation
+grids, legacy versus prefix-consistent generation, including eight
+changes at zero added severity. Those historical outcomes are separate
+from the present 324-episode replicated matrix. Some earlier caches
+retain aggregate scores without every box and match, requiring raw-input
+replay for box-level verification.
+
+
+
+The original path summaries 2.94 and 1.03 use different available-path
+subsets and different summary statistics, so they are retained as
+historical diagnostics. Physical synchronisation in the real case
+remains unverified. Code availability, model-weight access and raw-data
+access require separate descriptions in the final release package.
+
+\end{document}
