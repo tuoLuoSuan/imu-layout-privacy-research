@@ -81,7 +81,9 @@ def script(scene,peak_speed=.65):
     return result
 
 
-def generate(scene,seed=7,peak_speed=.65,fs=120.,wrist='medium',calibration=False,script_override=None):
+def generate(scene,seed=7,peak_speed=.65,fs=120.,wrist='medium',calibration=False,script_override=None,noise_streams='legacy'):
+    if noise_streams not in ('legacy', 'independent-v1'):
+        raise ValueError('noise_streams must be legacy or independent-v1')
     segs=script_override if script_override is not None else script(scene,peak_speed) if not calibration else [
       {'start':0.,'end':5.,'label':'other','a':np.array([1.,1.]),'b':np.array([1.,1.]),'heading':np.array([1.,0.])},
       {'start':5.,'end':5.+1.875*10/peak_speed,'label':'walk','a':np.array([1.,1.]),'b':np.array([11.,1.]),'heading':np.array([1.,0.])},
@@ -108,8 +110,13 @@ def generate(scene,seed=7,peak_speed=.65,fs=120.,wrist='medium',calibration=Fals
     derivative=np.gradient(rot,dt,axis=0,edge_order=2);body=np.einsum('nji,njk->nik',rot,derivative)
     gyro=np.c_[body[:,2,1]-body[:,1,2],body[:,0,2]-body[:,2,0],body[:,1,0]-body[:,0,1]]/2
     clean_acc=np.einsum('nji,nj->ni',rot,acceleration+[0,0,G]);rng=np.random.default_rng(seed)
-    return {'t':t,'fs':fs,'ts_ns':1700000000000000000+np.rint(t*1e9).astype(np.int64),'acc':clean_acc+rng.normal(0,.035,clean_acc.shape)+[.02,-.01,.03],
-      'gyro':gyro+rng.normal(0,.003,gyro.shape)+[.0005,-.0004,.0003],'clean_acc':clean_acc,'clean_gyro':gyro,
+    acc_rng, gyro_rng = rng, rng
+    if noise_streams == 'independent-v1':
+        # Channel streams do not move when a longer script consumes more samples.
+        acc_seed, gyro_seed = np.random.SeedSequence(seed).spawn(2)
+        acc_rng, gyro_rng = np.random.default_rng(acc_seed), np.random.default_rng(gyro_seed)
+    return {'t':t,'fs':fs,'ts_ns':1700000000000000000+np.rint(t*1e9).astype(np.int64),'acc':clean_acc+acc_rng.normal(0,.035,clean_acc.shape)+[.02,-.01,.03],
+      'gyro':gyro+gyro_rng.normal(0,.003,gyro.shape)+[.0005,-.0004,.0003],'clean_acc':clean_acc,'clean_gyro':gyro,
       'room_m':[12.,3.] if calibration else [scene['W'],scene['L']],
       'truth':{'pos':pos,'R':rot,'label':labels,'segments':[[s['start'],s['end'],s['label']] for s in segs]},
       'contract':CONTRACT,'calibration':calibration,'script':segs}

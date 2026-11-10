@@ -9,8 +9,9 @@ from docx.oxml import OxmlElement
 from docx.enum.table import WD_TABLE_ALIGNMENT
 
 HERE = Path(__file__).resolve().parent
-SRC = HERE / 'manuscript.md'
-OUT = HERE / 'cvpr2026.docx'
+import sys
+SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / 'manuscript.md'
+OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else HERE / 'cvpr2026.docx'
 WIDE = ('fig1', 'fig6')
 WIDTH = {'fig1': 7.0, 'fig2': 3.4, 'fig3': 3.4, 'fig4': 3.4, 'fig5': 3.4, 'fig6': 7.0}
 

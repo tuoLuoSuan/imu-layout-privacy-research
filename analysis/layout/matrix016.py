@@ -31,7 +31,7 @@ from . import sensor013 as S
 
 
 def cell(task):
-    rid, visits, severity, out = task
+    rid, visits, severity, out, streams = (list(task) + ['legacy'])[:5]
     out = Path(out)
     native = E.OLD / 'raw-native800' / 'native' / f'multi-{rid:05d}.json'
     meta = json.loads((E.WRIST / 'metadata.json').read_text())
@@ -39,8 +39,10 @@ def cell(task):
     start = json.loads(native.read_text())['agent_placement']['position']
     scene['S'] = np.array([start['x'], start['z']])
     script, prefix = plan(scene, visits=visits)
-    phone = generate(scene, 1900000 + rid, script_override=script)
-    noisy = S.degrade(phone, severity, seed=1910000 + rid)
+    phone = generate(scene, 1900000 + rid, script_override=script,
+                     noise_streams='independent-v1' if streams == 'prefix' else 'legacy')
+    noisy = S.degrade(phone, severity, seed=1910000 + rid,
+                      noise_streams='prefix-v1' if streams == 'prefix' else 'legacy')
     watch = mount(generate_watch(noisy, 1900300 + rid), meta['neutral_up_from_development'])
     session = out / 'input'
     write_input(session, noisy)
@@ -71,6 +73,8 @@ def cell(task):
         row = {'room': rid, 'visits': visits, 'severity': severity, 'status': pred['status'],
                'all_instances_hit': bool(score['all_instances_hit']), 'f1': float(score['f1']),
                'ok': pred['status'] == 'ok', 'per_class': score['per_class'],
+               'predicted_boxes': pred['boxes'], 'matches': score['matches'],
+               'predicted_runs': pred['runs'], 'streams': streams,
                'n_events': len(pred['runs']), 'duration_s': float(max(r[2] for r in pred['runs'])),
                'coverage_free': float(prefix['coverage_free']),
                'sensor': S.report(phone, noisy)}
@@ -84,7 +88,7 @@ def worker(task):
     try:
         return cell(task)
     except Exception as e:  # noqa: BLE001
-        rid, visits, severity, _ = task
+        rid, visits, severity = task[0], task[1], task[2]
         return {'room': rid, 'visits': visits, 'severity': severity, 'error': repr(e)}
 
 
@@ -105,13 +109,14 @@ def summarise(rows):
         c['events'].append(r['n_events'])
         c['coverage'].append(r['coverage_free'])
     for c in cells.values():
-        c['f1'] = c.pop('f1_sum', 0.) / max(1, c.get('scored', 0))
+        # A failed invocation remains in the planned-room denominator.
+        c['f1'] = c.pop('f1_sum', 0.) / max(1, c['n'])
         c['events_median'] = float(np.median(c.pop('events'))) if c['events'] else None
         c['coverage_median'] = float(np.median(c.pop('coverage'))) if c['coverage'] else None
     return cells
 
 
-def run(ids, visits, severities, out, workers=6):
+def run(ids, visits, severities, out, workers=6, streams='legacy'):
     out = Path(out)
     tasks = []
     for v in visits:
@@ -119,14 +124,16 @@ def run(ids, visits, severities, out, workers=6):
             for i in ids:
                 d = out / f'v{v}-s{s}' / f'multi-{i:05d}'
                 d.mkdir(parents=True, exist_ok=True)
-                tasks.append((i, v, s, str(d)))
+                tasks.append((i, v, s, str(d), streams))
     rows = []
     with concurrent.futures.ProcessPoolExecutor(max_workers=workers) as pool:
         for r in pool.map(worker, tasks):
             rows.append(r)
             print(json.dumps({k: r.get(k) for k in ('room', 'visits', 'severity', 'error', 'status')}), flush=True)
     cells = summarise(rows)
-    payload = {'cells': cells, 'rows': rows}
+    payload = {'cells': cells, 'rows': rows,
+               'protocol': {'streams': streams, 'ids': [min(ids), max(ids)], 'visits': visits,
+                            'severities': severities}}
     out.mkdir(parents=True, exist_ok=True)
     (out / 'matrix.json').write_text(json.dumps(payload, indent=1, default=float))
     print(json.dumps({k: {m: v[m] for m in ('whole', 'ok', 'f1', 'errors')} for k, v in cells.items()}, indent=1))
@@ -139,8 +146,9 @@ if __name__ == '__main__':
     p.add_argument('--visits', default='6,10,14')
     p.add_argument('--severities', default='0,0.5,1')
     p.add_argument('--workers', type=int, default=6)
+    p.add_argument('--streams', default='legacy', choices=['legacy', 'prefix'])
     p.add_argument('--out', required=True)
     a = p.parse_args()
     lo, hi = a.ids.split('-')
     run(list(range(int(lo), int(hi) + 1)), [int(x) for x in a.visits.split(',')],
-        [float(x) for x in a.severities.split(',')], a.out, a.workers)
+        [float(x) for x in a.severities.split(',')], a.out, a.workers, a.streams)

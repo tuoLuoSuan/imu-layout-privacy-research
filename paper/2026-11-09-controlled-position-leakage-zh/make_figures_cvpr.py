@@ -62,7 +62,7 @@ T = {
             r5='gated gyro tracking\nseverity 1.0', r6='truth pose, same actions\ndiagnostic',
             n1='10,000 rooms', n2='1,000 rooms', n3='1,000 rooms', n4='64 rooms', n5='32 rooms', n6='32 records',
             f3x='sensor severity s', f3y='visits per room', f3q='severity axis', f3v='visit axis',
-            f3t='visits barely move it, sensor severity does',
+            f3t='one realisation per cell identifies neither axis',
             f4y='rooms recovered of 12', f4t='same RMS, three temporal structures',
             f5x='change vs base (pp)', f5t='no selection criterion replicates',
             f6t='four rooms, truth against prediction', r1s='contact placement', r2s='desk-wall prior', r3s='decoder portfolio', r4s='gated gyro, s=0.5', r5s='gated gyro, s=1.0', r6s='truth pose (diagnostic)', fig1c='c  one real room', fig1title='the task and the three evidence layers', fig1note='each bracket is scored on one room set; no arrow crosses two sets. simulated layer uses an ideal trajectory with class-level contact coordinates; device layer uses raw phone and watch streams.', f2note='Newcombe hybrid score intervals on two proportions; every row keeps its own room set.', truth='truth', pred='prediction', none='no proposal survives',
@@ -82,7 +82,7 @@ T = {
             r5='门控陀螺跟踪\n严重度 1.0', r6='真值位姿、同动作\n诊断用',
             n1='10,000 间', n2='1,000 间', n3='1,000 间', n4='64 间', n5='32 间', n6='32 条',
             f3x='传感器严重度 s', f3y='每间访次', f3q='质量轴', f3v='预算轴',
-            f3t='访次几乎不动，严重度动得多',
+            f3t='每格一次实现，两条轴都不可识别',
             f4y='恢复间数（共 12）', f4t='同样的均方根，三种时间结构',
             f5x='相对基线变化（百分点）', f5t='没有一类选择准则能复现',
             f6t='四间房：真值与预测', truth='真值', pred='预测', none='没有候选通过硬覆盖',
@@ -340,7 +340,8 @@ def fig3():
     axv.spines['top'].set_visible(False); axv.spines['right'].set_visible(False)
     fig.text(.30, .163, say('f3v'), fontsize=5.2, color='#5A6B78')
     fig.text(.02, .955, say('f3t'), fontsize=7.4, fontweight='bold', color=INK)
-    fig.text(.02, .012, '11:2 rooms, p=0.0225 (s 0 to 1) | 6:3, p=0.508 (6 to 14 visits); 12 rooms per cell; marginals in pp.', fontsize=4.9, color='#5A6B78')
+    fig.text(.02, .045, 'first run, room-clustered p=0.13 (severity) and p=0.66 (visits); 12 rooms per cell.', fontsize=5.2, color='#5A6B78')
+    fig.text(.02, .018, 'with matched noise prefixes the severity axis reverses; marginals in pp.', fontsize=5.2, color='#5A6B78')
     save(fig, 'fig3_budget_quality', [ax, axq, axv], aligned=False)
     table('fig3.csv', [dict(visits=v, severity=s_, whole=int(grid[i, j]), n=n, f1=rep['cells'][i * len(sev) + j]['f1'])
                        for i, v in enumerate(visits) for j, s_ in enumerate(sev)])
