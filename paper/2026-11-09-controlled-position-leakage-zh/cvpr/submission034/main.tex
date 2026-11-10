@@ -1,0 +1,658 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[review]{cvpr}
+\usepackage{amsmath,amssymb,booktabs,graphicx,placeins}
+\usepackage[breaklinks,colorlinks,allcolors=blue]{hyperref}
+\def\confName{CVPR}
+\def\confYear{2027}
+\def\paperID{TBD}
+\title{What Inertial Recordings Reveal About Furniture Layout}
+\author{Anonymous submission}
+\setlength{\dbltextfloatsep}{10pt plus 3pt minus 3pt}
+\setlength{\textfloatsep}{9pt plus 3pt minus 3pt}
+\setlength{\dblfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{7pt plus 2pt minus 2pt}
+\setcounter{topnumber}{3}
+\setcounter{dbltopnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{.92}
+\renewcommand{\dbltopfraction}{.92}
+\renewcommand{\textfraction}{.08}
+\renewcommand{\floatpagefraction}{.72}
+\renewcommand{\dblfloatpagefraction}{.72}
+\begin{document}
+\maketitle
+\begin{abstract}
+We quantify how wearable activity discloses furniture positions under
+known room outlines, starts, inventories and nominal dimensions.
+Separate evaluations measure ideal geometric evidence, acquisition from
+synthetic phone and watch IMUs, and real-room feasibility. Across 10,000
+controlled layouts, dispersing contacts at the same walking route and
+fourteen interactions raises whole-room centre recovery from 39.78\% to
+64.70\%, a paired gain of 24.92 percentage points with a room-bootstrap
+95\% interval of {[}24.00, 25.84{]} and a mean room-level
+instance-position F1 of 90.43\%. The same intervention end-to-end through
+noisy phone and wrist streams, trajectory refiners and a frozen decoder
+reproduces on 64 rooms that no earlier arm uses: 48/64 against 30/64, a
+gain of 28.12 points ({[}15.62, 40.62{]}, exact McNemar p = 1.2e-4).
+Two other decoders keep that sign (+26.56 and +15.62 points, both
+$p<0.02$), and so does sensor error at severity 0.5 (+17.19 points,
+$p=0.013$).
+Declared side information alone recovers 0/32 records, and an
+independent sampler over 64,000 declared-only layouts over 32 rooms
+reaches F1 0.088 with four exact rooms; selecting the best draw with
+reference layouts raises F1 to 0.737 with 4/32 exact, while the inertial
+chain reaches 0.801 with 21/32. Fixed-record subset controls show that
+selection and refinement, not contact count alone, set the operating
+point. A production replay localises four objects in one real room with
+centre errors of 0.09--0.23 m. Contact placement is therefore a
+first-order lever that survives the device chain, and declared priors
+alone do not substitute for it.
+\end{abstract}
+\section{Introduction}\label{introduction}
+
+Wearable inertial recordings reflect movement and its spatial
+constraints. A walk passes through free space, sitting locates a seat
+region, and opening a cabinet constrains an operation surface. Given a
+room's dimensions and inventory, these observations can narrow furniture
+positions. Quantifying that disclosure requires specifying the
+observations and available side information.
+
+Existing systems recover layouts from trajectories or synthesise scenes
+compatible with motion. Walk2Map learns trajectory-to-plan relationships
+\cite{r1}, CoGuide studies spatial inverse problems and varies
+trajectory density and noise \cite{r2}, and SUMMON synthesises
+contact-compatible objects \cite{r3}. Wearable systems extend motion
+understanding to scenes and interactions \cite{r4,r12}. We examine a
+more specific experimental question. At the same walking route and
+number of interactions, how much does changing the spatial placement of
+contacts affect furniture-position recovery?
+
+The answer depends on the measurement protocol. In our controlled
+geometric experiment, moving fourteen contacts from repeated to
+dispersed locations changes whole-room recovery by 24.92 percentage
+points. We then rebuilt that intervention inside the device chain, with
+identical rooms, route, fourteen contacts, sensor seeds, trajectory
+refiners and decoder, and the placement protocol as the only difference.
+On 64 rooms that no earlier arm uses, the effect persists at 48/64
+against 30/64, a gain of 28.12 points, so the geometric lever is not an
+artefact of ideal trajectories. A twelve-room development block, reported
+separately, is too small to resolve a difference of that sign. Declared
+near-wall structure and finite decoding also shift recovery at a given
+activity budget, but declared priors alone do not reproduce it: across
+64,000 sampled layouts the best attainable F1 is 0.088. These
+measurements define conditional operating points for a scene family,
+side-information package, interaction policy and decoder. Walking
+coverage uses reference free space as its denominator, so these maps
+describe controlled activity budgets and require additional evidence
+before they can serve as a runtime stopping rule.
+
+The device experiment then asks which of these spatial observations a
+frozen inference chain can extract. On two synthetic batches, removing
+inertial evidence while retaining the same finite decoder and declared
+side information gives 0/32 whole-room successes, compared with 17/32
+and 21/32 for the corresponding raw-input arms. This evidence ablation
+evaluates the contribution of observations to that estimator. Its
+interpretation is bounded by the estimator's prior-only search and
+ordering. Within fixed recordings, further controls vary which contacts
+reach the refiners and decoder, making evidence selection a measurable
+part of the pipeline.
+
+We contribute a paired contact-placement intervention over 10,000
+controlled layouts, an end-to-end replication of that intervention on 64
+unseen rooms of the device chain, conditional budget maps retaining
+partial and whole-room endpoints, and device controls separating
+acquisition, feasibility and selection. The three layers retain separate
+chains and denominators. Device training and testing use the same
+generation family, and real-input feasibility uses one development room.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../figures/cvpr/fig_framework031.pdf}
+\caption{The framework links activity, acquired evidence and position disclosure,
+with higher F1 and whole-room counts indicating better recovery. Device
+scores refer to 32 synthetic records, while room drawings and waveforms
+are illustrative. The three datasets retain separate chains and
+denominators, the watch supplies contact and timing evidence, and
+physical clock synchronisation is unverified.}
+\end{figure*}
+
+\section{Related work}\label{related-work}
+
+\textbf{Scene recovery from movement.} Walk2Map learns floor plans and
+coarse furniture regions from walk trajectories \cite{r1}. CoGuide
+formulates spatial inference using contrastive diffusion guidance and
+studies sparse and noisy trajectories \cite{r2}. SUMMON uses human
+motion and contact to synthesise plausible scene objects \cite{r3}.
+These studies motivate our use of movement as spatial evidence. Our
+paired intervention holds route, interaction count and decoder fixed
+while changing contact placement.
+
+\textbf{Wearable interaction and localisation.} IMU4D estimates body
+motion and coarse scene structure from wearable IMUs \cite{r4}. IMU-HOI
+uses body- and object-mounted IMUs for coherent human--object motion
+\cite{r12}. RoNIN addresses inertial odometry \cite{r6}, while
+ActionSLAM uses actions as localisation landmarks \cite{r5}. Collective
+landmark mapping also addresses ambiguities between class labels and
+physical instances \cite{r13}. We retain unknown event-to-instance
+associations, use phone and watch inertial channels under a declared
+carrying protocol, and place no sensor on furniture.
+
+\textbf{Position disclosure as a measurement task.} We evaluate the
+furniture positions recoverable by a specified estimator under stated
+observations and side information. Partial instance recovery, complete
+room recovery and footprint agreement answer different questions. This
+distinction matters when a plausible output contains a misplaced object,
+or when a finite decoder retains useful individual candidates but
+selects an incorrect joint layout.
+
+\section{Task, evidence and
+evaluation}\label{task-evidence-and-evaluation}
+
+\subsection{Conditional activity
+budgets}\label{conditional-activity-budgets}
+
+Each controlled rectangular room contains one bed and one or two
+instances of each desk, storage and chair category, giving four to seven
+target instances. The 10,000-room set contains 55,000 target items. The
+analyst receives the room outline, starting position, furniture
+categories, counts and nominal dimensions. Furniture positions, absolute
+heading and event-to-instance associations are inferred. Axis alignment,
+interaction semantics and any near-wall assumptions are stated with the
+corresponding experiment.
+
+Walking coverage measures the fraction of reference traversable grid
+points within 0.25 m of the walked path. The route construction uses an
+approximately 0.20 m grid and 0.15 m body clearance. Let G\_free be the
+reference free-space grid and T the sampled trajectory. We report
+
+\[c(T)=\frac{|\{g\in G_{\mathrm{free}}:\min_{p\in T}\|g-p\|_2\leq0.25\,\mathrm{m}\}|}{|G_{\mathrm{free}}|}.\]
+
+Coverage is an experimental design and evaluation variable. Reference
+furniture geometry plans and scores the motion, while the inference
+interface receives the declared side information and observations. The
+total interaction budget n follows a chair--storage--bed cycle, rotating
+among same-category instances. Repeated and dispersed arms differ in
+contact location. Desks have no direct contact channel and are
+constrained through walking, side information and relations to seated
+events.
+
+\subsection{Endpoints}\label{endpoints}
+
+Predictions and references are matched one to one within category, with
+a Euclidean centre tolerance of 0.5 m. For room r, we compute
+
+\[\begin{gathered}F_{1,r}=\frac{2TP_r}{2TP_r+FP_r+FN_r},\\[4pt]H_r=\mathbf{1}[TP_r=|\widehat{O}_r|=|O_r|].\end{gathered}\]
+
+We average each endpoint over rooms. Whole-room centre success requires
+all instances and no extras. An empty output receives zero on both
+endpoints. Decoder solve status and the separate endpoint requiring
+every matched footprint to reach IoU of at least 0.5 are also retained.
+
+For a declared protocol Pi, the budget map reports the empirical mean F1
+and mean H at each measured (c,n) cell. Pi includes the room family,
+side information, interaction policy, acquisition settings and decoder.
+This notation describes the measured operating points. The finite
+candidate domains and search limits remain part of their interpretation.
+
+\subsection{Input chains and inference
+units}\label{input-chains-and-inference-units}
+
+Layer 1 receives ideal trajectories and class-level contact coordinates.
+Layer 2 starts from synthetic phone acceleration and angular velocity at
+120 Hz and watch acceleration at approximately 16.7 Hz. Its
+segment-displacement regressor is ExtraTrees \cite{r10} with 300 trees,
+minimum leaf size two and 148 features, trained on 7,723 segments from
+historical rooms 0--19. Model selection uses records 11000--11007, while
+primary confirmation records 11100--11131 are excluded from that
+selection. Training and evaluation share the generation family. Some
+evaluation geometries appeared in earlier project stages, so the holdout
+concerns the stated model-selection process and newly generated long
+records.
+
+The phone activity model uses a frozen random forest \cite{r9}, and a
+watch-only cabinet channel supplies wrist events. Under the declared
+pose-to-body protocol, sitting anchors seat regions, lying supports the
+bed footprint, and cabinet events refer to an operation face with
+nominal reach 0.60 m. Unknown point and plane revisits regularise
+trajectory drift. Directional finite decoding uses cap 128, contact
+padding 0.30 m and walking tolerance 0.20 m. Later diagnostic chains
+additionally apply storage-wall trajectory repair and gated gyro-bias
+tracking. Each arm identifies its own chain. The real-room layer retains
+the original RoNIN production entry point and its room-specific
+relations.
+
+Rooms are the inferential units. Binary paired comparisons use exact
+two-sided McNemar tests. Proportions use pointwise Wilson 95\% intervals
+\cite{r11}, and paired effects use room-bootstrap intervals where
+stated. In the replicated grid, each room contributes zero to three
+successes from three handset-noise realisations, with wrist streams
+fixed. Exploratory Wilcoxon tests are two-sided and discard zero
+differences. Six simple effects are reported with Holm sensitivity
+results in the supplement. A direct post-hoc room-level interaction
+contrast uses sign flips, assuming independent rooms and symmetric
+contrasts under the null.
+
+\section{Geometric evidence and conditional
+budgets}\label{geometric-evidence-and-conditional-budgets}
+
+\subsection{Contact placement at fixed route and
+count}\label{contact-placement-at-fixed-route-and-count}
+
+Figure 2 retains all 43 measured cells. Mean room-level position F1
+ranges from 4.56\% to 90.43\%, while whole-room recovery over those
+cells ranges from 0\% to 64.70\%. The heatmap and three-dimensional
+lattice encode the same F1 values. Five unmeasured cells are marked
+explicitly.
+
+At the same route and fourteen interactions, repeated contact placement
+recovers 39.78\% of rooms and dispersed placement 64.70\%. The paired
+difference is 24.92 percentage points, with room-bootstrap 95\% interval
+{[}24.00, 25.84{]}. Mean distinct contact coordinates increase from 4.0
+to 10.5. This intervention isolates contact placement within the
+controlled geometric protocol. At full coverage and fourteen dispersed
+interactions, instance-position F1 is 90.43\%, but only 740/10,000 rooms
+meet the separate whole-room footprint-IoU endpoint. The distinction
+limits conclusions about shapes and orientations.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{../../figures/cvpr/fig_budget032.pdf}
+\caption{Activity budgets set the operating level under a fixed geometric
+protocol. Panel a gives room-macro position F1 for all 43 measured cells,
+each resting on 10,000 controlled rooms, with hatching for the five
+unmeasured cells. Panel b replots the full-coverage column against
+interaction count, where three more interactions buy 3.3 points once
+coverage is complete. Values are F1, not whole-room counts.}
+\end{figure}
+
+\subsection{Dependence on priors, decoding and scene
+family}\label{dependence-on-priors-decoding-and-scene-family}
+
+A wall-property audit of 1,000 historical generated rooms finds every
+desk within 0.15 m of a wall, with median gap 0.104 m. Adding this
+declared property to the geometric candidate pool raises whole-room
+recovery from 651 to 826 on the same 1,000 development rooms and desk
+recall from 75.87\% to 87.27\%. A new same-family 300-room set gives
+66.0\% and 84.0\%. On a separate 1,000-room confirmation set,
+post64\_wall40k recovers 851 rooms and depth\_portfolio 945 at the same
+maximum total budget of 40,000 nodes. The paired gain is 9.4 percentage
+points with bootstrap 95\% interval {[}7.6, 11.3{]}.
+
+With the declared desk-wall prior in the development configuration,
+measured operating points are 64.7\% at 95\% coverage/14 interactions,
+70.0\% at 100\%/8, 82.6\% at 100\%/14 and 85.1\% at 100\%/20. The 82.6\%
+point is conditional on that configuration and room family. The
+corresponding outline-decoder result over 10,000 rooms is 64.70\%,
+increasing to at most 66.63\% at the separately tested 23-interaction
+budget. All sets and configurations are kept distinct.
+
+Scene transfer further changes the operating point. Of 25 exported iTHOR
+scenes \cite{r7}, fifteen contain the target categories and thirteen
+pass the geometry screen. The earlier 11/11 result uses an additionally
+restricted subset. On 803 separately included rectangular ProcTHOR rooms
+\cite{r8}, 95\% coverage and five interactions yield 350 centre
+successes, or 43.6\%. That earlier protocol selects one representative
+per target role and maps Dresser to storage, with idealised
+storage-surface contact semantics. Its endpoint differs from the
+variable-inventory experiment.
+
+\section{What raw device streams
+contribute}\label{what-raw-device-streams-contribute}
+
+\subsection{Observation and pose
+interventions}\label{observation-and-pose-interventions}
+
+The primary raw joint arm recovers 17/32 rooms (53.13\%, Wilson 95\%
+{[}36.45, 69.13{]}) with mean instance-position F1 0.7275. The older
+front end recovers 11/32. Their paired outcomes are nine both
+successful, eight new-only successes, two old-only successes and
+thirteen both unsuccessful. The 18.75-point difference has paired
+bootstrap 95\% interval {[}0, 37.5{]} and exact McNemar p = 0.1094.
+
+Removing wrist evidence gives 9/32, with eight joint-only successes and
+no wrist-absent-only success (unadjusted diagnostic p = 0.0078).
+Shifting the wrist recording by ten seconds gives 0/32. Replacing
+estimated pose with reference pose, while retaining predicted actions,
+gives 26/32 and F1 0.9536. This diagnostic changes the pose-dependent
+refinements and finite decoding together. Six rooms still fail to meet
+the centre endpoint.
+
+\textbf{Evidence ablation with the same decoder.} Feeding only outline,
+start and inventory to the directional decoder, with cap 128 and support
+weight 0.3, gives 0/32 whole-room successes and mean position F1 0.0915.
+All 32 runs return layouts. Against the corresponding raw arm, the
+paired difference is 17 rooms, with bootstrap 95\% interval {[}34.4,
+68.8{]} percentage points and exact McNemar p = 1.5e-5. A second 32-room
+set gives 0/32 and F1 0.0793, compared with its stored raw arm's 21/32
+and 0.8013 (p = 9.5e-7). This post-hoc ablation retains one finite
+estimator's candidate ordering and search behaviour.
+
+\textbf{Limit of the estimator or of the priors?} An independent sampler
+draws 2,000 layouts per room from the declared inventory, dimensions,
+non-overlap, wall-clearance and support constraints, and reproduces the
+ablation: F1 0.0878 with 4/64,000 exact recoveries over the same 32
+rooms. The failure is therefore not specific to one decoder. Selecting
+the best of the 2,000 draws per room with reference layouts gives F1
+0.7371 and 4/32 exact rooms, and that ceiling falls as inventories grow:
+0.950 for four items (4/5 rooms), 0.725 for five (0/13), 0.716 for six
+(0/14) and 0.595 for seven (0/12). Above five items, 78,000 draws contain
+no exact room (Fig. 5). Declared priors in this family support
+approximate placement at best, and the inertial chain's 21/32 on the same
+rooms is what supplies exactness. The ceiling belongs to one sampling
+family rather than to all prior-only inference.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../figures/cvpr/fig_prior033.pdf}
+\caption{What declared side information can recover without inertial
+evidence. Panel a compares one finite decoder fed only outline, start and
+inventory with an independent 2,000-draw sampler on the same 32 rooms,
+together with a sampler draw selected using reference layouts and the
+inertial chain. Panel b reports that truth-assisted ceiling against
+inventory size, where it drops from 0.950 at four items to 0.595 at
+seven. Both panels share one room set and one declared input package.}
+\end{figure*}
+
+
+\subsection{Placement transfers to the device
+chain}\label{placement-transfers-to-the-device-chain}
+
+The geometric intervention changes only where contacts land. We rebuilt
+it inside the Layer-2 chain: identical room, route, fourteen contacts,
+handset and wrist seeds, refiners and decoder, with the placement
+protocol as the only difference. The twelve development rooms give 7/12
+(mean F1 0.8135) for dispersed placement and 8/12 (0.8379) for repeated
+placement, a difference of $-8.33$ points with exact McNemar p = 1.0.
+At that size the block cannot resolve an effect of the geometric
+magnitude. A fresh block of 64 rooms, which no earlier arm in this paper
+reports on, separates the two protocols: dispersed placement recovers
+48/64 (75.0\%, F1 0.9304) and repeated placement 30/64 (46.9\%,
+0.8354). Twenty rooms succeed under dispersed placement only, against
+two under repeated placement only, giving a paired gain of 28.12 points
+with room-bootstrap 95\% interval {[}15.62, 40.62{]} and exact McNemar p
+= 1.2e-4 (Fig. 4). Pooling all 76 rooms gives 55/76 against 38/76,
++22.37 points ({[}10.53, 34.21{]}, p = 9.1e-4). The sign and magnitude
+match the geometric experiment, and the twelve-room block was
+underpowered rather than contradictory. The decoder is not the source. Decoding the same two recordings per room
+with a candidate cap of 64 gives 52/64 against 35/64, +26.56 points with
+$p=7.6e-5$; adding a wall-support price to that cap gives 54/64 against
+44/64, +15.62 points with $p=0.013$. The sign survives all three
+decoders, the magnitude does not, because a priced pool lifts the
+repeated arm from 30 to 44 rooms (Fig. 6a, Table S14). Sensor error
+leaves the sign as well: over the same 64 rooms at severity 0.5,
+dispersed placement recovers 36 and repeated placement 25, a gain of
+17.19 points ({[}4.69, 29.69{]}, $p=0.013$), while mean instance F1 is
+flat at 0.743 against 0.767. The benefit therefore concentrates on
+rooms near the success boundary rather than raising accuracy
+uniformly (Table S15).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../figures/cvpr/fig_placement033.pdf}
+\caption{Contact placement transfers from the geometric protocol to the
+device chain. Panel a gives paired room outcomes for 64 rooms under
+dispersed and repeated placement with the same route, fourteen contacts,
+seeds, refiners and decoder. Panel b compares the paired effect with the
+10,000-room geometric experiment and with the twelve-room development
+block, with room-bootstrap 95\% intervals. Dispersed placement gains 28.1
+points on the fresh block and loses 8.3 points on the underpowered
+twelve-room block.}
+\end{figure*}
+
+\subsection{Evidence selection within fixed
+recordings}\label{evidence-selection-within-fixed-recordings}
+
+The replicated visit-by-error grid contains twelve rooms, three visit
+counts, three handset-error levels and three handset-noise realisations
+per condition. Whole-room counts are 18/16/14 at six visits, 21/20/12 at
+ten visits and 23/21/11 at fourteen visits, each out of 36 observations
+(Fig. 5a). The independent room count remains twelve. Increasing visits
+from six to fourteen changes success by +13.89 percentage points at
+severity zero and $-8.33$ points at severity one. The direct
+difference-in-differences is $-22.22$ points, with exploratory
+sign-flip p = 0.125. A second block of twelve rooms (11700--11711, one
+realisation) keeps every sign: more visits help 4 rooms at severity zero
+and hurt none, severity still costs 6 rooms, and the interaction stays
+negative in 3 rooms at $p=0.25$ (Table S18). Visits also lengthen the
+recording, so a separate contact-count effect needs further controls.
+
+\textbf{Holding the recording fixed.} On the same fourteen-visit record
+per room, all fourteen qualified contacts recover 7/12 rooms with F1
+0.8135. The first six recover 4/12 with 0.7274, dispersed six recover
+5/12 with 0.7028, and three random six-contact subsets per room recover
+8/36 with 0.6435 (Fig. 5b). A truth-assisted six-contact heuristic gives
+4/12 with 0.7960. It accesses reference object centres and is evaluated
+as a diagnostic. The same raw recording, front end, walking runs and
+decoder settings are retained, while the selected events feed the
+contact and wall refiners before decoding. Thus the contrast includes
+selection-induced changes in the refined trajectory and heading
+hypotheses.
+
+\textbf{A second recording length.} Within the twenty-visit records, all
+twenty contacts and the first fourteen each recover 8/12 rooms, with F1
+0.7817 and 0.7917. Dispersed and truth-assisted fourteen-contact subsets
+also give 8/12, with F1 0.8393 and 0.8671. Equal aggregate hit counts
+can involve different successful rooms. The longer records last
+1.18--1.26 times as long as the fourteen-visit records. Cross-length
+differences therefore combine changed motion, added signal and
+refinement effects. The within-record observations establish equality at
+the tested budgets, while the separate grid's visit-and-duration
+dependence remains unresolved.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../figures/cvpr/fig_evidence032.pdf}
+\caption{Contact availability and contact selection under different controls.
+Panel a reports whole-room success over 36 observations per cell from
+twelve rooms and three handset-noise realisations; the interaction is
+exploratory, with p = 0.125. Panel b holds one record per room and varies
+only which six contacts reach the refiners and decoder, against all
+fourteen and against a truth-assisted diagnostic. Cells are success
+counts, not F1.}
+\end{figure*}
+
+Ranking contacts by event duration provides a useful negative control.
+Keeping the longest eleven, nine and six contacts gives 4/12, 0/12 and
+0/12 whole-room successes. Corresponding three-seed random subsets give
+19/36, 17/36 and 14/36. Duration ranking retains cabinet events and
+removes all lying contacts at six and nine contacts. The synthetic event
+schedule makes duration category-dependent, so this result bounds that
+score in this chain. Detector confidence remains a separate question.
+Complete subset results and class counts are in the supplement.
+
+\textbf{Pinning the class mix.} A second selection experiment removes the
+class composition as a free variable. Each room receives six contacts
+allocated across seated, lying and cabinet events in proportion to the
+available counts, with at least one per present class; all twenty-four
+rooms here admit the quota 2/2/2. Under that fixed quota a spatially
+dispersed subset beats three same-quota random subsets on a confirmation
+block of twelve rooms that the rule never saw, 11700--11711: nine rooms
+better, one worse, two equal, mean F1 +0.0899, whole-room hits 7/12
+against 16/36. The twelve development rooms agree in sign (+0.0503,
+five better, three worse, four equal). The quota itself is not the
+source: same-quota random against unrestricted random is $+0.0700$ on
+development and $-0.0122$ on the confirmation block, so the quota alone
+neither helps nor transfers. A quota-respecting truth-assisted subset stays below random
+in both blocks (0.6806 and 0.7252), so taking the nearest contact per
+object is not an upper bound here. Six contacts, however chosen, remain
+below the fourteen-contact arm (0.8829 against 0.9603 on the
+confirmation block). With twelve rooms per block and one severity, these
+sign counts are descriptive (Table S13).
+
+\textbf{The budget bounds that gain.} Over 76 rooms with the quota held
+fixed, spreading the kept contacts buys $+0.109$ mean F1 at six contacts
+(30 rooms better, 7 worse, 39 equal, sign-flip $p=3.0e-5$), $+0.045$ at
+eight, $+0.010$ at ten, and $-0.017$ at twelve, where the budget is
+nearly the whole set (Fig. 6b, Table S16). Selecting where contacts
+land is a lever only while the budget is tight; once every contact is
+kept, both arms coincide by construction at 55/76.
+
+\subsection{Temporal error and remaining inference
+failures}\label{temporal-error-and-remaining-inference-failures}
+
+On twelve rooms, jointly scaling handset white noise, bias walk,
+scale/misalignment and timestamp jitter gives 7/3/1/0 whole-room
+successes at severities 0/0.5/1/2. The severity-0.5 acceleration RMS
+difference is 0.0132 m/s\^{}2, but multiple error terms change together.
+Per-term controls give 3/12 for bias walk, 5/12 for scale/misalignment
+and 7/12 for either white noise or jitter. Per-term RMS values remain
+unreported.
+
+At fixed nominal per-axis added RMS of 0.020 m/s\^{}2 and 0.003 rad/s,
+temporal structure also matters: clean, white-gyro, constant-gyro and
+slowly varying-gyro conditions recover 10/12, 11/12, 8/12 and 0/12,
+because a slow gyro error can hide the initial stationary block that the
+frozen front end requires. Gated bias tracking leaves the unperturbed
+arm at 24/32 and changes 12/32 to 18/32 at severity 0.5 and 3/32 to
+14/32 at severity one; across two severity-0.5 batches, 25/64 becomes
+34/64 (p = 0.0225). These results concern the evaluated generator and
+front end (Supplementary Figure S1, Tables S6 and S17).
+
+Across all 324 replicated rows, 266 return a solution and 156 recover
+every centre. The remaining 110 solved rows contain at least one
+position error. The 58 unsolved rows comprise 45 proposal conflicts,
+eleven exhausted search budgets and two empty proposal pools. These are
+repeated observations from twelve rooms. A separate 32-room finite-pool
+diagnostic retains a near-truth candidate for every object, yet
+restricting candidates using evaluation-time truth yields only 28/32
+jointly feasible correct layouts, compared with 24/32 for the deployed
+arm. Candidate cap 64 gives 25/23/18 against 24/23/17 across three
+batches. Other tested selection criteria lack consistent cross-batch
+gains. These diagnostics distinguish candidate retention, joint
+compatibility and final selection.
+
+The inventory assumption also affects feasibility. These twelve rooms
+hold four to seven instances, 5.67 on average. Dropping one declared
+storage instance leaves nine proposal conflicts and F1 0.1965, dropping
+one chair leaves five and 0.4349, and mean true positives fall from 4.58
+to 1.08 and 2.33. Whole-room success is zero by construction once a
+reference instance leaves the declaration, so feasibility and
+matched-instance counts carry the comparison.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../figures/cvpr/fig_robust034.pdf}
+\caption{Does the placement effect depend on the decoder, on sensor
+quality, or on the contact budget? Panel a gives the paired gain of
+dispersed over repeated placement on 64 fresh rooms; the three decoder
+rows keep the record, front end and refiners fixed, and the last row
+adds severity-0.5 sensor error. Bars are room-bootstrap 95\% intervals.
+Panel b gives whole-room recovery against the number of contacts kept
+under a fixed class quota over 76 rooms, for the most-spread and a
+random selection of the same size. The two curves meet once every
+contact is kept.}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../../figures/cvpr/fig_real_cases031.pdf}
+\caption{The real-input case and post-hoc synthetic examples delimit the position
+endpoint. Smaller centre errors and higher position F1 indicate better
+localisation, while the 0.25 m annotation cutoff leaves the 0.5 m
+matching rule unchanged. The real production replay is one reused room
+with unverified physical clock synchronisation, 0.244 is the chair IoU,
+and the synthetic examples come from a separate frozen 32-record batch.}
+\end{figure*}
+
+\section{One real-room feasibility
+case}\label{one-real-room-feasibility-case}
+
+The reused dormitory measures 2.84 by 4.045 m with a 2.09 m ceiling. Its
+original RoNIN and phone-activity production chain retains the declared
+room-specific relations and interaction protocol. Centre errors are
+0.1117 m for bed, 0.1079 m for desk, 0.0907 m for cabinet and 0.2333 m
+for chair. The inferred room registration is 170 degrees. The chair
+footprint IoU is approximately 0.244, illustrating the distinction
+between centre and footprint recovery.
+
+A watch-driven cabinet replay retains four centre hits under seven
+software clock shifts within plus or minus two seconds. Physical clock
+synchronisation remains unverified. This n = 1 development-room replay
+establishes feasibility for its production chain. The synthetic
+displacement regressor is evaluated in its own generation domain.
+
+\section{Discussion and conclusion}\label{discussion-and-conclusion}
+
+The strongest controlled finding concerns contact placement. At the same
+route and fourteen interactions, dispersed contacts increase whole-room
+centre recovery by 24.92 percentage points over 10,000 generated
+layouts. The activity map records the resulting partial and whole-room
+disclosure under a specified protocol. Changing a declared prior, finite
+decoder or scene family changes the operating point, which limits the
+portability of a numerical activity budget.
+
+The device results additionally depend on supervised synthetic dynamics,
+posture semantics and event association. The two side-information
+ablations establish that observations benefit the evaluated decoder,
+while stronger prior-only baselines are needed to assess the full value
+of side information. Fixed-record controls expose selection-dependent
+refinement, but the replicated grid provides limited evidence for a
+visit-by-error interaction. The primary new-versus-old whole-room
+difference also remains statistically inconclusive at p = 0.1094. A
+general raw-IMU activity threshold requires additional independently
+controlled measurements.
+
+Archived configurations, model metadata and commands document the
+evaluated chains. Some historical caches retain only aggregate scores,
+so independent box-level checks require replaying the saved inputs.
+Across the controlled geometric experiments, device evaluation within
+the training generator, and real-room case, acquisition, refinement and
+finite selection remain practical sources of recovery loss.
+
+\FloatBarrier
+\section*{LLM Usage Statement}
+OpenAI GPT models accessed through ChatGPT and Codex were used for
+manuscript drafting and revision, literature and citation checking,
+programming, figure preparation, and experiment design and result
+auditing. Some code, plotting and auditing tasks were executed through
+multi-step agent workflows, with outputs reviewed during the research
+process. The authors are responsible for the submitted content.
+{\small
+\begin{thebibliography}{99}
+\bibitem{r1} C. Mura, R. Pajarola, K. Schindler, and N. Mitra. Walk2Map: Extracting
+floor plans from indoor walk trajectories. Computer Graphics Forum,
+40:375--388, 2021.
+
+\bibitem{r2} S. Basu, C. Amballa, Z. Xu, J. V. Sampedro, S. Nelakuditi, and R. R.
+Choudhury. Contrastive diffusion guidance for spatial inverse problems.
+arXiv:2509.26489, 2025.
+
+\bibitem{r3} S. Ye, Y. Wang, J. Li, D. Park, C. K. Liu, H. Xu, and J. Wu. Scene
+synthesis from human motion. In SIGGRAPH Asia Conference Papers, 2022.
+
+\bibitem{r4} H.-Y. Hsu, T. Cheng, J. Wen, A. G. Schwing, and S. Wang. IMU4D: 4D
+human-object understanding from wearable IMUs. arXiv:2604.21926, 2026.
+
+\bibitem{r5} M. Hardegger, D. Roggen, S. Mazilu, and G. Troster. ActionSLAM: Using
+location-related actions as landmarks in pedestrian SLAM. In IPIN, 2012.
+
+\bibitem{r6} S. Herath, H. Yan, and Y. Furukawa. RoNIN: Robust neural inertial
+navigation in the wild. In ICRA, pages 3146--3152, 2020.
+
+\bibitem{r7} E. Kolve et al.~AI2-THOR: An interactive 3D environment for visual AI.
+arXiv:1712.05474, 2017.
+
+\bibitem{r8} M. Deitke et al.~ProcTHOR: Large-scale embodied AI using procedural
+generation. arXiv:2206.06994, 2022.
+
+\bibitem{r9} L. Breiman. Random forests. Machine Learning, 45:5--32, 2001.
+
+\bibitem{r10} P. Geurts, D. Ernst, and L. Wehenkel. Extremely randomized trees.
+Machine Learning, 63:3--42, 2006.
+
+\bibitem{r11} E. B. Wilson. Probable inference, the law of succession, and statistical
+inference. Journal of the American Statistical Association, 22:209--212,
+1927.
+
+\bibitem{r12} L. Lin, S. Xia, Z. Lai, L. Sun, J. Yang, and L. Pei. IMU-HOI: A
+symbiotic framework for coherent human-object interaction and motion
+capture via contact-conscious inertial fusion. In CVPR, pages
+42901--42910, 2026.
+
+\bibitem{r13} R. Yonetani and K. Hara. Map as a by-product: Collective landmark
+mapping from IMU data and user-provided texts in situated tasks. PACM
+IMWUT, 9(3):146, 2025.
+\end{thebibliography}
+}
+\end{document}
