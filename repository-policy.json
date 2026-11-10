@@ -2,6 +2,8 @@
  "schema_version": 1,
  "purpose": "Reviewed public research source and derived summaries; no raw recordings or device diagnostics. Expansion requires manual review.",
  "allowed_files": [
+  "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig3_budget_quality023.png",
+  "paper/2026-11-09-controlled-position-leakage-zh/patch_v17.py",
   ".gitattributes",
   ".github/workflows/layout-review-fixes.yml",
   ".github/workflows/source-check.yml",
@@ -1205,6 +1207,7 @@
   "tools/tests/test_repository_guard.py"
  ],
  "binary_sha256": {
+  "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig3_budget_quality023.png": "88cc28cdb28c43b1296d8a3467e95214cb2ba9703c9129e87950fa6bdf4bec43",
   "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
   "collection/band9pro-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e",
   "collection/watch-s5-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e",
