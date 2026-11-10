@@ -133,28 +133,34 @@ def pick_random(n, k, seed):
 
 
 def pick_oracle(pos, gt, k):
-    """Greedy true-identity cover: repeatedly take the (object, contact) pair that
-    is globally nearest among still-uncovered objects and still-unpicked contacts."""
+    """Truth-assisted selection in two stages, always exactly k distinct contacts.
+
+    Stage 1 gives every contact-class object its own nearest contact, taking the
+    objects with the tightest nearest contact first. Stage 2 runs only when k
+    exceeds the number of contactable objects: the spare slots go to the contact
+    farthest from everything already picked, so the extra slot spreads over the
+    room instead of repeating the same cabinet face."""
     names = [n for n in sorted(gt) if M.category(n) in ORACLE_CLASSES]
+    want = min(k, len(pos))
+    if want == 0:
+        return []
+    if not names:
+        return list(range(want))
     centres = np.asarray([(np.asarray(gt[n])[:2] + np.asarray(gt[n])[2:]) / 2. for n in names], float)
-    chosen, covered, free = [], set(), set(range(len(pos)))
-    while len(chosen) < min(k, len(pos)) and free and names:
-        best = None
-        # Prefer an as-yet-uncovered object; once every contact class object is
-        # covered the remaining picks go to the unpicked contact nearest any of
-        # them, so the oracle still sees exactly k contacts like the other arms.
-        pool = [oi for oi in range(len(names)) if oi not in covered] or list(range(len(names)))
-        for oi in pool:
-            for ci in sorted(free):
-                distance = float(np.linalg.norm(pos[ci] - centres[oi]))
-                if best is None or distance < best[0] - 1e-12:
-                    best = (distance, oi, ci)
-        if best is None:
+    distance = np.linalg.norm(np.asarray(pos, float)[:, None, :] - centres[None, :, :], axis=2)
+    chosen = []
+    for oi in sorted(range(len(names)), key=lambda o: float(distance[:, o].min())):
+        free = [c for c in np.argsort(distance[:, oi]) if int(c) not in chosen]
+        if not free:
+            continue
+        chosen.append(int(free[0]))
+        if len(chosen) >= want:
             break
-        chosen.append(best[2])
-        covered.add(best[1])
-        free.discard(best[2])
-    return chosen
+    while len(chosen) < want:
+        gap = np.min(np.linalg.norm(np.asarray(pos, float)[:, None, :] - np.asarray(pos, float)[chosen][None, :, :], axis=2), axis=1)
+        gap[chosen] = -1.
+        chosen.append(int(np.argmax(gap)))
+    return sorted(chosen)
 
 
 def subset(runs, order, picked):
