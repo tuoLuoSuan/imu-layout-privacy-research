@@ -2,6 +2,12 @@
  "schema_version": 1,
  "purpose": "Reviewed public research source and derived summaries; no raw recordings or device diagnostics. Expansion requires manual review.",
  "allowed_files": [
+  "analysis/layout/confidence030.py",
+  "docs/research/2026-11-10-contact-confidence-030.md",
+  "paper/2026-11-09-controlled-position-leakage-zh/cvpr/manuscript_v10_030.md",
+  "paper/2026-11-09-controlled-position-leakage-zh/cvpr/patch_v10_030.py",
+  "paper/2026-11-09-controlled-position-leakage-zh/cvpr/supplement_v10_030.md",
+  "paper/2026-11-09-controlled-position-leakage-zh/patch_v20.py",
   "analysis/layout/figure_contrasts018.py",
   "analysis/layout/inventory029.py",
   "analysis/layout/prior_only_audit018.py",
