@@ -167,10 +167,11 @@ def main():
     sec.page_width, sec.page_height = Inches(8.5), Inches(11)
     for a in ('left_margin', 'right_margin', 'top_margin', 'bottom_margin'):
         setattr(sec, a, Inches(0.75))
-    set_doc_cols(sec, 2)
+    COLS = 1 if (len(sys.argv) > 4 and sys.argv[4] == "single") else 2
+    set_doc_cols(sec, COLS)
     style_font(doc)
 
-    title = 'What Inertial Recordings Reveal About Furniture Layout: Contact Placement, Visit Count, and Sensor Error'
+    title = sys.argv[3] if len(sys.argv) > 3 else 'What Inertial Recordings Reveal About Furniture Layout: Contact Placement, Visit Count, and Sensor Error'
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.space_after = Pt(10)
@@ -180,13 +181,14 @@ def main():
     sub = doc.add_paragraph()
     sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
     sub.paragraph_format.space_after = Pt(12)
-    sr = sub.add_run('Anonymous CVPR submission')
+    sr = sub.add_run('Supplementary material' if len(sys.argv) > 3 else 'Anonymous CVPR submission')
     sr.font.size = Pt(10)
     sr.italic = True
 
     fig_no = 0
-    WIDTH = {'fig1': 3.35, 'fig2': 3.35, 'fig3': 3.35, 'fig4': 3.35, 'fig5': 3.35, 'fig6': 3.35}
+    WIDTH = {'fig1': 3.35, 'fig2': 3.35, 'fig3': 3.35, 'fig4': 3.35, 'fig5': 3.35, 'fig6': 3.35, 'figA1': 3.35}
     in_front = True
+    pending_cap = None
     for b in blocks:
         kind = b[0]
         if kind == 'h1':
@@ -198,7 +200,7 @@ def main():
         elif kind == 'h2':
             heading(doc, b[1], size=11, space_before=10)
         elif kind == 'cap':
-            pass
+            pending_cap = b[1]
         elif kind == 'p':
             para(doc, b[1], size=10, first_indent=0.0)
         elif kind == 'img':
@@ -222,8 +224,9 @@ def main():
             cr.font.size = Pt(8.5)
             in_front = False
         elif kind == 'table':
-            add_table(doc, b[1], b[2], 'Table 1. Whole-room recovery on 1,000 development rooms at four operating points of the layer-1 decoder. Tolerance is the per-class centre window; contacts is the number of interactions per room.')
-    set_doc_cols(doc.sections[-1], 2)
+            add_table(doc, b[1], b[2], pending_cap or 'Table S1.')
+            pending_cap = None
+    set_doc_cols(doc.sections[-1], COLS)
     doc.save(str(OUT))
     print('saved', OUT, 'blocks', len(blocks))
 

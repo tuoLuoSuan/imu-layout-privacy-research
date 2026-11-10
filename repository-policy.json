@@ -2,6 +2,16 @@
  "schema_version": 1,
  "purpose": "Reviewed public research source and derived summaries; no raw recordings or device diagnostics. Expansion requires manual review.",
  "allowed_files": [
+  "analysis/layout/selectcount026.py",
+  "docs/research/2026-11-10-equal-contact-selection-026.md",
+  "paper/2026-11-09-controlled-position-leakage-zh/cvpr/manuscript_v8_026.md",
+  "paper/2026-11-09-controlled-position-leakage-zh/cvpr/patch_v8_026.py",
+  "paper/2026-11-09-controlled-position-leakage-zh/cvpr/supplement_v8_026.md",
+  "paper/2026-11-09-controlled-position-leakage-zh/make_fig2_budget026.py",
+  "paper/2026-11-09-controlled-position-leakage-zh/make_fig4_visits026.py",
+  "paper/2026-11-09-controlled-position-leakage-zh/patch_v18.py",
+  "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig_budget026.png",
+  "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig_visits026.png",
   "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig3_budget_quality023.png",
   "paper/2026-11-09-controlled-position-leakage-zh/patch_v17.py",
   ".gitattributes",
@@ -1207,6 +1217,8 @@
   "tools/tests/test_repository_guard.py"
  ],
  "binary_sha256": {
+  "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig_budget026.png": "b347d7f270c10b64015fbab7498b7e3216d125c1382925e7a9fc1109e247951d",
+  "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig_visits026.png": "029e53bb9380e0b40878f200f51281901b3fb54debbb1406b7b8d24fcba95b89",
   "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig3_budget_quality023.png": "88cc28cdb28c43b1296d8a3467e95214cb2ba9703c9129e87950fa6bdf4bec43",
   "collection/phone-imu-recorder/gradle/wrapper/gradle-wrapper.jar": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
   "collection/band9pro-probe/src/common/icon.png": "e167eca31c272554a27bb29222786c146e2e8f01cd2e86d96db2aa25ff40ee9e",
