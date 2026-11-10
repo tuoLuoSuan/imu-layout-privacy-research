@@ -99,7 +99,7 @@ select026 已经把「只保留部分接触事件、其余事件全部保留」�
 
 ### 其他配对与状态
 
-- `bal_random − plain_random`（只看配额、不看空间）：开发集 F1 +0.1204（好 10 / 差 2 / 平 0）、整屋命中 +0.2778（好 6 / 差 0 / 平 6）；确认集 F1 −0.0389（好 7 / 差 5 / 平 0），但整屋命中 16/36 对 11/36、按房配对 +0.0278。也就是说，单靠配额在确认集上并没有稳定收益。
+- `bal_random − plain_random`（只看配额、不看空间）：开发集 F1 +0.0700（好 7 / 差 3 / 平 2）、整屋命中 +0.0833（好 5 / 差 0 / 平 7）；确认集 F1 −0.0122（好 5 / 差 6 / 平 1），整屋命中 16/36 对 11/36。也就是说，单靠配额既不帮忙也不复现。**这一行已更正**，见文末「更正」。
 - `bal_oracle − bal_random`：开发集 −0.0330（好 6 / 差 4 / 平 2），确认集 −0.0678（好 4 / 差 7 / 平 1）。按真值类别取「每个物体最近的那个接触」在实践中不是上界，反而低于随机：它把 6 个名额压到少数几个物体上，而评分要求覆盖该房出现的每个真实实例，集中取点会漏掉别的物体；这是 oracle 设计本身的缺陷，不改写、如实报。
 - 状态分布（所有失败行保留，非 ok 行 f1 记 0，error 行 0）：开发集 108 行 = ok 96 / proposal_conflict 11 / search_budget_exhausted 1；确认集 108 行 = ok 105 / proposal_conflict 2 / search_budget_exhausted 1。`proposal_conflict` 与 `search_budget_exhausted` 是解码器自身的状态，不是异常，两批都原样保留在 JSON 里。
 - 配额在两批 24 个房间里都是 2/2/2（每房可用 5/4/5、共 14 个接触）；本批没有出现某类别缺席的房间，1/0/5 这类退化情形由 `quota()` 处理并单独验证，但没有在本实验的房间里发生。
@@ -107,7 +107,7 @@ select026 已经把「只保留部分接触事件、其余事件全部保留」�
 ## 结论（只按数字）
 
 1. 先冻结、再确认这一次成立：确认集上 `bal_disperse` 在 12 个房间里 9 好 1 差 2 平，平均配对差 +0.0899；整屋命中 7/12 对 `bal_random` 的 16/36（按房平均 5.33/12）。开发集方向相同但更弱（+0.0503，5/3/4）。
-2. 配额本身不足以解释这个差：确认集上 `bal_random` 对 `plain_random` 的平均 F1 是 −0.0389（虽然整屋命中数更高）。所以「把类别配比钉死」并没有单独带来 F1 收益，收益来自**同一配比下的空间分散**。
+2. 配额本身不足以解释这个差：`bal_random` 对 `plain_random` 的平均 F1 在开发集是 +0.0700、在确认集是 −0.0122，两批反号、量级也小于分散效应。所以「把类别配比钉死」本身不是收益来源，收益来自**同一配比下的空间分散**。
 3. 因此对审稿问题的回答是：在 k=6、配额固定的条件下，接触选择的收益主要来自空间分散，而不是类别配比；类别配比的效果在两个批次的 F1 上不一致。
 4. 确认集上 6 个接触的 `bal_disperse`（7/12、0.8829）仍低于 14 个接触的 `base`（10/12、0.9603），即分散选择缩小但不能消除与全量接触的差距。
 
@@ -134,3 +134,16 @@ python -m analysis.layout.selectbalanced032 --combine --out output/layout-recon/
 - `analysis/layout/selectbalanced032.py`（唯一新增模块；SHA256 `af72bac4…a9a12c`）
 - `output/layout-recon/select032/select032.json`（108 行 × 2 批 + 两批汇总 + 三组配对 + 门 + verdict）
 - `output/layout-recon/select032/stage-dev.json`、`stage-confirm.json`
+## 更正（2026-11-11，主会话复算）
+
+`select032.json` 里的 `paired_bal_vs_plain` 块在取 `f1_a` 时用的是该 (room, arm) 最后一条随机行（某一 seed），不是三种子的均值，于是它给出的开发集 +0.1204、确认集 −0.0389 与两臂各自的均值不一致（开发集均值差 0.7136 − 0.6435 = +0.0701，确认集 0.7930 − 0.8052 = −0.0122）。主端点块 `paired_disperse_minus_random` 用的是种子均值，未受影响（+0.0503 / +0.0899 与两臂均值差一致）；`oracle` 块每房只有一行，也未受影响。
+
+以 `analysis/layout/selectbalanced_paired032.py` 从 `stage-dev.json` / `stage-confirm.json` 的逐行数据重算，写入 `output/layout-recon/select032/paired_recomputed.json`：
+
+| 配对 | dev | confirm |
+| --- | --- | --- |
+| `bal_disperse − bal_random` | +0.0503（5/3/4） | +0.0899（9/1/2） |
+| `bal_random − plain_random` | +0.0700（7/3/2） | −0.0122（5/6/1） |
+| `bal_oracle − bal_random` | −0.0330（6/4/2） | −0.0678（4/7/1） |
+
+`select032.json` 原块保留不动，作为“当时写进去的东西”的记录；引用一律以 `paired_recomputed.json` 为准。这条更正不改变主结论：配额本身既不帮忙也不复现，收益来自同一配额下的空间分散。

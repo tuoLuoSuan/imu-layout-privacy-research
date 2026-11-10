@@ -2,6 +2,7 @@
  "schema_version": 1,
  "purpose": "Reviewed public research source and derived summaries; no raw recordings or device diagnostics. Expansion requires manual review.",
  "allowed_files": [
+  "analysis/layout/selectbalanced_paired032.py",
   "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig_budget032.png",
   "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig_evidence032.png",
   "paper/2026-11-09-controlled-position-leakage-zh/figures/cvpr/fig_prior033.png",
