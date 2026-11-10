@@ -65,7 +65,7 @@ T = {
             f3t='one realisation per cell identifies neither axis',
             f4y='rooms recovered of 12', f4t='same RMS, three temporal structures',
             f5x='change vs base (pp)', f5t='no selection criterion replicates',
-            f6t='four rooms, truth against prediction', r1s='contact placement', r2s='desk-wall prior', r3s='decoder portfolio', r4s='gated gyro, s=0.5', r5s='gated gyro, s=1.0', r6s='truth pose (diagnostic)', fig1c='c  one real room', fig1title='the task and the three evidence layers', fig1note='each bracket is scored on one room set; no arrow crosses two sets. simulated layer uses an ideal trajectory with class-level contact coordinates; device layer uses raw phone and watch streams.', f2note='Newcombe hybrid score intervals on two proportions; every row keeps its own room set.', truth='truth', pred='prediction', none='no proposal survives',
+            f6t='four rooms, truth against prediction', r1s='contact placement', r2s='desk-wall prior', r3s='decoder portfolio', r4s='gated gyro, s=0.5', r5s='gated gyro, s=1.0', r6s='truth pose (diagnostic)', fig1c='c  one real room', fig1title='the task and the three evidence layers', fig1note='each bracket is scored on one room set; no arrow crosses two sets. simulated layer uses an ideal trajectory with class-level contact coordinates; device layer uses raw phone and watch streams.', f2note='Newcombe hybrid score intervals on marginal counts, which ignore the pairing and therefore err wide; every row keeps its own room set.', truth='truth', pred='prediction', none='no proposal survives',
             nrun='n.r.'),
  'zh': dict(bed='床', desk='桌', cab='储物', chair='椅',
             known='已知  外框 2.84 x 4.05 m、起点 P0、4 类共 5 件带尺寸清单',
