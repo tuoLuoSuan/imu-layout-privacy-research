@@ -1,0 +1,43 @@
+arm,coverage,contacts,metric,mean_percent,n_requested,n_usable,source
+spatial_zero088,0.25,0,f1,23.086904761904762,100,99,original
+spatial_zero088,0.25,2,f1,31.67142857142857,100,96,original
+spatial_zero088,0.25,6,f1,39.45238095238095,100,96,original
+spatial_zero088,0.25,10,f1,39.64523809523809,100,96,original
+spatial_zero088,0.25,14,f1,40.095238095238095,100,96,original
+spatial_zero088,0.5,0,f1,41.41547619047619,100,99,original
+spatial_zero088,0.5,2,f1,39.75595238095238,100,98,original
+spatial_zero088,0.5,6,f1,58.38214285714286,100,98,original
+spatial_zero088,0.5,10,f1,58.2797619047619,100,98,original
+spatial_zero088,0.5,14,f1,58.2047619047619,100,98,original
+spatial_zero088,0.75,0,f1,61.57142857142857,100,99,same-cohort extension
+spatial_zero088,0.75,2,f1,54.46666666666666,100,99,same-cohort extension
+spatial_zero088,0.75,6,f1,77.39404761904763,100,99,same-cohort extension
+spatial_zero088,0.75,10,f1,75.5297619047619,100,99,same-cohort extension
+spatial_zero088,0.75,14,f1,75.53571428571428,100,99,same-cohort extension
+spatial_zero088,1.0,0,f1,86.12976190476189,100,93,original
+spatial_zero088,1.0,2,f1,79.15119047619046,100,93,original
+spatial_zero088,1.0,6,f1,91.31666666666666,100,93,original
+spatial_zero088,1.0,10,f1,92.3,100,93,original
+spatial_zero088,1.0,14,f1,92.175,100,93,original
+corrected_static,0.25,0,f1,4.980952380952381,100,99,original
+corrected_static,0.25,2,f1,19.420238095238094,100,96,original
+corrected_static,0.25,6,f1,26.886904761904763,100,96,original
+corrected_static,0.25,10,f1,28.7297619047619,100,96,original
+corrected_static,0.25,14,f1,29.69761904761905,100,96,original
+corrected_static,0.5,0,f1,4.747619047619048,100,99,original
+corrected_static,0.5,2,f1,31.9047619047619,100,98,original
+corrected_static,0.5,6,f1,44.445238095238096,100,98,original
+corrected_static,0.5,10,f1,47.275,100,98,original
+corrected_static,0.5,14,f1,47.72619047619048,100,98,original
+corrected_static,0.75,0,f1,17.60595238095238,100,99,same-cohort extension
+corrected_static,0.75,2,f1,44.654761904761905,100,99,same-cohort extension
+corrected_static,0.75,6,f1,60.85357142857143,100,99,same-cohort extension
+corrected_static,0.75,10,f1,60.81309523809524,100,99,same-cohort extension
+corrected_static,0.75,14,f1,59.432142857142864,100,99,same-cohort extension
+corrected_static,1.0,0,f1,64.12619047619047,100,93,original
+corrected_static,1.0,2,f1,67.41666666666666,100,93,original
+corrected_static,1.0,6,f1,76.99523809523811,100,93,original
+corrected_static,1.0,10,f1,77.25714285714287,100,93,original
+corrected_static,1.0,14,f1,78.4,100,93,original
+spatial_zero088,0,0,f1,4.410714285714286,100,93,same-cohort zero-observation boundary
+corrected_static,0,0,f1,1.2583333333333333,100,93,same-cohort zero-observation boundary

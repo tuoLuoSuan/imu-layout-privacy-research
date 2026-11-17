@@ -1,0 +1,40 @@
+{
+  "rule": "actual_events_zero_spatial_else_frozen_D",
+  "selection": "posthoc original-development exploration; not an independent confirmation",
+  "D_checkpoint_sha256": {
+    "k2": "3b82cdb610daad19d710218216e55d430eb1c1af5e20789b5699153599d05ec1",
+    "teacher": "57069619fbea2bf8cd63b7e37ac32b3f39596d6354a0fcc474038855ce55811d",
+    "refiner": "7432aecd865319cf0af7b6dd5a6bc35bc59e29bc814b1f086c5dcc0c7550bf05",
+    "k6": "e21e75982fb3bb43208ec6777a463fdbee13a510352ce7829ad813b63581d578",
+    "refiner_k2": "a3330fe464dea376f19f3da5149f28f1312ae7cbd00d33cd416d22db061e4a68"
+  },
+  "cnn_checkpoint_sha256": "88557782981e0efd2ee4ad6fd6d1c4349a0d22631ac41474554df410d74d2b46",
+  "cnn_config_sha256": "d3e94d60d422fa5bc9ae4f391e4453304ac6f2fb5c8690ad5685f79017e9dd6d",
+  "source_sha256": {
+    "recovery076_data.py": "190c4a5cdca073b0b137f4f5f33d6901e7ef3a4625486af61cbe8cb2495e119b",
+    "recovery076_model.py": "d06256c616e2f33d258a31584bfd7a6af923b4fcc02af6e44a6e54ee7a0dd3e9",
+    "recovery077_model.py": "557966b528cff394a725a9ecfa985e804cee25659d66b1d53e838b4a65bbd166",
+    "recovery077_runtime.py": "1e7b1c27df1e5dca0d121bc447f2ab49540fe9cab7a73289076114da381acecd",
+    "recovery078_candidates.py": "b90e38b74518f2d07c1d1da54baf8e1370b3fa28e26d3262c5095943c4d6415e",
+    "recovery078_model.py": "98c3dd3e464edabc18326ccbe4e05116c23ff19a8931d39c3cff785f65a69f38",
+    "recovery078_runtime.py": "0ca33d202c1b962d975675a3098b5d3a7ef89e553f44aa9baad3e2583ad5ae8a",
+    "recovery080_refine.py": "51707a08d03a41b2dcbf73198e19c8889ef9f8114842ba8d3e0e98f9bee7d6ee",
+    "recovery081_runtime.py": "8f492d5c0ce39ef52c4ce4e0155e5eb28ef1880de3e6d806fa6479fa1f697342",
+    "recovery083_fields.py": "3eec23b14f91b33c7f4df3f6a59a4b0cb0ac51384e787b0237e54e9abbc29e1a",
+    "recovery083_model.py": "4f7915942df01e33a62e79ccf6e0b8db3f5a8b111550dd1bc063e11eb53f6727",
+    "recovery083_runtime.py": "413d5bb02bb3a8a2f7b581e4e5c73a90fc0002d6f0a48615f773c02da64f04f5",
+    "recovery088_spatial_runtime.py": "92e585d256289ea7a0707dbf109807bb88c7c2366a164a10c25222042bde6c40"
+  },
+  "cnn_residual_scale": 1.0,
+  "077_score_strength": 0.75,
+  "D_rows_sha256": "8413effc8b4c116ef6a9c8047b68acd7850c32c137eb45943e427bf6c80d420a",
+  "spatial_rows_sha256": "de2e160cbe442e4dffa71db78f1ea27594099185bb7cf595d558600808404738",
+  "manifest_sha256": "996ab4b8760e3bd9ea5c12beb2563ca4f0ba730815e7b25b77cdb0cc18be30db",
+  "audit_source_sha256": "42bcbce927420cdf7204b7d33367961ae789b60099436a02ec4fda3dfb79f96c",
+  "explored_rules": [
+    "spatial_nonK2",
+    "spatial_K0_only",
+    "spatial_K0_K6"
+  ],
+  "failure_policy": "all1590 requested;62 acquisition failures score zero"
+}

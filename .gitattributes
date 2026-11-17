@@ -1,3 +1,23 @@
 # Preserve the bytes of frozen source snapshots on every operating system.
 # Source digests must not change because Git converted line endings.
 * -text
+
+# Frozen inference sources are hash-bound; preserve their exact line endings.
+analysis/layout/recovery076_data.py -text
+analysis/layout/recovery076_model.py -text
+analysis/layout/recovery077_model.py -text
+analysis/layout/recovery077_runtime.py -text
+analysis/layout/recovery078_candidates.py -text
+analysis/layout/recovery078_model.py -text
+analysis/layout/recovery078_runtime.py -text
+analysis/layout/recovery080_refine.py -text
+analysis/layout/recovery081_runtime.py -text
+analysis/layout/recovery083_fields.py -text
+analysis/layout/recovery083_model.py -text
+analysis/layout/recovery083_runtime.py -text
+analysis/layout/recovery088_spatial_runtime.py -text
+
+# Parent checkpoint protocols also bind analytic dependencies.
+analysis/layout/*.py -text
+tools/eval_spatial088_locked.py -text
+tools/train_spatial083_archived.py -text

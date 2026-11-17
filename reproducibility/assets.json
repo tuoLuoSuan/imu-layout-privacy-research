@@ -1,0 +1,31 @@
+{
+  "schema": "roomtrace-release-assets-v1",
+  "tag": "roomtrace-repro-v1",
+  "repository": "tuoLuoSuan/imu-layout-privacy-research",
+  "assets": [
+    {
+      "name": "roomtrace-models-v1.zip",
+      "sha256": "8269e8755373d7d28a25ff048c1210a3436a841c47f586247425a66c716cdc8f",
+      "bytes": 2077767,
+      "default": true,
+      "description": "Six frozen RoomTrace/D checkpoints, legacy refiner initialization, config and lock.",
+      "url": "https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/roomtrace-repro-v1/roomtrace-models-v1.zip"
+    },
+    {
+      "name": "roomtrace-confirmation-v1.zip",
+      "sha256": "ac257ceae58f32ef5907334ebc4c747615ed758393de41065277e9fbe7f12c1d",
+      "bytes": 13280487,
+      "default": true,
+      "description": "Synthetic primary confirmation, coverage extensions, exclusion manifests and archived predictions.",
+      "url": "https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/roomtrace-repro-v1/roomtrace-confirmation-v1.zip"
+    },
+    {
+      "name": "roomtrace-training-v1.zip",
+      "sha256": "82d4037e2e3c0ac34bf9126dd209f809c98a6ad37a05b5baacc018d585261420",
+      "bytes": 32836167,
+      "default": false,
+      "description": "Synthetic training/development geometry and refiner coarse views; regenerate the 1.9 GiB tensor cache locally.",
+      "url": "https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/roomtrace-repro-v1/roomtrace-training-v1.zip"
+    }
+  ]
+}

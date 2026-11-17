@@ -1,0 +1,18 @@
+{
+  "source": "original 98001 confirmation, frozen model",
+  "requested": 1500,
+  "usable": 1439,
+  "failures_zero": 61,
+  "rescored_archived_prediction_rows": 4500,
+  "all_table_values_match": true,
+  "inference_check": {
+    "checked_inputs": 15,
+    "coverage_contact_conditions": 15,
+    "max_coordinate_delta_m": 0.0,
+    "status": "PASS"
+  },
+  "unit_tests": {
+    "scientific": 54,
+    "release_boundary": 4
+  }
+}

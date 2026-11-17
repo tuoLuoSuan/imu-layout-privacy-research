@@ -29,6 +29,12 @@ PRIVATE_SUFFIXES = {
 # This reviewed development RF is public code output, not a raw recording.
 # Its exact bytes must also match binary_sha256 in the allowlist policy.
 PUBLIC_MODEL_FILES = frozenset({"analysis/layout/models/phone-five-class.joblib"})
+# Reviewed numeric tables from the paper; raw/session CSVs remain forbidden.
+PUBLIC_DERIVED_FILES = frozenset({
+    "reproducibility/dense-eight-f1-surface.csv",
+    "reproducibility/quarter-f1-surface.csv",
+    "reproducibility/real-dorm-errors.csv",
+})
 PATTERNS = {
     "private_key": re.compile(r"-----BEGIN (?:[A-Z0-9 ]+ )?PRIVATE KEY-----"),
     "github_token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})\b"),
@@ -52,7 +58,7 @@ def private_path(name):
     return (lower.startswith(PRIVATE_ROOTS) or any(
         p in {".git", ".cache", ".gradle", "node_modules", "__pycache__", "build",
               "dist", "secrets", "sign", "output"} or p.startswith(".tmp") for p in parts)
-        or (PurePosixPath(lower).suffix in PRIVATE_SUFFIXES and lower not in PUBLIC_MODEL_FILES)
+        or (PurePosixPath(lower).suffix in PRIVATE_SUFFIXES and lower not in PUBLIC_MODEL_FILES and lower not in PUBLIC_DERIVED_FILES)
         or any(p == ".env" or (p.startswith(".env.") and p != ".env.example") for p in parts)
         or lower.endswith(("/local.properties", ".tar.gz")))
 

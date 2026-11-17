@@ -1,0 +1,50 @@
+[
+  {
+    "component": "Geometry-only baseline",
+    "centres": 270,
+    "footprints": 12,
+    "f1": 0.42814615154237795,
+    "arm": "corrected_static",
+    "source": "D:\\Project\\imu\u73af\u5883\u91cd\u5efa\\output\\layout-recon\\recovery081\\full-validation-C"
+  },
+  {
+    "component": "Local scores and joint search",
+    "centres": 387,
+    "footprints": 147,
+    "f1": 0.5241404612159329,
+    "arm": "coarse_A",
+    "source": "D:\\Project\\imu\u73af\u5883\u91cd\u5efa\\output\\layout-recon\\recovery081\\full-validation-C"
+  },
+  {
+    "component": "Shared refinement",
+    "centres": 388,
+    "footprints": 182,
+    "f1": 0.5257786762503743,
+    "arm": "refine_B",
+    "source": "D:\\Project\\imu\u73af\u5883\u91cd\u5efa\\output\\layout-recon\\recovery081\\full-validation-C"
+  },
+  {
+    "component": "Six-contact calibration",
+    "centres": 391,
+    "footprints": 177,
+    "f1": 0.5273008385744236,
+    "arm": "refine_k6_C",
+    "source": "D:\\Project\\imu\u73af\u5883\u91cd\u5efa\\output\\layout-recon\\recovery081\\full-validation-C"
+  },
+  {
+    "component": "Two-contact refinement (D)",
+    "centres": 391,
+    "footprints": 179,
+    "f1": 0.5277650494159928,
+    "arm": "refine_k6_C",
+    "source": "D:\\Project\\imu\u73af\u5883\u91cd\u5efa\\output\\layout-recon\\recovery088\\spatial-zero-development"
+  },
+  {
+    "component": "Contact-free spatial branch",
+    "centres": 425,
+    "footprints": 189,
+    "f1": 0.5751826894279725,
+    "arm": "spatial_zero088",
+    "source": "D:\\Project\\imu\u73af\u5883\u91cd\u5efa\\output\\layout-recon\\recovery088\\spatial-zero-development"
+  }
+]

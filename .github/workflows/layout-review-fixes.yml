@@ -1,4 +1,4 @@
-name: Layout review regressions
+name: RoomTrace reproduction checks
 on:
   push:
     branches: ['**']
@@ -6,12 +6,26 @@ on:
 permissions:
   contents: read
 jobs:
-  layout-review-fixes:
+  roomtrace:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install numpy scipy matplotlib joblib scikit-learn
-      - run: python -m unittest discover -s analysis/layout/tests -v
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - run: >-
+          python -m unittest
+          analysis.layout.tests.test_spatial088
+          analysis.layout.tests.test_analytic077
+          analysis.layout.tests.test_recovery076
+          analysis.layout.tests.test_recovery077
+          analysis.layout.tests.test_recovery078
+          analysis.layout.tests.test_recovery081_runtime
+          analysis.layout.tests.test_refine081_training
+          analysis.layout.tests.test_eval081_pairing -v
+      - run: python -m roomtrace download
+      - run: python -m roomtrace summarize --out output/ci-confirmation.json
+      - run: python -m roomtrace verify --threads 2 --out output/ci-inference.json

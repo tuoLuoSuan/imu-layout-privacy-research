@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roomtrace-reproduction"
+version = "1.0.0"
+description = "Phone-watch activity evidence to furniture layout: frozen RoomTrace reproduction"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.2,<3", "scipy>=1.14,<2", "torch>=2.6,<3", "scikit-learn>=1.5,<2", "joblib>=1.4,<2", "matplotlib>=3.9,<4"]
+
+[project.scripts]
+roomtrace = "roomtrace.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["roomtrace*", "analysis*", "tools*"]
