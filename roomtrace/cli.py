@@ -2,11 +2,19 @@
 import argparse
 import hashlib
 import json
+import os
+import platform
 from pathlib import Path, PurePosixPath
 import subprocess
 import sys
 import urllib.request
 import zipfile
+
+# The archived x86-64 run used AVX2. Select its numerical dispatch before
+# NumPy/PyTorch imports; different vector kernels can reorder near ties.
+if platform.machine().lower() in {'amd64','x86_64'}:
+    for key,value in {'ATEN_CPU_CAPABILITY':'avx2','ONEDNN_MAX_CPU_ISA':'AVX2','MKL_CBWR':'AVX2'}.items():
+        os.environ.setdefault(key,value)
 
 ROOT=Path(__file__).resolve().parents[1]
 LOCK=ROOT/'reproducibility/frozen088-lock.json'
@@ -137,7 +145,8 @@ def verify(args):
             for key,b in boxes.items():
                 delta=float(np.max(np.abs(np.asarray(b)-reference[key])));maximum=max(maximum,delta)
                 if delta>1e-6:raise ValueError('Archived prediction differs: '+m['id']+' '+arm+' '+key+' max_delta_m='+str(delta)+'. Install reproducibility/requirements-tested.txt before checking frozen coordinates.')
-    result={'checked_inputs':len(selected),'coverage_contact_conditions':15,'max_coordinate_delta_m':maximum,'status':'PASS'}
+    result={'checked_inputs':len(selected),'coverage_contact_conditions':15,'max_coordinate_delta_m':maximum,'status':'PASS',
+            'reference_cpu_environment':{k:os.environ.get(k) for k in ['ATEN_CPU_CAPABILITY','ONEDNN_MAX_CPU_ISA','MKL_CBWR']}}
     if args.out:write(args.out,result)
     print(json.dumps(result,indent=2))
 

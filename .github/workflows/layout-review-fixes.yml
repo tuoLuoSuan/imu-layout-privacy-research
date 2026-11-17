@@ -8,10 +8,6 @@ permissions:
 jobs:
   roomtrace:
     runs-on: ubuntu-latest
-    env:
-      ATEN_CPU_CAPABILITY: avx2
-      ONEDNN_MAX_CPU_ISA: AVX2
-      MKL_CBWR: AVX2
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

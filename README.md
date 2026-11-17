@@ -17,7 +17,8 @@ condition groups and failures retained in the denominator.
 
 ## Reproduce the paper table
 
-Python 3.11+ and a CPU are sufficient for the decoder. Run from this clone:
+Use Python 3.11+ and an x86-64 CPU with AVX2 for frozen numerical reproduction.
+Run from this clone:
 
 ```bash
 python -m pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu
@@ -35,6 +36,9 @@ coverage/contact conditions and compares all predicted coordinates.
 Dependencies are pinned to the measured environment. The tested package
 versions are also listed in `reproducibility/requirements-tested.txt`;
 using newer numerical libraries can change candidate ordering and coordinates.
+The CLI selects the reference AVX2/oneDNN/MKL dispatch before importing the
+numerical libraries. Explicit environment overrides are respected. This policy
+matches the original CPU; model weights and routing are unchanged.
 
 Run all three decoders on the complete 1,500-request cohort:
 

@@ -3,9 +3,9 @@ import argparse,json,sys,platform
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
+from roomtrace.cli import models,PRIMARY,read
 import numpy as np
 import torch
-from roomtrace.cli import models,PRIMARY,read
 from analysis.layout.recovery076_data import prepare,pack
 from analysis.layout.recovery088_spatial_runtime import residual_field
 

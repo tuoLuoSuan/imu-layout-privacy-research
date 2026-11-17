@@ -5,6 +5,13 @@ Retraining creates a new checkpoint; the shipped lock continues to identify
 the published weights. Exact training protocols are exported as
 `reproducibility/training-{teacher,k2,k6,refiner}.json`.
 
+The frozen reference uses the pinned package versions and an x86-64 AVX2 CPU.
+The public CLI sets `ATEN_CPU_CAPABILITY=avx2`, `ONEDNN_MAX_CPU_ISA=AVX2` and
+`MKL_CBWR=AVX2` before numerical imports. When invoking archived trainers
+directly, set those variables in the shell before starting Python if you need
+the same CPU dispatch. Different kernels can change nearly tied candidate
+rankings without changing any checkpoint bytes.
+
 ## Data and cache
 
 ```bash
