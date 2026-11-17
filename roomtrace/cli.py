@@ -136,7 +136,7 @@ def verify(args):
             if set(reference)!=set(boxes):raise ValueError('Prediction inventory mismatch')
             for key,b in boxes.items():
                 delta=float(np.max(np.abs(np.asarray(b)-reference[key])));maximum=max(maximum,delta)
-                if delta>1e-6:raise ValueError('Archived prediction differs: '+m['id'])
+                if delta>1e-6:raise ValueError('Archived prediction differs: '+m['id']+' '+arm+' '+key+' max_delta_m='+str(delta)+'. Install reproducibility/requirements-tested.txt before checking frozen coordinates.')
     result={'checked_inputs':len(selected),'coverage_contact_conditions':15,'max_coordinate_delta_m':maximum,'status':'PASS'}
     if args.out:write(args.out,result)
     print(json.dumps(result,indent=2))

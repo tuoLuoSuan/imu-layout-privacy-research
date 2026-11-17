@@ -20,6 +20,7 @@ condition groups and failures retained in the denominator.
 Python 3.11+ and a CPU are sufficient for the decoder. Run from this clone:
 
 ```bash
+python -m pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu
 python -m pip install -e .
 python -m roomtrace download
 python -m roomtrace summarize --out output/confirmation-recomputed.json
@@ -30,6 +31,10 @@ python -m roomtrace verify --out output/inference-check.json
 archived prediction against its target and recomputes the paired group-bootstrap
 intervals. `verify` reruns frozen inference on one case from each of the 15
 coverage/contact conditions and compares all predicted coordinates.
+
+Dependencies are pinned to the measured environment. The tested package
+versions are also listed in `reproducibility/requirements-tested.txt`;
+using newer numerical libraries can change candidate ordering and coordinates.
 
 Run all three decoders on the complete 1,500-request cohort:
 
