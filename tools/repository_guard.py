@@ -31,8 +31,12 @@ PRIVATE_SUFFIXES = {
 PUBLIC_MODEL_FILES = frozenset({"analysis/layout/models/phone-five-class.joblib"})
 # Reviewed numeric tables from the paper; raw/session CSVs remain forbidden.
 PUBLIC_DERIVED_FILES = frozenset({
+    "reproducibility/activity-development.csv",
+    "reproducibility/class-localisation-by-coverage058.csv",
     "reproducibility/dense-eight-f1-surface.csv",
     "reproducibility/quarter-f1-surface.csv",
+    "reproducibility/quarter-whole_footprint-surface.csv",
+    "reproducibility/quarter-whole_room-surface.csv",
     "reproducibility/real-dorm-errors.csv",
 })
 PATTERNS = {

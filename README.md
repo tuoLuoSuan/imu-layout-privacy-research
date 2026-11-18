@@ -13,7 +13,8 @@ The primary evaluation uses synthetic registered geometric evidence, 50 held-out
 condition groups and failures retained in the denominator.
 
 [Architecture](docs/roomtrace/architecture.md) · [Evaluation protocol](docs/roomtrace/protocol.md) ·
-[Training](docs/roomtrace/training.md) · [Reproduction matrix](docs/roomtrace/reproduction-matrix.md)
+[Training](docs/roomtrace/training.md) · [Reproduction matrix](docs/roomtrace/reproduction-matrix.md) ·
+[Paper figures and historical controls](docs/roomtrace/paper-artifacts.md)
 
 **Collect new recordings:** [Android APK](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/joint-watch-v0.2.23/IMU-Capture-0.2.4.apk) ·
 [S5 watch RPK](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/joint-watch-v0.2.23/org.imuresearch.s5joint.release.0.2.23.rpk) ·

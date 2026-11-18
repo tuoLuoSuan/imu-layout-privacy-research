@@ -1,0 +1,854 @@
+{
+  "scope": "Synthetic phone-watch streams; archived room-level evaluation scores",
+  "visits": 14,
+  "severity": 0,
+  "streams": "prefix",
+  "earlier_diagnostic_rooms": [
+    11700,
+    11701,
+    11702,
+    11703,
+    11704,
+    11705,
+    11706,
+    11707,
+    11708,
+    11709,
+    11710,
+    11711
+  ],
+  "pairs": [
+    {
+      "room": 11700,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11701,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11702,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8333333333333334,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11703,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11704,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11705,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11706,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11707,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.5,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.6666666666666666,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11708,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11709,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11710,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11711,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8571428571428571,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8571428571428571,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11712,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11713,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11714,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11715,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.5,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8333333333333334,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11716,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11717,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8333333333333334,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11718,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6666666666666666,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8333333333333334,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11719,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8571428571428571,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11720,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11721,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11722,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11723,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.5,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.0,
+        "status": "search_budget_exhausted"
+      }
+    },
+    {
+      "room": 11724,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11725,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8333333333333334,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11726,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11727,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.7142857142857143,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8571428571428571,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11728,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11729,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11730,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11731,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6666666666666666,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11732,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11733,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11734,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11735,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8571428571428571,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.42857142857142855,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11736,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11737,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11738,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11739,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6666666666666666,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11740,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11741,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11742,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11743,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8571428571428571,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11744,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11745,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11746,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11747,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.3333333333333333,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11748,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11749,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11750,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8333333333333334,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11751,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8571428571428571,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11752,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.75,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11753,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11754,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11755,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.3333333333333333,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.6666666666666666,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11756,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11757,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11758,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11759,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.5714285714285714,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.7142857142857143,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11760,
+      "repeat": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11761,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.6,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": true,
+        "f1": 1.0,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11762,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8,
+        "status": "ok"
+      }
+    },
+    {
+      "room": 11763,
+      "repeat": {
+        "all_instances_hit": false,
+        "f1": 0.5,
+        "status": "ok"
+      },
+      "dispersed": {
+        "all_instances_hit": false,
+        "f1": 0.8333333333333334,
+        "status": "ok"
+      }
+    }
+  ]
+}

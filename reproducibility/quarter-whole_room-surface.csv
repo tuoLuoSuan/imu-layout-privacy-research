@@ -1,0 +1,43 @@
+arm,coverage,contacts,metric,mean_percent,n_requested,n_usable,source
+spatial_zero088,0.25,0,whole_room,0.0,100,99,original
+spatial_zero088,0.25,2,whole_room,0.0,100,96,original
+spatial_zero088,0.25,6,whole_room,3.0,100,96,original
+spatial_zero088,0.25,10,whole_room,2.0,100,96,original
+spatial_zero088,0.25,14,whole_room,1.0,100,96,original
+spatial_zero088,0.5,0,whole_room,3.0,100,99,original
+spatial_zero088,0.5,2,whole_room,0.0,100,98,original
+spatial_zero088,0.5,6,whole_room,9.0,100,98,original
+spatial_zero088,0.5,10,whole_room,8.0,100,98,original
+spatial_zero088,0.5,14,whole_room,6.0,100,98,original
+spatial_zero088,0.75,0,whole_room,13.0,100,99,same-cohort extension
+spatial_zero088,0.75,2,whole_room,7.000000000000001,100,99,same-cohort extension
+spatial_zero088,0.75,6,whole_room,27.0,100,99,same-cohort extension
+spatial_zero088,0.75,10,whole_room,23.0,100,99,same-cohort extension
+spatial_zero088,0.75,14,whole_room,25.0,100,99,same-cohort extension
+spatial_zero088,1.0,0,whole_room,71.0,100,93,original
+spatial_zero088,1.0,2,whole_room,43.0,100,93,original
+spatial_zero088,1.0,6,whole_room,87.0,100,93,original
+spatial_zero088,1.0,10,whole_room,90.0,100,93,original
+spatial_zero088,1.0,14,whole_room,89.0,100,93,original
+corrected_static,0.25,0,whole_room,0.0,100,99,original
+corrected_static,0.25,2,whole_room,0.0,100,96,original
+corrected_static,0.25,6,whole_room,0.0,100,96,original
+corrected_static,0.25,10,whole_room,0.0,100,96,original
+corrected_static,0.25,14,whole_room,1.0,100,96,original
+corrected_static,0.5,0,whole_room,0.0,100,99,original
+corrected_static,0.5,2,whole_room,0.0,100,98,original
+corrected_static,0.5,6,whole_room,0.0,100,98,original
+corrected_static,0.5,10,whole_room,1.0,100,98,original
+corrected_static,0.5,14,whole_room,1.0,100,98,original
+corrected_static,0.75,0,whole_room,0.0,100,99,same-cohort extension
+corrected_static,0.75,2,whole_room,1.0,100,99,same-cohort extension
+corrected_static,0.75,6,whole_room,7.000000000000001,100,99,same-cohort extension
+corrected_static,0.75,10,whole_room,10.0,100,99,same-cohort extension
+corrected_static,0.75,14,whole_room,10.0,100,99,same-cohort extension
+corrected_static,1.0,0,whole_room,15.0,100,93,original
+corrected_static,1.0,2,whole_room,42.0,100,93,original
+corrected_static,1.0,6,whole_room,64.0,100,93,original
+corrected_static,1.0,10,whole_room,64.0,100,93,original
+corrected_static,1.0,14,whole_room,66.0,100,93,original
+spatial_zero088,0,0,whole_room,0.0,100,93,same-cohort zero-observation boundary
+corrected_static,0,0,whole_room,0.0,100,93,same-cohort zero-observation boundary
