@@ -4,7 +4,8 @@
 
 - 当前手表源码：[daily-0.2.23](maintenance/daily-0.2.23/README.md)。
 - 当前插件源码：[bridge-0.2.5](maintenance/bridge-0.2.5/README.md)。
-- 安装包：[私有Release](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/tag/joint-watch-v0.2.23)。
+- 安装包：[GitHub Release（手机 APK、手表 RPK、插件 ABP）](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/tag/joint-watch-v0.2.23)。
+- 从零安装、整包导出和校验：[当前采集指南](../../docs/roomtrace/capture.md)。
 - 摘要与更新身份：[版本清单](releases/watch-0.2.23.json)。
 
 同代0.2.20～0.2.22可保留数据覆盖。0.2.19及更早旧签名不能直接覆盖；必须先导出并核验需保留记录，不能直接卸载或清数据。

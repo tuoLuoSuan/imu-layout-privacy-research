@@ -8,6 +8,7 @@
 | Spatial training | Original training JSONs, split manifest, archived trainer and frozen parent | Regenerate tensor cache, train a new run |
 | Graph/refiner stages | Trainers, graph builder, protocols, coarse views and weights | Run the linked per-stage commands |
 | Action classification | Feature extraction, training/inference code, frozen RF and metadata | Run on an exported phone session; original participant recordings remain local |
+| Phone–watch capture and export | Original Android APK, Xiaomi Watch S5 RPK, AstroBox bridge ABP, matching sources and validator | [Install the three components and validate your own recording](capture.md) |
 | Registered real dorm | Item-error source table and archived replay description | Reported registered-evidence result; raw recording and private registration inputs are not distributed |
 | Historical geometry/raw-stream controls | Original source modules retained in Git history/current legacy modules | Their historical protocols require their own archived inputs; they are separate from the primary decoder table |
 

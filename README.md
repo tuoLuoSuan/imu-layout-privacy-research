@@ -15,6 +15,11 @@ condition groups and failures retained in the denominator.
 [Architecture](docs/roomtrace/architecture.md) · [Evaluation protocol](docs/roomtrace/protocol.md) ·
 [Training](docs/roomtrace/training.md) · [Reproduction matrix](docs/roomtrace/reproduction-matrix.md)
 
+**Collect new recordings:** [Android APK](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/joint-watch-v0.2.23/IMU-Capture-0.2.4.apk) ·
+[S5 watch RPK](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/joint-watch-v0.2.23/org.imuresearch.s5joint.release.0.2.23.rpk) ·
+[AstroBox bridge ABP](https://github.com/tuoLuoSuan/imu-layout-privacy-research/releases/download/joint-watch-v0.2.23/IMU-Bridge-0.2.5-clock-discard.abp) ·
+[Installation, export and integrity checks](docs/roomtrace/capture.md)
+
 ## Reproduce the paper table
 
 Use Python 3.11+ and an x86-64 CPU with AVX2 for frozen numerical reproduction.
@@ -65,6 +70,10 @@ of events: zero activates the spatial residual; positive-contact inputs retain
 frozen D. [Input examples](examples) contain synthetic evidence.
 
 ## Activities and IMU acquisition
+
+For a new phone–watch recording, use the three installers above and follow
+the [capture guide](docs/roomtrace/capture.md). The guide shows how to validate
+the exported ZIP and prepare its phone channels for the classifier.
 
 ```bash
 python -m roomtrace actions --session YOUR_EXPORTED_SESSION \

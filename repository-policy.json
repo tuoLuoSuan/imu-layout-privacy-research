@@ -1056,6 +1056,7 @@
     "docs/research/results/simulation-checkpoint-20261029.json",
     "docs/research/results/unknown-place-groups-20261029.json",
     "docs/roomtrace/architecture.md",
+    "docs/roomtrace/capture.md",
     "docs/roomtrace/protocol.md",
     "docs/roomtrace/reproduction-matrix.md",
     "docs/roomtrace/training.md",
