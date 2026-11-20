@@ -1,4 +1,4 @@
-# What can be reproduced from this release
+# What you can reproduce
 
 | Paper component | Released material | Verification route |
 |---|---|---|
@@ -12,9 +12,6 @@
 | Registered real dorm | Published room-frame observation, reference footprints, item-error table and replay command | [Replay the archived five-contact example](../../examples/registered-dorm/) and redraw the error panel |
 | Historical geometry and raw-stream controls | Fixed-walking outcome counts, 64 acquisition pairs and archived experiment code | [Recompute the reported comparisons](paper-artifacts.md) and see the input requirements for inference reruns |
 
-The table distinguishes score reproduction, frozen inference and retraining.
-The public release does not turn synthetic evidence into raw phone/watch
-recordings, and the desktop runtime does not become a phone benchmark.
-
-The retired interactive showcase is removed. Reproducibility uses command-line
-entry points, versioned source, model hashes and data manifests.
+To check paper numbers, start with the archived scores or run frozen
+inference. The training guide is for building new checkpoints. The reported
+decoder timing was measured on a desktop CPU.

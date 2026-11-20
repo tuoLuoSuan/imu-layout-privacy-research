@@ -1,8 +1,7 @@
 # Training and regeneration
 
-Use the frozen release for numerical reproduction of the primary table.
-Retraining creates a new checkpoint; the shipped lock continues to identify
-the published weights. Exact training protocols are exported as
+To reproduce the primary table, use the frozen release. Run the commands
+below to train a new checkpoint. The exact training protocols are in
 `reproducibility/training-{teacher,k2,k6,refiner}.json`.
 
 The frozen reference uses the pinned package versions and an x86-64 AVX2 CPU.
@@ -21,10 +20,10 @@ python -m roomtrace cache \
   --out output/layout-recon/recovery076/main400/packed-g24.pt
 ```
 
-The cache is generated from the explicit train/validation manifest rows.
-Test and confirmation rows are excluded. The approximately 1.9 GiB local
-tensor cache is regenerable and is not a release download. The release
-contains the original synthetic observation/target JSONs and split manifest.
+The cache command reads the training and validation rows in the supplied
+manifest. It generates about 1.9 GiB of tensors locally from the released
+synthetic observation and target JSONs. Test and confirmation rows stay
+outside the cache.
 
 For a new geometric cohort, use the generator separately:
 
@@ -34,7 +33,8 @@ python -m analysis.layout.recovery076_generate \
   --coverages 0.25,0.5,1.0 --budgets 0,2,6,10,14 --confirmation
 ```
 
-This creates a new experiment, not the archived 98001 confirmation.
+This command creates a separate experiment with seed 99001. The archived
+confirmation uses seed 98001.
 
 ## Spatial residual
 
@@ -44,11 +44,11 @@ python tools/train_spatial083_archived.py \
   --out output/retrained-spatial083
 ```
 
-This is the archived training program: five convolutional blocks, zero output
-initialization, AdamW learning rate 1e-3 and weight decay 1e-4, uniform budget
-sampling and then a training-cell sample. The gradient-carrying target is
-candidate cross-entropy. The logged selected-IoU term is a detached scalar;
-it is not a differentiable IoU loss.
+The archived trainer uses five convolutional blocks, zero-initialized
+outputs and AdamW with learning rate 1e-3 and weight decay 1e-4. At each
+update it draws a budget uniformly, then samples a cell from that budget.
+Candidate cross-entropy supplies the gradient. The selected IoU is logged
+as a detached scalar.
 
 ## Contact, graph and refinement stages
 

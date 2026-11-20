@@ -8,7 +8,7 @@ python -m tools.reproduce_paper_figures --out output/paper-panels
 python -m tools.reproduce_historical_controls --out output/historical-controls.json
 ```
 
-The figure command redraws the public panels with the archived values. It uses a compact presentation layout. Use a new output directory for each figure run.
+The figure command draws eight panels from the archived values in a compact layout. Give each run a new output directory.
 
 ## Figure and table sources
 
@@ -18,7 +18,7 @@ The figure command redraws the public panels with the archived values. It uses a
 | Fig. 2, actions and constraints | [Action features](../../analysis/layout/action_features.py), [classifier](../../analysis/layout/action_model.py), [contact kernels](../../analysis/layout/recovery076_model.py) and [activity summary values](../../reproducibility/activity-development.csv). The measured signal strip requires the archived recording extract. |
 | Fig. 3, position F1 | [Quarter-grid values](../../reproducibility/quarter-f1-surface.csv), [100% slice intervals](../../reproducibility/full-coverage-ci059.json) and the figure command above. The 0% marker is measured at zero contacts. |
 | Fig. 4, paired layouts | [Frozen selected IDs](../../reproducibility/case-selection.json) and released primary confirmation targets, observations and predictions. |
-| Fig. 5, dorm error bars | [Reported per-item values](../../reproducibility/real-dorm-errors.csv). The registered replay below regenerates the predictions when the observation is available. |
+| Fig. 5, dorm error bars | [Per-item errors](../../reproducibility/real-dorm-errors.csv) and [the registered dorm input](../../examples/registered-dorm/). |
 | Supplement, coverage surfaces | [Complete-room center](../../reproducibility/quarter-whole_room-surface.csv), [complete footprint](../../reproducibility/quarter-whole_footprint-surface.csv) and [eight-level position F1](../../reproducibility/dense-eight-f1-surface.csv). |
 | Supplement, class checks | [Localization by class and coverage](../../reproducibility/class-localisation-by-coverage058.csv) and [activity classification summary](../../reproducibility/activity-development.csv). |
 | Supplement, spatial representations | [Distance field, mask and contact heatmaps](../../analysis/layout/recovery083_fields.py), [frozen spatial score](../../analysis/layout/recovery083_runtime.py), and bundled synthetic observations under [examples](../../examples/). Submitted dorm panels use the original registered observation. |
@@ -26,9 +26,9 @@ The figure command redraws the public panels with the archived values. It uses a
 
 ## Historical placement controls
 
-The fixed-walking study compares repeated and dispersed contacts at full coverage with 14 contacts. Its [archived contingency counts](../../analysis/layout/expansion009-results.json) give **3,978 vs 6,470 of 10,000**. The report computes the paired difference from the four outcome counts and displays the archived room-bootstrap interval.
+The first study held walking coverage at 100% and varied where the 14 contacts occurred. Repeated contacts recovered **3,978 of 10,000** rooms. Dispersed contacts recovered **6,470**. The script computes the paired difference from [the four archived outcome counts](../../analysis/layout/expansion009-results.json) and prints the recorded bootstrap interval.
 
-The paired acquisition study compares two protocols on synthetic phone–watch streams. The [128 arm-level scores](../../reproducibility/paired-synthetic-acquisition-scores.json) reproduce **30 vs 48 of 64**, exact McNemar inference, the paired bootstrap interval and the 52-pair analysis excluding earlier diagnostic rooms. The archive includes the search-budget failure in its original pair.
+The second study generated a pair of synthetic phone–watch recordings for each of 64 rooms. Repeated acquisition recovered 30 rooms and dispersed acquisition recovered 48. From the [128 archived scores](../../reproducibility/paired-synthetic-acquisition-scores.json), the script recalculates the exact McNemar test, paired bootstrap interval and the 52-pair comparison after excluding earlier diagnostic rooms. The search-budget failure stays in its original pair.
 
 The historical from-input scripts are [expansion10000](../../analysis/layout/expansion10000.py) and [placement033](../../analysis/layout/placement033.py). The latter used rooms 11700–11763, 14 visits, sensor severity 0 and prefix noise streams:
 
@@ -36,7 +36,7 @@ The historical from-input scripts are [expansion10000](../../analysis/layout/exp
 python -m analysis.layout.placement033 --ids 11700-11763 --visits 14 --severity 0 --streams prefix --workers 4 --out output/historical-acquisition-rerun
 ```
 
-This historical inference command additionally requires the exact native-scene JSONs, wrist metadata and trained ensemble, and displacement checkpoint referenced by [exp_bias014](../../analysis/layout/exp_bias014.py). The 10,000-room generator and evaluator also require their original staged scene/evaluation archives. Those legacy inputs are outside the current release. The score reproduction commands above run with the published files.
+To rerun inference from the historical inputs, you need the native scenes, wrist metadata, trained ensemble and displacement checkpoint listed in [exp_bias014](../../analysis/layout/exp_bias014.py). The 10,000-room study also needs its original scene and evaluation archives. Use the score reproduction commands at the top of this page with the public release files.
 
 ## Registered room replay
 
@@ -46,4 +46,4 @@ The [registered dorm example](../../examples/registered-dorm/) provides the decl
 python -m tools.replay_registered_layout --observation examples/registered-dorm/observation.json --reference examples/registered-dorm/reference.json --out output/registered-room.json
 ```
 
-The official replay returns four center matches within 0.5 m and a mean center error rounded to 0.143 m. The reference file maps item IDs to axis-aligned `[x0, y0, x1, y1]` footprints. Supply it to report matched errors. The decoder takes its input from the observation alone. Use [the capture guide](capture.md) for collecting a phone–watch session and [the public synthetic examples](../../examples/) for the main decoder input schema.
+The replay places all four centers within 0.5 m, with a mean error of 0.143 m. The decoder reads the observation. The reference maps item IDs to `[x0, y0, x1, y1]` boxes for scoring. See the [capture guide](capture.md) to record a new session and the [synthetic examples](../../examples/) for the decoder's input schema.
