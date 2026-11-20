@@ -9,7 +9,7 @@
 | Graph/refiner stages | Trainers, graph builder, protocols, coarse views and weights | Run the linked per-stage commands |
 | Action classification | Feature extraction, training/inference code, frozen RF and metadata | Run on an exported phone session; original participant recordings remain local |
 | Phone–watch capture and export | Original Android APK, Xiaomi Watch S5 RPK, AstroBox bridge ABP, matching sources and validator | [Install the three components and validate your own recording](capture.md) |
-| Registered real dorm | Item-error source table and a registered replay command | Redraw the error panel. The replay command accepts a locally available registered observation and optional reference file. |
+| Registered real dorm | Published room-frame observation, reference footprints, item-error table and replay command | [Replay the archived five-contact example](../../examples/registered-dorm/) and redraw the error panel |
 | Historical geometry and raw-stream controls | Fixed-walking outcome counts, 64 acquisition pairs and archived experiment code | [Recompute the reported comparisons](paper-artifacts.md) and see the input requirements for inference reruns |
 
 The table distinguishes score reproduction, frozen inference and retraining.

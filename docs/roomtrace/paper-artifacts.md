@@ -40,10 +40,10 @@ This historical inference command additionally requires the exact native-scene J
 
 ## Registered room replay
 
-An observation is a registered layout-evidence JSON with the declared outline and inventory, walking points, and contact positions. The dorm example uses the recorded five-contact route with its rule settings, as implemented in [replay_registered_layout](../../tools/replay_registered_layout.py).
+The [registered dorm example](../../examples/registered-dorm/) provides the declared outline and inventory, 128 walking points, five contact positions and four reference footprints. The example uses the archived five-contact route with its rule settings, as implemented in [replay_registered_layout](../../tools/replay_registered_layout.py).
 
 ```bash
-python -m tools.replay_registered_layout --observation PATH_TO_OBSERVATION.json --reference PATH_TO_REFERENCE.json --out output/registered-room.json
+python -m tools.replay_registered_layout --observation examples/registered-dorm/observation.json --reference examples/registered-dorm/reference.json --out output/registered-room.json
 ```
 
 The official replay returns four center matches within 0.5 m and a mean center error rounded to 0.143 m. The reference file maps item IDs to axis-aligned `[x0, y0, x1, y1]` footprints. Supply it to report matched errors. The decoder takes its input from the observation alone. Use [the capture guide](capture.md) for collecting a phone–watch session and [the public synthetic examples](../../examples/) for the main decoder input schema.

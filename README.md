@@ -89,9 +89,9 @@ registered movement evidence. Watch input is three-axis acceleration; phone
 input includes acceleration and angular velocity. Device recording, activity
 recognition, registration and layout decoding are documented as distinct stages.
 
-The real-dorm registered replay recovers four items with 0.143 m mean center
-error from 56.45 s of exported evidence. Raw recordings, video, device logs,
-signing keys and third-party model weights are not distributed. The original
+The [real-dorm registered replay](examples/registered-dorm/) recovers four items
+with 0.143 m mean center error from 56.45 s of exported evidence. Raw recordings,
+video, device logs, signing keys and third-party model weights are not distributed. The original
 RoNIN model is obtained under its authors' terms from [Sachini/ronin](https://github.com/Sachini/ronin).
 
 ## Training and source layout
@@ -120,5 +120,10 @@ python -m unittest analysis.layout.tests.test_spatial088 -v
 ```
 
 The previous interactive showcase has been retired. Use the reproducible
-commands and data manifests above. Existing third-party components retain
-their original terms; this update does not assign a new license to them.
+commands and data manifests above.
+
+## Licensing
+
+Original RoomTrace code and model weights are Apache-2.0. Original RoomTrace
+synthetic data are CC BY 4.0. See [the licensing guide](LICENSING.md) for the
+registered example, installation packages and third-party material.
